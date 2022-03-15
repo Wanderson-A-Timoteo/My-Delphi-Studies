@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/03/15 16:00:00.834,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 16:00:23.794,D:\Projetos\ws-delphi\Aula_02.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/03/15 16:01:14.325,D:\Projetos\ws-delphi\Aula-02-Tipos-de-Arquitetura\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 16:01:14.325,D:\Projetos\ws-delphi\Aula-02-Tipos-de-Arquitetura\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/15 16:01:16.868,D:\Projetos\ws-delphi\Aula-02-Tipos-de-Arquitetura\Aula_02.dproj=D:\Projetos\ws-delphi\Aula_02.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
