@@ -2,9 +2,9 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/03/15 15:49:57.000.669,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/15 15:50:29.000.630,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\Aula_03.dproj</Transaction>
-    <Transaction>2022/03/15 15:52:14.000.176,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\Aula-03\Unit1.dfm</Transaction>
-    <Transaction>2022/03/15 15:52:14.000.176,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\Aula-03\Unit1.pas</Transaction>
-    <Transaction>2022/03/15 15:52:18.000.873,D:\Projetos\ws-delphi\Aula_03.dproj=D:\Projetos\ws-delphi\Aula-03\Aula_03.dproj</Transaction>
+    <Transaction>2022/03/15 15:50:29.000.630,D:\Projetos\ws-delphi\Aula_03.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/03/15 15:52:14.000.176,D:\Projetos\ws-delphi\Aula-03\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/15 15:52:14.000.176,D:\Projetos\ws-delphi\Aula-03\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/15 15:52:18.000.873,D:\Projetos\ws-delphi\Aula-03\Aula_03.dproj=D:\Projetos\ws-delphi\Aula_03.dproj</Transaction>
   </Transactions>
 </BorlandProject>
