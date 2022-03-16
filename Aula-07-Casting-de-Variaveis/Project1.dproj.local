@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/16 08:17:50.000.052,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 08:18:25.000.744,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-06-declaracao-de-variaveis\frmPrincipal.pas</Transaction>
+    <Transaction>2022/03/16 08:18:25.000.744,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-06-declaracao-de-variaveis\frmPrincipal.dfm</Transaction>
+    <Transaction>2022/03/16 08:18:28.000.526,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-06-declaracao-de-variaveis\Project1.dproj</Transaction>
+    <Transaction>2022/03/16 09:33:13.604,=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-07-Casting-de-Variaveis\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 09:33:31.344,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-07-Casting-de-Variaveis\ll\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-07-Casting-de-Variaveis\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
