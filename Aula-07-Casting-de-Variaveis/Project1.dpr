@@ -2,8 +2,7 @@ program Project1;
 
 uses
   Vcl.Forms,
-  frmPrincipal in 'frmPrincipal.pas' {Form1},
-  Unit1 in 'll\Unit1.pas';
+  frmPrincipal in 'frmPrincipal.pas' {Form1};
 
 {$R *.res}
 
