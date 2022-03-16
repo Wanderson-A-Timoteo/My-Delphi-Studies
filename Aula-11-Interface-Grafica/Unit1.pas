@@ -25,7 +25,6 @@ type
     N1: TMenuItem;
     procedure Edit1Exit(Sender: TObject);
     procedure Edit1Enter(Sender: TObject);
-    {procedure Memo1Change(Sender: TObject);}
     procedure Button1Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
   private
@@ -60,10 +59,5 @@ procedure TForm1.Edit1Exit(Sender: TObject);
 begin
   ShowMessage('Saindo do edit');
 end;
-
-{procedure TForm1.Memo1Change(Sender: TObject);
-begin
-  Memo1.Lines.Add(Edit1.Text);
-  end;}
 
 end.
