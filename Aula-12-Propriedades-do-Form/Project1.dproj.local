@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/03/16 13:36:08.223,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/16 13:36:21.182,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-11-Interface-Grafica\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
-    <Transaction>2022/03/16 13:36:21.182,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-11-Interface-Grafica\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/16 13:36:23.209,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-11-Interface-Grafica\Project1.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2022/03/16 13:36:08.000.223,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 13:36:21.000.182,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-11-Interface-Grafica\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 13:36:21.000.182,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-11-Interface-Grafica\Unit1.dfm</Transaction>
+    <Transaction>2022/03/16 13:36:23.000.209,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-11-Interface-Grafica\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>

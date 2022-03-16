@@ -15,6 +15,9 @@ object Form1: TForm1
   PopupMenu = PopupMenu1
   Position = poScreenCenter
   WindowState = wsMaximized
+  DesignSize = (
+    591
+    353)
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -76,6 +79,7 @@ object Form1: TForm1
     Top = 296
     Width = 99
     Height = 49
+    Anchors = [akRight, akBottom]
     Caption = 'Fechar'
     TabOrder = 2
     OnClick = Button2Click
