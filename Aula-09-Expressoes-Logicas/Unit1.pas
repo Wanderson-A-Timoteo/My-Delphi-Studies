@@ -35,7 +35,7 @@ begin
     <> Diferente
     < Menor
     > Maior
-    <= Menos ou Igual
+    <= Menor ou Igual
     >= Maior ou Igual
 
 
