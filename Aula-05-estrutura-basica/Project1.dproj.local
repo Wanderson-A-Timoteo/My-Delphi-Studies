@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/03/16 08:11:01.267,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 08:11:45.400,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-05-estrutura-basica\frmPrincipal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 08:11:45.400,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-05-estrutura-basica\frmPrincipal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/16 08:12:14.345,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-05-estrutura-basica\Project1.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
