@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/03/16 11:29:03.266,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/16 11:29:15.174,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-09-Expressoes-Logicas\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/16 11:29:15.174,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-09-Expressoes-Logicas\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
-    <Transaction>2022/03/16 11:29:17.463,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-09-Expressoes-Logicas\Project1.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2022/03/16 11:29:03.000.266,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 11:29:15.000.174,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-09-Expressoes-Logicas\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 11:29:15.000.174,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-09-Expressoes-Logicas\Unit1.dfm</Transaction>
+    <Transaction>2022/03/16 11:29:17.000.463,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-09-Expressoes-Logicas\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
