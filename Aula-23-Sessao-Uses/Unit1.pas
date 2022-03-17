@@ -25,7 +25,7 @@ implementation
 
 procedure TfrmPrincipal.Button1Click(Sender: TObject);
 begin
-  frmSecundario.SecGlobal;
+  frmSecundario.Show;
 end;
 
 end.
