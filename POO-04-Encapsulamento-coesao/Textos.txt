@@ -1,0 +1,5 @@
+Aula 3 - Encapsulamento
+
+Capacidade de criar objetos e procedimentos reutilizaveis, sem se preocupar com detalhes
+e regras internas
+
