@@ -1,0 +1,4 @@
+Aula 2 - Abstração
+
+Possibilidade de modelar objetos e problemas do mundo real dentro da linguagem
+Capacidade de suporte ao mundo real e a reutilização dos metodos e procedimentos
