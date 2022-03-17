@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/03/17 10:53:04.608,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/17 10:53:17.167,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-26-Arrays\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/17 10:53:17.167,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-26-Arrays\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
-    <Transaction>2022/03/17 10:53:18.959,D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-26-Arrays\Project1.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2022/03/17 10:53:04.000.608,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/17 10:53:17.000.167,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-26-Arrays\Unit1.pas</Transaction>
+    <Transaction>2022/03/17 10:53:17.000.167,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-26-Arrays\Unit1.dfm</Transaction>
+    <Transaction>2022/03/17 10:53:18.000.959,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Aula-26-Arrays\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
