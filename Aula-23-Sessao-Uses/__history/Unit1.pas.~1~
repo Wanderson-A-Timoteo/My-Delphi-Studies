@@ -4,14 +4,10 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
   TForm1 = class(TForm)
-    Timer1: TTimer;
-    Label1: TLabel;
-    Label2: TLabel;
-    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,10 +20,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm1.Timer1Timer(Sender: TObject);
-begin
-  Label1.Caption := DateTimeToStr(now);
-end;
 
 end.
