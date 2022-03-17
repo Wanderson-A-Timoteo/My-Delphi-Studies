@@ -1,0 +1,13 @@
+unit Classe.SQL;
+
+interface
+
+type
+  TConSQL = class
+    public
+      procedure Gravar;
+  end;
+
+implementation
+
+end.

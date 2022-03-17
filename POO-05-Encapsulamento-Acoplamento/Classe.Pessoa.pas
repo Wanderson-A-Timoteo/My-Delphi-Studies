@@ -1,0 +1,30 @@
+unit Classe.Pessoa;
+
+interface
+
+uses
+  System.SysUtils, Classe.SQL;
+
+type
+  TPessoa = class
+  private
+
+  public
+   Nome : String;
+   DataNasc : String;
+   Sexo : String;
+   Etnia : String;
+   SQL : TConSQL;
+   function Idade : Integer;
+  end;
+
+implementation
+
+{ TPessoa }
+
+function TPessoa.Idade : Integer;
+begin
+  Result := Trunc((now - StrToDate(DataNasc)) / 365.25);
+end;
+
+end.

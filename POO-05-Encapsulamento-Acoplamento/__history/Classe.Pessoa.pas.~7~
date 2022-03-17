@@ -1,0 +1,19 @@
+unit Classe.Pessoa;
+
+interface
+
+type
+  TPessoa = class
+  private
+
+  public
+   Nome : String;
+   DataNasc : Integer;
+   Sexo : String;
+   Etnia : String;
+   function Idade : Integer;
+  end;
+
+implementation
+
+end.
