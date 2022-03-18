@@ -77,9 +77,15 @@ end;
 
 procedure TForm1.btnCalcularClick(Sender: TObject);
 var
-  i: Integer;
+  Total : Currency;
+  I : Integer;
 begin
-  i := 0;
+  Total := 0;
+  for I := 0 to QtdFuncionario -1 do
+  begin
+    Total := Total + Funcionario[I].calcularSalario;
+  end;
+  Memo1.Lines.Add('Sua folha salarial é de: R$ ' + CurrToStr(Total));
 end;
 
 procedure TForm1.btnVoltarClick(Sender: TObject);
