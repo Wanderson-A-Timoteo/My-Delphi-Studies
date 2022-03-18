@@ -27,22 +27,18 @@ implementation
 
 procedure TPessoa.SetFuncao(const Value: String);
 begin
-  if Value = '' then
-    raise Exception.Create('Função não pode ser vazia.');
   FFuncao := Value;
 end;
 
 procedure TPessoa.SetNome(const Value: String);
 begin
   if Value = '' then
-    raise Exception.Create('Nome não pode ser vazio.');
+    raise Exception.Create('Nome não pode ser vazio');
   FNome := Value;
 end;
 
 procedure TPessoa.SetSalario(const Value: Currency);
 begin
-  if Value <= 0 then
-    raise Exception.Create('Salario não pode ser menor ou igual a zero.');
   FSalario := Value;
 end;
 
