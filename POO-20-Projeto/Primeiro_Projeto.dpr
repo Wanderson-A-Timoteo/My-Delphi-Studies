@@ -2,7 +2,10 @@ program Primeiro_Projeto;
 
 uses
   Vcl.Forms,
-  View.Principal in 'View.Principal.pas' {Form1};
+  View.Principal in 'View.Principal.pas' {Form1},
+  Classe.Pessoa in 'Classe.Pessoa.pas',
+  Classe.Vendedor in 'Classe.Vendedor.pas',
+  Classe.Administrativo in 'Classe.Administrativo.pas';
 
 {$R *.res}
 

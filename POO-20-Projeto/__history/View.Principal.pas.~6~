@@ -1,0 +1,49 @@
+unit View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Classe.Pessoa, Classe.Vendedor, Classe.Administrativo;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    cbFuncao: TComboBox;
+    Label2: TLabel;
+    edtNome: TEdit;
+    Label3: TLabel;
+    edtSalario: TEdit;
+    Label4: TLabel;
+    edtBonus: TEdit;
+    btnCadastrar: TButton;
+    Button1: TButton;
+    Button2: TButton;
+    Memo1: TMemo;
+    Button3: TButton;
+    procedure Button3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnCadastrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+
+    Funcionario : Array[1..100] of TPessoa; { Polimorfismo -> Herença }
+    QtdFuncionario : Integer;
+
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  QtdFuncionario := 0;
+end;
+
+end.
