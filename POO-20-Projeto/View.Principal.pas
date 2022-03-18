@@ -22,22 +22,25 @@ type
     Label4: TLabel;
     edtBonus: TEdit;
     btnCadastrar: TButton;
-    Button1: TButton;
-    Button2: TButton;
+    btnVoltar: TButton;
+    btnProximo: TButton;
     Memo1: TMemo;
     btnCalcular: TButton;
     procedure btnCadastrarClick(Sender: TObject);
     procedure btnCalcularClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnVoltarClick(Sender: TObject);
+    procedure btnProximoClick(Sender: TObject);
   private
     procedure fnc_IncluirAdministrativo;
     procedure fnc_IncluirVendedor;
     procedure fnc_IncluirFuncionario;
-    { Private declarations }
+    procedure fnc_ExibirDados(Posicao : Integer);
   public
 
     Funcionario: Array [1 .. 100] of TPessoa; { Polimorfismo -> Herença }
     QtdFuncionario: Integer;
+    RegAtual : Integer;
 
   end;
 
@@ -79,9 +82,55 @@ begin
   i := 0;
 end;
 
+procedure TForm1.btnVoltarClick(Sender: TObject);
+begin
+  if RegAtual <= 0 then
+    exit;
+
+  RegAtual := RegAtual - 1;
+  fnc_ExibirDados(RegAtual);
+end;
+
+procedure TForm1.btnProximoClick(Sender: TObject);
+begin
+  if RegAtual >= QtdFuncionario then
+    exit;
+
+  RegAtual := RegAtual + 1;
+  fnc_ExibirDados(RegAtual);
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   QtdFuncionario := 0;
+  RegAtual := 0;
+end;
+
+procedure TForm1.fnc_ExibirDados(Posicao: Integer);
+begin
+  edtNome.Text := Funcionario[RegAtual].Nome;
+  edtSalario.Text := CurrToStr(Funcionario[RegAtual].Salario);
+
+  if (Funcionario[RegAtual].ClassName = 'TAdministrativo') then
+  begin
+    edtBonus.Enabled := true;
+    edtBonus.Text := CurrToStr(TAdministrativo(Funcionario[RegAtual]).Bonus);
+    cbFuncao.ItemIndex := Integer(tpAdministrativo);
+  end;
+
+  if (Funcionario[RegAtual].ClassName = 'TVendedor') then
+  begin
+    edtBonus.Enabled := true;
+    edtBonus.Text := CurrToStr(TVendedor(Funcionario[RegAtual]).Comissao);
+    cbFuncao.ItemIndex := Integer(tpVendedor);
+  end;
+
+  if (Funcionario[RegAtual].ClassName = 'TPessoa') then
+  begin
+    edtBonus.Enabled := false;
+    edtBonus.Text := '';
+    cbFuncao.ItemIndex := Integer(tpFuncionario);
+  end;
 end;
 
 procedure TForm1.fnc_IncluirAdministrativo;

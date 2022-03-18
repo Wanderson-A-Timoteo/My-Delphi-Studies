@@ -85,21 +85,23 @@ object Form1: TForm1
     TabOrder = 4
     OnClick = btnCadastrarClick
   end
-  object Button1: TButton
+  object btnVoltar: TButton
     Left = 319
     Top = 112
     Width = 50
     Height = 25
     Caption = '<<'
     TabOrder = 5
+    OnClick = btnVoltarClick
   end
-  object Button2: TButton
+  object btnProximo: TButton
     Left = 375
     Top = 112
     Width = 50
     Height = 25
     Caption = '>>'
     TabOrder = 6
+    OnClick = btnProximoClick
   end
   object Memo1: TMemo
     Left = 18
