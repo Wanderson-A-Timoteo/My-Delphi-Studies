@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="porloslcmj5fkg4ul_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TGarrafa">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="180,20,127,131" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TGarrafa.Cor" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TGarrafa.Modelo" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TGarrafa.Tampa" />
+      <reference referencedUin="delphi:e_method:src:Project1:Unit1.TGarrafa.ArmazenarLiquido(System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.@unitclass.Form1" />
+      <reference referencedUin="delphi:l_ast:src:Project1:Unit1.@unitclass.Form1" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TForm1">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,20,97,81" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TLivro">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="400,40,140,140" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TLivro.Autor" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TLivro.Titulo" />
+      <reference referencedUin="delphi:e_method:src:Project1:Unit1.TLivro.Paginacao(System.Integer)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TAutor">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="260,300,106,100" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TAutor.Livro" />
+      <reference referencedUin="delphi:l_ast:src:Project1:Unit1.TAutor.Livro">
+        <property name="sourceAnchor" value="345,300" />
+        <property name="targetAnchor" value="424,180" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TGibi">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="480,300,120,100" />
+      <property name="location_set_by_user" value="True" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:l_gnt:src:Project1:Unit1.TGibi:Unit1.TLivro">
+        <property name="sourceAnchor" value="510,300" />
+        <property name="targetAnchor" value="510,180" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>
