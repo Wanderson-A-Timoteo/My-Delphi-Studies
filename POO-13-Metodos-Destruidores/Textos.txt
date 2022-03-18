@@ -1,0 +1,4 @@
+Aula 4 - Encapsulamento - Coesão
+
+Comportamentos Unicos, metodos e funcoes que realizem apenas uma unica operação para 
+facilitarem o seu reaproveitamento
