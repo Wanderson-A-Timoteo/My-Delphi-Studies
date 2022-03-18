@@ -8,24 +8,28 @@ uses
 type
   TPessoa = class
   private
+    FFuncao: String;
     FSalario: Currency;
     FNome: String;
+    procedure SetFuncao(const Value: String);
     procedure SetNome(const Value: String);
     procedure SetSalario(const Value: Currency);
 
   public
     property Nome    : String read FNome write SetNome;
+    property Funcao  : String read FFuncao write SetFuncao;
     property Salario : Currency read FSalario write SetSalario;
-    function calcularSalario :  Currency; virtual; // Para poder sobrecarregar
   end;
 
 implementation
 
 { TPessoa }
 
-function TPessoa.calcularSalario: Currency;
+procedure TPessoa.SetFuncao(const Value: String);
 begin
-  Result := Salario;
+  if Value = '' then
+    raise Exception.Create('Função não pode ser vazia.');
+  FFuncao := Value;
 end;
 
 procedure TPessoa.SetNome(const Value: String);
