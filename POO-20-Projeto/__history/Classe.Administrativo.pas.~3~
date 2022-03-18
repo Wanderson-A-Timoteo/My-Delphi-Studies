@@ -12,7 +12,7 @@ type
     procedure SetBonus(const Value: Currency);
   public
     property Bonus : Currency read FBonus write SetBonus;
-//Override - Sobrecarregando a função calcularSalario criada na classe Pessoa.
+  //Override - Sobrecarregando a função calcularSalario criada na classe Pessoa.
     function calcularSalario :  Currency; override;
   end;
 
