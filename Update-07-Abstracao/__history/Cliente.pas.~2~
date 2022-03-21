@@ -1,0 +1,15 @@
+unit Cliente;
+
+interface
+
+type
+  TCliente = class
+    Noem: String;
+    Telefone : String;
+    Endereco : String;
+    Cidade : String;
+  end;
+
+implementation
+
+end.

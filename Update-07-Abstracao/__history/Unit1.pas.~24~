@@ -1,0 +1,74 @@
+unit Unit1;
+{
+
+ ABSTRAÇÂO é a capacidade da linguagem de representar um objeto
+ do mundo real para dentro da linguagem de programação. Essa é uma das
+ diretrizes para a linguagem ser considerada orientada a objetos.
+
+
+
+}
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Memo.Types, FMX.ScrollBox,
+  FMX.Memo;
+
+type
+
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure CadastrarCliente(Nome, Telefone, Endereco, Cidade : String);
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+
+{ TForm1 }
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  CadastrarCliente('Wanderson', '6533322255', 'Rua dos desesperados 100', 'Cuiabá');
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+
+end;
+{ Exemplo de forma procedural }
+procedure TForm1.CadastrarCliente(Nome, Telefone, Endereco, Cidade : String);
+var
+  Lista : TStringList;
+
+begin
+  Lista := TStringList.Create;
+
+  try
+    Lista.Add('Nome: ' + Nome);
+    Lista.Add('Telefone: ' + Telefone);
+    Lista.Add('Endereço: ' + Endereco);
+    Lista.Add('Cidade: ' + Cidade);
+
+    Lista.SaveToFile('Cliente.txt');
+
+  finally
+    Lista.Free;
+  end;
+
+end;
+
+end.
