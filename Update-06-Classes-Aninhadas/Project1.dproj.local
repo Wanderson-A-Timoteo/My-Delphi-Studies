@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/18 16:38:37.000.688,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/18 16:40:14.000.467,D:\Projetos\ws-delphi\Unit1.fmx=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\Unit1.fmx</Transaction>
+    <Transaction>2022/03/18 16:40:14.000.467,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\Unit1.pas</Transaction>
+    <Transaction>2022/03/18 16:40:18.000.380,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\Project1.dproj</Transaction>
+    <Transaction>2022/03/18 16:40:21.000.033,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\ModelSupport_Project1\default.txaPackage</Transaction>
+    <Transaction>2022/03/18 16:40:49.000.564,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\ModelSupport_Project1\default.txvpck</Transaction>
+    <Transaction>2022/03/18 16:41:02.000.898,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\ModelSupport_Project1\Project1\default.txvpck</Transaction>
+    <Transaction>2022/03/18 16:41:02.000.762,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\ModelSupport_Project1\Unit1\default.txvpck</Transaction>
+    <Transaction>2022/03/18 16:41:24.000.009,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-Garrafa\ModelSupport_Project1\Unit1\default.txaPackage</Transaction>
+    <Transaction>2022/03/21 10:17:07.638,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-06-Classes-Aninhadas\Unit2.pas</Transaction>
+    <Transaction>2022/03/21 10:17:37.596,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-06-Classes-Aninhadas\Classe.Carro.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-06-Classes-Aninhadas\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

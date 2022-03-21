@@ -1,0 +1,74 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls;
+
+type
+{
+  RECORDS assim como as classes são registros que podemos estruturar
+}
+  // Criando um RECORD de configuração
+  TConfiguracao = record
+    Host : String;
+    Path : String;
+    Usuario : String;
+    Senha : String;
+  end;
+
+  // Criando uma classe
+  TGarrafa = class
+    Cor: String;
+    Modelo: String;
+    Tampa: String;
+    procedure ArmazenarLiquido(Liquido: String);
+  end;
+
+  TForm1 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+{ TGarrafa }
+
+procedure TGarrafa.ArmazenarLiquido(Liquido: String);
+begin
+end;
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  MinhaGarrafa : TGarrafa;
+
+begin
+  MinhaGarrafa := nil;  // nil poderá dar erro em mobile devido ao ARC
+  if Assigned(MinhaGarrafa) then
+    ShowMessage('Estou instanciado')
+  else
+    //ShowMessage('Não estou instanciado');
+    MinhaGarrafa := TGarrafa.Create;   // Instanciando
+    ShowMessage('Não estou instanciado');
+  try
+    MinhaGarrafa.Modelo := 'Vidro';
+    MinhaGarrafa.Cor := 'Vermelha';
+  finally
+// Quando usar nil para mobile, executar FreeAndNil para o ARC limpar a memoria
+    FreeAndNil(MinhaGarrafa);
+  end;
+end;
+
+end.
