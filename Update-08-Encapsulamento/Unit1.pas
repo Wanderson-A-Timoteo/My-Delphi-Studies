@@ -1,11 +1,11 @@
 unit Unit1;
 {
 
- ENCAPSULAMENTO tem como pricipio a criação de um objeto para encapsular
- dentro dele todas as suas funções, metodos e atributos que ele precise para
+ ENCAPSULAMENTO tem como pricipio a criaï¿½ï¿½o de um objeto para encapsular
+ dentro dele todas as suas funï¿½ï¿½es, metodos e atributos que ele precise para
  funcionar sem depender de nenhum outro.
 
- Isso possibilita seu uso em qualquer parte do código.
+ Isso possibilita seu uso em qualquer parte do cï¿½digo.
 
 }
 
@@ -44,12 +44,12 @@ var
   Cliente : TCliente;
 
 begin
-  Cliente := Tcliente.Create;
+  Cliente := TCliente.Create;
   try
     Cliente.Nome := 'Wanderson';
     Cliente.Telefone := '6532489444';
     Cliente.Endereco := 'Rua da saudade';
-    Cliente.Cidade := 'Cuiabá';
+    Cliente.Cidade := 'Cuiabï¿½';
 
     Cliente.CadastrarCliente;
   finally

@@ -2,8 +2,8 @@ unit Cliente;
 
 {
 
- ENCAPSULAMENTO tem como pricipio a criação de um objeto para encapsular
- dentro dele todas as suas funções, metodos e atributos que ele precise para
+ ENCAPSULAMENTO tem como pricipio a criaï¿½ï¿½o de um objeto para encapsular
+ dentro dele todas as suas funï¿½ï¿½es, metodos e atributos que ele precise para
  funcionar sem depender de nenhum outro.
 
 }
@@ -11,7 +11,7 @@ unit Cliente;
 interface
 
 uses
-  System.Classes;
+  System.Classes, System.SysUtils;
 
 type
   TCliente = class
@@ -41,7 +41,7 @@ Lista := TStringList.Create;
   try
     Lista.Add('Nome: ' + Nome);
     Lista.Add('Telefone: ' + Telefone);
-    Lista.Add('Endereço: ' + Endereco);
+    Lista.Add('Endereï¿½o: ' + Endereco);
     Lista.Add('Cidade: ' + Cidade);
     Lista.Add('UF: ' + UF);
 
