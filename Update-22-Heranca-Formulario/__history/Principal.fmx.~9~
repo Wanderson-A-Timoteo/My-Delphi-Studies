@@ -1,0 +1,74 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 376
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Button2: TButton
+    Position.X = 312.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Cadastrar Fornecedor'
+    OnClick = Button2Click
+  end
+  object Button1: TButton
+    Position.X = 120.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Cadastrar Cliente'
+    OnClick = Button1Click
+  end
+  object ComboBox1: TComboBox
+    Items.Strings = (
+      'Cliente'
+      'Fornecedor'
+      'Pessoa')
+    Position.X = 32.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object Button3: TButton
+    Position.X = 408.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Quem sou eu?'
+    OnClick = Button3Click
+  end
+  object ComboBox2: TComboBox
+    Items.Strings = (
+      'Cachorro'
+      'Gato')
+    Position.X = 32.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Position.X = 408.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Voz do Animal'
+    OnClick = Button3Click
+  end
+end
