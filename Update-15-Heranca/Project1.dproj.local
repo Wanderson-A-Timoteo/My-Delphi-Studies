@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/21 11:05:36.000.116,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/21 11:06:46.000.526,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-07-Abstracao\Unit1.fmx=D:\Projetos\ws-delphi\Unit1.fmx</Transaction>
+    <Transaction>2022/03/21 11:06:46.000.526,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-07-Abstracao\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/21 11:07:24.000.916,=D:\Projetos\ws-delphi\Unit2.pas</Transaction>
+    <Transaction>2022/03/21 11:07:36.000.977,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-07-Abstracao\Cliente.pas=D:\Projetos\ws-delphi\Unit2.pas</Transaction>
+    <Transaction>2022/03/21 11:07:43.000.093,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-07-Abstracao\Project1.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/03/21 17:14:44.000.185,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Unit2.pas</Transaction>
+    <Transaction>2022/03/21 17:15:06.000.585,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Unit2.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Conexao.SQLServer.pas</Transaction>
+    <Transaction>2022/03/21 17:22:51.000.269,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Unit2.pas</Transaction>
+    <Transaction>2022/03/21 17:23:05.000.665,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Unit2.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Conexao.MySQL.pas</Transaction>
+    <Transaction>2022/03/21 17:24:00.000.785,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Unit2.pas</Transaction>
+    <Transaction>2022/03/21 17:24:12.000.091,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Unit2.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-14-Encapsulamento-Acoplamento-interfaces\Interfaces.pas</Transaction>
+    <Transaction>2022/03/22 08:17:30.103,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Unit2.pas</Transaction>
+    <Transaction>2022/03/22 08:17:50.112,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Classe.Fornecedor.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Unit2.pas</Transaction>
+    <Transaction>2022/03/22 08:18:16.922,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Classe.Pessoa.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Cliente.pas</Transaction>
+    <Transaction>2022/03/22 08:18:43.692,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\default.txaPackage</Transaction>
+    <Transaction>2022/03/22 08:18:53.994,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\default.txvpck</Transaction>
+    <Transaction>2022/03/22 08:19:04.126,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Classe\default.txvpck</Transaction>
+    <Transaction>2022/03/22 08:19:04.259,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Project1\default.txvpck</Transaction>
+    <Transaction>2022/03/22 08:19:11.391,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Classe\Fornecedor\default.txvpck</Transaction>
+    <Transaction>2022/03/22 08:19:11.956,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Classe\Fornecedor\default.txaPackage</Transaction>
+    <Transaction>2022/03/22 08:19:34.882,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Classe\default.txaPackage</Transaction>
+    <Transaction>2022/03/22 08:20:11.541,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Classe\Pessoa\default.txvpck</Transaction>
+    <Transaction>2022/03/22 08:24:58.624,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Unit1\default.txvpck</Transaction>
+    <Transaction>2022/03/22 08:28:41.701,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Unit2.pas</Transaction>
+    <Transaction>2022/03/22 08:28:59.572,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Classe.Cliente.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Unit2.pas</Transaction>
+    <Transaction>2022/03/22 08:41:05.306,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Principal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Unit1.pas</Transaction>
+    <Transaction>2022/03/22 08:41:05.306,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Principal.fmx=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\Unit1.fmx</Transaction>
+    <Transaction>2022/03/22 08:51:09.756,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Classe\Cliente\default.txaPackage</Transaction>
+    <Transaction>2022/03/22 08:51:09.848,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Unit1\default.txaPackage</Transaction>
+    <Transaction>2022/03/22 08:51:09.918,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Principal\default.txaPackage</Transaction>
+    <Transaction>2022/03/22 08:53:20.543,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-15-Heranca\ModelSupport_Project1\Principal\default.txvpck</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="rcxtu4obb5h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Project1:Classe.Fornecedor.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Classe.Fornecedor.TFornecedor">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="320,120,200,160" />
+      <property name="bounds_setted_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:Classe.Fornecedor.TFornecedor.RazaoSocial" />
+    </reference>
+  </view>
+</nodeSet>
