@@ -1,0 +1,9 @@
+inherited FormPadrao2: TFormPadrao2
+  Caption = 'FormPadrao2'
+  DesignerMasterStyle = 0
+  inherited Layout1: TLayout
+    inherited Layout: TLabel
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

@@ -1,0 +1,36 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Button2: TButton
+    Position.X = 288.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Bot'#227'o'
+    OnClick = Button2Click
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 128.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 160.000000000000000000
+    Text = 'Data de Nascimento:'
+    TabOrder = 3
+  end
+end

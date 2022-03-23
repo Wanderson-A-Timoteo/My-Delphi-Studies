@@ -50,7 +50,7 @@ var
 begin
   Cliente := TCliente.Create(TConexaoSQLServer.Create);
   try
-    Cliente.Nome := 'Jeane';
+    Cliente.Nome := 'Mary';
     Cliente.Telefone := '6532489444';
     Cliente.Endereco := 'Rua da saudade ';
     Cliente.Cidade := 'Cuiabá';
@@ -72,7 +72,7 @@ var
 begin
   Fornecedor := TFornecedor.Create(TConexaoSQLServer.Create);
   try
-    Fornecedor.Nome := 'Frigorifico Dom Aquino';
+    Fornecedor.Nome := 'MaDom Aquino';
     Fornecedor.Telefone := '6532489444';
     Fornecedor.Endereco := 'Rua da saudade ';
     Fornecedor.Cidade := 'Cuiabá';
