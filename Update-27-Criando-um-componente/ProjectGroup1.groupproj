@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{850F947C-0692-4162-A483-1F52E222AC79}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CompEventos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project1.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CompEventos">
+        <MSBuild Projects="CompEventos.dproj"/>
+    </Target>
+    <Target Name="CompEventos:Clean">
+        <MSBuild Projects="CompEventos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CompEventos:Make">
+        <MSBuild Projects="CompEventos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="Project1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CompEventos;Project1"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CompEventos:Clean;Project1:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CompEventos:Make;Project1:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

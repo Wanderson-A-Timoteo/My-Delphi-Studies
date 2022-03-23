@@ -1,0 +1,27 @@
+unit Principal;
+
+interface
+
+uses
+  System.Classes;
+
+Type
+  TEventos = class(TComponent)
+  private
+
+  public
+  function TamanhoString(Value : String) : Integer;
+  published
+
+  end;
+
+implementation
+
+{ TEventos }
+
+function TEventos.TamanhoString(Value: String): Integer;
+begin
+  Result := Length(Value);
+end;
+
+end.

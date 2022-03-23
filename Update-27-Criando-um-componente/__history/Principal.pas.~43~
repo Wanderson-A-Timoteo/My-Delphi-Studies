@@ -1,0 +1,43 @@
+unit Principal;
+
+interface
+
+uses
+  System.Classes;
+
+procedure register;
+
+Type
+  TEventos = class(TComponent)
+  private
+    FNome: String;
+    procedure SetNome(const Value: String);
+
+  public
+    function TamanhoString(Value : String) : Integer;
+
+  published
+    property Nome : String read FNome write SetNome;
+
+  end;
+
+implementation
+
+{ TEventos }
+
+procedure register;
+begin
+  RegisterComponents('Delphi Updates', [TEventos]);
+end;
+
+procedure TEventos.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+function TEventos.TamanhoString(Value: String): Integer;
+begin
+  Result := Length(Value);
+end;
+
+end.
