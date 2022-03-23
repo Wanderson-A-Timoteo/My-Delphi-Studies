@@ -1,0 +1,12 @@
+unit Unit2;
+
+interface
+
+type
+  IPessoa = Interface
+    ['{AF1EA4DD-D798-4DDF-8CC4-9FCFDEFB1E24}']
+  End;
+
+implementation
+
+end.

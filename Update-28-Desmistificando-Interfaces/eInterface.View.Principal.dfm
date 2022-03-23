@@ -1,0 +1,80 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 284
+  ClientWidth = 562
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 19
+    Width = 34
+    Height = 13
+    Caption = 'Nome: '
+  end
+  object Label2: TLabel
+    Left = 278
+    Top = 19
+    Width = 61
+    Height = 13
+    Caption = 'Sobrenome: '
+  end
+  object label3: TLabel
+    Left = 24
+    Top = 69
+    Width = 75
+    Height = 13
+    Caption = 'Tipo de Cliente:'
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 224
+    Width = 105
+    Height = 41
+    Caption = 'Cadastrar'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 64
+    Top = 16
+    Width = 193
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 345
+    Top = 16
+    Width = 193
+    Height = 21
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 320
+    Top = 56
+    Width = 218
+    Height = 209
+    TabOrder = 3
+  end
+  object ComboBox1: TComboBox
+    Left = 24
+    Top = 88
+    Width = 145
+    Height = 21
+    TabOrder = 4
+    Text = 'Selecione'
+    OnChange = Selecione
+    Items.Strings = (
+      'F'#237'cica'
+      'Jur'#237'dica')
+  end
+end

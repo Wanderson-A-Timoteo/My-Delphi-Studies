@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/23 11:27:58.000.746,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 11:29:47.000.484,=D:\Projetos\ws-delphi\Unit2.pas</Transaction>
+    <Transaction>2022/03/23 11:30:01.000.930,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit2.pas=D:\Projetos\ws-delphi\Unit2.pas</Transaction>
+    <Transaction>2022/03/23 11:30:04.000.428,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 11:30:04.000.428,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/23 11:30:06.000.780,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Project1.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/03/23 11:40:48.000.325,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit3.pas</Transaction>
+    <Transaction>2022/03/23 11:41:56.000.967,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Pessoa.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit3.pas</Transaction>
+    <Transaction>2022/03/23 11:43:20.000.159,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Interfaces.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 11:43:20.000.159,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Interfaces.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.dfm</Transaction>
+    <Transaction>2022/03/23 11:46:16.000.816,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.View.Principal.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Interfaces.dfm</Transaction>
+    <Transaction>2022/03/23 11:46:16.000.816,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.View.Principal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Interfaces.pas</Transaction>
+    <Transaction>2022/03/23 11:46:57.000.311,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Interfaces.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit2.pas</Transaction>
+    <Transaction>2022/03/23 12:08:56.000.527,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.PessoaFisica.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Pessoa.pas</Transaction>
+    <Transaction>2022/03/23 12:13:04.000.466,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 12:13:23.000.362,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.PessoaJuridica.pas</Transaction>
+    <Transaction>2022/03/23 12:27:36.000.712,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 12:28:11.000.805,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Model.Pessoa.Factory.pas</Transaction>
+    <Transaction>2022/03/23 14:12:22.701,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 14:13:17.667,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Controller.Pessoa.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 14:14:17.027,=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+    <Transaction>2022/03/23 14:14:35.595,D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\eInterface.Controller.Interfaces.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Update-28-Desmistificando-Interfaces\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

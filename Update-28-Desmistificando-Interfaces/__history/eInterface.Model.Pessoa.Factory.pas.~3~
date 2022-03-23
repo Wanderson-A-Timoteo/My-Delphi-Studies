@@ -1,0 +1,23 @@
+unit eInterface.Model.Pessoa.Factory;
+
+interface
+
+type
+
+  TModelPessoaFactory = class(TInterfacedObject, IPessoaFactory)
+      private
+
+      protected
+
+      public
+        constructor Create;
+        destructor Destroy; override;
+        class function New : IPessoaFactory;
+
+      published
+
+  end;
+
+  implementation
+
+  end.

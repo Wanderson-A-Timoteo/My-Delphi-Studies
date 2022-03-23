@@ -1,0 +1,12 @@
+unit eInterface.Model.Pessoa;
+
+interface
+
+type
+  TModelPessoa = class(TInterfaceObject, IPessoa)
+
+  end;
+
+implementation
+
+end.

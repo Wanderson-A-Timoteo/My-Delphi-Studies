@@ -1,0 +1,12 @@
+unit Unit2;
+
+interface
+
+type
+  IPessoa = Interface
+
+  End;
+
+implementation
+
+end.
