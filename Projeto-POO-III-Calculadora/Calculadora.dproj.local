@@ -2,10 +2,10 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/03/24 08:39:05.000.402,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/24 08:54:39.000.898,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Principal.pas</Transaction>
-    <Transaction>2022/03/24 08:54:39.000.898,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Principal.dfm</Transaction>
-    <Transaction>2022/03/24 08:54:56.000.400,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Calculadora.dproj</Transaction>
+    <Transaction>2022/03/24 08:54:39.000.898,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 08:54:39.000.898,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/24 08:54:56.000.400,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Calculadora.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
     <Transaction>2022/03/24 08:56:45.000.369,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Unit1.pas</Transaction>
-    <Transaction>2022/03/24 08:57:04.000.173,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Classe.Calculadora.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 08:57:04.000.173,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Classe.Calculadora.pas</Transaction>
   </Transactions>
 </BorlandProject>

@@ -21,7 +21,7 @@ type
     procedure btnSubtrairClick(Sender: TObject);
     procedure btnDividirClick(Sender: TObject);
     procedure btnMultiplicarClick(Sender: TObject);
-    procedure FormCreate(Sender : TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
     FCalculadora: ICalculadora;
@@ -62,7 +62,7 @@ begin
   Edit3.Text := Calculadora.Subtrair.Operacao(Edit1.Text.ToCurrency, Edit2.Text.ToCurrency).ToString;
 end;
 
-procedure TForm1.FormCreate(Sender : TObject);
+procedure TForm1.FormCreate(Sender: TObject);
 begin
   Calculadora := TCalculadora.New;
 end;
