@@ -1,0 +1,67 @@
+unit Classe.Calculadora;
+
+interface
+
+uses
+  Calculadora.Interfaces, System.SysUtils, Controls, System.Generics.Collections,
+  Calculadora.Helpers, Calculadora.Somar, Calculadora.Subtrair, Calculadora.Dividir,
+  Calculadora.Multiplicar;
+
+type
+  // Classe
+  TCalculadora = class(TInterfacedObject, ICalculadora)
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: ICalculadora;
+
+    function Somar: IOperacoes;
+    function Subtrair: IOperacoes;
+    function Dividir: IOperacoes;
+    function Multiplicar: IOperacoes;
+  end;
+
+
+implementation
+
+
+{ TCalculadora }
+
+constructor TCalculadora.Create;
+begin
+
+end;
+
+destructor TCalculadora.Destroy;
+begin
+
+  inherited;
+end;
+
+function TCalculadora.Dividir: IOperacoes;
+begin
+  Result := TDividir.New;
+end;
+
+function TCalculadora.Multiplicar: IOperacoes;
+begin
+  Result := TMultiplicar.New;
+end;
+
+class function TCalculadora.New: ICalculadora;
+begin
+  Result := Self.Create;
+end;
+
+function TCalculadora.Somar: IOperacoes;
+begin
+Result := TSomar.New;
+end;
+
+function TCalculadora.Subtrair: IOperacoes;
+begin
+  Result := TSubtrair.New;
+end;
+
+
+end.
