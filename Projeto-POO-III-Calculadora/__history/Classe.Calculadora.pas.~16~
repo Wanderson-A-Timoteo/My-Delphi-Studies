@@ -1,0 +1,220 @@
+unit Classe.Calculadora;
+
+interface
+
+uses
+  System.SysUtils;
+
+type
+
+  // Interface
+  IOperacoes = Interface
+    ['{187FB061-D7B5-48A5-BB46-7E989E40AAA6}']
+    // Assinatura da Interface
+    function Operacao(Num1, Num2: double): double;
+  End;
+
+  // Interface
+  ICalculadora = Interface
+    ['{1486D8B4-0D8A-4001-95E3-B547AD6493B8}']
+    function Somar: IOperacoes;
+    function Subtrair: IOperacoes;
+    function Dividir: IOperacoes;
+    function Multiplicar: IOperacoes;
+
+  end;
+
+  // Toda classe precisa receber TInterfacedObject e a interface que ela usa
+  TSomar = class(TInterfacedObject, IOperacoes)
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: IOperacoes;  // Metodo construtor
+
+    function Operacao(Num1, Num2: double): double;
+    function SomarDireto(Num1, Num2: double): double;
+  end;
+
+  TSubtrair = class(TInterfacedObject, IOperacoes)
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: IOperacoes;
+
+    function Operacao(Num1, Num2: double): double;
+  end;
+
+  TDividir = class(TInterfacedObject, IOperacoes)
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: IOperacoes;
+
+    function Operacao(Num1, Num2: double): double;
+  end;
+
+  TMultiplicar = class(TInterfacedObject, IOperacoes)
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: IOperacoes;
+
+    function Operacao(Num1, Num2: double): double;
+  end;
+
+  TCalculadora = class(TInterfacedObject, ICalculadora)
+  public
+    constructor Create;
+    destructor Destroy; overrive;
+    class function New: ICalculadora;
+
+    function Somar: IOperacoes;
+    function Subtrair: IOperacoes;
+    function Dividir: IOperacoes;
+    function Multiplicar: IOperacoes;
+  end;
+
+implementation
+
+{ TSoma }
+
+constructor TSomar.Create;
+begin
+
+end;
+
+destructor TSomar.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TSomar.New: IOperacoes;
+begin
+  Result := Self.Create;
+end;
+
+function TSomar.Operacao(Num1, Num2: double): double;
+begin
+  Result := Num1 + Num2;
+end;
+
+function TSomar.SomarDireto(Num1, Num2: double): double;
+begin
+  Result := Num1 + Num2;
+end;
+
+{ TSubtrair }
+
+constructor TSubtrair.Create;
+begin
+
+end;
+
+destructor TSubtrair.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TSubtrair.New: IOperacoes;
+begin
+  Result := Self.Create;
+end;
+
+function TSubtrair.Operacao(Num1, Num2: double): double;
+begin
+  Result := Num1 - Num2;
+end;
+
+{ TDividir }
+
+constructor TDividir.Create;
+begin
+
+end;
+
+destructor TDividir.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TDividir.New: IOperacoes;
+begin
+  Result := Self.Create;
+end;
+
+function TDividir.Operacao(Num1, Num2: double): double;
+begin
+  if Num2 <= 0 then
+    raise Exception.Create('Error: Valor não pode ser dividido por zero');
+  Result := Num1 / Num2;
+end;
+
+{ TMultiplicar }
+
+constructor TMultiplicar.Create;
+begin
+
+end;
+
+destructor TMultiplicar.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TMultiplicar.New: IOperacoes;
+begin
+  Result := Self.Create;
+end;
+
+function TMultiplicar.Operacao(Num1, Num2: double): double;
+begin
+  Result := Num1 * Num2;
+end;
+
+{ TCalculadora }
+
+constructor TCalculadora.Create;
+begin
+
+end;
+
+destructor TCalculadora.Destroy;
+begin
+
+  inherited;
+end;
+
+function TCalculadora.Dividir: IOperacoes;
+begin
+  Result := TDividir.New;
+end;
+
+function TCalculadora.Multiplicar: IOperacoes;
+begin
+  Result := TMultiplicar.New;
+end;
+
+class function TCalculadora.New: ICalculadora;
+begin
+  Result := Self.Create;
+end;
+
+function TCalculadora.Somar: IOperacoes;
+begin
+  Result := TSomar.Create;
+end;
+
+function TCalculadora.Subtrair: IOperacoes;
+begin
+  Result := TSubtrair.Create;
+end;
+
+end.
