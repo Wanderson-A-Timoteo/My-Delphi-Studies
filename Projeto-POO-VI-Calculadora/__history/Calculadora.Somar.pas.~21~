@@ -1,0 +1,50 @@
+unit Calculadora.Somar;
+
+interface
+
+
+uses
+  Calculadora.Interfaces, Calculadora.Helpers, System.SysUtils,
+  Calculadora.Operacoes;
+
+type
+  // Toda classe precisa receber TInterfacedObject e a interface que ela usa
+  TSomar = class sealed (TOperacoes)
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: IOperacoes;  // Metodo construtor
+
+    function Executar : String; override;
+
+  end;
+
+implementation
+
+
+{ TSomar }
+
+constructor TSomar.Create;
+begin
+
+end;
+
+destructor TSomar.Destroy;
+begin
+
+  inherited;
+end;
+
+function TSomar.Executar: String;
+begin
+
+  inherited;
+end;
+
+class function TSomar.New: IOperacoes;
+begin
+  Result := Self.Create;
+end;
+
+end.

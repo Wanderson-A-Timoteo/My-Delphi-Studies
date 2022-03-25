@@ -1,0 +1,15 @@
+unit Calculadora.Operacoes;
+
+interface
+
+uses
+  Calculadora.Interfaces;
+
+type
+  TOperacoes = class(TInterfacedObject, IOperacoes)
+
+  end;
+
+implementation
+
+end.
