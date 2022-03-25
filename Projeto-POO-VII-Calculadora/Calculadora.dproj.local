@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/24 08:39:05.000.402,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 08:54:39.000.898,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/24 08:54:39.000.898,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 08:54:56.000.400,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I\Calculadora.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/03/24 08:56:45.000.369,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 08:57:04.000.173,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-I-Calculadora\Classe.Calculadora.pas</Transaction>
+    <Transaction>2022/03/24 15:22:29.000.902,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:22:47.000.980,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Intefaces.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:25:34.000.229,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Interfaces.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Intefaces.pas</Transaction>
+    <Transaction>2022/03/24 15:27:27.000.683,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:27:43.000.118,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Helpers.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:30:20.000.764,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:30:37.000.242,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Somar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:37:45.000.987,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:38:24.000.353,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Subtrair.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:41:56.000.849,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:42:12.000.424,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Dividir.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:43:43.000.999,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 15:44:00.000.651,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Calculadora.Multiplicar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-V-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 17:07:28.000.194,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-VI-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 17:07:49.000.929,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-VI-Calculadora\Calculadora.Operacoes.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-VI-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 11:17:33.456,=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-VII-Calculadora\Unit1.pas</Transaction>
+    <Transaction>2022/03/25 11:17:53.950,D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-VII-Calculadora\Calculadora.Eventos.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Projeto-POO-VII-Calculadora\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

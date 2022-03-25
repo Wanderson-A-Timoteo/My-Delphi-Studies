@@ -1,0 +1,47 @@
+unit Calculadora.Subtrair;
+
+interface
+
+uses
+  Calculadora.Interfaces, Calculadora.Helpers, System.SysUtils,
+  Calculadora.Operacoes;
+
+type
+
+  TSubtrair = class sealed (TOperacoes)
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: IOperacoes;
+
+    function Executar : String; override;
+  end;
+
+implementation
+
+
+{ TSubtrair }
+
+constructor TSubtrair.Create;
+begin
+
+end;
+
+destructor TSubtrair.Destroy;
+begin
+
+  inherited;
+end;
+
+function TSubtrair.Executar: String;
+begin
+
+  inherited;
+end;
+
+class function TSubtrair.New: IOperacoes;
+begin
+  Result := Self.Create;
+end;
+
+end.
