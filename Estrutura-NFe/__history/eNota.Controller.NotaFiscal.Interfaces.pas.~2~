@@ -1,0 +1,19 @@
+unit eNota.Controller.NotaFiscal.Interfaces;
+
+interface
+
+type
+
+  iNotaFiscal = interface
+    ['{05ED2560-0012-455E-8898-F6023F4287CC}']
+    function Criar : iNotaFiscal;
+    function Validar : iNotaFiscal;
+    function Enviar : iNotaFiscal;
+    function Gravar : iNotaFiscal;
+    function Email : iNotaFiscal;
+    function EnviarNotaSefaz : iNotaFiscal;
+  end;
+
+implementation
+
+end.

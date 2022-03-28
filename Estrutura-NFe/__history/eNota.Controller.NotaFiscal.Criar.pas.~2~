@@ -1,0 +1,37 @@
+unit eNota.Controller.NotaFiscal.Criar;
+
+interface
+
+type
+  TControllerNotaFiscalCriar = class(TInterfacedObject, iCommand)
+    private
+
+    public
+      constructor Create;
+      destructor Destrou; override;
+
+      class function New : iComand;
+
+  end;
+
+implementation
+
+{ TControllerNotaFiscalCriar }
+
+constructor TControllerNotaFiscalCriar.Create;
+begin
+
+end;
+
+destructor TControllerNotaFiscalCriar.Destrou;
+begin
+
+  inherited;
+end;
+
+class function TControllerNotaFiscalCriar.New: iComand;
+begin
+
+end;
+
+end.

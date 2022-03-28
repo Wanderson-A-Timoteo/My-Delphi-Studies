@@ -1,0 +1,76 @@
+ATALHOS:
+- Ctrl + Alt + Shift + P -> 
+- Ctrl + D -> Intentação do código.
+- Alt + F11 -> Importa as classes na Unit.
+- Ctrl + Shift + C -> Cria as procedures e functions declaradas.
+- Ctrl + Shift + G ou Ctrl + Shift + Alt + G -> Ao criar uma interface este comando gera a chave da interface.
+- Ctrl + Shift + 0 a 9: Inserir um Bookmark no editor de código. Ex: Você está na linha 845 e tecla Ctrl + Shift + 0 (irá aparecer um pequeno quadrado 
+com o número 0 à esquerda do editor). Você vai para o início da unit e, para voltar para a linha 845, é só teclar Ctrl + 0. Tecle novamente Ctrl + Shift + 0 para 
+desmarcar.
+- Ctrl + Barra de Espaço: para forçar a exibição dos comandos relativos àquele componente.
+- Ctrl + Mouse: Clique com o botão esquerdo do mouse mantendo pressionada a tecla Ctrl sobre a chamada a uma procedure/function/variável para localizá-la na unit 
+atual ou em outra unit.
+- Ctrl + J (Code Templates): Este recurso também tem uma boa utilidade. Digamos que você, a todo momento, precise usar um "if..then..else". Ao invés de digitar todo
+ comando, você pode teclar Ctrl + J e, localizar o Template (modelo) apropriado na janela que se abre. Tecle enter para aplicar o Template escolhido. Para alterar ou 
+incluir novos templates, vá em Tools/Editor Options/Code Insight.
+- Ctrl + O + U: Alterna a caixa (maiúscula/minúscula) do código selecionado.
+- Ctrl + K + E: Converter o código selecionado para minúsculas.
+- Ctrl + K + F: Converter o código selecionado para maiúsculas.
+- Ctrl + E: Ativa a busca incremental. Você pode pressionar Ctrl + E e digitar diretamente a palavra que deseja procurar, sem a necessidade de passar por uma caixa de
+ diálogo especial (Ctrl + F).
+- Ctrl + Shift + Setas: Mover o(s) componente(s) selecionado(s) rapidamente no form. O "salto" da movimentação é determinado pelo valor informado em Tools/Environment 
+Options/Grid size X e Y.
+- Ctrl + Setas: Move o componente pixel a pixel.
+- Shift + Setas: Redimensiona o componente pixel a pixel.
+
+
+
+
+
+POO
+- nil -> Nulo, é a referencia zero da memoria.
+- VIRTUAL -> constructor, procedures ou functions virtual, permitem ser sobrecarregadas ou sobreescritas.
+- DYNAMIC -> só registra o metodo na matriz quando ele é usado.
+- VIRTUAL vs DYNAMIC -> 
+	* VIRTUAL trabalha com VMT(Tabelas de Metodos Virtuais), o compilador registra na matriz de metodos virtuais a sua declaração e 
+		da um identificador unico para ele, tornando a sobrecarga mais rápida, porém todas declarações serão compiladas para a VMT o que consome mais memoria.
+		Ele é o mais utilizado, apesar de consumir mais memoria, ele oferece melhor performance.
+	
+	* DYNAMIC trabalha diferente do VIRTUAL, ele não duplica o registro na VMT, o DYNAMIC só registra o metodo na matriz quando ele é usado, isso provoca uma 
+		lentidão pois quando ele for chamado vai demorar para ele sobrecarregar.  
+- OVERRIDE -> constructor, procedures ou functions override indica que elas estão sendo sobrecarregadas. 
+- Por convenção toda classe começa com a letra T.
+- Declarar variaveis de uma classe com F no inicio, exemplo FSenha.
+- Uma procedure não tem retorno.
+- Uma classe precisa ter um retorno.
+- PRIVATE  - Atributos declarados private só ficam visíveis na classe que a declarou, ela não é visível ou seja, ela fica inascessível para outras classes. 
+	Nem seus filhos (subclasses) ou pais (superclasses) podem vê-las, quanto mais outras classes (classes não relacionadas), somente é visível 
+	para classes amigas.
+- Classes amigas são as classes declaradas na mesma Unit, estas classes compartilham as variaveis mesmo que estejam declaradas private. Isto viola o
+	encapsulamento, por isso é uma boa pratica declarar cada classe em uma Unit separada
+- PROPERTY são como os gethers e sethers do JAVA, ou seja, são propriedades de alguns atributos que permitem a alteração de seu valor de forma implicita. 
+- STRICT PRIVATE - As variaveis e metodos declarados como strict private garante que não ficaraõ visíveis mesmo para as classes amigas.
+- ENCAPSULAMENTO - COESÃO - Cada metodo da classe tem apenas uma responsabilidade. 
+- ABSTRACT - O metodo abstract não precisa ser implementado na mesma classe, pois sua implementação será nas classes filhas.
+- CLASSE SEALED(selada) - Essas classes não permite ser sobrecarregada.
+- METODO FINAL - O metodo FINAL não permite que seja novamente sobrecarregada, indica que ela poderá ser usada, mas não sobrecarregda. 
+- inherited - indica herança, executando as implementações da classe pai.
+- HERANÇA - É a capacidade de uma classe compartilhar seus atributos, metodos e funções para suas classes filhas.
+- POLIMORFISMO - É a capacidade que a linguagem tem de interpretar dois metodos com o mesmo nome, porém com parametros diferentes.
+- class function New : NOME_DA_INTERFACE -> É o metodo construtor de uma classe.
+- NEW - Retorna uma Interface
+- FREE -> Simplesmente destrói o objeto se não tiver mais em uso, por isso é preciso criar interfaces, pois o Free monitora o ARC - AUTO REFERENCE COUNT, ou seja, o 
+contador de referencia do objeto, e caso não esteja em uso ele destrói para liberar memoria, mas se tiver um contador de referencia ativo o Free não faz nada.
+- FreeAndNil -> Se não tiver definido o contador de referencia, e se não tiver ativo, ele cria um objeto apontado para o objeto que vc criou dentro da classe, setando 
+este ponteiro para nil(nulo) e depois chama o Free, e se o contador não estiver ativo ele destrói. 
+- DisposeOf -> Muito utilizado no mobile, ele coloca o objeto em Disposed e força o destruídor acontecer, ou seja, se o contador de referencia estiver ativo e o objeto for 
+diferente de nil(nulo), ele adiciona uma referencia para este objeto para que tudo que esteja atrelado ao objeto seja destruído antes de terminar, mas se o ARC não 
+estiver ativo ele simplesmente destrói. 
+- SOLID
+	SRP - Princípio da Responsabilidade Única (cada classe ter apenas uma responsabilidade)
+	OCD - Princípio do Aberto e Fechado (Aberto para extensão e fechado para modificação)
+	LSP - Princípio de Substituição de Liskov (A classe filha pode ser a qualquer momento por sua classe pai sem que a sua propriedade ou funcionalidade mude)
+	ISP - Princípio da Segregação de Interfaces (Criar interfaces com responsabilidades unicas)
+	DIP - Princípio da Inversão de Dependência (classes ou modulos maiores não devem depender de modulos menores, ambos devem depender de interfaces)
+
+
