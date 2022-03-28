@@ -6,12 +6,18 @@ uses
   System.Classes, FMX.Types;
 
 type
+
+  iControllerListBoxItensDefault = interface;
+  iControllerListBoxDefault = interface;
+
   iControllerListBoxItensFactory = interface
     ['{52D7D579-2ED0-4F85-BAAE-11967DCFD6A7}']
+    function Defaul : iControllerListBoxItensDefault;
   end;
 
   iControllerListBoxFactory = interface
     ['{1F812D6A-1597-440E-8E50-126621DE2415}']
+    function Defaul(Container : TComponent) : iControllerListBoxDefault;
   end;
 
   iControllerListBoxItensDefault = interface
