@@ -1,0 +1,19 @@
+unit Menus.Controller.ListBox.Default;
+
+interface
+
+uses
+  Menus.Controller.Interfaces;
+
+type
+
+  TControllerListBoxDefault = class(TInterfacedObject, iControllerListBoxDefault)
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New : iControllerListBoxDefault;
+  end;
+
+implementation
+
+end.

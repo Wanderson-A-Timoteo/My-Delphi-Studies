@@ -1,0 +1,23 @@
+unit Menus.Controller.Interfaces;
+
+interface
+
+type
+  iControllerListBoxItensFactory = interface
+    ['{52D7D579-2ED0-4F85-BAAE-11967DCFD6A7}']
+  end;
+
+  iControllerListBoxFactory = interface
+    ['{1F812D6A-1597-440E-8E50-126621DE2415}']
+  end;
+
+  iControllerListBoxItensDefault = interface
+    ['{DEEBAF33-1C6E-4473-9045-42CF185AEF04}']
+    function Name(Value : String) : iControllerListBoxItensDefault;
+    function Text(Value : String) : iControllerListBoxItensDefault;
+    function StyleLookup(Value : String) : iControllerListBoxItensDefault;
+  end;
+
+implementation
+
+end.

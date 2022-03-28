@@ -1,6 +1,6 @@
 ATALHOS:
 - Ctrl + Alt + Shift + P -> 
-- Ctrl + D -> Intentação do código.
+- Ctrl + D -> Formatação ou Indentação do código.
 - Alt + F11 -> Importa as classes na Unit.
 - Ctrl + Shift + C -> Cria as procedures e functions declaradas.
 - Ctrl + Shift + G ou Ctrl + Shift + Alt + G -> Ao criar uma interface este comando gera a chave da interface.
@@ -72,5 +72,4 @@ estiver ativo ele simplesmente destrói.
 	LSP - Princípio de Substituição de Liskov (A classe filha pode ser a qualquer momento por sua classe pai sem que a sua propriedade ou funcionalidade mude)
 	ISP - Princípio da Segregação de Interfaces (Criar interfaces com responsabilidades unicas)
 	DIP - Princípio da Inversão de Dependência (classes ou modulos maiores não devem depender de modulos menores, ambos devem depender de interfaces)
-
 

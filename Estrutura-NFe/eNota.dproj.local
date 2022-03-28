@@ -2,16 +2,26 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/03/28 08:56:22.000.488,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/28 08:57:06.000.952,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Boas-Prticas-Estrutura-NFe\Principal.pas</Transaction>
-    <Transaction>2022/03/28 08:57:06.000.952,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Boas-Prticas-Estrutura-NFe\Principal.dfm</Transaction>
-    <Transaction>2022/03/28 09:13:01.000.741,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Boas-Prticas-Estrutura-NFe\eNota.dproj</Transaction>
-    <Transaction>2022/03/28 09:14:48.407,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.View.Principal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Principal.pas</Transaction>
-    <Transaction>2022/03/28 09:14:48.407,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.View.Principal.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Principal.dfm</Transaction>
-    <Transaction>2022/03/28 09:14:53.860,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
-    <Transaction>2022/03/28 09:15:24.854,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
-    <Transaction>2022/03/28 09:15:31.350,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
-    <Transaction>2022/03/28 09:16:00.900,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Interfaces.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
-    <Transaction>2022/03/28 09:30:08.375,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
-    <Transaction>2022/03/28 09:30:29.400,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Criar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 08:57:06.000.952,D:\Projetos\ws-delphi\My-Delphi-Studies\Boas-Prticas-Estrutura-NFe\Principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/28 08:57:06.000.952,D:\Projetos\ws-delphi\My-Delphi-Studies\Boas-Prticas-Estrutura-NFe\Principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 09:13:01.000.741,D:\Projetos\ws-delphi\My-Delphi-Studies\Boas-Prticas-Estrutura-NFe\eNota.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/03/28 09:14:48.000.407,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Principal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.View.Principal.pas</Transaction>
+    <Transaction>2022/03/28 09:14:48.000.407,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Principal.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.View.Principal.dfm</Transaction>
+    <Transaction>2022/03/28 09:14:53.000.860,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 09:15:24.000.854,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.pas</Transaction>
+    <Transaction>2022/03/28 09:15:31.000.350,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 09:16:00.000.900,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Interfaces.pas</Transaction>
+    <Transaction>2022/03/28 09:30:08.000.375,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 09:30:29.000.400,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Criar.pas</Transaction>
+    <Transaction>2022/03/28 10:03:03.200,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:03:34.749,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Validar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:03:38.802,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:04:08.473,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Enviar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:04:17.743,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:04:37.521,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Gravar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:04:43.376,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:05:06.999,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.NotaFiscal.Email.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:11:16.987,=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 10:11:53.672,D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\eNota.Controller.Invoker.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Estrutura-NFe\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

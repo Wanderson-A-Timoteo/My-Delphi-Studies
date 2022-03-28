@@ -105,6 +105,11 @@
         <DCCReference Include="eNota.Controller.NotaFiscal.pas"/>
         <DCCReference Include="eNota.Controller.NotaFiscal.Interfaces.pas"/>
         <DCCReference Include="eNota.Controller.NotaFiscal.Criar.pas"/>
+        <DCCReference Include="eNota.Controller.NotaFiscal.Validar.pas"/>
+        <DCCReference Include="eNota.Controller.NotaFiscal.Enviar.pas"/>
+        <DCCReference Include="eNota.Controller.NotaFiscal.Gravar.pas"/>
+        <DCCReference Include="eNota.Controller.NotaFiscal.Email.pas"/>
+        <DCCReference Include="eNota.Controller.Invoker.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
