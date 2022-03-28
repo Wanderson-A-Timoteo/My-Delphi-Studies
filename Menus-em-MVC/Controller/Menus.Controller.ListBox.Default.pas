@@ -3,7 +3,8 @@ unit Menus.Controller.ListBox.Default;
 interface
 
 uses
-  Menus.Controller.Interfaces, System.Classes, FMX.ListBox, FMX.Types;
+  Menus.Controller.Interfaces, System.Classes, FMX.ListBox, FMX.Types,
+  FMX.Layouts;
 
 type
 
@@ -21,6 +22,8 @@ type
       function ItemHeight(Value : Integer) : iControllerListBoxDefault;
       function AddItem(Value : TFmxObject) : iControllerListBoxDefault;
       function Lista : TFmxObject;
+
+      procedure Exibir;
   end;
 
 implementation
@@ -54,6 +57,11 @@ destructor TControllerListBoxDefault.Destroy;
 begin
 
   inherited;
+end;
+
+procedure TControllerListBoxDefault.Exibir;
+begin
+  TLayout(FContainer).AddObject(FListBox);
 end;
 
 function TControllerListBoxDefault.ItemHeight(

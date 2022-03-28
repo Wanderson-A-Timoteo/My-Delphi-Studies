@@ -1,0 +1,18 @@
+unit Menus.Controller.ListBox.Itens.Produto;
+
+interface
+
+uses
+  Menus.Controller.Interfaces;
+
+type
+
+  TControllerListBoxItensProduto = class(TInterfacedObject, iControllerListBoxItemForm)
+    constructor Create;
+    destructor Destroy; override;
+
+    class function New: iControllerListBoxItemForm;
+
+implementation
+
+end.

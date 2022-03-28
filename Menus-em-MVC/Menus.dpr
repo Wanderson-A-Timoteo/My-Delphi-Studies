@@ -9,7 +9,9 @@ uses
   Menus.Controller.ListBox.Itens.Factory in 'Controller\Menus.Controller.ListBox.Itens.Factory.pas',
   Menus.Controller.ListBox.Factory in 'Controller\Menus.Controller.ListBox.Factory.pas',
   Menus.Controller.ListBox.Itens.Default in 'Controller\Menus.Controller.ListBox.Itens.Default.pas',
-  Menus.Controller.ListBox.Default in 'Controller\Menus.Controller.ListBox.Default.pas';
+  Menus.Controller.ListBox.Default in 'Controller\Menus.Controller.ListBox.Default.pas',
+  Menus.Controller.ListBox.Itens.Produto in 'Controller\Menus.Controller.ListBox.Itens.Produto.pas',
+  Menus.Controller.ListBox.Principal in 'Controller\Menus.Controller.ListBox.Principal.pas';
 
 {$R *.res}
 

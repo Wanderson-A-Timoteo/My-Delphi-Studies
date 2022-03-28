@@ -4,7 +4,7 @@ interface
 
 uses
   Menus.Controller.Interfaces, System.Classes,
-  Menus.Controller.ListBox.Default;
+  Menus.Controller.ListBox.Default, Menus.Controller.ListBox.Principal;
 
 type
   TControllerListBoxFactory = class(TInterfacedObject, iControllerListBoxFactory)
@@ -14,6 +14,7 @@ type
     class function New : iControllerListBoxFactory;
 
     function Defaul(Container : TComponent) : iControllerListBoxDefault;
+    function Principal(Container : TComponent) : iControllerListBoxMenu;
   end;
 
 implementation
@@ -40,6 +41,12 @@ end;
 class function TControllerListBoxFactory.New: iControllerListBoxFactory;
 begin
   Result := Self.Create;
+end;
+
+function TControllerListBoxFactory.Principal(
+  Container: TComponent): iControllerListBoxMenu;
+begin
+  Result := TControllerListBoxPrincipal.New(Container);
 end;
 
 end.

@@ -199,6 +199,8 @@
         <DCCReference Include="Controller\Menus.Controller.ListBox.Factory.pas"/>
         <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Default.pas"/>
         <DCCReference Include="Controller\Menus.Controller.ListBox.Default.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Produto.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.ListBox.Principal.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -1016,11 +1018,6 @@
             <Platforms>
                 <Platform value="Android">True</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
-                <Platform value="iOSDevice64">False</Platform>
-                <Platform value="iOSSimulator">False</Platform>
-                <Platform value="OSX32">False</Platform>
-                <Platform value="OSX64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
