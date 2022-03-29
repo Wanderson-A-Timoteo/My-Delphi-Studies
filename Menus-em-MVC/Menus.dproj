@@ -190,7 +190,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="View\Menus.View.Principal.pas">
-            <Form>Form1</Form>
+            <Form>frmPrincipal</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="Controller\Menus.Controller.Interfaces.pas"/>
@@ -202,6 +202,16 @@
         <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Produto.pas"/>
         <DCCReference Include="Controller\Menus.Controller.ListBox.Principal.pas"/>
         <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Cliente.pas"/>
+        <DCCReference Include="View\Menus.View.Produtos.pas">
+            <Form>frmProdutos</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Menus.View.Clientes.pas">
+            <Form>frmClientes</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="Controller\Menus.Controller.ListBox.Produtos.pas"/>
+        <DCCReference Include="Controller\Menus.Controller.ListBox.Clientes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

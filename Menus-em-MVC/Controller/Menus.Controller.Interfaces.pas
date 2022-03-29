@@ -31,6 +31,8 @@ type
     ['{1F812D6A-1597-440E-8E50-126621DE2415}']
     function Defaul(Container : TComponent) : iControllerListBoxDefault;
     function Principal(Container : TComponent) : iControllerListBoxMenu;
+    function Procutos(Container : TComponent) : iControllerListBoxMenu;
+    function Clientes(Container : TComponent) : iControllerListBoxMenu;
   end;
 
   iControllerListBoxItensDefault = interface

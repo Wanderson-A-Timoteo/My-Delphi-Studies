@@ -1,0 +1,27 @@
+unit Menus.View.Produtos;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation;
+
+type
+  TfrmProdutos = class(TForm)
+    ToolBar1: TToolBar;
+    labelProdutos: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmProdutos: TfrmProdutos;
+
+implementation
+
+{$R *.fmx}
+
+end.

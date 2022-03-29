@@ -61,6 +61,7 @@ end;
 function TControllerListBoxItensDefault.onClick(
   Value: TNotifyEvent): iControllerListBoxItensDefault;
 begin
+  Result := Self;
   FListBoxItem.OnClick := Value;
 end;
 

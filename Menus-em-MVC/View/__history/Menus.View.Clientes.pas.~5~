@@ -1,0 +1,34 @@
+unit Menus.View.Clientes;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  Menus.Controller.ListBox.Factory, FMX.Layouts, FMX.Controls.Presentation;
+
+type
+  TfrmClientes = class(TForm)
+    ToolBar1: TToolBar;
+    labelClientes: TLabel;
+    Layout1: TLayout;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmClientes: TfrmClientes;
+
+implementation
+
+{$R *.fmx}
+
+procedure TfrmClientes.FormCreate(Sender: TObject);
+begin
+  TControllerListBoxFactory.New.Clientes(Layout1).Exibir;
+end;
+
+end.
