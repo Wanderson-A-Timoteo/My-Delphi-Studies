@@ -16,6 +16,7 @@ type
   end;
 
   iModelConexaoParametros = interface
+    ['{2ADDE3D1-1C3D-43FA-BABA-8F4F17346C07}']
     function Database(Value : String) : iModelConexaoParametros;
     function Porta(Value : Integer)   : iModelConexaoParametros;
     function Server(Value : String)   : iModelConexaoParametros;
@@ -23,6 +24,12 @@ type
     function UserName(Value : String) : iModelConexaoParametros;
     function Password(Value : String) : iModelConexaoParametros;
     function EndParamentos            : iModelConexao;
+  end;
+
+  iModelDataSet = interface
+    ['{6B3E6A74-F6FF-4E2C-8AFD-2BC8133EAE12}']
+    function Open(aTable : String) : iModelDataSet;
+    function EndDataSet : TComponent;
   end;
 implementation
 

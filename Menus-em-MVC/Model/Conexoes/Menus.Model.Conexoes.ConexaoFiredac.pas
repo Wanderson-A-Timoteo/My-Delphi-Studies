@@ -34,6 +34,7 @@ type
       function UserName(Value : String) : iModelConexaoParametros;
       function Password(Value : String) : iModelConexaoParametros;
       function EndParamentos            : iModelConexao;
+      function Parametros               : iModelConexaoParametros;
   end;
 
 implementation
@@ -92,6 +93,11 @@ end;
 class function TModelConexaoFiredac.New: iModelConexao;
 begin
   Result := Self.Create;
+end;
+
+function TModelConexaoFiredac.Parametros: iModelConexaoParametros;
+begin
+  Result := Self;
 end;
 
 function TModelConexaoFiredac.Password(Value: String): iModelConexaoParametros;
