@@ -1,0 +1,14 @@
+unit Menus.Model.Entity.Interfaces;
+
+interface
+
+type
+
+  iModelEntity = interface
+    ['{09DDC51A-AA19-4482-BEC5-5BBCBA74921A}']
+
+  end;
+
+implementation
+
+end.
