@@ -4,7 +4,8 @@ interface
 
 uses
   Menus.Controller.Interfaces, Menus.Controller.ListBox.Itens.Default,
-  Menus.Controller.ListBox.Itens.Produto;
+  Menus.Controller.ListBox.Itens.Produto,
+  Menus.Controller.ListBox.Itens.Cliente;
 
 type
   TControllerListBoxItensFactory = class(TInterfacedObject, iControllerListBoxItensFactory)
@@ -15,12 +16,18 @@ type
 
     function Defaul : iControllerListBoxItensDefault;
     function Produto : iControllerListBoxItemForm;
+    function Cliente : iControllerListBoxItemForm;
 
   end;
 
 implementation
 
 { TControllerListBoxItensFactory }
+
+function TControllerListBoxItensFactory.Cliente: iControllerListBoxItemForm;
+begin
+  Result := TControllerListBoxItensCliente.New;
+end;
 
 constructor TControllerListBoxItensFactory.Create;
 begin

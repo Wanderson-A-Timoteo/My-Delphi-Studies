@@ -33,6 +33,7 @@ implementation
 function TControllerListBoxDefault.AddItem(
   Value: TFmxObject): iControllerListBoxDefault;
 begin
+  Result := Self;
   FListBox.AddObject(Value);
 end;
 

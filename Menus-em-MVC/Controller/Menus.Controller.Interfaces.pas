@@ -19,6 +19,7 @@ type
     ['{52D7D579-2ED0-4F85-BAAE-11967DCFD6A7}']
     function Defaul : iControllerListBoxItensDefault;
     function Produto : iControllerListBoxItemForm;
+    function Cliente : iControllerListBoxItemForm;
   end;
 
   iControllerListBoxMenu = interface

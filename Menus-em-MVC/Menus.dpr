@@ -11,7 +11,8 @@ uses
   Menus.Controller.ListBox.Itens.Default in 'Controller\Menus.Controller.ListBox.Itens.Default.pas',
   Menus.Controller.ListBox.Default in 'Controller\Menus.Controller.ListBox.Default.pas',
   Menus.Controller.ListBox.Itens.Produto in 'Controller\Menus.Controller.ListBox.Itens.Produto.pas',
-  Menus.Controller.ListBox.Principal in 'Controller\Menus.Controller.ListBox.Principal.pas';
+  Menus.Controller.ListBox.Principal in 'Controller\Menus.Controller.ListBox.Principal.pas',
+  Menus.Controller.ListBox.Itens.Cliente in 'Controller\Menus.Controller.ListBox.Itens.Cliente.pas';
 
 {$R *.res}
 

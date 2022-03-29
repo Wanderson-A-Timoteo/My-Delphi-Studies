@@ -9,6 +9,7 @@ uses
 type
   TForm1 = class(TForm)
     Layout1: TLayout;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -20,6 +21,14 @@ var
 
 implementation
 
+uses
+  Menus.Controller.ListBox.Factory;
+
 {$R *.fmx}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  TControllerListBoxFactory.New.Principal(Layout1).Exibir;
+end;
 
 end.
