@@ -1,0 +1,38 @@
+unit Menus.View.Principal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys, FireDAC.FMXUI.Wait, Data.DB, FireDAC.Comp.Client;
+
+type
+  TfrmPrincipal = class(TForm)
+    Layout1: TLayout;
+    FDConnection1: TFDConnection;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+uses
+  Menus.Controller.ListBox.Factory;
+
+{$R *.fmx}
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  TControllerListBoxFactory.New.Principal(Layout1).Exibir;
+end;
+
+end.

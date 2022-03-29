@@ -1,0 +1,59 @@
+unit Menus.Model.Conexoes.ConexaoFiredac;
+
+interface
+
+uses Menus.Model.Conexoes.Interfaces, FireDAC.Comp.Client, System.Classes,
+  FireDAC.Comp.UI, FireDAC.Phys.FB;
+
+type
+  TModelConexaoFiredac = class(TInterfacedObject, iModelConexao)
+    private
+      // Conexão com o FireDAC | declarar uses FireDAC.Comp.Client
+      FConexao            : TFDConnection;
+      FDGUIxWaitCursor1   : TFDGUIxWaitCursor;
+      FDPhysFBDriverLink1 : TFDPhysFBDriverLink;
+      FDatabase           : String;
+      FPorta              : Integer;
+      FServer             : String;
+      FDriverID           : String;
+      FUserName           : String;
+      FPassword           : String;
+    public
+      constructor Create;
+      destructor Destroy; override;
+
+      class function New  : iModelConexao;
+
+      function EndConexao : TComponent;
+  end;
+
+implementation
+
+{ TModelConexaoFiredac }
+
+constructor TModelConexaoFiredac.Create;
+begin
+  FConexao            := TFDConnection.Create(nil);
+  FDGUIxWaitCursor1   := TFDGUIxWaitCursor.Create(nil);
+  FDPhysFBDriverLink1 := TFDPhysFBDriverLink.Create(nil);
+end;
+
+destructor TModelConexaoFiredac.Destroy;
+begin
+  FConexao.Free;
+  FDGUIxWaitCursor1.Free;
+  FDPhysFBDriverLink1.Free;
+  inherited;
+end;
+
+function TModelConexaoFiredac.EndConexao: TComponent;
+begin
+  Result := FConexao;
+end;
+
+class function TModelConexaoFiredac.New: iModelConexao;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -215,6 +215,8 @@
         <DCCReference Include="Controller\Menus.Controller.ListBox.Produtos.pas"/>
         <DCCReference Include="Controller\Menus.Controller.ListBox.Clientes.pas"/>
         <DCCReference Include="Controller\Menus.Controller.Forms.Default.pas"/>
+        <DCCReference Include="Model\Conexoes\Menus.Model.Conexoes.Interfaces.pas"/>
+        <DCCReference Include="Model\Conexoes\Menus.Model.Conexoes.ConexaoFiredac.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

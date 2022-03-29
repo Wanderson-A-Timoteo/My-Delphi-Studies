@@ -17,7 +17,9 @@ uses
   Menus.View.Clientes in 'View\Menus.View.Clientes.pas' {frmClientes},
   Menus.Controller.ListBox.Produtos in 'Controller\Menus.Controller.ListBox.Produtos.pas',
   Menus.Controller.ListBox.Clientes in 'Controller\Menus.Controller.ListBox.Clientes.pas',
-  Menus.Controller.Forms.Default in 'Controller\Menus.Controller.Forms.Default.pas';
+  Menus.Controller.Forms.Default in 'Controller\Menus.Controller.Forms.Default.pas',
+  Menus.Model.Conexoes.Interfaces in 'Model\Conexoes\Menus.Model.Conexoes.Interfaces.pas',
+  Menus.Model.Conexoes.ConexaoFiredac in 'Model\Conexoes\Menus.Model.Conexoes.ConexaoFiredac.pas';
 
 {$R *.res}
 
