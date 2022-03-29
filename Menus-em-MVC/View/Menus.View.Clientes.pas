@@ -34,4 +34,8 @@ begin
   TControllerListBoxFactory.New.Clientes(Layout1).Exibir;
 end;
 
+
+initialization
+  RegisterFmxClasses([TfrmClientes]);
+
 end.

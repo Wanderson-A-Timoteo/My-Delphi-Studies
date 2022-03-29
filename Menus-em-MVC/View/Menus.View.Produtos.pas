@@ -31,4 +31,7 @@ begin
   TControllerListBoxFactory.New.Procutos(Layout1).Exibir;
 end;
 
+initialization
+  RegisterFmxClasses([TfrmProdutos]);
+
 end.

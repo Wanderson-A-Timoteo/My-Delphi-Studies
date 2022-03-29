@@ -16,14 +16,13 @@ uses
   Menus.View.Produtos in 'View\Menus.View.Produtos.pas' {frmProdutos},
   Menus.View.Clientes in 'View\Menus.View.Clientes.pas' {frmClientes},
   Menus.Controller.ListBox.Produtos in 'Controller\Menus.Controller.ListBox.Produtos.pas',
-  Menus.Controller.ListBox.Clientes in 'Controller\Menus.Controller.ListBox.Clientes.pas';
+  Menus.Controller.ListBox.Clientes in 'Controller\Menus.Controller.ListBox.Clientes.pas',
+  Menus.Controller.Forms.Default in 'Controller\Menus.Controller.Forms.Default.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmProdutos, frmProdutos);
-  Application.CreateForm(TfrmClientes, frmClientes);
   Application.Run;
 end.
