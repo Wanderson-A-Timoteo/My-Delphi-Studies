@@ -12,6 +12,11 @@ type
     function Conexao : iModelConexao;
   end;
 
+  iControllerFactoryDataSet = interface
+    ['{65B61C40-6DBF-46E5-9BFA-B42995D2CB8E}']
+    function DataSet(Conexao : iModelConexao) : iModelDataSet;
+  end;
+
 implementation
 
 end.
