@@ -1,0 +1,36 @@
+unit Menus.Model.Entity.Factory;
+
+interface
+
+uses Menus.Model.Entity.Interfaces;
+
+Type
+  TModelEntityFactory = class(TInterfacedObject, iModelEntityFactory)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iModelEntityFactory;
+  end;
+
+implementation
+
+{ TModelEntityFactory }
+
+constructor TModelEntityFactory.Create;
+begin
+
+end;
+
+destructor TModelEntityFactory.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelEntityFactory.New: iModelEntityFactory;
+begin
+  Result := Self.Create;
+end;
+
+end.

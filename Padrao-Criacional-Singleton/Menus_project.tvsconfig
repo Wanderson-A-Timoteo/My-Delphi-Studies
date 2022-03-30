@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Menus" Type="System.String" Value="Menus" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Menus.Controller.Conexoes" Type="System.String" Value="Menus\Controller\Conexoes" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Menus.Controller.Conexoes.Facade" Type="System.String" Value="Menus\Controller\Conexoes\Facade" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Menus.Controller.Conexoes.Factory" Type="System.String" Value="Menus\Controller\Conexoes\Factory" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Menus.Controller.Conexoes.Interfaces" Type="System.String" Value="Menus\Controller\Conexoes\Interfaces" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Menus.Controller.Entity.Interfaces" Type="System.String" Value="Menus\Controller\Entity\Interfaces" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Menus.Controller.Entity.Clientes" Type="System.String" Value="Menus\Controller\Entity\Clientes" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Unit1" Type="System.String" Value="Unit1" Category="General" IsBrowsable="False" />
+</TgConfig>

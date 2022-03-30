@@ -1,0 +1,13 @@
+unit Menus.Controller.Conexoes.Interfaces;
+
+interface
+
+type
+
+  iControllerFactoryConexao = interface
+    ['{5EBF8D54-0A15-4A32-A123-D78C2DEF7E98}']
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,59 @@
+unit Menus.Controller.ListBox.Itens.Delete;
+
+interface
+
+uses Menus.Controller.ListBox.Interfaces, FMX.Types,
+  Menus.Controller.Forms.Default,
+  Data.DB;
+
+type
+  TControllerListBoxItensDelete = class(TInterfacedObject,
+    iControllerListBoxItemCRUD)
+  private
+    FEvento : TEvCRUD;
+  public
+    constructor Create(Evento : TEvCRUD);
+    destructor Destroy; override;
+    class function New(Evento : TEvCRUD): iControllerListBoxItemCRUD;
+    procedure onClick(Sender: TObject);
+    function Execute: TFmxObject;
+  end;
+
+implementation
+
+{ TControllerListBoxItensDelete }
+
+uses Menus.Controller.ListBox.Itens.Factory;
+
+constructor TControllerListBoxItensDelete.Create(Evento : TEvCRUD);
+begin
+  FEvento := Evento;
+end;
+
+destructor TControllerListBoxItensDelete.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerListBoxItensDelete.New(Evento : TEvCRUD): iControllerListBoxItemCRUD;
+begin
+  Result := Self.Create(Evento);
+end;
+
+procedure TControllerListBoxItensDelete.onClick(Sender: TObject);
+begin
+  FEvento;
+end;
+
+function TControllerListBoxItensDelete.Execute: TFmxObject;
+begin
+  Result := TControllerListBoxItensFactory.New
+              .Default
+              .Name('btnDeletar')
+              .Text('Excluir')
+              .onClick(onClick)
+              .Item;
+end;
+
+end.

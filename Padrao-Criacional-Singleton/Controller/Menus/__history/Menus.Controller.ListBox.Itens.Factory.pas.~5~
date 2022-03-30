@@ -1,0 +1,74 @@
+unit Menus.Controller.ListBox.Itens.Factory;
+
+interface
+
+uses Menus.Controller.ListBox.Interfaces, Menus.Controller.ListBox.Itens.Default;
+
+type
+  TControllerListBoxItensFactory = class(TInterfacedObject, iControllerListBoxItensFactory)
+    constructor Create;
+    destructor Destroy; override;
+    class function New : iControllerListBoxItensFactory;
+    function Default : iControllerListBoxItensDefault;
+    function Produto : iControllerListBoxItemForm;
+    function Cliente : iControllerListBoxItemForm;
+    function Insert(Evento : TEvCRUD) : iControllerListBoxItemCRUD;
+    function Update(Evento : TEvCRUD) : iControllerListBoxItemCRUD;
+    function Delete(Evento : TEvCRUD) : iControllerListBoxItemCRUD;
+  end;
+
+implementation
+
+{ TControllerListBoxItensFactory }
+
+uses Menus.Controller.ListBox.Itens.Produto,
+  Menus.Controller.ListBox.Itens.Cliente, Menus.Controller.ListBox.Itens.Insert,
+  Menus.Controller.ListBox.Itens.Delete, Menus.Controller.ListBox.Itens.Update;
+
+function TControllerListBoxItensFactory.Cliente: iControllerListBoxItemForm;
+begin
+  Result := TControllerListBoxItensCliente.New;
+end;
+
+constructor TControllerListBoxItensFactory.Create;
+begin
+
+end;
+
+function TControllerListBoxItensFactory.Default: iControllerListBoxItensDefault;
+begin
+  Result := TControllerListBoxItensDefault.New;
+end;
+
+function TControllerListBoxItensFactory.Delete(Evento : TEvCRUD) : iControllerListBoxItemCRUD;
+begin
+  Result := TControllerListBoxItensDelete.New(Evento);
+end;
+
+destructor TControllerListBoxItensFactory.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerListBoxItensFactory.Insert(Evento : TEvCRUD) : iControllerListBoxItemCRUD;
+begin
+  Result := TControllerListBoxItensInsert.New(Evento);
+end;
+
+class function TControllerListBoxItensFactory.New: iControllerListBoxItensFactory;
+begin
+  Result := Self.Create;
+end;
+
+function TControllerListBoxItensFactory.Produto: iControllerListBoxItemForm;
+begin
+  Result := TControllerListBoxItensProduto.New;
+end;
+
+function TControllerListBoxItensFactory.Update(Evento : TEvCRUD) : iControllerListBoxItemCRUD;
+begin
+    Result := TControllerListBoxItensUpdate.New(Evento);
+end;
+
+end.
