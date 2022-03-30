@@ -5,7 +5,6 @@ uses
   FMX.Forms,
   Menus.View.Principal in 'View\Menus.View.Principal.pas' {frmPrincipal},
   Menus.Controller.ListBox.Interfaces in 'Controller\Menus\Menus.Controller.ListBox.Interfaces.pas',
-  Menus.Model.Interfaces in 'Model\Menus.Model.Interfaces.pas',
   Menus.Controller.ListBox.Itens.Factory in 'Controller\Menus\Menus.Controller.ListBox.Itens.Factory.pas',
   Menus.Controller.ListBox.Factory in 'Controller\Menus\Menus.Controller.ListBox.Factory.pas',
   Menus.Controller.ListBox.Itens.Default in 'Controller\Menus\Menus.Controller.ListBox.Itens.Default.pas',

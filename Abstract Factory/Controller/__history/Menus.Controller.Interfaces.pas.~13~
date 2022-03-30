@@ -1,0 +1,15 @@
+unit Menus.Controller.Interfaces;
+
+interface
+
+uses
+  Menus.Controller.Conexoes.Interfaces;
+
+type
+  iControllerFacace = interface
+    function Conexao : iControllerConexoesFacade;
+  end;
+
+implementation
+
+end.

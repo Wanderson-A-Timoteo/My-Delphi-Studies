@@ -1,0 +1,29 @@
+unit Menus.Model.Conexoes.Interfaces;
+
+interface
+
+uses
+  System.Classes;
+
+type
+  iModelConexaoParametros = interface;
+
+  iModelConexao = interface
+    ['{E8538D27-DFF2-4485-A303-616176681A93}']
+    function EndConexao : TComponent;
+    function Parametros : iModelConexaoParametros;
+  end;
+
+  iModelConexaoParametros = interface
+     function Database(Value : String) : iModelConexaoParametros;
+     function UserName(Value : String) : iModelConexaoParametros;
+     function Password(Value : String) : iModelConexaoParametros;
+     function DriverID(Value : String) : iModelConexaoParametros;
+     function Server(Value : String) : iModelConexaoParametros;
+     function Porta(Value : Integer) : iModelConexaoParametros;
+     function EndParametros : iModelConexao;
+  end;
+
+implementation
+
+end.

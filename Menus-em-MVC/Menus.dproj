@@ -196,7 +196,6 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Interfaces.pas"/>
-        <DCCReference Include="Model\Menus.Model.Interfaces.pas"/>
         <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Itens.Factory.pas"/>
         <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Factory.pas"/>
         <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Itens.Default.pas"/>

@@ -1,0 +1,36 @@
+unit Menus.Model.Conexoes.Factory.Conexao;
+
+interface
+
+uses Menus.Model.Conexoes.Interfaces;
+
+Type
+  TModelConexaoFactoryConexoes = class(TInterfacedObject, iModelFactoryConexao)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iModelFactoryConexao;
+  end;
+
+implementation
+
+{ TModelConexaoFactoryConexoes }
+
+constructor TModelConexaoFactoryConexoes.Create;
+begin
+
+end;
+
+destructor TModelConexaoFactoryConexoes.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelConexaoFactoryConexoes.New: iModelFactoryConexao;
+begin
+  Result := Self.Create;
+end;
+
+end.

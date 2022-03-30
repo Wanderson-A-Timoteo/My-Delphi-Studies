@@ -44,19 +44,19 @@ object frmProdutos: TfrmProdutos
     Viewport.Height = 415.000000000000000000
   end
   object DataSource1: TDataSource
-    Left = 352
-    Top = 128
+    Left = 48
+    Top = 184
   end
   object BindSourceDB1: TBindSourceDB
     DataSource = DataSource1
     ScopeMappings = <>
-    Left = 304
-    Top = 224
+    Left = 48
+    Top = 120
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 28
+    Left = 52
     Top = 53
     object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
       Category = 'Quick Bindings'

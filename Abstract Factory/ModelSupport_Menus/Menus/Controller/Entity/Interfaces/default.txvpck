@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="u4qg2t6bacl_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntity">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,143,81" />
+      <reference referencedUin="delphi:e_method:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntity.Lista(Data.DB.TDataSource)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntityFacade">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="172,1,189,81" />
+      <reference referencedUin="delphi:e_method:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntityFacade.Entity()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Menus:Menus.Controller.Entity.Interfaces.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntityFactory">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="172,101,161,96" />
+      <reference referencedUin="delphi:e_method:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntityFactory.Produto()" />
+      <reference referencedUin="delphi:e_method:src:Menus:Menus.Controller.Entity.Interfaces.iControllerEntityFactory.Cliente()" />
+    </reference>
+  </view>
+</nodeSet>
