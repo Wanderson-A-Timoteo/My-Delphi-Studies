@@ -223,6 +223,12 @@
         <DCCReference Include="Model\Entity\Menus.Model.Entity.Interfaces.pas"/>
         <DCCReference Include="Model\Entity\Menus.Model.Entity.Produtos.pas"/>
         <DCCReference Include="Model\Entity\Menus.Model.Entity.Factory.pas"/>
+        <DCCReference Include="Controller\Conexoes\Menus.Controller.Conexoes.Interfaces.pas"/>
+        <DCCReference Include="Controller\Conexoes\Menus.Concoller.Conexoes.Factory.Conexao.pas"/>
+        <DCCReference Include="Controller\Conexoes\Menus.Concoller.Conexoes.Factory.DataSet.pas"/>
+        <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Interfaces.pas"/>
+        <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Produtos.pas"/>
+        <DCCReference Include="Controller\Entity\Menus.Controller.Entity.Factory.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

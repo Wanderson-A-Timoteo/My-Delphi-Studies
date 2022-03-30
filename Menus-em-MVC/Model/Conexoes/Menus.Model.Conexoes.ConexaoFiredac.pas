@@ -45,6 +45,7 @@ implementation
 function TModelConexaoFiredac.Conectar: iModelConexao;
 begin
   Result := Self;
+  LerParametros;
   FConexao.Connected := true;
 end;
 
@@ -53,11 +54,11 @@ begin
   FConexao            := TFDConnection.Create(nil);
   FDGUIxWaitCursor1   := TFDGUIxWaitCursor.Create(nil);
   FDPhysFBDriverLink1 := TFDPhysFBDriverLink.Create(nil);
-  LerParametros;
 end;
 
 function TModelConexaoFiredac.Database(Value: String): iModelConexaoParametros;
 begin
+  Result := Self;
   FDatabase := Value;
 end;
 

@@ -32,4 +32,37 @@ object frmProdutos: TfrmProdutos
     Size.PlatformDefault = False
     TabOrder = 1
   end
+  object StringGrid1: TStringGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 471.000000000000000000
+    Size.Height = 440.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 467.000000000000000000
+    Viewport.Height = 415.000000000000000000
+  end
+  object DataSource1: TDataSource
+    Left = 352
+    Top = 128
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSource = DataSource1
+    ScopeMappings = <>
+    Left = 304
+    Top = 224
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 53
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = StringGrid1
+      Columns = <>
+    end
+  end
 end

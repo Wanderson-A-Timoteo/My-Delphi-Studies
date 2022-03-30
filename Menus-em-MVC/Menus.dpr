@@ -25,7 +25,13 @@ uses
   Menus.Model.Conexoes.Factory.DataSet in 'Model\Conexoes\Menus.Model.Conexoes.Factory.DataSet.pas',
   Menus.Model.Entity.Interfaces in 'Model\Entity\Menus.Model.Entity.Interfaces.pas',
   Menus.Model.Entity.Produtos in 'Model\Entity\Menus.Model.Entity.Produtos.pas',
-  Menus.Model.Entity.Factory in 'Model\Entity\Menus.Model.Entity.Factory.pas';
+  Menus.Model.Entity.Factory in 'Model\Entity\Menus.Model.Entity.Factory.pas',
+  Menus.Controller.Conexoes.Interfaces in 'Controller\Conexoes\Menus.Controller.Conexoes.Interfaces.pas',
+  Menus.Concoller.Conexoes.Factory.Conexao in 'Controller\Conexoes\Menus.Concoller.Conexoes.Factory.Conexao.pas',
+  Menus.Concoller.Conexoes.Factory.DataSet in 'Controller\Conexoes\Menus.Concoller.Conexoes.Factory.DataSet.pas',
+  Menus.Controller.Entity.Interfaces in 'Controller\Entity\Menus.Controller.Entity.Interfaces.pas',
+  Menus.Controller.Entity.Produtos in 'Controller\Entity\Menus.Controller.Entity.Produtos.pas',
+  Menus.Controller.Entity.Factory in 'Controller\Entity\Menus.Controller.Entity.Factory.pas';
 
 {$R *.res}
 
