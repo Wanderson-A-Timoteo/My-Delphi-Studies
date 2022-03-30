@@ -195,15 +195,15 @@
             <Form>frmPrincipal</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Controller\Menus.Controller.Interfaces.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Interfaces.pas"/>
         <DCCReference Include="Model\Menus.Model.Interfaces.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Factory.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Factory.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Default.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Default.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Produto.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Principal.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Itens.Cliente.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Itens.Factory.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Factory.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Itens.Default.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Default.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Itens.Produto.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Principal.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Itens.Cliente.pas"/>
         <DCCReference Include="View\Menus.View.Produtos.pas">
             <Form>frmProdutos</Form>
             <FormType>fmx</FormType>
@@ -212,9 +212,9 @@
             <Form>frmClientes</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Produtos.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.ListBox.Clientes.pas"/>
-        <DCCReference Include="Controller\Menus.Controller.Forms.Default.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Produtos.pas"/>
+        <DCCReference Include="Controller\Menus\Menus.Controller.ListBox.Clientes.pas"/>
+        <DCCReference Include="Controller\Forms\Menus.Controller.Forms.Default.pas"/>
         <DCCReference Include="Model\Conexoes\Menus.Model.Conexoes.Interfaces.pas"/>
         <DCCReference Include="Model\Conexoes\Menus.Model.Conexoes.ConexaoFiredac.pas"/>
         <DCCReference Include="Model\Conexoes\Menus.Model.Conexoes.TableFiredac.pas"/>

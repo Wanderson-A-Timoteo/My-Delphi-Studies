@@ -4,7 +4,7 @@ unit Menus.Controller.ListBox.Produtos;
 interface
 
 uses
-  Menus.Controller.Interfaces, System.Classes;
+  Menus.Controller.ListBox.Interfaces, System.Classes;
 
 
 type

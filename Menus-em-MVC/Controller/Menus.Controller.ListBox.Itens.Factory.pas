@@ -3,7 +3,7 @@ unit Menus.Controller.ListBox.Itens.Factory;
 interface
 
 uses
-  Menus.Controller.Interfaces, Menus.Controller.ListBox.Itens.Default,
+  Menus.Controller.ListBox.Interfaces, Menus.Controller.ListBox.Itens.Default,
   Menus.Controller.ListBox.Itens.Produto,
   Menus.Controller.ListBox.Itens.Cliente;
 

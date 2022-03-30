@@ -3,7 +3,7 @@ unit Menus.Controller.ListBox.Clientes;
 interface
 
 uses
-  Menus.Controller.Interfaces, System.Classes;
+  Menus.Controller.ListBox.Interfaces, System.Classes;
 
 
 type
