@@ -44,7 +44,6 @@ implementation
 
 function TModelConexaoFiredac.Conectar: iModelConexao;
 begin
-  Result := Self;
   FConexao.Connected := true;
 end;
 

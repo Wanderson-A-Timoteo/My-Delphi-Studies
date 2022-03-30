@@ -35,18 +35,11 @@ type
       function Password(Value : String) : iModelConexaoParametros;
       function EndParamentos            : iModelConexao;
       function Parametros               : iModelConexaoParametros;
-      function Conectar                 : iModelConexao;
   end;
 
 implementation
 
 { TModelConexaoFiredac }
-
-function TModelConexaoFiredac.Conectar: iModelConexao;
-begin
-  Result := Self;
-  FConexao.Connected := true;
-end;
 
 constructor TModelConexaoFiredac.Create;
 begin
@@ -54,6 +47,8 @@ begin
   FDGUIxWaitCursor1   := TFDGUIxWaitCursor.Create(nil);
   FDPhysFBDriverLink1 := TFDPhysFBDriverLink.Create(nil);
   LerParametros;
+  FConexao.Connected := true;
+
 end;
 
 function TModelConexaoFiredac.Database(Value: String): iModelConexaoParametros;
