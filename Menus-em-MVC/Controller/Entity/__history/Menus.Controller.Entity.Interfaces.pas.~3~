@@ -1,0 +1,16 @@
+unit Menus.Controller.Entity.Interfaces;
+
+interface
+
+uses
+  Data.DB;
+
+type
+  iControllerEntity = interface
+    ['{4CAFB094-699C-4EDD-9AC0-EDBBFBA02DF0}']
+    function Lista(aDataSource :TDataSource) : iControllerEntity;
+  end;
+
+implementation
+
+end.

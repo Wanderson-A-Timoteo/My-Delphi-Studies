@@ -1,0 +1,12 @@
+unit Menus.Controller.Entity.Interfaces;
+
+interface
+
+type
+  iControllerEntity = interface
+    ['{4CAFB094-699C-4EDD-9AC0-EDBBFBA02DF0}']
+  end;
+
+implementation
+
+end.
