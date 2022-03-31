@@ -1,0 +1,90 @@
+unit Mediator.Model.Pedido.Mediator;
+
+interface
+
+uses Mediator.Model.Interfaces, System.Generics.Collections;
+
+Type
+  TModelPedidoMediator = class(TInterfacedObject, iMediator,
+    iDisplay<iMediator>)
+  private
+    FLista: TDictionary<string, iColleague>;
+    FDisplay: TEvExibir;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iMediator;
+    function Add(Value: iColleague): iMediator;
+    function EnviarPedido(FOrigem, FDestino: iColleague; Pedido: String)
+      : iMediator;
+    function Get(Value: String): iColleague;
+    function Display: iDisplay<iMediator>;
+    function Exibir(Value: TEvExibir): iDisplay<iMediator>;
+    function &End: iMediator;
+    function Remove(Value : String) : iMediator;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelPedidoMediator }
+
+function TModelPedidoMediator.Add(Value: iColleague): iMediator;
+begin
+  Result := Self;
+  FLista.Add(Value.GetName, Value);
+end;
+
+function TModelPedidoMediator.&End: iMediator;
+begin
+  Result := Self;
+end;
+
+constructor TModelPedidoMediator.Create;
+begin
+  FLista := TDictionary<string, iColleague>.Create;
+end;
+
+destructor TModelPedidoMediator.Destroy;
+begin
+  FreeAndNil(FLista);
+  inherited;
+end;
+
+function TModelPedidoMediator.Display: iDisplay<iMediator>;
+begin
+  Result := Self;
+end;
+
+function TModelPedidoMediator.EnviarPedido(FOrigem, FDestino: iColleague;
+  Pedido: String): iMediator;
+begin
+  Result := Self;
+  FLista.Items[FDestino.GetName].ReceberPedido(FOrigem, Pedido);
+end;
+
+function TModelPedidoMediator.Exibir(Value: TEvExibir): iDisplay<iMediator>;
+begin
+  Result := Self;
+  FDisplay := Value;
+end;
+
+function TModelPedidoMediator.Get(Value: String): iColleague;
+begin
+  Result := FLista.Items[Value];
+end;
+
+class function TModelPedidoMediator.New: iMediator;
+begin
+  Result := Self.Create;
+end;
+
+function TModelPedidoMediator.Remove(Value: String): iMediator;
+begin
+  Result := Self;
+  FLista.Remove(Value);
+end;
+
+end.

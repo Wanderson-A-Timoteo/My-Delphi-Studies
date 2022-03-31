@@ -1,0 +1,21 @@
+unit Mediator.Model.Interfaces;
+
+interface
+
+type
+
+  iColleague = interface
+    ['{DF1B7B09-5575-49F8-A325-475454B967DA}']
+    function EnviarPedido(FDestino : iColleague; Setor : String) : iColleague;
+    function ReceberPedido(FOrigem : iColleague; Setor : String) : iColleague;
+    function GetName : String;
+  end;
+
+  iMediator = interface
+    ['{49E9696B-9176-444B-8B6F-8EE89DFB3284}']
+    function Add(Value : iColleague) : iMediator;
+  end;
+
+implementation
+
+end.

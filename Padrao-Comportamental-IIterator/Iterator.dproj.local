@@ -21,22 +21,22 @@
     <Transaction>2017/09/04 21:01:39.000.169,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2017/09/04 23:19:07.000.712,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2017/09/07 15:09:09.000.144,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2017/09/07 15:09:37.000.110,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.View.Principal.pas</Transaction>
-    <Transaction>2017/09/07 15:09:37.000.110,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.dfm=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.View.Principal.dfm</Transaction>
-    <Transaction>2017/09/07 15:09:39.000.879,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.dproj</Transaction>
+    <Transaction>2017/09/07 15:09:37.000.110,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.View.Principal.pas=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/07 15:09:37.000.110,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.View.Principal.dfm=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2017/09/07 15:09:39.000.879,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.dproj=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2017/09/07 15:10:39.000.164,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
-    <Transaction>2017/09/07 15:10:48.000.606,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Venda.pas</Transaction>
+    <Transaction>2017/09/07 15:10:48.000.606,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Venda.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
     <Transaction>2017/09/07 15:11:13.000.947,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
-    <Transaction>2017/09/07 15:11:23.000.995,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Interfaces.pas</Transaction>
+    <Transaction>2017/09/07 15:11:23.000.995,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Interfaces.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
     <Transaction>2017/09/07 15:13:46.000.947,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
-    <Transaction>2017/09/07 15:13:56.000.766,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Itens.pas</Transaction>
-    <Transaction>2017/09/09 22:18:24.826,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.dproj=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.dproj</Transaction>
-    <Transaction>2017/09/09 22:18:31.340,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Interfaces.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.Model.Interfaces.pas</Transaction>
-    <Transaction>2017/09/09 22:18:37.332,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Itens.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.Model.Itens.pas</Transaction>
-    <Transaction>2017/09/09 22:18:43.290,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Venda.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.Model.Venda.pas</Transaction>
-    <Transaction>2017/09/09 22:18:49.061,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.View.Principal.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.View.Principal.pas</Transaction>
-    <Transaction>2017/09/09 22:18:49.061,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.View.Principal.dfm=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.View.Principal.dfm</Transaction>
-    <Transaction>2017/09/09 22:21:24.193,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Unit1.pas</Transaction>
-    <Transaction>2017/09/09 22:21:35.893,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Itens.Iterator.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Unit1.pas</Transaction>
+    <Transaction>2017/09/07 15:13:56.000.766,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Itens.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:18:24.000.826,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.dproj=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.dproj</Transaction>
+    <Transaction>2017/09/09 22:18:31.000.340,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.Model.Interfaces.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Interfaces.pas</Transaction>
+    <Transaction>2017/09/09 22:18:37.000.332,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.Model.Itens.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Itens.pas</Transaction>
+    <Transaction>2017/09/09 22:18:43.000.290,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.Model.Venda.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Venda.pas</Transaction>
+    <Transaction>2017/09/09 22:18:49.000.061,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.View.Principal.dfm=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.View.Principal.dfm</Transaction>
+    <Transaction>2017/09/09 22:18:49.000.061,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Composite.View.Principal.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.View.Principal.pas</Transaction>
+    <Transaction>2017/09/09 22:21:24.000.193,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 22:21:35.000.893,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Iterator\Iterator.Model.Itens.Iterator.pas</Transaction>
   </Transactions>
 </BorlandProject>

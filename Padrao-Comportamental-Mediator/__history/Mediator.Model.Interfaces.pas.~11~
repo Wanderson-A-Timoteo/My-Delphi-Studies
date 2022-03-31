@@ -1,0 +1,33 @@
+unit Mediator.Model.Interfaces;
+
+interface
+
+type
+  TEvExibir = procedure (Value : String) of Object;
+  iDisplay<t> = interface;
+
+  iColleague = interface
+    ['{DF1B7B09-5575-49F8-A325-475454B967DA}']
+    function EnviarPedido(FDestino : iColleague; Setor : String) : iColleague;
+    function ReceberPedido(FOrigem : iColleague; Setor : String) : iColleague;
+    function GetName : String;
+    function Display : iDisplay<iColleague>;
+  end;
+
+  iMediator = interface
+    ['{49E9696B-9176-444B-8B6F-8EE89DFB3284}']
+    function Add(Value : iColleague) : iMediator;
+    function EnviarPedido(FOrigem, FDestino : iColleague; Pedido : String) : iMediator;
+    function Get(Value : String) : iColleague;
+    function Display : iDisplay<iMediator>;
+  end;
+
+  iDisplay<t> = interface
+    ['{250B1988-D1CC-4EB2-AD26-AADCE6D1A297}']
+    function Exibir(Value : TEvExibir) : iDisplay<t>;
+    function &End : t;
+  end;
+
+implementation
+
+end.
