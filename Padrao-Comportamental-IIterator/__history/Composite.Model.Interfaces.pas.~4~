@@ -1,0 +1,23 @@
+unit Composite.Model.Interfaces;
+
+interface
+
+type
+
+  iVenda = interface
+  ['{4FEBCD6D-C819-4306-82E4-7A01A4BA4986}']
+    function Total : Currency;
+  end;
+
+  iItens = interface
+    ['{892B348F-B7EC-4CF9-9B1C-5F6F98582830}']
+    function Preco(Value : Currency) : iVenda;
+    function Quantidade(Value : Currency) : iVenda;
+    function EndItens : iVenda;
+  end;
+
+
+
+implementation
+
+end.

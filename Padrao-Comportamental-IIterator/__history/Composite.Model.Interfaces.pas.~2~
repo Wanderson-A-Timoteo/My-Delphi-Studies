@@ -1,0 +1,14 @@
+unit Composite.Model.Interfaces;
+
+interface
+
+type
+  iVenda = interface
+    function TotalVenda : Currency;
+  end;
+
+
+
+implementation
+
+end.

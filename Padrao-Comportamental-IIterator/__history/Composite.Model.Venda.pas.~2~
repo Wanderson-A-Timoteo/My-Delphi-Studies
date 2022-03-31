@@ -1,0 +1,34 @@
+unit Composite.Model.Venda;
+
+interface
+
+Type
+  TModelVenda = class(TInterfacedObject, iVenda)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iVenda;
+  end;
+
+implementation
+
+{ TModelVenda }
+
+constructor TModelVenda.Create;
+begin
+
+end;
+
+destructor TModelVenda.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelVenda.New: iVenda;
+begin
+  Result := Self.Create;
+end;
+
+end.

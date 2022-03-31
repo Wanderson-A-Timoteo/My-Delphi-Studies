@@ -1,0 +1,63 @@
+unit Composite.Model.Itens;
+
+interface
+
+uses Composite.Model.Interfaces;
+
+Type
+  TModelItem = class(TInterfacedObject, iItens)
+    private
+      FPreco : Currency;
+      FQuantidade : Currency;
+    function SetPreco(Value: Currency): iVenda;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iVenda;
+      function Preco(Value : Currency) : iItens;
+      function Quantidade(Value : Currency) : iItens;
+      function Total : Currency;
+      function EndItens : iVenda;
+  end;
+
+implementation
+
+{ TModelItem }
+
+constructor TModelItem.Create;
+begin
+
+end;
+
+destructor TModelItem.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelItem.EndItens: iVenda;
+begin
+  Result := Self;
+end;
+
+class function TModelItem.New: iVenda;
+begin
+  Result := Self.Create;
+end;
+
+function TModelItem.Preco(Value: Currency): iItens;
+begin
+  FPreco := Value;
+end;
+
+function TModelItem.Quantidade(Value: Currency): iItens;
+begin
+  FQuantidade := Value;
+end;
+
+function TModelItem.Total: Currency;
+begin
+  Result := FPreco * FQuantidade;
+end;
+
+end.
