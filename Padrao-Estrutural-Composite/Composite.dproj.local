@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/06/20 13:51:44.000.262,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 13:59:29.000.772,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:31:36.000.352,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:33:22.000.953,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:34:00.000.652,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 22:05:55.000.069,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/08 09:07:40.000.704,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 08:39:39.000.224,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:27.000.232,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:27.000.986,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:29.000.089,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2017/08/11 10:52:08.000.037,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 15:42:04.000.341,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 10:02:40.000.324,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/18 00:20:19.000.612,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/29 09:56:37.000.813,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2017/09/03 19:34:14.000.424,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 21:01:39.000.169,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 23:19:07.000.712,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/09 15:12:27.000.986,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/09 15:12:48.000.425,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.dfm=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.View.Principal.dfm</Transaction>
+    <Transaction>2017/09/09 15:12:48.000.425,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.View.Principal.pas</Transaction>
+    <Transaction>2017/09/09 15:12:53.000.039,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.dproj</Transaction>
+    <Transaction>2017/09/09 15:15:49.000.289,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:15:51.000.324,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\default.txvpck</Transaction>
+    <Transaction>2017/09/09 15:15:52.000.016,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\default.txvpck</Transaction>
+    <Transaction>2017/09/09 15:15:53.000.103,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\View\default.txvpck</Transaction>
+    <Transaction>2017/09/09 15:15:55.000.406,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\View\Principal\default.txvpck</Transaction>
+    <Transaction>2017/09/09 15:15:57.000.766,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\View\Principal\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:16:11.000.334,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\View\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:16:11.000.309,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:19:13.000.773,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:19:26.000.346,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Interfaces.pas</Transaction>
+    <Transaction>2017/09/09 15:19:58.000.632,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:20:08.000.700,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Venda.pas</Transaction>
+    <Transaction>2017/09/09 15:20:34.000.453,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:20:41.000.076,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\Composite.Model.Itens.pas</Transaction>
+    <Transaction>2017/09/09 15:21:03.000.906,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\Model\Interfaces\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:21:03.000.928,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\Model\Venda\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:21:03.000.867,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\Model\Itens\default.txaPackage</Transaction>
+    <Transaction>2017/09/09 15:21:03.000.887,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Composite\ModelSupport_Composite\Composite\Model\default.txaPackage</Transaction>
+    <Transaction>2022/03/31 09:22:17.063,=D:\Projetos\ws-delphi\My-Delphi-Studies\Padrao-Estrutural-Composite\ModelSupport_Composite\Composite\Model\default.txvpck</Transaction>
+    <Transaction>2022/03/31 09:22:17.257,=D:\Projetos\ws-delphi\My-Delphi-Studies\Padrao-Estrutural-Composite\ModelSupport_Composite\Composite\Model\Venda\default.txvpck</Transaction>
+    <Transaction>2022/03/31 09:22:17.347,=D:\Projetos\ws-delphi\My-Delphi-Studies\Padrao-Estrutural-Composite\ModelSupport_Composite\Composite\Model\Itens\default.txvpck</Transaction>
+    <Transaction>2022/03/31 09:22:17.448,=D:\Projetos\ws-delphi\My-Delphi-Studies\Padrao-Estrutural-Composite\ModelSupport_Composite\Composite\Model\Interfaces\default.txvpck</Transaction>
+  </Transactions>
+</BorlandProject>

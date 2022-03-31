@@ -1,0 +1,36 @@
+unit Composite.Model.Itens;
+
+interface
+
+uses Composite.Model.Interfaces;
+
+Type
+  TModelItens = class(TInterfacedObject, iItens)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iItens;
+  end;
+
+implementation
+
+{ TModelItens }
+
+constructor TModelItens.Create;
+begin
+
+end;
+
+destructor TModelItens.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelItens.New: iItens;
+begin
+  Result := Self.Create;
+end;
+
+end.

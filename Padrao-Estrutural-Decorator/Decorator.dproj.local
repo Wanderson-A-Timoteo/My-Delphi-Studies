@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/06/20 13:51:44.000.262,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 13:59:29.000.772,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:31:36.000.352,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:33:22.000.953,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:34:00.000.652,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 22:05:55.000.069,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/08 09:07:40.000.704,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 08:39:39.000.224,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:27.000.232,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:27.000.986,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:29.000.089,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2017/08/11 10:52:08.000.037,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 15:42:04.000.341,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 10:02:40.000.324,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/18 00:20:19.000.612,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/29 09:56:37.000.813,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2017/09/03 19:34:14.000.424,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 21:01:39.000.169,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 23:19:07.000.712,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 23:20:34.000.622,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 23:21:19.000.189,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.dfm=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Decorator.View.Principal.dfm</Transaction>
+    <Transaction>2017/09/04 23:21:19.000.189,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Decorator.View.Principal.pas</Transaction>
+    <Transaction>2017/09/04 23:21:21.000.862,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Decorator.dproj</Transaction>
+    <Transaction>2017/09/04 23:21:25.000.770,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:21:27.000.166,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\default.txvpck</Transaction>
+    <Transaction>2017/09/04 23:21:27.000.796,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\default.txvpck</Transaction>
+    <Transaction>2017/09/04 23:21:28.000.637,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\View\default.txvpck</Transaction>
+    <Transaction>2017/09/04 23:21:29.000.572,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\View\Principal\default.txvpck</Transaction>
+    <Transaction>2017/09/04 23:21:30.000.707,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\View\Principal\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:21:47.000.666,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:21:47.000.681,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\View\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:24:41.000.199,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Unit1.pas</Transaction>
+    <Transaction>2017/09/04 23:24:55.000.469,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Decorator.Model.NFC.pas</Transaction>
+    <Transaction>2017/09/04 23:24:58.000.934,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Unit1.pas</Transaction>
+    <Transaction>2017/09/04 23:25:05.000.369,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Decorator.Model.SAT.pas</Transaction>
+    <Transaction>2017/09/04 23:26:09.000.870,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Unit1.pas</Transaction>
+    <Transaction>2017/09/04 23:26:42.000.459,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\Decorator.Model.Interfaces.pas</Transaction>
+    <Transaction>2017/09/04 23:45:09.000.747,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\Model\SAT\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:45:09.000.785,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\Model\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:45:09.000.809,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\Model\Interfaces\default.txaPackage</Transaction>
+    <Transaction>2017/09/04 23:45:09.000.766,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Decorator\ModelSupport_Decorator\Decorator\Model\NFC\default.txaPackage</Transaction>
+  </Transactions>
+</BorlandProject>
