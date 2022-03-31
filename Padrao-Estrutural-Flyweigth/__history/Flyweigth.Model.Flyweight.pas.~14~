@@ -1,0 +1,48 @@
+unit Flyweigth.Model.Flyweight;
+
+interface
+
+uses System.SysUtils, Flyweigth.Model.Interfaces,
+      System.Classes, Flyweigth.Model.Cliente, System.Generics.Collections;
+
+Type
+  TModelFlyweight = class(TInterfacedObject, iFlyweight)
+    private
+      FListaCliente : TDictionary<string, iCliente>;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iFlyweight;
+      function GetCliente: iCliente;
+  end;
+
+implementation
+
+{ TModelFlyweight }
+
+constructor TModelFlyweight.Create;
+begin
+  FListaCliente := TDictionary<string, iCliente>.Create;
+end;
+
+destructor TModelFlyweight.Destroy;
+begin
+  FreeAndNil(FListaCliente);
+  inherited;
+end;
+
+function TModelFlyweight.GetCliente: iCliente;
+begin
+  if not FListaCliente.TryGetValue('CLIENTE', Result) then
+  begin
+    Result := TModelCliente.New;
+    FListaCliente.Add('CLIENTE', Result);
+  end;
+end;
+
+class function TModelFlyweight.New: iFlyweight;
+begin
+  Result := Self.Create;
+end;
+
+end.

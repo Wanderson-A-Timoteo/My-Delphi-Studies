@@ -1,0 +1,36 @@
+unit Flyweigth.Model.Cliente.Flyweigth;
+
+interface
+
+uses Flyweigth.Model.Interfaces;
+
+Type
+  TModelClienteFlyweight = class(TInterfacedObject, iFlyWeigth<iCliente>)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iFlyWeigth<iCliente>;
+  end;
+
+implementation
+
+{ TModelClienteFlyweight }
+
+constructor TModelClienteFlyweight.Create;
+begin
+
+end;
+
+destructor TModelClienteFlyweight.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelClienteFlyweight.New: iFlyWeigth<iCliente>;
+begin
+  Result := Self.Create;
+end;
+
+end.

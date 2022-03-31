@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/06/20 13:51:44.000.262,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 13:59:29.000.772,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:31:36.000.352,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:33:22.000.953,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 21:34:00.000.652,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/20 22:05:55.000.069,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/08 09:07:40.000.704,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 08:39:39.000.224,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:27.000.232,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:27.000.986,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/08/05 11:48:29.000.089,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2017/08/11 10:52:08.000.037,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/12 15:42:04.000.341,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/15 10:02:40.000.324,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/18 00:20:19.000.612,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/29 09:56:37.000.813,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2017/09/03 19:34:14.000.424,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 21:01:39.000.169,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/04 23:19:07.000.712,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/09 15:43:27.000.223,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2017/09/09 15:43:57.000.500,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.dfm=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.View.Principal.dfm</Transaction>
+    <Transaction>2017/09/09 15:43:57.000.500,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit2.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.View.Principal.pas</Transaction>
+    <Transaction>2017/09/09 15:44:08.000.745,C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.dproj</Transaction>
+    <Transaction>2017/09/09 15:47:13.000.491,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:47:23.000.931,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Interfaces.pas</Transaction>
+    <Transaction>2017/09/09 15:48:44.000.823,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:48:55.000.455,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.pas</Transaction>
+    <Transaction>2017/09/09 15:52:51.000.289,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:53:09.000.782,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.Flyweigth.pas</Transaction>
+    <Transaction>2017/09/09 15:56:57.000.979,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.Flyweigth.pas=</Transaction>
+    <Transaction>2017/09/09 15:58:11.000.211,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 15:58:33.000.449,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Flyweight.pas</Transaction>
+    <Transaction>2017/09/09 16:32:45.000.307,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 16:32:53.000.508,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.Brasil.pas</Transaction>
+    <Transaction>2017/09/09 16:48:51.000.031,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.Brasil.pas=</Transaction>
+    <Transaction>2017/09/09 16:52:14.000.690,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 16:52:21.000.979,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.Brasil.pas</Transaction>
+    <Transaction>2017/09/09 16:52:57.000.633,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 16:53:05.000.884,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.USA.pas</Transaction>
+    <Transaction>2017/09/09 16:53:36.000.992,=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas</Transaction>
+    <Transaction>2017/09/09 16:53:50.000.527,D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Unit1.pas=D:\Projetos\Cursos\Delphi Updates\Módulo IV\Principal\Flyweigth\Flyweigth.Model.Cliente.Espanha.pas</Transaction>
+  </Transactions>
+</BorlandProject>

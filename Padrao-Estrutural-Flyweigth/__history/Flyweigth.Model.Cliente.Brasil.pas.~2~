@@ -1,0 +1,36 @@
+unit Flyweigth.Model.Cliente.Brasil;
+
+interface
+
+uses Flyweigth.Model.Interfaces;
+
+Type
+  TModelClienteBrasil = class(TInterfacedObject, iCliente)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iCliente;
+  end;
+
+implementation
+
+{ TModelClienteBrasil }
+
+constructor TModelClienteBrasil.Create;
+begin
+
+end;
+
+destructor TModelClienteBrasil.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelClienteBrasil.New: iCliente;
+begin
+  Result := Self.Create;
+end;
+
+end.

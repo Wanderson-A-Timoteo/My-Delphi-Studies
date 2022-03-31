@@ -1,0 +1,50 @@
+unit Flyweigth.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Flyweigth.Model.Interfaces,
+  Flyweigth.Model.Flyweight, Flyweigth.Model.Cliente, Vcl.StdCtrls,
+  System.Generics.Collections;
+
+type
+  TClientes = record
+    Nome : String;
+    Email : String;
+    Nacionalidade : String;
+  end;
+
+  TForm2 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+    FFlyweight : iFlyWeight;
+    FLista : TList<TClientes>;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  FFlyweight := TModelFlyweight.New;
+  FLista := TList<TClientes>.Create;
+end;
+
+procedure TForm2.FormDestroy(Sender: TObject);
+begin
+  FLista.Free;
+end;
+
+end.

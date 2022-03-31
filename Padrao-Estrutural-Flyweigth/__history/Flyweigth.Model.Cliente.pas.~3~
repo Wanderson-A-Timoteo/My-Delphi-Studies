@@ -1,0 +1,79 @@
+unit Flyweigth.Model.Cliente;
+
+interface
+
+uses
+  Flyweigth.Model.Interfaces;
+
+Type
+  TModelCliente = class(TInterfacedObject, iCliente)
+    private
+    FEmail: String;
+    FNome: String;
+    FDisplay : TEvDisplay;
+    procedure SetEmail(const Value: String);
+    procedure SetNome(const Value: String);
+    function GetEmail: String;
+    function GetNome: String;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iCliente;
+      function Display(Value : TEvDisplay) : iCliente;
+      function EnviarEmail: iCliente;
+      property Nome : String read GetNome write SetNome;
+      property Email : String read GetEmail write SetEmail;
+  end;
+
+implementation
+
+{ TModelCliente }
+
+constructor TModelCliente.Create;
+begin
+
+end;
+
+destructor TModelCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelCliente.Display(Value: TEvDisplay): iCliente;
+begin
+  Result := Self;
+  FDisplay := Value;
+end;
+
+function TModelCliente.EnviarEmail: iCliente;
+begin
+  FDisplay(FNome + ' - ' FEmail);
+end;
+
+function TModelCliente.GetEmail: String;
+begin
+  Result := FEmail;
+end;
+
+function TModelCliente.GetNome: String;
+begin
+  Result := FNome;
+end;
+
+class function TModelCliente.New: iCliente;
+begin
+  Result := Self.Create;
+end;
+
+procedure TModelCliente.SetEmail(const Value: String);
+begin
+  FEmail := Value;
+end;
+
+procedure TModelCliente.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+end.

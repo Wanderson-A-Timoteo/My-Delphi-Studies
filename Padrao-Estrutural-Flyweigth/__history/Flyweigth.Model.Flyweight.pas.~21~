@@ -1,0 +1,59 @@
+unit Flyweigth.Model.Flyweight;
+
+interface
+
+uses System.SysUtils, Flyweigth.Model.Interfaces,
+      System.Classes, Flyweigth.Model.Cliente, System.Generics.Collections,
+  Flyweigth.Model.Cliente.Brasil, Flyweigth.Model.Cliente.Espanha,
+  Flyweigth.Model.Cliente.USA;
+
+Type
+  TModelFlyweight = class(TInterfacedObject, iFlyweight)
+    private
+      FListaCliente : TDictionary<string, iCliente>;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iFlyweight;
+      function GetCliente(Value : String) : iCliente;
+  end;
+
+implementation
+
+{ TModelFlyweight }
+
+constructor TModelFlyweight.Create;
+begin
+  FListaCliente := TDictionary<string, iCliente>.Create;
+end;
+
+destructor TModelFlyweight.Destroy;
+begin
+  FreeAndNil(FListaCliente);
+  inherited;
+end;
+
+function TModelFlyweight.GetCliente(Value : String) : iCliente;
+begin
+  if not FListaCLiente.TryGetValue(Value, Result) then
+  begin
+    if Value = 'Brasil' then
+      Result := TModelClienteBrasil.New;
+    if Value = 'USA' then
+      Result := TModelClienteUSA.New;
+    if Value = 'Espanha' then
+      Result := TModelClienteEspanha.New;
+
+     FListaCliente.Add(Value, Result);
+  end;
+
+
+
+end;
+
+class function TModelFlyweight.New: iFlyweight;
+begin
+  Result := Self.Create;
+end;
+
+end.

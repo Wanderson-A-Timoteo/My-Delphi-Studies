@@ -1,0 +1,86 @@
+unit Flyweigth.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Flyweigth.Model.Interfaces,
+  Flyweigth.Model.Flyweight, Flyweigth.Model.Cliente, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+    FFlyweight: iFlyWeight;
+    ListaEmail: TStringList;
+    ListaNome: TStringList;
+    ListaNacional: TStringList;
+
+  public
+    { Public declarations }
+    procedure Exibir(Value: String);
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  I: Integer;
+begin
+  for I := 0 to Pred(ListaNome.Count) do
+    FFlyweight
+      .GetCliente(ListaNacional[I])
+        .Display(Exibir)
+        .SetNome(ListaNome[I])
+        .SetEmail(ListaEmail[I])
+        .EnviarEmail;
+end;
+
+procedure TForm2.Exibir(Value: String);
+begin
+  Memo1.Lines.Add(Value);
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  ListaNome := TStringList.Create;
+  ListaNome := TStringList.Create;
+  ListaNacional := TStringList.Create;
+
+  ListaNome.Add('Thulio');
+  ListaNome.Add('Osiany');
+  ListaNome.Add('Lisandra');
+  ListaNome.Add('Suely');
+
+  ListaEmail.Add('bittencourtthuliO@gmail.com');
+  ListaEmail.Add('osiany@gmail.com');
+  ListaEmail.Add('lisandra@gmail.com');
+  ListaEmail.Add('suely@gmail.com');
+
+  ListaNacional.Add('Brasil');
+  ListaNacional.Add('USA');
+  ListaNacional.Add('Espanha');
+  ListaNacional.Add('Brasil');
+
+  FFlyweight := TModelFlyweight.New;
+end;
+
+procedure TForm2.FormDestroy(Sender: TObject);
+begin
+  ListaNacional.Free;
+  ListaEmail.Free;
+  ListaNome.Free;
+end;
+
+end.
