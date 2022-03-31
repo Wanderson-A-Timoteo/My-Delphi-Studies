@@ -1,0 +1,7 @@
+unit Command.Model.NotaFiscal;
+
+interface
+
+implementation
+
+end.

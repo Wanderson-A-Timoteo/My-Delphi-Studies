@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="7nc81qm6nraox1d9h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::0qikndtic0bb2lz0q_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,112,166" />
+      <reference referencedUin="design:view:::hw0l3d20ohr_v" />
+      <reference referencedUin="delphi:e_class:src:Command:Command.@unitclass" />
+      <reference referencedUin="design:view:::mxldutyh57bx2m9xt_v" />
+    </reference>
+  </view>
+</nodeSet>

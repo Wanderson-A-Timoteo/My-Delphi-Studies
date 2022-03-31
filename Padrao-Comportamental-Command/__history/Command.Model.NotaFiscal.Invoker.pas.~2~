@@ -1,0 +1,36 @@
+unit Command.Model.NotaFiscal.Invoker;
+
+interface
+
+uses Command.Model.Interfaces;
+
+Type
+  TModelNotaFiscalInvoker = class(TInterfacedObject, iInvoker)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iInvoker;
+  end;
+
+implementation
+
+{ TModelNotaFiscalInvoker }
+
+constructor TModelNotaFiscalInvoker.Create;
+begin
+
+end;
+
+destructor TModelNotaFiscalInvoker.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelNotaFiscalInvoker.New: iInvoker;
+begin
+  Result := Self.Create;
+end;
+
+end.

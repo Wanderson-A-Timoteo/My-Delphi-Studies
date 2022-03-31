@@ -1,0 +1,36 @@
+unit Command.Model.NotaFiscal.Criar;
+
+interface
+
+uses Command.Model.Interfaces;
+
+Type
+  TModelNotaFiscalCriar = class(TInterfacedObject, iCommand)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iCommand;
+  end;
+
+implementation
+
+{ TModelNotaFiscalCriar }
+
+constructor TModelNotaFiscalCriar.Create;
+begin
+
+end;
+
+destructor TModelNotaFiscalCriar.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelNotaFiscalCriar.New: iCommand;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -1,0 +1,20 @@
+unit Command.Model.Interfaces;
+
+interface
+
+type
+
+  iCommand = interface
+    ['{0C67CE44-B7D0-4A33-8734-AD07D8A8101B}']
+    function Execute : iCommand;
+  end;
+
+  iInvoker = interface
+    ['{C02A74A0-EB39-4782-82FA-F9C948723651}']
+    function Add(Value : iCommand) : iInvoker;
+    function Execute : iInvoker;
+  end;
+
+implementation
+
+end.
