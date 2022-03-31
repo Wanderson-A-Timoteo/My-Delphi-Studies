@@ -1,0 +1,36 @@
+unit Menus.Controller.Conexoes.Factory.DataSet;
+
+interface
+
+uses Menus.Controller.Conexoes.Interfaces;
+
+Type
+  TControllerConexoesFactoryDataSet = class(TInterfacedObject, iControllerFactoryDataSet)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iControllerFactoryDataSet;
+  end;
+
+implementation
+
+{ TControllerConexoesFactoryDataSet }
+
+constructor TControllerConexoesFactoryDataSet.Create;
+begin
+
+end;
+
+destructor TControllerConexoesFactoryDataSet.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerConexoesFactoryDataSet.New: iControllerFactoryDataSet;
+begin
+  Result := Self.Create;
+end;
+
+end.

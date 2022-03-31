@@ -1,0 +1,16 @@
+unit Menus.Model.Entity.Interfaces;
+
+interface
+
+uses
+  System.Classes;
+
+type
+  iModelEntity = interface
+    ['{2BCEC5B0-0EF3-4F71-8DF6-064D3E892BAE}']
+    function Listar : TComponent;
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,59 @@
+unit Menus.Controller.ListBox.CRUD;
+
+interface
+
+uses Menus.Controller.ListBox.Interfaces, System.Classes, Data.DB, FMX.Types;
+
+Type
+  TControllerListBoxCRUD = class(TInterfacedObject, iControllerListBoxMenu)
+    private
+      FContainer : TComponent;
+      FInsert, FUpdate, FDelete : TEvCRUD;
+      FBtnInsert, FBtnUpdate, FBtnDelete : TFMXObject;
+    public
+      constructor Create(Container: TComponent; Insert, Update, Delete : TEvCRUD);
+      destructor Destroy; override;
+      class function New(Container: TComponent; Insert, Update, Delete : TEvCRUD) : iControllerListBoxMenu;
+      procedure Exibir;
+  end;
+
+implementation
+
+{ TControllerListBoxCRUD }
+
+uses Menus.Controller.ListBox.Factory, Menus.Controller.ListBox.Itens.Factory;
+
+constructor TControllerListBoxCRUD.Create(Container: TComponent; Insert, Update, Delete : TEvCRUD);
+begin
+  FContainer := Container;
+  FInsert := Insert;
+  FUpdate := Update;
+  FDelete := Delete;
+
+  FBtnInsert := TControllerListBoxItensFactory.New.Insert(FInsert).Execute;
+  FBtnUpdate := TControllerListBoxItensFactory.New.Update(FUpdate).Execute;
+  FBtnDelete := TControllerListBoxItensFactory.New.Delete(FDelete).Execute;
+end;
+
+destructor TControllerListBoxCRUD.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TControllerListBoxCRUD.Exibir;
+begin
+   TControllerListBoxFactory.New
+    .Default(FContainer)
+    .AddItem(FBtnInsert)
+    .AddItem(FBtnInsert)
+    .AddItem(FBtnInsert)
+    .Exibir;
+end;
+
+class function TControllerListBoxCRUD.New(Container: TComponent; Insert, Update, Delete : TEvCRUD) : iControllerListBoxMenu;
+begin
+  Result := Self.Create(Container, Insert, Update, Delete);
+end;
+
+end.

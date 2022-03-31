@@ -1,0 +1,55 @@
+unit Menus.Controller.ListBox.Itens.Insert;
+
+interface
+
+uses Menus.Controller.ListBox.Interfaces, FMX.Types,
+  Menus.Controller.Forms.Default,
+  Data.DB;
+
+type
+  TControllerListBoxItensInsert = class(TInterfacedObject,
+    iControllerListBoxItemCRUD)
+  private
+    FDataSet: TDataSet;
+  public
+    constructor Create(DataSet: TDataSet);
+    destructor Destroy; override;
+    class function New(DataSet: TDataSet): iControllerListBoxItemCRUD;
+    procedure onClick(Sender: TObject);
+    function Execute: TFmxObject;
+  end;
+
+implementation
+
+{ TControllerListBoxItensInsert }
+
+uses Menus.Controller.ListBox.Itens.Factory;
+
+constructor TControllerListBoxItensInsert.Create(DataSet: TDataSet);
+begin
+  FDataSet := DataSet;
+end;
+
+destructor TControllerListBoxItensInsert.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerListBoxItensInsert.New(DataSet: TDataSet): iControllerListBoxItemCRUD;
+begin
+  Result := Self.Create;
+end;
+
+procedure TControllerListBoxItensInsert.onClick(Sender: TObject);
+begin
+  //
+end;
+
+function TControllerListBoxItensInsert.Execute: TFmxObject;
+begin
+  Result := TControllerListBoxItensFactory.New.Default.Name('btnNovo')
+    .Text('Novo').onClick(onClick).Item;
+end;
+
+end.

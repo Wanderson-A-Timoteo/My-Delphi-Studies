@@ -1,0 +1,16 @@
+unit Menus.Model.Conexoes.Interfaces;
+
+interface
+
+uses
+  System.Classes;
+
+type
+  iModelConexao = interface
+    ['{E8538D27-DFF2-4485-A303-616176681A93}']
+    function EndConexao : TComponent;
+  end;
+
+implementation
+
+end.

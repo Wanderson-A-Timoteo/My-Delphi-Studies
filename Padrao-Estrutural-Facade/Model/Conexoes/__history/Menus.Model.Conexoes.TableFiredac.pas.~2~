@@ -1,0 +1,36 @@
+unit Menus.Model.Conexoes.TableFiredac;
+
+interface
+
+uses Menus.Model.Conexoes.Interfaces;
+
+Type
+  TModelConexoesTableFiredac = class(TInterfacedObject, iModelDataSet)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iModelDataSet;
+  end;
+
+implementation
+
+{ TModelConexoesTableFiredac }
+
+constructor TModelConexoesTableFiredac.Create;
+begin
+
+end;
+
+destructor TModelConexoesTableFiredac.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelConexoesTableFiredac.New: iModelDataSet;
+begin
+  Result := Self.Create;
+end;
+
+end.
