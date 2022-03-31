@@ -1,0 +1,14 @@
+unit Adapter.Model.Interfaces;
+
+interface
+
+type
+
+  TItens = record
+    Produto : String;
+    Valor : Currency;
+  end;
+
+implementation
+
+end.

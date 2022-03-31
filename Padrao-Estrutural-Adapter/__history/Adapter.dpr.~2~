@@ -1,0 +1,15 @@
+program Adapter;
+
+uses
+  Vcl.Forms,
+  Adapter.View.Principal in 'Adapter.View.Principal.pas' {Form2},
+  Adapter.Model.Interfaces in 'Adapter.Model.Interfaces.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.Run;
+end.

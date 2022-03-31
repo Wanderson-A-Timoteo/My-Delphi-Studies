@@ -1,0 +1,23 @@
+unit Adapter.Model.Interfaces;
+
+interface
+
+uses
+  System.Generics.Collections;
+
+type
+
+  TItens = record
+    Produto : String;
+    Valor : Currency;
+  end;
+
+  iControllerItens = interface
+    function Add(Value : TItens) : iControllerItens;
+    function Itens : TList<TITens>;
+  end;
+
+
+implementation
+
+end.

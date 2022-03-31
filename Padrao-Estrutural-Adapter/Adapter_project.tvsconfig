@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Adapter.View.Principal" Type="System.String" Value="" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Adapter.Controller" Type="System.String" Value="Adapter\Controller" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Adapter.Controller.Itens" Type="System.String" Value="Adapter\Controller\Itens" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Adapter.Model" Type="System.String" Value="Adapter\Model" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Adapter.Model.Interfaces" Type="System.String" Value="Adapter\Model\Interfaces" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Adapter" Type="System.String" Value="Adapter" Category="General" IsBrowsable="False" />
+</TgConfig>

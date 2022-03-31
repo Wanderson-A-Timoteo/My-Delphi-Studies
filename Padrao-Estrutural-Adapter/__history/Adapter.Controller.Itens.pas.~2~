@@ -1,0 +1,36 @@
+unit Adapter.Controller.Itens;
+
+interface
+
+uses Adapter.Model.Interfaces;
+
+Type
+  TControllerItens = class(TInterfacedObject, iControllerItens)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iControllerItens;
+  end;
+
+implementation
+
+{ TControllerItens }
+
+constructor TControllerItens.Create;
+begin
+
+end;
+
+destructor TControllerItens.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerItens.New: iControllerItens;
+begin
+  Result := Self.Create;
+end;
+
+end.

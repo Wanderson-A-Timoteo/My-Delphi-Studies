@@ -1,0 +1,7 @@
+unit Adapter.Model.Interfaces;
+
+interface
+
+implementation
+
+end.
