@@ -1,0 +1,44 @@
+unit Bridge.Model.SPED.C100;
+
+interface
+
+uses Bridge.Model.Interfaces, System.Classes;
+
+Type
+  TModelSPEDC100 = class(TInterfacedObject, iExport<TVenda>)
+    private
+      FArquivo : TStringList;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iExport<TVenda>;
+       function GerarRegistros(Value : TVenda) : iExport<TVenda>;
+  end;
+
+implementation
+
+{ TModelSPEDC100 }
+
+constructor TModelSPEDC100.Create;
+begin
+  FArquivo := TStringList.Create;
+end;
+
+destructor TModelSPEDC100.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelSPEDC100.GerarRegistros(Value: TVenda): iExport<TVenda>;
+begin
+  Result := Self;
+
+end;
+
+class function TModelSPEDC100.New: iExport<TVenda>;
+begin
+  Result := Self.Create;
+end;
+
+end.

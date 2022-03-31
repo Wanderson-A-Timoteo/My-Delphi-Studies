@@ -1,0 +1,7 @@
+unit Bridge.Model.Venda;
+
+interface
+
+implementation
+
+end.

@@ -1,0 +1,36 @@
+unit Bridge.Model.Venda;
+
+interface
+
+uses Bridge.Model.Interfaces;
+
+Type
+  TModelVenda = class(TInterfacedObject, iSource<TVenda>)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iSource<TVenda>;
+  end;
+
+implementation
+
+{ TModelVenda }
+
+constructor TModelVenda.Create;
+begin
+
+end;
+
+destructor TModelVenda.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelVenda.New: iSource<TVenda>;
+begin
+  Result := Self.Create;
+end;
+
+end.

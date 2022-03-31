@@ -1,0 +1,53 @@
+unit Bridge.Model.Venda;
+
+interface
+
+uses Bridge.Model.Interfaces, System.Generics.Collections;
+
+Type
+  TModelVenda = class(TInterfacedObject, iSource<TVenda>)
+    private
+      FList : TList<TVenda>;
+      procedure AddItens;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iSource<TVenda>;
+      function Exportar(Value : iExport<TVenda>) : iSource<TVenda>;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelVenda }
+
+procedure TModelVenda.AddItens;
+begin
+
+end;
+
+constructor TModelVenda.Create;
+begin
+  FList := TList<TVenda>.Create;
+  AddItens;
+end;
+
+destructor TModelVenda.Destroy;
+begin
+  FreeAndNil(FList);
+  inherited;
+end;
+
+function TModelVenda.Exportar(Value: iExport<TVenda>): iSource<TVenda>;
+begin
+
+end;
+
+class function TModelVenda.New: iSource<TVenda>;
+begin
+  Result := Self.Create;
+end;
+
+end.
