@@ -1,0 +1,36 @@
+unit Chains.Model.Item;
+
+interface
+
+uses Chains.Model.Interfaces;
+
+Type
+  TModelItem = class(TInterfacedObject, iItem, iOperacoes)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iItem;
+  end;
+
+implementation
+
+{ TModelItem }
+
+constructor TModelItem.Create;
+begin
+
+end;
+
+destructor TModelItem.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelItem.New: iItem;
+begin
+  Result := Self.Create;
+end;
+
+end.

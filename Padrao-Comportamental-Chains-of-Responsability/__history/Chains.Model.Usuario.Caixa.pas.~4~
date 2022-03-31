@@ -1,0 +1,44 @@
+unit Chains.Model.Usuario.Caixa;
+
+interface
+
+uses Chains.Model.Interfaces;
+
+Type
+  TModelUsuarioCaixa = class(TInterfacedObject, iUsuario, iResponsability)
+    private
+      FSucessor : iResponsability;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iUsuario;
+      function Responsability : iResponsability;
+      function NextResponsability(Value : iResponsability) : iResponsability;
+  end;
+
+implementation
+
+{ TModelUsuarioCaixa }
+
+constructor TModelUsuarioCaixa.Create;
+begin
+
+end;
+
+destructor TModelUsuarioCaixa.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelUsuarioCaixa.New: iUsuario;
+begin
+  Result := Self.Create;
+end;
+
+function TModelUsuarioCaixa.Responsability: iResponsability;
+begin
+  Result := Self;
+end;
+
+end.
