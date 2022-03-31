@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Interpreter.View.Principal" Type="System.String" Value="" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Interpreter" Type="System.String" Value="Interpreter" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Interpreter.View" Type="System.String" Value="Interpreter\View" Category="General" IsBrowsable="False" />
+</TgConfig>

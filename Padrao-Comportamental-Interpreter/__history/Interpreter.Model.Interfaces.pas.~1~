@@ -1,0 +1,7 @@
+unit Interpreter.Model.Interfaces;
+
+interface
+
+implementation
+
+end.

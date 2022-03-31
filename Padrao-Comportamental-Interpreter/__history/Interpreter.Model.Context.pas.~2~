@@ -1,0 +1,36 @@
+unit Interpreter.Model.Context;
+
+interface
+
+uses Interpreter.Model.Interfaces;
+
+Type
+  TModelContext = class(TInterfacedObject, iContext)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iContext;
+  end;
+
+implementation
+
+{ TModelContext }
+
+constructor TModelContext.Create;
+begin
+
+end;
+
+destructor TModelContext.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelContext.New: iContext;
+begin
+  Result := Self.Create;
+end;
+
+end.

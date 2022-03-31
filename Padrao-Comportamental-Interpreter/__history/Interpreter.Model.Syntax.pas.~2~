@@ -1,0 +1,36 @@
+unit Interpreter.Model.Syntax;
+
+interface
+
+uses Interpreter.Model.Interfaces;
+
+Type
+  TModelSyntax = class(TInterfacedObject, iSyntax)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iSyntax;
+  end;
+
+implementation
+
+{ TModelSyntax }
+
+constructor TModelSyntax.Create;
+begin
+
+end;
+
+destructor TModelSyntax.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelSyntax.New: iSyntax;
+begin
+  Result := Self.Create;
+end;
+
+end.

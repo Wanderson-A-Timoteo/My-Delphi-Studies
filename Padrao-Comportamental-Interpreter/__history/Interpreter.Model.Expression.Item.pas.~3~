@@ -1,0 +1,43 @@
+unit Interpreter.Model.Expression.Item;
+
+interface
+
+uses Interpreter.Model.Interfaces;
+
+Type
+  TModelExpressionItem = class(TInterfacedObject, iExpression)
+    private
+      FLista : TStringList;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iExpression;
+      function Interpreter(Value: iContext): iExpression;
+  end;
+
+implementation
+
+{ TModelExpressionItem }
+
+constructor TModelExpressionItem.Create;
+begin
+
+end;
+
+destructor TModelExpressionItem.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelExpressionItem.Interpreter(Value: iContext): iExpression;
+begin
+
+end;
+
+class function TModelExpressionItem.New: iExpression;
+begin
+  Result := Self.Create;
+end;
+
+end.

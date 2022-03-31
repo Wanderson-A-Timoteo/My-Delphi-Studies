@@ -1,0 +1,49 @@
+unit Interpreter.Model.Syntax;
+
+interface
+
+uses Interpreter.Model.Interfaces;
+
+Type
+  TModelSyntax = class(TInterfacedObject, iSyntax)
+    private
+      FLista : TList<iExpression>;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iSyntax;
+      function Process(Value : String) : String;
+  end;
+
+implementation
+
+uses
+  System.Classes, System.Generics.Collections;
+
+{ TModelSyntax }
+
+constructor TModelSyntax.Create;
+begin
+
+end;
+
+destructor TModelSyntax.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelSyntax.New: iSyntax;
+begin
+  Result := Self.Create;
+end;
+
+function TModelSyntax.Process(Value: String): String;
+var
+
+begin
+  FLista : TList<iExpression>;
+
+end;
+
+end.

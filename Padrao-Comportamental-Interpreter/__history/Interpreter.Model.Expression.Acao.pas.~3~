@@ -1,0 +1,42 @@
+unit Interpreter.Model.Expression.Acao;
+
+interface
+
+uses Interpreter.Model.Interfaces;
+
+Type
+  TModelExpressionAcao = class(TInterfacedObject, iExpression)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iExpression;
+      function Interpreter(Value: iContext): iExpression;
+  end;
+
+implementation
+
+{ TModelExpressionAcao }
+
+constructor TModelExpressionAcao.Create;
+begin
+
+end;
+
+destructor TModelExpressionAcao.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelExpressionAcao.Interpreter(Value: iContext): iExpression;
+begin
+  Result := Self;
+end;
+
+class function TModelExpressionAcao.New: iExpression;
+begin
+  Result := Self.Create;
+end;
+
+end.

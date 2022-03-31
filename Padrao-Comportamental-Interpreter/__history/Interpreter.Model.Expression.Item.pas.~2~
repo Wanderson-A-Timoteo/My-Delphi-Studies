@@ -1,0 +1,36 @@
+unit Interpreter.Model.Expression.Item;
+
+interface
+
+uses Interpreter.Model.Interfaces;
+
+Type
+  TModelExpressionItem = class(TInterfacedObject, iExpression)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : i;
+  end;
+
+implementation
+
+{ TModelExpressionItem }
+
+constructor TModelExpressionItem.Create;
+begin
+
+end;
+
+destructor TModelExpressionItem.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelExpressionItem.New: iExpression;
+begin
+  Result := Self.Create;
+end;
+
+end.

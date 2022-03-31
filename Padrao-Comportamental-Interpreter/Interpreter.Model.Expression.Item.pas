@@ -1,0 +1,53 @@
+unit Interpreter.Model.Expression.Item;
+
+interface
+
+uses Interpreter.Model.Interfaces, System.Classes;
+
+Type
+  TModelExpressionItem = class(TInterfacedObject, iExpression)
+    private
+      FLista : TStringList;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iExpression;
+      function Interpreter(Value: iContext): iExpression;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelExpressionItem }
+
+constructor TModelExpressionItem.Create;
+begin
+  FLista := TStringList.Create;
+end;
+
+destructor TModelExpressionItem.Destroy;
+begin
+  FLista.Free;
+  inherited;
+end;
+
+function TModelExpressionItem.Interpreter(Value: iContext): iExpression;
+begin
+  ExtractStrings([' '], [], PWideChar(Value.Entrada), FLista);
+  if Pos('VENDIDO O ITEM', UpperCase(Value.Saida)) > 0 then
+    Value.Saida := FLista[1];
+  if Pos('CANCELADO O ITEM', UpperCase(Value.Saida)) > 0 then
+    Value.Saida := FLista[1];
+  if Pos('DEVOLVIDO O ITEM', UpperCase(Value.Saida)) > 0 then
+    Value.Saida := FLista[1];
+
+end;
+
+class function TModelExpressionItem.New: iExpression;
+begin
+  Result := Self.Create;
+end;
+
+end.
