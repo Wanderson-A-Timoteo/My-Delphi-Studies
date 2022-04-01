@@ -1,0 +1,69 @@
+unit Memento.Model.Cliente;
+
+interface
+
+uses Memento.Model.Interfaces, Memento.Model.Memento;
+
+Type
+  TModelCliente = class(TInterfacedObject, iCliente, iMemento<iCliente>)
+    private
+      FNome : String;
+      FMemento : iMementoZelador<iCliente>;
+      function GetNome : String;
+      procedure SetNome(const Value : String);
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iCliente;
+      property Nome : String read GetNome write SetNome;
+      function Memento : iMemento<iCliente>;
+      function Save(Key : String) : iMemento<iCliente>;
+      function Restore(Key : String) : iCliente;
+  end;
+
+implementation
+
+{ TModelCliente }
+
+constructor TModelCliente.Create;
+begin
+  FMemento := TModelMemento.New;
+end;
+
+destructor TModelCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelCliente.GetNome: String;
+begin
+  Result := FNome;
+end;
+
+function TModelCliente.Memento: iMemento<iCliente>;
+begin
+  Result := Self;
+end;
+
+class function TModelCliente.New: iCliente;
+begin
+  Result := Self.Create;
+end;
+
+function TModelCliente.Restore(Key: String): iCliente;
+begin
+
+end;
+
+function TModelCliente.Save(Key: String): iMemento<iCliente>;
+begin
+  Result := Self;
+end;
+
+procedure TModelCliente.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+end.

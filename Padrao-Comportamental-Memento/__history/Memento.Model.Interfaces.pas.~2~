@@ -1,0 +1,19 @@
+unit Memento.Model.Interfaces;
+
+interface
+
+type
+
+  iMemento<t> = interface
+    ['{5E32A07F-4BBD-41C4-B717-D8C241B34CC1}']
+    function Save(Key : String) : iMemento<t>;
+    function Restore(Key : String) : t;
+  end;
+
+  iMementoZelador<t> = interface
+    ['{C821E48B-CA8E-432E-9872-70D05DC13C97}']
+  end;
+
+implementation
+
+end.
