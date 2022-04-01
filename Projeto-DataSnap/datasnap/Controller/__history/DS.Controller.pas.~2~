@@ -1,0 +1,12 @@
+unit DS.Controller;
+
+interface
+
+type
+  TController = class
+
+  end;
+
+implementation
+
+end.

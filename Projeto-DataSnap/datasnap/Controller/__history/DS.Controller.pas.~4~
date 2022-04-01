@@ -1,0 +1,18 @@
+unit DS.Controller;
+
+interface
+
+uses
+  DS.Model.Entidade.Factory;
+
+type
+  TController = class
+    private
+      FEntidades : TModelEntidadeFactory;
+    public
+      function Entidades : TModelEntidadeFactory;
+  end;
+
+implementation
+
+end.

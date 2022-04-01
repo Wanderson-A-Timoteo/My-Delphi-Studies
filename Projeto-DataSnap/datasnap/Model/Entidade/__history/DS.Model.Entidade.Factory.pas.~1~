@@ -1,0 +1,7 @@
+unit DS.Model.Entidade.Factory;
+
+interface
+
+implementation
+
+end.
