@@ -1,0 +1,7 @@
+unit Observer.Model.Pedido;
+
+interface
+
+implementation
+
+end.

@@ -1,0 +1,44 @@
+unit Observer.Model.Interfaces;
+
+interface
+
+type
+  TEvDisplay = procedure (Value : String) of object;
+
+  TPedido = record
+    Produto : String;
+    Setor : String;
+  end;
+
+  iObserver = interface
+    ['{161EB732-5581-4341-9C81-ED1BBBFE96F5}']
+    function Update(Value : TPedido) : iObserver;
+  end;
+
+  iSubject = interface
+    ['{240F633B-FCC8-4C08-B13A-B580845F4538}']
+    function AddObserver(Value : iObserver) : iSubject;
+    function RemoveObserver(Value : iObserver) : iSubject;
+    function Notify(Value : TPedido) : iSubject;
+  end;
+
+  iPedidoOrigem = interface
+    ['{F5539B2E-0F4E-4CF2-9D65-3F96BE06C2C0}']
+    function Display(Value : TEvDisplay) : iPedidoOrigem;
+    function Observer : iObserver;
+  end;
+
+  iPedidoDestino = interface
+    ['{F4EB9BB9-0F04-4B21-9710-9A85EEC39B69}']
+  end;
+
+  iPedido = interface
+    ['{E3BB9D22-E0C4-4C27-89E5-4E92AC0E7072}']
+  end;
+
+
+
+
+implementation
+
+end.

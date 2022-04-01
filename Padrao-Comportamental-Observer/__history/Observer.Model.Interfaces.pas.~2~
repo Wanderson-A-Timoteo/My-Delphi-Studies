@@ -1,0 +1,17 @@
+unit Observer.Model.Interfaces;
+
+interface
+
+type
+  TEvDisplay = procedure (Value : String) of object;
+
+  TPedido = record
+    Produto : String;
+    Setor : String;
+  end;
+
+
+
+implementation
+
+end.

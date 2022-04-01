@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Observer.View.Principal" Type="System.String" Value="Observer\View\Principal" Category="General" IsBrowsable="False" />
+</TgConfig>

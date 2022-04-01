@@ -1,0 +1,7 @@
+unit Observer.Model.Interfaces;
+
+interface
+
+implementation
+
+end.

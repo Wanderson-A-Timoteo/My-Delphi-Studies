@@ -1,0 +1,72 @@
+unit Observer.Model.Cozinha;
+
+interface
+
+uses Observer.Model.Interfaces, System.Generics.Collections;
+
+Type
+  TModelCozinha = class(TInterfacedObject, iPedidoDestino, iObserver)
+  private
+    FLista : TList<TPedido>;
+    FDisplay : TEvDisplay;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iPedidoDestino;
+    function ReceberPedido(Value: TPedido): iPedidoDestino;
+    function FinalizarPedido(Value: TPedido): iPedidoDestino;
+    function Display(Value: TEvDisplay): iPedidoOrigem;
+    function Observer : iObserver;
+    function Update(Value : TPedido) : iObserver;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelCozinha }
+
+constructor TModelCozinha.Create;
+begin
+  FLista := TList<TPedido>.Create;
+end;
+
+destructor TModelCozinha.Destroy;
+begin
+  FreeAndNil(FLista);
+  inherited;
+end;
+
+function TModelCozinha.Display(Value: TEvDisplay): iPedidoOrigem;
+begin
+  Result := Self;
+  FDisplay := Value;
+end;
+
+function TModelCozinha.FinalizarPedido(Value: TPedido): iPedidoDestino;
+begin
+  Result := Self;
+end;
+
+class function TModelCozinha.New: iPedidoDestino;
+begin
+  Result := Self.Create;
+end;
+
+function TModelCozinha.Observer: iObserver;
+begin
+
+end;
+
+function TModelCozinha.ReceberPedido(Value: TPedido): iPedidoDestino;
+begin
+
+end;
+
+function TModelCozinha.Update(Value: TPedido): iObserver;
+begin
+
+end;
+
+end.
