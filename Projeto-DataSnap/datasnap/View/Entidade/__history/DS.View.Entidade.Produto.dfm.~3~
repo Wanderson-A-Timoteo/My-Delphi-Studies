@@ -1,0 +1,6 @@
+object Produto: TProduto
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 283
+  Width = 427
+end

@@ -6,8 +6,7 @@ uses
   System.SysUtils, System.Classes, DS.Model.Conexao.Firedac, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.JSON, DataSetConverter4D.Helper,
-  DataSetConverter4D.Impl;
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.JSON;
 
 type
   TModelEntidadeProduto = class(TDataModule)
@@ -33,13 +32,11 @@ implementation
 function TModelEntidadeProduto.Get(const Key: String): TJsonArray;
 begin
   FDQuery1.Close;
-  FDQuery1.SQL.Clear;
   FDQuery1.SQL.Add('SELECT * FROM PRODUTO');
   if Key <> '' then
     FDQuery1.SQL.Add(' WHERE CODIGO = ' + Key);
 
   FDQuery1.Open;
-  Result := FDQuery1.AsJSONArray;
 end;
 
 end.

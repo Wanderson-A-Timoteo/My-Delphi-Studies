@@ -27,10 +27,9 @@ object WebModule1: TWebModule1
   end
   object DSRESTWebDispatcher1: TDSRESTWebDispatcher
     Server = DSServer1
-    OnFormatResult = DSRESTWebDispatcher1FormatResult
     WebDispatch.PathInfo = 'datasnap*'
-    Left = 88
-    Top = 27
+    Left = 96
+    Top = 75
   end
   object DSServerClass1: TDSServerClass
     OnGetClass = DSServerClass1GetClass

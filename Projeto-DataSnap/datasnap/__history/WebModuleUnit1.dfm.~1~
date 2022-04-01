@@ -20,23 +20,22 @@ object WebModule1: TWebModule1
     end>
   BeforeDispatch = WebModuleBeforeDispatch
   Height = 333
-  Width = 706
+  Width = 414
   object DSServer1: TDSServer
-    Left = 280
-    Top = 27
+    Left = 96
+    Top = 11
   end
   object DSRESTWebDispatcher1: TDSRESTWebDispatcher
     Server = DSServer1
-    OnFormatResult = DSRESTWebDispatcher1FormatResult
     WebDispatch.PathInfo = 'datasnap*'
-    Left = 88
-    Top = 27
+    Left = 96
+    Top = 75
   end
   object DSServerClass1: TDSServerClass
     OnGetClass = DSServerClass1GetClass
     Server = DSServer1
-    Left = 384
-    Top = 27
+    Left = 200
+    Top = 11
   end
   object ServerFunctionInvoker: TPageProducer
     HTMLFile = 'templates/serverfunctioninvoker.html'
@@ -102,11 +101,5 @@ object WebModule1: TWebModule1
     Server = DSServer1
     Left = 208
     Top = 248
-  end
-  object ServerEntidadeProduto: TDSServerClass
-    OnGetClass = ServerEntidadeProdutoGetClass
-    Server = DSServer1
-    Left = 416
-    Top = 107
   end
 end

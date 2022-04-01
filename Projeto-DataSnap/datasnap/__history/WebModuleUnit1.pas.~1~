@@ -9,7 +9,7 @@ uses
   DataSnap.DSAuth,
   Datasnap.DSProxyJavaScript, IPPeerServer, Datasnap.DSMetadata,
   Datasnap.DSServerMetadata, Datasnap.DSClientMetadata, Datasnap.DSCommonServer,
-  Datasnap.DSHTTP, DS.View.Entidade.Produto, System.JSON, Data.DBXCommon;
+  Datasnap.DSHTTP;
 
 type
   TWebModule1 = class(TWebModule)
@@ -21,7 +21,6 @@ type
     WebFileDispatcher1: TWebFileDispatcher;
     DSProxyGenerator1: TDSProxyGenerator;
     DSServerMetaDataProvider1: TDSServerMetaDataProvider;
-    ServerEntidadeProduto: TDSServerClass;
     procedure DSServerClass1GetClass(DSServerClass: TDSServerClass;
       var PersistentClass: TPersistentClass);
     procedure ServerFunctionInvokerHTMLTag(Sender: TObject; Tag: TTag;
@@ -34,11 +33,6 @@ type
       const AFileName: string; Request: TWebRequest; Response: TWebResponse;
       var Handled: Boolean);
     procedure WebModuleCreate(Sender: TObject);
-    procedure ServerEntidadeProdutoGetClass(DSServerClass: TDSServerClass;
-      var PersistentClass: TPersistentClass);
-    procedure DSRESTWebDispatcher1FormatResult(Sender: TObject;
-      var ResultVal: TJSONValue; const Command: TDBXCommand;
-      var Handled: Boolean);
   private
     { Private declarations }
     FServerFunctionInvokerAction: TWebActionItem;
@@ -57,30 +51,10 @@ implementation
 
 uses ServerMethodsUnit1, Web.WebReq;
 
-procedure TWebModule1.DSRESTWebDispatcher1FormatResult(Sender: TObject;
-  var ResultVal: TJSONValue; const Command: TDBXCommand; var Handled: Boolean);
-  var
-    lcvJSONValue: TJSONValue;
-begin
-  lcvJSONValue := ResultVal;
-  try
-    ResultVal := TJSONArray(lcvJSONValue).Remove(0);
-  finally
-    lcvJSONValue.Free;
-  end;
-  Handled := true;
-end;
-
 procedure TWebModule1.DSServerClass1GetClass(
   DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
 begin
   PersistentClass := ServerMethodsUnit1.TServerMethods1;
-end;
-
-procedure TWebModule1.ServerEntidadeProdutoGetClass(
-  DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
-begin
-  PersistentClass := DS.View.Entidade.Produto.TProduto;
 end;
 
 procedure TWebModule1.ServerFunctionInvokerHTMLTag(Sender: TObject; Tag: TTag;

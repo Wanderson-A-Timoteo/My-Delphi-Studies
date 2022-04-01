@@ -9,7 +9,7 @@ uses
   DataSnap.DSAuth,
   Datasnap.DSProxyJavaScript, IPPeerServer, Datasnap.DSMetadata,
   Datasnap.DSServerMetadata, Datasnap.DSClientMetadata, Datasnap.DSCommonServer,
-  Datasnap.DSHTTP, DS.View.Entidade.Produto, System.JSON, Data.DBXCommon;
+  Datasnap.DSHTTP, DS.View.Entidade.Produto;
 
 type
   TWebModule1 = class(TWebModule)
@@ -36,9 +36,6 @@ type
     procedure WebModuleCreate(Sender: TObject);
     procedure ServerEntidadeProdutoGetClass(DSServerClass: TDSServerClass;
       var PersistentClass: TPersistentClass);
-    procedure DSRESTWebDispatcher1FormatResult(Sender: TObject;
-      var ResultVal: TJSONValue; const Command: TDBXCommand;
-      var Handled: Boolean);
   private
     { Private declarations }
     FServerFunctionInvokerAction: TWebActionItem;
@@ -56,20 +53,6 @@ implementation
 {$R *.dfm}
 
 uses ServerMethodsUnit1, Web.WebReq;
-
-procedure TWebModule1.DSRESTWebDispatcher1FormatResult(Sender: TObject;
-  var ResultVal: TJSONValue; const Command: TDBXCommand; var Handled: Boolean);
-  var
-    lcvJSONValue: TJSONValue;
-begin
-  lcvJSONValue := ResultVal;
-  try
-    ResultVal := TJSONArray(lcvJSONValue).Remove(0);
-  finally
-    lcvJSONValue.Free;
-  end;
-  Handled := true;
-end;
 
 procedure TWebModule1.DSServerClass1GetClass(
   DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);

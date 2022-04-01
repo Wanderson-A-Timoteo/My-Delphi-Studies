@@ -1,4 +1,4 @@
-program datasnap;
+﻿program datasnap;
 {$APPTYPE GUI}
 
 {$R *.dres}
@@ -14,7 +14,7 @@ uses
   DS.Model.Entidade.Produto in 'Model\Entidade\DS.Model.Entidade.Produto.pas' {ModelEntidadeProduto: TDataModule},
   DS.Controller in 'Controller\DS.Controller.pas',
   DS.Model.Entidade.Factory in 'Model\Entidade\DS.Model.Entidade.Factory.pas',
-  DS.View.Entidade.Produto in 'View\Entidade\DS.View.Entidade.Produto.pas' {Produto: TDataModule};
+  DS.View.Entidade.Produto in 'View\Entidade\DS.View.Entidade.Produto.pas' {DataModule2: TDataModule};
 
 {$R *.res}
 
@@ -25,6 +25,6 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TModelEntidadeProduto, ModelEntidadeProduto);
-  Application.CreateForm(TProduto, Produto);
+  Application.CreateForm(TDataModule2, DataModule2);
   Application.Run;
 end.
