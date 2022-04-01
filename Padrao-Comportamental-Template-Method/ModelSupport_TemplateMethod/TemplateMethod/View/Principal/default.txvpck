@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="chq8hxrav0k_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:TemplateMethod:TemplateMethod.View.Principal.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:TemplateMethod:TemplateMethod.View.Principal.@unitclass.Form2" />
+      <reference referencedUin="delphi:l_ast:src:TemplateMethod:TemplateMethod.View.Principal.@unitclass.Form2" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:TemplateMethod:TemplateMethod.View.Principal.TForm2">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,89,81" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:TemplateMethod:TemplateMethod.View.Principal.TAbstractClass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="175,94,177,114" />
+      <reference referencedUin="delphi:e_method:src:TemplateMethod:TemplateMethod.View.Principal.TAbstractClass.PrimitiveOperation()">
+        <property name="bounds" value="175,94,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:TemplateMethod:TemplateMethod.View.Principal.TAbstractClass.PrimitiveOperation1()">
+        <property name="bounds" value="175,94,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:TemplateMethod:TemplateMethod.View.Principal.TAbstractClass.TemplateMethod()">
+        <property name="bounds" value="175,94,0,0" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::db0ttc2lvhr_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="395,154,279,98" />
+      <reference referencedUin="design:link:::e4lktibehql_l:db0ttc2lvhr_n">
+        <property name="bounds" value="175,94,0,0" />
+        <property name="sourceAnchor" value="409,181" />
+        <property name="targetAnchor" value="352,181" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:@supplierRole:design:link:::e4lktibehql_l:db0ttc2lvhr_n">
+          <property name="bounds" value="303,162,99,16" />
+        </reference>
+      </reference>
+      <reference referencedUin="design:link:::9cb6jw889ym_l:db0ttc2lvhr_n">
+        <property name="bounds" value="175,94,0,0" />
+        <property name="sourceAnchor" value="454,243" />
+        <property name="targetAnchor" value="352,243" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:@supplierRole:design:link:::9cb6jw889ym_l:db0ttc2lvhr_n">
+          <property name="bounds" value="316,224,73,16" />
+        </reference>
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:TemplateMethod:TemplateMethod.View.Principal.TConcreteClass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="175,234,177,99" />
+      <reference referencedUin="delphi:e_method:src:TemplateMethod:TemplateMethod.View.Principal.TConcreteClass.PrimitiveOperation()">
+        <property name="bounds" value="175,94,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:TemplateMethod:TemplateMethod.View.Principal.TConcreteClass.PrimitiveOperation1()">
+        <property name="bounds" value="175,94,0,0" />
+      </reference>
+      <reference referencedUin="delphi:l_gnt:src:TemplateMethod:TemplateMethod.View.Principal.TConcreteClass:TemplateMethod.View.Principal.TAbstractClass">
+        <property name="bounds" value="175,94,0,0" />
+        <property name="sourceAnchor" value="263,234" />
+        <property name="targetAnchor" value="263,208" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

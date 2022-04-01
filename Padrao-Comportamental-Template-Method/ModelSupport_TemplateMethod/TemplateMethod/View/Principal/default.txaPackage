@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <node uin="db0ttc2lvhr_n">
+    <property name="$metaclass" value="Pattern" />
+    <property name="$name" value="Template Method" />
+    <property name="PatternUPID" value="{2004-11-30-7-31-41-548-68842}" />
+    <link uin="e4lktibehql_l">
+      <property name="$metaclass" value="DesignPatternLink" />
+      <property name="$name" value="TAbstractClass" />
+      <property name="@supplierRole" value="_TemplateContext" />
+      <participant referencedUin="design:node:::db0ttc2lvhr_n" role="Client" />
+      <participant referencedUin="delphi:e_class:src:TemplateMethod:TemplateMethod.View.Principal.TAbstractClass" role="Supplier" />
+    </link>
+    <link uin="9cb6jw889ym_l">
+      <property name="$metaclass" value="DesignPatternLink" />
+      <property name="$name" value="TConcreteClass" />
+      <property name="@supplierRole" value="_Implementor" />
+      <participant referencedUin="design:node:::db0ttc2lvhr_n" role="Client" />
+      <participant referencedUin="delphi:e_class:src:TemplateMethod:TemplateMethod.View.Principal.TConcreteClass" role="Supplier" />
+    </link>
+  </node>
+</nodeSet>
