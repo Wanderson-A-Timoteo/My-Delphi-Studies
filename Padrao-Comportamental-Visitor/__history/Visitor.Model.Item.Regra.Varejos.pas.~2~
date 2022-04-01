@@ -1,0 +1,48 @@
+unit Visitor.Model.Item.Regra.Varejos;
+
+interface
+
+uses Visitor.Model.Interfaces;
+
+Type
+  TModelItemRegraVarejo = class(TInterfacedObject, iItemRegras)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iItemRegras;
+    function PrecoVenda: Currency;
+    function PrecoPromocao: Currency;
+  end;
+
+implementation
+
+{ TModelItemRegraVarejo }
+
+constructor TModelItemRegraVarejo.Create;
+begin
+
+end;
+
+destructor TModelItemRegraVarejo.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelItemRegraVarejo.New: iItemRegras;
+begin
+  Result := Self.Create;
+end;
+
+function TModelItemRegraVarejo.PrecoPromocao: Currency;
+begin
+
+end;
+
+function TModelItemRegraVarejo.PrecoVenda: Currency;
+begin
+
+end;
+
+end.
