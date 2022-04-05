@@ -17,6 +17,7 @@ type
   public
     { Public declarations }
     function Produto (const Key : String) : TJsonArray;
+    procedure acceptProduto(const Key : String; jObject : TJSONObject);
   end;
 
   {$METHODINFO OFF}
@@ -32,6 +33,11 @@ implementation
 
 { TProduto }
 
+procedure TProduto.acceptProduto(const Key: String; jObject: TJSONObject);
+begin
+  FController.Entidades.Produto.Put(Key, jObject);
+end;
+
 procedure TProduto.DataModuleCreate(Sender: TObject);
 begin
   FController := TController.Create;
@@ -42,7 +48,7 @@ begin
   FreeAndNil(FController);
 end;
 
-function TProduto.Produto(const Key: String): TJsonArray;
+function TProduto.Produto(const Key : String) : TJsonArray;
 begin
   Result := FController.Entidades.Produto.Get(Key);
 end;
