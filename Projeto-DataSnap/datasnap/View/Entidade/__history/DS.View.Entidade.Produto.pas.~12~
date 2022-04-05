@@ -18,7 +18,6 @@ type
     { Public declarations }
     function Produto (const Key : String) : TJsonArray;
     procedure acceptProduto(const Key : String; jObject : TJSONObject);
-    procedure updateProduto(const Key : String; jObject : TJSONObject);
   end;
 
   {$METHODINFO OFF}
@@ -52,11 +51,6 @@ end;
 function TProduto.Produto(const Key : String) : TJsonArray;
 begin
   Result := FController.Entidades.Produto.Get(Key);
-end;
-
-procedure TProduto.updateProduto(const Key: String; jObject: TJSONObject);
-begin
-  FController.Entidades.Produto.Post(Key, jObject);
 end;
 
 end.

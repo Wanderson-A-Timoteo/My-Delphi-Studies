@@ -56,7 +56,7 @@ end;
 
 procedure TProduto.updateProduto(const Key: String; jObject: TJSONObject);
 begin
-  FController.Entidades.Produto.Post(Key, jObject);
+FController.Entidades.Produto.Post(Key, jObject);
 end;
 
 end.

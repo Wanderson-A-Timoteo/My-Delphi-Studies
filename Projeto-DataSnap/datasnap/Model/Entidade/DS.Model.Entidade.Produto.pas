@@ -16,8 +16,9 @@ type
     { Private declarations }
   public
     { Public declarations }
-    function Get(const Key : String = '') : TJsonArray;
-    function Put(const Key : String; jObject : TJSONObject) : TModelEntidadeProduto;
+    function Get(const Key  : String = '')                    : TJsonArray;
+    function Put(const Key  : String; jObject : TJSONObject)  : TModelEntidadeProduto;
+    function Post(const Key : String; jObject : TJSONObject)  : TModelEntidadeProduto;
   end;
 
 var
@@ -41,6 +42,19 @@ begin
 
   FDQuery1.Open;
   Result := FDQuery1.AsJSONArray;
+end;
+
+function TModelEntidadeProduto.Post(const Key: String;
+  jObject: TJSONObject): TModelEntidadeProduto;
+begin
+  Result := Self;
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO');
+  FDQuery1.ParamByName('CODIGO').Value := Key;
+  FDQuery1.Open;
+  FDQuery1.RecordFromJSONObject(jObject);
+  FDQuery1.ApplyUpdates(-1);
 end;
 
 function TModelEntidadeProduto.Put(const Key : String; jObject : TJSONObject) : TModelEntidadeProduto;
