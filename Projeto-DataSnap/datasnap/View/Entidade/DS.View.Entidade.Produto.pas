@@ -19,6 +19,7 @@ type
     function Produto (const Key : String) : TJsonArray;
     procedure acceptProduto(const Key : String; jObject : TJSONObject);
     procedure updateProduto(const Key : String; jObject : TJSONObject);
+    procedure cancelProduto(const Key : String);
   end;
 
   {$METHODINFO OFF}
@@ -37,6 +38,11 @@ implementation
 procedure TProduto.acceptProduto(const Key: String; jObject: TJSONObject);
 begin
   FController.Entidades.Produto.Put(Key, jObject);
+end;
+
+procedure TProduto.cancelProduto(const Key: String);
+begin
+  FController.Entidades.Produto.Delete(Key);
 end;
 
 procedure TProduto.DataModuleCreate(Sender: TObject);

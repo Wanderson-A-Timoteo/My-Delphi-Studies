@@ -19,6 +19,7 @@ type
     function Get(const Key  : String = '')                    : TJsonArray;
     function Put(const Key  : String; jObject : TJSONObject)  : TModelEntidadeProduto;
     function Post(const Key : String; jObject : TJSONObject)  : TModelEntidadeProduto;
+    function Delete(const Key : String) : TModelEntidadeProduto;
   end;
 
 var
@@ -32,11 +33,21 @@ implementation
 
 { TModelEntidadeProduto }
 
+function TModelEntidadeProduto.Delete(const Key: String): TModelEntidadeProduto;
+begin
+  Result := Self;
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('DELETE FROM PRODUTOS WHERE CODIGO = :CODIGO');
+  FDQuery1.ParamByName('CODIGO').Value := Key;
+  FDQuery1.ExecSQL;
+end;
+
 function TModelEntidadeProduto.Get(const Key: String): TJsonArray;
 begin
   FDQuery1.Close;
   FDQuery1.SQL.Clear;
-  FDQuery1.SQL.Add(' SELECT * FROM PRODUTO ');
+  FDQuery1.SQL.Add(' SELECT * FROM PRODUTOS ');
   if Key <> '' then
     FDQuery1.SQL.Add(' WHERE CODIGO = ' + Key);
 
@@ -50,7 +61,7 @@ begin
   Result := Self;
   FDQuery1.Close;
   FDQuery1.SQL.Clear;
-  FDQuery1.SQL.Add('SELECT * FROM PRODUTO WHERE CODIGO = :CODIGO');
+  FDQuery1.SQL.Add('SELECT * FROM PRODUTOS WHERE CODIGO = :CODIGO');
   FDQuery1.ParamByName('CODIGO').Value := Key;
   FDQuery1.Open;
   FDQuery1.RecordFromJSONObject(jObject);
@@ -62,7 +73,7 @@ begin
   Result := Self;
   FDQuery1.Close;
   FDQuery1.SQL.Clear;
-  FDQuery1.SQL.Add('SELECT * FROM PRODUTO WHERE 1=2');
+  FDQuery1.SQL.Add('SELECT * FROM PRODUTOS WHERE 1=2');
   FDQuery1.Open;
   FDQuery1.FromJSONObject(jObject);
   FDQuery1.ApplyUpdates(-1);
