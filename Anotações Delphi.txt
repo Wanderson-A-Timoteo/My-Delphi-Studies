@@ -73,3 +73,6 @@ estiver ativo ele simplesmente destrói.
 	ISP - Princípio da Segregação de Interfaces (Criar interfaces com responsabilidades unicas)
 	DIP - Princípio da Inversão de Dependência (classes ou modulos maiores não devem depender de modulos menores, ambos devem depender de interfaces)
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

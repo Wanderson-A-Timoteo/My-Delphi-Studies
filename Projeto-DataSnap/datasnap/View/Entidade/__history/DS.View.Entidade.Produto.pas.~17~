@@ -1,0 +1,69 @@
+unit DS.View.Entidade.Produto;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, System.JSON, DS.Controller, Datasnap.DSServer,
+  Datasnap.DSAuth;
+
+  {$METHODINFO ON}
+
+type
+  TProduto = class(TDataModule)
+    procedure DataModuleCreate(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
+  private
+    { Private declarations }
+    FController : TController;
+  public
+    { Public declarations }
+    function Produto (const Key : String) : TJsonArray;
+    procedure acceptProduto(const Key : String; jObject : TJSONObject);
+    procedure updateProduto(const Key : String; jObject : TJSONObject);
+    procedure cancelProduto(const Key : String);
+  end;
+
+  {$METHODINFO OFF}
+
+var
+  Produto: TProduto;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TProduto }
+
+procedure TProduto.acceptProduto(const Key: String; jObject: TJSONObject);
+begin
+  FController.Entidades.Produto.Put(Key, jObject);
+end;
+
+procedure TProduto.cancelProduto(const Key: String);
+begin
+  FController.Entidades.Produto.Delete(Key);
+end;
+
+procedure TProduto.DataModuleCreate(Sender: TObject);
+begin
+  FController := TController.Create;
+end;
+
+procedure TProduto.DataModuleDestroy(Sender: TObject);
+begin
+  FreeAndNil(FController);
+end;
+
+function TProduto.Produto(const Key : String) : TJsonArray;
+begin
+  Result := FController.Entidades.Produto.Get(Key);
+end;
+
+procedure TProduto.updateProduto(const Key: String; jObject: TJSONObject);
+begin
+  FController.Entidades.Produto.Post(Key, jObject);
+end;
+
+end.

@@ -112,6 +112,7 @@ object WebModule1: TWebModule1
   end
   object DSAuthenticationManager1: TDSAuthenticationManager
     OnUserAuthenticate = DSAuthenticationManager1UserAuthenticate
+    OnUserAuthorize = DSAuthenticationManager1UserAuthorize
     Roles = <>
     Left = 296
     Top = 24

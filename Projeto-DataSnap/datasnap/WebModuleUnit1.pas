@@ -9,7 +9,8 @@ uses
   DataSnap.DSAuth,
   Datasnap.DSProxyJavaScript, IPPeerServer, Datasnap.DSMetadata,
   Datasnap.DSServerMetadata, Datasnap.DSClientMetadata, Datasnap.DSCommonServer,
-  Datasnap.DSHTTP, DS.View.Entidade.Produto, System.JSON, Data.DBXCommon;
+  Datasnap.DSHTTP, DS.View.Entidade.Produto, System.JSON, Data.DBXCommon,
+  Data.DBXPlatform;
 
 type
   TWebModule1 = class(TWebModule)
@@ -43,6 +44,8 @@ type
     procedure DSAuthenticationManager1UserAuthenticate(Sender: TObject;
       const Protocol, Context, User, Password: string; var valid: Boolean;
       UserRoles: TStrings);
+    procedure DSAuthenticationManager1UserAuthorize(Sender: TObject;
+      AuthorizeEventObject: TDSAuthorizeEventObject; var valid: Boolean);
   private
     { Private declarations }
     FServerFunctionInvokerAction: TWebActionItem;
@@ -66,8 +69,24 @@ procedure TWebModule1.DSAuthenticationManager1UserAuthenticate(Sender: TObject;
   UserRoles: TStrings);
 begin
   valid := false;
-  if (User='teste') and (Password='123') then
-    valid := true;
+  if (User='teste') and (Password='1') then
+  begin
+  UserRoles.Add('Nivel1');
+  valid := true;
+  end;
+
+  if (User='teste') and (Password='2') then
+  begin
+  UserRoles.Add('Nivel2');
+  valid := true;
+  end;
+end;
+
+procedure TWebModule1.DSAuthenticationManager1UserAuthorize(Sender: TObject;
+  AuthorizeEventObject: TDSAuthorizeEventObject; var valid: Boolean);
+begin
+  if not valid then
+    GetInvocationMetadata.ResponseCode := 403;
 end;
 
 procedure TWebModule1.DSRESTWebDispatcher1FormatResult(Sender: TObject;

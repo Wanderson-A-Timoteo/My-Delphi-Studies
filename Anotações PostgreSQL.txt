@@ -1,0 +1,540 @@
+
+POSTGRESQL
+
+sudo -i -u postgres
+sudo systemctl restart postgres
+Logar como usuario master: 			 psql -U postgres
+Mosta informações de criação de usuarios:  man createuser
+Criar usuario: createuser -dPs <nomeusuario>
+
+
+CREATE DATABASE <nome-do-banco>;
+Quando executamos o comando acima será criado um banco com as propriedades abaixo por default, mas caso preciso poderemos mudar cada campo:
+
+
+CREATE DATABASE <nome-do-abnco>
+WITH
+OWNER = proprietario
+ENCODING = 'UTF8'
+LC_COLLATE = 'pt_BR.UTF-8'
+LC_CTYPE = 'pt_BR.UTF-8'
+TABLESPACE = pg_default
+CONNECTION LIMIT -1;
+
+
+Dar permissão para outro usuario acessar e fazer alterações no abnco
+GRANT ALL ON DATABASE <nome-do-banco> TO <nome-do-outro-usuario-cadastrado>;
+ 
+
+Excluir banco de dados
+DROP DATABASE <nome-do-banco>;
+
+
+Lista de todos os bancos que temos no servidor
+SELECT datname FROM pg_database;
+ 
+
+CRIAR TABELA
+CREATE TABLE IF NOT EXISTS categoria(
+	id SERIAL PRIMARY KEY NOT NULL,
+	descricao VARCHAR(100) NOT NULL,
+	status INTEGER DEFAULT 1	
+)
+
+
+CREATE TABLE IF NOT EXISTS produto(
+	id SERIAL PRIMARY KEY NOT NULL,
+	descricao VARCHAR(100) NOT NULL,
+	qtd INTEGER NOT NULL,
+	valor DECIMAL(10,2) NOT NULL,
+	categoria_id INTEGER NOT NULL,
+	status INTEGER DEFAULT 1,
+	FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+)
+
+
+Inserir elementos na tabela
+INSERT INTO <nome-tabela> (coluna1, coluna2, coluna3...) 
+VALUES (dado1, dado2, dado3...);
+
+
+Exemplo 
+INSERT INTO categoria (descricao) VALUES ('Bebidas')
+Será inserido na tabela categoria a descrição Bebidas com o id automatico e sequencial por isso não é preciso informar e status será preenchido com 1 que é o padrão.
+
+
+Inserir varios registros ao mesmo tempo
+INSERT INTO produto(descricao, qtd, valor, categoria_id) 
+VALUES 
+('Coca-Cola', 10, 7.50, 1),
+('Coca-Cola', 10, 7.50, 1),
+('Coca-Cola', 10, 7.50, 1),
+.
+.
+.
+('Coca-Cola', 10, 7.50, 1);
+
+
+
+Consulta simples, o * significa todos os elementos da tabela
+SELECT * FROM categoria
+
+
+Consulta apenas a descricao e status da tabela categoria 
+SELECT descricao, status FROM categoria
+
+
+Consulta os elementos da tabela categoria com o status = 0.
+SELECT id, descricao, status FROM categoria WHERE status = 0
+
+
+Consulta  de elementos diferentes
+SELECT * FROM categoria WHERE descricao = 'Doces' OR descricao = 'Massas'
+
+
+Consulta de estoque baixo
+SELECT descricao, qtd
+FROM produto
+WHERE qtd < 10;
+
+
+Consulta de produtos menor ou igual a 15 reais
+SELECT descricao, valor
+FROM produto
+WHERE valor <= 15.00;
+
+
+Consulta de produtos maior ou igual a 15 reais
+SELECT descricao, valor
+FROM produto
+WHERE valor >= 15.00;
+
+
+Ordenação de resultados em consultas- clausulas ORDER BY, Sintaxe:
+SELECT colunas
+FROM tabela
+WHERE condições (se for necessario)
+ORDER BY coluna, coluna ASC | DESC
+
+
+Exemplo: Ordenar de forma crescente (não é necessario ASC, pois por default já inclui)
+SELECT * 
+FROM categoria 
+ORDER BY id ASC 
+
+
+Ordenação decrescente 
+SELECT * 
+FROM categoria 
+ORDER BY id DESC
+
+
+Consulta a tabela produto ordenando pela descricao e caso tenha algum registro sem descrição preenchida, 
+podemos mandar ela para o inicio da lista (FIRST) ou para o final da lista (LAST).
+SELECT descricao 
+FROM produto
+ORDER BY descricao NULLS FIRST | LAST;
+
+
+Consulta mostra descrição do produto ordenando pelo preço menor que 100 do menor para o maior
+SELECT descricao, valor 
+FROM produto
+WHERE valor > 100.00
+ORDER BY valor;
+
+
+Consulta mostra descrição do produto ordenando pelo preço menor que 100 do maior para o menor
+SELECT descricao, valor 
+FROM produto
+WHERE valor < 100.00
+ORDER BY valor DESC;
+
+
+Consulta de relacionamentos entre as tabelas produtos e categoria
+SELECT * 
+FROM produto 
+INNER JOIN categoria 
+ON produto.categoria_id = categoria.id
+
+
+Calculo simples (acrescenta uma coluna de nome total com os valores da multiplicação entre a qtd * valor).
+SELECT descricao, qtd, valor, (qtd * valor) 
+AS total 
+FROM produto
+
+
+Soma
+SELECT categoria.descricao, sum(produto.valor)
+FROM categoria 
+INNER JOIN produto 
+ON produto.categoria_id = categoria.id 
+GROUP BY categoria.descricao
+
+
+SELECT * 
+FROM categoria 
+INNER JOIN produto 
+ON produto.categoria_id = categoria.id
+
+
+SELECT categoria.descricao, produto.descricao, produto.valor
+FROM categoria 
+INNER JOIN produto 
+ON produto.categoria_id = categoria.id
+
+
+LIMIT e OFFSET - Permite obter uma parte especificada das tuplas (linhas) retornadas por uma consulta SQL.
+Sintaxe:
+SELECT colunas(s)
+FROM tabela
+ORDER BY coluna (opcional, porém recomendado)
+LIMIT (contagem | ALL)
+OFFSET deslocamento;
+
+Contagem = quantidade de tuplas a exibir
+ALL = mostrar todas as tuplas
+deslocamento = quantas tuplas devem ser puladas antes de iniciar a contagem do LIMIT
+
+
+Exemplo: Ordenação de produtos pelo valor, mostrando apenas os 4 mais baratos
+SELECT * 
+FROM produto
+ORDER BY valor
+LIMIT 4;
+
+
+Exemplo: Ordenação de produtos pelo valor, mostrando apenas os 4 mais caros
+SELECT * 
+FROM produto
+ORDER BY valor DESC
+LIMIT 3;
+
+ 
+
+Exemplo: Suponha que quero ver o terceiro e o quarto produto mais barato, ordenação de produtos pelo valor, mostrando apenas os 4 mais baratos
+SELECT * 
+FROM produto
+ORDER BY valor
+LIMIT 4;
+
+
+Ordenação de produtos pelo valor, porém será iginirado os 2 primeiros produtos mais caros, 
+exibindo apartir do terceiro produto mais caro
+SELECT * 
+FROM produto
+ORDER BY valor DESC
+LIMIT 3
+OFFSET 2;
+
+
+Operadores de comparação 
+Comparar dois valores e retornar um valor booleano, dependendo do resultado da comparação.
+
+< menor que
+> maior que
+<= menor igual a
+>= maior igual a
+= igual a 
+<> ou != diferente de (Não igual a)
+
+
+
+Exemplo: Consultar os produtos com preço maior que 20.00
+SELECT descricao, valor
+FROM produto
+WHERE valor > 20.00;
+
+
+
+Exemplo: Consultar os produtos com descrição e quantidade menor ou igual a 20 e maior que 10 itens.
+SELECT descricao, qtd
+FROM produto
+WHERE qtd <= 20
+AND qtd > 10;
+
+
+
+Consulta todos os produtos exceto um produto especifico.
+SELECT descricao, qtd
+FROM produto
+WHERE descricao != 'Coca-Cola';
+
+
+Operador BETWEEN  e NOT BETWEEN
+Comparação | Intervalo de Daos
+Sintaxe:
+SELECT ...
+FROM ...
+WHERE coluna 
+BETWEEN valor1 
+AND valor2;
+ 
+
+Consulta os produtos com o preco entre 10 e 20 reais.
+SELECT descricao, valor
+FROM produto
+WHERE valor 
+BETWEEN 10.00 
+AND 20.00;
+
+
+
+Consulta os produtos com o preco entre 10 a 20 reais e os produtos entre 100 a 400 reais.
+SELECT descricao, valor
+FROM produto
+WHERE valor 
+BETWEEN 10.00 
+AND 20.00
+OR valor
+BETWEEN 100.00
+AND 400.00;
+
+
+
+Consulta os produtos com o preco entre 10 a 15 reais que tenha uma quantidade menor que 20 itens.
+SELECT descricao, valor, qtd
+FROM produto
+WHERE valor 
+BETWEEN 10.00 
+AND 15.00
+AND qtd < 20;
+
+
+Consulta os produtos que não tem os preços entre 10 a 20 reais.
+SELECT descricao, valor, qtd
+FROM produto
+WHERE valor 
+NOT BETWEEN 10.00 
+AND 20.00;
+
+
+Clausula UPDATE
+Atualizar ou editar registro na tabela
+Sintaxe:
+
+UPDATE tabela
+SET coluna = novo_valor
+WHERE coluna = valor_índice
+
+
+Exemplo: Categoria com id = 5 sem descrição
+UPDATE categoria 
+SET descricao = 'Perfumaria' 
+WHERE id = 5
+
+Exemplo: Produto com id = 16 sem descrição
+UPDATE produto 
+SET descricao = 'Cerveja' 
+WHERE id = 16
+
+
+Exemplo: Aumentar o preço de todos os produtos em 10%.
+UPDATE produto
+SET valor = valor * 1.10;
+
+
+Clausula DELETE FROM e TRUNCATE TABLE - Apagar tuplas de uma tabela.
+DELET FROM: Excluir tuplas especificas de uma tabela. 
+TRUNCATE TABLE: Apagar todos os registros de uma tabela
+
+
+Deletar ou apagar um registro pelo id 
+DELETE FROM <nome_tabela> 
+WHERE id = <id_do_produto para deletar>
+
+
+Deletar ou apagar o registro da tabela produto pela descricao
+DELETE FROM produto
+WHERE descricao = 'Alcatra';
+
+
+Deletar ou apagar os registro da tabela produto que tenham a quantidade menor ou igual a 5
+DELETE FROM produto
+WHERE qtd <= 5;
+
+
+Apaga tos os registros da tabela produto
+TRUNCATE TABLE produto;
+
+
+
+Funçoes de Agregação - Computar um valor unico a partir de um conjunto de valores de entrada.
+Funções basicas:
+COUNT - Para contagem de itens
+MAX - Valor maximo
+MIN - Valor minimo
+AVG - Valor medio
+SUM - Somatorio
+
+
+Contar quantos produtos estão cadastrados
+SELECT COUNT(*) FROM produto; 
+
+O * conta quantas tuplas tem cadastradas na tabela mesmo que tenha itens nulo e insere o nome da coluna criada como Qtde Produtos
+SELECT COUNT(*) AS "Qtde Produtos" FROM produto;
+
+
+Conta quantos registros em descrição tem na tabela, se tiver produtos sem descrição não serão contados, mas se tiver 2 ou mais produtos com a mesma descrição 
+serão todos contados.
+SELECT COUNT(descricao) FROM produto;
+
+
+Conta quantos registros em descrição tem na tabela,  mas se tiver produtos com a mesma descrição serão contados como apenas 1 registro.
+SELECT COUNT(DISTINCT descricao) FROM produto;
+
+
+Consulta os produtos com valor maior ou igual a 50 reais
+SELECT COUNT(*) FROM produto
+WHERE valor >= 50.00;
+
+
+
+Consulta os produtos com valor maior ou igual a 50 reais, e coloca o nome da coluna com a contagem de PrecoMaior50
+SELECT COUNT(*) AS "PrecoMaior50" FROM produto
+WHERE valor >= 50.00;
+
+
+Qual é o maior preço da tabela produto
+SELECT MAX(valor) FROM produto;
+
+
+Qual é o menor preço da tabela produto
+SELECT MAX(valor) FROM produto;
+
+
+Qual é a soma de preço da tabela produto
+SELECT SUM(valor) FROM produto;
+
+
+Qual é a média de preço da tabela produto? o resultado é com varias casa decimais
+SELECT AVG(valor) FROM produto;
+
+
+Qual é a média de preço da tabela produto, aredondando os valor para 2 casas decimais
+SELECT ROUND(AVG(valor),2) FROM produto;
+
+
+Aliases ou apelidos com a clausula AS
+Criar coluna com nomes especificos que desejamos durante uma consulta
+SELECT descricao AS "Nome do Produto"
+FROM produto;
+
+
+Criar colunas com nomes especificos que desejamos durante uma consulta
+SELECT id AS "Código do Produto", descricao AS "Nome do Produto", qtd AS "Quantidade de Produtos", 
+valor AS "Preço do Produto"
+FROM produto;
+
+
+Criar colunas e tabela com nomes especificos que desejamos durante uma consulta
+SELECT id AS "Código do Produto", descricao AS "Nome do Produto", qtd AS "Quantidade de Produtos", 
+valor AS "Preço do Produto"
+FROM produto AS "Produtos";
+
+
+JOINS
+Clausulas JOIN (junções) são usadas para combinar dados provenientes de duas ou mais tabelas em um unico conjunto de resultados, 
+baseado em condições de join especificadas.
+
+INNER JOIN -  Retorna linhas quando houver pelo menos uma correspondencia em ambas as tabelas.
+OUTER JOIN - Retorna linhas mesmo quando não houver pelo menos uma correspondencia em uma das tabelas (ou ambas). 
+O OUTER JOIN divide-se em LEFT JOIN, RIGHT JOIN e CROSS JOIN
+
+Clausula ON
+A clausula ON determina a condição de join, que indica como as tabelas devem ser comparadas.
+A comparação ocorre por meio de um relacionamento entre a chave primaria na primeira tabela e chave estrangeira na segunda tabela.
+
+Sintaxe:
+SELECT colunas
+FROM tabela1
+	INNER JOIN tabela2
+		ON tabela1.coluna = tabela2.coluna
+	INNER JOIN tabelaN
+		ON tabela1.coluna = tabelaN.coluna
+WHERE condições_filtragem;
+
+
+Exemplo: Nesta consulta retorna o codigo do pedido o nome do produto e a quantidade de itens do produto que foram pedidos.
+SELECT pedidos.cod_pedido, produtos.nome_produto, pedidos.qtd
+FROM pedidos
+INNER JOIN produtos
+ON pedidos.cod_produto = produtos.cod_produto;
+
+
+
+Exemplo: Nesta consulta retorna o codigo do pedido, o nome do produto, a quantidade de itens do produto que foram pedidos e o nome do cliente.
+SELECT PE.cod_pedido, CL.nome_cliente, PR.nome_produto, PE.qtde
+FROM pedidos PE
+INNER JOIN produtos PR
+ON PE.cod_produto = PR.cod_produto
+INNER JOIN clientes CL
+ON PE.cod_cliente = CL.cod_cliente
+WHERE PE.cod_pedido = 5;
+
+
+
+Exemplo: Nesta consulta retorna a quantidade de pedidos feito por um cliente
+SELECT PE.cod_pedido, CL.nome_cliente, PR.nome_produto
+FROM pedidos PE
+INNER JOIN produtos PR
+ON PE.cod_produto = PR.cod_produto
+INNER JOIN clientes CL
+ON PE.cod_cliente = CL.cod_cliente
+WHERE CL.cod_cliente = 2;
+
+
+
+Exemplo: Nesta consulta retorna a quantidade de produtos feito por um cliente e o valor total
+SELECT CL.nome_cliente AS Cliente, PR.nome_produto AS Produto, PE.qtde AS Quantidade, PE.cod_pedido AS Pedido, 
+PR.preco * PE.qtde AS Fatura
+FROM pedidos PE
+INNER JOIN clientes CL
+ON PE.cod_cliente = CL.cod_cliente
+INNER JOIN produtos PR
+ON PE.cod_produto = PR.cod_produto;
+
+
+
+VIEWS
+View (Exibição / Visão) é uma tabela virtual (estrutura de dados) baseada no conjunto de resultados de uma consulta SQL, criada a partir de um 
+conjunto de tabelas (ou outras views) presentes no banco, que servem com tabelas-base.
+Mostra sempre resultados de dados atualizados, pois o motor do banco de dados recria os dados toda vez que um usuário consulta a visão.
+
+Aplicações das Views
+- Simplificar o acesso a dados que estão armazenados em multiplas tabelas relacionadas
+- Implementar segurança nos dados de uma tabela, por exemplo criando uma visão que limite os dados que podem ser acessados, por meio de uma clausula WHERE
+- Prover isolamento de uma aplicação da estrutura especifica de tabelas do banco acessado. 
+
+Exemplo:
+CREATE OR REPLACE VIEW vendas AS
+	SELECT CL.nome_cliente AS Cliente, PR.nome_produto AS Produto, PE.qtde AS Quantidade, PE.cod_pedido AS Pedido, 
+		PR.preco * PE.qtde AS Fatura
+	FROM pedidos PE
+	INNER JOIN clientes CL
+		ON PE.cod_cliente = CL.cod_cliente
+	INNER JOIN produtos PR
+		ON PE.cod_produto = PR.cod_produto;
+
+
+Consulta cada cliente na tabela view (vendas) que foi criada e mostra o total de gasto de cada cliente.
+SELECT Cliente, SUM(Fatura)
+FROM vendas
+GROUP BY Cliente;
+
+
+Podemos alterar o nome da view 
+ALTER VIEW vendas RENAME TO faturas;
+
+
+Podemos excluir uma view
+DROP VIEW IF EXISTS faturas CASCADE;
+
+
+
+
+
+
+
+
+
+ 

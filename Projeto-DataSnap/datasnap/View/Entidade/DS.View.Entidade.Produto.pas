@@ -3,7 +3,8 @@ unit DS.View.Entidade.Produto;
 interface
 
 uses
-  System.SysUtils, System.Classes, System.JSON, DS.Controller;
+  System.SysUtils, System.Classes, System.JSON, DS.Controller, Datasnap.DSServer,
+  Datasnap.DSAuth;
 
   {$METHODINFO ON}
 
@@ -16,9 +17,13 @@ type
     FController : TController;
   public
     { Public declarations }
+    [TRoleAuth('Nivel1', 'Nivel2')]
     function Produto (const Key : String) : TJsonArray;
+    [TRoleAuth('Nivel2')]
     procedure acceptProduto(const Key : String; jObject : TJSONObject);
+    [TRoleAuth('Nivel2')]
     procedure updateProduto(const Key : String; jObject : TJSONObject);
+    [TRoleAuth('Nivel2')]
     procedure cancelProduto(const Key : String);
   end;
 
