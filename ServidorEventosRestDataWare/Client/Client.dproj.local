@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/04/08 14:21:52.000.717,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/04/08 16:21:03.933,=D:\Projetos\ws-delphi\Unit3.pas</Transaction>
+    <Transaction>2022/04/08 16:23:31.780,D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Unit4.dfm=D:\Projetos\ws-delphi\Unit3.dfm</Transaction>
+    <Transaction>2022/04/08 16:23:31.780,D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Unit4.pas=D:\Projetos\ws-delphi\Unit3.pas</Transaction>
+    <Transaction>2022/04/08 16:23:50.187,D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Client.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/04/08 16:26:53.090,D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Unit3.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Unit4.pas</Transaction>
+    <Transaction>2022/04/08 16:26:53.090,D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Unit3.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\ServidorEventosRestDataWare\Client\Unit4.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

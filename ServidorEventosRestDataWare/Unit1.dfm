@@ -14,11 +14,11 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
-    Left = 272
-    Top = 224
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
+    Left = 200
+    Top = 136
+    Width = 233
+    Height = 49
+    Caption = 'Ativar ou Desativar Servidor'
     TabOrder = 0
     OnClick = Button1Click
   end
