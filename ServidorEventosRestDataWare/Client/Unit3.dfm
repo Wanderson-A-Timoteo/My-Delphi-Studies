@@ -26,23 +26,32 @@ object Form3: TForm3
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
-  object Button1: TButton
+  object btnSelect: TButton
     Left = 16
     Top = 263
     Width = 75
     Height = 25
     Caption = 'Select'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = btnSelectClick
   end
-  object Button2: TButton
+  object btnInsert: TButton
     Left = 97
     Top = 263
     Width = 75
     Height = 25
     Caption = 'Insert'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = btnInsertClick
+  end
+  object btnUpdate: TButton
+    Left = 178
+    Top = 263
+    Width = 75
+    Height = 25
+    Caption = 'Update'
+    TabOrder = 3
+    OnClick = btnUpdateClick
   end
   object RESTDWDataBase1: TRESTDWDataBase
     Active = True

@@ -15,11 +15,13 @@ type
     RESTDWDataBase1: TRESTDWDataBase;
     RESTDWClientSQL1: TRESTDWClientSQL;
     DBGrid1: TDBGrid;
-    Button1: TButton;
+    btnSelect: TButton;
     DataSource1: TDataSource;
-    Button2: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    btnInsert: TButton;
+    btnUpdate: TButton;
+    procedure btnSelectClick(Sender: TObject);
+    procedure btnInsertClick(Sender: TObject);
+    procedure btnUpdateClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +35,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm3.Button1Click(Sender: TObject);
+procedure TForm3.btnSelectClick(Sender: TObject);
 begin
   RESTDWClientSQL1.Close;
   RESTDWClientSQL1.SQL.Clear;
@@ -41,21 +43,49 @@ begin
   RESTDWClientSQL1.Open;
 end;
 
-procedure TForm3.Button2Click(Sender: TObject);
+procedure TForm3.btnInsertClick(Sender: TObject);
 var
   vErro: string;
 begin
+  // Injetando os dados
+  //RESTDWClientSQL1.SQL.Clear;
+  //RESTDWClientSQL1.SQL.Add('INSERT INTO PRODUTOS (CODIGO, NOME, DESCRICAO, QUANTIDADE) VALUES (:CODIGO, :NOME, :DESCRICAO, :QUANTIDADE)');
+  //RESTDWClientSQL1.ParamByName('CODIGO').Value := '11';
+  ///RESTDWClientSQL1.ParamByName('NOME').Value := 'Moranfo';
+  //RESTDWClientSQL1.ParamByName('DESCRICAO').Value := 'Morango Nacional';
+  //RESTDWClientSQL1.ParamByName('QUANTIDADE').Value := '10';
+
+
+ // if not RESTDWClientSQL1.ExecSQL(vErro) then
+ //   raise Exception.Create(vErro);
+
+
+  // Injetando os dados de forma RAD
   RESTDWClientSQL1.Append;
   RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
   RESTDWClientSQL1.FieldByName('NOME').AsString := 'RestDataWare';
   RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Teste RestDataware';
   RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
-  RESTDWClientSQL1.Post;
+
 
   if not RESTDWClientSQL1.ApplyUpdates(vErro) then
     raise Exception.Create(vErro);
 
+end;
 
+procedure TForm3.btnUpdateClick(Sender: TObject);
+var
+  vErro: string;
+begin
+  RESTDWClientSQL1.Edit;
+  RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
+  RESTDWClientSQL1.FieldByName('NOME').AsString := 'RestDataWare';
+  RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Update Teste RestDataware';
+  RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
+  RESTDWClientSQL1.Post;
+
+  if not RESTDWClientSQL1.ApplyUpdates(vErro) then
+    raise Exception.Create(vErro);
 end;
 
 end.
