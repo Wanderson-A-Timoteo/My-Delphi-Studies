@@ -11,6 +11,7 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object DBGrid1: TDBGrid
@@ -52,6 +53,15 @@ object Form3: TForm3
     Caption = 'Update'
     TabOrder = 3
     OnClick = btnUpdateClick
+  end
+  object Delete: TButton
+    Left = 259
+    Top = 263
+    Width = 75
+    Height = 25
+    Caption = 'Delete'
+    TabOrder = 4
+    OnClick = DeleteClick
   end
   object RESTDWDataBase1: TRESTDWDataBase
     Active = True

@@ -19,11 +19,15 @@ type
     DataSource1: TDataSource;
     btnInsert: TButton;
     btnUpdate: TButton;
+    Delete: TButton;
     procedure btnSelectClick(Sender: TObject);
     procedure btnInsertClick(Sender: TObject);
     procedure btnUpdateClick(Sender: TObject);
+    procedure DeleteClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    procedure ApplyUpdate(aDataSet : TDataSet);
   public
     { Public declarations }
   end;
@@ -43,9 +47,15 @@ begin
   RESTDWClientSQL1.Open;
 end;
 
-procedure TForm3.btnInsertClick(Sender: TObject);
+procedure TForm3.ApplyUpdate(aDataSet: TDataSet);
 var
   vErro: string;
+begin
+    if not RESTDWClientSQL1.ApplyUpdates(vErro) then
+      raise Exception.Create(vErro);
+end;
+
+procedure TForm3.btnInsertClick(Sender: TObject);
 begin
   // Injetando os dados
   //RESTDWClientSQL1.SQL.Clear;
@@ -67,15 +77,9 @@ begin
   RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Teste RestDataware';
   RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
 
-
-  if not RESTDWClientSQL1.ApplyUpdates(vErro) then
-    raise Exception.Create(vErro);
-
 end;
 
 procedure TForm3.btnUpdateClick(Sender: TObject);
-var
-  vErro: string;
 begin
   RESTDWClientSQL1.Edit;
   RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
@@ -84,8 +88,18 @@ begin
   RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
   RESTDWClientSQL1.Post;
 
-  if not RESTDWClientSQL1.ApplyUpdates(vErro) then
-    raise Exception.Create(vErro);
+end;
+
+procedure TForm3.DeleteClick(Sender: TObject);
+begin
+  RESTDWClientSQL1.Delete;
+
+end;
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+  RESTDWClientSQL1.AfterPost   := ApplyUpdate;
+  RESTDWClientSQL1.AfterDelete := ApplyUpdate;
 end;
 
 end.

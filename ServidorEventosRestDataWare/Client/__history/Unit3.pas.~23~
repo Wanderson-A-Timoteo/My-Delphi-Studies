@@ -1,0 +1,98 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uDWAbout, uRESTDWPoolerDB,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  Data.DB, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, uDWConstsData;
+
+type
+  TForm3 = class(TForm)
+    RESTDWDataBase1: TRESTDWDataBase;
+    RESTDWClientSQL1: TRESTDWClientSQL;
+    DBGrid1: TDBGrid;
+    btnSelect: TButton;
+    DataSource1: TDataSource;
+    btnInsert: TButton;
+    btnUpdate: TButton;
+    Delete: TButton;
+    procedure btnSelectClick(Sender: TObject);
+    procedure btnInsertClick(Sender: TObject);
+    procedure btnUpdateClick(Sender: TObject);
+    procedure DeleteClick(Sender: TObject);
+    procedure RESTDWClientSQL1AfterPost(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.btnSelectClick(Sender: TObject);
+begin
+  RESTDWClientSQL1.Close;
+  RESTDWClientSQL1.SQL.Clear;
+  RESTDWClientSQL1.SQL.Add('SELECT * FROM PRODUTOS;');
+  RESTDWClientSQL1.Open;
+end;
+
+procedure TForm3.btnInsertClick(Sender: TObject);
+begin
+  // Injetando os dados
+  //RESTDWClientSQL1.SQL.Clear;
+  //RESTDWClientSQL1.SQL.Add('INSERT INTO PRODUTOS (CODIGO, NOME, DESCRICAO, QUANTIDADE) VALUES (:CODIGO, :NOME, :DESCRICAO, :QUANTIDADE)');
+  //RESTDWClientSQL1.ParamByName('CODIGO').Value := '11';
+  ///RESTDWClientSQL1.ParamByName('NOME').Value := 'Moranfo';
+  //RESTDWClientSQL1.ParamByName('DESCRICAO').Value := 'Morango Nacional';
+  //RESTDWClientSQL1.ParamByName('QUANTIDADE').Value := '10';
+
+
+ // if not RESTDWClientSQL1.ExecSQL(vErro) then
+ //   raise Exception.Create(vErro);
+
+
+  // Injetando os dados de forma RAD
+  RESTDWClientSQL1.Append;
+  RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
+  RESTDWClientSQL1.FieldByName('NOME').AsString := 'RestDataWare';
+  RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Teste RestDataware';
+  RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
+
+end;
+
+procedure TForm3.btnUpdateClick(Sender: TObject);
+begin
+  RESTDWClientSQL1.Edit;
+  RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
+  RESTDWClientSQL1.FieldByName('NOME').AsString := 'RestDataWare';
+  RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Update Teste RestDataware';
+  RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
+  RESTDWClientSQL1.Post;
+
+end;
+
+procedure TForm3.DeleteClick(Sender: TObject);
+begin
+  RESTDWClientSQL1.Delete;
+
+end;
+
+procedure TForm3.RESTDWClientSQL1AfterPost(DataSet: TDataSet);
+var
+  vErro: string;
+begin
+    if not RESTDWClientSQL1.ApplyUpdates(vErro) then
+      raise Exception.Create(vErro);
+end;
+
+end.
