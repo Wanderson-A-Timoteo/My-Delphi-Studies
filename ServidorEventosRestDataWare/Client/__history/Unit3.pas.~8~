@@ -42,8 +42,6 @@ begin
 end;
 
 procedure TForm3.Button2Click(Sender: TObject);
-var
-  vErro: string;
 begin
   RESTDWClientSQL1.Append;
   RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
@@ -51,10 +49,6 @@ begin
   RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Teste RestDataware';
   RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
   RESTDWClientSQL1.Post;
-
-  if not RESTDWClientSQL1.ApplyUpdates(vErro) then
-    raise Exception.Create(vErro);
-
 
 end;
 

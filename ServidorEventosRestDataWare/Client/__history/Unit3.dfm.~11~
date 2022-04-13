@@ -35,15 +35,6 @@ object Form3: TForm3
     TabOrder = 1
     OnClick = Button1Click
   end
-  object Button2: TButton
-    Left = 97
-    Top = 263
-    Width = 75
-    Height = 25
-    Caption = 'Insert'
-    TabOrder = 2
-    OnClick = Button2Click
-  end
   object RESTDWDataBase1: TRESTDWDataBase
     Active = True
     Compression = True

@@ -17,9 +17,7 @@ type
     DBGrid1: TDBGrid;
     Button1: TButton;
     DataSource1: TDataSource;
-    Button2: TButton;
     procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,26 +34,8 @@ implementation
 procedure TForm3.Button1Click(Sender: TObject);
 begin
   RESTDWClientSQL1.Close;
-  RESTDWClientSQL1.SQL.Clear;
   RESTDWClientSQL1.SQL.Add('SELECT * FROM PRODUTOS;');
   RESTDWClientSQL1.Open;
-end;
-
-procedure TForm3.Button2Click(Sender: TObject);
-var
-  vErro: string;
-begin
-  RESTDWClientSQL1.Append;
-  RESTDWClientSQL1.FieldByName('CODIGO').AsString := '10';
-  RESTDWClientSQL1.FieldByName('NOME').AsString := 'RestDataWare';
-  RESTDWClientSQL1.FieldByName('DESCRICAO').AsString := 'Teste RestDataware';
-  RESTDWClientSQL1.FieldByName('QUANTIDADE').AsString := '11';
-  RESTDWClientSQL1.Post;
-
-  if not RESTDWClientSQL1.ApplyUpdates(vErro) then
-    raise Exception.Create(vErro);
-
-
 end;
 
 end.
