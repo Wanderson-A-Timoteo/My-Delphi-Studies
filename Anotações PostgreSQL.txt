@@ -22,7 +22,7 @@ TABLESPACE = pg_default
 CONNECTION LIMIT -1;
 
 
-Dar permissão para outro usuario acessar e fazer alterações no abnco
+Dar permissão para outro usuario acessar e fazer alterações no banco
 GRANT ALL ON DATABASE <nome-do-banco> TO <nome-do-outro-usuario-cadastrado>;
  
 

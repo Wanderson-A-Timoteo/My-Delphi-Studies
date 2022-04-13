@@ -2,8 +2,8 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Caption = 'Form3'
-  ClientHeight = 201
-  ClientWidth = 447
+  ClientHeight = 360
+  ClientWidth = 721
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,16 +13,47 @@ object Form3: TForm3
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 16
+    Top = 8
+    Width = 545
+    Height = 249
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 16
+    Top = 263
+    Width = 75
+    Height = 25
+    Caption = 'Select'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
   object RESTDWDataBase1: TRESTDWDataBase
-    Active = False
+    Active = True
     Compression = True
     CriptOptions.Use = False
     CriptOptions.Key = 'RDWBASEKEY256'
-    AuthenticationOptions.AuthorizationOption = rdwAONone
+    MyIP = '127.0.0.1'
+    AuthenticationOptions.AuthorizationOption = rdwAOBasic
+    AuthenticationOptions.OptionParams.AuthDialog = True
+    AuthenticationOptions.OptionParams.CustomDialogAuthMessage = 'Protected Space...'
+    AuthenticationOptions.OptionParams.Custom404TitleMessage = '(404) The address you are looking for does not exist'
+    AuthenticationOptions.OptionParams.Custom404BodyMessage = '404'
+    AuthenticationOptions.OptionParams.Custom404FooterMessage = 'Take me back to <a href="./">Home REST Dataware'
+    AuthenticationOptions.OptionParams.Username = 'testserver'
+    AuthenticationOptions.OptionParams.Password = 'testserver'
     Proxy = False
     ProxyOptions.Port = 8888
     PoolerService = 'localhost'
     PoolerPort = 8082
+    PoolerName = 'TDataModule2.RESTDWPoolerDB1'
     StateConnection.AutoCheck = False
     StateConnection.InTime = 1000
     RequestTimeOut = 10000
@@ -43,7 +74,44 @@ object Form3: TForm3
     UserAgent = 
       'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l' +
       'ike Gecko) Chrome/41.0.2227.0 Safari/537.36'
-    Left = 120
-    Top = 80
+    Left = 648
+    Top = 16
+  end
+  object RESTDWClientSQL1: TRESTDWClientSQL
+    Active = False
+    Filtered = False
+    FieldDefs = <>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    BinaryCompatibleMode = False
+    MasterCascadeDelete = True
+    BinaryRequest = False
+    Datapacks = -1
+    DataCache = False
+    MassiveType = mtMassiveCache
+    Params = <>
+    DataBase = RESTDWDataBase1
+    UpdateTableName = 'PRODUTOS'
+    CacheUpdateRecords = True
+    AutoCommitData = False
+    AutoRefreshAfterCommit = False
+    ThreadRequest = False
+    RaiseErrors = True
+    ActionCursor = crHourGlass
+    ReflectChanges = False
+    Left = 648
+    Top = 88
+  end
+  object DataSource1: TDataSource
+    DataSet = RESTDWClientSQL1
+    Left = 456
+    Top = 128
   end
 end
