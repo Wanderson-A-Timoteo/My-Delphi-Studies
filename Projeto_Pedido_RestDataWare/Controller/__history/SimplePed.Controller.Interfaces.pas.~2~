@@ -1,0 +1,17 @@
+unit SimplePed.Controller.Interfaces;
+
+interface
+
+uses
+  SimplePed.Controller.Produto.Interfaces;
+
+type
+
+  iController = interface
+    ['{CB9E0130-BE09-4B55-BEC5-6970E07D9DEB}']
+    function Produto : iControllerProduto;
+  end;
+
+implementation
+
+end.

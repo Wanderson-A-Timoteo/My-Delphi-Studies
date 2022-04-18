@@ -1,0 +1,87 @@
+unit SimplePed.Controller.Pedido;
+
+interface
+
+uses
+  SimplePed.Controller.Pedido.Interfaces, Data.DB,
+  SimplePed.Model.Entidade.Pedido, SimplePed.Model.Pedido.Interfaces,
+  System.Generics.Collections;
+
+Type
+  TControllerPedido = class(TInterfacedObject, iControllerPedido)
+  private
+    FModel : iModelPedido;
+    FDataSource : TDataSource;
+    FList : TObjectList<TPEDIDO>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iControllerPedido;
+    function DataSource(aDataSource: TDataSource): iControllerPedido;
+    function Buscar: iControllerPedido;
+    function Insert: iControllerPedido;
+    function Delete: iControllerPedido;
+    function Update: iControllerPedido;
+    function Entidade: TPEDIDO;
+  end;
+
+implementation
+
+uses
+  SimplesPed.Model;
+
+{ TControllerPedido }
+
+function TControllerPedido.Buscar: iControllerPedido;
+begin
+  Result := Self;
+
+  if Assigned(FList) then
+    FList.Free;
+
+  FList := FModel.DAO.Find;
+end;
+
+constructor TControllerPedido.Create;
+begin
+  FModel := TModel.New.Pedido;
+end;
+
+function TControllerPedido.DataSource(
+  aDataSource: TDataSource): iControllerPedido;
+begin
+  Result := Self;
+end;
+
+function TControllerPedido.Delete: iControllerPedido;
+begin
+
+end;
+
+destructor TControllerPedido.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerPedido.Entidade: TPEDIDO;
+begin
+
+end;
+
+function TControllerPedido.Insert: iControllerPedido;
+begin
+
+end;
+
+class function TControllerPedido.New: iControllerPedido;
+begin
+  Result := Self.Create;
+end;
+
+function TControllerPedido.Update: iControllerPedido;
+begin
+
+end;
+
+end.

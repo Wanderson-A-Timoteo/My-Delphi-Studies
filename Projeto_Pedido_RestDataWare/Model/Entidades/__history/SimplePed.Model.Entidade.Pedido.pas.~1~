@@ -1,0 +1,7 @@
+unit SimplePed.Model.Entidade.Pedido;
+
+interface
+
+implementation
+
+end.

@@ -1,0 +1,17 @@
+unit SimplesPed.Model.Interfaces;
+
+interface
+
+uses
+  SimplePed.Model.Produto.Interfaces;
+
+type
+
+  iModel = interface
+    ['{2A108A7C-FAA6-42F5-8982-B70F1F79A212}']
+    function Produto : iModelProduto;
+  end;
+
+implementation
+
+end.

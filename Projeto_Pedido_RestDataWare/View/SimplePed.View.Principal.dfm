@@ -1,0 +1,190 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 647
+  ClientWidth = 694
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object edtID: TEdit
+    Left = 120
+    Top = 32
+    Width = 121
+    Height = 21
+    TabOrder = 0
+    Text = 'edtID'
+  end
+  object edtDESCRICAO: TEdit
+    Left = 120
+    Top = 59
+    Width = 426
+    Height = 21
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+  object edtVALORUNITARIO: TEdit
+    Left = 552
+    Top = 59
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = 'Edit1'
+  end
+  object DBGrid1: TDBGrid
+    Left = 120
+    Top = 86
+    Width = 553
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 32
+    Width = 75
+    Height = 25
+    Caption = 'Buscar'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 24
+    Top = 63
+    Width = 75
+    Height = 25
+    Caption = 'Inserir'
+    TabOrder = 5
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 24
+    Top = 94
+    Width = 75
+    Height = 25
+    Caption = 'Update'
+    TabOrder = 6
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 24
+    Top = 125
+    Width = 75
+    Height = 25
+    Caption = 'Delete'
+    TabOrder = 7
+    OnClick = Button4Click
+  end
+  object DBGrid2: TDBGrid
+    Left = 120
+    Top = 256
+    Width = 553
+    Height = 120
+    DataSource = DataSource2
+    TabOrder = 8
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 120
+    Top = 392
+    Width = 410
+    Height = 21
+    KeyField = 'ID'
+    ListField = 'DESCRICAO'
+    ListSource = DataSource1
+    TabOrder = 9
+  end
+  object Edit1: TEdit
+    Left = 536
+    Top = 393
+    Width = 73
+    Height = 21
+    TabOrder = 10
+    Text = 'Edit1'
+  end
+  object Button5: TButton
+    Left = 615
+    Top = 392
+    Width = 58
+    Height = 23
+    Caption = 'Add'
+    TabOrder = 11
+    OnClick = Button5Click
+  end
+  object DBGrid3: TDBGrid
+    Left = 120
+    Top = 432
+    Width = 553
+    Height = 120
+    DataSource = DataSource3
+    TabOrder = 12
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button6: TButton
+    Left = 24
+    Top = 256
+    Width = 75
+    Height = 25
+    Caption = 'Buscar'
+    TabOrder = 13
+    OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 24
+    Top = 287
+    Width = 75
+    Height = 25
+    Caption = 'Inserir'
+    TabOrder = 14
+    OnClick = Button7Click
+  end
+  object Button8: TButton
+    Left = 24
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Update'
+    TabOrder = 15
+  end
+  object Button9: TButton
+    Left = 24
+    Top = 349
+    Width = 75
+    Height = 25
+    Caption = 'Delete'
+    TabOrder = 16
+  end
+  object DataSource1: TDataSource
+    OnDataChange = DataSource1DataChange
+    Left = 616
+    Top = 96
+  end
+  object DataSource2: TDataSource
+    Left = 624
+    Top = 264
+  end
+  object DataSource3: TDataSource
+    Left = 624
+    Top = 440
+  end
+end

@@ -1,0 +1,20 @@
+unit SimplePed.Model.Pedido.Interfaces;
+
+interface
+
+uses
+  SimplePed.Model.Entidade.Pedido, SimpleInterface, Data.DB;
+
+type
+  iModelPedido = interface
+    ['{3B23189E-D0F9-4218-92BD-FDC3F7977D50}']
+    function Entidade : TPEDIDO; overload;
+    function Entidade (aEntidade : TPEDIDO) : iModelPedido;
+    function DAO : iSimpleDAO<TPEDIDO>;
+    function DataSource(aDataSource : TDataSource) : iModelPedido;
+    //function Itens : iModelPedidoItens;
+  end;
+
+implementation
+
+end.

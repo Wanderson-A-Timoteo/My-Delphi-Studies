@@ -1,0 +1,88 @@
+unit SimplePed.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids, SimplePed.Controller.Interfaces,
+  SimplePed.Controller.Produto.Interfaces;
+
+type
+  TForm6 = class(TForm)
+    edtID: TEdit;
+    edtDESCRICAO: TEdit;
+    edtVALORUNITARIO: TEdit;
+    DBGrid1: TDBGrid;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    DataSource1: TDataSource;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+    FController : iController;
+    FProduto : iControllerProduto;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+uses
+  SimplesPed.Controller;
+
+{$R *.dfm}
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+  FProduto.Buscar;
+end;
+
+procedure TForm6.Button2Click(Sender: TObject);
+begin
+  FProduto.Entidade.DESCRICAO := edtDESCRICAO.Text;
+  FProduto.Entidade.VALORUNITARIO := StrToCurr(edtVALORUNITARIO.Text);
+  FProduto.Insert;
+  FProduto.Buscar;
+end;
+
+procedure TForm6.Button3Click(Sender: TObject);
+begin
+  FProduto.Entidade.ID := StrToInt(edtID.Text);
+  FProduto.Entidade.DESCRICAO := edtDESCRICAO.Text;
+  FProduto.Entidade.VALORUNITARIO := StrToCurr(edtVALORUNITARIO.Text);
+  FProduto.Update;
+  FProduto.Buscar;
+end;
+
+procedure TForm6.Button4Click(Sender: TObject);
+begin
+  FProduto.Entidade.ID := StrToInt(edtID.Text);
+  FProduto.Delete;
+  FProduto.Buscar;
+end;
+
+procedure TForm6.DataSource1DataChange(Sender: TObject; Field: TField);
+begin
+  edtID.Text := DataSource1.DataSet.FieldByName('ID').AsString;
+  edtDESCRICAO.Text := DataSource1.DataSet.FieldByName('DESCRICAO').AsString;
+  edtVALORUNITARIO.Text := DataSource1.DataSet.FieldByName('VALORUNITARIO').AsString;
+end;
+
+procedure TForm6.FormCreate(Sender: TObject);
+begin
+  FController := TController.New;
+  FProduto := FController.Produto.DataSource(DataSource1);
+end;
+
+end.

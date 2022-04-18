@@ -1,0 +1,46 @@
+unit SimplesPed.Controller;
+
+interface
+
+uses
+  SimplePed.Controller.Interfaces, SimplePed.Controller.Produto.Interfaces;
+
+Type
+  TController = class(TInterfacedObject, iController)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iController;
+      function Produto : iControllerProduto;
+  end;
+
+implementation
+
+uses
+  SimplePed.Controller.Produto;
+
+{ TController }
+
+constructor TController.Create;
+begin
+
+end;
+
+destructor TController.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TController.New: iController;
+begin
+  Result := Self.Create;
+end;
+
+function TController.Produto: iControllerProduto;
+begin
+  Result := TControllerProduto.New;
+end;
+
+end.

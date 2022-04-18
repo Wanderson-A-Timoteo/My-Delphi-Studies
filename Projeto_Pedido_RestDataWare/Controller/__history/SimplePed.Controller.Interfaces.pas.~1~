@@ -1,0 +1,7 @@
+unit SimplePed.Controller.Interfaces;
+
+interface
+
+implementation
+
+end.

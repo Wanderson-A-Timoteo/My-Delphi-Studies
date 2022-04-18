@@ -1,0 +1,37 @@
+unit SimplePed.Controller.Pedido;
+
+interface
+
+uses
+  SimplePed.Controller.Pedido.Interfaces;
+
+Type
+  TControllerPedido = class(TInterfacedObject, iControllerPedido)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iControllerPedido;
+  end;
+
+implementation
+
+{ TControllerPedido }
+
+constructor TControllerPedido.Create;
+begin
+
+end;
+
+destructor TControllerPedido.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerPedido.New: iControllerPedido;
+begin
+  Result := Self.Create;
+end;
+
+end.

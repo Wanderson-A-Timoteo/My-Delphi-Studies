@@ -1,0 +1,22 @@
+unit SimplePed.Controller.Pedido.Interfaces;
+
+interface
+
+uses
+  Data.DB, SimplePed.Model.Entidade.Pedido;
+
+type
+  iControllerPedido = interface
+    ['{8197E30B-2419-427E-896E-9A0AA0209030}']
+    function DataSource (aDataSource : TDataSource) : iControllerPedido;
+    function Buscar : iControllerPedido;
+    function Insert : iControllerPedido;
+    function Delete : iControllerPedido;
+    function Update : iControllerPedido;
+    function Entidade : TPEDIDO;
+    //function Itens : iControllerPedidoItens;
+  end;
+
+implementation
+
+end.

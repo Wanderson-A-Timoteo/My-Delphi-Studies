@@ -1,0 +1,94 @@
+unit SimplePed.Controller.Produto;
+
+interface
+
+uses
+  SimplePed.Controller.Produto.Interfaces, Data.DB,
+  SimplePed.Model.Entidade.Produto, SimplePed.Model.Produto.Interfaces,
+  System.Generics.Collections;
+
+Type
+  TControllerProduto = class(TInterfacedObject, iControllerProduto)
+  private
+    FModel : iModelProduto;
+    FDataSource : TDataSource;
+    FList : TObjectList<TPRODUTO>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iControllerProduto;
+    function DataSource(aDataSource: TDataSource): iControllerProduto;
+    function Buscar: iControllerProduto;
+    function Insert: iControllerProduto;
+    function Delete: iControllerProduto;
+    function Update: iControllerProduto;
+    function Entidade: TPRODUTO;
+  end;
+
+implementation
+
+uses
+  SimplesPed.Model;
+
+{ TControllerProduto }
+
+function TControllerProduto.Buscar: iControllerProduto;
+begin
+  Result := Self;
+
+  if Assigned(FList) then
+    FList.Free;
+
+  FList := FModel.DAO.Find;
+end;
+
+constructor TControllerProduto.Create;
+begin
+  FModel := TModel.New.Produto;
+end;
+
+function TControllerProduto.DataSource(
+  aDataSource: TDataSource): iControllerProduto;
+begin
+  Result := Self;
+  FDataSource := aDataSource;
+  FModel.DataSource(FDataSource);
+end;
+
+function TControllerProduto.Delete: iControllerProduto;
+begin
+  Result := Self;
+  FModel.DAO.Delete(FModel.Entidade);
+end;
+
+destructor TControllerProduto.Destroy;
+begin
+  if Assigned(FList) then
+    FList.Free;
+
+  inherited;
+end;
+
+function TControllerProduto.Entidade: TPRODUTO;
+begin
+  Result := FModel.Entidade;
+end;
+
+function TControllerProduto.Insert: iControllerProduto;
+begin
+  Result := Self;
+  FModel.DAO.Insert(FModel.Entidade);
+end;
+
+class function TControllerProduto.New: iControllerProduto;
+begin
+  Result := Self.Create;
+end;
+
+function TControllerProduto.Update: iControllerProduto;
+begin
+  Result := Self;
+  FModel.DAO.Update(FModel.Entidade);
+end;
+
+end.

@@ -1,0 +1,60 @@
+unit SimplesPed.Controller;
+
+interface
+
+uses
+  SimplePed.Controller.Interfaces, SimplePed.Controller.Produto.Interfaces,
+  SimplePed.Controller.Pedido.Interfaces;
+
+Type
+  TController = class(TInterfacedObject, iController)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iController;
+    function Produto: iControllerProduto;
+    function Pedido: iControllerPedido;
+    function PedidoItens: iControllerPedidoItens;
+  end;
+
+implementation
+
+uses
+  SimplePed.Controller.Produto, SimplePed.Controller.Pedido,
+  SimplePed.Controller.PedidoItens;
+
+{ TController }
+
+constructor TController.Create;
+begin
+
+end;
+
+destructor TController.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TController.New: iController;
+begin
+  Result := Self.Create;
+end;
+
+function TController.Pedido: iControllerPedido;
+begin
+  Result := TControllerPedido.New;
+end;
+
+function TController.PedidoItens: iControllerPedidoItens;
+begin
+  Result := TControllerPedidoItens.New;
+end;
+
+function TController.Produto: iControllerProduto;
+begin
+  Result := TControllerProduto.New;
+end;
+
+end.
