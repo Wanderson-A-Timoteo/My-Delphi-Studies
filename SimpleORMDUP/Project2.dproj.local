@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/09/15 15:01:38.000.166,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit6.pas</Transaction>
+    <Transaction>2018/09/15 15:18:36.000.143,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit6.pas</Transaction>
+    <Transaction>2018/10/03 11:21:02.000.522,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit6.pas</Transaction>
+    <Transaction>2018/10/08 16:17:45.166,=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit6.pas</Transaction>
+    <Transaction>2018/10/08 16:18:02.969,C:\Users\thuli\Desktop\SimpleORMDUP\Unit6.dfm=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit6.dfm</Transaction>
+    <Transaction>2018/10/08 16:18:02.969,C:\Users\thuli\Desktop\SimpleORMDUP\Unit6.pas=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Unit6.pas</Transaction>
+    <Transaction>2018/10/08 16:18:04.148,C:\Users\thuli\Desktop\SimpleORMDUP\Project2.dproj=C:\Users\thuli\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2018/10/08 16:18:22.729,=C:\Users\thuli\Desktop\SimpleORMDUP\Entidades\Entidade.Pedido.pas</Transaction>
+  </Transactions>
+</BorlandProject>

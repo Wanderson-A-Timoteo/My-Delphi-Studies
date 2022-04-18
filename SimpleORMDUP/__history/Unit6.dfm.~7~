@@ -1,0 +1,110 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 449
+  ClientWidth = 863
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 112
+    Top = 80
+    Width = 729
+    Height = 249
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Edit1: TEdit
+    Left = 112
+    Top = 13
+    Width = 121
+    Height = 21
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 112
+    Top = 40
+    Width = 289
+    Height = 21
+    TabOrder = 2
+    Text = 'Edit2'
+  end
+  object Edit3: TEdit
+    Left = 407
+    Top = 40
+    Width = 194
+    Height = 21
+    TabOrder = 3
+    Text = 'Edit3'
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 8
+    Width = 98
+    Height = 25
+    Caption = 'Find'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Left = 112
+    Top = 344
+    Width = 729
+    Height = 89
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 39
+    Width = 98
+    Height = 25
+    Caption = 'FindID'
+    TabOrder = 6
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 8
+    Top = 70
+    Width = 98
+    Height = 25
+    Caption = 'Insert'
+    TabOrder = 7
+    OnClick = Button3Click
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=D:\Bancos\Firebird\PDVUPDATES.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    LoginPrompt = False
+    Left = 728
+    Top = 32
+  end
+  object DataSource1: TDataSource
+    OnDataChange = DataSource1DataChange
+    Left = 616
+    Top = 136
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 792
+    Top = 120
+  end
+end
