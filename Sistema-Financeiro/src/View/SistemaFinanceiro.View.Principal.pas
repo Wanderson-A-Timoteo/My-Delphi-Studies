@@ -14,6 +14,7 @@ type
     menuAjuda: TMenuItem;
     menuCadastroPadrao: TMenuItem;
     procedure menuCadastroPadraoClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,9 +27,20 @@ var
 implementation
 
 uses
-  SistemaFinanceiro.View.CadastroPadrao;
+  SistemaFinanceiro.View.CadastroPadrao,
+  SistemaFinanceiro.View.Splash;
 
 {$R *.dfm}
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  frmSplash := TFrmSplash.Create(nil);
+  try
+    frmSplash.ShowModal;
+  finally
+    FreeAndNil(frmSplash);
+  end;
+end;
 
 procedure TfrmPrincipal.menuCadastroPadraoClick(Sender: TObject);
 begin

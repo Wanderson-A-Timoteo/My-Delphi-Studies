@@ -28,6 +28,10 @@ type
     Panel1: TPanel;
     btnCancelar: TButton;
     btnSalvar: TButton;
+    procedure btnIncluirClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,5 +44,25 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmCadastroPadrao.btnCancelarClick(Sender: TObject);
+begin
+  PnlPrincipal.ActiveCard := cardPesquisa;
+end;
+
+procedure TfrmCadastroPadrao.btnEditarClick(Sender: TObject);
+begin
+  PnlPrincipal.ActiveCard := cardCadastro;
+end;
+
+procedure TfrmCadastroPadrao.btnFecharClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmCadastroPadrao.btnIncluirClick(Sender: TObject);
+begin
+  PnlPrincipal.ActiveCard := cardCadastro;
+end;
 
 end.
