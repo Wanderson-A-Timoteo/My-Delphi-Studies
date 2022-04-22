@@ -532,8 +532,420 @@ DROP VIEW IF EXISTS faturas CASCADE;
 
 
 
+*************************************************************************************************************************************
+                        ******                                ****** 
+                        *       ********  **    *  *********   *    *      ***    *********    ***
+                        *       *      *  * *   *      *       *    *     *   *       *       *   *
+                        ***     *      *  *  *  *      *       *    *    *     *      *      *     *
+                        *       *      *  *   * *      *       *    *   * ***** *     *     * ***** *
+                        *       ********  *    **      *      ******   *         *    *    *         *   
+*************************************************************************************************************************************
+AULA 01
 
 
+-- Primeira Parte
+CREATE DATABASE "DBTESTE"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'pt_BR.UTF-8'
+    LC_CTYPE = 'pt_BR.UTF-8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+drop table IF EXISTS movimento;
+drop table IF EXISTS produtos;
+drop table IF EXISTS clientes;
+drop table IF EXISTS tmp;
+
+CREATE schema 
+
+CREATE TABLE IF NOT EXISTS public.produtos
+(
+	codigo serial NOT NULL,
+	descricao character(30) NOT NULL,
+    CONSTRAINT "pk_produto" PRIMARY KEY (codigo)
+);
+
+	
+CREATE TABLE IF NOT EXISTS public.movimento
+(
+	numero integer NOT NULL,
+    cod_produto integer NOT NULL,
+	data_atual date NOT NULL DEFAULT DATE(NOW()),
+	valor numeric(15,2) NOT NULL default 0,
+    CONSTRAINT "pk_movimento" PRIMARY KEY (numero),
+    CONSTRAINT fk_produtos FOREIGN KEY (cod_produto)
+        REFERENCES public.produtos (codigo) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION	
+);
+
+
+CREATE TABLE IF NOT EXISTS public.tmp
+(
+	codigo serial NOT NULL,
+	descricao character(30) NOT NULL
+);
+
+
+ALTER TABLE IF EXISTS public.tmp
+    ADD CONSTRAINT pk_tmp PRIMARY KEY (codigo);
+
+ALTER TABLE IF EXISTS public.produtos
+    ADD COLUMN unidade character(2);
+	
+	
+ALTER TABLE IF EXISTS public.movimento
+    ADD CONSTRAINT fk_produtos FOREIGN KEY (cod_produto)
+    REFERENCES public.produtos (codigo) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;	
+	
+insert into produtos (descricao,unidade)
+VALUES ('PRODUTO A','CX'),('PRODUTO B','LT'),('PRODUTO C','UN');
+
+insert into movimento (numero,cod_produto,data_atual,valor)
+VALUES (1,1,'2022/03/01',100), (2,1,'2022/03/05',200), (3,2,'2022/03/15',300), (4,3,'2022/03/12',400), (5,3,'2022/03/22',300);
+
+
+DELETE from produtos where codigo = 2
+
+
+-- Segunda parte
+
+CREATE TABLE IF NOT EXISTS public.clientes
+(
+	codigo serial NOT NULL,
+	nome character(30),
+    CONSTRAINT "pk_cliente" PRIMARY KEY (codigo)
+);
+
+ALTER TABLE public.clientes
+   ALTER COLUMN nome SET NOT NULL;
+
+ALTER TABLE IF EXISTS public.movimento
+    ADD COLUMN cod_cliente integer;
+
+ALTER TABLE IF EXISTS public.movimento
+    ADD CONSTRAINT fk_clientes FOREIGN KEY (cod_cliente)
+    REFERENCES public.clientes (codigo) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;	
+		
+
+
+
+AULA 01 - Comandos DDL
+
+CREATE     - Serve para criar objetos dentro do banco de dados
+DROP       - Serve para eliminar objetosdentro do banco de dados
+ALTER      - Altera objetos dentro do banco de dados
+CONSTRAINS - Chaves da Tabela
+CAMPOS     - Campos das Tabelas
+
+
+EXERCICIO 01 - AULA 01
+1- Criar tabela clientes com os campos codigo (inteiro sequencial), nome(caracter 30)
+2- Inserir um campo cod_cliente (inteiro) na tabela movimento com chave estrangeira para a tabela cliente no 
+   campo codigo
+
+
+
+
+
+
+**********************************************************************************************************************************
+
+AULA 02
+
+
+
+-- INSERT - Inserir Registros em uma tabela
+
+-- INSERT <nome tabela> (<campo1>,<campo2)
+-- VALUES (XXXXX,XXX)
+
+select * from produtos
+
+insert into produtos (descricao,unidade)
+values ('PRODUTO H','KG')
+RETURNING codigo; 
+
+CREATE TABLE IF NOT EXISTS public.produtos2
+(
+    codigo integer NOT NULL DEFAULT nextval('produtos_codigo_seq'::regclass),
+    descricao character(30) COLLATE pg_catalog."default" NOT NULL,
+    unidade character(2) COLLATE pg_catalog."default",
+    CONSTRAINT pk_produto2 PRIMARY KEY (codigo)
+);
+
+
+insert into produtos2 (select * from produtos);
+
+CREATE TABLE IF NOT EXISTS public.produtos3
+(
+    codigo integer NOT NULL DEFAULT nextval('produtos_codigo_seq'::regclass),
+    descricao character(30) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT pk_produto3 PRIMARY KEY (codigo)
+);
+
+insert into produtos3 (select codigo,descricao from produtos);
+
+
+
+
+
+-- UPDATE - Modificar Registros de uma tabela
+
+-- UPDATE  <nome tabela> SET <campo1>=<conteudo1>,
+--                           <campo2>=<conteudo2>
+-- WHERE <campowhere> = <conteudowhere>
+
+select * from produtos2 order by codigo;
+
+UPDATE produtos2 SET unidade = 'KG'
+WHERE codigo = 5;
+
+select codigo,descricao,unidade,'XX' as nova
+from produtos2
+WHERE unidade =  'KG';
+
+UPDATE produtos2 SET UNIDADE = 'XX'
+WHERE unidade =  'KG';
+
+select numero,cod_produto,valor,(valor+50) as novo
+FROM movimento
+WHERE cod_produto = 1;
+
+select * from clientes;
+
+insert into clientes (nome) values ('JOSE'),('ANTONIO');
+
+update movimento set valor = (valor+50), cod_cliente = 1
+WHERE cod_produto = 1;
+
+select * from movimento;
+
+select numero,cod_produto,cod_cliente,2 as novo
+FROM movimento 
+where cod_cliente is null;
+
+update movimento set cod_cliente = 2
+where cod_cliente is null;
+
+
+
+
+
+
+-- DELETE - Eliminar ou Apagar Registros de uma tabela
+
+-- DELETE FROM <nome tabela>
+-- WHERE <campowhere> = <conteudowhere>
+
+select * from produtos2
+
+SELECT * FROM produtos2 p
+WHERE p.unidade = 'XX';
+
+DELETE FROM produtos2 p
+WHERE p.unidade = 'XX';
+
+DELETE FROM produtos2 p
+WHERE p.unidade = 'CX' and p.codigo < 5;
+
+
+
+
+******************************************************************************************************************************
+
+AULA 03
+
+
+
+-- SELECT
+-- SUBSELECTS
+-- JOIN
+-- GROUP BY
+-- HAVING
+-- DISTINCT
+-- UNION
+-- LIMIT
+
+CREATE TABLE IF NOT EXISTS public.cidades
+(
+    codigo serial NOT NULL,
+    nome character(50) NOT NULL,
+	uf character(2) NOT NULL,
+    CONSTRAINT pk_cidades PRIMARY KEY (codigo)
+);
+
+CREATE TABLE IF NOT EXISTS public.temperaturas
+(
+    cod_cidade integer NOT NULL,
+	data_hora timestamp NOT NULL DEFAULT NOW(), 
+    temperatura integer NOT NULL,
+    CONSTRAINT pk_temperaturas PRIMARY KEY (cod_cidade,data_hora),
+    CONSTRAINT fk_cidades FOREIGN KEY (cod_cidade)
+           REFERENCES public.cidades (codigo) MATCH SIMPLE
+           ON UPDATE NO ACTION
+           ON DELETE NO ACTION	
+);
+
+
+INSERT INTO CIDADES (nome,uf)
+VALUES ('CUIABA','MT'), ('VARZEA GRANDE','MT'),('SÃO PAULO','SP'),('BRASILIA','DF'),('BELO HORIZONTE','MG'),('FLORIANOPOLIS','SC'),
+('SINOP','MT'),('SAO JODE DOS CAMPOS','SP'),('CONGONHAS','MG')
+
+
+INSERT INTO TEMPERATURAS
+(SELECT codigo,
+        (timestamp '2022-01-01 00:00:00' +
+        random() * (timestamp '2022-04-15 24:00:00' -
+                   timestamp '2022-01-01 00:00:00')),
+        (floor(random()*(50-(-20)+1))+(-20))
+ FROM cidades);
+
+
+
+
+
+EXEMPLO 01:
+
+
+--set search_path = public,fontdata
+
+-- select <schema>.<tabela>.<campo1>,
+--        <schema>.<tabela>.<campo2>
+-- from <schema>.<tabela>
+-- where <schema>.<tabela>.<campox> = <comparacao>
+-- order by <schame>.<tabela>.<campox>
+
+-- max() - Maior
+-- min() = Minimo
+-- avg() = Media
+-- sum() = soma
+-- count() = conta
+
+
+select nome as cidade,
+       (select round(avg(temperatura),0) 
+		from  public.temperaturas t 
+		where t.cod_cidade = c.codigo) as temp
+from public.cidades c
+
+
+-- select min(temperatura)
+-- from temperaturas
+-- where cod_cidade = 1
+
+
+
+
+
+EXEMPLO 02:
+
+-- INNER JOIN - Existir em ambas as tabelas
+-- LEFT JOIN - Existir na tabela da esquerda ou a primeira tabela
+-- RIGHT JOIN - Existir na Segunda tabela ou a da direita
+-- FULL JOIN - Sempre traz os registros
+
+-- select cidades.codigo,
+--        cidades.nome,
+--        to_char(coalesce(temperaturas.data_hora,now()),'DD/MM/YYYY HH:mm') as data_hora,
+--        COALESCE(temperaturas.temperatura,999)
+-- from cidades
+-- LEFT JOIN temperaturas on (temperaturas.cod_cidade = cidades.codigo)
+-- order by cidades.nome,temperaturas.temperatura;
+
+select cidades.codigo,
+       cidades.nome,
+       max(temperaturas.temperatura) as temperatura
+from cidades
+LEFT JOIN temperaturas on (temperaturas.cod_cidade = cidades.codigo)
+group by cidades.codigo,
+         cidades.nome
+--HAVING max(temperaturas.temperatura) >= 45 
+order by cidades.nome;
+		 
+		 
+-- select movimento.cod_cliente,
+--        clientes.nome,
+-- 	   count(*) as quantidade,
+--        sum(movimento.valor) as total_movimento,
+-- 	   round((sum(movimento.valor) / count(*)),2) as valor_medio
+-- from movimento
+-- inner join clientes on (clientes.codigo = movimento.cod_cliente)
+-- group by movimento.cod_cliente,clientes.nome
+-- HAVING count(*) >= 3
+
+
+
+EXEMPLO 03:
+
+select distinct on (cidades.nome)
+       cidades.codigo,
+       cidades.nome,
+       temperaturas.data_hora,
+       temperaturas.temperatura
+from cidades
+LEFT JOIN temperaturas on (temperaturas.cod_cidade = cidades.codigo)
+order by cidades.nome, temperaturas.temperatura desc
+
+
+select 
+       cidades.codigo,
+       cidades.nome,
+       temperaturas.data_hora,
+       temperaturas.temperatura
+from cidades
+LEFT JOIN temperaturas on (temperaturas.cod_cidade = cidades.codigo)
+order by cidades.nome, temperaturas.temperatura desc
+
+
+
+EXEMPLO 04:
+
+select produtos.codigo,
+       produtos.descricao,
+	   produtos.unidade,
+	   CAST('PRODUTO1' as character(8)) as tabela
+from produtos
+UNION
+select produtos2.codigo,
+       produtos2.descricao,
+	   produtos2.unidade,
+	   CAST('PRODUTO2' as character(8)) as tabela
+from produtos2
+UNION
+select produtos3.codigo,
+       produtos3.descricao,
+	   CAST('CX' AS character(2)) as unidade,
+	   CAST('PRODUTO3' as character(8)) as tabela
+from produtos3
+order by tabela,descricao
+
+
+TAREFA AULA 03 DE SQL
+
+
+1-Pesquisa que traga o produto,o total vendido e a media  
+  com base nas tabelas movimento e produtos
+
+2-Pesquisa que mostre todas as cidades, a data e a menor temperatura 
+  de cada uma delas
+
+3-Pesquisa que mostre a cidade e a temperarura minima
+  das cidades que tiverem temperatura menor que 0 graus
+
+
+adriano@fontdata.com.br
+
+
+
+***********************************************************************************************************************************
 
 
 

@@ -107,9 +107,9 @@ object Form6: TForm6
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=D:\Bancos\Firebird\PDVUPDATES.FDB'
+      'Database=D:\BDFirebird\MENUS.FDB'
       'User_Name=SYSDBA'
-      'Password=masterkey'
+      'Password=12345'
       'DriverID=FB')
     LoginPrompt = False
     Left = 728
@@ -121,11 +121,11 @@ object Form6: TForm6
     Top = 136
   end
   object RESTDWDataBase1: TRESTDWDataBase
-    Active = True
+    Active = False
     Compression = True
-    MyIP = '127.0.0.1'
-    Login = 'testserver'
-    Password = 'testserver'
+    CriptOptions.Use = False
+    CriptOptions.Key = 'RDWBASEKEY256'
+    AuthenticationOptions.AuthorizationOption = rdwAONone
     Proxy = False
     ProxyOptions.Port = 8888
     PoolerService = '127.0.0.1'
@@ -134,13 +134,23 @@ object Form6: TForm6
     StateConnection.AutoCheck = False
     StateConnection.InTime = 1000
     RequestTimeOut = 10000
+    ConnectTimeOut = 3000
     EncodeStrings = True
     Encoding = esUtf8
     StrsTrim = False
     StrsEmpty2Null = False
     StrsTrim2Len = True
+    PoolerNotFoundMessage = 'Pooler not found'
+    HandleRedirects = False
+    RedirectMaximum = 0
     ParamCreate = True
+    FailOver = False
+    FailOverConnections = <>
+    FailOverReplaceDefaults = False
     ClientConnectionDefs.Active = False
+    UserAgent = 
+      'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l' +
+      'ike Gecko) Chrome/41.0.2227.0 Safari/537.36'
     Left = 728
     Top = 168
   end

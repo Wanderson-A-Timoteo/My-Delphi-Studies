@@ -2,14 +2,14 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/03/18 11:28:54.000.930,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/03/18 11:30:31.000.263,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\View.Principal.pas</Transaction>
-    <Transaction>2022/03/18 11:30:31.000.263,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\View.Principal.dfm</Transaction>
-    <Transaction>2022/03/18 11:31:59.000.214,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Primeiro_Projeto.dproj</Transaction>
+    <Transaction>2022/03/18 11:30:31.000.263,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\View.Principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/03/18 11:30:31.000.263,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\View.Principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/03/18 11:31:59.000.214,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Primeiro_Projeto.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
     <Transaction>2022/03/18 11:33:09.000.264,=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas</Transaction>
-    <Transaction>2022/03/18 11:33:26.000.922,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Classe.Pessoa.pas</Transaction>
+    <Transaction>2022/03/18 11:33:26.000.922,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Classe.Pessoa.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas</Transaction>
     <Transaction>2022/03/18 11:33:49.000.443,=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas</Transaction>
-    <Transaction>2022/03/18 11:34:08.000.375,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Classe.Vendedor.pas</Transaction>
+    <Transaction>2022/03/18 11:34:08.000.375,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Classe.Vendedor.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas</Transaction>
     <Transaction>2022/03/18 11:34:38.000.770,=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas</Transaction>
-    <Transaction>2022/03/18 11:35:00.000.810,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Classe.Administrativo.pas</Transaction>
+    <Transaction>2022/03/18 11:35:00.000.810,D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Classe.Administrativo.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\POO-20-Projeto\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
