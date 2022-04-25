@@ -1,0 +1,665 @@
+object frmMenu: TfrmMenu
+  Left = 0
+  Top = 0
+  Caption = 'Menu'
+  ClientHeight = 480
+  ClientWidth = 284
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object lyt1: TLayout
+    Align = Client
+    Size.Width = 284.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object rct2: TRectangle
+      Align = Client
+      Fill.Color = claWhite
+      Size.Width = 284.000000000000000000
+      Size.Height = 430.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object rctToolBar: TRectangle
+      Align = Top
+      Fill.Color = xFF202F46
+      Size.Width = 284.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object ShadowEffect1: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.400000005960464400
+        Opacity = 0.400000005960464400
+        ShadowColor = claBlack
+      end
+      object btn1: TButton
+        Align = Left
+        IconTintColor = claWhite
+        Position.Y = 1.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'drawertoolbutton'
+        TabOrder = 0
+        Text = 'btn1'
+      end
+      object btn2: TButton
+        Align = Right
+        IconTintColor = claWhite
+        Position.X = 236.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'detailstoolbutton'
+        TabOrder = 1
+        Text = 'btn1'
+      end
+      object lbl10: TLabel
+        Align = Left
+        StyledSettings = [Family]
+        Margins.Left = 15.000000000000000000
+        Position.X = 63.000000000000000000
+        Size.Width = 82.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        Text = 'Menu'
+      end
+    end
+  end
+  object MultiView1: TMultiView
+    TargetControl = lyt1
+    MasterButton = btn1
+    Mode = Drawer
+    ClipChildren = True
+    Size.Width = 250.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lst1: TListBox
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Size.Width = 255.000000000000000000
+      Size.Height = 480.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 255.000000000000000000
+      Viewport.Height = 480.000000000000000000
+      object ListBoxItem1: TListBoxItem
+        Size.Width = 255.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object rct1: TRectangle
+          Align = Client
+          Fill.Color = xFF202F46
+          Size.Width = 255.000000000000000000
+          Size.Height = 137.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+        end
+        object Path1: TPath
+          Data.Path = {
+            1500000000000000CDCC9A41D7A3204102000000295C954148E1D24002000000
+            713D7A4100008040020000000000404100008040020000008FC2114100008040
+            020000003333D340E17AB440020000003333AB40D7A30041020000008FC21540
+            8FC2054102000000000000005C8F2E4102000000000000000000604102000000
+            00000000E17A8A4102000000F6282C400000A041020000000000C0400000A041
+            01000000000098410000A041020000007B14AE410000A041020000000000C041
+            7B148E41020000000000C04100007041020000000000C0418FC2454102000000
+            9A99AF411E85234102000000CDCC9A41D7A3204103000000CDCC9A41D7A32041}
+          Fill.Color = xFF58CAC5
+          Position.X = 12.000000000000000000
+          Position.Y = 11.000000000000000000
+          Size.Width = 76.000000000000000000
+          Size.Height = 53.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          OnClick = Path1Click
+        end
+        object lbl1: TLabel
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, Style]
+          Position.X = 12.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 227.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          TextSettings.FontColor = claWhite
+          Text = 'Design De Interfaces'
+        end
+        object lbl2: TLabel
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, Style]
+          Position.X = 12.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 219.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          TextSettings.FontColor = claWhite
+          Text = 'designinterfaces@delphi.com.br'
+        end
+        object btn3: TButton
+          Anchors = [akTop, akRight]
+          IconTintColor = xFF58CAC5
+          Position.X = 195.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowdowntoolbutton'
+          TabOrder = 0
+          Text = 'btn3'
+        end
+      end
+      object ListBoxItem2: TListBoxItem
+        Position.Y = 137.000000000000000000
+        TabOrder = 6
+        object lyt2: TLayout
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Glyph1: TGlyph
+            Align = Center
+            ImageIndex = 0
+            Images = il1
+          end
+        end
+        object lbl3: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 90.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          Text = 'Home'
+        end
+      end
+      object ListBoxItem3: TListBoxItem
+        Position.Y = 181.000000000000000000
+        TabOrder = 5
+        object lyt3: TLayout
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Glyph2: TGlyph
+            Align = Center
+            ImageIndex = 1
+            Images = il1
+          end
+        end
+        object lbl4: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 90.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          Text = 'Pessoas'
+        end
+      end
+      object ListBoxItem4: TListBoxItem
+        Position.Y = 225.000000000000000000
+        TabOrder = 4
+        object lyt4: TLayout
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Glyph3: TGlyph
+            Align = Center
+            ImageIndex = 2
+            Images = il1
+          end
+        end
+        object lbl5: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 90.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          Text = 'Compras'
+        end
+      end
+      object ListBoxItem5: TListBoxItem
+        Position.Y = 269.000000000000000000
+        TabOrder = 3
+        object lyt5: TLayout
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Glyph4: TGlyph
+            Align = Center
+            ImageIndex = 3
+            Images = il1
+          end
+        end
+        object lbl6: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 90.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          Text = 'Vendas'
+        end
+      end
+      object ListBoxItem6: TListBoxItem
+        Position.Y = 313.000000000000000000
+        TabOrder = 7
+        object Line1: TLine
+          Align = Top
+          LineType = Top
+          Size.Width = 255.000000000000000000
+          Size.Height = 1.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFD0D0D0
+        end
+        object lbl7: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 30.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 43.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          TextSettings.FontColor = xFF4B4B4B
+          Text = 'Configura'#231#245'es'
+        end
+      end
+      object ListBoxItem7: TListBoxItem
+        Position.Y = 357.000000000000000000
+        TabOrder = 2
+        object lyt6: TLayout
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Glyph5: TGlyph
+            Align = Center
+            ImageIndex = 4
+            Images = il1
+          end
+        end
+        object lbl8: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 90.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          Text = 'Compartilhar'
+        end
+      end
+      object ListBoxItem8: TListBoxItem
+        Position.Y = 401.000000000000000000
+        TabOrder = 1
+        object lyt7: TLayout
+          Align = Left
+          Margins.Left = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Glyph6: TGlyph
+            Align = Center
+            ImageIndex = 5
+            Images = il1
+          end
+        end
+        object lbl9: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Position.X = 90.000000000000000000
+          Size.Width = 221.000000000000000000
+          Size.Height = 44.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          Text = 'Enviar'
+        end
+      end
+    end
+  end
+  object il1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              01D7494441546843EDD53F4BC3401806F0BB4BDAA205FF2DEDD4B4141C8A6D85
+              7E83D204C549C1459DFC027E04170757373727A72E2E622958A85004C141910E
+              A2D4B55B75A81A1A63D29C0ED6A677C90BA17ABF25BD9736E4297779902008C2
+              9F85959CBAAFE4B5038476099D81C3F40A2A93590F77E5CE11C278A33F303F8E
+              277BB3DBCD6659EFAF01810788E5D4E804C665EBE3B233F956932364F5E1AAF2
+              42D7204003A4168A3153924FAD8F056732E01A1BBD95D65DAD4DD7BE810548E4
+              D494B5652AD6669FA7A3615AD834965AB7E7F774ED0BC8E14A64B58281F125C3
+              C3DB523A962EECDFD0B52FBE0358FF7CD140EFB590B5FDE96824FBBB84A0BA92
+              557F9E136EBE0224F2DAE62BD6CF42243245473CA25DA29F288B9AF3A6F248A2
+              576EC96C690763FD308C22321D710B2359B20EE1DA4C3CFDD6693F36E8988B97
+              00FD82C284EC212443BC04EC7B94A6E3E9B9E7F65615A1BAE98CD9703DC04041
+              41F35078CC015C0A0A1A57E1310560282868CC85373200474141632A3CD7D728
+              674141632ABCA101BC14143496C2FB3580CF8282E65A78033D005150D0DC0A8F
+              F9359ACC6B5C05E3D7D34D95E9D95C0FF138100182067E0646ED5DA8FB7C115B
+              28682240D04480A089004113018236F60104411084FF0CA14FAF658D856AF8ED
+              5E0000000049454E44AE426082}
+            FileName = 'C:\Users\renat\Desktop\Aulas\Aula 2\Imagens\home (1).png'
+          end>
+        Name = 'Home'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              02C2494441546843EDD6C14B14511C07F0DFEFBD595CD74A930E59EA0A89072B
+              0D97A04B111D3444F22444E1B1C27FC07FA1ECD2A98B0411E821BC0421788A24
+              0F162C148A102906D9A182B0D4747767DEEBCDF07374DD7DEE5B2713E17D2EF3
+              7B6FE6EBBEDF8EFB66C0B22CCBB2AC03847434D6DC7CBDC24D78F704E22D0670
+              CE9F1300B34CC2A8F3870DCFCF4F64820B35A2E6772AAB81FAF66BA751E23847
+              DE4E53F904BC7799DBB3F4E1D5579AC913355F8C7103FE379749E4DE6A3F7C93
+              5A84B3CE2EEDFC26A3E675D45D34E3DFF6921FEE6370C1AB127768148A9AD731
+              6E4008799BCA922440C1B551F33AC60D2067AD5496A41610FC38B78B9AD7316E
+              A01CAEC8A88D65EFCAC91B37203D31476549315651706DD4BC8E71038CB1112A
+              4B525BDB2895A1A8791DE306FC878CBFC5D1504F5D5399AB1EA651286A5EC7B8
+              017F5FF61F32BB2E429DF3AF999B1BCBD24C286A5E87D3D1C8EF6F8B2BA74E74
+              3C7579E6BB1AD6AADDA2461DB328651A111F26DCEA8185D9F1E5E0E222A2E62D
+              CB2A64F4365A97EA4954781B1741E26529E03C02B64809F56B7CF5A87FBECA3B
+              B2821CBE48213F21831940F9C68DAFBE5B9A9E5E0FFE4011C9B6CE81355C7DE4
+              D77BC96FD236904AA5623FB3B5BD92C14DC86137C4A0924E99C9C1BA8CC13813
+              F2F9626DF6054C4EBA7426D4D4D6D5AF16FB4C9585EB30C8FB0A837D7D3CF9F1
+              D75DF4BC41707813CD46B5A85E26863EB7D43C81B1318FE602EA4E0C21C2200D
+              75B4F9BC06CE9CED6CC83930A29E6E5768EADF12F2B503BC7F7E66628966823B
+              FDC33DB6C020D640537A45F2E193B8B1A3AB2ECB616ADF16EF63787503BCA964
+              6BF7499A81743A9D538B7F4CC3DD15C9870DA0271E7084461AEE1B8761121DF7
+              3E0D0302D94B2A4BDA99DF6A60036F50B9FFD0EBA52A20E2CBEA7FBC0CDBF261
+              03100FDE4BFE137E9C8A80C976996F2BBFD5C021651B386887BE01CBB22CCBB2
+              0E0EC05F06A54EF7B74BD80B0000000049454E44AE426082}
+            FileName = 
+              'C:\Users\renat\Desktop\Aulas\Aula 2\Imagens\account-multiple (4)' +
+              '.png'
+          end>
+        Name = 'Pessoas'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              03AB494441546843ED994B4FD45014C7CFBD9D873380236E7C0B1116460C838F
+              2871696462A28918435CF9115C19D04FA0A02C8CAED4AD6E34514C5C0082092B
+              DC687898311A8C98C08285D1511C523AEDF1DCCE1119A1037367A49BFE9249CF
+              39BD6DCFBF3DF7D10E04F88CE06D453870A023920D65CED359CFD9E01C3640EE
+              5671B267C87E4B97EB8B5B9BFBD2E9278BEE0115A06202F636A72E480137C9DC
+              978F78819F1065D7978981A71C280B83B7FA747418F5E15DB78410B7C9ABCD07
+              8B21B60A011713DBF75567E62E0D038C20EFD0A26C012A794AEA0ABBEB468038
+              91D83613CBCC7D1AE2901692B75AA8B2F937F92C644DBAA57700B17501B15AFD
+              948D8077D53E6EE6424FA2AB2E996A67570BED3EE076D870E63D997F6BDE8259
+              88C099E9B1C1718E1450976C6B1196780161D8C521D2664F55E5B636E9766CED
+              27E08E36CB9277EF6E91E4155FC65F8E6118CF2E7F1242188D0B91EFE7D82D19
+              FD12A2A1922D9718C4EF154BFE0F4A440C630FD8754107375E800370844D173A
+              D12336D706B1A0AD2DE0289B25A32D803ACF4E365D62969966734DAA6CEB1D9B
+              2E12E4529F2895A29DB8EE606A3F4AEC4681276926ADE1F08640B3F74FC39143
+              42D8D73E4F0C7FE4F00A3C05A8E48505A3B009B670C827EC6F02A1D54B846709
+              A93BEF7FF20AA31685BCC1CE0ABC0550D9B0E93B96B3788ACD157896507D3255
+              748D12B7CC9A747A649E5D9AA4523FE964D5EC16C572CC1FB393230976A1F1D8
+              E9CD39D3C9B0BB2AD3E383ABE6AA3D0A2D844205A310DACEBA47A1B08C16B4CD
+              2DE00E364B465B8083A2701E90F2219B6B42B7B2601E70246EFC3C4069142CC2
+              4259799F66B73176BDA136312B719F3D1712A4BDA0D32F21B9D8BEA7E97403BB
+              3035D56FE664EE6C5111B44FB559BE706B38946A5CCC162E4B4A415B401CA211
+              2364AB37B02566C65FCDC6EDC471BAA397C97D4DA3C0BCFAD1D26154C5D43ED5
+              26DF3A8F65636F344EEB534D56EDD98AB546A125103AA727067BD92B09BAC655
+              DA74E7BDE2547C145A42983DF5C9B64EF6D60D1DD305605E67579BF2054094CE
+              216ED6379F7AA6EA99839EA8367B9BDBFAE8989EFCB1E5517E092DC3CC821589
+              411F0A782E6C7853E598332AFE4B4677A30147E862EDAAC3EAD4BC57095554C0
+              FFE4FFF5019F0904F84D20C06F02017E1308F09B4080DF0402FCC65380FA36C9
+              A6EF9816787E33F21460200CB3E93B110307D85C817709A1714D7D5865CF3F10
+              BE86C1F0FC13D153C0F4E4C00723672411E189FA14C8E10D435D131D7C1C42D9
+              3235D9EFBED9050404FC0BC06F0CA44774E35CAE700000000049454E44AE4260
+              82}
+            FileName = 'C:\Users\renat\Desktop\Aulas\Aula 2\Imagens\shopping.png'
+          end>
+        Name = 'Compras'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              034F494441546843EDD83F4C53411C07F0DFDD6B4B190C824617B068223A080D
+              2EA231C6287FA283839371307171757010FFC48449251A075D70C068C405178D
+              E14F8189C118A3B634366224B4A4A66844082AB6B4EF7EBE073F34D8BED77BF0
+              689BD0CFF2EE7B34D7FEB8DEDDEB83A2A2758ED115AABDCD48CD6504C0AB8980
+              AF8162C1E17435A4BD605F756DD3218A05276B010B386BA556C1912B00E0D8B6
+              DA96BDD42E287FD7C0FF3CDEE661ED8F0729E60D82888260E722C1815EEA5AC6
+              780698B84EADBC62C02B91A73A28A6312C20E21FECD1F6A0B714F30AD1997187
+              D499AF01E4EDD4CA2BCEE03E35D3981610DE55F6543B073E52CC8F247C9E77B8
+              EE504AA3D035B350082BB66C8F036327A827E750C1F3D1777DAF29A6C9BA8D56
+              B8A61FAA081314734A453510091C78443123F319D0C4623151BE7507678CB550
+              57CE289C9F9999EC1CA39851D619D0C5013A50856F1473A577DCEF1BA0B621A9
+              02BE8C0CFC621CEE515C7BC9B8CA847A919229A90274A914DC5541FCA0B8A6D0
+              E97E301E1C0A5234255D4034E4FBAE0033DC8F6D9384DF4EC1DB2865255D800E
+              93CE5BDA455B126B473B74DB3F05FBA214B3B2544024D43389284CB7B5D54801
+              7C75C74B6F539462A9001D22DEC4B8FE5EF673005C1D1D7D6E699D592EC0E162
+              53DA6DF64F8AF651C5FB704D59272569960B5093EC12B86123457BC41373CCE1
+              380BDDDD2AF54833FC41934975FD710F88D407ADE95EEC599DA448CC3AC1350C
+              0ABB12F6FB02D46D89B502EA9ABAB41BBBD31417EE1413A5AE9AD89B1773D493
+              73D25F214FDDD17A60F3A7282E72C0E57C7E789D74010CD83580927FAF17E00F
+              8FEC7F4C296FE41771821FA6D622065D006DDAEF9DFC925E0355DEC65905F806
+              8A6B2E1CF0497D36E919501086A85950E4BF42A8B46AA7C034A582215D4038D8
+              3FAAA4142F2274EBFB377517AD7B964E62CF9EE6DDC8F106323CA26745F041C6
+              D4D6F191A1153D3BB2633CE902F437634978997E23A74E338406AB45D8359EF4
+              22D6FF5399EF42957264DCF28360BBC6932F80A63993A4986FA4A634BBC6933F
+              074C08B5C4F0E9F14A58194FBA00B393D8A5603F35A5D9359EFC0C189DC40853
+              4E502E509267D378599F8D2E99F93A36B569F3CE278241650A135502D50447E5
+              99F66627AD3C065962F7784545EB13C01F82C644DCD611C4870000000049454E
+              44AE426082}
+            FileName = 'C:\Users\renat\Desktop\Aulas\Aula 2\Imagens\cart (1).png'
+          end>
+        Name = 'Vendas'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              04C0494441546843ED985D4C1C5514C7CFBD333B7CA9A018C15A81357C24C8C7
+              2624856A8CA6F221B58FFAA0464B34D4A8A98946135F341A1F8C46D3A42F26A8
+              A96DCA930FC6A4349462637D512A46A0B08995C26234D692182005CB7CDCEBB9
+              CBD9CA323B3B5BDDDD89915F42F69EFF1DE09CB95FFFBBB0CD36FF73187D0646
+              6DED430576B1F3AC60EC710ED0A4340130CD250CEA6B7C607676783DFEA00781
+              16B0B375CF1D4CB2218D69AD24252360C2E6F6BE5F26CFFC4A8A8BC00A506F7E
+              BDD81AF34C3E0116A1FFC93BBC4602472D18D4B4F14D5EC121E294887E8A5C04
+              568010F2096AFA22013C9F0DAC00A6F1466AFA8205C417772A822BC0049B9ABE
+              D8C2C48D29358114106EEDDE058677525B0971234A4D17792DA0BA716F654D4B
+              F71109E63700C62D24FB825BE520355DE4A580C6C6470D4CFC155B5BFB11B3E9
+              C3E433FFBFB88D1659A50314B9D0E8336754473AF79ADCFC8231780CB7CD0292
+              15524838869F36F6EDD890B64007D9C5E9A125525CE46C04C22D0FD6D734779D
+              60920FE13FA927390E4EFE319C161D3F4F8DF495D8A5F74A265F0029715AC12A
+              EE3857541BFB0F163BA5EDE94E6145D64FE28A96AE924206AF5A60BD6680B1F9
+              8D63E6F66FC0F5376393BB3F06782BE3459C8E6C16C0709E3F094CBE8BCD4AD2
+              E298265821033E0C15F0D767CF0DAF909C157C0B48E51691F302E4F11BACB28F
+              A2D1CF4CB52D3A0087B1BF9DFAFF46C821C6C4CBF3535F5E2025ABA42DC0CF2D
+              4A09E33867673883A7304CFA5B383F2E60E22F2D4C8C9E242927781690B15BDC
+              8225CC951033DE2EB64B0FABD121396778EE4219BBC56BE0C92AE153DD296E88
+              4D8DBC9F8FE4159E2350D5D439C635BE8B421FCC3F1818BDF39323E748C81B9E
+              23703D6E114C830791BCC2B380FF0A9E054847783A4017E82CE30E33003CBDD0
+              CD95B545B8427A29F4412BC279F44C59457DB8B4BC616C79F1A72BD491733C0B
+              B8F5C6BA49A1CB7D5844D2A9EA8DC6F0D988CDAE1E28BFBDCED951DE36BEB818
+              C5F32DB7784E21F52D807282CA1192E4421D64E8288FAAE68612BF7CDC845BC0
+              7BAB7C79BAAAB5E761927346DA45AC9CA07284B8D71EC4F0DBB85344C7A8DC22
+              26FFBC7292CA51627F877298F15F229806751CE4899AD6EE9335CD3D0D24671D
+              CF73E01FC0C291AE471C697FC0217427697112664ED3C51B73DF8F2E939C15B2
+              7AA159BA34172DACA81BD0195868A7776BA0E94AD7B0816FAA5D3AACBFECB6F0
+              FAD2FD6DE3108D5E9B76FF866C8E401277453AEB84C30E0167AE75A0D60E96F4
+              E2C20FA7D42506C2CD3DF749EEF40967C3ED72CE6624E3C716264F7DA5E274E4
+              AC8004D5CD5DBD82CB431AF0ADEB404A01839281836E763F694960FF715859EF
+              5F58387B95241739BF132F5F9E9BDD59DE3660F1F5154B9A1D9BEEC50CEFC22D
+              F813A1D885EA0743AF59BE7CF173925CE47C0436136EDA5321B9F60E300BDFF8
+              757C33C1C403B189D1B3142591572F343F7DE6F7D8D4E9A7192BEC00DB8991EC
+              8F8C5F985292D70212CC4F0C7F07BA7689425F128B3B158114A0904266BEFE34
+              EEB9E5065600AEE0196AFAC241783E1BDC0830A63C546608EF67032B401D5212
+              A4FA6A313D521E899D3FFD35452E022B40115AD50EA804294CC527FA9AF61CB5
+              5392D773C08BAA48F73D4C88FD4CF2BB558CCE769AE9EC68C26A6CB3CD365E00
+              FC0564D8A3CC0B37D4420000000049454E44AE426082}
+            FileName = 'C:\Users\renat\Desktop\Aulas\Aula 2\Imagens\share-variant.png'
+          end>
+        Name = 'Compartilhar'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0199494441546843ED97314BC3401840EF72111C84EAE62041E2AAF813BA888B
+              BF4E71EA24AE9DDC145D1C1C040545EC2448C4C545ECA4B6693FAFE7A543D27C
+              31CDDDE582F7E0B8F025431F796D13E270381CB5C2E43E657D7BF766797583B4
+              16D71EFBFD2896636BA1729FC20560B2F34FFEC6008E16801D3E3D9CBE8A9316
+              922B90109378C0C03FF13CDA79BE3BBB90636B28144871CB57073EBE8FA3E8F2
+              EB77542F65050436E5359740820D79551248514B5E2A0504A6F3522E90602A2F
+              6D0229B4E5654A40A0232FA302092AF3AA452045A5BC6C1010CC9B574620D8DA
+              5B21641832062100E56B1CF2CB424AF9714C02EA135F5EAA85B279650450DA6D
+              3F78F703C67C2E3611042947F83EE28B7179A514E6554EA0005D770FCB4BA900
+              8A82BB372B2F4F9C691823187FCAC3FF965013BEC4B6FC8C0285FD97FBF32B39
+              CE2523D0F83F32F728F107CA66826154A0C98FD3CD7BA15199098672011D9960
+              A814D09609462501539960CC25603A138CB202B56482512860432618B9023665
+              829111083677AE09F30E9686AD6EAFD71DC8B1C3E170386640C80FDD46AD9BDD
+              8A85610000000049454E44AE426082}
+            FileName = 'C:\Users\renat\Desktop\Aulas\Aula 2\Imagens\send (1).png'
+          end>
+        Name = 'Enviar'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'Home'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Pessoas'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Compras'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Vendas'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Compartilhar'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Enviar'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end>
+    Left = 248
+    Top = 64
+  end
+end
