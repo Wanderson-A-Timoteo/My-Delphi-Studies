@@ -1,4 +1,5 @@
 ATALHOS:
+- Alt + Shift + U -> Abre as opções para adicionar Unit.
 - Ctrl + Alt + Shift + P -> 
 - Ctrl + D -> Formatação ou Indentação do código.
 - Alt + F11 -> Importa as classes na Unit.
@@ -75,6 +76,8 @@ estiver ativo ele simplesmente destrói.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-BordeIcons  -> Remover botões de minimizar ou de maximizar
+OBJECT INSPECTOR - PROPRIEDADES:
+
+BordeIcons  -> Remover botões de minimizar ou de maximizar da tela.
 BorderStyle bsSingle -> Não permite alterar o tamanho da tela.
 

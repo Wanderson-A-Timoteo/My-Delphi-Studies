@@ -99,16 +99,21 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="unitPrincipal.pas">
-            <Form>Form1</Form>
+            <Form>frmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitCadastroPaciente.pas">
-            <Form>Form2</Form>
+            <Form>frmCadastroPaciente</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitCadastroAgendamento.pas">
-            <Form>Form3</Form>
+            <Form>frmCadastroAgendamento</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unitDM.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

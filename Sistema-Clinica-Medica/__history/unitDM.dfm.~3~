@@ -1,0 +1,42 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 257
+  Width = 368
+  object ConexaoPostgres: TFDConnection
+    Params.Strings = (
+      'Database=clinica_medica'
+      'DriverID=PG'
+      'User_Name=postgres'
+      'Password=fontdata2022')
+    Connected = True
+    LoginPrompt = False
+    Left = 40
+    Top = 26
+  end
+  object tbPaciente: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = ConexaoPostgres
+    TableName = 'paciente'
+    Left = 144
+    Top = 26
+  end
+  object DataSourcePaciente: TDataSource
+    DataSet = tbPaciente
+    Left = 144
+    Top = 98
+  end
+  object tbAgendamento: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = ConexaoPostgres
+    TableName = 'agendamento'
+    Left = 264
+    Top = 24
+  end
+  object DataSourceAgendamento: TDataSource
+    DataSet = tbAgendamento
+    Left = 264
+    Top = 96
+  end
+end
