@@ -75,4 +75,6 @@ estiver ativo ele simplesmente destrói.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BordeIcons  -> Remover botões de minimizar ou de maximizar
+BorderStyle bsSingle -> Não permite alterar o tamanho da tela.
 

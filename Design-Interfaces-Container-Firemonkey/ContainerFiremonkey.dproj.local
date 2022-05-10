@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/04/25 17:18:42.000.547,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/04/25 17:31:13.000.715,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-interfaces-aula-02\Unit1.pas</Transaction>
+    <Transaction>2022/04/25 17:31:13.000.715,D:\Projetos\ws-delphi\Unit1.fmx=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-interfaces-aula-02\Unit1.fmx</Transaction>
+    <Transaction>2022/04/25 17:31:18.000.522,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-interfaces-aula-02\Project1.dproj</Transaction>
+    <Transaction>2022/04/26 08:18:39.880,D:\Projetos\ws-delphi\My-Delphi-Studies\Design-Interfaces-Container-Firemonkey\ContainerFiremonkey.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-Interfaces-Container-Firemonkey\Project1.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android="Nexus7" Android64="Nexus7"/>
+	</ActiveMobileDevice>
+</BorlandProject>

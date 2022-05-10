@@ -1,0 +1,92 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 640.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = xFFE87A38
+      Size.Width = 640.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Layout2: TLayout
+    Align = Left
+    Position.Y = 50.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 430.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Rectangle2: TRectangle
+      Align = Client
+      Fill.Color = xFFE8E238
+      Size.Width = 177.000000000000000000
+      Size.Height = 430.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Layout3: TLayout
+    Position.X = 176.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 465.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Rectangle3: TRectangle
+      Align = Client
+      Fill.Color = xFF38BEE8
+      Size.Width = 465.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Layout4: TLayout
+    Position.X = 176.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 473.000000000000000000
+    Size.Height = 385.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object Layout5: TLayout
+      Align = Right
+      Position.X = 312.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 385.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle4: TRectangle
+        Align = Client
+        Fill.Color = xFF386FE8
+        Size.Width = 161.000000000000000000
+        Size.Height = 385.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object Layout6: TLayout
+      Align = Client
+      Size.Width = 312.000000000000000000
+      Size.Height = 385.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Rectangle5: TRectangle
+        Align = Client
+        Fill.Color = xFF38E83E
+        Size.Width = 312.000000000000000000
+        Size.Height = 385.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end

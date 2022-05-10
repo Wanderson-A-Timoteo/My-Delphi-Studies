@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/04/25 16:53:03.000.585,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/04/25 17:18:05.000.953,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-interfaces-aula-01\Unit1.pas</Transaction>
+    <Transaction>2022/04/25 17:18:05.000.953,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-interfaces-aula-01\Unit1.dfm</Transaction>
+    <Transaction>2022/04/25 17:18:14.000.689,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-interfaces-aula-01\Project1.dproj</Transaction>
+    <Transaction>2022/04/26 08:20:05.188,D:\Projetos\ws-delphi\My-Delphi-Studies\Design-Interfaces-Container-VLC\ContainerVCL.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Design-Interfaces-Container-VLC\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
