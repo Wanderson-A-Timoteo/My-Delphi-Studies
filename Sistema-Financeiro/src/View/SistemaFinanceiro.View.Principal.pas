@@ -53,7 +53,10 @@ end;
 
 procedure TfrmPrincipal.Sair1Click(Sender: TObject);
 begin
-  Application.Terminate;
+  if Application.MessageBox('Deseja realmente sair do Sistema?','Confirmação',MB_ICONQUESTION+MB_YESNO) = mrYes then
+  begin
+    Application.Terminate;
+  end;
 end;
 
 end.

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/05/11 16:11:49.000.149,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:12:24.000.380,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitPrincipal.pas</Transaction>
+    <Transaction>2022/05/11 16:12:24.000.380,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitPrincipal.dfm</Transaction>
+    <Transaction>2022/05/11 16:12:44.000.145,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\SistemaEstoqueFarmacia.dproj</Transaction>
+    <Transaction>2022/05/11 16:16:53.280,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:17:59.348,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitCadastroProduto.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.dfm</Transaction>
+    <Transaction>2022/05/11 16:17:59.348,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitCadastroProduto.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:18:08.984,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:20:04.094,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitCadastroMovimentacao.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.dfm</Transaction>
+    <Transaction>2022/05/11 16:20:04.094,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitCadastroMovimentacao.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:20:11.278,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:21:15.724,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitConsultaMovimentacao.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:21:15.724,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitConsultaMovimentacao.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.dfm</Transaction>
+    <Transaction>2022/05/11 16:21:31.770,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:22:27.735,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitDM.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 16:22:27.735,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\unitDM.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

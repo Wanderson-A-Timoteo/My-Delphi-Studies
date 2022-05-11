@@ -1,0 +1,16 @@
+program SistemaEstoqueFarmacia;
+
+uses
+  Vcl.Forms,
+  unitPrincipal in 'unitPrincipal.pas' {frmPrincipal},
+  unitCadastroProduto in 'unitCadastroProduto.pas' {frmCadastroProduto};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmCadastroProduto, frmCadastroProduto);
+  Application.Run;
+end.
