@@ -1,0 +1,63 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Consultas '#224' Banco de Dados'
+  ClientHeight = 361
+  ClientWidth = 577
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object LabelPesquisa: TLabel
+    Left = 264
+    Top = 8
+    Width = 65
+    Height = 13
+    Caption = 'Digite o nome'
+  end
+  object RadioGroupOpcoes: TRadioGroup
+    Left = 24
+    Top = 8
+    Width = 217
+    Height = 57
+    Caption = 'Op'#231#245'es de Consulta'
+    Columns = 2
+    Items.Strings = (
+      'Nome'
+      'Bairro')
+    TabOrder = 0
+  end
+  object EditPesquisa: TEdit
+    Left = 264
+    Top = 27
+    Width = 289
+    Height = 21
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 88
+    Width = 529
+    Height = 50
+    Caption = 'Realizar Consulta'
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Top = 152
+    Width = 529
+    Height = 193
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+end

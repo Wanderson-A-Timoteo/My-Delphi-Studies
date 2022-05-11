@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -13,8 +13,12 @@ type
     menuRelatorio: TMenuItem;
     menuAjuda: TMenuItem;
     menuCadastroPadrao: TMenuItem;
+    Sistema1: TMenuItem;
+    Sair1: TMenuItem;
+    Image1: TImage;
     procedure menuCadastroPadraoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +49,11 @@ end;
 procedure TfrmPrincipal.menuCadastroPadraoClick(Sender: TObject);
 begin
   frmCadastroPadrao.Show;
+end;
+
+procedure TfrmPrincipal.Sair1Click(Sender: TObject);
+begin
+  Application.Terminate;
 end;
 
 end.
