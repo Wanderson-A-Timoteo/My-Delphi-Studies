@@ -20,6 +20,29 @@ object DataModule1: TDataModule1
     TableName = 'produtos'
     Left = 200
     Top = 80
+    object tbProdutosid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object tbProdutosnome: TWideStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 50
+    end
+    object tbProdutosfabricante: TWideStringField
+      FieldName = 'fabricante'
+      Origin = 'fabricante'
+      Size = 30
+    end
+    object tbProdutosvalidade: TDateField
+      FieldName = 'validade'
+      Origin = 'validade'
+      EditMask = '##/##/####;1;_'
+    end
+    object tbProdutosestoque_atual: TIntegerField
+      FieldName = 'estoque_atual'
+      Origin = 'estoque_atual'
+    end
   end
   object DataSourceProdutos: TDataSource
     DataSet = tbProdutos

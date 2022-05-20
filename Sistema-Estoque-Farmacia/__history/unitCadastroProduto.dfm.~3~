@@ -1,0 +1,38 @@
+object frmCadastroProduto: TfrmCadastroProduto
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Produto'
+  ClientHeight = 432
+  ClientWidth = 599
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 16
+    Top = 23
+    Width = 195
+    Height = 29
+    Caption = 'Cadastro de Produto'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Arial Narrow'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 240
+    Top = 23
+    Width = 328
+    Height = 29
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel]
+    TabOrder = 0
+  end
+end
