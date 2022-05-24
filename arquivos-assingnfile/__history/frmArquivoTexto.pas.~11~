@@ -1,0 +1,58 @@
+unit frmArquivoTexto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    btnClick: TButton;
+    procedure btnClickClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    //procedure ZapFile;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnClickClick(Sender: TObject);
+var
+  files: TextFile;
+  x, y: Integer;
+  ok: Boolean;
+begin
+  AssignFile(files, 'texto.tx');
+
+  Rewrite(files);
+  x := 10;
+  y := 7;
+
+  Writeln(files, x);
+
+  Write(files, x + 2);
+
+  Write(files, 'Hello');
+
+  Write(files, x, y);
+
+  ok := 5 > 7;
+
+  Writeln(files, ok);
+
+  Writeln(files, x,' ',y);
+
+  Writeln(files, 'x=', x);
+
+  CloseFile(files);
+end;
+
+end.

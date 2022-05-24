@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/05/24 14:37:04.409,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/24 14:39:08.630,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivos-texto\frmArquivoTexto.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/05/24 14:39:08.630,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivos-texto\frmArquivoTexto.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/24 14:39:21.048,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivos-texto\ArquivoTexto.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/05/24 16:38:45.143,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivos-texto\ArquivoAssingnFile.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\arquivos-texto\ArquivoTexto.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

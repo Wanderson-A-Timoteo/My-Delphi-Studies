@@ -1,0 +1,52 @@
+unit frmArquivoAppend;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    btnClick: TButton;
+    Memo1: TMemo;
+    procedure btnClickClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure ZapZero(var fl: TextFile; n, m: integer);
+var
+  i, j: integer;
+begin
+  Rewrite(fl);
+  for i:=1 to n do
+begin
+  for j:=1 to m do
+    write(fl,0:3);
+    writeln(fl)
+end;
+  CloseFile(fl)
+end;
+
+procedure TForm1.btnClickClick(Sender: TObject);
+var
+f, g: TextFile;
+begin
+  AssignFile(f, 'test1.txt');
+  AssignFile(g, 'test2.txt');
+  ZapZero(f,3,5);
+  ZapZero(g,4,3);
+end;
+
+end.
