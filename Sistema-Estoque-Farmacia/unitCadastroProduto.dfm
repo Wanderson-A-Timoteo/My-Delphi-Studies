@@ -12,6 +12,7 @@ object frmCadastroProduto: TfrmCadastroProduto
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -172,9 +173,10 @@ object frmCadastroProduto: TfrmCadastroProduto
     Left = 18
     Top = 299
     Width = 167
-    Height = 27
+    Height = 21
     DataField = 'estoque_atual'
     DataSource = DataModule1.DataSourceProdutos
+    ReadOnly = True
     TabOrder = 6
   end
 end

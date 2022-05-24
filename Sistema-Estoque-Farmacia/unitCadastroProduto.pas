@@ -22,6 +22,7 @@ type
     Button1: TButton;
     DBEdit5: TDBEdit;
     procedure Button1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +41,11 @@ uses unitDM;
 procedure TfrmCadastroProduto.Button1Click(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmCadastroProduto.FormShow(Sender: TObject);
+begin
+  DataModule1.tbProdutos.Refresh;
 end;
 
 end.

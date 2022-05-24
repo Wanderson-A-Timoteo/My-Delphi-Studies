@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   Height = 421
-  Width = 843
+  Width = 673
   object ConexaoEstoqueFarmacia: TFDConnection
     Params.Strings = (
       'User_Name=postgres'
@@ -42,6 +42,7 @@ object DataModule1: TDataModule1
     object tbProdutosestoque_atual: TIntegerField
       FieldName = 'estoque_atual'
       Origin = 'estoque_atual'
+      ReadOnly = True
     end
   end
   object DataSourceProdutos: TDataSource
@@ -61,40 +62,84 @@ object DataModule1: TDataModule1
   end
   object tbMovimentacoes: TFDTable
     Active = True
+    BeforeDelete = tbMovimentacoesBeforeDelete
+    AfterScroll = tbMovimentacoesAfterScroll
     IndexFieldNames = 'id'
     Connection = ConexaoEstoqueFarmacia
+    UpdateOptions.AutoIncFields = 'id'
     TableName = 'movimentacoes'
     Left = 360
     Top = 80
   end
   object tbMovimentacoesProdutos: TFDTable
     Active = True
-    IndexFieldNames = 'id'
+    AfterPost = tbMovimentacoesProdutosAfterPost
+    BeforeDelete = tbMovimentacoesProdutosBeforeDelete
+    AfterDelete = tbMovimentacoesProdutosAfterDelete
+    IndexFieldNames = 'id_movimentacoes'
+    MasterSource = DataSourceMovimentacoes
+    MasterFields = 'id'
     Connection = ConexaoEstoqueFarmacia
     TableName = 'movimentacoes_produtos'
     Left = 544
     Top = 80
+    object tbMovimentacoesProdutosid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object tbMovimentacoesProdutosid_produtos: TIntegerField
+      FieldName = 'id_produtos'
+      Origin = 'id_produtos'
+    end
+    object tbMovimentacoesProdutosid_movimentacoes: TIntegerField
+      FieldName = 'id_movimentacoes'
+      Origin = 'id_movimentacoes'
+    end
+    object tbMovimentacoesProdutosquantidade: TIntegerField
+      FieldName = 'quantidade'
+      Origin = 'quantidade'
+    end
+    object tbMovimentacoesProdutosnome_produto: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nome_produto'
+      LookupDataSet = tbProdutos
+      LookupKeyFields = 'id'
+      LookupResultField = 'nome'
+      KeyFields = 'id_produtos'
+      Size = 50
+      Lookup = True
+    end
   end
   object sqlAumentaEstoque: TFDCommand
     Connection = ConexaoEstoqueFarmacia
+    CommandText.Strings = (
+      'UPDATE produtos SET estoque_atual = estoque_atual + :pQtd'
+      'WHERE id = :pId')
     ParamData = <
       item
-        Name = 'pId'
+        Name = 'pQtd'
+        ParamType = ptInput
       end
       item
-        Name = 'pQtd'
+        Name = 'pId'
+        ParamType = ptInput
       end>
     Left = 112
     Top = 248
   end
   object sqlDiminuiEstoque: TFDCommand
     Connection = ConexaoEstoqueFarmacia
+    CommandText.Strings = (
+      'UPDATE produtos SET estoque_atual = estoque_atual - :pQtd'
+      'WHERE id = :pId')
     ParamData = <
       item
-        Name = 'pId'
+        Name = 'pQtd'
+        ParamType = ptInput
       end
       item
-        Name = 'pQtd'
+        Name = 'pId'
+        ParamType = ptInput
       end>
     Left = 112
     Top = 320
@@ -106,10 +151,64 @@ object DataModule1: TDataModule1
       'SELECT * FROM movimentacoes')
     Left = 296
     Top = 248
+    ParamData = <
+      item
+        Name = 'pDataInicial'
+        DataType = ftDate
+        ParamType = ptInput
+      end
+      item
+        Name = 'pDataFinal'
+        DataType = ftDate
+        ParamType = ptInput
+      end>
   end
   object DataSourceSQLMovimentacoes: TDataSource
     DataSet = sqlMovimentacoes
     Left = 304
+    Top = 320
+  end
+  object sqlMovimentacoesProdutos: TFDQuery
+    Active = True
+    IndexFieldNames = 'id_movimentacoes'
+    MasterSource = DataSourceSQLMovimentacoes
+    MasterFields = 'id'
+    Connection = ConexaoEstoqueFarmacia
+    SQL.Strings = (
+      'SELECT * FROM movimentacoes_produtos')
+    Left = 496
+    Top = 248
+    object sqlMovimentacoesProdutosid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object sqlMovimentacoesProdutosid_produtos: TIntegerField
+      FieldName = 'id_produtos'
+      Origin = 'id_produtos'
+    end
+    object sqlMovimentacoesProdutosid_movimentacoes: TIntegerField
+      FieldName = 'id_movimentacoes'
+      Origin = 'id_movimentacoes'
+    end
+    object sqlMovimentacoesProdutosquantidade: TIntegerField
+      FieldName = 'quantidade'
+      Origin = 'quantidade'
+    end
+    object sqlMovimentacoesProdutosnome_produto: TStringField
+      FieldKind = fkLookup
+      FieldName = 'nome_produto'
+      LookupDataSet = tbProdutos
+      LookupKeyFields = 'id'
+      LookupResultField = 'nome'
+      KeyFields = 'id_produtos'
+      Size = 50
+      Lookup = True
+    end
+  end
+  object DataSourceSQLMovimentacoesProdutos: TDataSource
+    DataSet = sqlMovimentacoesProdutos
+    Left = 496
     Top = 320
   end
 end

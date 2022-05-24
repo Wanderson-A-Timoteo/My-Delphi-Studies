@@ -19,8 +19,20 @@ type
     Label4: TLabel;
     Label5: TLabel;
     DBNavigator1: TDBNavigator;
-    DBGrid1: TDBGrid;
+    DBGridCadMovimentacoes: TDBGrid;
+    Label6: TLabel;
+    DBNavigator2: TDBNavigator;
+    Label7: TLabel;
+    Label8: TLabel;
+    DBEdit3: TDBEdit;
+    DBGridCadProdutos: TDBGrid;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Sair: TButton;
+    Label9: TLabel;
+    LabelTotalProdutos: TLabel;
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+    procedure SairClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,6 +54,16 @@ begin
   begin
     DataModule1.tbMovimentacoes.FieldByName('data_hora').Value := Now;
   end;
+end;
+
+procedure TfrmCadastroMovimentacao.FormShow(Sender: TObject);
+begin
+  DataModule1.calcularTotal;
+end;
+
+procedure TfrmCadastroMovimentacao.SairClick(Sender: TObject);
+begin
+  Close;
 end;
 
 end.

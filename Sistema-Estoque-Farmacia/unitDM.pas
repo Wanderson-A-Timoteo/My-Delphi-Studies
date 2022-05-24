@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
   FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.PG,
   FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
-  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, Vcl.Dialogs;
 
 type
   TDataModule1 = class(TDataModule)
@@ -26,6 +26,24 @@ type
     tbProdutosfabricante: TWideStringField;
     tbProdutosvalidade: TDateField;
     tbProdutosestoque_atual: TIntegerField;
+    tbMovimentacoesProdutosid: TIntegerField;
+    tbMovimentacoesProdutosid_produtos: TIntegerField;
+    tbMovimentacoesProdutosid_movimentacoes: TIntegerField;
+    tbMovimentacoesProdutosquantidade: TIntegerField;
+    tbMovimentacoesProdutosnome_produto: TStringField;
+    sqlMovimentacoesProdutos: TFDQuery;
+    DataSourceSQLMovimentacoesProdutos: TDataSource;
+    sqlMovimentacoesProdutosid: TIntegerField;
+    sqlMovimentacoesProdutosid_produtos: TIntegerField;
+    sqlMovimentacoesProdutosid_movimentacoes: TIntegerField;
+    sqlMovimentacoesProdutosquantidade: TIntegerField;
+    sqlMovimentacoesProdutosnome_produto: TStringField;
+    procedure tbMovimentacoesProdutosAfterPost(DataSet: TDataSet);
+    procedure tbMovimentacoesProdutosAfterDelete(DataSet: TDataSet);
+    procedure calcularTotal;
+    procedure tbMovimentacoesAfterScroll(DataSet: TDataSet);
+    procedure tbMovimentacoesProdutosBeforeDelete(DataSet: TDataSet);
+    procedure tbMovimentacoesBeforeDelete(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -39,6 +57,77 @@ implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
+uses unitCadastroMovimentacao;
+
 {$R *.dfm}
+
+procedure TDataModule1.calcularTotal;
+var
+  total : Integer;
+begin
+  if tbMovimentacoesProdutos.State in [dsBrowse] then
+    begin
+      tbMovimentacoesProdutos.First;
+      while not tbMovimentacoesProdutos.Eof do
+        begin
+          total := total + tbMovimentacoesProdutos.FieldByName('quantidade').Value;
+
+          tbMovimentacoesProdutos.Next;
+        end;
+        frmCadastroMovimentacao.labelTotalProdutos.Caption := IntToStr(total);
+    end;
+end;
+
+procedure TDataModule1.tbMovimentacoesAfterScroll(DataSet: TDataSet);
+begin
+  calcularTotal;
+end;
+
+procedure TDataModule1.tbMovimentacoesBeforeDelete(DataSet: TDataSet);
+begin
+  if tbMovimentacoes.RecordCount > 0 then
+    begin
+      ShowMessage('Existem produtos cadastrados nessa movimentação. Exclua-os primeiro.');
+      Abort;
+    end;
+end;
+
+procedure TDataModule1.tbMovimentacoesProdutosAfterDelete(DataSet: TDataSet);
+begin
+  calcularTotal;
+end;
+
+procedure TDataModule1.tbMovimentacoesProdutosAfterPost(DataSet: TDataSet);
+begin
+  calcularTotal;
+  if (tbMovimentacoes.FieldByName('tipo').Value = 'Entrada no Estoque') then
+    begin
+      sqlAumentaEstoque.ParamByName('pId').Value := tbMovimentacoesProdutos.FieldByName('id_Produtos').Value;
+      sqlAumentaEstoque.ParamByName('pQtd').Value := tbMovimentacoesProdutos.FieldByName('quantidade').Value;
+      sqlAumentaEstoque.Execute;
+    end;
+  if (tbMovimentacoes.FieldByName('tipo').Value = 'Saída do Estoque') then
+    begin
+      sqlDiminuiEstoque.ParamByName('pId').Value := tbMovimentacoesProdutos.FieldByName('id_Produtos').Value;
+      sqlDiminuiEstoque.ParamByName('pQtd').Value := tbMovimentacoesProdutos.FieldByName('quantidade').Value;
+      sqlDiminuiEstoque.Execute;
+    end;
+end;
+
+procedure TDataModule1.tbMovimentacoesProdutosBeforeDelete(DataSet: TDataSet);
+begin
+  if (tbMovimentacoes.FieldByName('tipo').Value = 'Entrada no Estoque') then
+    begin
+      sqlDiminuiEstoque.ParamByName('pId').Value := tbMovimentacoesProdutos.FieldByName('id_Produtos').Value;
+      sqlDiminuiEstoque.ParamByName('pQtd').Value := tbMovimentacoesProdutos.FieldByName('quantidade').Value;
+      sqlDiminuiEstoque.Execute;
+    end;
+  if (tbMovimentacoes.FieldByName('tipo').Value = 'Saída do Estoque') then
+    begin
+      sqlAumentaEstoque.ParamByName('pId').Value := tbMovimentacoesProdutos.FieldByName('id_Produtos').Value;
+      sqlAumentaEstoque.ParamByName('pQtd').Value := tbMovimentacoesProdutos.FieldByName('quantidade').Value;
+      sqlAumentaEstoque.Execute;
+    end;
+end;
 
 end.
