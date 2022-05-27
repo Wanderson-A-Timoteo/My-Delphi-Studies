@@ -1,0 +1,27 @@
+program SGAC;
+
+uses
+  Vcl.Forms,
+  unit_principal in 'unit_principal.pas' {form_principal},
+  unit_DataModule in 'unit_DataModule.pas' {DataModule1: TDataModule},
+  unit_login in 'unit_login.pas' {form_login};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+
+
+  Application.CreateForm(TDataModule1, DataModule1);
+
+  form_login := Tform_login.Create(nil);
+  form_login.ShowModal;
+
+  Application.CreateForm(Tform_principal, form_principal);
+
+  form_login.Hide;
+  form_login.Free;
+
+  Application.Run;
+end.

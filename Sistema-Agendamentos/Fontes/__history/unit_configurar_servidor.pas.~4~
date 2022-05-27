@@ -1,0 +1,41 @@
+unit unit_configurar_servidor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons;
+
+type
+  Tform_configurar_servidor = class(TForm)
+    shape_fundo: TShape;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    pnlContainer: TPanel;
+    ImageServidorDados: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    pnlConfigServidor: TPanel;
+    pnlConfigServidorCancelar: TPanel;
+    pnlConfigServidorEntrar: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Label3: TLabel;
+    Label4: TLabel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_configurar_servidor: Tform_configurar_servidor;
+
+implementation
+
+{$R *.dfm}
+
+end.

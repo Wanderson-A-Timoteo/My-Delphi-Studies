@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/05/26 09:28:54.000.451,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/26 09:32:11.000.469,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_principal.dfm</Transaction>
+    <Transaction>2022/05/26 09:32:11.000.469,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_principal.pas</Transaction>
+    <Transaction>2022/05/26 09:32:59.000.150,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\SGAgendamentos.dproj</Transaction>
+    <Transaction>2022/05/26 09:34:54.000.044,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/26 09:48:30.000.700,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_DataModule.dfm</Transaction>
+    <Transaction>2022/05/26 09:48:30.000.700,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_DataModule.pas</Transaction>
+    <Transaction>2022/05/26 10:33:13.000.955,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/26 10:53:11.000.194,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_login.dfm</Transaction>
+    <Transaction>2022/05/26 10:53:11.000.194,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_login.pas</Transaction>
+    <Transaction>2022/05/26 15:56:38.000.201,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\SGAgendamentos.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\SGAC.dproj</Transaction>
+    <Transaction>2022/05/26 15:57:10.000.083,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_DataModule.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_dados.pas</Transaction>
+    <Transaction>2022/05/26 15:57:10.000.083,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_DataModule.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_dados.dfm</Transaction>
+    <Transaction>2022/05/26 17:09:30.000.161,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/26 17:12:36.000.417,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_configurar_servidor.dfm</Transaction>
+    <Transaction>2022/05/26 17:12:36.000.417,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_configurar_servidor.pas</Transaction>
+    <Transaction>2022/05/27 11:38:17.000.244,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/27 12:25:57.000.087,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_mensagens.dfm</Transaction>
+    <Transaction>2022/05/27 12:25:57.000.087,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_mensagens.pas</Transaction>
+    <Transaction>2022/05/27 14:20:04.367,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/27 14:20:32.091,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_funcoes.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

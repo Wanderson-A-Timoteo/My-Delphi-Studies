@@ -1,0 +1,30 @@
+object form_principal: Tform_principal
+  Left = 0
+  Top = 0
+  Align = alClient
+  BorderStyle = bsNone
+  ClientHeight = 520
+  ClientWidth = 948
+  Color = 11976552
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 15
+  object MainMenu1: TMainMenu
+    Left = 136
+    Top = 208
+    object Encerrar1: TMenuItem
+      Caption = 'Encerrar'
+    end
+    object Servidor1: TMenuItem
+      Caption = 'Servidor'
+      OnClick = Servidor1Click
+    end
+  end
+end

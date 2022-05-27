@@ -1,0 +1,27 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 355
+  Width = 553
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'Database=agendamentos'
+      'User_Name=root'
+      'Password=12345'
+      'Server=localhost'
+      'DriverID=MySQL')
+    Left = 32
+    Top = 56
+  end
+  object MySQLDriverLink: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Out' +
+      'put\libmysql.dll'
+    Left = 144
+    Top = 56
+  end
+  object FDGUIxWaitCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 272
+    Top = 56
+  end
+end

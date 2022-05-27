@@ -1,0 +1,11 @@
+{
+	"name": "design-criativo",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"https://github.com/academiadocodigo/router4delphi": "^1.0.7"
+	}
+}

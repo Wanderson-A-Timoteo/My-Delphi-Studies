@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/05/25 11:55:22.000.794,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/25 11:57:30.000.197,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\design-criativo\src\view\designCriativo.view.index.pas</Transaction>
+    <Transaction>2022/05/25 11:57:30.000.197,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\design-criativo\src\view\designCriativo.view.index.dfm</Transaction>
+    <Transaction>2022/05/25 11:57:48.000.177,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\design-criativo\DesignCriativo.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
