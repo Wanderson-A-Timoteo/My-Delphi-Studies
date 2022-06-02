@@ -2,8 +2,8 @@ object form_mensagens: Tform_mensagens
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 219
-  ClientWidth = 593
+  ClientHeight = 261
+  ClientWidth = 629
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,19 +20,21 @@ object form_mensagens: Tform_mensagens
   object panel_fundo: TPanel
     Left = 0
     Top = 0
-    Width = 593
-    Height = 219
+    Width = 629
+    Height = 261
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 593
+    ExplicitHeight = 219
     DesignSize = (
-      593
-      219)
+      629
+      261)
     object shape_fundo: TShape
       Left = 0
       Top = 0
-      Width = 593
-      Height = 219
+      Width = 629
+      Height = 261
       Align = alClient
       ExplicitLeft = 2
       ExplicitWidth = 623
@@ -62,8 +64,8 @@ object form_mensagens: Tform_mensagens
       Center = True
     end
     object label_titulo_msg: TLabel
-      Left = 176
-      Top = 56
+      Left = 160
+      Top = 58
       Width = 62
       Height = 25
       Caption = 'T'#237'tulo: '
@@ -77,10 +79,11 @@ object form_mensagens: Tform_mensagens
       ParentFont = False
     end
     object label_mensagem_para_usuario: TLabel
-      Left = 176
+      Left = 160
       Top = 83
-      Width = 199
-      Height = 21
+      Width = 421
+      Height = 118
+      AutoSize = False
       Caption = 'Mensagem Para o Usu'#225'rio'
       Color = clGray
       Font.Charset = DEFAULT_CHARSET
@@ -90,6 +93,7 @@ object form_mensagens: Tform_mensagens
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
+      WordWrap = True
     end
     object panel_borda_header: TPanel
       Left = 0
@@ -102,8 +106,8 @@ object form_mensagens: Tform_mensagens
       TabOrder = 0
     end
     object pnlBotoesSimNao: TPanel
-      Left = 264
-      Top = 152
+      Left = 292
+      Top = 208
       Width = 305
       Height = 35
       Anchors = [akTop, akRight]

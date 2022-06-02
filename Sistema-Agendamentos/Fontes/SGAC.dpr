@@ -8,7 +8,7 @@ uses
   unit_configurar_servidor in 'unit_configurar_servidor.pas' {form_configurar_servidor},
   unit_mensagens in 'unit_mensagens.pas' {form_mensagens},
   unit_funcoes in 'unit_funcoes.pas',
-  classe_conexao in 'classe_conexao.pas';
+  classe_conexao in 'classe_conexao.pas', System.SysUtils;
 
 {$R *.res}
 
@@ -18,15 +18,29 @@ begin
 
 
   Application.CreateForm(TDataModule1, DataModule1);
+
+  if DataModule1.Conexao.fnc_conectar_banco_dados then
+  begin
+    form_login := Tform_login.Create(nil);
+    form_login.ShowModal;
+
+    Application.CreateForm(Tform_principal, form_principal);
+
+    form_login.Hide;
+    form_login.Free;
+
+    Application.Run;
+  end else
+  begin
+    fnc_criar_mensagem('CONEXÃO AO BANCO DE DADOS',
+                      'Erro ao conectar ao Banco de Dados',
+                      'Não foi possível conectar ao Banco de Dados, possível causa: ' +
+                       DataModule1.Conexao.MsgErro,
+                       ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
+    Application.Terminate;
+  end;
+
   //Application.CreateForm(Tform_configurar_servidor, form_configurar_servidor);
 
-  form_login := Tform_login.Create(nil);
-  form_login.ShowModal;
 
-  Application.CreateForm(Tform_principal, form_principal);
-
-  form_login.Hide;
-  form_login.Free;
-
-  Application.Run;
 end.

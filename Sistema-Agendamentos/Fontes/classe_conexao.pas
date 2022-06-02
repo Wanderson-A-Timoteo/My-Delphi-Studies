@@ -3,7 +3,7 @@ unit classe_conexao;
 interface
 
 uses
-  FireDAC.Comp.Client, FireDAC.Stan.Intf;
+  FireDAC.Comp.Client, FireDAC.Stan.Intf, System.SysUtils;
 
 type
   TConexao = class
@@ -57,7 +57,15 @@ begin
   FConexao.Params.Add('port=' + FPorta);
   FConexao.Params.Add('Database=' + FBase);
   FConexao.Params.Add('DriverID' + 'PG');
-
+  try
+    FConexao.Connected := true;
+  except
+    on e:Exception do
+    begin
+      FMsgErro := e.Message;
+      Result := False;
+    end;
+  end;
 end;
 
 end.
