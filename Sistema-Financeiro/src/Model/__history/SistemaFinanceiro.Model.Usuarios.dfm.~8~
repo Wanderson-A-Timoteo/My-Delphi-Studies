@@ -1,0 +1,23 @@
+object dmUsuarios: TdmUsuarios
+  OldCreateOrder = False
+  Height = 282
+  Width = 512
+  object sqlUsuarios: TFDQuery
+    Connection = dmConexao.SQLConexao
+    Left = 48
+    Top = 8
+  end
+  object cdsUsuarios: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspUsuarios'
+    Left = 272
+    Top = 8
+  end
+  object dspUsuarios: TDataSetProvider
+    DataSet = sqlUsuarios
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 160
+    Top = 8
+  end
+end

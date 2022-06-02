@@ -65,6 +65,7 @@ type
     Panel3: TPanel;
     Panel4: TPanel;
     Panel5: TPanel;
+    procedure SpeedButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,5 +78,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure Tform_configurar_servidor.SpeedButton2Click(Sender: TObject);
+begin
+  Close;
+end;
 
 end.

@@ -1,0 +1,49 @@
+inherited frmUsuarios: TfrmUsuarios
+  Caption = 'Cadastro de Usu'#225'rios'
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited PnlPrincipal: TCardPanel
+    inherited cardPesquisa: TCard
+      inherited pnlPesquisa: TPanel
+        inherited btnPesquisar: TButton
+          OnClick = btnPesquisarClick
+        end
+      end
+      inherited pnlGrid: TPanel
+        inherited DBGrid1: TDBGrid
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'nome'
+              Title.Caption = 'Nome'
+              Width = 330
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'login'
+              Title.Caption = 'Login'
+              Width = 200
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'status'
+              Title.Caption = 'Status'
+              Width = 100
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+  inherited ImageList1: TImageList
+    Left = 601
+    Top = 138
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dmUsuarios.cdsUsuarios
+    Left = 601
+    Top = 258
+  end
+end

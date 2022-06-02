@@ -7,7 +7,8 @@ uses
   unit_login in 'unit_login.pas' {form_login},
   unit_configurar_servidor in 'unit_configurar_servidor.pas' {form_configurar_servidor},
   unit_mensagens in 'unit_mensagens.pas' {form_mensagens},
-  unit_funcoes in 'unit_funcoes.pas';
+  unit_funcoes in 'unit_funcoes.pas',
+  classe_conexao in 'classe_conexao.pas';
 
 {$R *.res}
 

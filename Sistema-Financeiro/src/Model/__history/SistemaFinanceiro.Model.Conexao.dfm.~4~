@@ -1,0 +1,25 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 387
+  Width = 672
+  object SQLConexao: TFDConnection
+    Params.Strings = (
+      'Database=Sistema_Financeiro'
+      'DriverID=PG'
+      'User_Name=postgres'
+      'Password=fontdata2022'
+      'Server=localhost')
+    Connected = True
+    LoginPrompt = False
+    Left = 48
+    Top = 56
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = SQLConexao
+    SQL.Strings = (
+      'SELECT * FROM usuarios')
+    Left = 136
+    Top = 56
+  end
+end

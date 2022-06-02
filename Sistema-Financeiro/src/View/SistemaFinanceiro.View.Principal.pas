@@ -32,6 +32,7 @@ implementation
 
 uses
   SistemaFinanceiro.View.CadastroPadrao,
+  SistemaFinanceiro.View.Usuarios,
   SistemaFinanceiro.View.Splash;
 
 {$R *.dfm}
@@ -48,7 +49,8 @@ end;
 
 procedure TfrmPrincipal.menuCadastroPadraoClick(Sender: TObject);
 begin
-  frmCadastroPadrao.Show;
+  //frmCadastroPadrao.Show;
+  frmUsuarios.Show;
 end;
 
 procedure TfrmPrincipal.Sair1Click(Sender: TObject);

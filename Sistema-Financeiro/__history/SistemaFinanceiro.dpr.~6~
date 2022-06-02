@@ -1,0 +1,21 @@
+program SistemaFinanceiro;
+
+uses
+  Vcl.Forms,
+  SistemaFinanceiro.View.Principal in 'src\View\SistemaFinanceiro.View.Principal.pas' {frmPrincipal},
+  SistemaFinanceiro.View.CadastroPadrao in 'src\View\SistemaFinanceiro.View.CadastroPadrao.pas' {frmCadastroPadrao},
+  SistemaFinanceiro.View.Splash in 'src\View\SistemaFinanceiro.View.Splash.pas' {frmSplash},
+  SistemaFinanceiro.Model.Conexao in 'src\Model\SistemaFinanceiro.Model.Conexao.pas' {DataModule1: TDataModule},
+  SistemaFinanceiro.View.Usuarios in 'src\View\SistemaFinanceiro.View.Usuarios.pas' {frmCadastroPadrao1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmCadastroPadrao, frmCadastroPadrao);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TfrmCadastroPadrao1, frmCadastroPadrao1);
+  Application.Run;
+end.

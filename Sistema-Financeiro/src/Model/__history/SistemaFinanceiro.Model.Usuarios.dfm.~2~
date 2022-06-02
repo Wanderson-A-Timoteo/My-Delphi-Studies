@@ -1,0 +1,19 @@
+object dmUsuarios: TdmUsuarios
+  OldCreateOrder = False
+  Height = 282
+  Width = 512
+  object sqlUsuarios: TFDQuery
+    Left = 48
+    Top = 8
+  end
+  object cdsUsuarios: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 272
+    Top = 8
+  end
+  object dspUsuarios: TDataSetProvider
+    Left = 160
+    Top = 8
+  end
+end

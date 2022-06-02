@@ -23,18 +23,18 @@ object form_mensagens: Tform_mensagens
     Width = 593
     Height = 219
     Align = alClient
+    BevelOuter = bvNone
     TabOrder = 0
     DesignSize = (
       593
       219)
     object shape_fundo: TShape
-      Left = 1
-      Top = 1
-      Width = 591
-      Height = 217
+      Left = 0
+      Top = 0
+      Width = 593
+      Height = 219
       Align = alClient
       ExplicitLeft = 2
-      ExplicitTop = 0
       ExplicitWidth = 623
       ExplicitHeight = 283
     end
@@ -91,7 +91,7 @@ object form_mensagens: Tform_mensagens
       ParentColor = False
       ParentFont = False
     end
-    object Panel1: TPanel
+    object panel_borda_header: TPanel
       Left = 0
       Top = 35
       Width = 625

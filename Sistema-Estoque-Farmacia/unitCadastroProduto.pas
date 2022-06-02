@@ -21,8 +21,10 @@ type
     DBGrid1: TDBGrid;
     Button1: TButton;
     DBEdit5: TDBEdit;
+    btnExportar: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnExportarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,6 +39,26 @@ implementation
 {$R *.dfm}
 
 uses unitDM;
+
+procedure TfrmCadastroProduto.btnExportarClick(Sender: TObject);
+var
+  LLista : TStringList;
+  Llinha : String;
+begin
+  LLista := TStringList.Create;
+  DataModule1.tbProdutos.First;
+  while not DataModule1.tbProdutos.Eof do
+  begin
+    Llinha := DataModule1.tbProdutosid.DisplayText + ';' +
+              DataModule1.tbProdutosnome.DisplayText + ';' +
+              DataModule1.tbProdutosfabricante.DisplayText;
+    LLista.Add(Llinha);
+    DataModule1.tbProdutos.Next;
+  end;
+  if FileExists('D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\exportacao\tbprodutos.csv') then DeleteFile('D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\exportacao\tbprodutos.csv');
+    LLista.SaveToFile('D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Estoque-Farmacia\exportacao\tbprodutos.csv');
+  ShowMessage('Tabela Produtos exportada com Sucesso!');
+end;
 
 procedure TfrmCadastroProduto.Button1Click(Sender: TObject);
 begin

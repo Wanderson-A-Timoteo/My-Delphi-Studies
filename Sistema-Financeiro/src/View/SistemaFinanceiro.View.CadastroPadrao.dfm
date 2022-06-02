@@ -33,10 +33,6 @@ object frmCadastroPadrao: TfrmCadastroPadrao
       Caption = 'cardCadastro'
       CardIndex = 0
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 185
-      ExplicitHeight = 41
       object Panel1: TPanel
         Left = 0
         Top = 330
@@ -44,8 +40,6 @@ object frmCadastroPadrao: TfrmCadastroPadrao
         Height = 76
         Align = alBottom
         TabOrder = 0
-        ExplicitTop = 320
-        ExplicitWidth = 652
         object btnCancelar: TButton
           Left = 545
           Top = 1
@@ -65,7 +59,6 @@ object frmCadastroPadrao: TfrmCadastroPadrao
           ParentFont = False
           TabOrder = 0
           OnClick = btnCancelarClick
-          ExplicitLeft = 535
         end
         object btnSalvar: TButton
           Left = 429
@@ -85,7 +78,6 @@ object frmCadastroPadrao: TfrmCadastroPadrao
           Images = ImageList1
           ParentFont = False
           TabOrder = 1
-          ExplicitLeft = 1
         end
       end
     end
@@ -270,6 +262,7 @@ object frmCadastroPadrao: TfrmCadastroPadrao
           Width = 660
           Height = 255
           Align = alClient
+          DataSource = DataSource1
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -286,7 +279,7 @@ object frmCadastroPadrao: TfrmCadastroPadrao
     Height = 32
     Width = 32
     Left = 545
-    Top = 170
+    Top = 130
     Bitmap = {
       494C010108001800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000008000000060000000010020000000000000C0
@@ -1878,5 +1871,9 @@ object frmCadastroPadrao: TfrmCadastroPadrao
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
+  end
+  object DataSource1: TDataSource
+    Left = 553
+    Top = 250
   end
 end

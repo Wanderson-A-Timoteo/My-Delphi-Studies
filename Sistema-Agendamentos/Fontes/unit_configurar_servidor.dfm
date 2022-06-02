@@ -259,7 +259,6 @@ object form_configurar_servidor: Tform_configurar_servidor
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          ExplicitLeft = 150
           object SpeedButton2: TSpeedButton
             Left = 0
             Top = 0
@@ -275,6 +274,7 @@ object form_configurar_servidor: Tform_configurar_servidor
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = SpeedButton2Click
             ExplicitLeft = 56
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -332,7 +332,6 @@ object form_configurar_servidor: Tform_configurar_servidor
       Enabled = False
       ParentBackground = False
       TabOrder = 1
-      ExplicitTop = 340
       object Label4: TLabel
         Left = 18
         Top = 20
@@ -673,8 +672,6 @@ object form_configurar_servidor: Tform_configurar_servidor
       Color = clWhite
       ParentBackground = False
       TabOrder = 2
-      ExplicitTop = 67
-      ExplicitWidth = 890
       object Label3: TLabel
         Left = 18
         Top = 21

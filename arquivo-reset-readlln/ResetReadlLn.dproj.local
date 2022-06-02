@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/05/24 17:12:19.631,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/05/24 17:20:16.269,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivo-reset-readlln\frmResetReadlLn.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/05/24 17:20:16.269,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivo-reset-readlln\frmResetReadlLn.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
-    <Transaction>2022/05/24 17:20:26.942,D:\Projetos\ws-delphi\My-Delphi-Studies\arquivo-reset-readlln\ResetReadlLn.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2022/05/24 17:12:19.000.631,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/24 17:20:16.000.269,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\arquivo-reset-readlln\frmResetReadlLn.pas</Transaction>
+    <Transaction>2022/05/24 17:20:16.000.269,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\arquivo-reset-readlln\frmResetReadlLn.dfm</Transaction>
+    <Transaction>2022/05/24 17:20:26.000.942,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\arquivo-reset-readlln\ResetReadlLn.dproj</Transaction>
   </Transactions>
 </BorlandProject>

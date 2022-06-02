@@ -58,6 +58,7 @@ end;
 
 procedure Tform_principal.Servidor1Click(Sender: TObject);
 begin
+  form_configurar_servidor := Tform_configurar_servidor.Create(nil);
   form_configurar_servidor.Show;
 end;
 

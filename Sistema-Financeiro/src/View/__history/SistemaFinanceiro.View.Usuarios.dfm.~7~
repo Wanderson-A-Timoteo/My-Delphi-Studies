@@ -1,0 +1,23 @@
+inherited frmUsuarios: TfrmUsuarios
+  Caption = 'Cadastro de Usu'#225'rios'
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited PnlPrincipal: TCardPanel
+    inherited cardPesquisa: TCard
+      inherited pnlPesquisa: TPanel
+        inherited btnPesquisar: TButton
+          OnClick = btnPesquisarClick
+        end
+      end
+    end
+  end
+  inherited ImageList1: TImageList
+    Left = 601
+    Top = 138
+  end
+  inherited DataSource1: TDataSource
+    DataSet = dmUsuarios.cdsUsuarios
+    Left = 601
+    Top = 258
+  end
+end

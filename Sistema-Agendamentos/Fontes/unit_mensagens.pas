@@ -10,7 +10,7 @@ type
   Tform_mensagens = class(TForm)
     panel_fundo: TPanel;
     shape_fundo: TShape;
-    Panel1: TPanel;
+    panel_borda_header: TPanel;
     label_titulo_janela: TLabel;
     img_icone: TImage;
     label_titulo_msg: TLabel;

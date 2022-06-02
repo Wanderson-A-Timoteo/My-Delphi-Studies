@@ -1227,17 +1227,10 @@ object frmPrincipal: TfrmPrincipal
   object MainMenu1: TMainMenu
     Left = 16
     Top = 16
-    object Sistema1: TMenuItem
-      Caption = 'Sistema'
-      object Sair1: TMenuItem
-        Caption = 'Sair'
-        OnClick = Sair1Click
-      end
-    end
     object menuCadastro: TMenuItem
-      Caption = 'Cadastros'
+      Caption = 'Cadastrar'
       object menuCadastroPadrao: TMenuItem
-        Caption = 'Cadastro Padr'#227'o'
+        Caption = 'Usu'#225'rios'
         OnClick = menuCadastroPadraoClick
       end
     end
@@ -1246,6 +1239,13 @@ object frmPrincipal: TfrmPrincipal
     end
     object menuAjuda: TMenuItem
       Caption = 'Ajuda'
+    end
+    object Sistema1: TMenuItem
+      Caption = 'Sistema'
+      object Sair1: TMenuItem
+        Caption = 'Sair'
+        OnClick = Sair1Click
+      end
     end
   end
 end
