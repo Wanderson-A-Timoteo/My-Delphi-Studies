@@ -6,12 +6,8 @@ object DataModule1: TDataModule1
   Width = 383
   object FDConnection: TFDConnection
     Params.Strings = (
-      'Database=agendamentos'
-      'User_Name=postgres'
-      'Password=fontdata2022'
-      'Server=localhost'
+      'Port='
       'DriverID=PG')
-    Connected = True
     LoginPrompt = False
     Left = 56
     Top = 56

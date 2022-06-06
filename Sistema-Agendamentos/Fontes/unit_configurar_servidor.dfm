@@ -2,7 +2,7 @@ object form_configurar_servidor: Tform_configurar_servidor
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 606
+  ClientHeight = 688
   ClientWidth = 940
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,13 +12,14 @@ object form_configurar_servidor: Tform_configurar_servidor
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object shape_fundo: TShape
     Left = 0
     Top = 0
     Width = 940
-    Height = 606
+    Height = 688
     Align = alClient
     Brush.Color = clSilver
     ExplicitLeft = 320
@@ -30,7 +31,7 @@ object form_configurar_servidor: Tform_configurar_servidor
     Left = 8
     Top = 8
     Width = 924
-    Height = 590
+    Height = 672
     BevelOuter = bvNone
     TabOrder = 0
     object PanelConfiguracaoServidor: TPanel
@@ -259,7 +260,7 @@ object form_configurar_servidor: Tform_configurar_servidor
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
-          object SpeedButton2: TSpeedButton
+          object SpeedButtonCancelar: TSpeedButton
             Left = 0
             Top = 0
             Width = 150
@@ -274,7 +275,7 @@ object form_configurar_servidor: Tform_configurar_servidor
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
-            OnClick = SpeedButton2Click
+            OnClick = SpeedButtonCancelarClick
             ExplicitLeft = 56
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -305,7 +306,7 @@ object form_configurar_servidor: Tform_configurar_servidor
             Cursor = crHandPoint
             Margins.Top = 4
             Align = alClient
-            Caption = 'Entrar'
+            Caption = 'Acessar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite
@@ -313,8 +314,8 @@ object form_configurar_servidor: Tform_configurar_servidor
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = SpeedButton1Click
             ExplicitLeft = -1
-            ExplicitTop = 4
           end
         end
       end
@@ -322,9 +323,9 @@ object form_configurar_servidor: Tform_configurar_servidor
     object PanelConfiguracaoAtualServidor: TPanel
       AlignWithMargins = True
       Left = 3
-      Top = 338
+      Top = 380
       Width = 918
-      Height = 245
+      Height = 285
       Margins.Bottom = 0
       Align = alTop
       BevelOuter = bvNone
@@ -348,9 +349,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       object Label15: TLabel
         Left = 47
         Top = 81
-        Width = 244
+        Width = 113
         Height = 17
-        Caption = 'Caminho do Banco de Dados / Servidor'
+        Caption = 'Nome do Servidor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -13
@@ -359,7 +360,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label16: TLabel
-        Left = 297
+        Left = 166
         Top = 83
         Width = 5
         Height = 15
@@ -387,9 +388,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       object Label18: TLabel
         Left = 46
         Top = 147
-        Width = 150
+        Width = 346
         Height = 17
-        Caption = 'Nome da Base de Dados'
+        Caption = 'Nome da Base de Dados / Caminho do Banco de Dados '
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -13
@@ -398,8 +399,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label19: TLabel
-        Left = 201
-        Top = 147
+        Left = 396
+        Top = 139
         Width = 5
         Height = 15
         Caption = '*'
@@ -413,8 +414,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label20: TLabel
-        Left = 313
-        Top = 147
+        Left = 46
+        Top = 219
         Width = 47
         Height = 17
         Caption = 'Usu'#225'rio'
@@ -426,8 +427,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label21: TLabel
-        Left = 362
-        Top = 147
+        Left = 95
+        Top = 219
         Width = 5
         Height = 15
         Caption = '*'
@@ -441,8 +442,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label22: TLabel
-        Left = 591
-        Top = 147
+        Left = 278
+        Top = 219
         Width = 37
         Height = 17
         Caption = 'Senha'
@@ -454,8 +455,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label23: TLabel
-        Left = 632
-        Top = 147
+        Left = 319
+        Top = 219
         Width = 5
         Height = 15
         Caption = '*'
@@ -479,6 +480,32 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label25: TLabel
+        Left = 594
+        Top = 219
+        Width = 56
+        Height = 17
+        Caption = 'Driver ID'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label26: TLabel
+        Left = 656
+        Top = 219
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
       object PanelBordaConfigAtualServidor: TPanel
         Left = 18
         Top = 42
@@ -494,10 +521,10 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
         TabOrder = 0
       end
-      object EditAtualCaminhoBDServidor: TEdit
+      object EditAtualNomeServidor: TEdit
         Left = 47
         Top = 104
-        Width = 529
+        Width = 517
         Height = 29
         TabStop = False
         BevelInner = bvNone
@@ -515,7 +542,7 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditAtualBaseDados: TEdit
         Left = 47
         Top = 170
-        Width = 260
+        Width = 833
         Height = 29
         TabStop = False
         BevelInner = bvNone
@@ -531,9 +558,9 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 2
       end
       object EditAtualUsuario: TEdit
-        Left = 313
-        Top = 170
-        Width = 260
+        Left = 49
+        Top = 242
+        Width = 219
         Height = 29
         TabStop = False
         BevelInner = bvNone
@@ -549,9 +576,9 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 3
       end
       object EditAtualSenha: TEdit
-        Left = 591
-        Top = 170
-        Width = 289
+        Left = 274
+        Top = 233
+        Width = 281
         Height = 29
         TabStop = False
         BevelInner = bvNone
@@ -615,10 +642,10 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 7
       end
       object Panel3: TPanel
-        Left = 591
-        Top = 197
-        Width = 289
-        Height = 2
+        Left = 278
+        Top = 268
+        Width = 277
+        Height = 1
         Color = clGray
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
@@ -630,9 +657,9 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 8
       end
       object Panel4: TPanel
-        Left = 313
-        Top = 197
-        Width = 244
+        Left = 46
+        Top = 269
+        Width = 221
         Height = 2
         Color = clGray
         Font.Charset = DEFAULT_CHARSET
@@ -647,8 +674,8 @@ object form_configurar_servidor: Tform_configurar_servidor
       object Panel5: TPanel
         Left = 46
         Top = 197
-        Width = 244
-        Height = 2
+        Width = 837
+        Height = 1
         Color = clGray
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
@@ -659,13 +686,46 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
         TabOrder = 10
       end
+      object PanelBordaConfigAtualServidorDriverID: TPanel
+        Left = 594
+        Top = 268
+        Width = 277
+        Height = 1
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 11
+      end
+      object EditAtualDriverID: TEdit
+        Left = 594
+        Top = 233
+        Width = 281
+        Height = 29
+        TabStop = False
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 12
+      end
     end
     object PanelNovaConfiguracaoServidor: TPanel
       AlignWithMargins = True
       Left = 3
       Top = 101
       Width = 918
-      Height = 234
+      Height = 276
       Margins.Bottom = 0
       Align = alTop
       BevelOuter = bvNone
@@ -688,9 +748,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       object Label5: TLabel
         Left = 49
         Top = 139
-        Width = 150
+        Width = 346
         Height = 17
-        Caption = 'Nome da Base de Dados'
+        Caption = 'Nome da Base de Dados / Caminho do Banco de Dados '
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -13
@@ -701,9 +761,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       object Label6: TLabel
         Left = 50
         Top = 73
-        Width = 244
+        Width = 113
         Height = 17
-        Caption = 'Caminho do Banco de Dados / Servidor'
+        Caption = 'Nome do Servidor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -13
@@ -725,8 +785,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label7: TLabel
-        Left = 316
-        Top = 139
+        Left = 46
+        Top = 203
         Width = 47
         Height = 17
         Caption = 'Usu'#225'rio'
@@ -738,8 +798,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label9: TLabel
-        Left = 594
-        Top = 139
+        Left = 279
+        Top = 203
         Width = 37
         Height = 17
         Caption = 'Senha'
@@ -751,7 +811,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label10: TLabel
-        Left = 300
+        Left = 169
         Top = 75
         Width = 5
         Height = 15
@@ -777,7 +837,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label12: TLabel
-        Left = 204
+        Left = 396
         Top = 139
         Width = 5
         Height = 15
@@ -792,8 +852,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label13: TLabel
-        Left = 365
-        Top = 139
+        Left = 95
+        Top = 203
         Width = 5
         Height = 15
         Caption = '*'
@@ -807,8 +867,8 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
       end
       object Label14: TLabel
-        Left = 635
-        Top = 139
+        Left = 320
+        Top = 203
         Width = 5
         Height = 15
         Caption = '*'
@@ -817,6 +877,32 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
+        ParentFont = False
+      end
+      object Label27: TLabel
+        Left = 649
+        Top = 203
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label28: TLabel
+        Left = 591
+        Top = 203
+        Width = 56
+        Height = 17
+        Caption = 'Driver ID'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
         ParentFont = False
       end
       object PanelBordaNovaConfigServidor: TPanel
@@ -835,11 +921,13 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentFont = False
         TabOrder = 10
       end
-      object EditNovoCaminhoBDServidor: TEdit
+      object EditNovoNomeServidor: TEdit
+        Tag = 5
         Left = 50
         Top = 96
-        Width = 529
+        Width = 526
         Height = 29
+        Hint = 'Nome do Servidor'
         BevelInner = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
@@ -851,10 +939,12 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 0
       end
       object EditNovaSenha: TEdit
-        Left = 594
-        Top = 162
-        Width = 289
+        Tag = 5
+        Left = 279
+        Top = 226
+        Width = 276
         Height = 29
+        Hint = 'Senha'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -864,13 +954,16 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
+        PasswordChar = '*'
         TabOrder = 4
       end
       object EditNovaBaseDados: TEdit
+        Tag = 5
         Left = 50
         Top = 162
-        Width = 260
-        Height = 29
+        Width = 830
+        Height = 30
+        Hint = 'Nome da Base de Dados / Caminho do Banco de Dados '
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -883,10 +976,12 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 2
       end
       object EditNovoUsuario: TEdit
-        Left = 316
-        Top = 162
-        Width = 260
+        Tag = 5
+        Left = 46
+        Top = 226
+        Width = 221
         Height = 29
+        Hint = 'Login '
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -899,10 +994,12 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 3
       end
       object EditNovaPorta: TEdit
+        Tag = 5
         Left = 594
         Top = 96
         Width = 289
         Height = 29
+        Hint = 'Porta de Conex'#227'o'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -947,9 +1044,9 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 6
       end
       object PanelBordaNovaConfigSenha: TPanel
-        Left = 594
-        Top = 188
-        Width = 286
+        Left = 279
+        Top = 252
+        Width = 276
         Height = 1
         Caption = 'PanelBorda'
         Color = clGray
@@ -963,9 +1060,9 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 9
       end
       object PanelBordaNovaConfigUsuario: TPanel
-        Left = 316
-        Top = 188
-        Width = 260
+        Left = 46
+        Top = 252
+        Width = 221
         Height = 2
         Caption = 'PanelBorda'
         Color = clGray
@@ -980,9 +1077,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object PanelBordaNovaConfigBaseDados: TPanel
         Left = 47
-        Top = 188
-        Width = 255
-        Height = 2
+        Top = 191
+        Width = 833
+        Height = 1
         Caption = 'PanelBorda'
         Color = clGray
         Font.Charset = DEFAULT_CHARSET
@@ -993,6 +1090,40 @@ object form_configurar_servidor: Tform_configurar_servidor
         ParentBackground = False
         ParentFont = False
         TabOrder = 7
+      end
+      object Panel6: TPanel
+        Left = 591
+        Top = 252
+        Width = 286
+        Height = 1
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 11
+      end
+      object EditNovaDriverID: TEdit
+        Tag = 5
+        Left = 593
+        Top = 226
+        Width = 282
+        Height = 26
+        Hint = 'Senha'
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 12
       end
     end
   end

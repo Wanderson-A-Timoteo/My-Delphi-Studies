@@ -20,12 +20,12 @@ type
     pnlConfigServidorCancelar: TPanel;
     pnlConfigServidorEntrar: TPanel;
     SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
+    SpeedButtonCancelar: TSpeedButton;
     Label3: TLabel;
     Label4: TLabel;
     PanelBordaNovaConfigServidor: TPanel;
     PanelBordaConfigAtualServidor: TPanel;
-    EditNovoCaminhoBDServidor: TEdit;
+    EditNovoNomeServidor: TEdit;
     EditNovaSenha: TEdit;
     EditNovaBaseDados: TEdit;
     EditNovoUsuario: TEdit;
@@ -41,7 +41,7 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
-    EditAtualCaminhoBDServidor: TEdit;
+    EditAtualNomeServidor: TEdit;
     Label16: TLabel;
     Label17: TLabel;
     Label18: TLabel;
@@ -65,7 +65,17 @@ type
     Panel3: TPanel;
     Panel4: TPanel;
     Panel5: TPanel;
-    procedure SpeedButton2Click(Sender: TObject);
+    PanelBordaConfigAtualServidorDriverID: TPanel;
+    Label25: TLabel;
+    Label26: TLabel;
+    EditAtualDriverID: TEdit;
+    Panel6: TPanel;
+    Label27: TLabel;
+    Label28: TLabel;
+    EditNovaDriverID: TEdit;
+    procedure SpeedButtonCancelarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,7 +89,56 @@ implementation
 
 {$R *.dfm}
 
-procedure Tform_configurar_servidor.SpeedButton2Click(Sender: TObject);
+uses unit_funcoes, unit_dados, classe_conexao;
+
+procedure Tform_configurar_servidor.FormShow(Sender: TObject);
+begin
+  if DataModule1.Conexao.fnc_ler_arquivo_INI then
+  begin
+    EditAtualNomeServidor.Text  := DataModule1.Conexao.Servidor;
+    EditAtualBaseDados.Text     := DataModule1.Conexao.Base;
+    EditAtualUsuario.Text       := DataModule1.Conexao.Login;
+    EditAtualSenha.Text         := DataModule1.Conexao.Senha;
+    EditAtualPorta.Text         := DataModule1.Conexao.Porta;
+    EditAtualDriverID.Text      := DataModule1.Conexao.DriverId;
+  end;
+end;
+
+procedure Tform_configurar_servidor.SpeedButton1Click(Sender: TObject);
+begin
+  prcValidarCamposObrigatorios( form_configurar_servidor );
+
+  DataModule1.Conexao.Servidor := EditNovoNomeServidor.Text;
+  DataModule1.Conexao.Base     := EditNovaBaseDados.Text;
+  DataModule1.Conexao.Login    := EditNovoUsuario.Text;
+  DataModule1.Conexao.Senha    := EditNovaSenha.Text;
+  DataModule1.Conexao.Porta    := EditNovaPorta.Text;
+  DataModule1.Conexao.DriverId := EditNovaDriverID.Text;
+
+  DataModule1.Conexao.GravarArquivoINI;
+
+  if DataModule1.Conexao.fnc_conectar_banco_dados then
+  begin
+
+    fnc_criar_mensagem('CONEXÃO AO BANCO DE DADOS',
+                       'Conectado com o Banco de Dados',
+                       'Conexão com o Banco de Dados Realizado com Sucesso! ' +
+                       'O Sistema precisa ser reiniciado!',
+                       ExtractFilePath(Application.ExeName) + '\imagens\aviso.png','OK');
+    Application.Terminate;
+  end else
+  begin
+    fnc_criar_mensagem('CONEXÃO AO BANCO DE DADOS',
+                      'Erro ao conectar ao Banco de Dados',
+                      'Não foi possível conectar ao Banco de Dados, possível causa: ' +
+                       DataModule1.Conexao.MsgErro,
+                       ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
+
+    EditNovoNomeServidor.SetFocus;
+  end;
+end;
+
+procedure Tform_configurar_servidor.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
 end;
