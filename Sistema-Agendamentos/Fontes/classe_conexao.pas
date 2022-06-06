@@ -114,7 +114,7 @@ begin
   IniFile := ChangeFileExt(Application.Exename, '.ini');
   Ini     := TIniFile.Create(IniFile);
 
-  if FileExists(IniFile) then
+  if not FileExists(IniFile) then
     Result := False
   else
     begin

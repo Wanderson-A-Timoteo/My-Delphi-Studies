@@ -147,7 +147,7 @@ object form_login: Tform_login
         Height = 85
         Alignment = taCenter
         AutoSize = False
-        Caption = 'Sistema de Gest'#227'o de Agendamentos de Consultas'
+        Caption = 'Sistema de Gest'#227'o de Agendamento de Consulta'
         Color = 10679390
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
@@ -167,8 +167,8 @@ object form_login: Tform_login
         Alignment = taCenter
         AutoSize = False
         Caption = 
-          'Desenvolvido por Wanderson A. Tim'#243'teo Todos os direitos reservad' +
-          'os '
+          'Desenvolvido por Wanderson A. Tim'#243'teo  Copyright '#169' 2022 - Todos ' +
+          'os direitos reservados '
         Color = 5839365
         Font.Charset = ANSI_CHARSET
         Font.Color = 5511957
@@ -181,7 +181,7 @@ object form_login: Tform_login
       end
       object Label4: TLabel
         Left = 190
-        Top = 652
+        Top = 663
         Width = 97
         Height = 17
         Caption = '(65) 9.9292-5286'

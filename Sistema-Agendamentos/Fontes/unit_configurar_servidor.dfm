@@ -4,9 +4,9 @@ object form_configurar_servidor: Tform_configurar_servidor
   BorderStyle = bsNone
   ClientHeight = 688
   ClientWidth = 940
-  Color = clBtnFace
+  Color = 11976552
   Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Font.Color = 11976552
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
@@ -21,7 +21,8 @@ object form_configurar_servidor: Tform_configurar_servidor
     Width = 940
     Height = 688
     Align = alClient
-    Brush.Color = clSilver
+    Brush.Color = 11976552
+    Pen.Color = 11976552
     ExplicitLeft = 320
     ExplicitTop = 176
     ExplicitWidth = 65
@@ -33,6 +34,8 @@ object form_configurar_servidor: Tform_configurar_servidor
     Width = 924
     Height = 672
     BevelOuter = bvNone
+    Color = 11976552
+    ParentBackground = False
     TabOrder = 0
     object PanelConfiguracaoServidor: TPanel
       AlignWithMargins = True
@@ -359,32 +362,6 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label16: TLabel
-        Left = 166
-        Top = 83
-        Width = 5
-        Height = 15
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-      end
-      object Label17: TLabel
-        Left = 630
-        Top = 83
-        Width = 5
-        Height = 15
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-      end
       object Label18: TLabel
         Left = 46
         Top = 147
@@ -396,21 +373,6 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label19: TLabel
-        Left = 396
-        Top = 139
-        Width = 5
-        Height = 15
-        Caption = '*'
-        Color = clRed
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentColor = False
         ParentFont = False
       end
       object Label20: TLabel
@@ -426,21 +388,6 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label21: TLabel
-        Left = 95
-        Top = 219
-        Width = 5
-        Height = 15
-        Caption = '*'
-        Color = clRed
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-      end
       object Label22: TLabel
         Left = 278
         Top = 219
@@ -452,19 +399,6 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label23: TLabel
-        Left = 319
-        Top = 219
-        Width = 5
-        Height = 15
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
         ParentFont = False
       end
       object Label24: TLabel
@@ -491,19 +425,6 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label26: TLabel
-        Left = 656
-        Top = 219
-        Width = 5
-        Height = 15
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
         ParentFont = False
       end
       object PanelBordaConfigAtualServidor: TPanel
@@ -576,10 +497,10 @@ object form_configurar_servidor: Tform_configurar_servidor
         TabOrder = 3
       end
       object EditAtualSenha: TEdit
-        Left = 274
-        Top = 233
-        Width = 281
-        Height = 29
+        Left = 279
+        Top = 242
+        Width = 276
+        Height = 24
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -590,6 +511,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
+        PasswordChar = '*'
         ReadOnly = True
         TabOrder = 4
       end
@@ -703,9 +625,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualDriverID: TEdit
         Left = 594
-        Top = 233
+        Top = 242
         Width = 281
-        Height = 29
+        Height = 24
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone

@@ -4,17 +4,36 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.Buttons, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage;
 
 type
   Tform_principal = class(TForm)
-    MainMenu1: TMainMenu;
-    Encerrar1: TMenuItem;
-    Servidor1: TMenuItem;
-    Button1: TButton;
-    procedure Servidor1Click(Sender: TObject);
-    procedure Encerrar1Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    Label1: TLabel;
+    LabelUsuarioLogado: TLabel;
+    PanelFundo: TPanel;
+    PanelBordaHeader: TPanel;
+    PanelLogoGrande: TPanel;
+    PanelBtnMaximizarFechar: TPanel;
+    ImageLogoPequeno: TImage;
+    ImageLogoGrande: TImage;
+    SpeedButtonMaximinizar: TSpeedButton;
+    SpeedButtonFechar: TSpeedButton;
+    PanelBordaFooter: TPanel;
+    Label2: TLabel;
+    PanelBtnAgendamento: TPanel;
+    SpeedButtonAgendamento: TSpeedButton;
+    PanelBtnCadastrarUsuarios: TPanel;
+    PanelBtnGerarRelatorio: TPanel;
+    SpeedButtonCadastrarUsuarios: TSpeedButton;
+    SpeedButtonGerarRelatorio: TSpeedButton;
+    PanelBtnServidor: TPanel;
+    SpeedButtonServidor: TSpeedButton;
+    procedure Sair1Click(Sender: TObject);
+    procedure SpeedButtonFecharClick(Sender: TObject);
+    procedure SpeedButtonMaximinizarClick(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure SpeedButtonServidorClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,36 +49,49 @@ implementation
 
 uses unit_configurar_servidor, unit_funcoes, unit_mensagens;
 
-procedure Tform_principal.Button1Click(Sender: TObject);
+procedure Tform_principal.FormResize(Sender: TObject);
 begin
-//  if fnc_criar_mensagem('CONFIRMAÇÃO',
-//                      'Tem certeza que deseja Continuar?',
-//                      'Deseja Inserir estes Dados?',
-//                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
-//                      'Comfirma') then
-//   ShowMessage('Sim')
-//   else
-//   ShowMessage('Não');
-
-   // Mensagem de erro
-   fnc_criar_mensagem('CONFIRMAÇÃO',
-                      'Tem certeza que deseja Continuar?',
-                      'Deseja Inserir estes Dados?',
-                      ExtractFilePath(Application.ExeName) + '\imagens\erro.png',
-                      'OK')
-
-
+  PanelFundo.Top := Round((form_principal.Height - PanelFundo.Height) / 2);
+  PanelFundo.Left := Round((form_principal.Width - PanelFundo.Width) / 2);
 end;
 
-procedure Tform_principal.Encerrar1Click(Sender: TObject);
+procedure Tform_principal.Sair1Click(Sender: TObject);
 begin
-  Application.Terminate;
+  if fnc_criar_mensagem('CONFIRMAÇÃO',
+                      'Sair do Sistema',
+                      'Deseja Realmente Sair do Sistema?',
+                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
+                      'Comfirma') then
+   Application.Terminate
+   else
+   Exit;
 end;
 
-procedure Tform_principal.Servidor1Click(Sender: TObject);
+procedure Tform_principal.SpeedButtonFecharClick(Sender: TObject);
+begin
+  if fnc_criar_mensagem('CONFIRMAÇÃO',
+                      'Sair do Sistema',
+                      'Deseja Realmente Sair do Sistema?',
+                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
+                      'Comfirma') then
+   Application.Terminate
+   else
+   Exit;
+end;
+
+procedure Tform_principal.SpeedButtonMaximinizarClick(Sender: TObject);
+begin
+  Application.Minimize;
+end;
+
+procedure Tform_principal.SpeedButtonServidorClick(Sender: TObject);
 begin
   form_configurar_servidor := Tform_configurar_servidor.Create(nil);
-  form_configurar_servidor.Show;
+  try
+    form_configurar_servidor.ShowModal;
+  finally
+    form_configurar_servidor.Free;
+  end;
 end;
 
 end.

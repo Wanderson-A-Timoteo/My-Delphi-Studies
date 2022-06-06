@@ -42,14 +42,9 @@ type
     Label14: TLabel;
     Label15: TLabel;
     EditAtualNomeServidor: TEdit;
-    Label16: TLabel;
-    Label17: TLabel;
     Label18: TLabel;
-    Label19: TLabel;
     Label20: TLabel;
-    Label21: TLabel;
     Label22: TLabel;
-    Label23: TLabel;
     EditAtualBaseDados: TEdit;
     EditAtualUsuario: TEdit;
     EditAtualSenha: TEdit;
@@ -67,7 +62,6 @@ type
     Panel5: TPanel;
     PanelBordaConfigAtualServidorDriverID: TPanel;
     Label25: TLabel;
-    Label26: TLabel;
     EditAtualDriverID: TEdit;
     Panel6: TPanel;
     Label27: TLabel;
