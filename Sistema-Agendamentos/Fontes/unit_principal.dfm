@@ -217,10 +217,9 @@ object form_principal: Tform_principal
       Color = 16250871
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = 0
       object ImageLogoGrande: TImage
-        Left = 14
-        Top = 14
+        Left = -41
+        Top = 9
         Width = 489
         Height = 490
         Center = True
@@ -3066,7 +3065,6 @@ object form_principal: Tform_principal
     Color = clGray
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 576
   end
   object PanelBtnAgendamento: TPanel
     Left = 142
@@ -3092,6 +3090,7 @@ object form_principal: Tform_principal
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = SpeedButtonAgendamentoClick
       ExplicitLeft = 1
     end
   end
@@ -3119,6 +3118,7 @@ object form_principal: Tform_principal
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = SpeedButtonCadastrarUsuariosClick
       ExplicitLeft = -9
     end
   end

@@ -34,6 +34,8 @@ type
     procedure SpeedButtonMaximinizarClick(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure SpeedButtonServidorClick(Sender: TObject);
+    procedure SpeedButtonAgendamentoClick(Sender: TObject);
+    procedure SpeedButtonCadastrarUsuariosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,7 +49,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_configurar_servidor, unit_funcoes, unit_mensagens;
+uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -65,6 +67,26 @@ begin
    Application.Terminate
    else
    Exit;
+end;
+
+procedure Tform_principal.SpeedButtonAgendamentoClick(Sender: TObject);
+begin
+  form_agendamento := Tform_agendamento.Create(Self);
+  try
+    form_agendamento.ShowModal;
+  finally
+    form_agendamento.Free;
+  end;
+end;
+
+procedure Tform_principal.SpeedButtonCadastrarUsuariosClick(Sender: TObject);
+begin
+  form_clientes := Tform_clientes.Create(Self);
+  try
+    form_clientes.ShowModal;
+  finally
+    form_clientes.Free;
+  end;
 end;
 
 procedure Tform_principal.SpeedButtonFecharClick(Sender: TObject);

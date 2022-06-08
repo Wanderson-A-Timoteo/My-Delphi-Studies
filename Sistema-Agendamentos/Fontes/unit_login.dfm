@@ -79,7 +79,7 @@ object form_login: Tform_login
       Height = 37
       Caption = 'Login'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = 11976552
+      Font.Color = 5839365
       Font.Height = -27
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
@@ -102,7 +102,7 @@ object form_login: Tform_login
       Caption = 'X'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = 11976552
+      Font.Color = 5839365
       Font.Height = -21
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]

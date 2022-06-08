@@ -111,8 +111,8 @@
             <Form>form_login</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="unit_configurar_servidor.pas">
-            <Form>form_configurar_servidor</Form>
+        <DCCReference Include="unit_clientes.pas">
+            <Form>form_clientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unit_mensagens.pas">
@@ -121,6 +121,19 @@
         </DCCReference>
         <DCCReference Include="unit_funcoes.pas"/>
         <DCCReference Include="classe_conexao.pas"/>
+        <DCCReference Include="unit_configurar_servidor.pas">
+            <Form>form_configurar_servidor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="classe.profissionais.pas"/>
+        <DCCReference Include="unit_profissionais.pas">
+            <Form>form_profissionais</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_agendamento.pas">
+            <Form>form_agendamento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -144,6 +157,12 @@
             </Delphi.Personality>
             <Deployment Version="3">
                 <DeployFile LocalName="Win32\Debug\SGAC.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>SGAC.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win32\Release\SGAC.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>SGAC.exe</RemoteName>
                         <Overwrite>true</Overwrite>

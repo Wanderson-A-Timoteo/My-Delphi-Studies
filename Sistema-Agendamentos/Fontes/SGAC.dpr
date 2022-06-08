@@ -5,10 +5,15 @@ uses
   unit_principal in 'unit_principal.pas' {form_principal},
   unit_dados in 'unit_dados.pas' {DataModule1: TDataModule},
   unit_login in 'unit_login.pas' {form_login},
-  unit_configurar_servidor in 'unit_configurar_servidor.pas' {form_configurar_servidor},
+  unit_clientes in 'unit_clientes.pas' {form_clientes},
   unit_mensagens in 'unit_mensagens.pas' {form_mensagens},
   unit_funcoes in 'unit_funcoes.pas',
-  classe_conexao in 'classe_conexao.pas', System.SysUtils;
+  classe_conexao in 'classe_conexao.pas',
+  System.SysUtils,
+  unit_configurar_servidor in 'unit_configurar_servidor.pas' {form_configurar_servidor},
+  classe.profissionais in 'classe.profissionais.pas',
+  unit_profissionais in 'unit_profissionais.pas' {form_profissionais},
+  unit_agendamento in 'unit_agendamento.pas' {form_agendamento};
 
 {$R *.res}
 
@@ -19,7 +24,9 @@ begin
 
 
   Application.CreateForm(TDataModule1, DataModule1);
-
+  //Application.CreateForm(Tform_agendamento, form_agendamento);
+  //Application.CreateForm(Tform_profissionais, form_profissionais);
+  //Application.CreateForm(Tform_configurar_servidor, form_configurar_servidor);
   if DataModule1.Conexao.fnc_conectar_banco_dados then
   begin
     form_login := Tform_login.Create(nil);
