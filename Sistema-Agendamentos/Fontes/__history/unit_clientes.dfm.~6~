@@ -1,0 +1,1271 @@
+object form_clientes: Tform_clientes
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 686
+  ClientWidth = 716
+  Color = 11976552
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = 11976552
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 15
+  object shape_fundo_form_agendamento: TShape
+    Left = 0
+    Top = 0
+    Width = 716
+    Height = 686
+    Align = alClient
+    Brush.Color = 11976552
+    Pen.Color = 11976552
+    ExplicitHeight = 625
+  end
+  object PanelContainer: TPanel
+    Left = 8
+    Top = 8
+    Width = 700
+    Height = 673
+    BevelOuter = bvNone
+    Color = 11976552
+    ParentBackground = False
+    TabOrder = 0
+    object PanelAgrupaCamposAgendamento: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 694
+      Height = 662
+      Margins.Bottom = 0
+      Align = alTop
+      BevelOuter = bvNone
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 0
+      object LabelSelecioneProfissional: TLabel
+        Left = 10
+        Top = 85
+        Width = 54
+        Height = 21
+        Caption = 'Cliente'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LabelNoemProfissional: TLabel
+        Left = 10
+        Top = 137
+        Width = 129
+        Height = 21
+        Caption = 'Nome do Cliente'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LabelCelular: TLabel
+        Left = 420
+        Top = 381
+        Width = 54
+        Height = 21
+        Caption = 'Celular'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LabelTituloAgendamento: TLabel
+        Left = 203
+        Top = 14
+        Width = 221
+        Height = 37
+        Caption = 'Cadastrar Cliente'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -27
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 10
+        Top = 209
+        Width = 71
+        Height = 21
+        Caption = 'Endere'#231'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LabelTelefoneFixo: TLabel
+        Left = 10
+        Top = 381
+        Width = 102
+        Height = 21
+        Caption = 'Telefone Fixo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 10
+        Top = 297
+        Width = 109
+        Height = 21
+        Caption = 'Complemento'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 10
+        Top = 449
+        Width = 97
+        Height = 21
+        Caption = 'Observa'#231'oes'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 420
+        Top = 297
+        Width = 155
+        Height = 21
+        Caption = 'Data de Nascimento'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label5: TLabel
+        Left = 420
+        Top = 209
+        Width = 63
+        Height = 21
+        Caption = 'N'#250'mero'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object PanelBordaNovaConfigServidor: TPanel
+        Left = 10
+        Top = 112
+        Width = 660
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 2
+      end
+      object MaskEditCelular: TMaskEdit
+        Left = 420
+        Top = 414
+        Width = 250
+        Height = 23
+        BorderStyle = bsNone
+        EditMask = '(##) #.####-####;1;_'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        MaxLength = 16
+        ParentFont = False
+        TabOrder = 0
+        Text = '(  )  .    -    '
+      end
+      object PanelBotoesAgendarCancelar: TPanel
+        Left = 10
+        Top = 539
+        Width = 364
+        Height = 49
+        BevelOuter = bvNone
+        TabOrder = 1
+        object PanelBotaoAgendar: TPanel
+          Left = 0
+          Top = 0
+          Width = 177
+          Height = 49
+          Align = alLeft
+          Anchors = [akLeft, akBottom]
+          BevelOuter = bvNone
+          Color = 11976552
+          ParentBackground = False
+          TabOrder = 0
+          object SpeedButtonAgendar: TSpeedButton
+            Left = 0
+            Top = 0
+            Width = 177
+            Height = 49
+            Align = alClient
+            Caption = 'Agendar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ExplicitLeft = 96
+            ExplicitTop = 24
+            ExplicitWidth = 23
+            ExplicitHeight = 22
+          end
+        end
+        object PanelBotaoCancelar: TPanel
+          Left = 193
+          Top = 0
+          Width = 171
+          Height = 49
+          Align = alRight
+          BevelOuter = bvNone
+          Color = 8421631
+          ParentBackground = False
+          TabOrder = 1
+          object SpeedButtonCancelar: TSpeedButton
+            Left = 0
+            Top = 0
+            Width = 171
+            Height = 49
+            Align = alClient
+            Caption = 'Cancelar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = SpeedButtonCancelarClick
+            ExplicitLeft = 88
+            ExplicitTop = 8
+            ExplicitWidth = 23
+            ExplicitHeight = 22
+          end
+        end
+      end
+      object Edit1: TEdit
+        Left = 10
+        Top = 164
+        Width = 660
+        Height = 29
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+      end
+      object Panel1: TPanel
+        Left = 10
+        Top = 193
+        Width = 660
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Panel2: TPanel
+        Left = 10
+        Top = 265
+        Width = 375
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 5
+      end
+      object Edit2: TEdit
+        Left = 10
+        Top = 236
+        Width = 375
+        Height = 29
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 6
+      end
+      object Panel3: TPanel
+        Left = 420
+        Top = 437
+        Width = 250
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 7
+      end
+      object MaskEditTelefoneFixo: TMaskEdit
+        Left = 10
+        Top = 414
+        Width = 250
+        Height = 29
+        BorderStyle = bsNone
+        EditMask = '(##) ####-####;1;_'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        MaxLength = 14
+        ParentFont = False
+        TabOrder = 8
+        Text = '(  )     -    '
+      end
+      object Panel4: TPanel
+        Left = 10
+        Top = 353
+        Width = 375
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 9
+      end
+      object Edit3: TEdit
+        Left = 10
+        Top = 324
+        Width = 375
+        Height = 29
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 10
+      end
+      object Panel5: TPanel
+        Left = 10
+        Top = 505
+        Width = 660
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 11
+      end
+      object Edit4: TEdit
+        Left = 10
+        Top = 476
+        Width = 660
+        Height = 29
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 12
+      end
+      object Panel6: TPanel
+        Left = 10
+        Top = 437
+        Width = 250
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 13
+      end
+      object Panel7: TPanel
+        Left = 420
+        Top = 353
+        Width = 250
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 14
+      end
+      object MaskEdit1: TMaskEdit
+        Left = 420
+        Top = 330
+        Width = 247
+        Height = 29
+        BorderStyle = bsNone
+        EditMask = '##/##/####;1;_'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        MaxLength = 10
+        ParentFont = False
+        TabOrder = 15
+        Text = '  /  /    '
+      end
+      object Panel8: TPanel
+        Left = 420
+        Top = 353
+        Width = 250
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 16
+      end
+      object Panel9: TPanel
+        Left = 420
+        Top = 265
+        Width = 100
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = clGray
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 17
+      end
+      object Edit5: TEdit
+        Left = 420
+        Top = 236
+        Width = 100
+        Height = 29
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 18
+      end
+      object Panel10: TPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 688
+        Height = 646
+        Margins.Bottom = 0
+        Align = alTop
+        BevelOuter = bvNone
+        Color = clWhite
+        ParentBackground = False
+        TabOrder = 19
+        object LabelNomeCliente: TLabel
+          Left = 10
+          Top = 90
+          Width = 129
+          Height = 21
+          Caption = 'Nome do Cliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label8: TLabel
+          Left = 414
+          Top = 440
+          Width = 54
+          Height = 21
+          Caption = 'Celular'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label9: TLabel
+          Left = 200
+          Top = 30
+          Width = 221
+          Height = 37
+          Caption = 'Cadastrar Cliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -27
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelEndereco: TLabel
+          Left = 10
+          Top = 232
+          Width = 71
+          Height = 21
+          Caption = 'Endere'#231'o'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label11: TLabel
+          Left = 7
+          Top = 440
+          Width = 102
+          Height = 21
+          Caption = 'Telefone Fixo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelComplemento: TLabel
+          Left = 7
+          Top = 366
+          Width = 109
+          Height = 21
+          Caption = 'Complemento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label13: TLabel
+          Left = 7
+          Top = 510
+          Width = 97
+          Height = 21
+          Caption = 'Observa'#231'oes'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelDataNascimento: TLabel
+          Left = 368
+          Top = 161
+          Width = 155
+          Height = 21
+          Caption = 'Data de Nascimento'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelNumero: TLabel
+          Left = 575
+          Top = 232
+          Width = 63
+          Height = 21
+          Caption = 'N'#250'mero'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelRG: TLabel
+          Left = 186
+          Top = 161
+          Width = 21
+          Height = 21
+          Caption = 'RG'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelCPF: TLabel
+          Left = 10
+          Top = 161
+          Width = 28
+          Height = 21
+          Caption = 'CPF'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelCEP: TLabel
+          Left = 520
+          Top = 366
+          Width = 29
+          Height = 21
+          Caption = 'CEP'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelBairro: TLabel
+          Left = 10
+          Top = 296
+          Width = 46
+          Height = 21
+          Caption = 'Bairro'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelCidade: TLabel
+          Left = 287
+          Top = 300
+          Width = 53
+          Height = 21
+          Caption = 'Cidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LabelUF: TLabel
+          Left = 575
+          Top = 300
+          Width = 20
+          Height = 21
+          Caption = 'UF'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object MaskEdit2: TMaskEdit
+          Left = 414
+          Top = 473
+          Width = 250
+          Height = 23
+          BorderStyle = bsNone
+          EditMask = '(##) #.####-####;1;_'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          MaxLength = 16
+          ParentFont = False
+          TabOrder = 0
+          Text = '(  )  .    -    '
+        end
+        object Panel12: TPanel
+          Left = 7
+          Top = 591
+          Width = 364
+          Height = 49
+          BevelOuter = bvNone
+          TabOrder = 1
+          object Panel13: TPanel
+            Left = 0
+            Top = 0
+            Width = 177
+            Height = 49
+            Align = alLeft
+            Anchors = [akLeft, akBottom]
+            BevelOuter = bvNone
+            Color = 11976552
+            ParentBackground = False
+            TabOrder = 0
+            object SpeedButton1: TSpeedButton
+              Left = 0
+              Top = 0
+              Width = 177
+              Height = 49
+              Align = alClient
+              Caption = 'Salvar'
+              Flat = True
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWhite
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ExplicitLeft = 96
+              ExplicitTop = 24
+              ExplicitWidth = 23
+              ExplicitHeight = 22
+            end
+          end
+          object Panel14: TPanel
+            Left = 193
+            Top = 0
+            Width = 171
+            Height = 49
+            Align = alRight
+            BevelOuter = bvNone
+            Color = 8421631
+            ParentBackground = False
+            TabOrder = 1
+            object SpeedButton2: TSpeedButton
+              Left = 0
+              Top = 0
+              Width = 171
+              Height = 49
+              Align = alClient
+              Caption = 'Cancelar'
+              Flat = True
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWhite
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              OnClick = SpeedButtonCancelarClick
+              ExplicitLeft = 88
+              ExplicitTop = 8
+              ExplicitWidth = 23
+              ExplicitHeight = 22
+            end
+          end
+        end
+        object EditNomeCliente: TEdit
+          Left = 10
+          Top = 117
+          Width = 660
+          Height = 29
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 2
+        end
+        object Panel15: TPanel
+          Left = 10
+          Top = 146
+          Width = 660
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 3
+        end
+        object Panel16: TPanel
+          Left = 10
+          Top = 288
+          Width = 540
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 4
+        end
+        object EditEndereco: TEdit
+          Left = 10
+          Top = 259
+          Width = 543
+          Height = 29
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 5
+        end
+        object Panel17: TPanel
+          Left = 414
+          Top = 496
+          Width = 250
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 6
+        end
+        object MaskEdit3: TMaskEdit
+          Left = 7
+          Top = 473
+          Width = 250
+          Height = 29
+          BorderStyle = bsNone
+          EditMask = '(##) ####-####;1;_'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          MaxLength = 14
+          ParentFont = False
+          TabOrder = 7
+          Text = '(  )     -    '
+        end
+        object Panel18: TPanel
+          Left = 7
+          Top = 422
+          Width = 490
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 8
+        end
+        object EditComplemento: TEdit
+          Left = 7
+          Top = 393
+          Width = 490
+          Height = 29
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 9
+        end
+        object Panel19: TPanel
+          Left = 7
+          Top = 566
+          Width = 660
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 10
+        end
+        object Edit9: TEdit
+          Left = 7
+          Top = 537
+          Width = 660
+          Height = 29
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 11
+        end
+        object Panel20: TPanel
+          Left = 7
+          Top = 496
+          Width = 250
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 12
+        end
+        object Panel21: TPanel
+          Left = 290
+          Top = 354
+          Width = 259
+          Height = 1
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 13
+        end
+        object MaskEditDataNascimento: TMaskEdit
+          Left = 368
+          Top = 194
+          Width = 241
+          Height = 29
+          BorderStyle = bsNone
+          EditMask = '##/##/####;1;_'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          MaxLength = 10
+          ParentFont = False
+          TabOrder = 14
+          Text = '  /  /    '
+        end
+        object Panel22: TPanel
+          Left = 368
+          Top = 214
+          Width = 244
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 15
+        end
+        object Panel23: TPanel
+          Left = 575
+          Top = 288
+          Width = 95
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 16
+        end
+        object EditNumero: TEdit
+          Left = 575
+          Top = 259
+          Width = 95
+          Height = 29
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 17
+        end
+        object MaskEditRG: TMaskEdit
+          Left = 186
+          Top = 194
+          Width = 144
+          Height = 22
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 18
+          Text = ''
+        end
+        object Panel25: TPanel
+          Left = 180
+          Top = 214
+          Width = 150
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 19
+        end
+        object MaskEditCPF: TMaskEdit
+          Left = 10
+          Top = 194
+          Width = 147
+          Height = 22
+          BorderStyle = bsNone
+          EditMask = '###.###.###-##;1;_'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          MaxLength = 14
+          ParentFont = False
+          TabOrder = 20
+          Text = '   .   .   -  '
+        end
+        object Panel26: TPanel
+          Left = 10
+          Top = 214
+          Width = 150
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 21
+        end
+        object MaskEditCEP: TMaskEdit
+          Left = 520
+          Top = 399
+          Width = 150
+          Height = 29
+          BorderStyle = bsNone
+          EditMask = '##.###-###;1;_'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          MaxLength = 10
+          ParentFont = False
+          TabOrder = 22
+          Text = '  .   -   '
+        end
+        object Panel27: TPanel
+          Left = 520
+          Top = 419
+          Width = 150
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 23
+        end
+        object Panel24: TPanel
+          Left = 10
+          Top = 352
+          Width = 247
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 24
+        end
+        object EditBairro: TEdit
+          Left = 10
+          Top = 323
+          Width = 247
+          Height = 29
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 25
+        end
+        object EditCidade: TEdit
+          Left = 287
+          Top = 327
+          Width = 263
+          Height = 20
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 26
+        end
+        object Panel28: TPanel
+          Left = 575
+          Top = 352
+          Width = 92
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = clGray
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clSilver
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 27
+        end
+        object EditUF: TEdit
+          Left = 575
+          Top = 325
+          Width = 92
+          Height = 20
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          BorderStyle = bsNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 28
+        end
+      end
+    end
+  end
+end
