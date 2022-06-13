@@ -5,9 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
-  Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  Vcl.Mask, unit_dados, classe.profissionais;
 
 type
   Tform_profissionais = class(TForm)
@@ -29,13 +27,8 @@ type
     EditEspecialidade: TEdit;
     LabelEspecialidade: TLabel;
     PanelBordaCelular: TPanel;
-    dbg_registros: TDBGrid;
-    Label1: TLabel;
-    ds_profissionais: TDataSource;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
-      Column: TColumn; State: TGridDrawState);
   private
     { Private declarations }
   public
@@ -49,13 +42,6 @@ implementation
 
 {$R *.dfm}
 
-
-procedure Tform_profissionais.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect;
-  DataCol: Integer; Column: TColumn; State: TGridDrawState);
-begin
-  //prcDrawColumnCell(dbg_registros, Rect, DataCol, Column, State);
-  //prcAjustaTamanhoLinha(dbg_Registros, 33);
-end;
 
 procedure Tform_profissionais.FormShow(Sender: TObject);
 begin

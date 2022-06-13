@@ -279,59 +279,19 @@ object form_profissionais: Tform_profissionais
         ParentFont = False
         TabOrder = 5
       end
-      object dbg_registros: TDBGrid
+      object DBGridProfissionaisCadastrados: TDBGrid
         Left = 10
         Top = 328
         Width = 660
         Height = 193
-        BorderStyle = bsNone
         DataSource = ds_profissionais
-        FixedColor = clWindow
-        Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
         TabOrder = 7
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = 11976552
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
-        OnDrawColumnCell = dbg_registrosDrawColumnCell
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'id_profissional'
-            Title.Caption = 'C'#243'd.'
-            Title.Color = clBtnShadow
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'ds_profissional'
-            Title.Caption = 'Nome'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 349
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'ds_especialidade'
-            Title.Caption = 'Especialidade'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 216
-            Visible = True
-          end>
+        OnDrawColumnCell = DBGridProfissionaisCadastradosDrawColumnCell
       end
     end
   end

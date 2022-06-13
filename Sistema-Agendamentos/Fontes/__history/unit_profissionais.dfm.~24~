@@ -339,4 +339,8 @@ object form_profissionais: Tform_profissionais
     Left = 627
     Top = 467
   end
+  object FDQuery1: TFDQuery
+    Left = 507
+    Top = 467
+  end
 end

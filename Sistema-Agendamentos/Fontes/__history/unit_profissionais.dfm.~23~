@@ -284,10 +284,7 @@ object form_profissionais: Tform_profissionais
         Top = 328
         Width = 660
         Height = 193
-        BorderStyle = bsNone
         DataSource = ds_profissionais
-        FixedColor = clWindow
-        Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
         TabOrder = 7
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = 11976552

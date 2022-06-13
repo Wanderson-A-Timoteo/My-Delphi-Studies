@@ -2,7 +2,7 @@ object form_profissionais: Tform_profissionais
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 649
+  ClientHeight = 406
   ClientWidth = 716
   Color = 11976552
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object form_profissionais: Tform_profissionais
     Left = 0
     Top = 0
     Width = 716
-    Height = 649
+    Height = 406
     Align = alClient
     Brush.Color = 11976552
     Pen.Color = 11976552
@@ -30,7 +30,7 @@ object form_profissionais: Tform_profissionais
     Left = 8
     Top = 8
     Width = 700
-    Height = 633
+    Height = 385
     BevelOuter = bvNone
     Color = 11976552
     ParentBackground = False
@@ -40,7 +40,7 @@ object form_profissionais: Tform_profissionais
       Left = 3
       Top = 3
       Width = 694
-      Height = 622
+      Height = 599
       Margins.Bottom = 0
       Align = alTop
       BevelOuter = bvNone
@@ -99,19 +99,6 @@ object form_profissionais: Tform_profissionais
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label1: TLabel
-        Left = 10
-        Top = 298
-        Width = 194
-        Height = 21
-        Caption = 'Profissionais Cadastrados'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object MaskEditCelular: TMaskEdit
         Left = 420
         Top = 243
@@ -131,7 +118,7 @@ object form_profissionais: Tform_profissionais
       end
       object PanelBotoesAgendarCancelar: TPanel
         Left = 10
-        Top = 555
+        Top = 307
         Width = 364
         Height = 49
         BevelOuter = bvNone
@@ -153,7 +140,7 @@ object form_profissionais: Tform_profissionais
             Width = 177
             Height = 49
             Align = alClient
-            Caption = 'Salvar'
+            Caption = 'Agendar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite
@@ -279,64 +266,6 @@ object form_profissionais: Tform_profissionais
         ParentFont = False
         TabOrder = 5
       end
-      object dbg_registros: TDBGrid
-        Left = 10
-        Top = 328
-        Width = 660
-        Height = 193
-        BorderStyle = bsNone
-        DataSource = ds_profissionais
-        FixedColor = clWindow
-        Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
-        TabOrder = 7
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = 11976552
-        TitleFont.Height = -12
-        TitleFont.Name = 'Segoe UI'
-        TitleFont.Style = []
-        OnDrawColumnCell = dbg_registrosDrawColumnCell
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'id_profissional'
-            Title.Caption = 'C'#243'd.'
-            Title.Color = clBtnShadow
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'ds_profissional'
-            Title.Caption = 'Nome'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 349
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'ds_especialidade'
-            Title.Caption = 'Especialidade'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 216
-            Visible = True
-          end>
-      end
     end
-  end
-  object ds_profissionais: TDataSource
-    Left = 627
-    Top = 467
   end
 end

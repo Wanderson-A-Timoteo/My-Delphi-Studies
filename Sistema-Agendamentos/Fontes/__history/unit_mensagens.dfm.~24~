@@ -25,6 +25,8 @@ object form_mensagens: Tform_mensagens
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 593
+    ExplicitHeight = 219
     DesignSize = (
       629
       261)
@@ -105,9 +107,9 @@ object form_mensagens: Tform_mensagens
     end
     object pnlBotoesSimNao: TPanel
       Left = 292
-      Top = 192
+      Top = 208
       Width = 305
-      Height = 50
+      Height = 35
       Anchors = [akTop, akRight]
       BevelOuter = bvNone
       TabOrder = 1
@@ -115,24 +117,23 @@ object form_mensagens: Tform_mensagens
         Left = 155
         Top = 0
         Width = 150
-        Height = 50
+        Height = 35
         Align = alRight
         BevelOuter = bvNone
-        Color = 5839365
+        Color = 16730184
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = 11976552
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitHeight = 35
         object SpeedButtonNao: TSpeedButton
           Left = 0
           Top = 0
           Width = 150
-          Height = 50
+          Height = 35
           Cursor = crHandPoint
           Align = alClient
           Caption = 'N'#227'o (ESC)'
@@ -154,7 +155,7 @@ object form_mensagens: Tform_mensagens
         Left = 0
         Top = 0
         Width = 150
-        Height = 50
+        Height = 35
         Align = alLeft
         BevelOuter = bvNone
         Color = 11976552
@@ -166,12 +167,11 @@ object form_mensagens: Tform_mensagens
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 35
         object SpeedButtonSim: TSpeedButton
           Left = 0
           Top = 0
           Width = 150
-          Height = 50
+          Height = 35
           Cursor = crHandPoint
           Margins.Top = 4
           Align = alClient
@@ -185,6 +185,7 @@ object form_mensagens: Tform_mensagens
           ParentFont = False
           OnClick = SpeedButtonSimClick
           ExplicitLeft = -1
+          ExplicitHeight = 50
         end
       end
     end

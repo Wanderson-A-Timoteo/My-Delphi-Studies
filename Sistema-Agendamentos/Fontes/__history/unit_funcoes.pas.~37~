@@ -14,7 +14,7 @@ uses
 
 implementation
 
-uses unit_mensagens, unit_dados, classe.profissionais ;
+uses unit_mensagens, unit_dados, FireDAC.Comp.Client;
 
 
 function fnc_proximo_codigo(Tabela, Campo : String) : Integer;
@@ -27,7 +27,7 @@ begin
     DataModule1.FDConnection.Connected := False;
     DataModule1.FDConnection.Connected := True;
 
-    QryConsulta.Create(nil);
+    QryConsulta.TFDQuery.Create(nil);
     QryConsulta.Connection := DataModule1.FDConnection;
 
     QryConsulta.Close;

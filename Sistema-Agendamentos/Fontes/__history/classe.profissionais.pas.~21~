@@ -61,7 +61,7 @@ begin
     QueryConsulta.Close;
     QueryConsulta.SQL.Clear;
     QueryConsulta.SQL.Add('SELECT id_profissional, ds_especialidade, nr_contato  ');
-    QueryConsulta.SQL.Add('FROM profissional WHERE ds_profissional LIKE :p_texto ');
+    QueryConsulta.SQL.Add('FROM profissional WHERE ds_profissional LIKE :P_TEXTO ');
     QueryConsulta.ParamByName('p_texto').AsString := '%'+texto+'%';
     QueryConsulta.Open;
   finally

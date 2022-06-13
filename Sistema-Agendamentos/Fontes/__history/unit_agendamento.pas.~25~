@@ -47,6 +47,7 @@ type
     Panel4: TPanel;
     EditObservacoes: TEdit;
     ds_profissionais: TDataSource;
+    FDQuery1: TFDQuery;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);

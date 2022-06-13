@@ -356,7 +356,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Nome do Servidor'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -369,7 +369,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Nome da Base de Dados / Caminho do Banco de Dados '
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -382,7 +382,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -395,7 +395,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Senha'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -408,7 +408,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Porta'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -421,7 +421,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Driver ID'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -452,7 +452,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -488,7 +488,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -506,7 +506,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -525,7 +525,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -633,7 +633,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -674,7 +674,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Nome da Base de Dados / Caminho do Banco de Dados '
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -687,7 +687,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Nome do Servidor'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -700,7 +700,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Porta'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -713,7 +713,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -726,7 +726,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Senha'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -821,7 +821,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         Height = 17
         Caption = 'Driver ID'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = clSilver
         Font.Height = -13
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -853,7 +853,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelInner = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -871,7 +871,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -890,7 +890,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -908,7 +908,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -926,7 +926,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -1040,7 +1040,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
+        Font.Color = 5839365
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]

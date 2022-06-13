@@ -32,6 +32,7 @@ type
     dbg_registros: TDBGrid;
     Label1: TLabel;
     ds_profissionais: TDataSource;
+    FDQuery1: TFDQuery;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;

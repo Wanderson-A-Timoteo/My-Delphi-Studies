@@ -971,4 +971,8 @@ object form_agendamento: Tform_agendamento
     Left = 643
     Top = 19
   end
+  object FDQuery1: TFDQuery
+    Left = 563
+    Top = 27
+  end
 end
