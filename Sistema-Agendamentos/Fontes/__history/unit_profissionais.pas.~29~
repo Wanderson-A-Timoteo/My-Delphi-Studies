@@ -32,10 +32,15 @@ type
     dbg_registros: TDBGrid;
     Label1: TLabel;
     ds_profissionais: TDataSource;
+    Label10: TLabel;
+    Label2: TLabel;
+    labelMsnDELouEdit: TLabel;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
+    procedure dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure SpeedButtonAgendarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +54,8 @@ implementation
 
 {$R *.dfm}
 
+uses unit_funcoes;
+
 
 procedure Tform_profissionais.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
@@ -57,9 +64,49 @@ begin
   //prcAjustaTamanhoLinha(dbg_Registros, 33);
 end;
 
+procedure Tform_profissionais.dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if (not (dbg_registros.DataSource.DataSet.IsEmpty)) AND (key = VK_DELETE) then
+    DataModule1.Profissional.prc_deleta(dbg_registros.DataSource.DataSet.FieldByName('id_profissional').AsInteger );
+
+  //prcAjustaTamanhoLiha(dbg_Registros, 33);
+end;
+
 procedure Tform_profissionais.FormShow(Sender: TObject);
 begin
   ds_profissionais.DataSet := DataModule1.Profissional.fnc_consulta('');
+  //prcAjustaTamanhoLiha(dbg_Registros, 33);
+end;
+
+procedure Tform_profissionais.SpeedButtonAgendarClick(Sender: TObject);
+var
+  Erro: string;
+begin
+  prcValidarCamposObrigatorios( form_profissionais );
+
+  DataModule1.Profissional.ds_profissional  := EditNomeProfissional.Text;
+  DataModule1.Profissional.ds_especialidade := EditEspecialidade.Text;
+  DataModule1.Profissional.nr_contato       := MaskEditCelular.Text;
+
+  if DataModule1.Profissional.fnc_inserir_altear('INSERIR', Erro) then
+  begin
+
+    fnc_criar_mensagem('INSERINDO DADOS',
+                       'Cadastrar Novo Profissional',
+                       'Cadastro Realizado com Sucesso! ' +
+                       'O Sistema precisa ser reiniciado!',
+                       ExtractFilePath(Application.ExeName) + '\imagens\aviso.png','OK');
+    Close;
+  end else
+  begin
+    fnc_criar_mensagem('INSERINDO DADOS',
+                      'Erro ao Cadastrar Novo Profissional',
+                      'Não foi possível Cadastrar Profissional, possível causa: ' +
+                       Erro,
+                       ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
+
+    EditNomeProfissional.SetFocus;
+  end;
 end;
 
 procedure Tform_profissionais.SpeedButtonCancelarClick(Sender: TObject);

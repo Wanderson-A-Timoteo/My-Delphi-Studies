@@ -67,8 +67,6 @@ begin
     MaskEditCelular.Text                     := dbg_registros.DataSource.DataSet.FieldByName('nr_contato').AsString;
 
     DataModule1.Profissional.Id_Profissional := dbg_registros.DataSource.DataSet.FieldByName('id_profissional').AsInteger;
-
-    EditNomeProfissional.SetFocus;
   end;
 end;
 
@@ -105,23 +103,23 @@ begin
   DataModule1.Profissional.nr_contato       := MaskEditCelular.Text;
 
   if DataModule1.Profissional.Id_Profissional > 0 then
-    Operacao := 'ALTERAR'
+    Operacao := 'ALTERAR';
   else
     Operacao := 'INSERIR';
 
   if DataModule1.Profissional.fnc_inserir_altear(Operacao, Erro) then
   begin
     fnc_criar_mensagem('INSERINDO DADOS',
-                       'Cadastrar/Alterar Profissional',
-                       'Cadastro/Alteração Realizado com Sucesso! ' +
-                       '',
+                       'Cadastrar/Alterar Novo Profissional',
+                       'Cadastro Realizado com Sucesso! ' +
+                       'O Sistema precisa ser reiniciado!',
                        ExtractFilePath(Application.ExeName) + '\imagens\aviso.png','OK');
     Close;
   end else
   begin
     fnc_criar_mensagem('INSERINDO DADOS',
-                       'Erro ao Cadastrar/Alterar Profissional',
-                       'Não foi possível Cadastrar/Alterar Profissional, possível causa: ' +
+                      'Erro ao Cadastrar/Alterar Novo Profissional',
+                      'Não foi possível Cadastrar Profissional, possível causa: ' +
                        Erro,
                        ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
 

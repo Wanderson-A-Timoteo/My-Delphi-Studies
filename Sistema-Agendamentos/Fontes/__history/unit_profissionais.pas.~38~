@@ -67,8 +67,6 @@ begin
     MaskEditCelular.Text                     := dbg_registros.DataSource.DataSet.FieldByName('nr_contato').AsString;
 
     DataModule1.Profissional.Id_Profissional := dbg_registros.DataSource.DataSet.FieldByName('id_profissional').AsInteger;
-
-    EditNomeProfissional.SetFocus;
   end;
 end;
 

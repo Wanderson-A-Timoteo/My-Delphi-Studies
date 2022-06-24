@@ -45,7 +45,13 @@ object form_profissionais: Tform_profissionais
       Align = alTop
       BevelOuter = bvNone
       Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clSilver
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 0
       object LabelNoemProfissional: TLabel
         Left = 10
@@ -112,6 +118,48 @@ object form_profissionais: Tform_profissionais
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label10: TLabel
+        Left = 178
+        Top = 137
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 120
+        Top = 209
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object labelMsnDELouEdit: TLabel
+        Left = 10
+        Top = 527
+        Width = 455
+        Height = 22
+        Caption = 
+          'Pressione DEL para excluir ou duplo clique para editar profissio' +
+          'nais cadastrados'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        WordWrap = True
+      end
       object MaskEditCelular: TMaskEdit
         Left = 420
         Top = 243
@@ -161,6 +209,7 @@ object form_profissionais: Tform_profissionais
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = SpeedButtonAgendarClick
             ExplicitLeft = 96
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -200,10 +249,12 @@ object form_profissionais: Tform_profissionais
         end
       end
       object EditNomeProfissional: TEdit
+        Tag = 5
         Left = 10
         Top = 168
         Width = 660
         Height = 22
+        Hint = 'Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -248,10 +299,12 @@ object form_profissionais: Tform_profissionais
         TabOrder = 4
       end
       object EditEspecialidade: TEdit
+        Tag = 5
         Left = 10
         Top = 240
         Width = 375
         Height = 22
+        Hint = 'Especialidade do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -290,11 +343,13 @@ object form_profissionais: Tform_profissionais
         Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
         TabOrder = 7
         TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = 11976552
+        TitleFont.Color = clSilver
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
         OnDrawColumnCell = dbg_registrosDrawColumnCell
+        OnDblClick = dbg_registrosDblClick
+        OnKeyDown = dbg_registrosKeyDown
         Columns = <
           item
             Expanded = False
