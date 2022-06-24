@@ -2966,19 +2966,19 @@ object form_principal: Tform_principal
     TabOrder = 1
   end
   object PanelBtnMaximizarFechar: TPanel
-    Left = 904
-    Top = 13
-    Width = 90
-    Height = 44
+    Left = 912
+    Top = 4
+    Width = 82
+    Height = 43
     Cursor = crNo
     Anchors = [akTop, akRight]
     BevelOuter = bvNone
     TabOrder = 2
     object SpeedButtonMaximinizar: TSpeedButton
-      Left = 0
-      Top = 0
-      Width = 40
-      Height = 40
+      Left = 8
+      Top = 5
+      Width = 30
+      Height = 30
       Cursor = crHandPoint
       Hint = 'Minimizar Sistema'
       Font.Charset = DEFAULT_CHARSET
@@ -3019,10 +3019,10 @@ object form_principal: Tform_principal
       OnClick = SpeedButtonMaximinizarClick
     end
     object SpeedButtonFechar: TSpeedButton
-      Left = 46
-      Top = 0
-      Width = 40
-      Height = 40
+      Left = 48
+      Top = 5
+      Width = 30
+      Height = 30
       Cursor = crHandPoint
       Hint = 'Sair do Sistema'
       Glyph.Data = {

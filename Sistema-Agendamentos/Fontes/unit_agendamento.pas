@@ -5,9 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
-  Vcl.Mask, unit_dados, classe.profissionais, Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  Vcl.Mask, Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, unit_profissionais, unit_clientes, classe_conexao, unit_dados,
+  classe.profissionais;
 
 type
   Tform_agendamento = class(TForm)
@@ -68,11 +69,12 @@ implementation
 
 {$R *.dfm}
 
-uses unit_profissionais, unit_clientes;
+uses unit_cliente_consulta;
 
 procedure Tform_agendamento.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   DataModule1.Profissional.Destroy;
+  Action := caFree;
 end;
 
 procedure Tform_agendamento.FormCreate(Sender: TObject);
@@ -102,12 +104,11 @@ end;
 
 procedure Tform_agendamento.SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
 begin
-  //form_clientes := Tform_clientes;
-  form_clientes := Tform_clientes.Create(Self);
+  form_cliente_consulta := Tform_cliente_consulta.Create(Self);
   try
-    form_clientes.ShowModal;
+    form_cliente_consulta.ShowModal;
   finally
-    form_clientes.Free;
+    form_cliente_consulta.Free;
   end;
 end;
 

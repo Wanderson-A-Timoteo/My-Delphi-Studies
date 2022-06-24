@@ -60,10 +60,10 @@ end;
 procedure Tform_principal.Sair1Click(Sender: TObject);
 begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
-                      'Sair do Sistema',
-                      'Deseja Realmente Sair do Sistema?',
-                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
-                      'Comfirma') then
+                        'Sair do Sistema',
+                        'Deseja Realmente Sair do Sistema?',
+                        ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
+                        'Comfirma') then
    Application.Terminate
    else
    Exit;
@@ -92,10 +92,10 @@ end;
 procedure Tform_principal.SpeedButtonFecharClick(Sender: TObject);
 begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
-                      'Sair do Sistema',
-                      'Deseja Realmente Sair do Sistema?',
-                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
-                      'Comfirma') then
+                        'Sair do Sistema',
+                        'Deseja Realmente Sair do Sistema?',
+                        ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
+                        'Comfirma') then
    Application.Terminate
    else
    Exit;
