@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
-  Vcl.Mask;
+  Vcl.Mask, unit_dados, classe.profissionais, Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, unit_profissionais, unit_clientes, classe_conexao;
 
 type
   Tform_agendamento = class(TForm)
@@ -16,7 +18,7 @@ type
     PanelBordaNovaConfigServidor: TPanel;
     LabelNoemProfissional: TLabel;
     LabelData: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    dbl_cmb_profissionais: TDBLookupComboBox;
     PanelBordaSelecioneCliente: TPanel;
     LabelSelecioneCliente: TLabel;
     LabelNomeCliente: TLabel;
@@ -43,10 +45,14 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
-    Edit1: TEdit;
+    EditObservacoes: TEdit;
+    ds_profissionais: TDataSource;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,7 +68,20 @@ implementation
 
 {$R *.dfm}
 
-uses unit_profissionais, unit_clientes;
+procedure Tform_agendamento.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  DataModule1.Profissional.Destroy;
+end;
+
+procedure Tform_agendamento.FormCreate(Sender: TObject);
+begin
+  DataModule1.Profissional := TProfissionais.Create(DataModule1.FDConnection);
+end;
+
+procedure Tform_agendamento.FormShow(Sender: TObject);
+begin
+  ds_profissionais.DataSet := DataModule1.Profissional.fnc_consulta('');
+end;
 
 procedure Tform_agendamento.SpeedButtonCadastrarProfissionalClick(Sender: TObject);
 begin
