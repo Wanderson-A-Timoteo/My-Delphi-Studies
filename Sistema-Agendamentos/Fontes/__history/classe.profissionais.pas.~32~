@@ -36,13 +36,13 @@ implementation
 
 { TProfissionais }
 
-uses unit_funcoes, unit_dados;
+uses unit_funcoes, unit_dados, unit_profissionais;
 
 constructor TProfissionais.Create(Conexao: TFDConnection);
 begin
-  FConexao :=  Conexao;
+  FConexao                 :=  Conexao;
 
-  QueryConsulta := TFDQuery.Create(nil);
+  QueryConsulta            := TFDQuery.Create(nil);
   QueryConsulta.Connection := FConexao;
 end;
 
@@ -60,12 +60,12 @@ begin
 
     QueryConsulta.Close;
     QueryConsulta.SQL.Clear;
-    QueryConsulta.SQL.Add('SELECT id_profissional, ds_especialidade, nr_contato  ');
-    QueryConsulta.SQL.Add('FROM profissional WHERE DS_PROFISSIONAL LIKE :P_TEXTO ');
+    QueryConsulta.SQL.Add('SELECT id_profissional, ds_profissional, ds_especialidade, nr_contato  ');
+    QueryConsulta.SQL.Add('FROM profissionais WHERE ds_profissional LIKE :p_texto ');
     QueryConsulta.ParamByName('p_texto').AsString := '%'+texto+'%';
     QueryConsulta.Open;
   finally
-    Result := QueryConsulta;
+    Result             := QueryConsulta;
   end;
 
 end;
@@ -76,10 +76,10 @@ var
 begin
   try
     try
-      FConexao.Connected := False;
-      FConexao.Connected := True;
+      FConexao.Connected      := False;
+      FConexao.Connected      := True;
 
-      QueryInserir := TFDQuery.Create(nil);
+      QueryInserir            := TFDQuery.Create(nil);
       QueryInserir.Connection := FConexao;
 
       QueryInserir.Close;
@@ -87,29 +87,35 @@ begin
 
       if TipoOperacao = 'INSERIR' then
       begin
-        QueryInserir.SQL.Add('INSERT INTO profissionais (id_Profissional,     ');
+        QueryInserir.SQL.Add('INSERT INTO profissionais (id_profissional,     ');
         QueryInserir.SQL.Add('                           ds_profissional,     ');
         QueryInserir.SQL.Add('                           ds_especialidade,    ');
         QueryInserir.SQL.Add('                           nr_contato       )   ');
         QueryInserir.SQL.Add('VALUES                     (:p_id_profissional, ');
-        QueryInserir.SQL.Add(':                           :p_ds_especialiade, ');
+        QueryInserir.SQL.Add('                            :p_ds_profissional, ');
+        QueryInserir.SQL.Add('                            :p_ds_especialidade,');
         QueryInserir.SQL.Add('                            :p_nr_contato    )  ');
 
-        QueryInserir.ParamByName('p_id_profissional').AsInteger := fnc_proximo_codigo;
+        QueryInserir.ParamByName('p_id_profissional').AsInteger :=
+          fnc_proximo_codigo('profissionais', 'id_profissional');
       end else
       begin
-        QueryUpdate.SQL.Add('UPDATE profissionais SET                         ');
-        QueryUpdate.SQL.Add('        ds_profissional  = :p_ds_profissional,   ');
-        QueryUpdate.SQL.Add('        ds_especialidade = :p_ds_especialiade,   ');
-        QueryUpdate.SQL.Add('        nr_contato       = :p_nr_contato,        ');
-        QueryUpdate.SQL.Add('WHERE   id_profissional  = :p_id_profissional    ');
+        QueryInserir.SQL.Add('UPDATE profissionais                             ');
+        QueryInserir.SQL.Add('SET     ds_profissional  = :p_ds_profissional,   ');
+        QueryInserir.SQL.Add('        ds_especialidade = :p_ds_especialidade,  ');
+        QueryInserir.SQL.Add('        nr_contato       = :p_nr_contato,        ');
+        QueryInserir.SQL.Add('WHERE   id_profissional  = :p_id_profissional    ');
 
         QueryInserir.ParamByName('p_id_profissional').AsInteger := FId_Profissional;
       end;
-      QueryInserir.ParamByName('').AsString :=;
+      QueryInserir.ParamByName('p_ds_profissional').AsString  := Fds_profissional;
+      QueryInserir.ParamByName('p_ds_especialidade').AsString := Fds_especialidade;
+      QueryInserir.ParamByName('p_nr_contato').AsString       := Fnr_contato;
       QueryInserir.ExecSQL;
 
       Result := true;
+
+      fnc_consulta('');
     except
       on E: Exception do
       begin
@@ -134,7 +140,9 @@ begin
     FConexao.Connected := False;
     FConexao.Connected := True;
 
-    FConexao.ExecSQL('Delete from profissionais where id_profissional = :id_chave', [id_chave]);
+    FConexao.ExecSQL('DELETE FROM profissionais WHERE id_profissional = :id_chave', [id_chave]);
+
+    fnc_consulta('');
   end;
 
 end;
