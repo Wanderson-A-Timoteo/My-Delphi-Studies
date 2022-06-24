@@ -1,0 +1,33 @@
+unit classe.cliente;
+
+interface
+
+uses FireDAC.Comp.Client;
+
+type
+  TCliente = class
+    private
+    FConecao       : TFDConnection;
+
+    Fid_cliente    : Integer;
+    Fdt_nascimento : TDateTime;
+
+    Fds_cliente,
+    Fnr_cpf,
+    Fnr_rg,
+    Fnr_cep,
+    Fds_endereco,
+    Fnr_numero,
+    Fds_complemento,
+    Fds_bairro,
+    Fds_cidade,
+    Fds_uf,
+    Fnr_telefone,
+    Fnr_telefone2,
+    Fds_obs        : String;
+
+  end;
+
+implementation
+
+end.

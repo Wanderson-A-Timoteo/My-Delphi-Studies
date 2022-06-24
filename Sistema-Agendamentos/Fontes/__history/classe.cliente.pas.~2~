@@ -1,0 +1,15 @@
+unit classe.cliente;
+
+interface
+
+uses classe_conexao, unit_dados;
+
+type
+  TCliente = class
+    private
+    FConecao : TFDConection;
+  end;
+
+implementation
+
+end.

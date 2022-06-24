@@ -14,7 +14,8 @@ uses
   classe.profissionais in 'classe.profissionais.pas',
   unit_cliente_consulta in 'unit_cliente_consulta.pas' {form_cliente_consulta},
   unit_agendamento in 'unit_agendamento.pas' {form_agendamento},
-  unit_profissionais in 'unit_profissionais.pas' {form_profissionais};
+  unit_profissionais in 'unit_profissionais.pas' {form_profissionais},
+  classe.cliente in 'classe.cliente.pas';
 
 {$R *.res}
 
@@ -24,7 +25,6 @@ begin
   Application.MainFormOnTaskbar := True;
 
   Application.CreateForm(TDataModule1, DataModule1);
-
   if DataModule1.Conexao.fnc_conectar_banco_dados then
   begin
     form_login := Tform_login.Create(nil);
