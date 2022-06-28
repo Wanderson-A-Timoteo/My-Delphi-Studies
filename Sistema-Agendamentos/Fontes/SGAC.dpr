@@ -42,7 +42,7 @@ begin
                        'Erro ao conectar ao Banco de Dados',
                        'Não foi possível conectar ao Banco de Dados, possível causa: ' +
                         DataModule1.Conexao.MsgErro,
-                        ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
+                        ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
 
     Application.CreateForm(Tform_configurar_servidor, form_configurar_servidor);
     form_configurar_servidor.ShowModal;

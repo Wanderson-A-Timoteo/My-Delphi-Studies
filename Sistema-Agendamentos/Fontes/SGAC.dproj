@@ -83,6 +83,12 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_DcpOutput>D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Output\dcu\</DCC_DcpOutput>
+        <DCC_ExeOutput>D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Output\</DCC_ExeOutput>
+        <DCC_BplOutput>D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Output\dcu\</DCC_BplOutput>
+        <DCC_DcuOutput>D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Output\dcu\</DCC_DcuOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -159,6 +165,10 @@
                 <Source>
                     <Source Name="MainSource">SGAC.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
                 <DeployFile LocalName="Win32\Debug\SGAC.exe" Configuration="Debug" Class="ProjectOutput">
