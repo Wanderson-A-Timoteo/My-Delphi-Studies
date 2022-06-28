@@ -5,9 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
-  Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  Vcl.Mask, unit_dados, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, classe.cliente;
 
 type
   Tform_cliente_consulta = class(TForm)
@@ -26,15 +26,17 @@ type
     dbg_registros_consulta_cliente: TDBGrid;
     LabelClientesCadastrados: TLabel;
     ds_cliente_consulta: TDataSource;
-    LabelAsteriscoNomeCliente: TLabel;
     PanelBotaoCancelar: TPanel;
     SpeedButtonCancelarConsulta: TSpeedButton;
+    Label1: TLabel;
+    procedure SpeedButtonCancelarConsultaClick(Sender: TObject);
     procedure SpeedButtonCadastrarNovoClienteClick(Sender: TObject);
-    procedure SpeedButtonConsultarClienteClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    LClientes : TCliente;
   end;
 
 var
@@ -44,8 +46,13 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_clientes;
+uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens;
 
+
+procedure Tform_cliente_consulta.FormCreate(Sender: TObject);
+begin
+  LClientes := TCliente.Create( DataModule1.FDConnection );
+end;
 
 procedure Tform_cliente_consulta.SpeedButtonCadastrarNovoClienteClick(Sender: TObject);
 begin
@@ -57,9 +64,9 @@ begin
   end;
 end;
 
-procedure Tform_cliente_consulta.SpeedButtonConsultarClienteClick(Sender: TObject);
+procedure Tform_cliente_consulta.SpeedButtonCancelarConsultaClick(Sender: TObject);
 begin
-  //
+  Close;
 end;
 
 end.
