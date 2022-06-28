@@ -38,7 +38,7 @@ begin
     if QryConsulta.FieldByName('CODIGO').AsString <> '' then
       Result := QryConsulta.FieldByName('CODIGO').AsInteger + 1;
   finally
-    QryConsulta.Destroy;
+    QryConsulta.Free;
   end;
 end;
 

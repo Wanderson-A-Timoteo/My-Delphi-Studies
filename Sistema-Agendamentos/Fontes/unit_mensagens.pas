@@ -83,7 +83,7 @@ end;
 procedure Tform_mensagens.SpeedButtonSimClick(Sender: TObject);
 begin
   bRespostaMSG := True;
-  Close
+  Close;
 end;
 
 end.

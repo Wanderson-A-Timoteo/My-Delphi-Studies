@@ -3,7 +3,7 @@ object form_mensagens: Tform_mensagens
   Top = 0
   BorderStyle = bsNone
   ClientHeight = 261
-  ClientWidth = 629
+  ClientWidth = 625
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,23 +20,22 @@ object form_mensagens: Tform_mensagens
   object panel_fundo: TPanel
     Left = 0
     Top = 0
-    Width = 629
+    Width = 625
     Height = 261
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitWidth = 629
     DesignSize = (
-      629
+      625
       261)
     object shape_fundo: TShape
       Left = 0
       Top = 0
-      Width = 629
+      Width = 625
       Height = 261
       Align = alClient
-      ExplicitLeft = 2
-      ExplicitWidth = 623
-      ExplicitHeight = 283
+      ExplicitWidth = 649
     end
     object label_titulo_janela: TLabel
       Left = 14
@@ -54,16 +53,16 @@ object form_mensagens: Tform_mensagens
       ParentFont = False
     end
     object img_icone: TImage
-      Left = 14
-      Top = 59
-      Width = 128
-      Height = 128
+      Left = 32
+      Top = 83
+      Width = 177
+      Height = 159
       AutoSize = True
       Center = True
     end
     object label_titulo_msg: TLabel
-      Left = 160
-      Top = 58
+      Left = 248
+      Top = 40
       Width = 62
       Height = 25
       Caption = 'T'#237'tulo: '
@@ -77,9 +76,9 @@ object form_mensagens: Tform_mensagens
       ParentFont = False
     end
     object label_mensagem_para_usuario: TLabel
-      Left = 160
-      Top = 83
-      Width = 421
+      Left = 248
+      Top = 71
+      Width = 363
       Height = 118
       AutoSize = False
       Caption = 'Mensagem Para o Usu'#225'rio'
@@ -104,10 +103,10 @@ object form_mensagens: Tform_mensagens
       TabOrder = 0
     end
     object pnlBotoesSimNao: TPanel
-      Left = 292
-      Top = 192
+      Left = 303
+      Top = 195
       Width = 305
-      Height = 50
+      Height = 47
       Anchors = [akTop, akRight]
       BevelOuter = bvNone
       TabOrder = 1
@@ -115,7 +114,7 @@ object form_mensagens: Tform_mensagens
         Left = 155
         Top = 0
         Width = 150
-        Height = 50
+        Height = 47
         Align = alRight
         BevelOuter = bvNone
         Color = 5839365
@@ -127,12 +126,12 @@ object form_mensagens: Tform_mensagens
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitHeight = 35
+        ExplicitHeight = 50
         object SpeedButtonNao: TSpeedButton
           Left = 0
           Top = 0
           Width = 150
-          Height = 50
+          Height = 47
           Cursor = crHandPoint
           Align = alClient
           Caption = 'N'#227'o (ESC)'
@@ -154,7 +153,7 @@ object form_mensagens: Tform_mensagens
         Left = 0
         Top = 0
         Width = 150
-        Height = 50
+        Height = 47
         Align = alLeft
         BevelOuter = bvNone
         Color = 11976552
@@ -166,12 +165,12 @@ object form_mensagens: Tform_mensagens
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 35
+        ExplicitHeight = 50
         object SpeedButtonSim: TSpeedButton
           Left = 0
           Top = 0
           Width = 150
-          Height = 50
+          Height = 47
           Cursor = crHandPoint
           Margins.Top = 4
           Align = alClient
@@ -185,6 +184,7 @@ object form_mensagens: Tform_mensagens
           ParentFont = False
           OnClick = SpeedButtonSimClick
           ExplicitLeft = -1
+          ExplicitHeight = 50
         end
       end
     end

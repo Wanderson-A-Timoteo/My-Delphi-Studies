@@ -62,11 +62,11 @@ procedure Tform_profissionais.dbg_registrosDblClick(Sender: TObject);
 begin
   if (not (dbg_registros.DataSource.DataSet.IsEmpty)) then
   begin
-    EditNomeProfissional.Text                := dbg_registros.DataSource.DataSet.FieldByName('ds_profissional').AsString;
-    EditEspecialidade.Text                   := dbg_registros.DataSource.DataSet.FieldByName('ds_especialidade').AsString;
-    MaskEditCelular.Text                     := dbg_registros.DataSource.DataSet.FieldByName('nr_contato').AsString;
+    EditNomeProfissional.Text := dbg_registros.DataSource.DataSet.FieldByName('ds_profissional').AsString;
+    EditEspecialidade.Text    := dbg_registros.DataSource.DataSet.FieldByName('ds_especialidade').AsString;
+    MaskEditCelular.Text      := dbg_registros.DataSource.DataSet.FieldByName('nr_contato').AsString;
 
-    DataModule1.Profissional.Id_Profissional := dbg_registros.DataSource.DataSet.FieldByName('id_profissional').AsInteger;
+    DataModule1.Profissional.id_profissional := dbg_registros.DataSource.DataSet.FieldByName('id_profissional').AsInteger;
 
     EditNomeProfissional.SetFocus;
   end;
@@ -104,7 +104,7 @@ begin
   DataModule1.Profissional.ds_especialidade := EditEspecialidade.Text;
   DataModule1.Profissional.nr_contato       := MaskEditCelular.Text;
 
-  if DataModule1.Profissional.Id_Profissional > 0 then
+  if DataModule1.Profissional.id_profissional > 0 then
     Operacao := 'ALTERAR'
   else
     Operacao := 'INSERIR';
@@ -115,7 +115,7 @@ begin
                        'Cadastrar/Alterar Profissional',
                        'Cadastro/Alteração Realizado com Sucesso! ' +
                        '',
-                       ExtractFilePath(Application.ExeName) + '\imagens\aviso.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png','OK');
     Close;
   end else
   begin
@@ -123,7 +123,7 @@ begin
                        'Erro ao Cadastrar/Alterar Profissional',
                        'Não foi possível Cadastrar/Alterar Profissional, possível causa: ' +
                        Erro,
-                       ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
 
     EditNomeProfissional.SetFocus;
   end;

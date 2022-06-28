@@ -38,7 +38,7 @@ end;
 
 procedure TDataModule1.DataModuleDestroy(Sender: TObject);
 begin
-  Conexao.Free;
+  Conexao.Destroy;
 end;
 
 end.

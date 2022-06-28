@@ -147,8 +147,8 @@ object form_profissionais: Tform_profissionais
       object labelMsnDELouEdit: TLabel
         Left = 10
         Top = 527
-        Width = 455
-        Height = 22
+        Width = 434
+        Height = 15
         Caption = 
           'Pressione DEL para excluir ou duplo clique para editar profissio' +
           'nais cadastrados'
@@ -340,7 +340,13 @@ object form_profissionais: Tform_profissionais
         BorderStyle = bsNone
         DataSource = ds_profissionais
         FixedColor = clWindow
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
         Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
         TabOrder = 7
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clSilver
