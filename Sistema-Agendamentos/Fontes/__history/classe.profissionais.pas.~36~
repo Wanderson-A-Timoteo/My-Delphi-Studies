@@ -90,11 +90,11 @@ begin
         QueryInserir.SQL.Add('INSERT INTO profissionais (id_profissional,     ');
         QueryInserir.SQL.Add('                           ds_profissional,     ');
         QueryInserir.SQL.Add('                           ds_especialidade,    ');
-        QueryInserir.SQL.Add('                           nr_contato       )   ');
+        QueryInserir.SQL.Add('                           nr_contato)          ');
         QueryInserir.SQL.Add('VALUES                     (:p_id_profissional, ');
         QueryInserir.SQL.Add('                            :p_ds_profissional, ');
         QueryInserir.SQL.Add('                            :p_ds_especialidade,');
-        QueryInserir.SQL.Add('                            :p_nr_contato    )  ');
+        QueryInserir.SQL.Add('                            :p_nr_contato)      ');
 
         QueryInserir.ParamByName('p_id_profissional').AsInteger :=
           fnc_proximo_codigo('profissionais', 'id_profissional');
@@ -103,7 +103,7 @@ begin
         QueryInserir.SQL.Add('UPDATE profissionais                             ');
         QueryInserir.SQL.Add('SET     ds_profissional  = :p_ds_profissional,   ');
         QueryInserir.SQL.Add('        ds_especialidade = :p_ds_especialidade,  ');
-        QueryInserir.SQL.Add('        nr_contato       = :p_nr_contato,        ');
+        QueryInserir.SQL.Add('        nr_contato       = :p_nr_contato         ');
         QueryInserir.SQL.Add('WHERE   id_profissional  = :p_id_profissional    ');
 
         QueryInserir.ParamByName('p_id_profissional').AsInteger := FId_Profissional;
