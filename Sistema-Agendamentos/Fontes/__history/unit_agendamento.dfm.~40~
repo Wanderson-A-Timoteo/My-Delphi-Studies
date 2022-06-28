@@ -950,9 +950,9 @@ object form_agendamento: Tform_agendamento
         TabOrder = 13
       end
       object EditObservacoes: TEdit
-        Left = 13
+        Left = 15
         Top = 438
-        Width = 657
+        Width = 655
         Height = 78
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -964,11 +964,12 @@ object form_agendamento: Tform_agendamento
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 14
+        OnChange = EditObservacoesChange
       end
     end
   end
   object ds_profissionais: TDataSource
-    Left = 643
-    Top = 19
+    Left = 651
+    Top = 547
   end
 end

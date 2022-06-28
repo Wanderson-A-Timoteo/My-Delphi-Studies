@@ -729,7 +729,7 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditData: TMaskEdit
         Left = 49
-        Top = 179
+        Top = 180
         Width = 130
         Height = 22
         BevelInner = bvNone
@@ -748,7 +748,7 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditHora: TMaskEdit
         Left = 255
-        Top = 177
+        Top = 180
         Width = 130
         Height = 29
         BevelInner = bvNone
@@ -767,7 +767,7 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditTelefoneFixo: TMaskEdit
         Left = 13
-        Top = 372
+        Top = 375
         Width = 132
         Height = 29
         BevelInner = bvNone
@@ -786,7 +786,7 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditCelular: TMaskEdit
         Left = 252
-        Top = 372
+        Top = 375
         Width = 130
         Height = 29
         BevelInner = bvNone
@@ -950,9 +950,9 @@ object form_agendamento: Tform_agendamento
         TabOrder = 13
       end
       object EditObservacoes: TEdit
-        Left = 13
+        Left = 15
         Top = 438
-        Width = 657
+        Width = 655
         Height = 78
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -968,7 +968,7 @@ object form_agendamento: Tform_agendamento
     end
   end
   object ds_profissionais: TDataSource
-    Left = 643
-    Top = 19
+    Left = 651
+    Top = 547
   end
 end

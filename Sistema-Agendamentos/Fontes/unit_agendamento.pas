@@ -73,7 +73,7 @@ uses unit_cliente_consulta;
 
 procedure Tform_agendamento.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  DataModule1.Profissional.Destroy;
+  DataModule1.Profissional.Free;
   Action := caFree;
 end;
 
