@@ -9,11 +9,6 @@ uses
 
 type
   Tform_principal = class(TForm)
-    MainMenu1: TMainMenu;
-    Encerrar1: TMenuItem;
-    Servidor1: TMenuItem;
-    Sair1: TMenuItem;
-    ConfiguraodoServidor1: TMenuItem;
     Label1: TLabel;
     LabelUsuarioLogado: TLabel;
     PanelFundo: TPanel;
@@ -39,6 +34,8 @@ type
     procedure SpeedButtonMaximinizarClick(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure SpeedButtonServidorClick(Sender: TObject);
+    procedure SpeedButtonAgendamentoClick(Sender: TObject);
+    procedure SpeedButtonCadastrarUsuariosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,7 +49,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_configurar_servidor, unit_funcoes, unit_mensagens;
+uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -63,22 +60,42 @@ end;
 procedure Tform_principal.Sair1Click(Sender: TObject);
 begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
-                      'Sair do Sistema',
-                      'Deseja Realmente Sair do Sistema?',
-                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
-                      'Comfirma') then
+                        'Sair do Sistema',
+                        'Deseja Realmente Sair do Sistema?',
+                        ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
+                        'Comfirma') then
    Application.Terminate
    else
    Exit;
 end;
 
+procedure Tform_principal.SpeedButtonAgendamentoClick(Sender: TObject);
+begin
+  form_agendamento := Tform_agendamento.Create(Self);
+  try
+    form_agendamento.ShowModal;
+  finally
+    form_agendamento.Free;
+  end;
+end;
+
+procedure Tform_principal.SpeedButtonCadastrarUsuariosClick(Sender: TObject);
+begin
+  form_clientes := Tform_clientes.Create(Self);
+  try
+    form_clientes.ShowModal;
+  finally
+    form_clientes.Free;
+  end;
+end;
+
 procedure Tform_principal.SpeedButtonFecharClick(Sender: TObject);
 begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
-                      'Sair do Sistema',
-                      'Deseja Realmente Sair do Sistema?',
-                      ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
-                      'Comfirma') then
+                        'Sair do Sistema',
+                        'Deseja Realmente Sair do Sistema?',
+                        ExtractFilePath(Application.ExeName) + '\imagens\aviso.png',
+                        'Comfirma') then
    Application.Terminate
    else
    Exit;
@@ -92,7 +109,11 @@ end;
 procedure Tform_principal.SpeedButtonServidorClick(Sender: TObject);
 begin
   form_configurar_servidor := Tform_configurar_servidor.Create(nil);
-  form_configurar_servidor.Show;
+  try
+    form_configurar_servidor.ShowModal;
+  finally
+    form_configurar_servidor.Free;
+  end;
 end;
 
 end.
