@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/28 15:44:36.000.185,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/28 15:46:31.000.759,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Consulta-Cep\Principal.pas</Transaction>
+    <Transaction>2022/06/28 15:46:31.000.759,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Consulta-Cep\Principal.dfm</Transaction>
+    <Transaction>2022/06/28 15:46:45.000.809,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\Consulta-Cep\ConsultaCEP.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
