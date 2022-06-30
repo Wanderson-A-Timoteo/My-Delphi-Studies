@@ -2,7 +2,7 @@ object form_agendamento: Tform_agendamento
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 613
+  ClientHeight = 573
   ClientWidth = 716
   Color = 11976552
   Font.Charset = DEFAULT_CHARSET
@@ -21,7 +21,7 @@ object form_agendamento: Tform_agendamento
     Left = 0
     Top = 0
     Width = 716
-    Height = 613
+    Height = 573
     Align = alClient
     Brush.Color = 11976552
     Pen.Color = 11976552
@@ -31,7 +31,7 @@ object form_agendamento: Tform_agendamento
     Left = 8
     Top = 8
     Width = 700
-    Height = 593
+    Height = 553
     BevelOuter = bvNone
     Color = 11976552
     ParentBackground = False
@@ -48,6 +48,8 @@ object form_agendamento: Tform_agendamento
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = 0
+      ExplicitTop = -3
       object LabelSelecioneProfissional: TLabel
         Left = 15
         Top = 53
@@ -278,7 +280,7 @@ object form_agendamento: Tform_agendamento
       end
       object SpeedButtonLupaPesquisaNomeCliente: TSpeedButton
         Left = 15
-        Top = 294
+        Top = 298
         Width = 29
         Height = 35
         Cursor = crHandPoint
@@ -488,7 +490,7 @@ object form_agendamento: Tform_agendamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 8
       end
       object dbl_cmb_profissionais: TDBLookupComboBox
         Left = 46
@@ -521,22 +523,7 @@ object form_agendamento: Tform_agendamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 8
-      end
-      object DBLookupComboBoxNomeCliente: TDBLookupComboBox
-        Left = 46
-        Top = 298
-        Width = 620
-        Height = 29
-        BevelInner = bvNone
-        BevelOuter = bvNone
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 11976552
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = [fsBold]
-        ParentFont = False
-        TabOrder = 3
+        TabOrder = 9
       end
       object MaskEditData: TMaskEdit
         Left = 49
@@ -578,12 +565,14 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditTelefoneFixo: TMaskEdit
         Left = 13
-        Top = 375
-        Width = 132
-        Height = 29
+        Top = 371
+        Width = 130
+        Height = 25
+        TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        Color = clBtnFace
         EditMask = '(##) ####-####;1;_'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
@@ -592,17 +581,20 @@ object form_agendamento: Tform_agendamento
         Font.Style = [fsBold]
         MaxLength = 14
         ParentFont = False
-        TabOrder = 4
+        ReadOnly = True
+        TabOrder = 6
         Text = '(  )     -    '
       end
       object MaskEditCelular: TMaskEdit
         Left = 252
-        Top = 375
+        Top = 371
         Width = 130
-        Height = 29
+        Height = 25
+        TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        Color = clBtnFace
         EditMask = '(##) #.####-####;1;_'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
@@ -611,17 +603,18 @@ object form_agendamento: Tform_agendamento
         Font.Style = [fsBold]
         MaxLength = 16
         ParentFont = False
-        TabOrder = 5
+        ReadOnly = True
+        TabOrder = 7
         Text = '(  )  .    -    '
       end
       object PanelBotoesAgendarCancelar: TPanel
         Left = 15
-        Top = 531
+        Top = 484
         Width = 364
         Height = 49
         BevelOuter = bvNone
         ParentBackground = False
-        TabOrder = 6
+        TabOrder = 4
         object PanelBotaoAgendar: TPanel
           Left = 0
           Top = 0
@@ -698,9 +691,9 @@ object form_agendamento: Tform_agendamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 10
       end
-      object Panel1: TPanel
+      object PanelBordaHora: TPanel
         Left = 252
         Top = 201
         Width = 130
@@ -713,25 +706,10 @@ object form_agendamento: Tform_agendamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 10
-      end
-      object Panel2: TPanel
-        Left = 15
-        Top = 396
-        Width = 130
-        Height = 1
-        Color = 5839365
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
-        Font.Height = -12
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentBackground = False
-        ParentFont = False
         TabOrder = 11
       end
-      object Panel3: TPanel
-        Left = 250
+      object PanelBordaTelefoneFixo: TPanel
+        Left = 15
         Top = 396
         Width = 130
         Height = 1
@@ -745,11 +723,11 @@ object form_agendamento: Tform_agendamento
         ParentFont = False
         TabOrder = 12
       end
-      object Panel4: TPanel
-        Left = 10
-        Top = 519
-        Width = 660
-        Height = 2
+      object PanelBordaCelular: TPanel
+        Left = 250
+        Top = 396
+        Width = 130
+        Height = 1
         Color = 5839365
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
@@ -760,11 +738,26 @@ object form_agendamento: Tform_agendamento
         ParentFont = False
         TabOrder = 13
       end
+      object PanelBordaObservacoes: TPanel
+        Left = 10
+        Top = 467
+        Width = 660
+        Height = 2
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 14
+      end
       object EditObservacoes: TEdit
         Left = 15
         Top = 438
         Width = 655
-        Height = 78
+        Height = 30
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -774,12 +767,44 @@ object form_agendamento: Tform_agendamento
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 14
+        TabOrder = 3
+      end
+      object PanelBordaNomeCliente: TPanel
+        Left = 50
+        Top = 327
+        Width = 625
+        Height = 1
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 15
+      end
+      object EditNoemCliente: TEdit
+        Left = 50
+        Top = 302
+        Width = 625
+        Height = 25
+        TabStop = False
+        BorderStyle = bsNone
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 11976552
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 5
       end
     end
   end
   object ds_profissionais: TDataSource
-    Left = 651
-    Top = 547
+    Left = 643
+    Top = 27
   end
 end

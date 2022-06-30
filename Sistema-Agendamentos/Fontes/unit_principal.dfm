@@ -3094,36 +3094,8 @@ object form_principal: Tform_principal
       ExplicitLeft = 1
     end
   end
-  object PanelBtnCadastrarUsuarios: TPanel
-    Left = 334
-    Top = 67
-    Width = 185
-    Height = 41
-    Cursor = crHandPoint
-    BevelOuter = bvNone
-    Color = 5839365
-    ParentBackground = False
-    TabOrder = 5
-    object SpeedButtonCadastrarUsuarios: TSpeedButton
-      Left = 0
-      Top = 0
-      Width = 185
-      Height = 41
-      Align = alClient
-      Caption = 'Cadastrar Usu'#225'rios'
-      Flat = True
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      OnClick = SpeedButtonCadastrarUsuariosClick
-      ExplicitLeft = -9
-    end
-  end
   object PanelBtnGerarRelatorio: TPanel
-    Left = 525
+    Left = 334
     Top = 66
     Width = 185
     Height = 41
@@ -3131,7 +3103,7 @@ object form_principal: Tform_principal
     BevelOuter = bvNone
     Color = 5839365
     ParentBackground = False
-    TabOrder = 6
+    TabOrder = 5
     object SpeedButtonGerarRelatorio: TSpeedButton
       Left = 0
       Top = 0
@@ -3150,7 +3122,7 @@ object form_principal: Tform_principal
     end
   end
   object PanelBtnServidor: TPanel
-    Left = 716
+    Left = 527
     Top = 67
     Width = 185
     Height = 41
@@ -3158,7 +3130,7 @@ object form_principal: Tform_principal
     BevelOuter = bvNone
     Color = 5839365
     ParentBackground = False
-    TabOrder = 7
+    TabOrder = 6
     object SpeedButtonServidor: TSpeedButton
       Left = 0
       Top = 0

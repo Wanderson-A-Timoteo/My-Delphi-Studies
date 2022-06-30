@@ -117,9 +117,9 @@ begin
 
         QryInserir.ParamByName('p_id_profissional').AsInteger := Fid_profissional;
       end;
-      QryInserir.ParamByName('p_ds_profissional').AsString  := Fds_profissional;
-      QryInserir.ParamByName('p_ds_especialidade').AsString := Fds_especialidade;
-      QryInserir.ParamByName('p_nr_contato').AsString       := Fnr_contato;
+      QryInserir.ParamByName('p_ds_profissional').AsString    := Fds_profissional;
+      QryInserir.ParamByName('p_ds_especialidade').AsString   := Fds_especialidade;
+      QryInserir.ParamByName('p_nr_contato').AsString         := Fnr_contato;
       QryInserir.ExecSQL;
 
       Result := true;
@@ -143,7 +143,7 @@ procedure TProfissionais.prc_deleta(id_chave: Integer);
 begin
   if fnc_criar_mensagem('CONFIRMAÇÃO', 'Excluir Dados',
                         'Tem certeza que deseja EXCLUIR os dados deste Profissional?',
-                        ExtractFilePath (Application.ExeName)+ '\images\aviso.png',
+                        ExtractFilePath (Application.ExeName)+ 'imagens\aviso.png',
                         'CONFIRMAR') then
   begin
     FConexao.Connected := False;

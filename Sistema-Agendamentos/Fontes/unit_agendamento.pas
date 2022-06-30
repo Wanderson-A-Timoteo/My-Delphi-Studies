@@ -8,7 +8,7 @@ uses
   Vcl.Mask, Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, unit_profissionais, unit_clientes, classe_conexao, unit_dados,
-  classe.profissionais;
+  classe.profissionais, classe.agendamento;
 
 type
   Tform_agendamento = class(TForm)
@@ -23,7 +23,6 @@ type
     PanelBordaSelecioneCliente: TPanel;
     LabelSelecioneCliente: TLabel;
     LabelNomeCliente: TLabel;
-    DBLookupComboBoxNomeCliente: TDBLookupComboBox;
     LabelHora: TLabel;
     LabelTelefoneFixo: TLabel;
     LabelCelular: TLabel;
@@ -42,12 +41,14 @@ type
     SpeedButtonCancelar: TSpeedButton;
     SpeedButtonCadastrarProfissional: TSpeedButton;
     PanelBordaData: TPanel;
-    Panel1: TPanel;
-    Panel2: TPanel;
-    Panel3: TPanel;
-    Panel4: TPanel;
+    PanelBordaHora: TPanel;
+    PanelBordaTelefoneFixo: TPanel;
+    PanelBordaCelular: TPanel;
+    PanelBordaObservacoes: TPanel;
     EditObservacoes: TEdit;
     ds_profissionais: TDataSource;
+    PanelBordaNomeCliente: TPanel;
+    EditNoemCliente: TEdit;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
@@ -58,6 +59,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    Agendamento : TAgendamentos;
   end;
 
 var
@@ -74,12 +76,17 @@ uses unit_cliente_consulta;
 procedure Tform_agendamento.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   DataModule1.Profissional.Free;
+
+  Agendamento.Free;
+
   Action := caFree;
 end;
 
 procedure Tform_agendamento.FormCreate(Sender: TObject);
 begin
   DataModule1.Profissional := TProfissionais.Create(DataModule1.FDConnection);
+
+  Agendamento         := TAgendamentos.Create(DataModule1.FDConnection);
 end;
 
 procedure Tform_agendamento.FormShow(Sender: TObject);

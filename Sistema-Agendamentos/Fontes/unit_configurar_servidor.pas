@@ -118,7 +118,7 @@ begin
                        'Conectado com o Banco de Dados',
                        'Conexão com o Banco de Dados Realizado com Sucesso! ' +
                        'O Sistema precisa ser reiniciado!',
-                       ExtractFilePath(Application.ExeName) + '\imagens\aviso.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png','OK');
     Application.Terminate;
   end else
   begin
@@ -126,7 +126,7 @@ begin
                       'Erro ao conectar ao Banco de Dados',
                       'Não foi possível conectar ao Banco de Dados, possível causa: ' +
                        DataModule1.Conexao.MsgErro,
-                       ExtractFilePath(Application.ExeName) + '\imagens\erro.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
 
     EditNovoNomeServidor.SetFocus;
   end;

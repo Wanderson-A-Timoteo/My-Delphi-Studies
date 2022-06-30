@@ -24,15 +24,16 @@ begin
   Result := 1;
 
   try
+
     DataModule1.FDConnection.Connected := False;
     DataModule1.FDConnection.Connected := True;
 
-    QryConsulta.Create(nil);
-    QryConsulta.Connection := DataModule1.FDConnection;
+    QryConsulta                        := TFDQuery.Create(nil);
+    QryConsulta.Connection             := DataModule1.FDConnection;
 
     QryConsulta.Close;
     QryConsulta.SQL.Clear;
-    QryConsulta.SQL.Add('SELECT MAX(' +campo+ ') AS CODIGO FROM ' + Tabela);
+    QryConsulta.SQL.Add('SELECT MAX(' +Campo+ ') AS CODIGO FROM ' + Tabela);
     QryConsulta.Open;
 
     if QryConsulta.FieldByName('CODIGO').AsString <> '' then

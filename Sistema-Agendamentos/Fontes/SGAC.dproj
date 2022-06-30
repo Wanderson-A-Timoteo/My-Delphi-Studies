@@ -145,6 +145,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="classe.cliente.pas"/>
+        <DCCReference Include="classe.agendamento.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -171,7 +172,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\SGAC.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\Output\SGAC.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>SGAC.exe</RemoteName>
                         <Overwrite>true</Overwrite>

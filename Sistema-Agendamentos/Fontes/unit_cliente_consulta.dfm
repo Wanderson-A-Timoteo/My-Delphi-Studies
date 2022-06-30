@@ -216,6 +216,7 @@ object form_cliente_consulta: Tform_cliente_consulta
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
         OnDblClick = dbg_registros_consulta_clienteDblClick
+        OnKeyDown = dbg_registros_consulta_clienteKeyDown
         Columns = <
           item
             Expanded = False
@@ -254,31 +255,27 @@ object form_cliente_consulta: Tform_cliente_consulta
           end>
       end
       object PanelBotoesCadastrarNovoClienteFechar: TPanel
-        Left = 47
+        Left = 10
         Top = 507
-        Width = 578
+        Width = 663
         Height = 49
         BevelOuter = bvNone
         TabOrder = 4
-        DesignSize = (
-          578
-          49)
         object PanelBotaoCancelar: TPanel
-          Left = 382
+          Left = 230
           Top = 0
-          Width = 200
+          Width = 206
           Height = 49
-          Anchors = []
           BevelOuter = bvNone
           Color = 8421631
           ParentBackground = False
           TabOrder = 0
           object SpeedButtonCancelarConsulta: TSpeedButton
-            Left = 0
+            Left = 6
             Top = 0
             Width = 200
             Height = 49
-            Align = alClient
+            Align = alRight
             Caption = 'Cancelar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -288,15 +285,15 @@ object form_cliente_consulta: Tform_cliente_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCancelarConsultaClick
-            ExplicitLeft = -4
-            ExplicitWidth = 100
+            ExplicitLeft = -32
           end
         end
         object PanelBotaoCadastrarNovoCliente: TPanel
-          Left = 10
+          Left = 463
           Top = 0
           Width = 200
           Height = 49
+          Alignment = taRightJustify
           BevelOuter = bvNone
           Color = 5839365
           ParentBackground = False
@@ -316,6 +313,37 @@ object form_cliente_consulta: Tform_cliente_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCadastrarNovoClienteClick
+            ExplicitLeft = 51
+            ExplicitTop = -8
+          end
+        end
+        object PanelBotaoSelecionarCliente: TPanel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 49
+          Align = alLeft
+          BevelOuter = bvNone
+          Color = 11976552
+          ParentBackground = False
+          TabOrder = 2
+          object SpeedButtonSelecionarCliente: TSpeedButton
+            Left = 0
+            Top = 0
+            Width = 207
+            Height = 49
+            Align = alLeft
+            Caption = 'Selecionar Cliente'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = SpeedButtonSelecionarClienteClick
+            ExplicitLeft = 16
+            ExplicitTop = 8
           end
         end
       end

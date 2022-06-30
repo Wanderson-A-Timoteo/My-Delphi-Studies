@@ -23,9 +23,7 @@ type
     Label2: TLabel;
     PanelBtnAgendamento: TPanel;
     SpeedButtonAgendamento: TSpeedButton;
-    PanelBtnCadastrarUsuarios: TPanel;
     PanelBtnGerarRelatorio: TPanel;
-    SpeedButtonCadastrarUsuarios: TSpeedButton;
     SpeedButtonGerarRelatorio: TSpeedButton;
     PanelBtnServidor: TPanel;
     SpeedButtonServidor: TSpeedButton;
@@ -35,7 +33,6 @@ type
     procedure FormResize(Sender: TObject);
     procedure SpeedButtonServidorClick(Sender: TObject);
     procedure SpeedButtonAgendamentoClick(Sender: TObject);
-    procedure SpeedButtonCadastrarUsuariosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,16 +73,6 @@ begin
     form_agendamento.ShowModal;
   finally
     form_agendamento.Free;
-  end;
-end;
-
-procedure Tform_principal.SpeedButtonCadastrarUsuariosClick(Sender: TObject);
-begin
-  form_clientes := Tform_clientes.Create(Self);
-  try
-    form_clientes.ShowModal;
-  finally
-    form_clientes.Free;
   end;
 end;
 
