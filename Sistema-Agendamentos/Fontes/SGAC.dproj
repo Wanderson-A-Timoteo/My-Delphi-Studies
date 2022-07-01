@@ -140,12 +140,16 @@
             <Form>form_agendamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="unit_profissionais.pas">
-            <Form>form_profissionais</Form>
+        <DCCReference Include="unit_agendamento_consulta.pas">
+            <Form>form_agendamento_consulta</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="classe.cliente.pas"/>
         <DCCReference Include="classe.agendamento.pas"/>
+        <DCCReference Include="unit_profissionais.pas">
+            <Form>form_profissionais</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

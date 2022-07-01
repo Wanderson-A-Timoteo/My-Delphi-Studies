@@ -14,18 +14,20 @@ uses
   classe.profissionais in 'classe.profissionais.pas',
   unit_cliente_consulta in 'unit_cliente_consulta.pas' {form_cliente_consulta},
   unit_agendamento in 'unit_agendamento.pas' {form_agendamento},
-  unit_profissionais in 'unit_profissionais.pas' {form_profissionais},
+  unit_agendamento_consulta in 'unit_agendamento_consulta.pas' {form_agendamento_consulta},
   classe.cliente in 'classe.cliente.pas',
-  classe.agendamento in 'classe.agendamento.pas';
+  classe.agendamento in 'classe.agendamento.pas',
+  unit_profissionais in 'unit_profissionais.pas' {form_profissionais};
 
 {$R *.res}
 
 begin
-  ReportMemoryLeaksOnShutdown := true;
+  ReportMemoryLeaksOnShutdown := True;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
 
   Application.CreateForm(TDataModule1, DataModule1);
+
   if DataModule1.Conexao.fnc_conectar_banco_dados then
   begin
     form_login := Tform_login.Create(nil);
@@ -46,6 +48,7 @@ begin
                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
 
     Application.CreateForm(Tform_configurar_servidor, form_configurar_servidor);
+
     form_configurar_servidor.ShowModal;
 
   end;

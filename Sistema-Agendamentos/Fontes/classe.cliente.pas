@@ -79,7 +79,6 @@ end;
 function TCliente.fnc_consulta(Texto: String): TFDQuery;
 begin
   try
-    FConecao.Connected := False;
     FConecao.Connected := True;
 
     QryConsulta.SQL.Clear;

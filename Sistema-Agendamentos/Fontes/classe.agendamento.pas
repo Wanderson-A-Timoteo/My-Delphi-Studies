@@ -29,21 +29,97 @@ type
 
       constructor Create (Conexao  : TFDConnection);
       destructor Destroy; Override;
+
+      function fnc_consulta(id_profissional: Integer; Data: TDate): TFDQuery;
+      function fnc_validar_agendamento(id_profissional: Integer; Data: TDate; hr_hora: String): Boolean;
+
   end;
+
+
+var
+  QryConsulta : TFDQuery;
 
 implementation
 
 { TAgendamentos }
 
+uses unit_funcoes, unit_dados;
+
+
 constructor TAgendamentos.Create(Conexao: TFDConnection);
 begin
-  FConexao := Conexao;
+  FConexao               := Conexao;
+  QryConsulta            := TFDQuery.Create(nil);
+  QryConsulta.Connection := FConexao;
 end;
 
 destructor TAgendamentos.Destroy;
 begin
-
+  QryConsulta.Free;
   inherited;
+end;
+
+function TAgendamentos.fnc_consulta( id_profissional : Integer; Data : TDate ) : TFDQuery;
+begin
+
+  FConexao.Connected := True;
+
+  try
+    QryConsulta.Close;
+    QryConsulta.SQL.Clear;
+    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                           ');
+    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                           ');
+    QryConsulta.SQL.Add('         clientes.ds_cliente,                                   ');
+    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                      ');
+    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                          ');
+    QryConsulta.SQL.Add('         agendamentos.dt_data,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.ds_obs                                    ');
+    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                              ');
+    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                    ');
+    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente ');
+    QryConsulta.SQL.Add('WHERE    agendamentos.pro_id_profissional = :p_id_profissional  ');
+    QryConsulta.SQL.Add('AND      agendamentos.dt_data             = :p_data             ');
+    QryConsulta.SQL.Add('ORDER BY agendamentos.hr_hora                                   ');
+    QryConsulta.ParamByName('p_id_profissional').AsInteger := id_profissional;
+    QryConsulta.ParamByName('p_data').AsDate               := Data;
+    QryConsulta.Open;
+  finally
+    Result := QryConsulta;
+  end;
+
+end;
+
+function TAgendamentos.fnc_validar_agendamento( id_profissional : Integer; Data : TDate; hr_hora : String ) : Boolean;
+var
+  QryValidar : TFDQuery;
+begin
+
+  FConexao.Connected := True;
+
+  try
+    QryValidar := TFDQuery.Create(nil);
+    QryValidar.Connection :=  FConexao;
+
+    QryValidar.Close;
+    QryValidar.SQL.Clear;
+    QryValidar.SQL.Add('SELECT   id_agendamento                           ');
+    QryValidar.SQL.Add('FROM     agendamentos                              ');
+    QryValidar.SQL.Add('WHERE    pro_id_profissional = :p_id_profissional  ');
+    QryValidar.SQL.Add('AND      dt_data             = :p_data             ');
+    QryValidar.SQL.Add('AND      hr_hora             = :p_hora             ');
+    QryValidar.SQL.Add('ORDER BY agendamentos.hr_hora                      ');
+    QryValidar.ParamByName('p_id_profissional').AsInteger := id_profissional;
+    QryValidar.ParamByName('p_data').AsDate               := Data;
+    QryValidar.ParamByName('p_hora').AsString             := hr_hora;
+    QryValidar.Open;
+
+    Result := QryValidar.IsEmpty;
+
+  finally
+    QryValidar.Free;
+  end;
+
 end;
 
 end.

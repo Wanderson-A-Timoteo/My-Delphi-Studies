@@ -2,7 +2,7 @@ object form_cliente_consulta: Tform_cliente_consulta
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 596
+  ClientHeight = 660
   ClientWidth = 716
   Color = 11976552
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@ object form_cliente_consulta: Tform_cliente_consulta
     Left = 0
     Top = 0
     Width = 716
-    Height = 596
+    Height = 660
     Align = alClient
     Brush.Color = 11976552
     Pen.Color = 11976552
@@ -32,7 +32,7 @@ object form_cliente_consulta: Tform_cliente_consulta
     Left = 8
     Top = 8
     Width = 700
-    Height = 585
+    Height = 644
     BevelOuter = bvNone
     Color = 11976552
     ParentBackground = False
@@ -42,7 +42,7 @@ object form_cliente_consulta: Tform_cliente_consulta
       Left = 3
       Top = 3
       Width = 694
-      Height = 574
+      Height = 638
       Margins.Bottom = 0
       Align = alTop
       BevelOuter = bvNone
@@ -256,7 +256,7 @@ object form_cliente_consulta: Tform_cliente_consulta
       end
       object PanelBotoesCadastrarNovoClienteFechar: TPanel
         Left = 10
-        Top = 507
+        Top = 571
         Width = 663
         Height = 49
         BevelOuter = bvNone
@@ -346,6 +346,22 @@ object form_cliente_consulta: Tform_cliente_consulta
             ExplicitTop = 8
           end
         end
+      end
+      object Panel1: TPanel
+        Left = 10
+        Top = 541
+        Width = 663
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 5
       end
     end
   end

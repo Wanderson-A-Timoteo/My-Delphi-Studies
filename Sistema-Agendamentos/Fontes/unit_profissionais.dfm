@@ -2,7 +2,7 @@ object form_profissionais: Tform_profissionais
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 649
+  ClientHeight = 664
   ClientWidth = 716
   Color = 11976552
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object form_profissionais: Tform_profissionais
     Left = 0
     Top = 0
     Width = 716
-    Height = 649
+    Height = 664
     Align = alClient
     Brush.Color = 11976552
     Pen.Color = 11976552
@@ -30,7 +30,7 @@ object form_profissionais: Tform_profissionais
     Left = 8
     Top = 8
     Width = 700
-    Height = 633
+    Height = 648
     BevelOuter = bvNone
     Color = 11976552
     ParentBackground = False
@@ -40,7 +40,7 @@ object form_profissionais: Tform_profissionais
       Left = 3
       Top = 3
       Width = 694
-      Height = 622
+      Height = 638
       Margins.Bottom = 0
       Align = alTop
       BevelOuter = bvNone
@@ -179,7 +179,7 @@ object form_profissionais: Tform_profissionais
       end
       object PanelBotoesAgendarCancelar: TPanel
         Left = 10
-        Top = 555
+        Top = 570
         Width = 364
         Height = 49
         BevelOuter = bvNone

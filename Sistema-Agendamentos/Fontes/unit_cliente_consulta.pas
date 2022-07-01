@@ -33,6 +33,7 @@ type
     labelMsnDELouEdit: TLabel;
     PanelBotaoSelecionarCliente: TPanel;
     SpeedButtonSelecionarCliente: TSpeedButton;
+    Panel1: TPanel;
     procedure SpeedButtonCancelarConsultaClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);

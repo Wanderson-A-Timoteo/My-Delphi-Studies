@@ -49,12 +49,16 @@ type
     ds_profissionais: TDataSource;
     PanelBordaNomeCliente: TPanel;
     EditNoemCliente: TEdit;
+    Panel1: TPanel;
+    Label1: TLabel;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
+    procedure SpeedButtonCadastrarDataClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,7 +75,13 @@ implementation
 
 {$R *.dfm}
 
-uses unit_cliente_consulta;
+uses unit_cliente_consulta, unit_agendamento_consulta;
+
+procedure Tform_agendamento.FormActivate(Sender: TObject);
+begin
+  PanelContainer.Left := Round( (form_agendamento.Width - PanelContainer.Width) / 2);
+  PanelContainer.Top  := Round( (form_agendamento.Height - PanelContainer.Height) / 2);
+end;
 
 procedure Tform_agendamento.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -86,12 +96,28 @@ procedure Tform_agendamento.FormCreate(Sender: TObject);
 begin
   DataModule1.Profissional := TProfissionais.Create(DataModule1.FDConnection);
 
-  Agendamento         := TAgendamentos.Create(DataModule1.FDConnection);
+  Agendamento              := TAgendamentos.Create(DataModule1.FDConnection);
 end;
 
 procedure Tform_agendamento.FormShow(Sender: TObject);
 begin
   ds_profissionais.DataSet := DataModule1.Profissional.fnc_consulta('');
+end;
+
+procedure Tform_agendamento.SpeedButtonCadastrarDataClick(Sender: TObject);
+begin
+  try
+    form_agendamento_consulta := Tform_agendamento_consulta.Create(Self);
+
+    if dbl_cmb_profissionais.KeyValue <> null then
+      form_agendamento_consulta.dbl_cmb_Consulta_Profissional.KeyValue := dbl_cmb_profissionais.KeyValue;
+
+    form_agendamento_consulta.EditObservacoes.Text := EditObservacoes.Text;
+
+    form_agendamento_consulta.ShowModal;
+  finally
+    form_agendamento_consulta.Free;
+  end;
 end;
 
 procedure Tform_agendamento.SpeedButtonCadastrarProfissionalClick(Sender: TObject);

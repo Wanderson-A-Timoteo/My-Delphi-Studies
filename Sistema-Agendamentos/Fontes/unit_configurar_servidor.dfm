@@ -470,7 +470,7 @@ object form_configurar_servidor: Tform_configurar_servidor
         BevelOuter = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = 5839365
+        Font.Color = 11976552
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
