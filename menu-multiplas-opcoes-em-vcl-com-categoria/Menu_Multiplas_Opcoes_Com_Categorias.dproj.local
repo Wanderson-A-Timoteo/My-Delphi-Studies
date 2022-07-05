@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/07/04 11:45:34.000.052,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/07/04 11:49:07.000.252,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/07/04 11:50:27.000.285,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\Unit1.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/07/04 11:50:27.000.285,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\Unit1.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/07/04 11:51:23.000.052,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\Menu_Lateral.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+    <Transaction>2022/07/04 11:51:52.000.752,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\unit_view_principal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\Unit1.pas</Transaction>
+    <Transaction>2022/07/04 11:51:52.000.752,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\unit_view_principal.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\Unit1.dfm</Transaction>
+    <Transaction>2022/07/04 11:53:11.000.769,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\unit_principal.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\unit_view_principal.pas</Transaction>
+    <Transaction>2022/07/04 11:53:11.000.769,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\unit_principal.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-multiplas-opcoes-em-vcl\unit_view_principal.dfm</Transaction>
+    <Transaction>2022/07/05 12:11:27.000.959,=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 12:12:16.000.986,=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Unit2.pas</Transaction>
+    <Transaction>2022/07/05 12:12:56.000.747,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\unit_modelo1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Unit1.dfm</Transaction>
+    <Transaction>2022/07/05 12:12:56.000.747,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\unit_modelo1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Unit1.pas</Transaction>
+    <Transaction>2022/07/05 12:13:12.000.225,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\unit_modelo2.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Unit2.dfm</Transaction>
+    <Transaction>2022/07/05 12:13:12.000.225,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\unit_modelo2.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Unit2.pas</Transaction>
+    <Transaction>2022/07/05 12:51:48.000.475,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\unit_modelo2.pas=</Transaction>
+    <Transaction>2022/07/05 13:49:21.000.195,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Menu_Lateral.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Menu_Multiplas_Opcoes_Interno.dproj</Transaction>
+    <Transaction>2022/07/05 13:49:42.000.053,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Menu_Multiplas_Opcoes_Interno.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno\Menu_Multiplas_Opcoes_Form_Interno.dproj</Transaction>
+    <Transaction>2022/07/05 17:32:19.000.236,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno-e-submenu\Menu_Multiplas_Opcoes_Form_Interno.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-multiplas-opcoes-em-vcl-chama-form-interno-e-submenu\Menu_Multiplas_Opcoes_Com_Categorias.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
