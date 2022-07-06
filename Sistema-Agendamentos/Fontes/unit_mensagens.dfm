@@ -25,7 +25,6 @@ object form_mensagens: Tform_mensagens
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 629
     DesignSize = (
       625
       261)
@@ -53,7 +52,7 @@ object form_mensagens: Tform_mensagens
       ParentFont = False
     end
     object img_icone: TImage
-      Left = 32
+      Left = 14
       Top = 83
       Width = 177
       Height = 159
@@ -61,9 +60,9 @@ object form_mensagens: Tform_mensagens
       Center = True
     end
     object label_titulo_msg: TLabel
-      Left = 248
+      Left = 198
       Top = 40
-      Width = 62
+      Width = 58
       Height = 25
       Caption = 'T'#237'tulo: '
       Color = 5839365
@@ -76,10 +75,10 @@ object form_mensagens: Tform_mensagens
       ParentFont = False
     end
     object label_mensagem_para_usuario: TLabel
-      Left = 248
-      Top = 71
-      Width = 363
-      Height = 118
+      Left = 197
+      Top = 64
+      Width = 414
+      Height = 125
       AutoSize = False
       Caption = 'Mensagem Para o Usu'#225'rio'
       Color = clGray
@@ -126,7 +125,6 @@ object form_mensagens: Tform_mensagens
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitHeight = 50
         object SpeedButtonNao: TSpeedButton
           Left = 0
           Top = 0
@@ -165,7 +163,6 @@ object form_mensagens: Tform_mensagens
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
-        ExplicitHeight = 50
         object SpeedButtonSim: TSpeedButton
           Left = 0
           Top = 0

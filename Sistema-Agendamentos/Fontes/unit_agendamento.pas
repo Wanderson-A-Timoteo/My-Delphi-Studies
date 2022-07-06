@@ -51,6 +51,10 @@ type
     EditNoemCliente: TEdit;
     Panel1: TPanel;
     Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
@@ -59,6 +63,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure SpeedButtonCadastrarDataClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure SpeedButtonAgendarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -75,7 +80,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_cliente_consulta, unit_agendamento_consulta;
+uses unit_cliente_consulta, unit_agendamento_consulta, unit_funcoes;
 
 procedure Tform_agendamento.FormActivate(Sender: TObject);
 begin
@@ -102,6 +107,55 @@ end;
 procedure Tform_agendamento.FormShow(Sender: TObject);
 begin
   ds_profissionais.DataSet := DataModule1.Profissional.fnc_consulta('');
+end;
+
+procedure Tform_agendamento.SpeedButtonAgendarClick(Sender: TObject);
+var
+  sErro : String;
+begin
+  prcValidarCamposObrigatorios(form_agendamento);
+
+  if Agendamento.fnc_validar_agendamento( dbl_cmb_profissionais.KeyValue,
+                                          StrToDate(MaskEditData.Text),
+                                          MaskEditHora.Text ) then
+  begin
+    Agendamento.pro_id_profissional := dbl_cmb_profissionais.KeyValue;
+    Agendamento.dt_data             := StrToDate(MaskEditData.Text);
+    Agendamento.hr_hora             := MaskEditHora.Text;
+    Agendamento.ds_obs              := EditObservacoes.Text;
+
+    sErro := Agendamento.fnc_inserir;
+    if sErro = '' then
+    begin
+
+      fnc_criar_mensagem('GRAVANDO OS DADOS',
+                         'Data e Hora de Agendamento Disponível',
+                         'Agendamento Realizado Com Sucesso!.',
+                         ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
+                         'OK');
+      form_agendamento.Close;
+     end else
+     begin
+      fnc_criar_mensagem('GRAVANDO OS DADOS',
+                         'Erro no agendamento!',
+                         sErro,
+                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                         'OK');
+
+      MaskEditData.SetFocus;
+     end;
+  end else
+  begin
+    fnc_criar_mensagem('VALIDANDO DADOS',
+                       'Erro ao agendar horário!',
+                       'Dia e Hora do agendamento indisponível! Selecione outra data.',
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       'OK');
+
+    MaskEditData.SetFocus;
+  end;
+
+
 end;
 
 procedure Tform_agendamento.SpeedButtonCadastrarDataClick(Sender: TObject);

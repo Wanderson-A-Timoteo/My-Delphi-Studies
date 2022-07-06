@@ -33,6 +33,8 @@ type
       function fnc_consulta(id_profissional: Integer; Data: TDate): TFDQuery;
       function fnc_validar_agendamento(id_profissional: Integer; Data: TDate; hr_hora: String): Boolean;
 
+      function fnc_inserir : String;
+
   end;
 
 
@@ -88,6 +90,57 @@ begin
     Result := QryConsulta;
   end;
 
+end;
+
+function TAgendamentos.fnc_inserir: String;
+var
+  QryInserir : TFDQuery;
+begin
+  try
+    try
+      FConexao.Connected    := False;
+      FConexao.Connected    := True;
+
+      QryInserir            := TFDQuery.Create(nil);
+      QryInserir.Connection := FConexao;
+
+      QryInserir.Close;
+      QryInserir.SQL.Clear;
+
+      QryInserir.SQL.Add('INSERT INTO agendamentos ');
+      QryInserir.SQL.Add(' ( id_agendamento,       ');
+      QryInserir.SQL.Add('   cli_id_cliente,       ');
+      QryInserir.SQL.Add('   pro_id_profissional,  ');
+      QryInserir.SQL.Add('   usu_id_usuarios,      ');
+      QryInserir.SQL.Add('   dt_data,              ');
+      QryInserir.SQL.Add('   hr_hora,              ');
+      QryInserir.SQL.Add('   ds_obs     )          ');
+      QryInserir.SQL.Add('VALUES (                 ');
+      QryInserir.SQL.Add('   :id_agendamento,      ');
+      QryInserir.SQL.Add('   :cli_id_cliente,      ');
+      QryInserir.SQL.Add('   :pro_id_profissional, ');
+      QryInserir.SQL.Add('   :usu_id_usuarios,     ');
+      QryInserir.SQL.Add('   :dt_data,             ');
+      QryInserir.SQL.Add('   :hr_hora,             ');
+      QryInserir.SQL.Add('   :ds_obs    )          ');
+
+      QryInserir.ParamByName('id_agendamento').AsInteger      := fnc_proximo_codigo('agendamentos', 'id_agendamento');
+      QryInserir.ParamByName('cli_id_cliente').AsInteger      := Fcli_id_cliente;
+      QryInserir.ParamByName('pro_id_profissional').AsInteger := Fpro_id_profissional;
+      QryInserir.ParamByName('usu_id_usuarios').AsInteger     := 1;
+      QryInserir.ParamByName('dt_data').AsDate                := Fdt_data;
+      QryInserir.ParamByName('hr_hora').AsString              := Fhr_hora;
+      QryInserir.ParamByName('ds_obs').AsString               := Fds_obs;
+      QryInserir.ExecSQL;
+
+      Result := '';
+    except
+      On E: Exception Do
+        Result := E.Message;
+    end;
+  finally
+    QryInserir.Free;
+  end;
 end;
 
 function TAgendamentos.fnc_validar_agendamento( id_profissional : Integer; Data : TDate; hr_hora : String ) : Boolean;

@@ -188,7 +188,7 @@ begin
   except
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
-                       'Hora do agendamento não selecionada!',
+                       'Horário do agendamento não selecionada!',
                        ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
                        'OK');
     ComboBoxHora.SetFocus;
@@ -203,14 +203,14 @@ begin
     form_agendamento.MaskEditData.Text              := DateToStr( CalendarPickerSelecionarData.Date );
     form_agendamento.MaskEditHora.Text              := ( ComboBoxHora.Text + ':' + ComboBoxMinuto.Text );
 
-    form_agendamento.EditObservacoes.Text := EditObservacoes.Text;
+    form_agendamento.EditObservacoes.Text           := EditObservacoes.Text;
 
     Close;
   end else
   begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Erro ao agendar horário!',
-                       'Dia e Hora do agendamento indisponível! Selecione outra data.',
+                       'Dia e Hora do agendamento indisponível! Selecione outra data ou horário.',
                        ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
                        'OK');
 

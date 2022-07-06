@@ -1,0 +1,125 @@
+unit classe.agendamento;
+
+interface
+
+uses
+  FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms;
+
+type
+  TAgendamentos = class
+    private
+    FConexao: TFDConnection;
+    Fcli_id_cliente: Integer;
+    Fhr_hora: String;
+    Fpro_id_profissional: Integer;
+    Fid_agendamento: Integer;
+    Fds_obs: String;
+    Fdt_data: TDate;
+    Fusu_id_usuarios: Integer;
+
+    public
+      property Conexao             : TFDConnection read FConexao       write FConexao;
+      property id_agendamento      : Integer read Fid_agendamento      write Fid_agendamento;
+      property cli_id_cliente      : Integer read Fcli_id_cliente      write Fcli_id_cliente;
+      property pro_id_profissional : Integer read Fpro_id_profissional write Fpro_id_profissional;
+      property usu_id_usuarios     : Integer read Fusu_id_usuarios     write Fusu_id_usuarios;
+      property dt_data             : TDate   read Fdt_data             write Fdt_data;
+      property hr_hora             : String  read Fhr_hora             write Fhr_hora;
+      property ds_obs              : String  read Fds_obs              write Fds_obs;
+
+      constructor Create (Conexao  : TFDConnection);
+      destructor Destroy; Override;
+
+      function fnc_consulta(id_profissional: Integer; Data: TDate): TFDQuery;
+      function fnc_validar_agendamento(id_profissional: Integer; Data: TDate; hr_hora: String): Boolean;
+
+  end;
+
+
+var
+  QryConsulta : TFDQuery;
+
+implementation
+
+{ TAgendamentos }
+
+uses unit_funcoes, unit_dados;
+
+
+constructor TAgendamentos.Create(Conexao: TFDConnection);
+begin
+  FConexao               := Conexao;
+  QryConsulta            := TFDQuery.Create(nil);
+  QryConsulta.Connection := FConexao;
+end;
+
+destructor TAgendamentos.Destroy;
+begin
+  QryConsulta.Free;
+  inherited;
+end;
+
+function TAgendamentos.fnc_consulta( id_profissional : Integer; Data : TDate ) : TFDQuery;
+begin
+
+  FConexao.Connected := True;
+
+  try
+    QryConsulta.Close;
+    QryConsulta.SQL.Clear;
+    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                           ');
+    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                           ');
+    QryConsulta.SQL.Add('         clientes.ds_cliente,                                   ');
+    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                      ');
+    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                          ');
+    QryConsulta.SQL.Add('         agendamentos.dt_data,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.ds_obs                                    ');
+    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                              ');
+    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                    ');
+    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente ');
+    QryConsulta.SQL.Add('WHERE    agendamentos.pro_id_profissional = :p_id_profissional  ');
+    QryConsulta.SQL.Add('AND      agendamentos.dt_data             = :p_data             ');
+    QryConsulta.SQL.Add('ORDER BY agendamentos.hr_hora                                   ');
+    QryConsulta.ParamByName('p_id_profissional').AsInteger := id_profissional;
+    QryConsulta.ParamByName('p_data').AsDate               := Data;
+    QryConsulta.Open;
+  finally
+    Result := QryConsulta;
+  end;
+
+end;
+
+function TAgendamentos.fnc_validar_agendamento( id_profissional : Integer; Data : TDate; hr_hora : String ) : Boolean;
+var
+  QryValidar : TFDQuery;
+begin
+
+  FConexao.Connected := True;
+
+  try
+    QryValidar := TFDQuery.Create(nil);
+    QryValidar.Connection :=  FConexao;
+
+    QryValidar.Close;
+    QryValidar.SQL.Clear;
+    QryValidar.SQL.Add('SELECT   id_agendamento                           ');
+    QryValidar.SQL.Add('FROM     agendamentos                              ');
+    QryValidar.SQL.Add('WHERE    pro_id_profissional = :p_id_profissional  ');
+    QryValidar.SQL.Add('AND      dt_data             = :p_data             ');
+    QryValidar.SQL.Add('AND      hr_hora             = :p_hora             ');
+    QryValidar.SQL.Add('ORDER BY agendamentos.hr_hora                      ');
+    QryValidar.ParamByName('p_id_profissional').AsInteger := id_profissional;
+    QryValidar.ParamByName('p_data').AsDate               := Data;
+    QryValidar.ParamByName('p_hora').AsString             := hr_hora;
+    QryValidar.Open;
+
+    Result := QryValidar.IsEmpty;
+
+  finally
+    QryValidar.Free;
+  end;
+
+end;
+
+end.

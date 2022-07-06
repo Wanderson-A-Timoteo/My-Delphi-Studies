@@ -78,9 +78,9 @@ object form_agendamento: Tform_agendamento
       object LabelData: TLabel
         Left = 15
         Top = 244
-        Width = 40
+        Width = 36
         Height = 21
-        Caption = 'Data '
+        Caption = 'Data'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -16
@@ -117,9 +117,9 @@ object form_agendamento: Tform_agendamento
       object LabelHora: TLabel
         Left = 251
         Top = 244
-        Width = 37
+        Width = 58
         Height = 21
-        Caption = 'Hora'
+        Caption = 'Hor'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -16
@@ -489,6 +489,66 @@ object form_agendamento: Tform_agendamento
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label2: TLabel
+        Left = 183
+        Top = 129
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Color = 8421631
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 8421631
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 54
+        Top = 244
+        Width = 11
+        Height = 15
+        Caption = '*'
+        Color = 8421631
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 8421631
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 312
+        Top = 243
+        Width = 14
+        Height = 15
+        Caption = '*'
+        Color = 8421631
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 8421631
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label5: TLabel
+        Left = 147
+        Top = 353
+        Width = 21
+        Height = 15
+        Caption = '*'
+        Color = 8421631
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 8421631
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
       object PanelBordaNovaConfigServidor: TPanel
         Left = 15
         Top = 119
@@ -506,10 +566,12 @@ object form_agendamento: Tform_agendamento
         TabOrder = 8
       end
       object dbl_cmb_profissionais: TDBLookupComboBox
+        Tag = 5
         Left = 46
         Top = 158
         Width = 624
         Height = 29
+        Hint = 'Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         Font.Charset = DEFAULT_CHARSET
@@ -539,10 +601,12 @@ object form_agendamento: Tform_agendamento
         TabOrder = 9
       end
       object MaskEditData: TMaskEdit
+        Tag = 5
         Left = 50
         Top = 276
         Width = 130
         Height = 22
+        Hint = 'Data de Agendamento'
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -561,10 +625,12 @@ object form_agendamento: Tform_agendamento
         Text = '  /  /    '
       end
       object MaskEditHora: TMaskEdit
+        Tag = 5
         Left = 255
         Top = 276
         Width = 127
         Height = 22
+        Hint = 'Hor'#225'rio de Agendamento'
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -659,6 +725,7 @@ object form_agendamento: Tform_agendamento
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
+            OnClick = SpeedButtonAgendarClick
             ExplicitLeft = 96
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -804,10 +871,12 @@ object form_agendamento: Tform_agendamento
         TabOrder = 15
       end
       object EditNoemCliente: TEdit
+        Tag = 5
         Left = 50
         Top = 385
         Width = 625
         Height = 25
+        Hint = 'Nome do Cliente'
         TabStop = False
         BorderStyle = bsNone
         Color = clBtnFace
