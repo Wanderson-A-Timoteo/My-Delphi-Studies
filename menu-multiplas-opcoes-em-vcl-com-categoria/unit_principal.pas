@@ -90,6 +90,8 @@ type
      procedure prc_controlar_submenu_opcoes( Botao: TSpeedButton);
      procedure prc_criar_opcao(Titulo : String; Posleft, PosTop : Integer);
      procedure prc_destruir_opcoes;
+     procedure OpcaoMouseEnter(Sender : TObject);
+     procedure OpcaoMouseLeave(Sender : TObject);
   public
     { Public declarations }
   end;
@@ -172,6 +174,13 @@ var
   item_label : TLabel;
 begin
   item_label         := TLabel.Create(form_principal);
+
+  // Ao entrar com mouse = Após criar o label é preciso atribuir a prc com as funções de alterar cor e tamanho ao passar o mouse no label
+  item_label.OnMouseEnter := OpcaoMouseEnter;
+
+  // Ao sair com o mouse = Após sair do label é preciso atribuir a prc com as funções de voltar cor e tamanho original do label
+  item_label.OnMouseLeave := OpcaoMouseLeave;
+
   item_label.Parent  := pnl_submenu_opcoes;
   item_label.Left    := Posleft;
   item_label.Top     := PosTop;
@@ -255,6 +264,22 @@ begin
   pnl_menu.Enabled := False; // Desabilita Menu de opções
 
   form_modelo1.Show;
+end;
+
+procedure Tform_principal.OpcaoMouseEnter(Sender: TObject);
+begin
+  (TComponent(Sender) as TLabel).Font.Style := [fsBold, fsUnderline];
+  (TComponent(Sender) as TLabel).Font.Size  := 11;
+  (TComponent(Sender) as TLabel).Font.Color := clBlue;
+  (TComponent(Sender) as TLabel).Cursor     := crHandPoint;
+end;
+
+procedure Tform_principal.OpcaoMouseLeave(Sender: TObject);
+begin
+  (TComponent(Sender) as TLabel).Font.Style := [];
+  (TComponent(Sender) as TLabel).Font.Size  := 10;
+  (TComponent(Sender) as TLabel).Font.Color := clBlack;
+  (TComponent(Sender) as TLabel).Cursor     := crArrow;
 end;
 
 end.

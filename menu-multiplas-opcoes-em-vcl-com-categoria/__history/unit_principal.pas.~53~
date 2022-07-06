@@ -216,18 +216,22 @@ begin
   FDMemTable1.DisableControls;
   FDMemTable1.First;
 
+  Altura := 45;
 
-  if (TComponent(Sender) as TSpeedButton).Tag = FDMemTable1id_opcao.AsInteger then
+  while not FDMemTable1.Eof do
   begin
-    prc_criar_opcao('Opção de Clientes Nº 1', 16, 50);
-    prc_criar_opcao('Opção de Clientes Nº 2', 16, 70);
-    prc_criar_opcao('Opção de Clientes Nº 3', 16, 90);
+    if (TComponent(Sender) as TSpeedButton).Tag = FDMemTable1id_opcao.AsInteger then
+    begin
+      case FDMemTable1id_coluna.AsInteger of
+        1: Largura := 16;
+        2: Largura := 200;
+        3: Largura := 390;
+      end;
+      // Atribui a posição na grade passando o nome, a largura e pra encontrar a altura correta, multiplica pela linha
+      prc_criar_opcao(FDMemTable1ds_nome.AsString, Largura, Altura * FDMemTable1id_linha.AsInteger);
 
-    prc_criar_opcao('Relatório de Clientes Nº 1', 238, 50);
-    prc_criar_opcao('Relatório de Clientes Nº 2', 238, 70);
-    prc_criar_opcao('Relatório de Clientes Nº 3', 238, 90);
-    prc_criar_opcao('Relatório de Clientes Nº 4', 238, 110);
-    prc_criar_opcao('Relatório de Clientes Nº 5', 238, 130);
+    end;
+    FDMemTable1.Next;
   end;
 
   FDMemTable1.EnableControls;

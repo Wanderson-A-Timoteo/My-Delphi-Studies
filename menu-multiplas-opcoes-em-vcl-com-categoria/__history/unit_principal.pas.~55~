@@ -90,6 +90,7 @@ type
      procedure prc_controlar_submenu_opcoes( Botao: TSpeedButton);
      procedure prc_criar_opcao(Titulo : String; Posleft, PosTop : Integer);
      procedure prc_destruir_opcoes;
+     procedure OpcaoMouseEnter(Sender : TObject);
   public
     { Public declarations }
   end;
@@ -172,6 +173,10 @@ var
   item_label : TLabel;
 begin
   item_label         := TLabel.Create(form_principal);
+
+  // Após criar o label é preciso atribuir a prc com as funções de alterar cor e tamanho ao passar o mouse no label
+  item_label.OnMouseEnter := OpcaoMouseEnter;
+
   item_label.Parent  := pnl_submenu_opcoes;
   item_label.Left    := Posleft;
   item_label.Top     := PosTop;
@@ -216,7 +221,7 @@ begin
   FDMemTable1.DisableControls;
   FDMemTable1.First;
 
-  Altura := 30;
+  Altura := 45;
 
   while not FDMemTable1.Eof do
   begin
@@ -224,26 +229,14 @@ begin
     begin
       case FDMemTable1id_coluna.AsInteger of
         1: Largura := 16;
-        2: Largura := 238;
-        3: Largura := 360;
+        2: Largura := 200;
+        3: Largura := 390;
       end;
       // Atribui a posição na grade passando o nome, a largura e pra encontrar a altura correta, multiplica pela linha
       prc_criar_opcao(FDMemTable1ds_nome.AsString, Largura, Altura * FDMemTable1id_linha.AsInteger);
 
     end;
     FDMemTable1.Next;
-  end;
-
-
-    prc_criar_opcao('Opção de Clientes Nº 1', 16, 50);
-    prc_criar_opcao('Opção de Clientes Nº 2', 16, 70);
-    prc_criar_opcao('Opção de Clientes Nº 3', 16, 90);
-
-    prc_criar_opcao('Relatório de Clientes Nº 1', 238, 50);
-    prc_criar_opcao('Relatório de Clientes Nº 2', 238, 70);
-    prc_criar_opcao('Relatório de Clientes Nº 3', 238, 90);
-    prc_criar_opcao('Relatório de Clientes Nº 4', 238, 110);
-    prc_criar_opcao('Relatório de Clientes Nº 5', 238, 130);
   end;
 
   FDMemTable1.EnableControls;
@@ -267,6 +260,14 @@ begin
   pnl_menu.Enabled := False; // Desabilita Menu de opções
 
   form_modelo1.Show;
+end;
+
+procedure Tform_principal.OpcaoMouseEnter(Sender: TObject);
+begin
+  (TComponent(Sender) as TLabel).Font.Style := [fsBold, fsUnderline];
+  (TComponent(Sender) as TLabel).Font.Size  := 11;
+  (TComponent(Sender) as TLabel).Font.Color := clBlue;
+  (TComponent(Sender) as TLabel).Cursor     := crHandPoint;
 end;
 
 end.
