@@ -1,0 +1,43 @@
+unit unit_principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons;
+
+type
+  Tform_principal = class(TForm)
+    pnl_fundo: TPanel;
+    pnl_topo: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Image1: TImage;
+    Label1: TLabel;
+    Panel2: TPanel;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_principal: Tform_principal;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tform_principal.SpeedButton1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure Tform_principal.SpeedButton2Click(Sender: TObject);
+begin
+  Application.Minimize;
+end;
+
+end.
