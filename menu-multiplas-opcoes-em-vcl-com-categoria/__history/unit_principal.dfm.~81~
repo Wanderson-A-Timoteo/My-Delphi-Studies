@@ -4,8 +4,8 @@ object form_principal: Tform_principal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'form_principal'
-  ClientHeight = 668
-  ClientWidth = 1104
+  ClientHeight = 755
+  ClientWidth = 1087
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,19 +19,18 @@ object form_principal: Tform_principal
   object pnl_fundo: TPanel
     Left = 0
     Top = 0
-    Width = 1104
-    Height = 668
+    Width = 1087
+    Height = 755
     Align = alClient
     BevelOuter = bvLowered
     BorderStyle = bsSingle
     TabOrder = 0
     OnMouseEnter = pnl_fundoMouseEnter
-    ExplicitWidth = 892
     object pnl_formularios: TPanel
       Left = 1
       Top = 123
-      Width = 1098
-      Height = 540
+      Width = 1081
+      Height = 627
       Align = alClient
       BevelKind = bkFlat
       TabOrder = 6
@@ -39,12 +38,18 @@ object form_principal: Tform_principal
       object pnl_submenu_opcoes: TPanel
         Left = 193
         Top = -1
-        Width = 877
+        Width = 851
         Height = 507
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Color = 16776176
+        Color = clBtnHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Georgia'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 0
         object lbl_titulo_opcoes: TLabel
           Left = 16
@@ -64,7 +69,7 @@ object form_principal: Tform_principal
     object pnl_topo: TPanel
       Left = 1
       Top = 1
-      Width = 1098
+      Width = 1081
       Height = 81
       Align = alTop
       BevelOuter = bvNone
@@ -72,12 +77,11 @@ object form_principal: Tform_principal
       ParentBackground = False
       TabOrder = 0
       OnMouseEnter = pnl_fundoMouseEnter
-      ExplicitWidth = 886
       DesignSize = (
-        1098
+        1081
         81)
       object btn_fechar_sistema: TSpeedButton
-        Left = 1064
+        Left = 1047
         Top = 5
         Width = 24
         Height = 24
@@ -143,7 +147,7 @@ object form_principal: Tform_principal
         ExplicitLeft = 852
       end
       object btn_minimizar_sistema: TSpeedButton
-        Left = 1033
+        Left = 1016
         Top = 5
         Width = 24
         Height = 24
@@ -1763,28 +1767,32 @@ object form_principal: Tform_principal
       object pnl_borda_topo: TPanel
         Left = 0
         Top = 80
-        Width = 1098
+        Width = 1081
         Height = 1
         Align = alBottom
         BevelOuter = bvNone
         Color = clSilver
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 886
       end
     end
     object pnl_menu: TPanel
       Left = 1
       Top = 82
-      Width = 1098
+      Width = 1081
       Height = 41
       Align = alTop
       BevelOuter = bvNone
       Color = 14342874
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 1
       OnMouseEnter = pnl_fundoMouseEnter
-      ExplicitWidth = 886
       object btn_menu_suporte: TSpeedButton
         Tag = 4
         Left = 482
@@ -2091,7 +2099,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 2
       Visible = False
       object btn_usuarios_log_acesso: TSpeedButton
@@ -2445,7 +2459,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 14342874
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 3
       Visible = False
       object btn_sistema_minhas_empresas: TSpeedButton
@@ -3432,7 +3452,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 4
       Visible = False
       object btn_configuracoes_backup_restauracoes: TSpeedButton
@@ -3785,7 +3811,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 5
       Visible = False
       object btn_suporte_sobre_sistema: TSpeedButton

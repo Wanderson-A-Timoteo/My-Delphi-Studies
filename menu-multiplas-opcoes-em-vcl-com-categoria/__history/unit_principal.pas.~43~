@@ -182,7 +182,7 @@ begin
   begin
     // Testa se o componente é painel e se for tag <> 0 então é um painel de menu
     if ( form_principal.Components[i] is TLabel) and
-       (( form_principal.Components[i] as TLabel).Tag 5 5) then
+       (( form_principal.Components[i] as TLabel).Tag = 5) then
       (form_principal.Components[i] as TLabel).Free;
   end;
 end;

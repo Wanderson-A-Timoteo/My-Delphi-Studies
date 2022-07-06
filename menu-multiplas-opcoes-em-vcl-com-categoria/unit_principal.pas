@@ -4,7 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Imaging.pngimage;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Imaging.pngimage,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.StorageBin, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   Tform_principal = class(TForm)
@@ -69,6 +71,11 @@ type
     pnl_formularios: TPanel;
     pnl_submenu_opcoes: TPanel;
     lbl_titulo_opcoes: TLabel;
+    FDMemTable1: TFDMemTable;
+    FDMemTable1id_opcao: TIntegerField;
+    FDMemTable1id_coluna: TIntegerField;
+    FDMemTable1id_linha: TIntegerField;
+    FDMemTable1ds_nome: TStringField;
     procedure btn_fechar_sistemaClick(Sender: TObject);
     procedure btn_minimizar_sistemaClick(Sender: TObject);
     procedure btn_menu_hamburgueMouseEnter(Sender: TObject);
@@ -198,24 +205,37 @@ begin
 end;
 
 procedure Tform_principal.btn_sistema_clientesMouseEnter(Sender: TObject);
+var
+  Altura, Largura : Integer;
 begin
   //prc_focar_botao(pnl_foco, TComponent(Sender) as TSpeedButton, True);
   prc_controlar_submenu_opcoes(TComponent(Sender) as TSpeedButton);
 
   prc_destruir_opcoes;
 
-  if (TComponent(Sender) as TSpeedButton).Caption = 'Clientes' then
-  begin
-    prc_criar_opcao('Opção de Clientes Nº 1', 16, 50);
-    prc_criar_opcao('Opção de Clientes Nº 2', 16, 70);
-    prc_criar_opcao('Opção de Clientes Nº 3', 16, 90);
+  FDMemTable1.DisableControls;
+  FDMemTable1.First;
 
-    prc_criar_opcao('Relatório de Clientes Nº 1', 238, 50);
-    prc_criar_opcao('Relatório de Clientes Nº 2', 238, 70);
-    prc_criar_opcao('Relatório de Clientes Nº 3', 238, 90);
-    prc_criar_opcao('Relatório de Clientes Nº 4', 238, 110);
-    prc_criar_opcao('Relatório de Clientes Nº 5', 238, 130);
+  Altura := 45;
+
+  while not FDMemTable1.Eof do
+  begin
+    if (TComponent(Sender) as TSpeedButton).Tag = FDMemTable1id_opcao.AsInteger then
+    begin
+      case FDMemTable1id_coluna.AsInteger of
+        1: Largura := 16;
+        2: Largura := 200;
+        3: Largura := 390;
+      end;
+      // Atribui a posição na grade passando o nome, a largura e pra encontrar a altura correta, multiplica pela linha
+      prc_criar_opcao(FDMemTable1ds_nome.AsString, Largura, Altura * FDMemTable1id_linha.AsInteger);
+
+    end;
+    FDMemTable1.Next;
   end;
+
+  FDMemTable1.EnableControls;
+
 end;
 
 procedure Tform_principal.btn_sistema_clientesMouseLeave(Sender: TObject);
@@ -225,7 +245,7 @@ end;
 
 procedure Tform_principal.btn_usuarios_novo_usuarioClick(Sender: TObject);
 begin
-  form_modelo1        :=  Tform_modelo1.Create(Self); // Cria o formulário
+  form_modelo1 := Tform_modelo1.Create(Self); // Cria o formulário
 
   // Adiciona o formulario modelo 1 dentro do pnl_formularios da tela principal
   form_modelo1.Parent := form_principal.pnl_formularios;

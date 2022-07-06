@@ -4,7 +4,7 @@ object form_principal: Tform_principal
   Align = alClient
   BorderStyle = bsNone
   Caption = 'form_principal'
-  ClientHeight = 668
+  ClientHeight = 755
   ClientWidth = 1087
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,23 +20,21 @@ object form_principal: Tform_principal
     Left = 0
     Top = 0
     Width = 1087
-    Height = 668
+    Height = 755
     Align = alClient
     BevelOuter = bvLowered
     BorderStyle = bsSingle
     TabOrder = 0
     OnMouseEnter = pnl_fundoMouseEnter
-    ExplicitWidth = 892
     object pnl_formularios: TPanel
       Left = 1
       Top = 123
       Width = 1081
-      Height = 540
+      Height = 627
       Align = alClient
       BevelKind = bkFlat
       TabOrder = 6
       OnMouseEnter = pnl_formulariosMouseEnter
-      ExplicitWidth = 1098
       object pnl_submenu_opcoes: TPanel
         Left = 193
         Top = -1
@@ -44,8 +42,14 @@ object form_principal: Tform_principal
         Height = 507
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Color = 16776176
+        Color = clBtnHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Georgia'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 0
         object lbl_titulo_opcoes: TLabel
           Left = 16
@@ -73,7 +77,6 @@ object form_principal: Tform_principal
       ParentBackground = False
       TabOrder = 0
       OnMouseEnter = pnl_fundoMouseEnter
-      ExplicitWidth = 886
       DesignSize = (
         1081
         81)
@@ -1771,7 +1774,6 @@ object form_principal: Tform_principal
         Color = clSilver
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 886
       end
     end
     object pnl_menu: TPanel
@@ -1782,10 +1784,15 @@ object form_principal: Tform_principal
       Align = alTop
       BevelOuter = bvNone
       Color = 14342874
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 1
       OnMouseEnter = pnl_fundoMouseEnter
-      ExplicitWidth = 886
       object btn_menu_suporte: TSpeedButton
         Tag = 4
         Left = 482
@@ -2092,7 +2099,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 2
       Visible = False
       object btn_usuarios_log_acesso: TSpeedButton
@@ -2446,10 +2459,17 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 14342874
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 3
       Visible = False
       object btn_sistema_minhas_empresas: TSpeedButton
+        Tag = 11
         Left = 0
         Top = 410
         Width = 192
@@ -2529,6 +2549,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 165
       end
       object btn_sistema_caixa: TSpeedButton
+        Tag = 9
         Left = 0
         Top = 328
         Width = 192
@@ -2609,6 +2630,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 191
       end
       object btn_sistema_vendas: TSpeedButton
+        Tag = 8
         Left = 0
         Top = 287
         Width = 192
@@ -2688,6 +2710,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 165
       end
       object btn_sistema_orcamentos: TSpeedButton
+        Tag = 7
         Left = 0
         Top = 246
         Width = 192
@@ -2768,6 +2791,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 194
       end
       object btn_sistema_servicos: TSpeedButton
+        Tag = 6
         Left = 0
         Top = 205
         Width = 192
@@ -2847,6 +2871,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 165
       end
       object btn_sistema_financeiro: TSpeedButton
+        Tag = 5
         Left = 0
         Top = 164
         Width = 192
@@ -2926,6 +2951,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 165
       end
       object btn_sistema_estoque: TSpeedButton
+        Tag = 4
         Left = 0
         Top = 123
         Width = 192
@@ -3005,6 +3031,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 165
       end
       object btn_sistema_funcionarios: TSpeedButton
+        Tag = 3
         Left = 0
         Top = 82
         Width = 192
@@ -3085,6 +3112,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 191
       end
       object btn_sistema_fornecedores: TSpeedButton
+        Tag = 2
         Left = 0
         Top = 41
         Width = 192
@@ -3164,6 +3192,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 191
       end
       object btn_sistema_clientes: TSpeedButton
+        Tag = 1
         Left = 0
         Top = 0
         Width = 192
@@ -3245,6 +3274,7 @@ object form_principal: Tform_principal
         ExplicitWidth = 165
       end
       object btn_sistema_relatorios: TSpeedButton
+        Tag = 10
         Left = 0
         Top = 369
         Width = 192
@@ -3433,7 +3463,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 4
       Visible = False
       object btn_configuracoes_backup_restauracoes: TSpeedButton
@@ -3786,7 +3822,13 @@ object form_principal: Tform_principal
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clBtnHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Georgia'
+      Font.Style = []
       ParentBackground = False
+      ParentFont = False
       TabOrder = 5
       Visible = False
       object btn_suporte_sobre_sistema: TSpeedButton
@@ -4127,6 +4169,96 @@ object form_principal: Tform_principal
         ParentBackground = False
         TabOrder = 2
       end
+    end
+  end
+  object FDMemTable1: TFDMemTable
+    Active = True
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvPersistent, rvSilentMode]
+    ResourceOptions.Persistent = True
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 306
+    Top = 282
+    Content = {
+      414442530F00000019050000FF00010001FF02FF03040016000000460044004D
+      0065006D005400610062006C006500310005000A0000005400610062006C0065
+      00060000000000070000080032000000090000FF0AFF0B040010000000690064
+      005F006F007000630061006F00050010000000690064005F006F007000630061
+      006F000C00010000000E000D000F000110000111000112000113000114000115
+      0010000000690064005F006F007000630061006F00FEFF0B0400120000006900
+      64005F0063006F006C0075006E006100050012000000690064005F0063006F00
+      6C0075006E0061000C00020000000E000D000F00011000011100011200011300
+      01140001150012000000690064005F0063006F006C0075006E006100FEFF0B04
+      0010000000690064005F006C0069006E0068006100050010000000690064005F
+      006C0069006E00680061000C00030000000E000D000F00011000011100011200
+      01130001140001150010000000690064005F006C0069006E0068006100FEFF0B
+      04000E000000640073005F006E006F006D00650005000E000000640073005F00
+      6E006F006D0065000C00040000000E00160017001E0000000F00011000011100
+      0112000113000114000115000E000000640073005F006E006F006D0065001800
+      1E000000FEFEFF19FEFF1AFEFF1BFF1C1D0000000000FF1E0000010000000100
+      0100000002000100000003001100000043616461737472617220436C69656E74
+      65FEFEFF1C1D0001000000FF1E00000100000001000100000002000200000003
+      0011000000436F6E73756C74617220436C69656E7465FEFEFF1C1D0002000000
+      FF1E0000010000000100010000000200030000000300120000004F70E7E36F20
+      436C69656E7465204EBA2033FEFEFF1C1D0003000000FF1E0000010000000100
+      0200000002000100000003001500000052656C6174F372696F20646520436C69
+      656E746573FEFEFF1C1D0004000000FF1E000001000000010002000000020002
+      00000003001400000048697374F37269636F20646520436F6D70726173FEFEFF
+      1C1D0005000000FF1E0000010000000100020000000200030000000300140000
+      0052656C6174F372696F2046696E616E636569726FFEFEFF1C1D0006000000FF
+      1E00000100000001000300000002000100000003000F000000416E6976657273
+      617269616E746573FEFEFF1C1D0007000000FF1E000001000000010003000000
+      0200020000000300140000004C6973746167656D20646520436C69656E746573
+      FEFEFF1C1D0008000000FF1E0000020000000100010000000200010000000300
+      1400000043616461737472617220466F726E656365646F72FEFEFF1C1D000900
+      0000FF1E000002000000010001000000020002000000030014000000436F6E73
+      756C74617220466F726E656365646F72FEFEFF1C1D000A000000FF1E00000200
+      000001000100000002000300000003001700000048697374F37269636F20646F
+      20466F726E656365646F72FEFEFF1C1D000B000000FF1E000002000000010002
+      00000002000100000003001900000052656C6174F372696F20646520466F726E
+      656365646F726573FEFEFF1C1D000C000000FF1E000002000000010002000000
+      0200020000000300180000004C6973746167656D20646520466F726E65636564
+      6F726573FEFEFF1C1D000D000000FF1E00000200000001000300000002000100
+      000003001C000000466F726E656365646F72657320416E697665727361726961
+      6E746573FEFEFEFEFEFF1FFEFF2021000E000000FF22FEFEFE0E004D0061006E
+      0061006700650072001E00550070006400610074006500730052006500670069
+      00730074007200790012005400610062006C0065004C006900730074000A0054
+      00610062006C00650008004E0061006D006500140053006F0075007200630065
+      004E0061006D0065000A0054006100620049004400240045006E0066006F0072
+      006300650043006F006E00730074007200610069006E00740073001E004D0069
+      006E0069006D0075006D00430061007000610063006900740079001800430068
+      00650063006B004E006F0074004E0075006C006C00140043006F006C0075006D
+      006E004C006900730074000C0043006F006C0075006D006E00100053006F0075
+      00720063006500490044000E006400740049006E007400330032001000440061
+      007400610054007900700065001400530065006100720063006800610062006C
+      006500120041006C006C006F0077004E0075006C006C00080042006100730065
+      0014004F0041006C006C006F0077004E0075006C006C0012004F0049006E0055
+      007000640061007400650010004F0049006E00570068006500720065001A004F
+      0072006900670069006E0043006F006C004E0061006D00650018006400740041
+      006E007300690053007400720069006E0067000800530069007A006500140053
+      006F007500720063006500530069007A0065001C0043006F006E007300740072
+      00610069006E0074004C00690073007400100056006900650077004C00690073
+      0074000E0052006F0077004C00690073007400060052006F0077000A0052006F
+      0077004900440010004F0072006900670069006E0061006C001800520065006C
+      006100740069006F006E004C006900730074001C005500700064006100740065
+      0073004A006F00750072006E0061006C001200530061007600650050006F0069
+      006E0074000E004300680061006E00670065007300}
+    object FDMemTable1id_opcao: TIntegerField
+      FieldName = 'id_opcao'
+    end
+    object FDMemTable1id_coluna: TIntegerField
+      FieldName = 'id_coluna'
+    end
+    object FDMemTable1id_linha: TIntegerField
+      FieldName = 'id_linha'
+    end
+    object FDMemTable1ds_nome: TStringField
+      FieldName = 'ds_nome'
+      Size = 30
     end
   end
 end

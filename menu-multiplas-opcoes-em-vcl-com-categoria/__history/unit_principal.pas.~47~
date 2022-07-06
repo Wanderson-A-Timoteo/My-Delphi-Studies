@@ -4,7 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Imaging.pngimage;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Buttons, Vcl.Imaging.pngimage,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.StorageBin, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   Tform_principal = class(TForm)
@@ -69,7 +71,11 @@ type
     pnl_formularios: TPanel;
     pnl_submenu_opcoes: TPanel;
     lbl_titulo_opcoes: TLabel;
-    Label1: TLabel;
+    FDMemTable1: TFDMemTable;
+    FDMemTable1id_opcao: TIntegerField;
+    FDMemTable1id_coluna: TIntegerField;
+    FDMemTable1id_linha: TIntegerField;
+    FDMemTable1ds_nome: TStringField;
     procedure btn_fechar_sistemaClick(Sender: TObject);
     procedure btn_minimizar_sistemaClick(Sender: TObject);
     procedure btn_menu_hamburgueMouseEnter(Sender: TObject);
@@ -82,6 +88,8 @@ type
     { Private declarations }
      procedure prc_controlar_menu( Botao: TSpeedButton; Ativar : Boolean);
      procedure prc_controlar_submenu_opcoes( Botao: TSpeedButton);
+     procedure prc_criar_opcao(Titulo : String; Posleft, PosTop : Integer);
+     procedure prc_destruir_opcoes;
   public
     { Public declarations }
   end;
@@ -159,6 +167,33 @@ begin
   lbl_titulo_opcoes.Caption  := 'Opções Relacionas: ' + Botao.Caption;
 end;
 
+procedure Tform_principal.prc_criar_opcao(Titulo: String; Posleft, PosTop: Integer);
+var
+  item_label : TLabel;
+begin
+  item_label         := TLabel.Create(form_principal);
+  item_label.Parent  := pnl_submenu_opcoes;
+  item_label.Left    := Posleft;
+  item_label.Top     := PosTop;
+  item_label.Caption := Titulo;
+
+  item_label.Tag     := 5;
+end;
+
+procedure Tform_principal.prc_destruir_opcoes;
+var
+ I : Integer;
+begin
+  // Percorrer todos os componentes do form de tras pra frente
+  for I := form_principal.ComponentCount - 1 downto 0 do
+  begin
+    // Testa se o componente é painel e se for tag <> 0 então é um painel de menu
+    if ( form_principal.Components[i] is TLabel) and
+       (( form_principal.Components[i] as TLabel).Tag = 5) then
+      (form_principal.Components[i] as TLabel).Free;
+  end;
+end;
+
 procedure Tform_principal.btn_fechar_sistemaClick(Sender: TObject);
 begin
   Application.Terminate;
@@ -170,9 +205,37 @@ begin
 end;
 
 procedure Tform_principal.btn_sistema_clientesMouseEnter(Sender: TObject);
+var
+  Altura, Largura : Integer;
 begin
   //prc_focar_botao(pnl_foco, TComponent(Sender) as TSpeedButton, True);
   prc_controlar_submenu_opcoes(TComponent(Sender) as TSpeedButton);
+
+  prc_destruir_opcoes;
+
+  FDMemTable1.DisableControls;
+  FDMemTable1.First;
+
+  Altura := 30;
+
+  while not FDMemTable1.Eof do
+  begin
+    if (TComponent(Sender) as TSpeedButton).Tag = FDMemTable1id_opcao.AsInteger then
+    begin
+      case FDMemTable1id_coluna.AsInteger of
+        1: Largura := 16;
+        2: Largura := 238;
+        3: Largura := 360;
+      end;
+      // Atribui a posição na grade passando o nome, a largura e pra encontrar a altura correta, multiplica pela linha
+      prc_criar_opcao(FDMemTable1ds_nome.AsString, Largura, Altura * FDMemTable1id_linha.AsInteger);
+
+    end;
+    FDMemTable1.Next;
+  end;
+
+  FDMemTable1.EnableControls;
+
 end;
 
 procedure Tform_principal.btn_sistema_clientesMouseLeave(Sender: TObject);
@@ -182,7 +245,7 @@ end;
 
 procedure Tform_principal.btn_usuarios_novo_usuarioClick(Sender: TObject);
 begin
-  form_modelo1        :=  Tform_modelo1.Create(Self); // Cria o formulário
+  form_modelo1 := Tform_modelo1.Create(Self); // Cria o formulário
 
   // Adiciona o formulario modelo 1 dentro do pnl_formularios da tela principal
   form_modelo1.Parent := form_principal.pnl_formularios;
