@@ -62,7 +62,7 @@ object form_mensagens: Tform_mensagens
     object label_titulo_msg: TLabel
       Left = 198
       Top = 40
-      Width = 58
+      Width = 62
       Height = 25
       Caption = 'T'#237'tulo: '
       Color = 5839365
@@ -141,6 +141,8 @@ object form_mensagens: Tform_mensagens
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = SpeedButtonNaoClick
+          OnMouseEnter = SpeedButtonNaoMouseEnter
+          OnMouseLeave = SpeedButtonNaoMouseLeave
           ExplicitLeft = 56
           ExplicitTop = 24
           ExplicitWidth = 23
@@ -180,6 +182,8 @@ object form_mensagens: Tform_mensagens
           Font.Style = [fsBold]
           ParentFont = False
           OnClick = SpeedButtonSimClick
+          OnMouseEnter = SpeedButtonSimMouseEnter
+          OnMouseLeave = SpeedButtonSimMouseLeave
           ExplicitLeft = -1
           ExplicitHeight = 50
         end

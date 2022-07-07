@@ -150,6 +150,10 @@
             <Form>form_profissionais</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unit_agenda.pas">
+            <Form>form_agenda</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

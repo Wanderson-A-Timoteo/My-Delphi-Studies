@@ -25,6 +25,10 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure SpeedButtonSimMouseEnter(Sender: TObject);
+    procedure SpeedButtonSimMouseLeave(Sender: TObject);
+    procedure SpeedButtonNaoMouseEnter(Sender: TObject);
+    procedure SpeedButtonNaoMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,10 +84,30 @@ begin
   Close;
 end;
 
+procedure Tform_mensagens.SpeedButtonNaoMouseEnter(Sender: TObject);
+begin
+  SpeedButtonNao.Font.Color := $00591A05;
+end;
+
+procedure Tform_mensagens.SpeedButtonNaoMouseLeave(Sender: TObject);
+begin
+  SpeedButtonNao.Font.Color := clWhite;
+end;
+
 procedure Tform_mensagens.SpeedButtonSimClick(Sender: TObject);
 begin
   bRespostaMSG := True;
   Close;
+end;
+
+procedure Tform_mensagens.SpeedButtonSimMouseEnter(Sender: TObject);
+begin
+  SpeedButtonSim.Font.Color := $00591A05;
+end;
+
+procedure Tform_mensagens.SpeedButtonSimMouseLeave(Sender: TObject);
+begin
+  SpeedButtonSim.Font.Color := clWhite;
 end;
 
 end.

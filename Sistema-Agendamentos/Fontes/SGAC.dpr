@@ -17,7 +17,8 @@ uses
   unit_agendamento_consulta in 'unit_agendamento_consulta.pas' {form_agendamento_consulta},
   classe.cliente in 'classe.cliente.pas',
   classe.agendamento in 'classe.agendamento.pas',
-  unit_profissionais in 'unit_profissionais.pas' {form_profissionais};
+  unit_profissionais in 'unit_profissionais.pas' {form_profissionais},
+  unit_agenda in 'unit_agenda.pas' {form_agenda};
 
 {$R *.res}
 

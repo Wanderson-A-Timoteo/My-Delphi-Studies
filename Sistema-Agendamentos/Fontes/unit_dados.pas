@@ -33,12 +33,14 @@ implementation
 
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
-  Conexao := TConexao.Create( FDConnection );
+  Conexao      := TConexao.Create( FDConnection );
+  Profissional := TProfissionais.Create(DataModule1.FDConnection);
 end;
 
 procedure TDataModule1.DataModuleDestroy(Sender: TObject);
 begin
   Conexao.Free;
+  Profissional.Free;
 end;
 
 end.

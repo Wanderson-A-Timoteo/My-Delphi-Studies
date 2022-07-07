@@ -210,6 +210,8 @@ object form_profissionais: Tform_profissionais
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonAgendarClick
+            OnMouseEnter = SpeedButtonAgendarMouseEnter
+            OnMouseLeave = SpeedButtonAgendarMouseLeave
             ExplicitLeft = 96
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -241,6 +243,8 @@ object form_profissionais: Tform_profissionais
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCancelarClick
+            OnMouseEnter = SpeedButtonCancelarMouseEnter
+            OnMouseLeave = SpeedButtonCancelarMouseLeave
             ExplicitLeft = 88
             ExplicitTop = 8
             ExplicitWidth = 23

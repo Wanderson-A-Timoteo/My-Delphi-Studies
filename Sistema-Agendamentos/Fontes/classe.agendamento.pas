@@ -17,6 +17,7 @@ type
     Fdt_data: TDate;
     Fusu_id_usuarios: Integer;
 
+
     public
       property Conexao             : TFDConnection read FConexao       write FConexao;
       property id_agendamento      : Integer read Fid_agendamento      write Fid_agendamento;
@@ -31,6 +32,8 @@ type
       destructor Destroy; Override;
 
       function fnc_consulta(id_profissional: Integer; Data: TDate): TFDQuery;
+      function fnc_consultar_por_cliente(NomeCliente: String): TFDQuery;
+
       function fnc_validar_agendamento(id_profissional: Integer; Data: TDate; hr_hora: String): Boolean;
 
       function fnc_inserir : String;
@@ -85,6 +88,35 @@ begin
     QryConsulta.SQL.Add('ORDER BY agendamentos.hr_hora                                   ');
     QryConsulta.ParamByName('p_id_profissional').AsInteger := id_profissional;
     QryConsulta.ParamByName('p_data').AsDate               := Data;
+    QryConsulta.Open;
+  finally
+    Result := QryConsulta;
+  end;
+
+end;
+
+function TAgendamentos.fnc_consultar_por_cliente( NomeCliente : String ) : TFDQuery;
+begin
+
+  FConexao.Connected := True;
+
+  try
+    QryConsulta.Close;
+    QryConsulta.SQL.Clear;
+    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                           ');
+    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                           ');
+    QryConsulta.SQL.Add('         clientes.ds_cliente,                                   ');
+    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                      ');
+    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                          ');
+    QryConsulta.SQL.Add('         agendamentos.dt_data,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.ds_obs                                    ');
+    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                              ');
+    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                    ');
+    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente ');
+    QryConsulta.SQL.Add('WHERE    clientes.ds_cliente LIKE :p_nome_cliente               ');
+    QryConsulta.SQL.Add('ORDER BY clientes.ds_cliente                                    ');
+    QryConsulta.ParamByName('p_nome_cliente').AsString := '%' + NomeCliente + '%';
     QryConsulta.Open;
   finally
     Result := QryConsulta;

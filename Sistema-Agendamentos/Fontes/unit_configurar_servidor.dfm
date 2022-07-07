@@ -279,6 +279,8 @@ object form_configurar_servidor: Tform_configurar_servidor
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCancelarClick
+            OnMouseEnter = SpeedButtonCancelarMouseEnter
+            OnMouseLeave = SpeedButtonCancelarMouseLeave
             ExplicitLeft = 56
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -301,7 +303,7 @@ object form_configurar_servidor: Tform_configurar_servidor
           ParentBackground = False
           ParentFont = False
           TabOrder = 1
-          object SpeedButton1: TSpeedButton
+          object SpeedButtonAcessar: TSpeedButton
             Left = 0
             Top = 0
             Width = 150
@@ -317,7 +319,9 @@ object form_configurar_servidor: Tform_configurar_servidor
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
-            OnClick = SpeedButton1Click
+            OnClick = SpeedButtonAcessarClick
+            OnMouseEnter = SpeedButtonAcessarMouseEnter
+            OnMouseLeave = SpeedButtonAcessarMouseLeave
             ExplicitLeft = -1
           end
         end

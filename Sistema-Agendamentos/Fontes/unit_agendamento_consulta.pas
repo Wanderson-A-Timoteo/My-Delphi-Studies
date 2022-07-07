@@ -46,6 +46,10 @@ type
     procedure SpeedButtonAgendarHorarioClick(Sender: TObject);
     procedure ComboBoxHoraChange(Sender: TObject);
     procedure ComboBoxMinutoChange(Sender: TObject);
+    procedure SpeedButtonAgendarHorarioMouseEnter(Sender: TObject);
+    procedure SpeedButtonAgendarHorarioMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +63,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_agendamento, unit_profissionais, classe.agendamento;
+uses unit_funcoes, unit_agendamento, unit_profissionais, classe.agendamento, unit_agenda;
 
 
 procedure Tform_agendamento_consulta.CalendarPickerSelecionarDataChange(Sender: TObject);
@@ -80,7 +84,7 @@ begin
     Abort;
   end
   else begin
-    ds_consulta.DataSet := form_agendamento.Agendamento.fnc_consulta(
+    ds_consulta.DataSet := form_agenda.Agendamento.fnc_consulta(
       dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date);
 
     //prcAjustaTamanhoLinha ( dbg_registros, 28 );
@@ -195,7 +199,7 @@ begin
     Abort;
   end;
 
-  if form_agendamento.Agendamento.fnc_validar_agendamento(
+  if form_agenda.Agendamento.fnc_validar_agendamento(
       dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date,
       ( ComboBoxHora.Text + ':' + ComboBoxMinuto.Text ) ) then
   begin
@@ -218,9 +222,29 @@ begin
   end;
 end;
 
+procedure Tform_agendamento_consulta.SpeedButtonAgendarHorarioMouseEnter(Sender: TObject);
+begin
+  SpeedButtonAgendarHorario.Font.Color := $00591A05;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonAgendarHorarioMouseLeave(Sender: TObject);
+begin
+  SpeedButtonAgendarHorario.Font.Color := clWhite;
+end;
+
 procedure Tform_agendamento_consulta.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonCancelarMouseEnter(Sender: TObject);
+begin
+   SpeedButtonCancelar.Font.Color := $00591A05;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonCancelarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := clWhite;
 end;
 
 end.

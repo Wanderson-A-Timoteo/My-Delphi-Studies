@@ -56,9 +56,9 @@ object form_agendamento_consulta: Tform_agendamento_consulta
       object LabelNoemProfissional: TLabel
         Left = 10
         Top = 139
-        Width = 315
+        Width = 316
         Height = 21
-        Caption = 'Nome do Proffisional para Agendamento'
+        Caption = 'Nome do Profissional para Agendamento'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -16
@@ -67,12 +67,12 @@ object form_agendamento_consulta: Tform_agendamento_consulta
         ParentFont = False
       end
       object LabelTituloCadastrarProfissional: TLabel
-        Left = 140
+        Left = 212
         Top = 38
-        Width = 428
+        Width = 210
         Height = 37
         Alignment = taCenter
-        Caption = 'Consultar Agenda do Profissional'
+        Caption = 'Marcar Consulta'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -27
@@ -201,7 +201,7 @@ object form_agendamento_consulta: Tform_agendamento_consulta
             Width = 177
             Height = 49
             Align = alClient
-            Caption = 'Agendar Hor'#225'rio'
+            Caption = 'Marcar Hor'#225'rio'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite
@@ -210,6 +210,8 @@ object form_agendamento_consulta: Tform_agendamento_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonAgendarHorarioClick
+            OnMouseEnter = SpeedButtonAgendarHorarioMouseEnter
+            OnMouseLeave = SpeedButtonAgendarHorarioMouseLeave
             ExplicitLeft = 96
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -241,6 +243,8 @@ object form_agendamento_consulta: Tform_agendamento_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCancelarClick
+            OnMouseEnter = SpeedButtonCancelarMouseEnter
+            OnMouseLeave = SpeedButtonCancelarMouseLeave
             ExplicitLeft = 88
             ExplicitTop = 8
             ExplicitWidth = 23

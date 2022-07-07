@@ -42,6 +42,10 @@ type
     procedure dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SpeedButtonAgendarClick(Sender: TObject);
     procedure dbg_registrosDblClick(Sender: TObject);
+    procedure SpeedButtonAgendarMouseEnter(Sender: TObject);
+    procedure SpeedButtonAgendarMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -129,9 +133,29 @@ begin
   end;
 end;
 
+procedure Tform_profissionais.SpeedButtonAgendarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonAgendar.Font.Color := $00591A05;
+end;
+
+procedure Tform_profissionais.SpeedButtonAgendarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonAgendar.Font.Color := clWhite;
+end;
+
 procedure Tform_profissionais.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure Tform_profissionais.SpeedButtonCancelarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := $00591A05;
+end;
+
+procedure Tform_profissionais.SpeedButtonCancelarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := clWhite;
 end;
 
 end.

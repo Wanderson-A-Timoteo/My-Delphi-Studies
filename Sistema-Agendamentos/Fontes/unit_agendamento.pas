@@ -48,7 +48,7 @@ type
     EditObservacoes: TEdit;
     ds_profissionais: TDataSource;
     PanelBordaNomeCliente: TPanel;
-    EditNoemCliente: TEdit;
+    EditNomeCliente: TEdit;
     Panel1: TPanel;
     Label1: TLabel;
     Label2: TLabel;
@@ -58,17 +58,19 @@ type
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure SpeedButtonCadastrarDataClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure SpeedButtonAgendarClick(Sender: TObject);
+    procedure SpeedButtonAgendarMouseEnter(Sender: TObject);
+    procedure SpeedButtonAgendarMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
-    Agendamento : TAgendamentos;
   end;
 
 var
@@ -80,7 +82,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_cliente_consulta, unit_agendamento_consulta, unit_funcoes;
+uses unit_cliente_consulta, unit_agendamento_consulta, unit_funcoes, unit_agenda;
 
 procedure Tform_agendamento.FormActivate(Sender: TObject);
 begin
@@ -90,18 +92,7 @@ end;
 
 procedure Tform_agendamento.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  DataModule1.Profissional.Free;
-
-  Agendamento.Free;
-
   Action := caFree;
-end;
-
-procedure Tform_agendamento.FormCreate(Sender: TObject);
-begin
-  DataModule1.Profissional := TProfissionais.Create(DataModule1.FDConnection);
-
-  Agendamento              := TAgendamentos.Create(DataModule1.FDConnection);
 end;
 
 procedure Tform_agendamento.FormShow(Sender: TObject);
@@ -115,16 +106,16 @@ var
 begin
   prcValidarCamposObrigatorios(form_agendamento);
 
-  if Agendamento.fnc_validar_agendamento( dbl_cmb_profissionais.KeyValue,
+  if form_agenda.Agendamento.fnc_validar_agendamento( dbl_cmb_profissionais.KeyValue,
                                           StrToDate(MaskEditData.Text),
                                           MaskEditHora.Text ) then
   begin
-    Agendamento.pro_id_profissional := dbl_cmb_profissionais.KeyValue;
-    Agendamento.dt_data             := StrToDate(MaskEditData.Text);
-    Agendamento.hr_hora             := MaskEditHora.Text;
-    Agendamento.ds_obs              := EditObservacoes.Text;
+    form_agenda.Agendamento.pro_id_profissional := dbl_cmb_profissionais.KeyValue;
+    form_agenda.Agendamento.dt_data             := StrToDate(MaskEditData.Text);
+    form_agenda.Agendamento.hr_hora             := MaskEditHora.Text;
+    form_agenda.Agendamento.ds_obs              := EditObservacoes.Text;
 
-    sErro := Agendamento.fnc_inserir;
+    sErro := form_agenda.Agendamento.fnc_inserir;
     if sErro = '' then
     begin
 
@@ -158,6 +149,16 @@ begin
 
 end;
 
+procedure Tform_agendamento.SpeedButtonAgendarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonAgendar.Font.Color := $00591A05;
+end;
+
+procedure Tform_agendamento.SpeedButtonAgendarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonAgendar.Font.Color := clWhite;
+end;
+
 procedure Tform_agendamento.SpeedButtonCadastrarDataClick(Sender: TObject);
 begin
   try
@@ -187,6 +188,16 @@ end;
 procedure Tform_agendamento.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure Tform_agendamento.SpeedButtonCancelarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := $00591A05;
+end;
+
+procedure Tform_agendamento.SpeedButtonCancelarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := clWhite;
 end;
 
 procedure Tform_agendamento.SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);

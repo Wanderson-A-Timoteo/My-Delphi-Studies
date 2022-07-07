@@ -199,7 +199,7 @@ object form_principal: Tform_principal
   end
   object PanelFundo: TPanel
     Left = 22
-    Top = 128
+    Top = 122
     Width = 972
     Height = 442
     BevelOuter = bvNone
@@ -3082,7 +3082,7 @@ object form_principal: Tform_principal
       Width = 185
       Height = 41
       Align = alClient
-      Caption = 'Adicionar Agendamento'
+      Caption = 'Agendamentos'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -3091,6 +3091,8 @@ object form_principal: Tform_principal
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = SpeedButtonAgendamentoClick
+      OnMouseEnter = SpeedButtonAgendamentoMouseEnter
+      OnMouseLeave = SpeedButtonAgendamentoMouseLeave
       ExplicitLeft = 1
     end
   end
@@ -3118,6 +3120,8 @@ object form_principal: Tform_principal
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      OnMouseEnter = SpeedButtonGerarRelatorioMouseEnter
+      OnMouseLeave = SpeedButtonGerarRelatorioMouseLeave
       ExplicitLeft = 8
     end
   end
@@ -3146,6 +3150,8 @@ object form_principal: Tform_principal
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = SpeedButtonServidorClick
+      OnMouseEnter = SpeedButtonServidorMouseEnter
+      OnMouseLeave = SpeedButtonServidorMouseLeave
       ExplicitTop = 1
     end
   end

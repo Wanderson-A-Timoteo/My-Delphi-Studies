@@ -14,7 +14,6 @@ object form_agendamento: Tform_agendamento
   Position = poScreenCenter
   OnActivate = FormActivate
   OnClose = FormClose
-  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
@@ -169,9 +168,9 @@ object form_agendamento: Tform_agendamento
       object LabelTituloAgendamento: TLabel
         Left = 242
         Top = 30
-        Width = 183
+        Width = 260
         Height = 37
-        Caption = 'Agendamento'
+        Caption = 'Novo Agendamento'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -27
@@ -507,7 +506,7 @@ object form_agendamento: Tform_agendamento
       object Label3: TLabel
         Left = 54
         Top = 244
-        Width = 11
+        Width = 5
         Height = 15
         Caption = '*'
         Color = 8421631
@@ -522,7 +521,7 @@ object form_agendamento: Tform_agendamento
       object Label4: TLabel
         Left = 312
         Top = 243
-        Width = 14
+        Width = 5
         Height = 15
         Caption = '*'
         Color = 8421631
@@ -537,7 +536,7 @@ object form_agendamento: Tform_agendamento
       object Label5: TLabel
         Left = 147
         Top = 353
-        Width = 21
+        Width = 5
         Height = 15
         Caption = '*'
         Color = 8421631
@@ -726,6 +725,8 @@ object form_agendamento: Tform_agendamento
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonAgendarClick
+            OnMouseEnter = SpeedButtonAgendarMouseEnter
+            OnMouseLeave = SpeedButtonAgendarMouseLeave
             ExplicitLeft = 96
             ExplicitTop = 24
             ExplicitWidth = 23
@@ -757,6 +758,8 @@ object form_agendamento: Tform_agendamento
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCancelarClick
+            OnMouseEnter = SpeedButtonCancelarMouseEnter
+            OnMouseLeave = SpeedButtonCancelarMouseLeave
             ExplicitLeft = 88
             ExplicitTop = 8
             ExplicitWidth = 23
@@ -870,7 +873,7 @@ object form_agendamento: Tform_agendamento
         ParentFont = False
         TabOrder = 15
       end
-      object EditNoemCliente: TEdit
+      object EditNomeCliente: TEdit
         Tag = 5
         Left = 50
         Top = 385

@@ -38,6 +38,10 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButtonEntrarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure SpeedButtonEntrarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCadastrarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCadastrarMouseLeave(Sender: TObject);
+    procedure SpeedButtonEntrarMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,9 +66,29 @@ begin
   Close;
 end;
 
+procedure Tform_login.SpeedButtonEntrarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonEntrar.Font.Color := $00591A05;
+end;
+
+procedure Tform_login.SpeedButtonEntrarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonEntrar.Font.Color := clWhite;
+end;
+
 procedure Tform_login.SpeedButton2Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure Tform_login.SpeedButtonCadastrarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCadastrar.Font.Color := $00591A05;
+end;
+
+procedure Tform_login.SpeedButtonCadastrarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCadastrar.Font.Color := clWhite;
 end;
 
 end.

@@ -661,6 +661,8 @@ object form_clientes: Tform_clientes
               Font.Style = [fsBold]
               ParentFont = False
               OnClick = SpeedButtonSalvarClick
+              OnMouseEnter = SpeedButtonSalvarMouseEnter
+              OnMouseLeave = SpeedButtonSalvarMouseLeave
               ExplicitLeft = 96
               ExplicitTop = 24
               ExplicitWidth = 23
@@ -692,6 +694,8 @@ object form_clientes: Tform_clientes
               Font.Style = [fsBold]
               ParentFont = False
               OnClick = SpeedButtonCancelarClick
+              OnMouseEnter = SpeedButtonCancelarMouseEnter
+              OnMouseLeave = SpeedButtonCancelarMouseLeave
               ExplicitLeft = 88
               ExplicitTop = 8
               ExplicitWidth = 23
@@ -728,6 +732,8 @@ object form_clientes: Tform_clientes
               Font.Style = [fsBold]
               ParentFont = False
               OnClick = SpeedButtonLimparClick
+              OnMouseEnter = SpeedButtonLimparMouseEnter
+              OnMouseLeave = SpeedButtonLimparMouseLeave
               ExplicitLeft = 88
               ExplicitTop = 8
               ExplicitWidth = 23

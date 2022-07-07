@@ -69,7 +69,7 @@ object form_cliente_consulta: Tform_cliente_consulta
         ParentFont = False
       end
       object LabelTituloCadastrarProfissional: TLabel
-        Left = 203
+        Left = 234
         Top = 38
         Width = 220
         Height = 37
@@ -103,12 +103,12 @@ object form_cliente_consulta: Tform_cliente_consulta
       end
       object labelMsnDELouEdit: TLabel
         Left = 10
-        Top = 478
-        Width = 434
+        Top = 526
+        Width = 436
         Height = 15
         Caption = 
-          'Pressione DEL para excluir ou duplo clique para editar profissio' +
-          'nais cadastrados'
+          'Pressione DELETE para EXCLUIR ou duplo clique para EDITAR client' +
+          'e cadastrado'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -12
@@ -119,27 +119,28 @@ object form_cliente_consulta: Tform_cliente_consulta
       end
       object PanelBotoesConsultarCancelarCadastrarCliente: TPanel
         Left = 573
-        Top = 146
+        Top = 160
         Width = 103
-        Height = 49
+        Height = 35
         BevelOuter = bvNone
         TabOrder = 2
         object PanelBotaoConsultar: TPanel
           Left = 0
           Top = 0
-          Width = 100
-          Height = 49
+          Width = 106
+          Height = 35
           Align = alLeft
           Anchors = [akLeft, akBottom]
           BevelOuter = bvNone
           Color = 11976552
           ParentBackground = False
           TabOrder = 0
+          ExplicitHeight = 30
           object SpeedButtonConsultarCliente: TSpeedButton
             Left = 0
             Top = 0
-            Width = 100
-            Height = 49
+            Width = 106
+            Height = 35
             Align = alClient
             Anchors = []
             Caption = 'Consultar'
@@ -151,10 +152,11 @@ object form_cliente_consulta: Tform_cliente_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonConsultarClienteClick
-            ExplicitLeft = 96
-            ExplicitTop = 24
-            ExplicitWidth = 23
-            ExplicitHeight = 22
+            OnMouseEnter = SpeedButtonConsultarClienteMouseEnter
+            OnMouseLeave = SpeedButtonConsultarClienteMouseLeave
+            ExplicitLeft = -1
+            ExplicitTop = 16
+            ExplicitHeight = 30
           end
         end
       end
@@ -196,7 +198,7 @@ object form_cliente_consulta: Tform_cliente_consulta
         Left = 10
         Top = 243
         Width = 666
-        Height = 214
+        Height = 271
         BorderStyle = bsNone
         Color = clSilver
         DataSource = ds_cliente_consulta
@@ -271,9 +273,9 @@ object form_cliente_consulta: Tform_cliente_consulta
           ParentBackground = False
           TabOrder = 0
           object SpeedButtonCancelarConsulta: TSpeedButton
-            Left = 6
+            Left = 0
             Top = 0
-            Width = 200
+            Width = 206
             Height = 49
             Align = alRight
             Caption = 'Cancelar'
@@ -285,7 +287,8 @@ object form_cliente_consulta: Tform_cliente_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCancelarConsultaClick
-            ExplicitLeft = -32
+            OnMouseEnter = SpeedButtonCancelarConsultaMouseEnter
+            OnMouseLeave = SpeedButtonCancelarConsultaMouseLeave
           end
         end
         object PanelBotaoCadastrarNovoCliente: TPanel
@@ -313,6 +316,8 @@ object form_cliente_consulta: Tform_cliente_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonCadastrarNovoClienteClick
+            OnMouseEnter = SpeedButtonCadastrarNovoClienteMouseEnter
+            OnMouseLeave = SpeedButtonCadastrarNovoClienteMouseLeave
             ExplicitLeft = 51
             ExplicitTop = -8
           end
@@ -342,6 +347,8 @@ object form_cliente_consulta: Tform_cliente_consulta
             Font.Style = [fsBold]
             ParentFont = False
             OnClick = SpeedButtonSelecionarClienteClick
+            OnMouseEnter = SpeedButtonSelecionarClienteMouseEnter
+            OnMouseLeave = SpeedButtonSelecionarClienteMouseLeave
             ExplicitLeft = 16
             ExplicitTop = 8
           end

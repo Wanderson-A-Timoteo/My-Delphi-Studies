@@ -33,6 +33,12 @@ type
     procedure FormResize(Sender: TObject);
     procedure SpeedButtonServidorClick(Sender: TObject);
     procedure SpeedButtonAgendamentoClick(Sender: TObject);
+    procedure SpeedButtonAgendamentoMouseEnter(Sender: TObject);
+    procedure SpeedButtonAgendamentoMouseLeave(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
+    procedure SpeedButtonServidorMouseEnter(Sender: TObject);
+    procedure SpeedButtonServidorMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,7 +52,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes;
+uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -68,12 +74,22 @@ end;
 
 procedure Tform_principal.SpeedButtonAgendamentoClick(Sender: TObject);
 begin
-  form_agendamento := Tform_agendamento.Create(Self);
+  form_agenda := Tform_agenda.Create(Self);
   try
-    form_agendamento.ShowModal;
+    form_agenda.ShowModal;
   finally
-    form_agendamento.Free;
+    form_agenda.Free;
   end;
+end;
+
+procedure Tform_principal.SpeedButtonAgendamentoMouseEnter(Sender: TObject);
+begin
+  SpeedButtonAgendamento.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonAgendamentoMouseLeave(Sender: TObject);
+begin
+  SpeedButtonAgendamento.Font.Color := clWhite;
 end;
 
 procedure Tform_principal.SpeedButtonFecharClick(Sender: TObject);
@@ -86,6 +102,16 @@ begin
    Application.Terminate
    else
    Exit;
+end;
+
+procedure Tform_principal.SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := clWhite;
 end;
 
 procedure Tform_principal.SpeedButtonMaximinizarClick(Sender: TObject);
@@ -101,6 +127,16 @@ begin
   finally
     form_configurar_servidor.Free;
   end;
+end;
+
+procedure Tform_principal.SpeedButtonServidorMouseEnter(Sender: TObject);
+begin
+  SpeedButtonServidor.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonServidorMouseLeave(Sender: TObject);
+begin
+  SpeedButtonServidor.Font.Color := clWhite;
 end;
 
 end.

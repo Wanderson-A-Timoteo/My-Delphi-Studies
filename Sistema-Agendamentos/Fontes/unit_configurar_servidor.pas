@@ -19,7 +19,7 @@ type
     pnlConfigServidor: TPanel;
     pnlConfigServidorCancelar: TPanel;
     pnlConfigServidorEntrar: TPanel;
-    SpeedButton1: TSpeedButton;
+    SpeedButtonAcessar: TSpeedButton;
     SpeedButtonCancelar: TSpeedButton;
     Label3: TLabel;
     Label4: TLabel;
@@ -68,8 +68,12 @@ type
     Label28: TLabel;
     EditNovaDriverID: TEdit;
     procedure SpeedButtonCancelarClick(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButtonAcessarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SpeedButtonAcessarMouseEnter(Sender: TObject);
+    procedure SpeedButtonAcessarMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,7 +102,7 @@ begin
   end;
 end;
 
-procedure Tform_configurar_servidor.SpeedButton1Click(Sender: TObject);
+procedure Tform_configurar_servidor.SpeedButtonAcessarClick(Sender: TObject);
 begin
   prcValidarCamposObrigatorios( form_configurar_servidor );
 
@@ -132,9 +136,29 @@ begin
   end;
 end;
 
+procedure Tform_configurar_servidor.SpeedButtonAcessarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonAcessar.Font.Color := $00591A05;
+end;
+
+procedure Tform_configurar_servidor.SpeedButtonAcessarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonAcessar.Font.Color := clWhite;
+end;
+
 procedure Tform_configurar_servidor.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure Tform_configurar_servidor.SpeedButtonCancelarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := $00591A05;
+end;
+
+procedure Tform_configurar_servidor.SpeedButtonCancelarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := clWhite;
 end;
 
 end.

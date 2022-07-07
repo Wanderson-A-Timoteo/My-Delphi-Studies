@@ -85,6 +85,12 @@ type
     procedure MaskEditCEPExit(Sender: TObject);
     procedure SpeedButtonLimparClick(Sender: TObject);
     procedure SpeedButtonCancelarClick(Sender: TObject);
+    procedure SpeedButtonSalvarMouseEnter(Sender: TObject);
+    procedure SpeedButtonSalvarMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
+    procedure SpeedButtonLimparMouseEnter(Sender: TObject);
+    procedure SpeedButtonLimparMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -170,9 +176,29 @@ begin
   Close;
 end;
 
+procedure Tform_clientes.SpeedButtonCancelarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := $00591A05;
+end;
+
+procedure Tform_clientes.SpeedButtonCancelarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := clWhite;
+end;
+
 procedure Tform_clientes.SpeedButtonLimparClick(Sender: TObject);
 begin
   EditNomeCliente.SetFocus;
+end;
+
+procedure Tform_clientes.SpeedButtonLimparMouseEnter(Sender: TObject);
+begin
+  SpeedButtonLimpar.Font.Color := $00591A05;
+end;
+
+procedure Tform_clientes.SpeedButtonLimparMouseLeave(Sender: TObject);
+begin
+  SpeedButtonLimpar.Font.Color := clWhite;
 end;
 
 procedure Tform_clientes.SpeedButtonLupaPesquisaCEP(Sender: TObject);
@@ -249,6 +275,16 @@ begin
       EditNomeCliente.SetFocus;
     end;
   end;
+end;
+
+procedure Tform_clientes.SpeedButtonSalvarMouseEnter(Sender: TObject);
+begin
+  SpeedButtonSalvar.Font.Color := $00591A05;
+end;
+
+procedure Tform_clientes.SpeedButtonSalvarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonSalvar.Font.Color := clWhite;
 end;
 
 end.

@@ -3089,6 +3089,8 @@ object form_login: Tform_login
         Font.Style = [fsBold]
         ParentFont = False
         OnClick = SpeedButtonEntrarClick
+        OnMouseEnter = SpeedButtonEntrarMouseEnter
+        OnMouseLeave = SpeedButtonEntrarMouseLeave
         ExplicitLeft = -40
         ExplicitWidth = 230
         ExplicitHeight = 41
@@ -3142,6 +3144,8 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
+        OnMouseEnter = SpeedButtonCadastrarMouseEnter
+        OnMouseLeave = SpeedButtonCadastrarMouseLeave
         ExplicitLeft = 136
         ExplicitTop = 32
         ExplicitWidth = 23
