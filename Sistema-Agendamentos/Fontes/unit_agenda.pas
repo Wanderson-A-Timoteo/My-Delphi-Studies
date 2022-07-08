@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.WinXCalendars, classe.agendamento;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.WinXCalendars, classe.agendamento, Datasnap.DBClient;
 
 type
   Tform_agenda = class(TForm)
@@ -36,6 +36,11 @@ type
     Label3: TLabel;
     SpeedButtonConsultarProfissional: TSpeedButton;
     ds_profissionais: TDataSource;
+    cds_agenda: TClientDataSet;
+    cds_agendadt_data: TDateField;
+    cds_agendahr_hora: TStringField;
+    cds_agendads_cliente: TStringField;
+    cds_agendads_profissional: TStringField;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure CalendarPickerSelecionarDataChange(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
@@ -154,10 +159,13 @@ begin
   end;
 
   ds_consulta.DataSet := Agendamento.fnc_consultar_por_cliente(EditNomeCliente.Text);
+
   //prcAjustaTamanhoLinha ( dbg_registros, 28 );
 end;
 
 procedure Tform_agenda.SpeedButtonConsultarProfissionalClick(Sender: TObject);
+var
+  QryHorarios : TFDQuery;
 begin
   if CalendarPickerSelecionarData.IsEmpty then
   begin
@@ -183,10 +191,38 @@ begin
     Abort;
   end;
 
-  ds_consulta.DataSet := Agendamento.fnc_consulta( dbl_cmb_consulta_profissional.KeyValue,
-                                                   CalendarPickerSelecionarData.Date);
+  cds_agenda.EmptyDataSet;
+  Agendamento.fnc_montar_agenda(CalendarPickerSelecionarData.Date, cds_agenda);
 
-    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
+  try
+    QryHorarios            := TFDQuery.Create(form_agenda);
+    QryHorarios.Connection :=  DataModule1.FDConnection;
+    QryHorarios            := Agendamento.fnc_consulta(dbl_cmb_consulta_profissional.KeyValue,
+                                            CalendarPickerSelecionarData.Date);
+    QryHorarios.First;
+
+    while not QryHorarios.Eof do
+    begin
+      cds_agenda.First;
+
+      if cds_agenda.Locate('hr_hora', QryHorarios.FieldByName('hr_hora').AsString,
+                          [loCaseInsensitive]) then
+      begin
+        cds_agenda.Edit;
+        cds_agendads_cliente.AsString      := QryHorarios.FieldByName('ds_cliente').AsString;
+        cds_agendads_profissional.AsString := QryHorarios.FieldByName('ds_profissional').AsString;
+        cds_agenda.Post;
+      end;
+
+      QryHorarios.Next;
+    end;
+
+  finally
+    QryHorarios.Free;
+  end;
+  cds_agenda.First;
+  ds_consulta.DataSet := cds_agenda;
+  //prcAjustaTamanhoLinha ( dbg_registros, 28 );
 end;
 
 procedure Tform_agenda.SpeedButtonNovoAgendamentoClick(Sender: TObject);
