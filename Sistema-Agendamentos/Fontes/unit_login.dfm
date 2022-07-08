@@ -180,7 +180,7 @@ object form_login: Tform_login
         WordWrap = True
       end
       object Label4: TLabel
-        Left = 190
+        Left = 199
         Top = 663
         Width = 97
         Height = 17
@@ -3074,12 +3074,13 @@ object form_login: Tform_login
       ParentFont = False
       TabOrder = 3
       object SpeedButtonEntrar: TSpeedButton
-        Left = 0
-        Top = 0
-        Width = 273
-        Height = 50
+        Left = 2
+        Top = 2
+        Width = 269
+        Height = 46
         Cursor = crHandPoint
-        Align = alClient
+        Align = alCustom
+        BiDiMode = bdLeftToRight
         Caption = 'Entrar'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -3088,12 +3089,10 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
+        ParentBiDiMode = False
         OnClick = SpeedButtonEntrarClick
         OnMouseEnter = SpeedButtonEntrarMouseEnter
         OnMouseLeave = SpeedButtonEntrarMouseLeave
-        ExplicitLeft = -40
-        ExplicitWidth = 230
-        ExplicitHeight = 41
       end
     end
     object Edit3: TEdit
@@ -3105,7 +3104,7 @@ object form_login: Tform_login
       BevelOuter = bvNone
       BorderStyle = bsNone
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = 5511957
+      Font.Color = 11976552
       Font.Height = -13
       Font.Name = 'Segoe UI'
       Font.Style = []
@@ -3130,12 +3129,12 @@ object form_login: Tform_login
       ParentFont = False
       TabOrder = 5
       object SpeedButtonCadastrar: TSpeedButton
-        Left = 1
-        Top = 1
-        Width = 271
-        Height = 48
+        Left = 2
+        Top = 2
+        Width = 269
+        Height = 46
         Cursor = crHandPoint
-        Align = alClient
+        Align = alCustom
         Caption = 'Cadastrar-se'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -3146,10 +3145,6 @@ object form_login: Tform_login
         ParentFont = False
         OnMouseEnter = SpeedButtonCadastrarMouseEnter
         OnMouseLeave = SpeedButtonCadastrarMouseLeave
-        ExplicitLeft = 136
-        ExplicitTop = 32
-        ExplicitWidth = 23
-        ExplicitHeight = 22
       end
     end
   end

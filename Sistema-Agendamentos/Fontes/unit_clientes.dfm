@@ -647,11 +647,11 @@ object form_clientes: Tform_clientes
             ParentBackground = False
             TabOrder = 0
             object SpeedButtonSalvar: TSpeedButton
-              Left = 0
-              Top = 0
-              Width = 177
-              Height = 49
-              Align = alClient
+              Left = 2
+              Top = 2
+              Width = 173
+              Height = 45
+              Align = alCustom
               Caption = 'Salvar'
               Flat = True
               Font.Charset = DEFAULT_CHARSET
@@ -663,16 +663,12 @@ object form_clientes: Tform_clientes
               OnClick = SpeedButtonSalvarClick
               OnMouseEnter = SpeedButtonSalvarMouseEnter
               OnMouseLeave = SpeedButtonSalvarMouseLeave
-              ExplicitLeft = 96
-              ExplicitTop = 24
-              ExplicitWidth = 23
-              ExplicitHeight = 22
             end
           end
           object PanelBotaoCancelar: TPanel
-            Left = 385
+            Left = 379
             Top = 0
-            Width = 171
+            Width = 177
             Height = 49
             Align = alRight
             BevelOuter = bvNone
@@ -680,11 +676,11 @@ object form_clientes: Tform_clientes
             ParentBackground = False
             TabOrder = 1
             object SpeedButtonCancelar: TSpeedButton
-              Left = 0
-              Top = 0
-              Width = 171
-              Height = 49
-              Align = alClient
+              Left = 2
+              Top = 2
+              Width = 173
+              Height = 45
+              Align = alCustom
               Caption = 'Cancelar'
               Flat = True
               Font.Charset = DEFAULT_CHARSET
@@ -696,16 +692,12 @@ object form_clientes: Tform_clientes
               OnClick = SpeedButtonCancelarClick
               OnMouseEnter = SpeedButtonCancelarMouseEnter
               OnMouseLeave = SpeedButtonCancelarMouseLeave
-              ExplicitLeft = 88
-              ExplicitTop = 8
-              ExplicitWidth = 23
-              ExplicitHeight = 22
             end
           end
           object PanelBotaoLimpar: TPanel
             Left = 193
             Top = 0
-            Width = 171
+            Width = 177
             Height = 49
             BevelOuter = bvNone
             Color = clSilver
@@ -718,11 +710,11 @@ object form_clientes: Tform_clientes
             ParentFont = False
             TabOrder = 2
             object SpeedButtonLimpar: TSpeedButton
-              Left = 0
-              Top = 0
-              Width = 171
-              Height = 49
-              Align = alClient
+              Left = 2
+              Top = 2
+              Width = 173
+              Height = 45
+              Align = alCustom
               Caption = 'Limpar'
               Flat = True
               Font.Charset = DEFAULT_CHARSET
@@ -734,10 +726,6 @@ object form_clientes: Tform_clientes
               OnClick = SpeedButtonLimparClick
               OnMouseEnter = SpeedButtonLimparMouseEnter
               OnMouseLeave = SpeedButtonLimparMouseLeave
-              ExplicitLeft = 88
-              ExplicitTop = 8
-              ExplicitWidth = 23
-              ExplicitHeight = 22
             end
           end
         end

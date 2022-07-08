@@ -196,11 +196,11 @@ object form_profissionais: Tform_profissionais
           ParentBackground = False
           TabOrder = 0
           object SpeedButtonAgendar: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 177
-            Height = 49
-            Align = alClient
+            Left = 2
+            Top = 2
+            Width = 173
+            Height = 45
+            Align = alCustom
             Caption = 'Salvar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -212,16 +212,12 @@ object form_profissionais: Tform_profissionais
             OnClick = SpeedButtonAgendarClick
             OnMouseEnter = SpeedButtonAgendarMouseEnter
             OnMouseLeave = SpeedButtonAgendarMouseLeave
-            ExplicitLeft = 96
-            ExplicitTop = 24
-            ExplicitWidth = 23
-            ExplicitHeight = 22
           end
         end
         object PanelBotaoCancelar: TPanel
-          Left = 193
+          Left = 187
           Top = 0
-          Width = 171
+          Width = 177
           Height = 49
           Align = alRight
           BevelOuter = bvNone
@@ -229,11 +225,11 @@ object form_profissionais: Tform_profissionais
           ParentBackground = False
           TabOrder = 1
           object SpeedButtonCancelar: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 171
-            Height = 49
-            Align = alClient
+            Left = 2
+            Top = 2
+            Width = 173
+            Height = 45
+            Align = alCustom
             Caption = 'Cancelar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -245,10 +241,6 @@ object form_profissionais: Tform_profissionais
             OnClick = SpeedButtonCancelarClick
             OnMouseEnter = SpeedButtonCancelarMouseEnter
             OnMouseLeave = SpeedButtonCancelarMouseLeave
-            ExplicitLeft = 88
-            ExplicitTop = 8
-            ExplicitWidth = 23
-            ExplicitHeight = 22
           end
         end
       end

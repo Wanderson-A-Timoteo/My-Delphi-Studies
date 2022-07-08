@@ -264,12 +264,12 @@ object form_configurar_servidor: Tform_configurar_servidor
           ParentFont = False
           TabOrder = 0
           object SpeedButtonCancelar: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 150
-            Height = 50
+            Left = 2
+            Top = 2
+            Width = 146
+            Height = 46
             Cursor = crHandPoint
-            Align = alClient
+            Align = alCustom
             Caption = 'Cancelar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -281,10 +281,6 @@ object form_configurar_servidor: Tform_configurar_servidor
             OnClick = SpeedButtonCancelarClick
             OnMouseEnter = SpeedButtonCancelarMouseEnter
             OnMouseLeave = SpeedButtonCancelarMouseLeave
-            ExplicitLeft = 56
-            ExplicitTop = 24
-            ExplicitWidth = 23
-            ExplicitHeight = 22
           end
         end
         object pnlConfigServidorEntrar: TPanel
@@ -304,13 +300,13 @@ object form_configurar_servidor: Tform_configurar_servidor
           ParentFont = False
           TabOrder = 1
           object SpeedButtonAcessar: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 150
-            Height = 50
+            Left = 2
+            Top = 2
+            Width = 146
+            Height = 46
             Cursor = crHandPoint
             Margins.Top = 4
-            Align = alClient
+            Align = alCustom
             Caption = 'Acessar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -322,7 +318,6 @@ object form_configurar_servidor: Tform_configurar_servidor
             OnClick = SpeedButtonAcessarClick
             OnMouseEnter = SpeedButtonAcessarMouseEnter
             OnMouseLeave = SpeedButtonAcessarMouseLeave
-            ExplicitLeft = -1
           end
         end
       end

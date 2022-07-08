@@ -190,7 +190,7 @@ end;
 
 procedure Tform_cliente_consulta.SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
 begin
-  SpeedButtonCancelarConsulta.Font.Color := $00591A05;
+  SpeedButtonCancelarConsulta.Font.Color := clWhite;
 end;
 
 procedure Tform_cliente_consulta.SpeedButtonConsultarClienteClick(Sender: TObject);

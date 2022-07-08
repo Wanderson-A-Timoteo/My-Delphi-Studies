@@ -3077,11 +3077,11 @@ object form_principal: Tform_principal
     ParentBackground = False
     TabOrder = 4
     object SpeedButtonAgendamento: TSpeedButton
-      Left = 0
-      Top = 0
-      Width = 185
-      Height = 41
-      Align = alClient
+      Left = 2
+      Top = 2
+      Width = 181
+      Height = 37
+      Align = alCustom
       Caption = 'Agendamentos'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -3093,7 +3093,6 @@ object form_principal: Tform_principal
       OnClick = SpeedButtonAgendamentoClick
       OnMouseEnter = SpeedButtonAgendamentoMouseEnter
       OnMouseLeave = SpeedButtonAgendamentoMouseLeave
-      ExplicitLeft = 1
     end
   end
   object PanelBtnGerarRelatorio: TPanel
@@ -3107,11 +3106,11 @@ object form_principal: Tform_principal
     ParentBackground = False
     TabOrder = 5
     object SpeedButtonGerarRelatorio: TSpeedButton
-      Left = 0
-      Top = 0
-      Width = 185
-      Height = 41
-      Align = alClient
+      Left = 2
+      Top = 2
+      Width = 181
+      Height = 37
+      Align = alCustom
       Caption = 'Relat'#243'rios'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -3122,7 +3121,6 @@ object form_principal: Tform_principal
       ParentFont = False
       OnMouseEnter = SpeedButtonGerarRelatorioMouseEnter
       OnMouseLeave = SpeedButtonGerarRelatorioMouseLeave
-      ExplicitLeft = 8
     end
   end
   object PanelBtnServidor: TPanel
@@ -3136,11 +3134,11 @@ object form_principal: Tform_principal
     ParentBackground = False
     TabOrder = 6
     object SpeedButtonServidor: TSpeedButton
-      Left = 0
-      Top = 0
-      Width = 185
-      Height = 41
-      Align = alClient
+      Left = 2
+      Top = 2
+      Width = 181
+      Height = 37
+      Align = alCustom
       Caption = 'Servidor'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -3152,7 +3150,6 @@ object form_principal: Tform_principal
       OnClick = SpeedButtonServidorClick
       OnMouseEnter = SpeedButtonServidorMouseEnter
       OnMouseLeave = SpeedButtonServidorMouseLeave
-      ExplicitTop = 1
     end
   end
 end

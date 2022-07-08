@@ -135,14 +135,12 @@ object form_cliente_consulta: Tform_cliente_consulta
           Color = 11976552
           ParentBackground = False
           TabOrder = 0
-          ExplicitHeight = 30
           object SpeedButtonConsultarCliente: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 106
-            Height = 35
-            Align = alClient
-            Anchors = []
+            Left = 2
+            Top = 2
+            Width = 99
+            Height = 31
+            Align = alCustom
             Caption = 'Consultar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -154,9 +152,6 @@ object form_cliente_consulta: Tform_cliente_consulta
             OnClick = SpeedButtonConsultarClienteClick
             OnMouseEnter = SpeedButtonConsultarClienteMouseEnter
             OnMouseLeave = SpeedButtonConsultarClienteMouseLeave
-            ExplicitLeft = -1
-            ExplicitTop = 16
-            ExplicitHeight = 30
           end
         end
       end
@@ -260,24 +255,24 @@ object form_cliente_consulta: Tform_cliente_consulta
         Left = 10
         Top = 571
         Width = 663
-        Height = 49
+        Height = 50
         BevelOuter = bvNone
         TabOrder = 4
         object PanelBotaoCancelar: TPanel
           Left = 230
           Top = 0
-          Width = 206
-          Height = 49
+          Width = 200
+          Height = 50
           BevelOuter = bvNone
           Color = 8421631
           ParentBackground = False
           TabOrder = 0
           object SpeedButtonCancelarConsulta: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 206
-            Height = 49
-            Align = alRight
+            Left = 2
+            Top = 2
+            Width = 196
+            Height = 46
+            Align = alCustom
             Caption = 'Cancelar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -295,18 +290,18 @@ object form_cliente_consulta: Tform_cliente_consulta
           Left = 463
           Top = 0
           Width = 200
-          Height = 49
+          Height = 50
           Alignment = taRightJustify
           BevelOuter = bvNone
           Color = 5839365
           ParentBackground = False
           TabOrder = 1
           object SpeedButtonCadastrarNovoCliente: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 200
-            Height = 49
-            Align = alClient
+            Left = 2
+            Top = 2
+            Width = 196
+            Height = 46
+            Align = alCustom
             Caption = 'Cadastrar Novo Cliente'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -318,26 +313,25 @@ object form_cliente_consulta: Tform_cliente_consulta
             OnClick = SpeedButtonCadastrarNovoClienteClick
             OnMouseEnter = SpeedButtonCadastrarNovoClienteMouseEnter
             OnMouseLeave = SpeedButtonCadastrarNovoClienteMouseLeave
-            ExplicitLeft = 51
-            ExplicitTop = -8
           end
         end
         object PanelBotaoSelecionarCliente: TPanel
           Left = 0
           Top = 0
           Width = 200
-          Height = 49
+          Height = 50
           Align = alLeft
           BevelOuter = bvNone
           Color = 11976552
           ParentBackground = False
           TabOrder = 2
+          ExplicitHeight = 49
           object SpeedButtonSelecionarCliente: TSpeedButton
-            Left = 0
-            Top = 0
-            Width = 207
-            Height = 49
-            Align = alLeft
+            Left = 2
+            Top = 2
+            Width = 196
+            Height = 46
+            Align = alCustom
             Caption = 'Selecionar Cliente'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
@@ -349,8 +343,6 @@ object form_cliente_consulta: Tform_cliente_consulta
             OnClick = SpeedButtonSelecionarClienteClick
             OnMouseEnter = SpeedButtonSelecionarClienteMouseEnter
             OnMouseLeave = SpeedButtonSelecionarClienteMouseLeave
-            ExplicitLeft = 16
-            ExplicitTop = 8
           end
         end
       end

@@ -126,12 +126,12 @@ object form_mensagens: Tform_mensagens
         ParentFont = False
         TabOrder = 0
         object SpeedButtonNao: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 47
+          Left = 2
+          Top = 2
+          Width = 146
+          Height = 43
           Cursor = crHandPoint
-          Align = alClient
+          Align = alCustom
           Caption = 'N'#227'o (ESC)'
           Flat = True
           Font.Charset = DEFAULT_CHARSET
@@ -143,10 +143,6 @@ object form_mensagens: Tform_mensagens
           OnClick = SpeedButtonNaoClick
           OnMouseEnter = SpeedButtonNaoMouseEnter
           OnMouseLeave = SpeedButtonNaoMouseLeave
-          ExplicitLeft = 56
-          ExplicitTop = 24
-          ExplicitWidth = 23
-          ExplicitHeight = 22
         end
       end
       object pnlBotaoSim: TPanel
@@ -166,13 +162,13 @@ object form_mensagens: Tform_mensagens
         ParentFont = False
         TabOrder = 1
         object SpeedButtonSim: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 47
+          Left = 2
+          Top = 2
+          Width = 146
+          Height = 43
           Cursor = crHandPoint
           Margins.Top = 4
-          Align = alClient
+          Align = alCustom
           Caption = 'Sim (Enter)'
           Flat = True
           Font.Charset = DEFAULT_CHARSET
@@ -184,8 +180,6 @@ object form_mensagens: Tform_mensagens
           OnClick = SpeedButtonSimClick
           OnMouseEnter = SpeedButtonSimMouseEnter
           OnMouseLeave = SpeedButtonSimMouseLeave
-          ExplicitLeft = -1
-          ExplicitHeight = 50
         end
       end
     end
