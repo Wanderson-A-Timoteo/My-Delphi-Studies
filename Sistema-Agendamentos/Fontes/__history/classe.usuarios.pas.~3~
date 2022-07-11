@@ -1,0 +1,25 @@
+unit classe.usuarios;
+
+interface
+
+uses
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms;
+
+type
+  TUsuarios = class
+
+    private
+
+    public
+
+      property Conexao      : TFDConnection read FConexao      write FConexao;
+      property id_usuarios  : Integer       read Fid_usuarios  write Fid_usuarios;
+      property ds_usuario   : String        read Fds_usuario   write Fds_usuario;
+      property ds_login     : String        read Fds_login     write Fds_login;
+      property ds_senha     : String        read Fs_senha      write Fs_senha;
+      property cd_permissao : Integer       read Fcd_permissao write Fcd_permissao;
+  end;
+
+implementation
+
+end.

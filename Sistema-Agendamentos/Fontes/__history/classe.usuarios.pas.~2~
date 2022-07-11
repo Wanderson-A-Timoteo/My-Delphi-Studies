@@ -1,0 +1,18 @@
+unit classe.usuarios;
+
+interface
+
+uses
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms;
+
+type
+  TUsuarios = class
+    private
+
+    public
+
+  end;
+
+implementation
+
+end.

@@ -3096,7 +3096,7 @@ object form_principal: Tform_principal
     end
   end
   object PanelBtnGerarRelatorio: TPanel
-    Left = 334
+    Left = 526
     Top = 66
     Width = 185
     Height = 41
@@ -3119,12 +3119,10 @@ object form_principal: Tform_principal
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      OnMouseEnter = SpeedButtonGerarRelatorioMouseEnter
-      OnMouseLeave = SpeedButtonGerarRelatorioMouseLeave
     end
   end
   object PanelBtnServidor: TPanel
-    Left = 527
+    Left = 718
     Top = 67
     Width = 185
     Height = 41
@@ -3150,6 +3148,35 @@ object form_principal: Tform_principal
       OnClick = SpeedButtonServidorClick
       OnMouseEnter = SpeedButtonServidorMouseEnter
       OnMouseLeave = SpeedButtonServidorMouseLeave
+    end
+  end
+  object Panel1: TPanel
+    Left = 335
+    Top = 67
+    Width = 185
+    Height = 41
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    Color = 5839365
+    ParentBackground = False
+    TabOrder = 7
+    object SpeedButtonUsuarios: TSpeedButton
+      Left = 2
+      Top = 2
+      Width = 181
+      Height = 37
+      Align = alCustom
+      Caption = 'Usu'#225'rios'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = SpeedButtonUsuariosClick
+      OnMouseEnter = SpeedButtonUsuariosMouseEnter
+      OnMouseLeave = SpeedButtonUsuariosMouseLeave
     end
   end
 end

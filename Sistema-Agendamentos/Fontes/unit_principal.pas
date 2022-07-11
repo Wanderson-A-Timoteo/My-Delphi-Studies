@@ -27,6 +27,8 @@ type
     SpeedButtonGerarRelatorio: TSpeedButton;
     PanelBtnServidor: TPanel;
     SpeedButtonServidor: TSpeedButton;
+    Panel1: TPanel;
+    SpeedButtonUsuarios: TSpeedButton;
     procedure Sair1Click(Sender: TObject);
     procedure SpeedButtonFecharClick(Sender: TObject);
     procedure SpeedButtonMaximinizarClick(Sender: TObject);
@@ -35,10 +37,11 @@ type
     procedure SpeedButtonAgendamentoClick(Sender: TObject);
     procedure SpeedButtonAgendamentoMouseEnter(Sender: TObject);
     procedure SpeedButtonAgendamentoMouseLeave(Sender: TObject);
-    procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
-    procedure SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
     procedure SpeedButtonServidorMouseEnter(Sender: TObject);
     procedure SpeedButtonServidorMouseLeave(Sender: TObject);
+    procedure SpeedButtonUsuariosMouseEnter(Sender: TObject);
+    procedure SpeedButtonUsuariosMouseLeave(Sender: TObject);
+    procedure SpeedButtonUsuariosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,7 +55,8 @@ implementation
 
 {$R *.dfm}
 
-uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda;
+uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda,
+  unit_usuarios_consulta;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -104,16 +108,6 @@ begin
    Exit;
 end;
 
-procedure Tform_principal.SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
-begin
-  SpeedButtonGerarRelatorio.Font.Color := $00591A05;
-end;
-
-procedure Tform_principal.SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
-begin
-  SpeedButtonGerarRelatorio.Font.Color := clWhite;
-end;
-
 procedure Tform_principal.SpeedButtonMaximinizarClick(Sender: TObject);
 begin
   Application.Minimize;
@@ -137,6 +131,26 @@ end;
 procedure Tform_principal.SpeedButtonServidorMouseLeave(Sender: TObject);
 begin
   SpeedButtonServidor.Font.Color := clWhite;
+end;
+
+procedure Tform_principal.SpeedButtonUsuariosClick(Sender: TObject);
+begin
+  form_usuario_consulta := Tform_usuario_consulta.Create(Self);
+  try
+    form_usuario_consulta.ShowModal;
+  finally
+    form_usuario_consulta.Free;
+  end;
+end;
+
+procedure Tform_principal.SpeedButtonUsuariosMouseEnter(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonUsuariosMouseLeave(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := clWhite;
 end;
 
 end.
