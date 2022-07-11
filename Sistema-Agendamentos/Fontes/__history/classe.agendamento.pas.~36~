@@ -3,7 +3,8 @@ unit classe.agendamento;
 interface
 
 uses
-  FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms;
+  FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms,
+  Datasnap.DBClient;
 
 type
   TAgendamentos = class
@@ -33,10 +34,11 @@ type
 
       function fnc_consulta(id_profissional: Integer; Data: TDate): TFDQuery;
       function fnc_consultar_por_cliente(NomeCliente: String): TFDQuery;
-
       function fnc_validar_agendamento(id_profissional: Integer; Data: TDate; hr_hora: String): Boolean;
-
       function fnc_inserir : String;
+
+      procedure fnc_montar_agenda(dt_data : TDate; cds_agenda : TClientDataSet);
+      procedure prc_deleta(id_chave: Integer);
 
   end;
 
@@ -72,20 +74,23 @@ begin
   try
     QryConsulta.Close;
     QryConsulta.SQL.Clear;
-    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                           ');
-    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                           ');
-    QryConsulta.SQL.Add('         clientes.ds_cliente,                                   ');
-    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                      ');
-    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                          ');
-    QryConsulta.SQL.Add('         agendamentos.dt_data,                                  ');
-    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                  ');
-    QryConsulta.SQL.Add('         agendamentos.ds_obs                                    ');
-    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                              ');
-    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                    ');
-    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente ');
-    QryConsulta.SQL.Add('WHERE    agendamentos.pro_id_profissional = :p_id_profissional  ');
-    QryConsulta.SQL.Add('AND      agendamentos.dt_data             = :p_data             ');
-    QryConsulta.SQL.Add('ORDER BY agendamentos.hr_hora                                   ');
+    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                                    ');
+    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                                    ');
+    QryConsulta.SQL.Add('         clientes.ds_cliente,                                            ');
+    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                               ');
+    QryConsulta.SQL.Add('         profissionais.ds_profissional,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                                   ');
+    QryConsulta.SQL.Add('         agendamentos.dt_data,                                           ');
+    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                           ');
+    QryConsulta.SQL.Add('         agendamentos.ds_obs                                             ');
+    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                                       ');
+    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                             ');
+    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente          ');
+    QryConsulta.SQL.Add('INNER JOIN profissionais profissionais                                   ');
+    QryConsulta.SQL.Add('ON       agendamentos.pro_id_profissional = profissionais.id_profissional');
+    QryConsulta.SQL.Add('WHERE    agendamentos.pro_id_profissional = :p_id_profissional           ');
+    QryConsulta.SQL.Add('AND      agendamentos.dt_data             = :p_data                      ');
+    QryConsulta.SQL.Add('ORDER BY agendamentos.hr_hora                                            ');
     QryConsulta.ParamByName('p_id_profissional').AsInteger := id_profissional;
     QryConsulta.ParamByName('p_data').AsDate               := Data;
     QryConsulta.Open;
@@ -103,19 +108,22 @@ begin
   try
     QryConsulta.Close;
     QryConsulta.SQL.Clear;
-    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                           ');
-    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                           ');
-    QryConsulta.SQL.Add('         clientes.ds_cliente,                                   ');
-    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                      ');
-    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                          ');
-    QryConsulta.SQL.Add('         agendamentos.dt_data,                                  ');
-    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                  ');
-    QryConsulta.SQL.Add('         agendamentos.ds_obs                                    ');
-    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                              ');
-    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                    ');
-    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente ');
-    QryConsulta.SQL.Add('WHERE    clientes.ds_cliente LIKE :p_nome_cliente               ');
-    QryConsulta.SQL.Add('ORDER BY clientes.ds_cliente                                    ');
+    QryConsulta.SQL.Add('SELECT   agendamentos.id_agendamento,                                    ');
+    QryConsulta.SQL.Add('         agendamentos.cli_id_cliente,                                    ');
+    QryConsulta.SQL.Add('         clientes.ds_cliente,                                            ');
+    QryConsulta.SQL.Add('         agendamentos.pro_id_profissional,                               ');
+    QryConsulta.SQL.Add('         profissionais.ds_profissional,                                  ');
+    QryConsulta.SQL.Add('         agendamentos.usu_id_usuarios,                                   ');
+    QryConsulta.SQL.Add('         agendamentos.dt_data,                                           ');
+    QryConsulta.SQL.Add('         agendamentos.hr_hora,                                           ');
+    QryConsulta.SQL.Add('         agendamentos.ds_obs                                             ');
+    QryConsulta.SQL.Add('FROM     agendamentos agendamentos                                       ');
+    QryConsulta.SQL.Add('INNER JOIN clientes clientes                                             ');
+    QryConsulta.SQL.Add('ON       agendamentos.cli_id_cliente      = clientes.id_cliente          ');
+    QryConsulta.SQL.Add('INNER JOIN profissionais profissionais                                   ');
+    QryConsulta.SQL.Add('ON       agendamentos.pro_id_profissional = profissionais.id_profissional');
+    QryConsulta.SQL.Add('WHERE    clientes.ds_cliente LIKE :p_nome_cliente                        ');
+    QryConsulta.SQL.Add('ORDER BY clientes.ds_cliente                                             ');
     QryConsulta.ParamByName('p_nome_cliente').AsString := '%' + NomeCliente + '%';
     QryConsulta.Open;
   finally
@@ -136,8 +144,8 @@ begin
       QryInserir            := TFDQuery.Create(nil);
       QryInserir.Connection := FConexao;
 
-      QryInserir.Close;
-      QryInserir.SQL.Clear;
+      //QryInserir.Close;
+      //QryInserir.SQL.Clear;
 
       QryInserir.SQL.Add('INSERT INTO agendamentos ');
       QryInserir.SQL.Add(' ( id_agendamento,       ');
@@ -175,15 +183,39 @@ begin
   end;
 end;
 
+procedure TAgendamentos.fnc_montar_agenda(dt_data : TDate; cds_agenda: TClientDataSet);
+var
+  I, Hora, Minutos : Word;   // Word é um inteiro porém reserva menos espaço na menoria que o tipo Integer
+begin
+  Minutos  := 0;
+
+  for Hora := 6 to 22 do
+  begin
+    for I  := 0 to 3 do
+    begin
+      cds_agenda.Append;
+      cds_agenda.FieldByName('dt_data').AsDateTime       := dt_data;
+      cds_agenda.FieldByName('hr_hora').AsString         := FormatFloat('00', Hora) + ':' + FormatFloat('00', Minutos);
+      Minutos                                            := Minutos + 15;
+
+      //cds_agenda.FieldByName('ds_cliente').AsString      := ds_cliente;
+      //cds_agenda.FieldByName('ds_profissional').AsString := ds_profissional;
+      cds_agenda.Post;
+    end;
+    Minutos := 0;  // Volta os minutos para zero para contagem da proxima hora
+  end;
+
+end;
+
 function TAgendamentos.fnc_validar_agendamento( id_profissional : Integer; Data : TDate; hr_hora : String ) : Boolean;
 var
   QryValidar : TFDQuery;
 begin
 
-  FConexao.Connected := True;
+  FConexao.Connected      := True;
 
   try
-    QryValidar := TFDQuery.Create(nil);
+    QryValidar            := TFDQuery.Create(nil);
     QryValidar.Connection :=  FConexao;
 
     QryValidar.Close;
@@ -199,10 +231,24 @@ begin
     QryValidar.ParamByName('p_hora').AsString             := hr_hora;
     QryValidar.Open;
 
-    Result := QryValidar.IsEmpty;
+    Result                := QryValidar.IsEmpty;
 
   finally
     QryValidar.Free;
+  end;
+
+end;
+
+procedure TAgendamentos.prc_deleta(id_chave: Integer);
+begin
+  if fnc_criar_mensagem('CONFIRMAÇÃO', 'Excluir Dados',
+                        'Tem certeza que deseja EXCLUIR o Horário agendado?',
+                        ExtractFilePath (Application.ExeName)+ 'imagens\aviso.png',
+                        'CONFIRMAR') then
+  begin
+    FConexao.Connected := True;
+
+    FConexao.ExecSQL('DELETE FROM agendamentos WHERE id_agendamento = :id_chave', [id_chave]);
   end;
 
 end;

@@ -46,6 +46,10 @@ type
     procedure SpeedButtonAgendarHorarioClick(Sender: TObject);
     procedure ComboBoxHoraChange(Sender: TObject);
     procedure ComboBoxMinutoChange(Sender: TObject);
+    procedure SpeedButtonAgendarHorarioMouseEnter(Sender: TObject);
+    procedure SpeedButtonAgendarHorarioMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
+    procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +63,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_agendamento, unit_profissionais, classe.agendamento;
+uses unit_funcoes, unit_agendamento, unit_profissionais, classe.agendamento, unit_agenda;
 
 
 procedure Tform_agendamento_consulta.CalendarPickerSelecionarDataChange(Sender: TObject);
@@ -80,7 +84,7 @@ begin
     Abort;
   end
   else begin
-    ds_consulta.DataSet := form_agendamento.Agendamento.fnc_consulta(
+    ds_consulta.DataSet := form_agenda.Agendamento.fnc_consulta(
       dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date);
 
     //prcAjustaTamanhoLinha ( dbg_registros, 28 );
@@ -188,35 +192,59 @@ begin
   except
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
-                       'Hora do agendamento não selecionada!',
+                       'Horário do agendamento não selecionada!',
                        ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
                        'OK');
     ComboBoxHora.SetFocus;
     Abort;
   end;
 
-  if form_agendamento.Agendamento.fnc_validar_agendamento(
+  if form_agenda.Agendamento.fnc_validar_agendamento(
       dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date,
       ( ComboBoxHora.Text + ':' + ComboBoxMinuto.Text ) ) then
   begin
     form_agendamento.dbl_cmb_profissionais.KeyValue := dbl_cmb_Consulta_Profissional.KeyValue;
     form_agendamento.MaskEditData.Text              := DateToStr( CalendarPickerSelecionarData.Date );
-    form_agendamento.MaskEditHora                   := ( ComboBoxHora.Text + ':' + ComboBoxMinuto.Text );
+    form_agendamento.MaskEditHora.Text              := ( ComboBoxHora.Text + ':' + ComboBoxMinuto.Text );
+
+    form_agendamento.EditObservacoes.Text           := EditObservacoes.Text;
 
     Close;
   end else
   begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Erro ao agendar horário!',
-                       'Dia e Hora do agendamento indisponível! Selecione outra data.',
+                       'Dia e Hora do agendamento indisponível! Selecione outra data ou horário.',
                        ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
                        'OK');
+
+    ComboBoxHora.SetFocus;
   end;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonAgendarHorarioMouseEnter(Sender: TObject);
+begin
+  SpeedButtonAgendarHorario.Font.Color := $00591A05;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonAgendarHorarioMouseLeave(Sender: TObject);
+begin
+  SpeedButtonAgendarHorario.Font.Color := clWhite;
 end;
 
 procedure Tform_agendamento_consulta.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonCancelarMouseEnter(Sender: TObject);
+begin
+   SpeedButtonCancelar.Font.Color := $00591A05;
+end;
+
+procedure Tform_agendamento_consulta.SpeedButtonCancelarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelar.Font.Color := clWhite;
 end;
 
 end.

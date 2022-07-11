@@ -58,7 +58,7 @@ object form_agenda: Tform_agenda
       ParentFont = False
       TabOrder = 0
       object LabelNoemProfissional: TLabel
-        Left = 332
+        Left = 10
         Top = 139
         Width = 165
         Height = 21
@@ -111,11 +111,11 @@ object form_agenda: Tform_agenda
         ParentFont = False
       end
       object Label7: TLabel
-        Left = 10
+        Left = 502
         Top = 139
-        Width = 36
+        Width = 173
         Height = 21
-        Caption = 'Data'
+        Caption = 'Data do Agendamento'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -16
@@ -249,8 +249,8 @@ object form_agenda: Tform_agenda
         ParentFont = False
       end
       object SpeedButtonConsultarProfissional: TSpeedButton
-        Left = 778
-        Top = 165
+        Left = 459
+        Top = 163
         Width = 32
         Height = 32
         Font.Charset = DEFAULT_CHARSET
@@ -497,6 +497,7 @@ object form_agenda: Tform_agenda
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
         OnDrawColumnCell = dbg_registrosDrawColumnCell
+        OnKeyDown = dbg_registrosKeyDown
         Columns = <
           item
             Expanded = False
@@ -551,7 +552,7 @@ object form_agenda: Tform_agenda
       end
       object dbl_cmb_consulta_profissional: TDBLookupComboBox
         Tag = 5
-        Left = 332
+        Left = 10
         Top = 166
         Width = 443
         Height = 29
@@ -571,7 +572,7 @@ object form_agenda: Tform_agenda
       end
       object CalendarPickerSelecionarData: TCalendarPicker
         Tag = 5
-        Left = 10
+        Left = 502
         Top = 166
         Width = 308
         Height = 32
@@ -620,19 +621,46 @@ object form_agenda: Tform_agenda
     Top = 427
   end
   object ds_profissionais: TDataSource
-    Left = 619
-    Top = 131
+    Left = 339
+    Top = 171
   end
   object cds_agenda: TClientDataSet
     PersistDataPacket.Data = {
-      890000009619E0BD01000000180000000400000000000300000089000764745F
+      A00000009619E0BD010000001800000005000000000003000000A0000764745F
       6461746104000600000000000768725F686F7261010049000000010005574944
       54480200020014000A64735F636C69656E746501004900000001000557494454
       480200020014000F64735F70726F66697373696F6E616C010049000000010005
-      57494454480200020014000000}
+      57494454480200020014000E69645F6167656E64616D656E746F040001000000
+      00000000}
     Active = True
     Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'dt_data'
+        DataType = ftDate
+      end
+      item
+        Name = 'hr_hora'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'ds_cliente'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'ds_profissional'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'id_agendamento'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
     Params = <>
+    StoreDefs = True
     Left = 611
     Top = 499
     object cds_agendadt_data: TDateField
@@ -646,6 +674,9 @@ object form_agenda: Tform_agenda
     end
     object cds_agendads_profissional: TStringField
       FieldName = 'ds_profissional'
+    end
+    object cds_agendaid_agendamento: TIntegerField
+      FieldName = 'id_agendamento'
     end
   end
 end

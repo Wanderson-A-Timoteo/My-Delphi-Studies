@@ -56,6 +56,7 @@ type
     procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -75,27 +76,27 @@ uses unit_funcoes, unit_agendamento, unit_profissionais, unit_principal;
 
 procedure Tform_agenda.CalendarPickerSelecionarDataChange(Sender: TObject);
 begin
-//  if CalendarPickerSelecionarData.IsEmpty then
-//    Exit;
-//
-//  if (dbl_cmb_Consulta_Profissional.KeyValue = null) then
-//  begin
-//    fnc_criar_mensagem('VALIDANDO DADOS',
-//                       'Dados obrigatórios não preenchidos',
-//                       'Selecione um Profissional!',
-//                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
-//                       'OK');
-//
-//    CalendarPickerSelecionarData.IsEmpty := True;
-//    dbl_cmb_Consulta_Profissional.SetFocus;
-//    Abort;
-//  end
-//  else begin
-//    ds_consulta.DataSet := form_agendamento.Agendamento.fnc_consulta(
-//      dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date);
-//
-//    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
-//  end;
+  if CalendarPickerSelecionarData.IsEmpty then
+    Exit;
+
+  if (dbl_cmb_consulta_profissional.KeyValue = null) then
+  begin
+    fnc_criar_mensagem('VALIDANDO DADOS',
+                       'Dados obrigatórios não preenchidos',
+                       'Selecione um Profissional!',
+                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       'OK');
+
+    CalendarPickerSelecionarData.IsEmpty := True;
+    dbl_cmb_consulta_profissional.SetFocus;
+    Abort;
+  end
+  else begin
+    ds_consulta.DataSet := form_agenda.Agendamento.fnc_consulta(
+      dbl_cmb_consulta_profissional.KeyValue, CalendarPickerSelecionarData.Date);
+
+    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
+  end;
 end;
 
 procedure Tform_agenda.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
@@ -103,6 +104,12 @@ procedure Tform_agenda.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: 
 begin
   //prcDrawColumnCell( dbg_registros, Rect, DataCol, Column, State );
 
+end;
+
+procedure Tform_agenda.dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if key = VK_DELETE then
+    Agendamento.prc_deleta(dbg_registros.DataSource.DataSet.FieldByName('id_agendamento').AsInteger);
 end;
 
 procedure Tform_agenda.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -193,6 +200,33 @@ begin
 
   cds_agenda.EmptyDataSet;
   Agendamento.fnc_montar_agenda(CalendarPickerSelecionarData.Date, cds_agenda);
+
+  try
+    QryHorarios            := TFDQuery.Create(form_agenda);
+    QryHorarios.Connection := DataModule1.FDConnection;
+    QryHorarios            := Agendamento.fnc_consulta(dbl_cmb_consulta_profissional.KeyValue,
+                                            CalendarPickerSelecionarData.Date);
+    QryHorarios.First;
+
+    while not QryHorarios.Eof do
+    begin
+      cds_agenda.First;
+
+      if cds_agenda.Locate('hr_hora', QryHorarios.FieldByName('hr_hora').AsString,
+                          [loCaseInsensitive]) then
+      begin
+        cds_agenda.Edit;
+        cds_agendads_cliente.AsString      := QryHorarios.FieldByName('ds_cliente').AsString;
+        cds_agendads_profissional.AsString := QryHorarios.FieldByName('ds_profissional').AsString;
+        cds_agenda.Post;
+      end;
+
+      QryHorarios.Next;
+    end;
+
+  finally
+    QryHorarios.Free;
+  end;
   cds_agenda.First;
   ds_consulta.DataSet := cds_agenda;
   //prcAjustaTamanhoLinha ( dbg_registros, 28 );
@@ -206,6 +240,7 @@ begin
   finally
     form_agendamento.Free;
   end;
+
 end;
 
 procedure Tform_agenda.SpeedButtonNovoAgendamentoMouseEnter(Sender: TObject);

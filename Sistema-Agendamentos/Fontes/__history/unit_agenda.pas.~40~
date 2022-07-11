@@ -93,8 +93,8 @@ begin
 //  else begin
 //    ds_consulta.DataSet := form_agendamento.Agendamento.fnc_consulta(
 //      dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date);
-//
-//    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
+
+    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
 //  end;
 end;
 
@@ -164,6 +164,8 @@ begin
 end;
 
 procedure Tform_agenda.SpeedButtonConsultarProfissionalClick(Sender: TObject);
+var
+  QryHorarios : TFDQuery;
 begin
   if CalendarPickerSelecionarData.IsEmpty then
   begin
@@ -189,9 +191,37 @@ begin
     Abort;
   end;
 
-  //ds_consulta.DataSet := Agendamento.fnc_consulta( dbl_cmb_consulta_profissional.KeyValue,
-  //                                                 CalendarPickerSelecionarData.Date);
+  cds_agenda.EmptyDataSet;
   Agendamento.fnc_montar_agenda(CalendarPickerSelecionarData.Date, cds_agenda);
+
+  try
+    //QryHorarios            := TFDQuery.Create(nil);
+    QryHorarios            := TFDQuery.Create(form_agenda);
+    QryHorarios.Connection := DataModule1.FDConnection;
+    QryHorarios            := Agendamento.fnc_consulta(dbl_cmb_consulta_profissional.KeyValue,
+                                            CalendarPickerSelecionarData.Date);
+    QryHorarios.First;
+
+    while not QryHorarios.Eof do
+    begin
+      cds_agenda.First;
+
+      if cds_agenda.Locate('hr_hora', QryHorarios.FieldByName('hr_hora').AsString,
+                          [loCaseInsensitive]) then
+      begin
+        cds_agenda.Edit;
+        cds_agendads_cliente.AsString      := QryHorarios.FieldByName('ds_cliente').AsString;
+        cds_agendads_profissional.AsString := QryHorarios.FieldByName('ds_profissional').AsString;
+        cds_agenda.Post;
+      end;
+
+      QryHorarios.Next;
+    end;
+
+  finally
+    QryHorarios.Free;
+  end;
+  cds_agenda.First;
   ds_consulta.DataSet := cds_agenda;
   //prcAjustaTamanhoLinha ( dbg_registros, 28 );
 end;
@@ -204,6 +234,7 @@ begin
   finally
     form_agendamento.Free;
   end;
+
 end;
 
 procedure Tform_agenda.SpeedButtonNovoAgendamentoMouseEnter(Sender: TObject);

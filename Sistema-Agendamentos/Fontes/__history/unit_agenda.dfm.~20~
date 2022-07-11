@@ -3,7 +3,7 @@ object form_agenda: Tform_agenda
   Top = 0
   BorderStyle = bsNone
   ClientHeight = 678
-  ClientWidth = 716
+  ClientWidth = 844
   Color = 11976552
   Font.Charset = DEFAULT_CHARSET
   Font.Color = 11976552
@@ -22,17 +22,18 @@ object form_agenda: Tform_agenda
   object shape_fundo_form_agendamento: TShape
     Left = 0
     Top = 0
-    Width = 716
+    Width = 844
     Height = 678
     Align = alClient
     Brush.Color = 11976552
     Pen.Color = 11976552
+    ExplicitWidth = 716
     ExplicitHeight = 465
   end
   object PanelContainer: TPanel
     Left = 8
     Top = 8
-    Width = 700
+    Width = 828
     Height = 662
     BevelOuter = bvNone
     Color = 11976552
@@ -42,7 +43,7 @@ object form_agenda: Tform_agenda
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 694
+      Width = 822
       Height = 654
       Margins.Bottom = 0
       Align = alTop
@@ -57,7 +58,7 @@ object form_agenda: Tform_agenda
       ParentFont = False
       TabOrder = 0
       object LabelNoemProfissional: TLabel
-        Left = 279
+        Left = 332
         Top = 139
         Width = 165
         Height = 21
@@ -70,7 +71,7 @@ object form_agenda: Tform_agenda
         ParentFont = False
       end
       object LabelTituloCadastrarProfissional: TLabel
-        Left = 164
+        Left = 268
         Top = 38
         Width = 313
         Height = 37
@@ -123,7 +124,7 @@ object form_agenda: Tform_agenda
         ParentFont = False
       end
       object SpeedButtonConsultarCliente: TSpeedButton
-        Left = 641
+        Left = 778
         Top = 236
         Width = 32
         Height = 32
@@ -248,7 +249,7 @@ object form_agenda: Tform_agenda
         ParentFont = False
       end
       object SpeedButtonConsultarProfissional: TSpeedButton
-        Left = 641
+        Left = 778
         Top = 165
         Width = 32
         Height = 32
@@ -429,7 +430,7 @@ object form_agenda: Tform_agenda
       object PanelBordaNomeProfissional: TPanel
         Left = 10
         Top = 115
-        Width = 660
+        Width = 800
         Height = 2
         Caption = 'PanelBorda'
         Color = 5839365
@@ -445,7 +446,7 @@ object form_agenda: Tform_agenda
       object PanelBordaEspecialidade: TPanel
         Left = 10
         Top = 267
-        Width = 625
+        Width = 765
         Height = 1
         Caption = 'PanelBorda'
         Color = 5839365
@@ -461,7 +462,7 @@ object form_agenda: Tform_agenda
       object EditNomeCliente: TEdit
         Left = 10
         Top = 245
-        Width = 625
+        Width = 765
         Height = 22
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -475,9 +476,9 @@ object form_agenda: Tform_agenda
         TabOrder = 2
       end
       object dbg_registros: TDBGrid
-        Left = 10
+        Left = 13
         Top = 301
-        Width = 660
+        Width = 797
         Height = 236
         BorderStyle = bsNone
         DataSource = ds_consulta
@@ -520,27 +521,39 @@ object form_agenda: Tform_agenda
             Title.Font.Height = -16
             Title.Font.Name = 'Segoe UI'
             Title.Font.Style = [fsBold]
-            Width = 150
+            Width = 83
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'ds_cliente'
-            Title.Caption = 'Cliente'
+            Title.Caption = 'Nome do Cliente'
             Title.Font.Charset = DEFAULT_CHARSET
             Title.Font.Color = 11976552
             Title.Font.Height = -16
             Title.Font.Name = 'Segoe UI'
             Title.Font.Style = [fsBold]
-            Width = 400
+            Width = 290
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'ds_profissional'
+            Title.Caption = 'Nome do Profissional'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 290
             Visible = True
           end>
       end
       object dbl_cmb_consulta_profissional: TDBLookupComboBox
         Tag = 5
-        Left = 279
+        Left = 332
         Top = 166
-        Width = 362
+        Width = 443
         Height = 29
         Hint = 'Nome do Profissional'
         BevelInner = bvNone
@@ -560,7 +573,7 @@ object form_agenda: Tform_agenda
         Tag = 5
         Left = 10
         Top = 166
-        Width = 263
+        Width = 308
         Height = 32
         Hint = 'Selecione uma data '
         CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
@@ -587,7 +600,7 @@ object form_agenda: Tform_agenda
       object PanelBordaDBGrid: TPanel
         Left = 10
         Top = 563
-        Width = 660
+        Width = 800
         Height = 1
         Caption = 'PanelBorda'
         Color = 5839365
@@ -609,5 +622,30 @@ object form_agenda: Tform_agenda
   object ds_profissionais: TDataSource
     Left = 619
     Top = 131
+  end
+  object cds_agenda: TClientDataSet
+    PersistDataPacket.Data = {
+      890000009619E0BD01000000180000000400000000000300000089000764745F
+      6461746104000600000000000768725F686F7261010049000000010005574944
+      54480200020014000A64735F636C69656E746501004900000001000557494454
+      480200020014000F64735F70726F66697373696F6E616C010049000000010005
+      57494454480200020014000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 611
+    Top = 499
+    object cds_agendadt_data: TDateField
+      FieldName = 'dt_data'
+    end
+    object cds_agendahr_hora: TStringField
+      FieldName = 'hr_hora'
+    end
+    object cds_agendads_cliente: TStringField
+      FieldName = 'ds_cliente'
+    end
+    object cds_agendads_profissional: TStringField
+      FieldName = 'ds_profissional'
+    end
   end
 end

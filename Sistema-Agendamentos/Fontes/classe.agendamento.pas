@@ -38,6 +38,7 @@ type
       function fnc_inserir : String;
 
       procedure fnc_montar_agenda(dt_data : TDate; cds_agenda : TClientDataSet);
+      procedure prc_deleta(id_chave: Integer);
 
   end;
 
@@ -186,18 +187,17 @@ procedure TAgendamentos.fnc_montar_agenda(dt_data : TDate; cds_agenda: TClientDa
 var
   I, Hora, Minutos : Word;   // Word é um inteiro porém reserva menos espaço na menoria que o tipo Integer
 begin
-  Minutos := 0;
+  Minutos  := 0;
 
   for Hora := 6 to 22 do
   begin
-    for I := 0 to 3 do
+    for I  := 0 to 3 do
     begin
       cds_agenda.Append;
-      cds_agenda.FieldByName('dt_data').AsDateTime := dt_data;
-      cds_agenda.FieldByName('hr_hora').AsString   := FormatFloat('00', Hora) + ':' + FormatFloat('00', Minutos);
-      Minutos := Minutos + 15;
-      //cds_agenda.FieldByName('ds_cliente').AsString := ds_cliente;
-      //cds_agenda.FieldByName('ds_profissional').AsString := ds_profissional;
+      cds_agenda.FieldByName('dt_data').AsDateTime       := dt_data;
+      cds_agenda.FieldByName('hr_hora').AsString         := FormatFloat('00', Hora) + ':' + FormatFloat('00', Minutos);
+      Minutos                                            := Minutos + 15;
+
       cds_agenda.Post;
     end;
     Minutos := 0;  // Volta os minutos para zero para contagem da proxima hora
@@ -210,10 +210,10 @@ var
   QryValidar : TFDQuery;
 begin
 
-  FConexao.Connected := True;
+  FConexao.Connected      := True;
 
   try
-    QryValidar := TFDQuery.Create(nil);
+    QryValidar            := TFDQuery.Create(nil);
     QryValidar.Connection :=  FConexao;
 
     QryValidar.Close;
@@ -229,10 +229,24 @@ begin
     QryValidar.ParamByName('p_hora').AsString             := hr_hora;
     QryValidar.Open;
 
-    Result := QryValidar.IsEmpty;
+    Result                := QryValidar.IsEmpty;
 
   finally
     QryValidar.Free;
+  end;
+
+end;
+
+procedure TAgendamentos.prc_deleta(id_chave: Integer);
+begin
+  if fnc_criar_mensagem('CONFIRMAÇÃO', 'Excluir Dados',
+                        'Tem certeza que deseja EXCLUIR o Horário agendado?',
+                        ExtractFilePath (Application.ExeName)+ 'imagens\aviso.png',
+                        'CONFIRMAR') then
+  begin
+    FConexao.Connected := True;
+
+    FConexao.ExecSQL('DELETE FROM agendamentos WHERE id_agendamento = :id_chave', [id_chave]);
   end;
 
 end;

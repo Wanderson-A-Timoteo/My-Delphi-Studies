@@ -93,8 +93,8 @@ begin
 //  else begin
 //    ds_consulta.DataSet := form_agendamento.Agendamento.fnc_consulta(
 //      dbl_cmb_Consulta_Profissional.KeyValue, CalendarPickerSelecionarData.Date);
-//
-//    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
+
+    //prcAjustaTamanhoLinha ( dbg_registros, 28 );
 //  end;
 end;
 
@@ -193,12 +193,15 @@ begin
 
   cds_agenda.EmptyDataSet;
   Agendamento.fnc_montar_agenda(CalendarPickerSelecionarData.Date, cds_agenda);
+
   try
-    QryHorarios := TFDQuery.Create(form_agenda);
-    QryHorarios.Connection :=  DataModule1.FDConnection;
-    QryHorarios := Agendamento.fnc_consulta(dbl_cmb_consulta_profissional.KeyValue,
+    //QryHorarios            := TFDQuery.Create(nil);
+    QryHorarios            := TFDQuery.Create(form_agenda);
+    QryHorarios.Connection := DataModule1.FDConnection;
+    QryHorarios            := Agendamento.fnc_consulta(dbl_cmb_consulta_profissional.KeyValue,
                                             CalendarPickerSelecionarData.Date);
     QryHorarios.First;
+
     while not QryHorarios.Eof do
     begin
       cds_agenda.First;
@@ -231,6 +234,7 @@ begin
   finally
     form_agendamento.Free;
   end;
+
 end;
 
 procedure Tform_agenda.SpeedButtonNovoAgendamentoMouseEnter(Sender: TObject);
