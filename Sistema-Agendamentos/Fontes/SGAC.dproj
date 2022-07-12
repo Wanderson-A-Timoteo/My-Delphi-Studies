@@ -162,6 +162,7 @@
             <Form>form_usuario_consulta</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="classe.usuarios.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

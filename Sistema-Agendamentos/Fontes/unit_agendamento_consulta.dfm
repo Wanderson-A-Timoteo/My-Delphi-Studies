@@ -69,10 +69,10 @@ object form_agendamento_consulta: Tform_agendamento_consulta
       object LabelTituloCadastrarProfissional: TLabel
         Left = 212
         Top = 38
-        Width = 210
+        Width = 288
         Height = 37
         Alignment = taCenter
-        Caption = 'Marcar Consulta'
+        Caption = 'Marcar Data e Hor'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -27
@@ -201,7 +201,7 @@ object form_agendamento_consulta: Tform_agendamento_consulta
             Width = 173
             Height = 45
             Align = alCustom
-            Caption = 'Marcar Hor'#225'rio'
+            Caption = 'Marcar'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite

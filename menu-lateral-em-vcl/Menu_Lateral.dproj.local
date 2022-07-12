@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/07/06 13:46:24.000.774,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/07/06 13:47:34.000.217,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-em-vcl\unit_principal.pas</Transaction>
-    <Transaction>2022/07/06 13:47:34.000.217,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-em-vcl\unit_principal.dfm</Transaction>
-    <Transaction>2022/07/06 13:47:48.000.123,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-em-vcl\Menu_Lateral.dproj</Transaction>
+    <Transaction>2022/07/06 13:47:34.000.217,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-em-vcl\unit_principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/07/06 13:47:34.000.217,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-em-vcl\unit_principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/07/06 13:47:48.000.123,D:\Projetos\ws-delphi\My-Delphi-Studies\menu-lateral-em-vcl\Menu_Lateral.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>

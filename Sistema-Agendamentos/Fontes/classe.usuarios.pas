@@ -10,11 +10,11 @@ type
 
     private
       Fcd_permissao: Integer;
-      Fs_senha: String;
-      Fds_login: String;
-      Fds_usuario: String;
-      Fid_usuarios: Integer;
-      FConexao: TFDConnection;
+      Fds_senha    : String;
+      Fds_login    : String;
+      Fds_usuario  : String;
+      Fid_usuarios : Integer;
+      FConexao     : TFDConnection;
 
     public
 
@@ -22,11 +22,13 @@ type
       property id_usuarios  : Integer       read Fid_usuarios  write Fid_usuarios;
       property ds_usuario   : String        read Fds_usuario   write Fds_usuario;
       property ds_login     : String        read Fds_login     write Fds_login;
-      property ds_senha     : String        read Fs_senha      write Fs_senha;
+      property ds_senha     : String        read Fds_senha     write Fds_senha;
       property cd_permissao : Integer       read Fcd_permissao write Fcd_permissao;
 
       constructor Create(Conexao : TFDConnection);
       destructor Destroy; Override;
+
+      function fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String) : Boolean;
   end;
 
 var
@@ -36,10 +38,12 @@ implementation
 
 { TUsuarios }
 
+uses unit_funcoes;
+
 constructor TUsuarios.Create(Conexao: TFDConnection);
 begin
-  FConexao := Conexao;
-  QryConsulta := TFDQuery.Create(nil);
+  FConexao               := Conexao;
+  QryConsulta            := TFDQuery.Create(nil);
   QryConsulta.Connection := FConexao;
 end;
 
@@ -47,6 +51,93 @@ destructor TUsuarios.Destroy;
 begin
   QryConsulta.Free;
   inherited;
+end;
+
+function TUsuarios.fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String): Boolean;
+var
+  QryAuxiliar : TFDQuery;
+begin
+  try
+    FConexao.Connected := False;
+    FConexao.Connected := True;
+
+    if TipoOperacao = 'CONSULTAR' then
+    begin
+      QryConsulta.Close;
+      QryConsulta.SQL.Clear;
+      QryConsulta.SQL.Add('SELECT id_usuario,               ');
+      QryConsulta.SQL.Add('       ds_usuario,               ');
+      QryConsulta.SQL.Add('       cd_permissao,             ');
+      QryConsulta.SQL.Add('       ds_login,                 ');
+      QryConsulta.SQL.Add('       ds_senha                  ');
+      QryConsulta.SQL.Add('FROM usuarios                    ');
+      QryConsulta.SQL.Add('WHERE ds_usuario LIKE :parametro ');
+      QryConsulta.ParamByName('parametro').AsString := '%' + parametro + '%';
+      QryConsulta.Open;
+    end else
+    if TipoOperacao = 'EXCLUIR' then
+      FConexao.ExecSQL('DELETE FROM usuarios WHERE id_usuario = :id_usuario', [StrToInt(parametro)])
+    else
+    begin
+      try
+        QryAuxiliar := TFDQuery.Create(nil);
+        QryAuxiliar.Connection := FConexao;
+
+        QryAuxiliar.Close;
+        QryAuxiliar.SQL.Clear;
+
+        if TipoOperacao = 'INSERIR' then
+        begin
+          QryAuxiliar.SQL.Add('INSERT INTO usuarios    ');
+          QryAuxiliar.SQL.Add('       ( id_usuarios,   ');
+          QryAuxiliar.SQL.Add('         ds_usuario,    ');
+          QryAuxiliar.SQL.Add('         cd_permissao,  ');
+          QryAuxiliar.SQL.Add('         ds_login,      ');
+          QryAuxiliar.SQL.Add('         ds_senha   )   ');
+          QryAuxiliar.SQL.Add('VALUES                  ');
+          QryAuxiliar.SQL.Add('       ( :id_usuarios,  ');
+          QryAuxiliar.SQL.Add('         :ds_usuario,   ');
+          QryAuxiliar.SQL.Add('         :cd_permissao, ');
+          QryAuxiliar.SQL.Add('         :ds_login,     ');
+          QryAuxiliar.SQL.Add('         :ds_senha   )  ');
+
+          QryAuxiliar.ParamByName('id_usuarios').AsInteger :=
+                                fnc_proximo_codigo('usuarios', 'id_usuarios');
+        end else
+        if TipoOperacao = 'ALTERAR' then
+        begin
+          QryAuxiliar.SQL.Add('UPDATE usuarios SET                  ');
+          QryAuxiliar.SQL.Add('       cd_permissao = :cd_permissao, ');
+          QryAuxiliar.SQL.Add('       ds_usuario   = :ds_usuario,   ');
+          QryAuxiliar.SQL.Add('       ds_login     = :ds_login,     ');
+          QryAuxiliar.SQL.Add('       ds_senha     = :ds_senha      ');
+          QryAuxiliar.SQL.Add('WHERE  id_usuarios  = :p_id_usuarios ');
+
+          QryAuxiliar.ParamByName('p_id_usuarios').AsInteger := Fid_usuarios;
+        end;
+
+        QryAuxiliar.ParamByName('cd_permissao').AsInteger := cd_permissao;
+        QryAuxiliar.ParamByName('ds_usuario').AsString    := Fds_usuario;
+        QryAuxiliar.ParamByName('ds_login').AsString      := Fds_login;
+        QryAuxiliar.ParamByName('ds_senha').AsString      := Fds_senha;
+
+        QryAuxiliar.ExecSQL;
+
+      finally
+        QryAuxiliar.Free;
+      end;
+    end;
+
+    Result := True;
+
+  except
+
+    on E: Exception do
+    begin
+      Erro := E.Message;
+      Result := False;
+    end;
+  end;
 end;
 
 end.

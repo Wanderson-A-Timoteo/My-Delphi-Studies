@@ -42,6 +42,8 @@ type
     procedure SpeedButtonUsuariosMouseEnter(Sender: TObject);
     procedure SpeedButtonUsuariosMouseLeave(Sender: TObject);
     procedure SpeedButtonUsuariosClick(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -108,6 +110,16 @@ begin
    Exit;
 end;
 
+procedure Tform_principal.SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := clWhite;
+end;
+
 procedure Tform_principal.SpeedButtonMaximinizarClick(Sender: TObject);
 begin
   Application.Minimize;
@@ -145,12 +157,12 @@ end;
 
 procedure Tform_principal.SpeedButtonUsuariosMouseEnter(Sender: TObject);
 begin
-  SpeedButtonGerarRelatorio.Font.Color := $00591A05;
+  SpeedButtonUsuarios.Font.Color := $00591A05;
 end;
 
 procedure Tform_principal.SpeedButtonUsuariosMouseLeave(Sender: TObject);
 begin
-  SpeedButtonGerarRelatorio.Font.Color := clWhite;
+  SpeedButtonUsuarios.Font.Color := clWhite;
 end;
 
 end.
