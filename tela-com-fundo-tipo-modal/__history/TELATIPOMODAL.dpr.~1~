@@ -1,0 +1,16 @@
+program TELATIPOMODAL;
+
+uses
+  Vcl.Forms,
+  Principal in 'Principal.pas' {FormPrincipal},
+  FundoPreto in 'FundoPreto.pas' {FormFundoPretoTransparente};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormPrincipal, FormPrincipal);
+  Application.CreateForm(TFormFundoPretoTransparente, FormFundoPretoTransparente);
+  Application.Run;
+end.

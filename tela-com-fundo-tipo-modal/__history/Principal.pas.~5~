@@ -1,0 +1,63 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormPrincipal = class(TForm)
+    Label1: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPrincipal: TFormPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses Cadastro, Pesquisar, Relatorio;
+
+procedure TFormPrincipal.Button1Click(Sender: TObject);
+begin
+  try
+     FormCadastro := TFormCadastro.Create(nil);
+     FormCadastro.ShowModal;
+   finally
+     FreeAndNil(FormCadastro);
+   end;
+end;
+
+procedure TFormPrincipal.Button2Click(Sender: TObject);
+begin
+  try
+     FormPesquisar := TFormPesquisar.Create(nil);
+     FormPesquisar.ShowModal;
+   finally
+     FreeAndNil(FormPesquisar);
+   end;
+end;
+
+procedure TFormPrincipal.Button3Click(Sender: TObject);
+begin
+  try
+     FormRelatorio := TFormRelatorio.Create(nil);
+     FormRelatorio.ShowModal;
+   finally
+     FreeAndNil(FormRelatorio);
+   end;
+end;
+
+end.

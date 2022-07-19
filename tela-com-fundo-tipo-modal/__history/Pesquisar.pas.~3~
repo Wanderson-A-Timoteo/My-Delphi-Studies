@@ -1,0 +1,40 @@
+unit Pesquisar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TFormPesquisar = class(TForm)
+    Label1: TLabel;
+    Cadastrar: TButton;
+    procedure CadastrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPesquisar: TFormPesquisar;
+
+implementation
+
+uses
+  Cadastro;
+
+{$R *.dfm}
+
+procedure TFormPesquisar.CadastrarClick(Sender: TObject);
+begin
+  try
+     FormCadastro := TFormCadastro.Create(nil);
+     FormCadastro.ShowModal;
+   finally
+     FreeAndNil(FormCadastro);
+   end;
+end;
+
+end.

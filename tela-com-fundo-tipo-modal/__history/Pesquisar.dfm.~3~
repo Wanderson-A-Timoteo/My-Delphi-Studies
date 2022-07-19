@@ -1,0 +1,38 @@
+object FormPesquisar: TFormPesquisar
+  Left = 0
+  Top = 0
+  Caption = 'Pesquisar'
+  ClientHeight = 550
+  ClientWidth = 839
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 328
+    Top = 24
+    Width = 145
+    Height = 33
+    Caption = 'Pesquisar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Cadastrar: TButton
+    Left = 56
+    Top = 424
+    Width = 193
+    Height = 57
+    Caption = 'Cadastrar'
+    TabOrder = 0
+    OnClick = CadastrarClick
+  end
+end

@@ -1,0 +1,29 @@
+object FormCadastro: TFormCadastro
+  Left = 0
+  Top = 0
+  Caption = 'Tela de Cadastro'
+  ClientHeight = 546
+  ClientWidth = 835
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 336
+    Top = 32
+    Width = 161
+    Height = 33
+    Caption = 'Cadastro'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+end
