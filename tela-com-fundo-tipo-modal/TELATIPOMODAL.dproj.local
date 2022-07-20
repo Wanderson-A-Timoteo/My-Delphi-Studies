@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/07/19 11:35:58.301,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:43:36.201,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:43:36.201,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
-    <Transaction>2022/07/19 11:45:11.781,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:49:35.915,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\FundoPreto.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:49:35.915,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\FundoPreto.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
-    <Transaction>2022/07/19 11:50:29.583,D:\Projetos\ws-delphi\TELATIPOMODAL.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
-    <Transaction>2022/07/19 11:51:40.371,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\TELATIPOMODAL.dproj=D:\Projetos\ws-delphi\TELATIPOMODAL.dproj</Transaction>
-    <Transaction>2022/07/19 11:52:17.058,=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:53:20.805,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Cadastro.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.dfm</Transaction>
-    <Transaction>2022/07/19 11:53:20.805,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Cadastro.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:53:42.320,=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:56:08.795,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Pesquisar.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas</Transaction>
-    <Transaction>2022/07/19 11:56:08.795,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Pesquisar.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.dfm</Transaction>
-    <Transaction>2022/07/19 11:56:21.364,=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit2.pas</Transaction>
-    <Transaction>2022/07/19 11:57:27.621,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Relatorio.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit2.dfm</Transaction>
-    <Transaction>2022/07/19 11:57:27.621,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Relatorio.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit2.pas</Transaction>
+	<Transactions>
+    <Transaction>2022/07/19 11:35:58.000.301,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/07/19 11:43:36.000.201,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Principal.pas</Transaction>
+    <Transaction>2022/07/19 11:43:36.000.201,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Principal.dfm</Transaction>
+    <Transaction>2022/07/19 11:45:11.000.781,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/07/19 11:49:35.000.915,D:\Projetos\ws-delphi\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\FundoPreto.pas</Transaction>
+    <Transaction>2022/07/19 11:49:35.000.915,D:\Projetos\ws-delphi\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\FundoPreto.dfm</Transaction>
+    <Transaction>2022/07/19 11:50:29.000.583,D:\Projetos\ws-delphi\Project1.dproj=D:\Projetos\ws-delphi\TELATIPOMODAL.dproj</Transaction>
+    <Transaction>2022/07/19 11:51:40.000.371,D:\Projetos\ws-delphi\TELATIPOMODAL.dproj=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\TELATIPOMODAL.dproj</Transaction>
+    <Transaction>2022/07/19 11:52:17.000.058,=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas</Transaction>
+    <Transaction>2022/07/19 11:53:20.000.805,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Cadastro.pas</Transaction>
+    <Transaction>2022/07/19 11:53:20.000.805,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Cadastro.dfm</Transaction>
+    <Transaction>2022/07/19 11:53:42.000.320,=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas</Transaction>
+    <Transaction>2022/07/19 11:56:08.000.795,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Pesquisar.dfm</Transaction>
+    <Transaction>2022/07/19 11:56:08.000.795,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Pesquisar.pas</Transaction>
+    <Transaction>2022/07/19 11:56:21.000.364,=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit2.pas</Transaction>
+    <Transaction>2022/07/19 11:57:27.000.621,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit2.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Relatorio.pas</Transaction>
+    <Transaction>2022/07/19 11:57:27.000.621,D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Unit2.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\tela-com-fundo-tipo-modal\Relatorio.dfm</Transaction>
   </Transactions>
 </BorlandProject>

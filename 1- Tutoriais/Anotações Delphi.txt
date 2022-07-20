@@ -1,28 +1,54 @@
 ATALHOS:
 - Alt + Shift + U -> Abre as opções para adicionar Unit.
+
 - Ctrl + Alt + Shift + P -> 
+
 - Ctrl + D -> Formatação ou Indentação do código.
+
 - Alt + F11 -> Importa as classes na Unit.
+
 - Ctrl + Shift + C -> Cria as procedures e functions declaradas.
+
 - Ctrl + Shift + G ou Ctrl + Shift + Alt + G -> Ao criar uma interface este comando gera a chave da interface.
-- Ctrl + Shift + 0 a 9: Inserir um Bookmark no editor de código. Ex: Você está na linha 845 e tecla Ctrl + Shift + 0 (irá aparecer um pequeno quadrado 
-com o número 0 à esquerda do editor). Você vai para o início da unit e, para voltar para a linha 845, é só teclar Ctrl + 0. Tecle novamente Ctrl + Shift + 0 para 
+
+- Ctrl + Shift + 0 a 9: Inserir um Bookmark no editor de código. Ex: Você está na linha 845 e tecla Ctrl + Shift + 0 
+(irá aparecer um pequeno quadrado 
+com o número 0 à esquerda do editor). Você vai para o início da unit e, para voltar para a linha 845, é só teclar Ctrl + 0. 
+Tecle novamente Ctrl + Shift + 0 para 
 desmarcar.
+
 - Ctrl + Barra de Espaço: para forçar a exibição dos comandos relativos àquele componente.
-- Ctrl + Mouse: Clique com o botão esquerdo do mouse mantendo pressionada a tecla Ctrl sobre a chamada a uma procedure/function/variável para localizá-la na unit 
+
+- Ctrl + Mouse: Clique com o botão esquerdo do mouse mantendo pressionada a tecla Ctrl sobre a chamada a uma 
+procedure/function/variável para localizá-la na unit 
 atual ou em outra unit.
-- Ctrl + J (Code Templates): Este recurso também tem uma boa utilidade. Digamos que você, a todo momento, precise usar um "if..then..else". Ao invés de digitar todo
- comando, você pode teclar Ctrl + J e, localizar o Template (modelo) apropriado na janela que se abre. Tecle enter para aplicar o Template escolhido. Para alterar ou 
-incluir novos templates, vá em Tools/Editor Options/Code Insight.
+
+- Ctrl + J (Code Templates): Este recurso também tem uma boa utilidade. Digamos que você, a todo momento, precise usar 
+um "if..then..else". Ao invés de digitar todo comando, você pode teclar Ctrl + J e, localizar o Template (modelo) 
+apropriado na janela que se abre. Tecle enter para aplicar o Template escolhido. Para alterar ou incluir novos templates, 
+vá em Tools/Editor Options/Code Insight.
+
 - Ctrl + O + U: Alterna a caixa (maiúscula/minúscula) do código selecionado.
+
 - Ctrl + K + E: Converter o código selecionado para minúsculas.
+
 - Ctrl + K + F: Converter o código selecionado para maiúsculas.
-- Ctrl + E: Ativa a busca incremental. Você pode pressionar Ctrl + E e digitar diretamente a palavra que deseja procurar, sem a necessidade de passar por uma caixa de
+
+- Ctrl + E: Ativa a busca incremental. Você pode pressionar Ctrl + E e digitar diretamente a palavra que deseja procurar, 
+sem a necessidade de passar por uma caixa de
  diálogo especial (Ctrl + F).
-- Ctrl + Shift + Setas: Mover o(s) componente(s) selecionado(s) rapidamente no form. O "salto" da movimentação é determinado pelo valor informado em Tools/Environment 
+
+- Ctrl + Shift + Setas: Mover o(s) componente(s) selecionado(s) rapidamente no form. O "salto" da movimentação é determinado 
+pelo valor informado em Tools/Environment 
 Options/Grid size X e Y.
+
 - Ctrl + Setas: Move o componente pixel a pixel.
+
 - Shift + Setas: Redimensiona o componente pixel a pixel.
+
+- Shift + Alt + Seta seleciona parte de um conteúdo
+
+- Crtl + Shift + U ou + I Movimenta o bloco selecionado
 
 
 

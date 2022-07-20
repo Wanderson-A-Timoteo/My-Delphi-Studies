@@ -1,0 +1,233 @@
+unit CadastroCrianca;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitNossoMdiCadastro, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
+  Vcl.Mask, FireDAC.Comp.Client, BibPesquisa;
+
+type
+  TFormCadastroCrianca = class(TNossoMdiCadastro)
+    EditNomeCrianca: TEdit;
+    Label1: TLabel;
+    EditNomeMae: TEdit;
+    Label2: TLabel;
+    EditNomePai: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    EditNumeroPulseira: TEdit;
+    Label5: TLabel;
+    RadioGroupSairSozinho: TRadioGroup;
+    SpbCodigo: TSpeedButton;
+    Label6: TLabel;
+    EditCodigo: TEdit;
+    DtpDataEntrada: TDateTimePicker;
+    DtpHorarioEntrada: TDateTimePicker;
+    Label7: TLabel;
+    Label8: TLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel8: TPanel;
+    Panel9: TPanel;
+    Panel10: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure SpbCodigoClick(Sender: TObject);
+    procedure EditCodigoEnter(Sender: TObject);
+    procedure EditCodigoExit(Sender: TObject);
+    procedure EditCodigoKeyPress(Sender: TObject; var Key: Char);
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadastroCrianca: TFormCadastroCrianca;
+
+implementation
+
+{$R *.dfm}
+
+uses BibVariavel, bibmarco, DMDados, Login;
+
+procedure TFormCadastroCrianca.BitBtn1Click(Sender: TObject);
+begin
+  inherited;
+  if EditNumeroPulseira.Text = '' then
+  begin
+    ShowMessage('Número da pulseira é obrigatório!');
+    EditNumeroPulseira.SetFocus;
+    Exit;
+  end;
+  with DataModuleDados.QryCrianca do
+  begin
+    FieldByName('codigo').AsString                   := EditCodigo.Text;
+    FieldByName('numero_pulseira').AsString          := EditNumeroPulseira.Text;
+    FieldByName('nome_crianca').AsString             := EditNomeCrianca.Text;
+    FieldByName('nome_mae').AsString                 := EditNomeMae.Text;
+    FieldByName('nome_pai').AsString                 := EditNomePai.Text;
+//    FieldByName('data_hora_entrada').AsDateTime      := StrToDateTime(DateToStr(DtpDataEntrada.Date) + TimeToStr(DtpHorarioEntrada.Time));
+    FieldByName('data_hora_entrada').AsDateTime      := DtpDataEntrada.Date + DtpHorarioEntrada.Time;
+    FieldByName('cod_usuario_atualizacao').AsInteger := StrToInt(Codigo_Usuario);
+    FieldByName('data_hora_atualizacao').AsDateTime  := DataModuleDados.DataServidor(False);
+
+    case RadioGroupSairSozinho.ItemIndex of
+      0:FieldByName('sair_sozinho').AsString         := 'S';
+      1:FieldByName('sair_sozinho').AsString         := 'N';
+    end;
+
+    Post;
+
+    if ApplyUpdates(-1) <> 0 then
+      raise Exception.Create('Ocorreu um problema na gravação dos dados...');
+
+  end;
+
+  ShowMessage('Cadastro realizado com sucesso!');
+  EditCodigo.SetFocus;
+end;
+
+
+procedure TFormCadastroCrianca.EditCodigoEnter(Sender: TObject);
+begin
+  inherited;
+  LimpaGroupBox(GroupBox);
+  with DataModuleDados.QueryPesquisa do
+  begin
+    SQL.Clear;
+    SQL.Add('SELECT MAX(codigo) AS ultimo       ');
+    SQL.Add('FROM paraisokids.controle_criancas ');
+    Open;
+    if FieldByName('ULTIMO').AsInteger = 0 then
+    begin
+      EditCodigo.Text := '0001'
+    end
+    else
+    begin
+      EditCodigo.Text := CompletaZeros(IntToStr(FieldByName('ULTIMO').AsInteger+1),4);
+    end;
+  end;
+  DtpDataEntrada.Date    := DataModuleDados.DataServidor(False);
+  DtpHorarioEntrada.Time := DataModuleDados.DataServidor(False);;
+  EditCodigo.SelectAll;
+end;
+
+procedure TFormCadastroCrianca.EditCodigoExit(Sender: TObject);
+begin
+  inherited;
+  if EditCodigo.Text <> '' then
+  begin
+    with DataModuleDados.QryCrianca do
+    begin
+      EditCodigo.Text := CompletaZeros(EditCodigo.Text,4);
+      Close;
+      Params.ParamByName('codigo').AsInteger  := StrToInt(EditCodigo.Text);
+      Open;
+      if IsEmpty then
+      begin
+        Insert;
+      end
+      else begin
+        Edit;
+
+        EditNumeroPulseira.Text             := FieldByName('numero_pulseira').AsString;
+        EditNomeCrianca.Text                := FieldByName('nome_crianca').AsString;
+        EditNomeMae.Text                    := FieldByName('nome_mae').AsString;
+        EditNomePai.Text                    := FieldByName('nome_pai').AsString ;
+        DtpDataEntrada.DateTime             := FieldByName('data_hora_entrada').AsDateTime;
+
+        if FieldByName('sair_sozinho').AsString = 'S' then
+        begin
+          RadioGroupSairSozinho.ItemIndex   := 0;
+        end else
+          RadioGroupSairSozinho.ItemIndex   := 1;
+        end;
+    end;
+  end;
+end;
+
+procedure TFormCadastroCrianca.EditCodigoKeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+  Key := TestaNumero(Key);
+end;
+
+procedure TFormCadastroCrianca.FormActivate(Sender: TObject);
+begin
+  inherited;
+  GroupBox.Left := Round( (FormCadastroCrianca.Width - GroupBox.Width) / 2);
+  GroupBox.Top  := Round( (FormCadastroCrianca.Height - GroupBox.Height) / 2);
+end;
+
+procedure TFormCadastroCrianca.FormShow(Sender: TObject);
+begin
+  inherited;
+  PanelAcoes.Visible := False;
+end;
+
+procedure TFormCadastroCrianca.SpbCodigoClick(Sender: TObject);
+begin
+  inherited;
+  Pesquisa2('Controle de Crianças','paraisokids.controle_criancas',['CODIGO', 'NUMERO_PULSEIRA', 'NOME_CRIANCA'],['Codigo', 'Nº da Pulseira', 'Nome da Criança'],'','',['NOME_CRIANCA', 'NUMERO_PULSEIRA'],['CODIGO'],[EditCodigo],'');
+end;
+
+procedure TFormCadastroCrianca.SpeedButton1Click(Sender: TObject);
+begin
+  inherited;
+  if EditNumeroPulseira.Text = '' then
+  begin
+    ShowMessage('Número da pulseira é obrigatório!');
+    EditNumeroPulseira.SetFocus;
+    Exit;
+  end;
+  with DataModuleDados.QryCrianca do
+  begin
+    FieldByName('codigo').AsString                   := EditCodigo.Text;
+    FieldByName('numero_pulseira').AsString          := EditNumeroPulseira.Text;
+    FieldByName('nome_crianca').AsString             := EditNomeCrianca.Text;
+    FieldByName('nome_mae').AsString                 := EditNomeMae.Text;
+    FieldByName('nome_pai').AsString                 := EditNomePai.Text;
+//    FieldByName('data_hora_entrada').AsDateTime      := StrToDateTime(DateToStr(DtpDataEntrada.Date) + TimeToStr(DtpHorarioEntrada.Time));
+    FieldByName('data_hora_entrada').AsDateTime      := DtpDataEntrada.Date + DtpHorarioEntrada.Time;
+    FieldByName('cod_usuario_atualizacao').AsInteger := StrToInt(Codigo_Usuario);
+    FieldByName('data_hora_atualizacao').AsDateTime  := DataModuleDados.DataServidor(False);
+
+    case RadioGroupSairSozinho.ItemIndex of
+      0:FieldByName('sair_sozinho').AsString         := 'S';
+      1:FieldByName('sair_sozinho').AsString         := 'N';
+    end;
+
+    Post;
+
+    if ApplyUpdates(-1) <> 0 then
+      raise Exception.Create('Ocorreu um problema na gravação dos dados...');
+
+  end;
+
+  ShowMessage('Cadastro realizado com sucesso!');
+  EditCodigo.SetFocus;
+end;
+
+
+procedure TFormCadastroCrianca.SpeedButton4Click(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
+end.
