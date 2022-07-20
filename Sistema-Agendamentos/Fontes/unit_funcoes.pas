@@ -12,9 +12,12 @@ uses
   function  fnc_criar_mensagem(TituloJanela, TituloMSG, MSG, Icone, Tipo : String) :  boolean;
   procedure prcValidarCamposObrigatorios ( Form: TForm );
 
+var
+  var_gbl_nome_usuario : String;
+
 implementation
 
-uses unit_mensagens, unit_dados, classe.profissionais ;
+uses unit_mensagens, unit_dados, classe.profissionais, classe.usuarios ;
 
 
 function fnc_proximo_codigo(Tabela, Campo : String) : Integer;

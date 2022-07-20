@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  unit_dados;
 
 type
   Tform_login = class(TForm)
@@ -55,6 +56,9 @@ implementation
 
 {$R *.dfm}
 
+uses
+  classe.usuarios, unit_funcoes;
+
 procedure Tform_login.FormActivate(Sender: TObject);
 begin
   pnl_fundo.Left := Round( (form_login.Width - pnl_fundo.Width) / 2);
@@ -63,7 +67,10 @@ end;
 
 procedure Tform_login.SpeedButtonEntrarClick(Sender: TObject);
 begin
-  Close;
+  prcValidarCamposObrigatorios(form_login);
+
+  if DataModule1.Usuarios.fnc_validar_login(EditNomeUsuario.Text, EditSenhaUsuario.Text) then
+   Close;
 end;
 
 procedure Tform_login.SpeedButtonEntrarMouseEnter(Sender: TObject);

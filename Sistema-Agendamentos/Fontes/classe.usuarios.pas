@@ -3,7 +3,7 @@ unit classe.usuarios;
 interface
 
 uses
-  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms, unit_dados;
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms;
 
 type
   TUsuarios = class
@@ -29,6 +29,7 @@ type
       destructor Destroy; Override;
 
       function fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String) : Boolean;
+      function fnc_validar_login(usuario, senha : String) : Boolean;
   end;
 
 var
@@ -38,7 +39,7 @@ implementation
 
 { TUsuarios }
 
-uses unit_funcoes;
+uses unit_funcoes, unit_dados, unit_usuarios_cadastro;
 
 constructor TUsuarios.Create(Conexao: TFDConnection);
 begin
@@ -137,6 +138,60 @@ begin
       Erro := E.Message;
       Result := False;
     end;
+  end;
+end;
+
+function TUsuarios.fnc_validar_login(usuario, senha: String): Boolean;
+var
+  QryLogin : TFDQuery;
+
+begin
+  Result := False;
+
+  try
+    QryLogin := TFDQuery.Create(nil);
+    QryLogin.Connection := FConexao;
+
+    QryLogin.Close;
+    QryLogin.SQL.Clear;
+    QryLogin.SQL.Add('SELECT ds_usuario,           ');
+    QryLogin.SQL.Add('       ds_login,             ');
+    QryLogin.SQL.Add('       ds_senha,             ');
+    QryLogin.SQL.Add('FROM usuarios                ');
+    QryLogin.SQL.Add('WHERE ds_login = :p_ds_login ');
+    QryLogin.ParamByName('p_ds_login').AsString := usuario;
+    QryLogin.Open;
+
+    if QryLogin.IsEmpty then
+    begin
+      // Usuário não encontrado
+      fnc_criar_mensagem('VALIDANDO LOGIN',
+                         'Erro ao efetuar Login',
+                         'Nome do Usuário / Login não encontrado!',
+                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                         'OK');
+      Result := False;
+    end else
+    begin
+      // Usuario encontrado, faz a validação da senha
+      if QryLogin.FieldByName('ds_senha').AsString = senha then
+      begin
+        // Senha Correta
+        var_gbl_nome_usuario := QryLogin.FieldByName('ds_usuario').AsString;
+        Result := True;
+      end else
+      begin
+        // Senha inválida
+        fnc_criar_mensagem('VALIDANDO LOGIN',
+                           'Erro ao efetuar Login',
+                           'Senha inválida!',
+                           ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                           'OK');
+        Result := False;
+      end;
+    end;
+  finally
+    QryLogin.Free;
   end;
 end;
 

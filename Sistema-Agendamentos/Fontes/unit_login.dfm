@@ -2968,11 +2968,13 @@ object form_login: Tform_login
         ExplicitWidth = 57
       end
       object EditNomeUsuario: TEdit
+        Tag = 5
         AlignWithMargins = True
         Left = 3
         Top = 24
         Width = 363
         Height = 27
+        Hint = 'Nome do Usu'#225'rio/Login'
         Align = alTop
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
@@ -3023,11 +3025,13 @@ object form_login: Tform_login
         ExplicitWidth = 46
       end
       object EditSenhaUsuario: TEdit
+        Tag = 5
         AlignWithMargins = True
         Left = 3
         Top = 24
         Width = 359
         Height = 27
+        Hint = 'Senha'
         Align = alTop
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
