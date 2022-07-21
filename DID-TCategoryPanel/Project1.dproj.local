@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/03/01 13:38:51.000.438,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 11:21:12.763,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 11:31:39.953,D:\Projetos\Cursos\Design de Interfaces\VCL\#04 - TCategoryPanel\Unit1.dfm=D:\Projetos\Diversos\Embarcadero\Unit1.dfm</Transaction>
+    <Transaction>2018/03/02 11:31:39.953,D:\Projetos\Cursos\Design de Interfaces\VCL\#04 - TCategoryPanel\Unit1.pas=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 11:31:41.684,D:\Projetos\Cursos\Design de Interfaces\VCL\#04 - TCategoryPanel\Project1.dproj=D:\Projetos\Diversos\Embarcadero\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
