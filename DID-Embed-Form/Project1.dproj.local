@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/03/01 13:38:51.000.438,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 16:24:59.783,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 16:37:46.447,=D:\Projetos\Diversos\Embarcadero\Unit2.pas</Transaction>
+    <Transaction>2018/03/05 16:37:49.548,=D:\Projetos\Diversos\Embarcadero\Unit3.pas</Transaction>
+    <Transaction>2018/03/05 16:45:40.920,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Unit3.dfm=D:\Projetos\Diversos\Embarcadero\Unit3.dfm</Transaction>
+    <Transaction>2018/03/05 16:45:40.920,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Unit3.pas=D:\Projetos\Diversos\Embarcadero\Unit3.pas</Transaction>
+    <Transaction>2018/03/05 16:45:44.889,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Unit2.pas=D:\Projetos\Diversos\Embarcadero\Unit2.pas</Transaction>
+    <Transaction>2018/03/05 16:45:44.889,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Unit2.dfm=D:\Projetos\Diversos\Embarcadero\Unit2.dfm</Transaction>
+    <Transaction>2018/03/05 16:45:45.991,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Unit1.pas=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 16:45:45.991,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Unit1.dfm=D:\Projetos\Diversos\Embarcadero\Unit1.dfm</Transaction>
+    <Transaction>2018/03/05 16:45:46.985,D:\Projetos\Cursos\Design de Interfaces\VCL\#09.01 - Embed Form\Project1.dproj=D:\Projetos\Diversos\Embarcadero\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
