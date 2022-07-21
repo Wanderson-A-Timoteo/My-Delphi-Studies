@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/03/01 13:38:51.000.438,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 10:05:21.000.823,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 10:27:35.000.628,D:\Projetos\Diversos\Embarcadero\Unit1.dfm=D:\Projetos\Cursos\Design de Interfaces\VCL\#01 - Responsividade em VCL\Unit1.dfm</Transaction>
+    <Transaction>2018/03/02 10:27:35.000.628,D:\Projetos\Diversos\Embarcadero\Unit1.pas=D:\Projetos\Cursos\Design de Interfaces\VCL\#01 - Responsividade em VCL\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 10:27:37.000.804,D:\Projetos\Diversos\Embarcadero\Project1.dproj=D:\Projetos\Cursos\Design de Interfaces\VCL\#01 - Responsividade em VCL\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
