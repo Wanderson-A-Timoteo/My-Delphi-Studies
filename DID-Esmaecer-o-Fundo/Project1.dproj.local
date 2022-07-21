@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/03/01 13:38:51.000.438,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 14:16:53.000.621,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 14:18:21.000.833,=D:\Projetos\Diversos\Embarcadero\Unit2.pas</Transaction>
+    <Transaction>2018/03/05 14:18:25.000.066,=D:\Projetos\Diversos\Embarcadero\Unit3.pas</Transaction>
+    <Transaction>2018/03/05 14:26:24.000.572,D:\Projetos\Diversos\Embarcadero\Unit3.dfm=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Unit3.dfm</Transaction>
+    <Transaction>2018/03/05 14:26:24.000.572,D:\Projetos\Diversos\Embarcadero\Unit3.pas=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Unit3.pas</Transaction>
+    <Transaction>2018/03/05 14:26:25.000.972,D:\Projetos\Diversos\Embarcadero\Unit2.dfm=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Unit2.dfm</Transaction>
+    <Transaction>2018/03/05 14:26:25.000.972,D:\Projetos\Diversos\Embarcadero\Unit2.pas=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Unit2.pas</Transaction>
+    <Transaction>2018/03/05 14:26:26.000.895,D:\Projetos\Diversos\Embarcadero\Unit1.pas=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 14:26:26.000.895,D:\Projetos\Diversos\Embarcadero\Unit1.dfm=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Unit1.dfm</Transaction>
+    <Transaction>2018/03/05 14:26:28.000.625,D:\Projetos\Diversos\Embarcadero\Project1.dproj=D:\Projetos\Cursos\Design de Interfaces\VCL\#12 - Esmaecer o Fundo\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
