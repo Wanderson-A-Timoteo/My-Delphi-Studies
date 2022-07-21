@@ -3,8 +3,8 @@
 	<Transactions>
     <Transaction>2018/03/01 13:38:51.000.438,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
     <Transaction>2018/03/05 17:55:34.000.607,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
-    <Transaction>2018/03/05 18:54:18.000.060,D:\Projetos\Diversos\Embarcadero\Unit1.dfm=D:\Projetos\Cursos\Design de Interfaces\VCL\Desafio DID #01\Unit1.dfm</Transaction>
-    <Transaction>2018/03/05 18:54:18.000.060,D:\Projetos\Diversos\Embarcadero\Unit1.pas=D:\Projetos\Cursos\Design de Interfaces\VCL\Desafio DID #01\Unit1.pas</Transaction>
-    <Transaction>2018/03/05 18:54:20.000.212,D:\Projetos\Diversos\Embarcadero\Project1.dproj=D:\Projetos\Cursos\Design de Interfaces\VCL\Desafio DID #01\Project1.dproj</Transaction>
+    <Transaction>2018/03/05 18:54:18.000.060,D:\Projetos\Cursos\Design de Interfaces\VCL\Desafio DID #01\Unit1.pas=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/05 18:54:18.000.060,D:\Projetos\Cursos\Design de Interfaces\VCL\Desafio DID #01\Unit1.dfm=D:\Projetos\Diversos\Embarcadero\Unit1.dfm</Transaction>
+    <Transaction>2018/03/05 18:54:20.000.212,D:\Projetos\Cursos\Design de Interfaces\VCL\Desafio DID #01\Project1.dproj=D:\Projetos\Diversos\Embarcadero\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
