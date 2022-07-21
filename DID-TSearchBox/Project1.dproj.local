@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/03/01 13:38:51.000.438,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 15:16:59.968,=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 15:38:09.416,D:\Projetos\Cursos\Design de Interfaces\VCL\#08 - SplitView\Unit1.dfm=D:\Projetos\Diversos\Embarcadero\Unit1.dfm</Transaction>
+    <Transaction>2018/03/02 15:38:09.416,D:\Projetos\Cursos\Design de Interfaces\VCL\#08 - SplitView\Unit1.pas=D:\Projetos\Diversos\Embarcadero\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 15:38:11.309,D:\Projetos\Cursos\Design de Interfaces\VCL\#08 - SplitView\Project1.dproj=D:\Projetos\Diversos\Embarcadero\Project1.dproj</Transaction>
+    <Transaction>2018/03/02 16:28:17.259,D:\Projetos\Cursos\Design de Interfaces\VCL\#09 - TSearchBox\Unit1.dfm=D:\Projetos\Cursos\Design de Interfaces\VCL\#08 - SplitView\Unit1.dfm</Transaction>
+    <Transaction>2018/03/02 16:28:17.259,D:\Projetos\Cursos\Design de Interfaces\VCL\#09 - TSearchBox\Unit1.pas=D:\Projetos\Cursos\Design de Interfaces\VCL\#08 - SplitView\Unit1.pas</Transaction>
+    <Transaction>2018/03/02 16:28:30.570,D:\Projetos\Cursos\Design de Interfaces\VCL\#09 - TSearchBox\Project1.dproj=D:\Projetos\Cursos\Design de Interfaces\VCL\#08 - SplitView\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
