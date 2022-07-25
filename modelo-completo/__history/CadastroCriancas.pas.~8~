@@ -1,0 +1,298 @@
+unit CadastroCriancas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnitNossoMdiCadastro, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
+  Vcl.Mask, FireDAC.Comp.Client, BibPesquisa;
+
+type
+  TFormCadastroCriancas = class(TForm)
+    PanelContainer: TPanel;
+    PanelBarraTitulo: TPanel;
+    PanelBarraCodigo: TPanel;
+    PanelBarraPulseira: TPanel;
+    PanelBarraNomeCrianca: TPanel;
+    PanelBarraNomeMae: TPanel;
+    PanelBarraNomePai: TPanel;
+    Label8: TLabel;
+    SpbFechar: TSpeedButton;
+    Label4: TLabel;
+    EditCodigo: TEdit;
+    SpbPesquisarCodigo: TSpeedButton;
+    Label5: TLabel;
+    DtpDataEntrada: TDateTimePicker;
+    Label7: TLabel;
+    DtpHorarioEntrada: TDateTimePicker;
+    EditNumeroPulseira: TEdit;
+    Label6: TLabel;
+    Label1: TLabel;
+    EditNomeCrianca: TEdit;
+    Label2: TLabel;
+    EditNomeMae: TEdit;
+    Label3: TLabel;
+    EditNomePai: TEdit;
+    RadioGroupSairSozinho: TRadioGroup;
+    StatusBar: TStatusBar;
+    PanelBtnExcluir: TPanel;
+    SpbExcluir: TSpeedButton;
+    PanelBtnLimpar: TPanel;
+    SpbLimpar: TSpeedButton;
+    PanelBtnSair: TPanel;
+    SpbSair: TSpeedButton;
+    PanelBtnSalvar: TPanel;
+    SpbSalvar: TSpeedButton;
+    procedure EditCodigoEnter(Sender: TObject);
+    procedure EditCodigoExit(Sender: TObject);
+    procedure SpbPesquisarCodigoClick(Sender: TObject);
+    procedure SpbSalvarClick(Sender: TObject);
+    procedure SpbLimparClick(Sender: TObject);
+    procedure SpbSairClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure EditCodigoKeyPress(Sender: TObject; var Key: Char);
+    procedure SpbSalvarMouseEnter(Sender: TObject);
+    procedure SpbSalvarMouseLeave(Sender: TObject);
+    procedure SpbExcluirMouseEnter(Sender: TObject);
+    procedure SpbExcluirMouseLeave(Sender: TObject);
+    procedure SpbFecharMouseEnter(Sender: TObject);
+    procedure SpbFecharMouseLeave(Sender: TObject);
+    procedure SpbFecharClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCadastroCriancas: TFormCadastroCriancas;
+
+implementation
+
+uses BibVariavel, bibmarco, DMDados, CadastroCrianca;
+
+{$R *.dfm}
+
+procedure TFormCadastroCriancas.btnFecharMouseEnter(Sender: TObject);
+begin
+
+end;
+
+procedure TFormCadastroCriancas.btnFecharMouseLeave(Sender: TObject);
+begin
+
+end;
+
+procedure TFormCadastroCriancas.EditCodigoEnter(Sender: TObject);
+begin
+  inherited;
+  LimpaGroupBox(GroupBox);
+  with DataModuleDados.QueryPesquisa do
+  begin
+    SQL.Clear;
+    SQL.Add('SELECT MAX(codigo) AS ultimo       ');
+    SQL.Add('FROM paraisokids.controle_criancas ');
+    Open;
+    if FieldByName('ULTIMO').AsInteger = 0 then
+    begin
+      EditCodigo.Text := '0001'
+    end
+    else
+    begin
+      EditCodigo.Text := CompletaZeros(IntToStr(FieldByName('ULTIMO').AsInteger+1),4);
+    end;
+  end;
+  DtpDataEntrada.Date    := DataModuleDados.DataServidor(False);
+  DtpHorarioEntrada.Time := DataModuleDados.DataServidor(False);;
+  EditCodigo.SelectAll;
+end;
+
+procedure TFormCadastroCriancas.EditCodigoExit(Sender: TObject);
+begin
+  inherited;
+  if EditCodigo.Text <> '' then
+  begin
+    with DataModuleDados.QryCrianca do
+    begin
+      EditCodigo.Text := CompletaZeros(EditCodigo.Text,4);
+      Close;
+      Params.ParamByName('codigo').AsInteger  := StrToInt(EditCodigo.Text);
+      Open;
+      if IsEmpty then
+      begin
+        Insert;
+      end
+      else begin
+        Edit;
+
+        EditNumeroPulseira.Text             := FieldByName('numero_pulseira').AsString;
+        EditNomeCrianca.Text                := FieldByName('nome_crianca').AsString;
+        EditNomeMae.Text                    := FieldByName('nome_mae').AsString;
+        EditNomePai.Text                    := FieldByName('nome_pai').AsString ;
+        DtpDataEntrada.DateTime             := FieldByName('data_hora_entrada').AsDateTime;
+
+        if FieldByName('sair_sozinho').AsString = 'S' then
+        begin
+          RadioGroupSairSozinho.ItemIndex   := 0;
+        end else
+          RadioGroupSairSozinho.ItemIndex   := 1;
+        end;
+    end;
+  end;
+end;
+
+procedure TFormCadastroCriancas.EditCodigoKeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+  Key := TestaNumero(Key);
+end;
+
+procedure TFormCadastroCriancas.FormActivate(Sender: TObject);
+begin
+  inherited;
+  GroupBox.Left := Round( (FormCadastroCrianca.Width - GroupBox.Width) / 2);
+  GroupBox.Top  := Round( (FormCadastroCrianca.Height - GroupBox.Height) / 2);
+end;
+
+procedure TFormCadastroCriancas.SpbExcluirMouseEnter(Sender: TObject);
+begin
+  inherited;
+  btnExcluir.Font.Color := clBlack;
+end;
+
+procedure TFormCadastroCriancas.SpbExcluirMouseLeave(Sender: TObject);
+begin
+  inherited;
+  btnExcluir.Font.Color := clWhite;
+end;
+
+procedure TFormCadastroCriancas.SpbLimparClick(Sender: TObject);
+begin
+  inherited;
+  EditCodigo.SetFocus;
+end;
+
+procedure TFormCadastroCriancas.SpbPesquisarCodigoClick(Sender: TObject);
+begin
+  inherited;
+  Pesquisa2('Controle de Crianças','paraisokids.controle_criancas',['CODIGO', 'NUMERO_PULSEIRA', 'NOME_CRIANCA'],['Codigo', 'Nº da Pulseira', 'Nome da Criança'],'','',['NOME_CRIANCA', 'NUMERO_PULSEIRA'],['CODIGO'],[EditCodigo],'');
+end;
+
+procedure TFormCadastroCriancas.SpbSairClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
+
+procedure TFormCadastroCriancas.SpbSalvarClick(Sender: TObject);
+begin
+  inherited;
+  if EditNumeroPulseira.Text = '' then
+  begin
+    ShowMessage('Número da pulseira é obrigatório!');
+    EditNumeroPulseira.SetFocus;
+    Exit;
+  end;
+  with DataModuleDados.QryCrianca do
+  begin
+    FieldByName('codigo').AsString                   := EditCodigo.Text;
+    FieldByName('numero_pulseira').AsString          := EditNumeroPulseira.Text;
+    FieldByName('nome_crianca').AsString             := EditNomeCrianca.Text;
+    FieldByName('nome_mae').AsString                 := EditNomeMae.Text;
+    FieldByName('nome_pai').AsString                 := EditNomePai.Text;
+    FieldByName('data_hora_entrada').AsDateTime      := DtpDataEntrada.Date + DtpHorarioEntrada.Time;
+    FieldByName('cod_usuario_atualizacao').AsInteger := StrToInt(Codigo_Usuario);
+    FieldByName('data_hora_atualizacao').AsDateTime  := DataModuleDados.DataServidor(False);
+
+    case RadioGroupSairSozinho.ItemIndex of
+      0:FieldByName('sair_sozinho').AsString         := 'S';
+      1:FieldByName('sair_sozinho').AsString         := 'N';
+    end;
+
+    Post;
+
+    if ApplyUpdates(-1) <> 0 then
+      raise Exception.Create('Ocorreu um problema na gravação dos dados...');
+
+  end;
+
+  ShowMessage('Cadastro realizado com sucesso!');
+  EditCodigo.SetFocus;
+end;
+
+procedure TFormCadastroCriancas.SpbSalvarMouseEnter(Sender: TObject);
+begin
+  inherited;
+  btnSalvar.Font.Color := clBlack;
+end;
+
+
+procedure TFormCadastroCriancas.SpbSalvarMouseLeave(Sender: TObject);
+begin
+  inherited;
+  btnSalvar.Font.Color := clWhite;
+end;
+
+
+
+procedure TFormCadastroCriancas.btnFecharClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
+procedure TFormCadastroCriancas.SpbFecharClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFormCadastroCriancas.SpbFecharMouseEnter(Sender: TObject);
+begin
+  inherited;
+  btnFechar.Font.Color := clRed;
+end;
+
+procedure TFormCadastroCriancas.SpbFecharMouseLeave(Sender: TObject);
+begin
+  inherited;
+  btnFechar.Font.Color := $00DFDFDF;
+end;
+
+procedure TFormCadastroCriancas.btnLimparClick(Sender: TObject);
+begin
+  inherited;
+  EditCodigo.SetFocus;
+end;
+
+procedure TFormCadastroCriancas.btnLimparMouseEnter(Sender: TObject);
+begin
+  inherited;
+  btnLimpar.Font.Color := clBlack;
+end;
+
+procedure TFormCadastroCriancas.btnLimparMouseLeave(Sender: TObject);
+begin
+  inherited;
+  btnLimpar.Font.Color := clWhite;
+end;
+
+procedure TFormCadastroCriancas.btnSairClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
+procedure TFormCadastroCriancas.btnSairMouseEnter(Sender: TObject);
+begin
+  inherited;
+  btnSair.Font.Color := clBlack;
+end;
+
+procedure TFormCadastroCriancas.btnSairMouseLeave(Sender: TObject);
+begin
+  inherited;
+  btnSair.Font.Color := clWhite;
+end;
+
+end.
