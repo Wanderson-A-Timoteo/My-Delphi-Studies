@@ -1,0 +1,826 @@
+Unit RelatorioComissaoVendedoresRecebidas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UnitNossoModalRelatorio, StdCtrls, CheckLst, Buttons, DB, ppComm,
+  ppRelatv, ppDB, ppDBPipe, ppDBBDE, RxGrdCpt, ComCtrls, Mask, ppModule, raCodMod,
+  ppBands, ppClass, ppCtrls, ppVar, ppPrnabl, ppCache, ppProd, ppReport, ppViewr,
+  ppStrtch, ppSubRpt, DBClient, Grids, DBGrids, Gauges, ppParameter,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  ppDesignLayer, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtCtrls;
+
+type
+  TFormRelatorioComissaoVendedoresRecebidas = class(TNossoModalRelatorio)
+    Label14: TLabel;
+    EditCodigoLoja: TEdit;
+    SpbCodigoLoja: TSpeedButton;
+    EditNomeLoja: TEdit;
+    Label15: TLabel;
+    EditCodigoVendedor: TEdit;
+    SpbCodigoVendedor: TSpeedButton;
+    EditNomeVendedor: TEdit;
+    Label7: TLabel;
+    DtpDataInicial: TDateTimePicker;
+    Label4: TLabel;
+    DtpDataFinal: TDateTimePicker;
+    ppReportRelatorio: TppReport;
+    Label2: TLabel;
+    CheckListBoxSeries: TCheckListBox;
+    EditSeries: TEdit;
+    ComboBoxTipoRelatorio: TComboBox;
+    Label5: TLabel;
+    ppParameterList1: TppParameterList;
+    ppTitleBand1: TppTitleBand;
+    ppHeaderBand1: TppHeaderBand;
+    ppLabel1: TppLabel;
+    ppLabel2: TppLabel;
+    ppLabel3: TppLabel;
+    ppLabel4: TppLabel;
+    ppSystemVariable3: TppSystemVariable;
+    ppLabel5: TppLabel;
+    ppLine1: TppLine;
+    ppLine2: TppLine;
+    ppLabel6: TppLabel;
+    ppLabel7: TppLabel;
+    ppLine4: TppLine;
+    ppLabel8: TppLabel;
+    ppLabel11: TppLabel;
+    ppLabel12: TppLabel;
+    ppLabel17: TppLabel;
+    ppLabel19: TppLabel;
+    ppVarData: TppVariable;
+    ppVarHora: TppVariable;
+    ppLabel25: TppLabel;
+    ppLabel30: TppLabel;
+    ppVarPeriodoEmissao: TppVariable;
+    ppLine10: TppLine;
+    ppLabel13: TppLabel;
+    ppLabelLoja: TppLabel;
+    ppDetailBand1: TppDetailBand;
+    ppShapeDetalhe: TppShape;
+    ppDBTextNumeroVenda: TppDBText;
+    ppDBTextCodigoSerie: TppDBText;
+    ppDBTextCodigoLoja: TppDBText;
+    ppDBTextDataEmissao: TppDBText;
+    ppDBTextCodCliente: TppDBText;
+    ppDBTextnomeCliente: TppDBText;
+    ppDBTextCodVendedor: TppDBText;
+    ppDBTextVenda: TppDBText;
+    ppDBTextComissoes: TppDBText;
+    ppFooterBand1: TppFooterBand;
+    ppLine3: TppLine;
+    ppLabel9: TppLabel;
+    ppLabel10: TppLabel;
+    ppSummaryBand1: TppSummaryBand;
+    ppLine7: TppLine;
+    ppShape2: TppShape;
+    ppVarQtdregistros: TppVariable;
+    ppLabel24: TppLabel;
+    ppLabel21: TppLabel;
+    ppLabel32: TppLabel;
+    ppLabel18: TppLabel;
+    ppVarQtdDevolucoes: TppVariable;
+    ppLabel22: TppLabel;
+    ppVarTotalDevolucoes: TppVariable;
+    ppVarTotalVendas: TppVariable;
+    ppVarTotalComissao: TppVariable;
+    ppPageStyle1: TppPageStyle;
+    ppGroup1: TppGroup;
+    ppGroupHeaderBand1: TppGroupHeaderBand;
+    ppShapeQuebra: TppShape;
+    ppLabelQuebra: TppLabel;
+    ppLabelTipoComissao: TppLabel;
+    ppGroupFooterBand1: TppGroupFooterBand;
+    ppShapeSintetico: TppShape;
+    ppLabelQuebraSintetico: TppLabel;
+    ppLineSintetico: TppLine;
+    ppVarSubTotalComissao: TppVariable;
+    ppLabel26: TppLabel;
+    ppVarSubTotalDevolucoes: TppVariable;
+    ppLabel28: TppLabel;
+    raCodeModule1: TraCodeModule;
+    ppLabel29: TppLabel;
+    ppVarTotalVendasDevolucoes: TppVariable;
+    CheckBoxOcultaDevolucao: TCheckBox;
+    ppLabelDevolucao: TppLabel;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppDesignLayer2: TppDesignLayer;
+    CheckBoxSeriesFinanceiro: TCheckBox;
+    MemTableRelatorio: TFDMemTable;
+    MemTableRelatoriotipo: TStringField;
+    MemTableRelatoriocod_loja: TIntegerField;
+    MemTableRelatoriocod_serie: TStringField;
+    MemTableRelatorionumero: TIntegerField;
+    MemTableRelatoriocod_cliente: TIntegerField;
+    MemTableRelatorionome_cliente: TStringField;
+    MemTableRelatoriocod_vendedor: TIntegerField;
+    MemTableRelatorionome_vendedor: TStringField;
+    MemTableRelatoriototal_vendas: TCurrencyField;
+    MemTableRelatoriovalor_comissao: TCurrencyField;
+    MemTableRelatoriotipo_comissao: TStringField;
+    ppVarSubTotalVendas: TppVariable;
+    ppLabel23: TppLabel;
+    ppLabel20: TppLabel;
+    ppDBTextSufixo: TppDBText;
+    MemTableRelatoriosufixo: TStringField;
+    MemTableRelatoriodata_recebimento: TDateField;
+    MemTableRelatoriosequencial: TIntegerField;
+    procedure BitImpressoraClick(Sender: TObject);
+    procedure BitVideoClick(Sender: TObject);
+    procedure EditCodigoLojaExit(Sender: TObject);
+    procedure EditCodigoLojaEnter(Sender: TObject);
+    procedure ppReportRelatorioPreviewFormCreate(Sender: TObject);
+    procedure EditCodigoVendedorExit(Sender: TObject);
+    procedure SpbCodigoLojaClick(Sender: TObject);
+    procedure SpbCodigoVendedorClick(Sender: TObject);
+    procedure ppHeaderBand1BeforePrint(Sender: TObject);
+    procedure ppSummaryBand1BeforePrint(Sender: TObject);
+    procedure CheckListBoxSeriesClickCheck(Sender: TObject);
+    procedure ppGroupHeaderBand1BeforePrint(Sender: TObject);
+    procedure ppDBTextCupomFiscalGetText(Sender: TObject;
+      var Text: String);
+    procedure ppDetailBand1BeforePrint(Sender: TObject);
+    procedure EditCodigoLojaKeyPress(Sender: TObject; var Key: Char);
+    procedure CheckListBoxSeriesEnter(Sender: TObject);
+    procedure CheckListBoxSeriesExit(Sender: TObject);
+    procedure ppGroupFooterBand1BeforePrint(Sender: TObject);
+    procedure ppDBTextCodPagtoGetText(Sender: TObject; var Text: String);
+    procedure ppGroupFooterBand1AfterPrint(Sender: TObject);
+    procedure CheckBoxSeriesFinanceiroClick(Sender: TObject);
+    procedure ppDetailBand1AfterPrint(Sender: TObject);
+  private
+    { Private declarations }
+    procedure GerarRelatorio;
+    function CalcularComissao: Currency;
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRelatorioComissaoVendedoresRecebidas: TFormRelatorioComissaoVendedoresRecebidas;
+
+implementation
+
+uses BibMarco, DMdados, BibPesquisa, BibVariavel;
+
+var
+   CorSintetico: Boolean;
+
+{$R *.dfm}
+
+{ TFormRelatorioVendas }
+
+ procedure TFormRelatorioComissaoVendedoresRecebidas.GerarRelatorio;
+var
+   x, cta: Integer;
+begin
+   with QueryRelatorio do
+   begin
+      SQL.Clear;
+      SQL.Add('SELECT CAST(''V'' AS CHAR(1)) as tipo,                                             ');
+      SQL.Add('       duplicata.numero,                                                           ');
+      SQL.Add('       duplicata.sufixo,                                                           ');
+      SQL.Add('       duplicata.cod_serie,                                                        ');
+      SQL.Add('       duplicata.cod_loja,                                                         ');
+      SQL.Add('       duplicata.cod_cliente,                                                      ');
+      SQL.Add('       duplicata.cod_vendedor,                                                     ');
+      SQL.Add('       baixa_duplicata.sequencial,                                                 ');
+      SQL.Add('       baixa_duplicata.data_recebimento,                                           ');
+      SQL.Add('       cast((baixa_duplicata.valor        +                                        ');
+      SQL.Add('             baixa_duplicata.juros        +                                        ');
+      SQL.Add('             baixa_duplicata.outras_taxas -                                        ');
+      SQL.Add('             baixa_duplicata.descontos) as numeric(15,3)) as total_vendas,         ');
+      SQL.Add('       clientes.nome as nome_cliente,                                              ');
+      SQL.Add('       vendedores.nome as nome_vendedor,                                           ');
+      SQL.Add('       vendedores.comissao_prazo,                                                  ');
+      SQL.Add('       vendedores.tipo_comissao                                                    ');
+      SQL.Add('FROM baixa_duplicata                                                                         ');
+      SQL.Add('INNER JOIN duplicata            ON (duplicata.cod_loja  = baixa_duplicata.cod_loja      AND  ');
+      SQL.Add('                                    duplicata.numero    = baixa_duplicata.numero        AND  ');
+      SQL.Add('                                    duplicata.cod_serie = baixa_duplicata.cod_serie     AND  ');
+      SQL.Add('                                    duplicata.sufixo    = baixa_duplicata.sufixo)            ');
+      SQL.Add('INNER JOIN vendedores           ON (vendedores.codigo   = duplicata.cod_vendedor)            ');
+      SQL.Add('INNER JOIN clientes             ON (clientes.codigo     = duplicata.cod_cliente)             ');
+      SQL.Add('INNER JOIN serie                ON (serie.codigo        = duplicata.cod_serie)               ');
+      SQL.Add('WHERE baixa_duplicata.data_recebimento        BETWEEN  :data_inicial and                     ');
+      SQL.Add('                                                       :data_final   and                     ');
+      SQL.Add('      baixa_duplicata.ativo               =  ''S''                   AND                     ');
+      SQL.Add('      duplicata.ativo                    <>  ''N''                                           ');
+      if EditCodigoLoja.Text <> '0000' then
+         SQL.Add('AND duplicata.cod_loja                 = :Codigo_Loja                            ');
+      if EditCodigoVendedor.Text <> '0000' then
+         SQL.Add('AND duplicata.cod_vendedor             = :Codigo_Vendedor                        ');
+      if CheckBoxSeriesFinanceiro.Checked then
+      begin
+        SQL.Add('AND   serie.gera_caixa     = ''S''                                             ');
+        SQL.Add('AND   serie.gera_duplicata = ''S''                                             ');
+      end
+      else begin
+        if EditSeries.Text <> '' then
+        begin
+           cta := 1;
+           for x := 0 to CheckListBoxSeries.Items.Count -1 do
+           begin
+              if CheckListBoxSeries.Checked[X] then
+              begin
+                 if cta = 1 then
+                    SQL.Add(' AND duplicata.cod_serie IN (:SR'+IntToStr(cta))
+                 else
+                    SQL.Add(',:SR'+IntToStr(cta));
+                 cta := cta + 1;
+              end;
+           end;
+           SQL.Add(') ');
+        end;
+      end;
+      SQL.Add('UNION                                                                                        ');
+      SQL.Add('SELECT CAST(''V'' AS CHAR(1)) as tipo,                                                       ');
+      SQL.Add('       vendas.numero,                                                                        ');
+      SQL.Add('       CAST(''000'' as char(3)) as sufixo,                                                   ');
+      SQL.Add('       vendas.cod_serie,                                                                     ');
+      SQL.Add('       vendas.cod_loja,                                                                      ');
+      SQL.Add('       vendas.cod_cliente,                                                                   ');
+      SQL.Add('       vendas.cod_vendedor,                                                                  ');
+      SQL.Add('       CAST(0 as integer) as sequencial,                                                     ');
+      SQL.Add('       vendas.data_emissao as data_recebimento,                                              ');
+      SQL.Add('       vendas.valor_recebido as total_vendas,                                                ');
+      SQL.Add('       clientes.nome as nome_cliente,                                                        ');
+      SQL.Add('       vendedores.nome as nome_vendedor,                                                     ');
+      SQL.Add('       vendedores.comissao_prazo,                                                            ');
+      SQL.Add('       vendedores.tipo_comissao                                                              ');
+      SQL.Add('FROM vendas                                                                                  ');
+      SQL.Add('INNER JOIN vendedores           ON (vendedores.codigo   = vendas.cod_vendedor)               ');
+      SQL.Add('INNER JOIN clientes             ON (clientes.codigo     = vendas.cod_cliente)                ');
+      SQL.Add('INNER JOIN serie                ON (serie.codigo        = vendas.cod_serie)                  ');
+      SQL.Add('WHERE vendas.data_emissao           BETWEEN :data_inicial AND                                ');
+      SQL.Add('                                            :data_final   AND                                ');
+      SQL.Add('      vendas.cancelado                    = ''N''         AND                                ');
+      SQL.Add('      vendas.valor_recebido               > 0                                                ');
+      if EditCodigoLoja.Text <> '0000' then
+         SQL.Add('AND vendas.cod_loja                    = :Codigo_Loja                         ');
+      if EditCodigoVendedor.Text <> '0000' then
+         SQL.Add('AND vendas.cod_vendedor                = :Codigo_Vendedor                     ');
+      if CheckBoxSeriesFinanceiro.Checked then
+      begin
+        SQL.Add('AND   serie.gera_caixa     = ''S''                                             ');
+        SQL.Add('AND   serie.gera_duplicata = ''S''                                             ');
+      end
+      else begin
+        if EditSeries.Text <> '' then
+        begin
+           cta := 1;
+           for x := 0 to CheckListBoxSeries.Items.Count -1 do
+           begin
+              if CheckListBoxSeries.Checked[X] then
+              begin
+                 if cta = 1 then
+                    SQL.Add(' AND vendas.cod_serie IN (:SR'+IntToStr(cta))
+                 else
+                    SQL.Add(',:SR'+IntToStr(cta));
+                 cta := cta + 1;
+              end;
+           end;
+           SQL.Add(') ');
+        end;
+      end;
+
+      // Busca devolucoes de venda
+      if CheckBoxOcultaDevolucao.Checked = False then
+      begin
+        SQL.Add('UNION                                                                                                   ');
+        SQL.Add('SELECT CAST(''D'' AS CHAR(1)) as tipo,                                                                  ');
+        SQL.Add('       compras.numero,                                                                                  ');
+        SQL.Add('       CAST(''000'' as Char(3)) as sufixo,                                                              ');
+        SQL.Add('       compras.cod_serie,                                                                               ');
+        SQL.Add('       compras.cod_loja,                                                                                ');
+        SQL.Add('       vd.cod_cliente,                                                                                  ');
+        SQL.Add('       vd.cod_vendedor,                                                                                 ');
+        SQL.Add('       CAST(0 as integer) as sequencial,                                                                ');
+        SQL.Add('       compras.data_entrada as data_recebimento,                                                        ');
+        SQL.Add('       compras.total_nota as total_vendas,                                                              ');
+        SQL.Add('       cl.nome as nome_cliente,                                                                         ');
+        SQL.Add('       vn.nome as nome_vendedor,                                                                        ');
+        SQL.Add('       vn.comissao_prazo,                                                                               ');
+        SQL.Add('       vn.tipo_comissao                                                                                 ');
+        sql.add('FROM compras                                                                                            ');
+        SQL.Add('INNER JOIN cfop  cf                ON (cf.codigo         = compras.cod_cfop)                            ');
+        SQL.Add('INNER JOIN compras_documentos      on (compras_documentos.cod_loja       = compras.cod_loja     AND     ');
+        SQL.Add('                                       compras_documentos.cod_serie      = compras.cod_serie    AND     ');
+        SQL.Add('                                       compras_documentos.numero         = compras.numero       AND     ');
+        SQL.Add('                                       compras_documentos.cod_fornecedor = compras.cod_fornecedor)      ');
+        sql.add('INNER JOIN vendas vd ON (vd.cod_loja  = compras_documentos.cod_loja_documento    AND                    ');
+        sql.add('                         vd.numero    = compras_documentos.numero_documento      AND                    ');
+        sql.add('                         vd.cod_serie = compras_documentos.cod_serie_documento)                         ');
+        sql.add('INNER JOIN clientes  cl           ON (cl.codigo   = vd.cod_cliente)                                     ');
+        sql.add('INNER JOIN vendedores vn          ON (vn.codigo   = vd.cod_vendedor)                                    ');
+        SQL.Add('WHERE compras.cancelado                <> ''S''                  AND             ');
+        SQL.Add('      compras.data_entrada          BETWEEN  :Data_Inicial       and             ');
+        SQL.Add('                                             :Data_Final         and             ');
+        SQL.Add('      cf.tipo             = ''V''                                                ');
+        if EditCodigoLoja.Text <> '0000' then
+           SQL.Add('AND compras.cod_loja                = :Codigo_Loja                            ');
+        if EditCodigoVendedor.Text <> '0000' then
+           SQL.Add('AND vd.cod_vendedor                 = :Codigo_Vendedor                        ');
+
+        if not CheckBoxSeriesFinanceiro.Checked then
+        begin
+          if EditSeries.Text <> '' then
+          begin
+             cta := 1;
+             for x := 0 to CheckListBoxSeries.Items.Count -1 do
+             begin
+                if CheckListBoxSeries.Checked[X] then
+                begin
+                   if cta = 1 then
+                      SQL.Add(' AND vd.cod_serie IN (:SR'+IntToStr(cta))
+                   else
+                      SQL.Add(',:SR'+IntToStr(cta));
+                   cta := cta + 1;
+                end;
+             end;
+             SQL.Add(') ');
+          end;
+        end;
+      end;
+
+      ppGroup1.BreakName      := 'COD_VENDEDOR';
+      ParamByName('Data_Inicial').AsDate                   := DtpDataInicial.Date;
+      ParamByName('Data_Final').AsDate                     := DtpDataFinal.Date;
+      if EditCodigoLoja.Text <> '0000' then
+         ParamByName('Codigo_loja').AsInteger              := StrToInt(EditCodigoLoja.Text);
+      if EditCodigoVendedor.Text <> '0000' then
+         ParamByName('Codigo_Vendedor').AsInteger          := StrToInt(EditCodigoVendedor.Text);
+      if not CheckBoxSeriesFinanceiro.Checked then
+      begin
+        if EditSeries.Text <> '' then
+        begin
+          cta := 1;  // Inicializa o contador
+          for x := 0 to CheckListBoxSeries.Items.Count -1 do
+          begin
+             if CheckListBoxSeries.Checked[X] then
+             begin
+               ParamByName('SR'+IntToStr(cta)).AsString := CheckListBoxSeries.Items.Strings[X];
+               cta := cta + 1;
+             end;
+          end;
+        end;
+      end;
+      Open;
+      MemTableRelatorio.Close;
+      MemTableRelatorio.CreateDataSet;
+      MemTableRelatorio.Open;
+      First;
+      while not Eof do
+      begin
+        if not MemTableRelatorio.Locate('TIPO;COD_LOJA;COD_SERIE;NUMERO;SUFIXO;SEQUENCIAL',
+                                        VarArrayOf([FieldByName('TIPO').AsString,
+                                                    FieldByName('COD_LOJA').AsInteger,
+                                                    FieldByName('COD_SERIE').AsString,
+                                                    FieldByName('NUMERO').AsInteger,
+                                                    FieldByName('SUFIXO').AsString,
+                                                    FieldByName('SEQUENCIAL').AsInteger]), []) then
+        begin
+          MemTableRelatorio.Append;
+          MemTableRelatorio.CopyRecord(QueryRelatorio);
+        end
+        else begin
+          MemTableRelatorio.Edit;
+        end;
+        MemTableRelatorio.FieldByName('VALOR_COMISSAO').AsCurrency     := MemTableRelatorio.FieldByName('VALOR_COMISSAO').AsCurrency +
+                                                                          CalcularComissao();
+        MemTableRelatorio.Post;
+        Next;
+      end;
+   end;
+   if ComboBoxTipoRelatorio.ItemIndex = 0 then
+   begin
+     ppGroupHeaderBand1.Visible     := True;
+     ppDetailBand1.Visible          := True;
+     ppLineSintetico.Visible        := True;
+     ppLabelQuebraSintetico.Visible := False;
+   end
+   else begin
+     ppGroupHeaderBand1.Visible     := False;
+     ppDetailBand1.Visible          := False;
+     ppLineSintetico.Visible        := False;
+     ppLabelQuebraSintetico.Visible := True;
+   end;
+   MemTableRelatorio.First;
+   ppLabel1.Caption                            := Nome_Sistema;
+   ppLabelLoja.Caption                         := Nome_loja;
+   if CheckBoxOcultaDevolucao.Checked then
+   begin
+     ppLabelDevolucao.Text := 'Relatorio Sem Devolução';
+   end
+   else
+   begin
+     ppLabelDevolucao.Text := '';
+   end;
+   ppReportRelatorio.PrinterSetup.DocumentName := FormRelatorioComissaoVendedoresRecebidas.Caption;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.BitImpressoraClick(Sender: TObject);
+begin
+  inherited;
+  GerarRelatorio;
+  ppReportRelatorio.DeviceType := 'Printer';
+  ppReportRelatorio.Print;
+  EditCodigoLoja.SetFocus;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.BitVideoClick(Sender: TObject);
+begin
+  inherited;
+  GerarRelatorio;
+  ppReportRelatorio.DeviceType := 'Screen';
+  ppReportRelatorio.Print;
+  EditCodigoLoja.SetFocus;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.EditCodigoLojaExit(Sender: TObject);
+begin
+  inherited;
+  EditCodigoLoja.Text := CompletaZeros(EditCodigoLoja.Text,4);
+  if EditCodigoLoja.Text <> '0000' then
+   begin
+     with DataModuleDados.QueryPesquisa do
+      begin
+       SQL.Clear;
+       SQL.Add('SELECT codigo,razao FROM loja WHERE codigo = :codigo');
+       ParamByName('CODIGO').AsInteger := StrToInt(EditCodigoLoja.Text);
+       Open;
+        if Eof then begin
+           Mensagem('Codigo Loja não cadastrada.',mtError,[mbOk]);
+           EditCodigoLoja.SetFocus;
+        end;
+        EditNomeLoja.Text := FieldByName('RAZAO').AsString;
+      end;
+   end
+   else begin
+        EditNomeLoja.Text := '* TODAS AS LOJAS *'
+   end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.EditCodigoLojaEnter(Sender: TObject);
+begin
+  inherited;
+  LimpaGroupBox(GroupBox);
+  EditCodigoLoja.Text              := CompletaZeros(Codigo_Loja,4);
+  if Restricao_Vendedor then
+  begin
+    EditCodigoVendedor.Text        := Codigo_Vendedor_usuario;
+    EditCodigoVendedor.Enabled     := False;
+    SpbCodigoVendedor.Enabled      := False;
+  end
+  else begin
+    EditCodigoVendedor.Text        := '0000';
+    EditCodigoVendedor.Enabled     := True;
+    SpbCodigoVendedor.Enabled      := True;
+  end;
+  ChkImprimeFiltros.Checked        := False;
+  CheckBoxSeriesFinanceiro.Checked := False;
+  StatusBar.Panels[0].Text         := '';
+  ComboBoxTipoRelatorio.ItemIndex  := 0;
+  DtpDataInicial.DateTime          := VPDataPadraoInicial;
+  DtpDataFinal.DateTime            := VPDataPadraoFinal;
+  CheckListBoxSeries.Items.Clear;
+  with DataModuleDados.QueryPesquisa do
+  begin
+    SQL.Clear;
+    SQL.Add('SELECT codigo FROM serie WHERE tipo_serie= ''NV'' or tipo_serie = ''DP'' or tipo_serie = ''OS'' or tipo_serie = ''OQ'' or tipo_serie = ''NS''');
+    Open;
+    First;
+    while not Eof do
+    begin
+      CheckListBoxSeries.Items.Add(FieldByName('CODIGO').AsString);
+      Next;
+    end;
+  end;
+  EditCodigoLojaExit(Sender);
+  EditCodigoVendedorExit(Sender);
+  EditCodigoLoja.SelectAll;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppReportRelatorioPreviewFormCreate(
+  Sender: TObject);
+begin
+  inherited;
+  ppReportRelatorio.PreviewForm.WindowState                      := wsMaximized;
+  TppViewer(ppReportRelatorio.PreviewForm.Viewer).ZoomPercentage := 120;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.EditCodigoVendedorExit(Sender: TObject);
+begin
+  inherited;
+  EditCodigoVendedor.Text := CompletaZeros(EditCodigoVendedor.Text,4);
+  if EditCodigoVendedor.Text <> '0000' then
+  begin
+    with DataModuleDados.QueryPesquisa do
+    begin
+      SQL.Clear;
+      SQL.Add('SELECT codigo,nome FROM vendedores WHERE codigo = :codigo');
+      ParamByName('CODIGO').AsInteger := StrToInt(EditCodigoVendedor.Text);
+      Open;
+      if Eof then begin
+        Mensagem('Vendedor não cadastrado.',mtError,[mbOk]);
+        EditCodigoVendedor.SetFocus;
+      end;
+      EditNomeVendedor.Text := FieldByName('NOME').AsString;
+   end;
+   end
+   else begin
+     EditNomeVendedor.Text := '* TODOS OS VENDEDORES *'
+   end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.SpbCodigoLojaClick(Sender: TObject);
+begin
+  inherited;
+  Pesquisa2('Lojas','LOJA',['CODIGO','RAZAO'],['Codigo','Nome da Loja'],'','ATIVO = ''S''',['RAZAO'],['CODIGO'],[EditCodigoLoja],'');
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.SpbCodigoVendedorClick(Sender: TObject);
+begin
+  inherited;
+  Pesquisa2('Vendedores','VENDEDORES',['CODIGO','NOME'],['Codigo','Nome dos Vendedores'],'','ATIVO = ''S''',['NOME'],['CODIGO'],[EditCodigoVendedor],'');
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppHeaderBand1BeforePrint(Sender: TObject);
+begin
+  inherited;
+  ppVarData.AsDate             := DataModuleDados.DataServidor(true);
+  ppVarHora.AsTime             := DataModuleDados.DataServidor(False);
+  ppVarPeriodoEmissao.AsString := DateToStr(DtpDataInicial.Date)+'  A  '+DateToStr(DtpDataFinal.Date);
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppSummaryBand1BeforePrint(Sender: TObject);
+begin
+  inherited;
+  ppVarQtdRegistros.AsInteger      := MemTableRelatorio.RecordCount;
+  ppVarTotalVendasDevolucoes.Value := ppVarTotalVendas.Value     - ppVarTotalDevolucoes.Value;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.CheckBoxSeriesFinanceiroClick(
+  Sender: TObject);
+var
+   x: integer;
+begin
+  inherited;
+  for x := 0 to CheckListBoxSeries.Items.Count -1 do
+  begin
+     CheckListBoxSeries.Checked[X] := False;
+  end;
+  if CheckBoxSeriesFinanceiro.Checked  then
+  begin
+    EditSeries.Text := '* TODAS SERIES - FINANCEIRO *'
+  end
+  else begin
+    EditSeries.Text := ''
+  end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.CheckListBoxSeriesClickCheck(
+  Sender: TObject);
+var
+   x: integer;
+begin
+  inherited;
+  EditSeries.Clear;
+  for x := 0 to CheckListBoxSeries.Items.Count -1 do
+  begin
+     if CheckListBoxSeries.Checked[X] then
+     begin
+        if Editseries.Text = '' then
+        begin
+           EditSeries.Text := CheckListBoxSeries.Items.Strings[X];
+        end
+        else
+        begin
+           EditSeries.Text := EditSeries.Text + '/' + CheckListBoxSeries.Items.Strings[X];
+        end;
+     end;
+  end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppGroupHeaderBand1BeforePrint(
+  Sender: TObject);
+begin
+  inherited;
+  ppLabelQuebra.Caption           := Completazeros(BdeRelatorio.DataSource.DataSet.FieldByName('COD_VENDEDOR').AsString,4)+' - '+BdeRelatorio.DataSource.DataSet.FieldByName('NOME_VENDEDOR').AsString;
+  if BdeRelatorio.DataSource.DataSet.FieldByName('TIPO_COMISSAO').AsString = 'F' then
+  begin
+    ppLabelTipoComissao.Caption := 'TIPO COMISSÃO: PERCENTUAL FIXO';
+  end
+  else if BdeRelatorio.DataSource.DataSet.FieldByName('TIPO_COMISSAO').AsString = 'P' then
+  begin
+    ppLabelTipoComissao.Caption := 'TIPO COMISSÃO: POR PRODUTO';
+  end
+  else if BdeRelatorio.DataSource.DataSet.FieldByName('TIPO_COMISSAO').AsString = 'T' then
+  begin
+    ppLabelTipoComissao.Caption := 'TIPO COMISSÃO: POR TABELA DE PREÇO';
+  end
+  else begin
+    ppLabelTipoComissao.Caption := 'TIPO COMISSÃO: *** ERRO - CAD.VENDEDORES ***';
+  end;
+  if Zebrado then
+  begin
+    ppShapeQuebra.Brush.Color   := clGradientActiveCaption;
+    CorDetalhe                  := True;
+  end
+  else begin
+    ppShapeQuebra.Brush.Color   := clWhite;
+    CorDetalhe                  := False;
+  end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppDBTextCupomFiscalGetText(Sender: TObject;
+  var Text: String);
+begin
+  inherited;
+  // Prenche com ZEROS o numero do cupom caso exista o cupom
+  // caso contrario não mostra nada no relatorio
+  if Text = '0' then
+     Text := ''
+  else
+     Text := CompletaZeros(Text,6);
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppDetailBand1AfterPrint(
+  Sender: TObject);
+begin
+  inherited;
+  if (MemTableRelatorio.FieldByName('TIPO').AsString <> 'D') and (MemTableRelatorio.FieldByName('TIPO').AsString <> 'T')  then
+  begin
+    ppVarQtdregistros.Value       := ppVarQtdregistros.Value       + 1;
+    ppVarSubTotalVendas.Value     := ppVarSubTotalVendas.Value     + MemTableRelatorio.FieldbyName('TOTAL_VENDAS').AsCurrency;
+    ppVarSubTotalComissao.Value   := ppVarSubTotalComissao.Value   + MemTableRelatorio.FieldbyName('VALOR_COMISSAO').AsCurrency;
+    ppVarTotalVendas.Value        := ppVarTotalVendas.Value        + MemTableRelatorio.FieldbyName('TOTAL_VENDAS').AsCurrency;
+    ppVarTotalComissao.Value      := ppVarTotalComissao.Value      + MemTableRelatorio.FieldbyName('VALOR_COMISSAO').AsCurrency;
+  end
+  else begin
+    ppVarQtdDevolucoes.Value      := ppVarQtdDevolucoes.Value      + 1;
+    ppVarSubTotalDevolucoes.Value := ppVarSubTotalDevolucoes.Value + MemTableRelatorio.FieldbyName('TOTAL_VENDAS').AsCurrency;
+    ppVarSubTotalComissao.Value   := ppVarSubTotalComissao.Value   - MemTableRelatorio.FieldbyName('VALOR_COMISSAO').AsCurrency;
+    ppVarTotalDevolucoes.Value    := ppVarTotalDevolucoes.Value    + MemTableRelatorio.FieldbyName('TOTAL_VENDAS').AsCurrency;
+    ppVarTotalComissao.Value      := ppVarTotalComissao.Value      - MemTableRelatorio.FieldbyName('VALOR_COMISSAO').AsCurrency;
+  end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppDetailBand1BeforePrint(
+  Sender: TObject);
+begin
+  inherited;
+  if MemTableRelatorio.FieldByName('TIPO').AsString <> 'D' then
+  begin
+    ppDBTextCodigoLoja.Font.Color      := clBlack;
+    ppDBTextNumeroVenda.Font.Color     := clBlack;
+    ppDBTextCodigoSerie.Font.Color     := clBlack;
+    ppDBTextDataEmissao.Font.Color     := clBlack;
+    ppDBTextCodCliente.Font.Color      := clBlack;
+    ppDBTextnomeCliente.Font.Color     := clBlack;
+    ppDBTextCodVendedor.Font.Color     := clBlack;
+    ppDBTextVenda.Font.Color           := clBlack;
+    ppDBTextSufixo.Font.Color          := clBlack;
+    ppDBTextComissoes.Font.Color       := clBlack;
+  end
+  else begin
+    ppDBTextCodigoLoja.Font.Color      := clred;
+    ppDBTextNumeroVenda.Font.Color     := clred;
+    ppDBTextCodigoSerie.Font.Color     := clred;
+    ppDBTextDataEmissao.Font.Color     := clred;
+    ppDBTextCodCliente.Font.Color      := clred;
+    ppDBTextnomeCliente.Font.Color     := clred;
+    ppDBTextCodVendedor.Font.Color     := clred;
+    ppDBTextVenda.Font.Color           := clred;
+    ppDBTextSufixo.Font.Color          := clRed;
+    ppDBTextComissoes.Font.Color       := clred;
+  end;
+  if Zebrado then
+  begin
+    if CorDetalhe then
+    begin
+      ppShapeDetalhe.Brush.Color := clWhite;
+      CorDetalhe                 := False;
+    end
+    else
+    begin
+      ppShapeDetalhe.Brush.Color := clMoneyGreen;
+      CorDetalhe                 := True;
+    end;
+  end
+  else begin
+    ppShapeDetalhe.Brush.Color   := clWhite;
+  end;
+end;
+
+function TFormRelatorioComissaoVendedoresRecebidas.CalcularComissao: Currency;
+Var
+   Perc_Comissao: Double;
+   Valor: Currency;
+begin
+   Valor := 0;
+   with QueryRelatorio do
+   begin
+     Perc_Comissao    := FieldByName('COMISSAO_PRAZO').AsFloat;
+     Valor            := FieldByName('TOTAL_VENDAS').AsCurrency;
+     Result           := Valor * Perc_Comissao / 100;
+   end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.EditCodigoLojaKeyPress(
+  Sender: TObject; var Key: Char);
+begin
+  inherited;
+  key := TestaNumero(key);
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.CheckListBoxSeriesEnter(
+  Sender: TObject);
+begin
+  inherited;
+  CheckListBoxSeries.Height := 91;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.CheckListBoxSeriesExit(
+  Sender: TObject);
+begin
+  inherited;
+  CheckListBoxSeries.Height := 19;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppGroupFooterBand1BeforePrint(
+  Sender: TObject);
+begin
+  inherited;
+  ppLabelQuebraSintetico.Caption  := Completazeros(BdeRelatorio.DataSource.DataSet.FieldByName('COD_VENDEDOR').AsString,4)+' - '+BdeRelatorio.DataSource.DataSet.FieldByName('NOME_VENDEDOR').AsString;
+  if ComboBoxTipoRelatorio.ItemIndex = 0 then
+  begin
+    if Zebrado then
+    begin
+      if CorDetalhe then
+      begin
+        ppShapeSintetico.Brush.Color := clWhite;
+        CorDetalhe                   := False;
+      end
+      else
+      begin
+        ppShapeSintetico.Brush.Color := clMoneyGreen;
+        CorDetalhe                   := True;
+      end;
+    end
+    else begin
+      ppShapeSintetico.Brush.Color   := clWhite;
+    end;
+  end
+  else begin
+    if Zebrado then
+    begin
+      if CorSintetico then
+      begin
+        ppShapeSintetico.Brush.Color := clWhite;
+        CorSintetico                 := False;
+      end
+      else
+      begin
+        ppShapeSintetico.Brush.Color := clMoneyGreen;
+        CorSintetico                 := True;
+      end;
+    end
+    else begin
+      ppShapeSintetico.Brush.Color   := clWhite;
+    end;
+  end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppDBTextCodPagtoGetText(
+  Sender: TObject; var Text: String);
+begin
+  inherited;
+  if MemTableRelatorio.FieldByName('TIPO').AsString = 'D' then
+  begin
+    Text := 'DEV.';
+  end;
+end;
+
+procedure TFormRelatorioComissaoVendedoresRecebidas.ppGroupFooterBand1AfterPrint(
+  Sender: TObject);
+begin
+  inherited;
+  ppVarSubTotalVendas.Value     := 0;
+  ppVarSubTotalDevolucoes.Value := 0;
+  ppVarSubTotalComissao.Value   := 0;
+end;
+
+end.
+{*******************************************************************************
+| Historico
+|*******************************************************************************
+|
+|
+********************************************************************************
+
+

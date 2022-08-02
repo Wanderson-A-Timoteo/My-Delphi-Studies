@@ -1,0 +1,149 @@
+unit PesquisarCrianca;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Comp.Client, System.DateUtils, Vcl.ExtCtrls;
+
+type
+  TFormPesquisarCrianca = class(TForm)
+    EditNome: TEdit;
+    LabelNome: TLabel;
+    SpbPesquisar: TSpeedButton;
+    DbgPesquisarCrianca: TDBGrid;
+    PanelContainer: TPanel;
+    LabelTitulo: TLabel;
+    PanelBarraNome: TPanel;
+    PanelBarraTitulo: TPanel;
+    SpbCadastrar: TSpeedButton;
+    SpbSair: TSpeedButton;
+    PanelBtnCadastrar: TPanel;
+    PanelBtnSair: TPanel;
+    btnFechar: TSpeedButton;
+    procedure SpbPesquisarClick(Sender: TObject);
+    procedure EditNomeKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure btnSairClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpbCadastrarClick(Sender: TObject);
+    procedure SpbCadastrarMouseEnter(Sender: TObject);
+    procedure SpbCadastrarMouseLeave(Sender: TObject);
+    procedure SpbSairMouseEnter(Sender: TObject);
+    procedure SpbSairMouseLeave(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
+    procedure btnFecharMouseEnter(Sender: TObject);
+    procedure btnFecharMouseLeave(Sender: TObject);
+    procedure DbgPesquisarCriancaDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+      State: TGridDrawState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPesquisarCrianca: TFormPesquisarCrianca;
+
+implementation
+
+{$R *.dfm}
+
+uses DMDados, CadastroCrianca, Fontdata.Utils, CadastroCriancas;
+
+procedure TFormPesquisarCrianca.SpbCadastrarMouseEnter(Sender: TObject);
+begin
+  btnCadastrar.Font.Color := clBlack;
+end;
+
+procedure TFormPesquisarCrianca.SpbCadastrarMouseLeave(Sender: TObject);
+begin
+  btnCadastrar.Font.Color := clWhite;
+end;
+
+procedure TFormPesquisarCrianca.btnFecharClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFormPesquisarCrianca.btnFecharMouseEnter(Sender: TObject);
+begin
+  btnFechar.Font.Color := clRed;
+end;
+
+procedure TFormPesquisarCrianca.btnFecharMouseLeave(Sender: TObject);
+begin
+  btnFechar.Font.Color := $00DFDFDF;
+end;
+
+procedure TFormPesquisarCrianca.btnSairClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFormPesquisarCrianca.SpbSairMouseEnter(Sender: TObject);
+begin
+  btnSair.Font.Color := clBlack;
+end;
+
+procedure TFormPesquisarCrianca.SpbSairMouseLeave(Sender: TObject);
+begin
+  btnSair.Font.Color := clWhite;
+end;
+
+procedure TFormPesquisarCrianca.DbgPesquisarCriancaDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
+  Column: TColumn; State: TGridDrawState);
+begin
+  TUtilsVCL.ZebrarDBGrid(DbgPesquisarCrianca, Rect, DataCol, Column, State);
+end;
+
+procedure TFormPesquisarCrianca.EditNomeKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if key = VK_RETURN then
+    btnPesquisarClick(Sender);
+end;
+
+procedure TFormPesquisarCrianca.FormActivate(Sender: TObject);
+begin
+  PanelContainer.Left := Round( (FormPesquisarCrianca.Width - PanelContainer.Width) / 2);
+  PanelContainer.Top  := Round( (FormPesquisarCrianca.Height - PanelContainer.Height) / 2);
+end;
+
+procedure TFormPesquisarCrianca.FormShow(Sender: TObject);
+begin
+  btnPesquisarClick(Sender);
+end;
+
+procedure TFormPesquisarCrianca.SpbPesquisarClick(Sender: TObject);
+var
+  LDataHoraAtual: TDateTime;
+begin
+  LDataHoraAtual := DataModuleDados.DataServidor(False);
+  with DataModuleDados.QryPesquisarCrianca do
+  begin
+    Close;
+    ParamByName('nome').AsString                := '%' + EditNome.Text + '%';
+    ParamByName('data_hora_inicial').AsDateTime := IncHour(LDataHoraAtual, -12);
+    ParamByName('data_hora_final').AsDateTime   := LDataHoraAtual;
+    Open;
+  end;
+end;
+
+procedure TFormPesquisarCrianca.SpbCadastrarClick(Sender: TObject);
+begin
+  try
+     FormCadastroCriancas := TFormCadastroCriancas.Create(nil);
+     FormCadastroCriancas.ShowModal;
+   finally
+     FreeAndNil(FormCadastroCrianca);
+   end;
+end;
+
+procedure TFormPesquisarCrianca.SpbSairClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.
