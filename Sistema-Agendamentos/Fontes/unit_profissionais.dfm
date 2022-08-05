@@ -162,10 +162,11 @@ object form_profissionais: Tform_profissionais
       end
       object MaskEditCelular: TMaskEdit
         Left = 420
-        Top = 243
+        Top = 246
         Width = 250
-        Height = 22
+        Height = 20
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         EditMask = '(##) #.####-####;1;_'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
@@ -247,13 +248,14 @@ object form_profissionais: Tform_profissionais
       object EditNomeProfissional: TEdit
         Tag = 5
         Left = 10
-        Top = 168
+        Top = 174
         Width = 660
-        Height = 22
-        Hint = 'Nome do Profissional'
+        Height = 20
+        Hint = '  -   Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -297,13 +299,14 @@ object form_profissionais: Tform_profissionais
       object EditEspecialidade: TEdit
         Tag = 5
         Left = 10
-        Top = 240
+        Top = 246
         Width = 375
-        Height = 22
-        Hint = 'Especialidade do Profissional'
+        Height = 20
+        Hint = '  -   Especialidade do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -356,7 +359,7 @@ object form_profissionais: Tform_profissionais
           item
             Expanded = False
             FieldName = 'id_profissional'
-            Title.Caption = 'C'#243'd.'
+            Title.Caption = 'C'#243'digo'
             Title.Color = clBtnShadow
             Title.Font.Charset = DEFAULT_CHARSET
             Title.Font.Color = 11976552

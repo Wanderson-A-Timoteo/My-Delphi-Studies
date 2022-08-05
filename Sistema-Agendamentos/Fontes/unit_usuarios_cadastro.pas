@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
-  Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  Vcl.Mask, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
   FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
@@ -37,11 +37,16 @@ type
     LabelRepetirSenha: TLabel;
     EditRepetirSenha: TEdit;
     Label4: TLabel;
+    PanelBordaLogin: TPanel;
+    EditLogin: TEdit;
+    Label3: TLabel;
+    Label5: TLabel;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonSalvarMouseEnter(Sender: TObject);
     procedure SpeedButtonSalvarMouseLeave(Sender: TObject);
     procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
+    procedure SpeedButtonSalvarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -56,7 +61,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes;
+uses unit_dados, unit_funcoes;
 
 procedure Tform_usuarios_cadastro.SpeedButtonCancelarClick(Sender: TObject);
 begin
@@ -71,6 +76,53 @@ end;
 procedure Tform_usuarios_cadastro.SpeedButtonCancelarMouseLeave(Sender: TObject);
 begin
   SpeedButtonCancelar.Font.Color := clWhite;
+end;
+
+procedure Tform_usuarios_cadastro.SpeedButtonSalvarClick(Sender: TObject);
+var
+  sErro : String;
+begin
+  prcValidarCamposObrigatorios(form_usuarios_cadastro);
+
+  if EditSenha.Text <> EditRepetirSenha.Text then
+  begin
+    fnc_criar_mensagem('CADASTRAR USUÁRIO',
+                       'Erro ao Repetir Senha do Usuário',
+                       'Senhas digitadas não conferem!',
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       'ERRO');
+
+    EditSenha.SetFocus;
+    Abort;
+  end;
+
+  with DataModule1.Usuarios do
+  begin
+     ds_usuario    := EditNomeUsuario.Text;
+     ds_login      := EditLogin.Text;
+     ds_senha      := EditSenha.Text;
+     //cd_permissao  := dbl_cmb_grupo_usuarios.KeyValue;
+
+     if fnc_operacoes_crud('INSERIR', '', sErro) then
+     begin
+        fnc_criar_mensagem('CADASTRAR USUÁRIO',
+                           'Inserir/Alterar Dados do Usuário',
+                           'Dados salvo com sucesso!',
+                           ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
+                           'ERRO');
+
+        Close;
+     end else
+     begin
+        fnc_criar_mensagem('CADASTRAR USUÁRIO',
+                           'ERRO ao Inserir/Alterar Dados do Usuário',
+                           'Erro: ' + sErro,
+                           ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                           'ERRO');
+
+        EditNomeUsuario.SetFocus;
+     end;
+  end;
 end;
 
 procedure Tform_usuarios_cadastro.SpeedButtonSalvarMouseEnter(Sender: TObject);

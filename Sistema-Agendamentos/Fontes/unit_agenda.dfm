@@ -461,12 +461,14 @@ object form_agenda: Tform_agenda
       end
       object EditNomeCliente: TEdit
         Left = 10
-        Top = 245
+        Top = 247
         Width = 765
-        Height = 22
+        Height = 20
+        Hint = 'Nome do Cliente'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -556,7 +558,7 @@ object form_agenda: Tform_agenda
         Top = 166
         Width = 443
         Height = 29
-        Hint = 'Nome do Profissional'
+        Hint = '  -   Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         Font.Charset = DEFAULT_CHARSET
@@ -576,7 +578,7 @@ object form_agenda: Tform_agenda
         Top = 166
         Width = 308
         Height = 32
-        Hint = 'Selecione uma data '
+        Hint = '  -   Selecione uma data '
         CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
         CalendarHeaderInfo.DaysOfWeekFont.Color = clWindowText
         CalendarHeaderInfo.DaysOfWeekFont.Height = -13

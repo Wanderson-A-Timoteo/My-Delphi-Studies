@@ -443,9 +443,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualNomeServidor: TEdit
         Left = 47
-        Top = 104
+        Top = 110
         Width = 517
-        Height = 29
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -461,9 +461,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualBaseDados: TEdit
         Left = 47
-        Top = 170
+        Top = 177
         Width = 833
-        Height = 29
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -479,9 +479,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualUsuario: TEdit
         Left = 49
-        Top = 242
+        Top = 248
         Width = 219
-        Height = 29
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -497,9 +497,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualSenha: TEdit
         Left = 279
-        Top = 242
+        Top = 248
         Width = 276
-        Height = 24
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -516,9 +516,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualPorta: TEdit
         Left = 591
-        Top = 104
+        Top = 110
         Width = 289
-        Height = 29
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -624,9 +624,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
       object EditAtualDriverID: TEdit
         Left = 594
-        Top = 242
+        Top = 248
         Width = 281
-        Height = 24
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -845,10 +845,10 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditNovoNomeServidor: TEdit
         Tag = 5
         Left = 50
-        Top = 96
+        Top = 104
         Width = 526
-        Height = 29
-        Hint = 'Nome do Servidor'
+        Height = 20
+        Hint = '  -   Nome do Servidor'
         BevelInner = bvNone
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
@@ -862,10 +862,10 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditNovaSenha: TEdit
         Tag = 5
         Left = 279
-        Top = 226
+        Top = 232
         Width = 276
-        Height = 29
-        Hint = 'Senha'
+        Height = 20
+        Hint = '  -   Senha'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -881,10 +881,10 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditNovaBaseDados: TEdit
         Tag = 5
         Left = 50
-        Top = 162
+        Top = 172
         Width = 830
-        Height = 30
-        Hint = 'Nome da Base de Dados / Caminho do Banco de Dados '
+        Height = 20
+        Hint = '  -   Nome da Base de Dados / Caminho do Banco de Dados '
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -899,10 +899,10 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditNovoUsuario: TEdit
         Tag = 5
         Left = 46
-        Top = 226
+        Top = 232
         Width = 221
-        Height = 29
-        Hint = 'Login '
+        Height = 20
+        Hint = '  -   Login '
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -917,10 +917,10 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditNovaPorta: TEdit
         Tag = 5
         Left = 594
-        Top = 96
+        Top = 104
         Width = 289
-        Height = 29
-        Hint = 'Porta de Conex'#227'o'
+        Height = 20
+        Hint = '  -   Porta de Conex'#227'o'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
@@ -1031,10 +1031,10 @@ object form_configurar_servidor: Tform_configurar_servidor
       object EditNovaDriverID: TEdit
         Tag = 5
         Left = 593
-        Top = 226
+        Top = 232
         Width = 282
-        Height = 26
-        Hint = 'Senha'
+        Height = 20
+        Hint = '  -   Driver ID do Banco de Dados'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone

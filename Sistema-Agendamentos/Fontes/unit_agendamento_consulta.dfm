@@ -278,12 +278,13 @@ object form_agendamento_consulta: Tform_agendamento_consulta
       end
       object EditObservacoes: TEdit
         Left = 10
-        Top = 298
+        Top = 300
         Width = 660
-        Height = 22
+        Height = 20
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -347,7 +348,7 @@ object form_agendamento_consulta: Tform_agendamento_consulta
         Top = 166
         Width = 660
         Height = 29
-        Hint = 'Nome do Profissional'
+        Hint = '  -   Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         Font.Charset = DEFAULT_CHARSET
@@ -367,7 +368,7 @@ object form_agendamento_consulta: Tform_agendamento_consulta
         Top = 226
         Width = 343
         Height = 32
-        Hint = 'Selecione uma data '
+        Hint = '  -   Selecione uma data '
         CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
         CalendarHeaderInfo.DaysOfWeekFont.Color = clWindowText
         CalendarHeaderInfo.DaysOfWeekFont.Height = -13
@@ -395,8 +396,9 @@ object form_agendamento_consulta: Tform_agendamento_consulta
         Top = 229
         Width = 145
         Height = 29
-        Hint = 'Selecione a hora'
+        Hint = '  -   Selecione a hora'
         Style = csDropDownList
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -16
@@ -430,8 +432,9 @@ object form_agendamento_consulta: Tform_agendamento_consulta
         Top = 229
         Width = 145
         Height = 29
-        Hint = 'Selecione o minuto'
+        Hint = '  -   Selecione o minuto'
         Style = csDropDownList
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -16

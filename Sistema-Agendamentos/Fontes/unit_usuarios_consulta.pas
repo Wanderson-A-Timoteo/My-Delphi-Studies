@@ -16,7 +16,6 @@ type
     PanelContainer: TPanel;
     LabelConsultaNomeCliente: TLabel;
     LabelTituloConsultarUsuarios: TLabel;
-    PanelBotoesConsultarCancelarCadastrarCliente: TPanel;
     PanelBotaoConsultar: TPanel;
     SpeedButtonConsultarUsuario: TSpeedButton;
     EditConsultaNomeUsuario: TEdit;
@@ -33,7 +32,7 @@ type
     labelMsnDELouEdit: TLabel;
     PanelBotaoSelecionarCliente: TPanel;
     SpeedButtonSelecionarUsuario: TSpeedButton;
-    Panel1: TPanel;
+    PanelBordaGrid: TPanel;
     procedure SpeedButtonCancelarConsultaClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SpeedButtonCancelarConsultaMouseEnter(Sender: TObject);
@@ -43,6 +42,10 @@ type
     procedure SpeedButtonSelecionarUsuarioMouseEnter(Sender: TObject);
     procedure SpeedButtonSelecionarUsuarioMouseLeave(Sender: TObject);
     procedure SpeedButtonCadastrarNovoUsuarioClick(Sender: TObject);
+    procedure EditConsultaNomeUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure SpeedButtonConsultarUsuarioClick(Sender: TObject);
+    procedure SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
+    procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,8 +61,31 @@ implementation
 {$R *.dfm}
 
 uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens, unit_agendamento, unit_agenda, classe.agendamento,
-  unit_cliente_consulta, unit_usuarios_cadastro;
+  unit_cliente_consulta, unit_usuarios_cadastro, classe.usuarios;
 
+
+procedure Tform_usuario_consulta.EditConsultaNomeUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  sErro : String;
+begin
+  if key = VK_RETURN then
+  begin
+    if DataModule1.Usuarios.fnc_operacoes_crud('CONSULTAR', EditConsultaNomeUsuario.Text, sErro) then
+    begin
+      ds_usuario_consulta.DataSet := DataModule1.Usuarios.QryConsulta;
+      // prcAjustaTamanhoLinha(dbg_Registros, 30);
+    end else
+    begin
+      fnc_criar_mensagem('CONSULTAR USUÁRIO',
+                         'Erro ao Consultar Usuário',
+                         sErro,
+                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                         'ERRO');
+
+      EditConsultaNomeUsuario.SetFocus;
+    end;
+  end;
+end;
 
 procedure Tform_usuario_consulta.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
@@ -103,6 +129,36 @@ end;
 procedure Tform_usuario_consulta.SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
 begin
   SpeedButtonCancelarConsulta.Font.Color := clWhite;
+end;
+
+procedure Tform_usuario_consulta.SpeedButtonConsultarUsuarioClick(Sender: TObject);
+var
+  sErro : String;
+begin
+  if DataModule1.Usuarios.fnc_operacoes_crud('CONSULTAR', EditConsultaNomeUsuario.Text, sErro) then
+  begin
+    ds_usuario_consulta.DataSet := DataModule1.Usuarios.QryConsulta;
+    // prcAjustaTamanhoLinha(dbg_Registros, 30);
+  end else
+  begin
+    fnc_criar_mensagem('CONSULTAR USUÁRIO',
+                       'Erro ao Consultar Usuário',
+                       sErro,
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       'ERRO');
+
+    EditConsultaNomeUsuario.SetFocus;
+  end;
+end;
+
+procedure Tform_usuario_consulta.SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
+begin
+  SpeedButtonConsultarUsuario.Font.Color := $00591A05;
+end;
+
+procedure Tform_usuario_consulta.SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
+begin
+  SpeedButtonConsultarUsuario.Font.Color := clWhite;
 end;
 
 procedure Tform_usuario_consulta.SpeedButtonSelecionarUsuarioMouseEnter(Sender: TObject);

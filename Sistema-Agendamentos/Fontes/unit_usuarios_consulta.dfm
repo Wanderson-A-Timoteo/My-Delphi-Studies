@@ -115,51 +115,45 @@ object form_usuario_consulta: Tform_usuario_consulta
         ParentFont = False
         WordWrap = True
       end
-      object PanelBotoesConsultarCancelarCadastrarCliente: TPanel
+      object PanelBotaoConsultar: TPanel
         Left = 573
         Top = 160
         Width = 103
         Height = 35
         BevelOuter = bvNone
-        TabOrder = 2
-        object PanelBotaoConsultar: TPanel
-          Left = 0
-          Top = 0
-          Width = 106
-          Height = 35
-          Align = alLeft
-          Anchors = [akLeft, akBottom]
-          BevelOuter = bvNone
-          Color = 11976552
-          ParentBackground = False
-          TabOrder = 0
-          object SpeedButtonConsultarUsuario: TSpeedButton
-            Left = 2
-            Top = 2
-            Width = 99
-            Height = 31
-            Align = alCustom
-            Caption = 'Consultar'
-            Flat = True
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWhite
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
+        Color = 11976552
+        ParentBackground = False
+        TabOrder = 1
+        object SpeedButtonConsultarUsuario: TSpeedButton
+          Left = 2
+          Top = 2
+          Width = 99
+          Height = 31
+          Align = alCustom
+          Caption = 'Consultar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          OnClick = SpeedButtonConsultarUsuarioClick
+          OnMouseEnter = SpeedButtonConsultarUsuarioMouseEnter
+          OnMouseLeave = SpeedButtonConsultarUsuarioMouseLeave
         end
       end
       object EditConsultaNomeUsuario: TEdit
         Tag = 5
-        Left = 16
-        Top = 168
-        Width = 550
-        Height = 22
-        Hint = 'Nome do Usu'#225'rio'
+        Left = 10
+        Top = 173
+        Width = 557
+        Height = 20
+        Hint = '  -   Nome do Usu'#225'rio'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -167,6 +161,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
+        OnKeyDown = EditConsultaNomeUsuarioKeyDown
       end
       object PanelBordaConsultaNomeCliente: TPanel
         Left = 10
@@ -182,7 +177,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 5
       end
       object dbg_registros_consulta_usuarios: TDBGrid
         Left = 10
@@ -201,7 +196,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         Font.Style = [fsBold]
         Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
         ParentFont = False
-        TabOrder = 3
+        TabOrder = 2
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clSilver
         TitleFont.Height = -12
@@ -210,7 +205,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         Columns = <
           item
             Expanded = False
-            FieldName = 'id_usuario'
+            FieldName = 'id_usuarios'
             Title.Caption = 'C'#243'digo'
             Title.Font.Charset = DEFAULT_CHARSET
             Title.Font.Color = 11976552
@@ -229,7 +224,7 @@ object form_usuario_consulta: Tform_usuario_consulta
             Title.Font.Height = -16
             Title.Font.Name = 'Segoe UI'
             Title.Font.Style = [fsBold]
-            Width = 525
+            Width = 500
             Visible = True
           end>
       end
@@ -239,7 +234,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         Width = 663
         Height = 50
         BevelOuter = bvNone
-        TabOrder = 4
+        TabOrder = 3
         object PanelBotaoCancelar: TPanel
           Left = 230
           Top = 0
@@ -284,7 +279,7 @@ object form_usuario_consulta: Tform_usuario_consulta
             Width = 196
             Height = 46
             Align = alCustom
-            Caption = 'Cadastrar Novo Usuario'
+            Caption = 'Cadastrar Usu'#225'rio'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite
@@ -326,12 +321,11 @@ object form_usuario_consulta: Tform_usuario_consulta
           end
         end
       end
-      object Panel1: TPanel
+      object PanelBordaGrid: TPanel
         Left = 10
         Top = 541
         Width = 663
         Height = 2
-        Caption = 'PanelBorda'
         Color = 5839365
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
@@ -340,7 +334,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 4
       end
     end
   end

@@ -612,10 +612,10 @@ object form_clientes: Tform_clientes
         object MaskEditCelular: TMaskEdit
           Tag = 5
           Left = 193
-          Top = 476
+          Top = 478
           Width = 150
-          Height = 22
-          Hint = 'Celular'
+          Height = 20
+          Hint = '  -   Celular'
           BorderStyle = bsNone
           EditMask = '(##) #.####-####;1;_'
           Font.Charset = DEFAULT_CHARSET
@@ -732,13 +732,14 @@ object form_clientes: Tform_clientes
         object EditNomeCliente: TEdit
           Tag = 5
           Left = 10
-          Top = 117
+          Top = 121
           Width = 660
-          Height = 29
-          Hint = 'Nome do Cliente'
+          Height = 20
+          Hint = '  -   Nome do Cliente'
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -782,12 +783,14 @@ object form_clientes: Tform_clientes
         object EditEndereco: TEdit
           Tag = 5
           Left = 10
-          Top = 262
+          Top = 268
           Width = 543
-          Height = 22
+          Height = 20
+          Hint = '  -   Endere'#231'o'
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -814,9 +817,9 @@ object form_clientes: Tform_clientes
         end
         object MaskEditTelefoneFixo: TMaskEdit
           Left = 10
-          Top = 476
+          Top = 478
           Width = 150
-          Height = 22
+          Height = 20
           BorderStyle = bsNone
           EditMask = '(##) ####-####;1;_'
           Font.Charset = DEFAULT_CHARSET
@@ -847,12 +850,13 @@ object form_clientes: Tform_clientes
         end
         object EditComplemento: TEdit
           Left = 10
-          Top = 394
-          Width = 487
-          Height = 22
+          Top = 396
+          Width = 660
+          Height = 20
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -879,12 +883,13 @@ object form_clientes: Tform_clientes
         end
         object EditObservacoes: TEdit
           Left = 10
-          Top = 540
+          Top = 547
           Width = 654
-          Height = 22
+          Height = 20
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -928,10 +933,10 @@ object form_clientes: Tform_clientes
         object MaskEditDataNascimento: TMaskEdit
           Tag = 5
           Left = 336
-          Top = 194
+          Top = 195
           Width = 160
-          Height = 29
-          Hint = 'Data de Nascimento'
+          Height = 20
+          Hint = '  -   Data de Nascimento'
           BorderStyle = bsNone
           EditMask = '##/##/####;1;_'
           Font.Charset = DEFAULT_CHARSET
@@ -980,12 +985,14 @@ object form_clientes: Tform_clientes
         object EditNumero: TEdit
           Tag = 5
           Left = 575
-          Top = 262
+          Top = 268
           Width = 95
-          Height = 22
+          Height = 20
+          Hint = '  -   N'#250'mero'
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -997,11 +1004,12 @@ object form_clientes: Tform_clientes
         object MaskEditRG: TMaskEdit
           Tag = 5
           Left = 167
-          Top = 194
+          Top = 195
           Width = 150
-          Height = 22
-          Hint = 'RG'
+          Height = 20
+          Hint = '  -   RG'
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -1029,10 +1037,10 @@ object form_clientes: Tform_clientes
         object MaskEditCPF: TMaskEdit
           Tag = 5
           Left = 10
-          Top = 194
+          Top = 195
           Width = 147
-          Height = 22
-          Hint = 'CPF'
+          Height = 20
+          Hint = '  -   CPF'
           BorderStyle = bsNone
           EditMask = '###.###.###-##;1;_'
           Font.Charset = DEFAULT_CHARSET
@@ -1065,10 +1073,10 @@ object form_clientes: Tform_clientes
         object MaskEditCEP: TMaskEdit
           Tag = 5
           Left = 520
-          Top = 194
+          Top = 195
           Width = 105
-          Height = 28
-          Hint = 'CEP'
+          Height = 20
+          Hint = '  -   CEP'
           BorderStyle = bsNone
           EditMask = '##.###-###;1;_'
           Font.Charset = DEFAULT_CHARSET
@@ -1117,13 +1125,14 @@ object form_clientes: Tform_clientes
         object EditBairro: TEdit
           Tag = 5
           Left = 10
-          Top = 327
+          Top = 333
           Width = 247
-          Height = 22
-          Hint = 'Bairro'
+          Height = 20
+          Hint = '  -   Bairro'
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -1135,13 +1144,14 @@ object form_clientes: Tform_clientes
         object EditCidade: TEdit
           Tag = 5
           Left = 290
-          Top = 328
+          Top = 334
           Width = 259
-          Height = 22
-          Hint = 'Cidade'
+          Height = 20
+          Hint = '  -   Cidade'
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
@@ -1169,13 +1179,14 @@ object form_clientes: Tform_clientes
         object EditUF: TEdit
           Tag = 5
           Left = 575
-          Top = 327
+          Top = 333
           Width = 92
-          Height = 22
-          Hint = 'UF'
+          Height = 20
+          Hint = '  -   UF'
           BevelInner = bvNone
           BevelOuter = bvNone
           BorderStyle = bsNone
+          CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16

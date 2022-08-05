@@ -157,14 +157,15 @@ object form_cliente_consulta: Tform_cliente_consulta
       end
       object EditConsultaNomeCliente: TEdit
         Tag = 5
-        Left = 16
-        Top = 168
-        Width = 550
-        Height = 22
-        Hint = 'Nome do Profissional'
+        Left = 10
+        Top = 174
+        Width = 556
+        Height = 20
+        Hint = '  -   Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -302,7 +303,7 @@ object form_cliente_consulta: Tform_cliente_consulta
             Width = 196
             Height = 46
             Align = alCustom
-            Caption = 'Cadastrar Novo Cliente'
+            Caption = 'Cadastrar Cliente'
             Flat = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWhite
@@ -325,7 +326,6 @@ object form_cliente_consulta: Tform_cliente_consulta
           Color = 11976552
           ParentBackground = False
           TabOrder = 2
-          ExplicitHeight = 49
           object SpeedButtonSelecionarCliente: TSpeedButton
             Left = 2
             Top = 2

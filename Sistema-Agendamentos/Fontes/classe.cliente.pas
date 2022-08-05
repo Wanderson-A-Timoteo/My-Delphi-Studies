@@ -2,7 +2,7 @@ unit classe.cliente;
 
 interface
 
-uses FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms;
+uses FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms, Data.DB;
 
 type
   TCliente = class
@@ -103,6 +103,7 @@ begin
 
     QryConsulta.ParamByName('p_texto').AsString := '%'+Texto+'%';
     QryConsulta.Open;
+    TIntegerField(QryConsulta.FieldByName('id_cliente')).DisplayFormat := '0000';  // use Data.DB
   finally
     Result := QryConsulta;
   end;

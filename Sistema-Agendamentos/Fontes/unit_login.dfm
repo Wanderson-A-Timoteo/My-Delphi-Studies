@@ -181,7 +181,7 @@ object form_login: Tform_login
       end
       object Label4: TLabel
         Left = 199
-        Top = 663
+        Top = 665
         Width = 97
         Height = 17
         Caption = '(65) 9.9292-5286'
@@ -2973,10 +2973,11 @@ object form_login: Tform_login
         Left = 3
         Top = 24
         Width = 363
-        Height = 27
-        Hint = 'Nome do Usu'#225'rio/Login'
+        Height = 20
+        Hint = '  -   Usu'#225'rio'
         Align = alTop
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -2984,6 +2985,7 @@ object form_login: Tform_login
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
+        ExplicitTop = 25
       end
       object pnlBordaUsuario: TPanel
         Left = 0
@@ -3030,10 +3032,11 @@ object form_login: Tform_login
         Left = 3
         Top = 24
         Width = 359
-        Height = 27
-        Hint = 'Senha'
+        Height = 20
+        Hint = '  -   Senha'
         Align = alTop
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -3042,6 +3045,7 @@ object form_login: Tform_login
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
+        ExplicitTop = 25
       end
       object pnlBordaSenha: TPanel
         Left = 0

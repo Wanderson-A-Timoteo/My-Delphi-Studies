@@ -3,7 +3,7 @@ unit classe.profissionais;
 interface
 
 uses
-  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms;
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms, Data.DB;
 
 type
   TProfissionais = class
@@ -69,6 +69,7 @@ begin
 
     QueryConsulta.ParamByName('p_texto').AsString := '%'+texto+'%';
     QueryConsulta.Open;
+    TIntegerField(QueryConsulta.FieldByName('id_profissional')).DisplayFormat := '0000';  // use Data.DB
   finally
     Result := QueryConsulta;
   end;

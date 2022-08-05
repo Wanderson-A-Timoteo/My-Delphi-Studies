@@ -570,7 +570,7 @@ object form_agendamento: Tform_agendamento
         Top = 158
         Width = 624
         Height = 29
-        Hint = 'Nome do Profissional'
+        Hint = '  -   Nome do Profissional'
         BevelInner = bvNone
         BevelOuter = bvNone
         Font.Charset = DEFAULT_CHARSET
@@ -602,10 +602,10 @@ object form_agendamento: Tform_agendamento
       object MaskEditData: TMaskEdit
         Tag = 5
         Left = 50
-        Top = 276
+        Top = 278
         Width = 130
-        Height = 22
-        Hint = 'Data de Agendamento'
+        Height = 20
+        Hint = '  -   Data de Agendamento'
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -626,10 +626,10 @@ object form_agendamento: Tform_agendamento
       object MaskEditHora: TMaskEdit
         Tag = 5
         Left = 255
-        Top = 276
+        Top = 278
         Width = 127
-        Height = 22
-        Hint = 'Hor'#225'rio de Agendamento'
+        Height = 20
+        Hint = '  -   Hor'#225'rio de Agendamento'
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -649,9 +649,9 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditTelefoneFixo: TMaskEdit
         Left = 15
-        Top = 450
+        Top = 454
         Width = 130
-        Height = 25
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -671,9 +671,9 @@ object form_agendamento: Tform_agendamento
       end
       object MaskEditCelular: TMaskEdit
         Left = 252
-        Top = 449
+        Top = 454
         Width = 130
-        Height = 25
+        Height = 20
         TabStop = False
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -836,12 +836,13 @@ object form_agendamento: Tform_agendamento
       end
       object EditObservacoes: TEdit
         Left = 15
-        Top = 527
+        Top = 537
         Width = 655
-        Height = 30
+        Height = 20
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
         Font.Height = -16
@@ -871,9 +872,10 @@ object form_agendamento: Tform_agendamento
         Top = 385
         Width = 625
         Height = 25
-        Hint = 'Nome do Cliente'
+        Hint = '  -   Nome do Cliente'
         TabStop = False
         BorderStyle = bsNone
+        CharCase = ecUpperCase
         Color = clBtnFace
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 11976552
