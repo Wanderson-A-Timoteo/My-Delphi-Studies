@@ -46,6 +46,7 @@ type
     procedure SpeedButtonConsultarUsuarioClick(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
+    procedure dbg_registros_consulta_usuariosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -63,6 +64,32 @@ implementation
 uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens, unit_agendamento, unit_agenda, classe.agendamento,
   unit_cliente_consulta, unit_usuarios_cadastro, classe.usuarios;
 
+
+procedure Tform_usuario_consulta.dbg_registros_consulta_usuariosKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+var
+  sErro : String;
+begin
+   if (NOT ( dbg_registros_consulta_usuarios.DataSource.DataSet.IsEmpty ) ) and ( key = VK_DELETE )
+   and ( fnc_criar_mensagem('CONFIRMAÇÃO',
+                          'Excluir Dados do Usuário',
+                          'Deseja excluir este Usuário?',
+                          ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                          'CORFIRMA')) then
+  begin
+    if (not ( DataModule1.Usuarios.fnc_operacoes_crud('EXCLUIR',
+               dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('id_usuarios').AsString,
+               sErro))) then
+    begin
+      fnc_criar_mensagem('EXCLUIR USUÁRIO',
+                         'Erro ao excluir Usuário',
+                         sErro,
+                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                         'ERRO');
+    end;
+
+  end;
+end;
 
 procedure Tform_usuario_consulta.EditConsultaNomeUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 var

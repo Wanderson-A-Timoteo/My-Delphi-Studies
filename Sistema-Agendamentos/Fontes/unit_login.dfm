@@ -74,23 +74,16 @@ object form_login: Tform_login
     end
     object Label9: TLabel
       Left = 768
-      Top = 89
-      Width = 72
-      Height = 37
-      Caption = 'Login'
+      Top = 138
+      Width = 115
+      Height = 54
+      Caption = 'Entrar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 5839365
-      Font.Height = -27
+      Font.Height = -40
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-    end
-    object Label12: TLabel
-      Left = 640
-      Top = 439
-      Width = 110
-      Height = 17
-      Caption = 'Esqueceu a senha?'
     end
     object SpeedButton2: TSpeedButton
       Left = 1048
@@ -2947,7 +2940,7 @@ object form_login: Tform_login
     end
     object pnlNomeUsuario: TPanel
       Left = 640
-      Top = 169
+      Top = 264
       Width = 369
       Height = 49
       BevelOuter = bvNone
@@ -2985,7 +2978,6 @@ object form_login: Tform_login
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitTop = 25
       end
       object pnlBordaUsuario: TPanel
         Left = 0
@@ -3006,7 +2998,7 @@ object form_login: Tform_login
     end
     object pnlSenhaUsuario: TPanel
       Left = 644
-      Top = 243
+      Top = 338
       Width = 365
       Height = 47
       BevelOuter = bvNone
@@ -3045,7 +3037,7 @@ object form_login: Tform_login
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
-        ExplicitTop = 25
+        OnKeyDown = EditSenhaUsuarioKeyDown
       end
       object pnlBordaSenha: TPanel
         Left = 0
@@ -3068,7 +3060,7 @@ object form_login: Tform_login
     end
     object pnlEntrar: TPanel
       Left = 688
-      Top = 360
+      Top = 455
       Width = 273
       Height = 50
       BevelOuter = bvNone
@@ -3103,57 +3095,10 @@ object form_login: Tform_login
         OnMouseLeave = SpeedButtonEntrarMouseLeave
       end
     end
-    object Edit3: TEdit
-      Left = 756
-      Top = 439
-      Width = 69
-      Height = 17
-      Cursor = crHandPoint
-      BevelOuter = bvNone
-      BorderStyle = bsNone
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = 11976552
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 4
-      Text = 'Clique aqui'
-    end
-    object pnlCadastrar: TPanel
-      Left = 688
-      Top = 584
-      Width = 273
-      Height = 50
-      BevelOuter = bvNone
-      BorderWidth = 1
-      Color = 5839365
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = 5511957
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 5
-      object SpeedButtonCadastrar: TSpeedButton
-        Left = 2
-        Top = 2
-        Width = 269
-        Height = 46
-        Cursor = crHandPoint
-        Align = alCustom
-        Caption = 'Cadastrar-se'
-        Flat = True
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = [fsBold]
-        ParentFont = False
-        OnMouseEnter = SpeedButtonCadastrarMouseEnter
-        OnMouseLeave = SpeedButtonCadastrarMouseLeave
-      end
-    end
+  end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 1000
+    Top = 608
   end
 end

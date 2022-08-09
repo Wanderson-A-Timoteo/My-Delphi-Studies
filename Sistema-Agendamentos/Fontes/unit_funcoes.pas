@@ -4,8 +4,10 @@ interface
 
 uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, System.SysUtils, Winapi.Windows,
-  Vcl.Buttons, Vcl.Graphics, Vcl.ComCtrls, FireDac.Stan.Param, System.Classes, vcl.DBCtrls, FireDAC.Comp.Client;
+  Vcl.Buttons, Vcl.Graphics, Vcl.ComCtrls, FireDac.Stan.Param, System.Classes, vcl.DBCtrls, FireDAC.Comp.Client,
+  IdHashMessageDigest;
 
+  function MD5(const Value: String) : String;
   function  fnc_proximo_codigo(Tabela, Campo : String) : Integer;
   function  fncRomoveCaracteres(AString: String) : String;
   function  Criptografia(Senha, Chave: string) : string;
@@ -19,6 +21,19 @@ implementation
 
 uses unit_mensagens, unit_dados, classe.profissionais, classe.usuarios ;
 
+// Função que criptografa senha do usuário para ser guardada no Banco de Dados  - uses IdHashMessageDigest
+// Ela não descriptografa
+function MD5(const Value: String) : String;
+var
+  xMD5 : TIdHashMessageDigest5;
+begin
+  xMD5 := TIdHashMessageDigest5.Create;
+  try
+    Result := LowerCase(xMD5.HashStringAsHex(Value));
+  finally
+    xMD5.Free;
+  end;
+end;
 
 function fnc_proximo_codigo(Tabela, Campo : String) : Integer;
 var

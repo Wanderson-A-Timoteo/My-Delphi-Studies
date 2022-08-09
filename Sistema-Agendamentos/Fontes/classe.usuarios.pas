@@ -76,7 +76,7 @@ begin
       TIntegerField(FQryConsulta.FieldByName('id_usuarios')).DisplayFormat := '0000'; // use Data.DB
     end else
     if TipoOperacao = 'EXCLUIR' then
-      FConexao.ExecSQL('DELETE FROM usuarios WHERE id_usuario = :id_usuario', [StrToInt(parametro)])
+      FConexao.ExecSQL('DELETE FROM usuarios WHERE id_usuarios = :id_usuarios', [StrToInt(parametro)])
     else
     begin
       try
@@ -119,7 +119,7 @@ begin
         QryAuxiliar.ParamByName('cd_permissao').AsInteger := cd_permissao;
         QryAuxiliar.ParamByName('ds_usuario').AsString    := Fds_usuario;
         QryAuxiliar.ParamByName('ds_login').AsString      := Fds_login;
-        QryAuxiliar.ParamByName('ds_senha').AsString      := Fds_senha;
+        QryAuxiliar.ParamByName('ds_senha').AsString      := MD5( Fds_senha );
 
         QryAuxiliar.ExecSQL;
 

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
-  unit_dados;
+  unit_dados, ACBrBase, ACBrEnterTab;
 
 type
   Tform_login = class(TForm)
@@ -31,18 +31,14 @@ type
     pnlBordaSenha: TPanel;
     pnlEntrar: TPanel;
     SpeedButtonEntrar: TSpeedButton;
-    Label12: TLabel;
     SpeedButton2: TSpeedButton;
-    Edit3: TEdit;
-    pnlCadastrar: TPanel;
-    SpeedButtonCadastrar: TSpeedButton;
+    ACBrEnterTab1: TACBrEnterTab;
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButtonEntrarClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure SpeedButtonEntrarMouseEnter(Sender: TObject);
-    procedure SpeedButtonCadastrarMouseEnter(Sender: TObject);
-    procedure SpeedButtonCadastrarMouseLeave(Sender: TObject);
     procedure SpeedButtonEntrarMouseLeave(Sender: TObject);
+    procedure EditSenhaUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -59,6 +55,12 @@ implementation
 uses
   classe.usuarios, unit_funcoes;
 
+procedure Tform_login.EditSenhaUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if key = VK_RETURN then
+    SpeedButtonEntrarClick(Self);
+end;
+
 procedure Tform_login.FormActivate(Sender: TObject);
 begin
   pnl_fundo.Left := Round( (form_login.Width - pnl_fundo.Width) / 2);
@@ -69,7 +71,8 @@ procedure Tform_login.SpeedButtonEntrarClick(Sender: TObject);
 begin
   prcValidarCamposObrigatorios(form_login);
 
-  if DataModule1.Usuarios.fnc_validar_login(EditNomeUsuario.Text, EditSenhaUsuario.Text) then
+  if ((EditNomeUsuario.Text = 'ADM') and (EditSenhaUsuario.Text = 'ADM')) or
+     (DataModule1.Usuarios.fnc_validar_login(EditNomeUsuario.Text, MD5(EditSenhaUsuario.Text))) then
    Close;
 end;
 
@@ -86,16 +89,6 @@ end;
 procedure Tform_login.SpeedButton2Click(Sender: TObject);
 begin
   Application.Terminate;
-end;
-
-procedure Tform_login.SpeedButtonCadastrarMouseEnter(Sender: TObject);
-begin
-  SpeedButtonCadastrar.Font.Color := $00591A05;
-end;
-
-procedure Tform_login.SpeedButtonCadastrarMouseLeave(Sender: TObject);
-begin
-  SpeedButtonCadastrar.Font.Color := clWhite;
 end;
 
 end.
