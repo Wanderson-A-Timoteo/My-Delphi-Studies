@@ -173,6 +173,7 @@
             <Form>form_relatorio_agendamento_periodo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="classe.relatorios.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

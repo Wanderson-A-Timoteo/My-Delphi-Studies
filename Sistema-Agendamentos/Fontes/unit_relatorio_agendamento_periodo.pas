@@ -19,25 +19,32 @@ type
     RLBand2: TRLBand;
     RLBand3: TRLBand;
     RLBand4: TRLBand;
-    RLLabel1: TRLLabel;
-    lblPeriodo: TRLLabel;
     RLLabelData: TRLLabel;
     RLLabelHora: TRLLabel;
     RLLabelNomeProfissional: TRLLabel;
     RLLabelNomeCliente: TRLLabel;
     RLLabelAgendadoPor: TRLLabel;
-    RLDBText1: TRLDBText;
-    RLDBText2: TRLDBText;
-    RLDBText3: TRLDBText;
-    RLDBText4: TRLDBText;
-    RLDBText5: TRLDBText;
+    RLDBTextData: TRLDBText;
+    RLDBTextHora: TRLDBText;
+    RLDBTextNomeProfissional: TRLDBText;
+    RLDBTextNomeCliente: TRLDBText;
+    RLDBTextAgendadoPorNomeUsuario: TRLDBText;
     RLLabelTotalAgendamentosPeriodo: TRLLabel;
     lblTotal: TRLLabel;
-    RLSystemInfoNumeroPagina: TRLSystemInfo;
-    RLSystemInfoDataEmissao: TRLSystemInfo;
-    RLLabel2: TRLLabel;
-    RLLabel9: TRLLabel;
     ds_padrao: TDataSource;
+    RLBand5: TRLBand;
+    RLLabelTituloRelatorio: TRLLabel;
+    RLLabelPeriodo: TRLLabel;
+    RLLabelDataEmissao: TRLLabel;
+    RLSystemInfoDataEmissao: TRLSystemInfo;
+    RLLabelHorarioEmissao: TRLLabel;
+    RLSystemInfoHorarioEmissao: TRLSystemInfo;
+    RLLabelRazaoSocial: TRLLabel;
+    RLLabelNomeSistema: TRLLabel;
+    RLLabelPagina: TRLLabel;
+    RLSystemInfoPagina: TRLSystemInfo;
+    RLLabelEmitidoPor: TRLLabel;
+    RLLabelEmitidoPorNomeUsuario: TRLLabel;
 
   private
     { Private declarations }

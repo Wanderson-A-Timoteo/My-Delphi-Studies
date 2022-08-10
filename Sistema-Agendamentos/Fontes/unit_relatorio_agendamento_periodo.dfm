@@ -68,41 +68,60 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
           Left = 38
           Top = 38
           Width = 718
-          Height = 59
-          BandType = btTitle
+          Height = 75
+          BandType = btHeader
           Borders.Sides = sdCustom
           Borders.DrawLeft = False
           Borders.DrawTop = False
           Borders.DrawRight = False
           Borders.DrawBottom = False
-          object RLLabel1: TRLLabel
-            Left = 0
-            Top = 0
-            Width = 718
-            Height = 32
-            Align = faTop
-            Alignment = taCenter
-            Borders.Sides = sdCustom
-            Borders.DrawLeft = False
-            Borders.DrawTop = False
-            Borders.DrawRight = False
-            Borders.DrawBottom = False
-            Caption = 'RELAT'#211'RIO DE AGENDAMENTOS POR PER'#205'ODO'
+          object RLLabelDataEmissao: TRLLabel
+            Left = 542
+            Top = 26
+            Width = 98
+            Height = 15
+            Caption = 'Data de Emiss'#227'o: '
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -19
+            Font.Height = -12
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
           end
-          object lblPeriodo: TRLLabel
-            Left = 0
-            Top = 32
-            Width = 718
-            Height = 20
-            Align = faTop
-            Alignment = taCenter
-            Caption = 'PER'#205'ODO'
+          object RLSystemInfoDataEmissao: TRLSystemInfo
+            Left = 643
+            Top = 26
+            Width = 39
+            Height = 17
+            Text = ''
+          end
+          object RLLabelHorarioEmissao: TRLLabel
+            Left = 527
+            Top = 49
+            Width = 114
+            Height = 15
+            Caption = 'Hor'#225'rio de Emiss'#227'o: '
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object RLSystemInfoHorarioEmissao: TRLSystemInfo
+            Left = 643
+            Top = 49
+            Width = 41
+            Height = 17
+            Info = itHour
+            Text = ''
+          end
+          object RLLabelRazaoSocial: TRLLabel
+            Left = 3
+            Top = 24
+            Width = 182
+            Height = 17
+            Caption = 'RAZAO SOCIAL DA EMPRESA'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -110,28 +129,25 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
             Font.Style = [fsBold]
             ParentFont = False
           end
-          object RLSystemInfoNumeroPagina: TRLSystemInfo
-            Left = 626
-            Top = 17
-            Width = 89
-            Height = 17
-            Alignment = taRightJustify
-            Info = itPageNumber
-            Text = ''
-          end
-          object RLSystemInfoDataEmissao: TRLSystemInfo
-            Left = 3
-            Top = 19
-            Width = 39
-            Height = 17
-            Text = ''
-          end
-          object RLLabel2: TRLLabel
+          object RLLabelNomeSistema: TRLLabel
             Left = 3
             Top = 3
-            Width = 75
+            Width = 350
+            Height = 17
+            Caption = 'SGAC - Sistema de Gest'#227'o de Agendamento de Consulta'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object RLLabelPagina: TRLLabel
+            Left = 595
+            Top = 5
+            Width = 45
             Height = 15
-            Caption = 'Data Emiss'#227'o'
+            Caption = 'P'#225'gina: '
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -12
@@ -139,15 +155,36 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
             Font.Style = [fsBold]
             ParentFont = False
           end
-          object RLLabel9: TRLLabel
-            Left = 676
+          object RLSystemInfoPagina: TRLSystemInfo
+            Left = 643
             Top = 3
-            Width = 39
-            Height = 15
-            Caption = 'P'#225'gina'
+            Width = 40
+            Height = 17
+            Info = itPageNumber
+            Text = ''
+          end
+          object RLLabelEmitidoPor: TRLLabel
+            Left = 3
+            Top = 46
+            Width = 85
+            Height = 17
+            Caption = 'Emitido Por: '
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object RLLabelEmitidoPorNomeUsuario: TRLLabel
+            Left = 94
+            Top = 46
+            Width = 302
+            Height = 17
+            Caption = 'Nome do usu'#225'rio que fez a emiss'#227'o do relat'#243'rio'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
@@ -155,76 +192,82 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
         end
         object RLBand2: TRLBand
           Left = 38
-          Top = 97
+          Top = 169
           Width = 718
-          Height = 24
+          Height = 35
           BandType = btColumnHeader
           Borders.Sides = sdCustom
           Borders.DrawLeft = False
           Borders.DrawTop = True
           Borders.DrawRight = False
           Borders.DrawBottom = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
           object RLLabelData: TRLLabel
             Left = 3
-            Top = 3
-            Width = 29
-            Height = 15
+            Top = 12
+            Width = 40
+            Height = 21
             Caption = 'Data'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
           end
           object RLLabelHora: TRLLabel
-            Left = 113
-            Top = 3
-            Width = 30
-            Height = 15
+            Left = 104
+            Top = 12
+            Width = 41
+            Height = 21
             Caption = 'Hora'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
           end
           object RLLabelNomeProfissional: TRLLabel
-            Left = 224
-            Top = 3
-            Width = 66
-            Height = 15
+            Left = 180
+            Top = 12
+            Width = 94
+            Height = 21
             Caption = 'Profissional'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
           end
           object RLLabelNomeCliente: TRLLabel
-            Left = 353
-            Top = 3
-            Width = 42
-            Height = 15
+            Left = 368
+            Top = 12
+            Width = 58
+            Height = 21
             Caption = 'Cliente'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
           end
           object RLLabelAgendadoPor: TRLLabel
-            Left = 481
-            Top = 3
-            Width = 81
-            Height = 15
+            Left = 527
+            Top = 12
+            Width = 113
+            Height = 21
             Caption = 'Agendado Por'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
@@ -232,63 +275,79 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
         end
         object RLBand3: TRLBand
           Left = 38
-          Top = 121
+          Top = 204
           Width = 718
-          Height = 64
-          object RLDBText1: TRLDBText
+          Height = 36
+          object RLDBTextData: TRLDBText
             Left = 3
-            Top = 3
-            Width = 59
-            Height = 15
+            Top = 10
+            Width = 55
+            Height = 21
+            DataField = 'dt_data'
+            DataSource = ds_padrao
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
             Text = ''
           end
-          object RLDBText2: TRLDBText
-            Left = 113
-            Top = 3
-            Width = 59
-            Height = 15
+          object RLDBTextHora: TRLDBText
+            Left = 104
+            Top = 10
+            Width = 58
+            Height = 21
+            DataField = 'hr_hora'
+            DataSource = ds_padrao
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
             Text = ''
           end
-          object RLDBText3: TRLDBText
-            Left = 224
-            Top = 3
-            Width = 59
-            Height = 15
+          object RLDBTextNomeProfissional: TRLDBText
+            Left = 180
+            Top = 10
+            Width = 108
+            Height = 21
+            DataField = 'ds_profissional'
+            DataSource = ds_padrao
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
             Text = ''
           end
-          object RLDBText4: TRLDBText
-            Left = 353
-            Top = 3
-            Width = 65
-            Height = 17
-            Text = ''
-          end
-          object RLDBText5: TRLDBText
-            Left = 481
-            Top = 3
-            Width = 59
-            Height = 15
+          object RLDBTextNomeCliente: TRLDBText
+            Left = 368
+            Top = 10
+            Width = 72
+            Height = 21
+            DataField = 'ds_cliente'
+            DataSource = ds_padrao
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            Text = ''
+          end
+          object RLDBTextAgendadoPorNomeUsuario: TRLDBText
+            Left = 527
+            Top = 10
+            Width = 79
+            Height = 21
+            DataField = 'ds_usuario'
+            DataSource = ds_padrao
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
@@ -297,7 +356,7 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
         end
         object RLBand4: TRLBand
           Left = 38
-          Top = 185
+          Top = 240
           Width = 718
           Height = 35
           BandType = btFooter
@@ -320,14 +379,61 @@ object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
             ParentFont = False
           end
           object lblTotal: TRLLabel
-            Left = 261
-            Top = 12
-            Width = 10
-            Height = 15
+            Left = 256
+            Top = 6
+            Width = 23
+            Height = 21
             Caption = '0'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
-            Font.Height = -12
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+        end
+        object RLBand5: TRLBand
+          Left = 38
+          Top = 113
+          Width = 718
+          Height = 56
+          BandType = btTitle
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = False
+          Borders.DrawTop = False
+          Borders.DrawRight = False
+          Borders.DrawBottom = False
+          object RLLabelTituloRelatorio: TRLLabel
+            Left = 0
+            Top = 0
+            Width = 718
+            Height = 25
+            Align = faTop
+            Alignment = taCenter
+            Borders.Sides = sdCustom
+            Borders.DrawLeft = False
+            Borders.DrawTop = False
+            Borders.DrawRight = False
+            Borders.DrawBottom = False
+            Caption = 'RELAT'#211'RIO DE AGENDAMENTOS POR PER'#205'ODO'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -19
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object RLLabelPeriodo: TRLLabel
+            Left = 0
+            Top = 25
+            Width = 718
+            Height = 17
+            Align = faTop
+            Alignment = taCenter
+            Caption = 'PER'#205'ODO'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False

@@ -8,15 +8,16 @@ uses
 
 type
   TAgendamentos = class
+
     private
-    FConexao: TFDConnection;
-    Fcli_id_cliente: Integer;
-    Fhr_hora: String;
-    Fpro_id_profissional: Integer;
-    Fid_agendamento: Integer;
-    Fds_obs: String;
-    Fdt_data: TDate;
-    Fusu_id_usuarios: Integer;
+      FConexao: TFDConnection;
+      Fcli_id_cliente: Integer;
+      Fhr_hora: String;
+      Fpro_id_profissional: Integer;
+      Fid_agendamento: Integer;
+      Fds_obs: String;
+      Fdt_data: TDate;
+      Fusu_id_usuarios: Integer;
 
 
     public
@@ -39,8 +40,7 @@ type
 
       procedure fnc_montar_agenda(dt_data : TDate; cds_agenda : TClientDataSet);
       procedure prc_deleta(id_chave: Integer);
-
-  end;
+end;
 
 
 var

@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.Mask, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, ACBrBase, ACBrEnterTab;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, ACBrBase, ACBrEnterTab, classe.relatorios,
+  unit_dados;
 
 type
   Tform_relatorios = class(TForm)
@@ -42,11 +43,14 @@ type
     procedure SpeedButtonVizualizarClick(Sender: TObject);
     procedure MaskEditDataInicialExit(Sender: TObject);
     procedure MaskEditDataFinalExit(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
 
   private
     { Private declarations }
   public
     { Public declarations }
+    Relatorios     : TRelatorios;
     senha_original : String;
   end;
 
@@ -57,7 +61,17 @@ implementation
 
 {$R *.dfm}
 
-uses unit_dados, unit_funcoes, unit_relatorio_agendamento_periodo;
+uses unit_funcoes, unit_relatorio_agendamento_periodo;
+
+procedure Tform_relatorios.FormCreate(Sender: TObject);
+begin
+  Relatorios := TRelatorios.Create( DataModule1.FDConnection );
+end;
+
+procedure Tform_relatorios.FormDestroy(Sender: TObject);
+begin
+  Relatorios.Free;
+end;
 
 procedure Tform_relatorios.MaskEditDataFinalExit(Sender: TObject);
 begin
@@ -141,12 +155,15 @@ procedure Tform_relatorios.SpeedButtonVizualizarClick(Sender: TObject);
 begin
   prcValidarCamposObrigatorios( form_relatorios );
 
-  ShowMessage('Vizualização do relatório não disponível no momento.');
   case ComboBoxTipoRelatorio.ItemIndex of
   0:begin
     try
       form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
-      form_relatorio_agendamento_periodo.lblPeriodo.Caption := 'PERÍODO DE: ' + MaskEditDataInicial.Text + 'ATÉ: ' + MaskEditDataFinal.Text;
+      form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PERÍODO DE:  ' + MaskEditDataInicial.Text + '  ATÉ:  ' + MaskEditDataFinal.Text;
+
+      Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
+      form_relatorio_agendamento_periodo.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
+      form_relatorio_agendamento_periodo.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
 
       // Mostra o form relatório
       //form_relatorio_agendamento_periodo.ShowModal;
