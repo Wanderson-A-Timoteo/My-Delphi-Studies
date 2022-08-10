@@ -40,6 +40,8 @@ type
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
     procedure MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SpeedButtonVizualizarClick(Sender: TObject);
+    procedure MaskEditDataInicialExit(Sender: TObject);
+    procedure MaskEditDataFinalExit(Sender: TObject);
 
   private
     { Private declarations }
@@ -55,12 +57,69 @@ implementation
 
 {$R *.dfm}
 
-uses unit_dados, unit_funcoes;
+uses unit_dados, unit_funcoes, unit_relatorio_agendamento_periodo;
+
+procedure Tform_relatorios.MaskEditDataFinalExit(Sender: TObject);
+begin
+   if (fncRomoveCaracteres ( MaskEditDataFinal.Text ) <> '') and
+                          ( MaskEditDataFinal.Text <> '  /  /    ') then
+  begin
+    try
+      MaskEditDataFinal.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataFinal.Text));
+    except
+      fnc_criar_mensagem('VALIDANDO DADOS',
+                         'Erro ao validar DATA FINAL',
+                         'Data Final Inválida',
+                         ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
+                         'OK');
+
+      MaskEditDataFinal.SetFocus;
+      Exit;
+    end;
+  end;
+end;
 
 procedure Tform_relatorios.MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
   if key = VK_RETURN then
-    SpeedButtonVizualizarClick(Self);
+  begin
+    if (fncRomoveCaracteres ( MaskEditDataFinal.Text ) <> '') and
+                            ( MaskEditDataFinal.Text <> '  /  /    ') then
+    begin
+      try
+        MaskEditDataFinal.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataFinal.Text));
+      except
+        fnc_criar_mensagem('VALIDANDO DADOS',
+                           'Erro ao validar DATA FINAL',
+                           'Data Final Inválida',
+                           ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
+                           'OK');
+
+        MaskEditDataFinal.SetFocus;
+        Exit;
+      end;
+    end;
+      SpeedButtonVizualizarClick(Self);
+  end;
+end;
+
+procedure Tform_relatorios.MaskEditDataInicialExit(Sender: TObject);
+begin
+   if (fncRomoveCaracteres ( MaskEditDataInicial.Text ) <> '') and
+                          ( MaskEditDataInicial.Text <> '  /  /    ') then
+  begin
+    try
+      MaskEditDataInicial.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataInicial.Text));
+    except
+      fnc_criar_mensagem('VALIDANDO DADOS',
+                         'Erro ao validar DATA INICIAL',
+                         'Data Inicial Inválida',
+                         ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
+                         'OK');
+
+      MaskEditDataInicial.SetFocus;
+    end;
+  end;
 end;
 
 procedure Tform_relatorios.SpeedButtonCancelarClick(Sender: TObject);
@@ -83,6 +142,23 @@ begin
   prcValidarCamposObrigatorios( form_relatorios );
 
   ShowMessage('Vizualização do relatório não disponível no momento.');
+  case ComboBoxTipoRelatorio.ItemIndex of
+  0:begin
+    try
+      form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
+      form_relatorio_agendamento_periodo.lblPeriodo.Caption := 'PERÍODO DE: ' + MaskEditDataInicial.Text + 'ATÉ: ' + MaskEditDataFinal.Text;
+
+      // Mostra relatório dentro do componente
+      form_relatorio_agendamento_periodo.ShowModal;
+
+      // Mostra o relatório coo folha de papel para ser impressa
+      //form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
+    finally
+      form_relatorio_agendamento_periodo.Free;
+    end;
+  end;
+
+  end;
 end;
 
 procedure Tform_relatorios.SpeedButtonVizualizarMouseEnter(Sender: TObject);

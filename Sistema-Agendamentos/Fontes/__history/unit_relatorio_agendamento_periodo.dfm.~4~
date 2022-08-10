@@ -1,0 +1,136 @@
+object form_relatorio_agendamento_periodo: Tform_relatorio_agendamento_periodo
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 813
+  ClientWidth = 835
+  Color = 11976552
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = 11976552
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 15
+  object shape_fundo_form_agendamento: TShape
+    Left = 0
+    Top = 0
+    Width = 835
+    Height = 813
+    Align = alClient
+    Brush.Color = 11976552
+    Pen.Color = 11976552
+    ExplicitWidth = 535
+    ExplicitHeight = 415
+  end
+  object PanelContainer: TPanel
+    Left = 8
+    Top = 8
+    Width = 817
+    Height = 797
+    BevelOuter = bvNone
+    Color = 11976552
+    ParentBackground = False
+    TabOrder = 0
+    object PanelAgrupaCamposAgendamento: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 811
+      Height = 790
+      Margins.Bottom = 0
+      Align = alTop
+      BevelOuter = bvNone
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clSilver
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      object RLReportAgendamentoPeriodo: TRLReport
+        Left = 8
+        Top = 0
+        Width = 794
+        Height = 1123
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        object RLBand1: TRLBand
+          Left = 38
+          Top = 38
+          Width = 718
+          Height = 75
+          BandType = btTitle
+          Borders.Sides = sdCustom
+          Borders.DrawLeft = True
+          Borders.DrawTop = True
+          Borders.DrawRight = True
+          Borders.DrawBottom = True
+          object RLLabel1: TRLLabel
+            Left = 1
+            Top = 1
+            Width = 716
+            Height = 25
+            Align = faTop
+            Alignment = taCenter
+            Borders.Sides = sdCustom
+            Borders.DrawLeft = False
+            Borders.DrawTop = False
+            Borders.DrawRight = False
+            Borders.DrawBottom = False
+            Caption = 'RELAT'#211'RIO DE AGENDAMENTOS POR PER'#205'ODO'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -19
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object RLLabel2: TRLLabel
+            Left = 1
+            Top = 26
+            Width = 716
+            Height = 24
+            Align = faTop
+            Alignment = taCenter
+            Caption = 'PER'#205'ODO'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+        end
+        object RLBand2: TRLBand
+          Left = 38
+          Top = 113
+          Width = 718
+          Height = 48
+          BandType = btColumnHeader
+        end
+        object RLBand3: TRLBand
+          Left = 38
+          Top = 161
+          Width = 718
+          Height = 64
+        end
+        object RLBand4: TRLBand
+          Left = 38
+          Top = 225
+          Width = 718
+          Height = 48
+          BandType = btFooter
+        end
+      end
+    end
+  end
+end

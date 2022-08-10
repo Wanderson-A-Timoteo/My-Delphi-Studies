@@ -10,7 +10,7 @@ uses
   FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, ACBrBase, ACBrEnterTab;
 
 type
-  Tform_relatorios = class(TForm)
+  Tform_relatorios2 = class(TForm)
     shape_fundo_form_agendamento: TShape;
     PanelAgrupaCamposAgendamento: TPanel;
     PanelContainer: TPanel;
@@ -51,7 +51,7 @@ type
   end;
 
 var
-  form_relatorios: Tform_relatorios;
+  form_relatorios2: Tform_relatorios2;
 
 implementation
 
@@ -59,7 +59,7 @@ implementation
 
 uses unit_dados, unit_funcoes;
 
-procedure Tform_relatorios.MaskEditDataFinalExit(Sender: TObject);
+procedure Tform_relatorios2.MaskEditDataFinalExit(Sender: TObject);
 begin
    if (fncRomoveCaracteres ( MaskEditDataFinal.Text ) <> '') and
                           ( MaskEditDataFinal.Text <> '  /  /    ') then
@@ -69,68 +69,87 @@ begin
     except
       fnc_criar_mensagem('VALIDANDO DADOS',
                          'Erro ao validar DATA FINAL',
-                         'Data Inválida',
+                         'Data Final Inválida',
                          ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
                          'OK');
 
       MaskEditDataFinal.SetFocus;
+      Exit;
     end;
   end;
 end;
 
-procedure Tform_relatorios.MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure Tform_relatorios2.MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
   if key = VK_RETURN then
-    SpeedButtonVizualizarClick(Self);
+  begin
+    if (fncRomoveCaracteres ( MaskEditDataFinal.Text ) <> '') and
+                            ( MaskEditDataFinal.Text <> '  /  /    ') then
+    begin
+      try
+        MaskEditDataFinal.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataFinal.Text));
+      except
+        fnc_criar_mensagem('VALIDANDO DADOS',
+                           'Erro ao validar DATA FINAL',
+                           'Data Final Inválida',
+                           ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
+                           'OK');
+
+        MaskEditDataFinal.SetFocus;
+        Exit;
+      end;
+    end;
+      SpeedButtonVizualizarClick(Self);
+  end;
 end;
 
-procedure Tform_relatorios.MaskEditDataInicialExit(Sender: TObject);
+procedure Tform_relatorios2.MaskEditDataInicialExit(Sender: TObject);
 begin
-   if (fncRomoveCaracteres ( MaskEditDataNascimento.Text ) <> '') and
-                          ( MaskEditDataNascimento.Text <> '  /  /    ') then
+   if (fncRomoveCaracteres ( MaskEditDataInicial.Text ) <> '') and
+                          ( MaskEditDataInicial.Text <> '  /  /    ') then
   begin
     try
-      MaskEditDataNascimento.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataNascimento.Text));
+      MaskEditDataInicial.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataInicial.Text));
     except
       fnc_criar_mensagem('VALIDANDO DADOS',
-                         'Erro ao validar DATA',
-                         'Data Inválida',
+                         'Erro ao validar DATA INICIAL',
+                         'Data Inicial Inválida',
                          ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
                          'OK');
 
-      MaskEditDataNascimento.SetFocus;
+      MaskEditDataInicial.SetFocus;
     end;
   end;
 end;
 
-procedure Tform_relatorios.SpeedButtonCancelarClick(Sender: TObject);
+procedure Tform_relatorios2.SpeedButtonCancelarClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure Tform_relatorios.SpeedButtonCancelarMouseEnter(Sender: TObject);
+procedure Tform_relatorios2.SpeedButtonCancelarMouseEnter(Sender: TObject);
 begin
   SpeedButtonCancelar.Font.Color := $00591A05;
 end;
 
-procedure Tform_relatorios.SpeedButtonCancelarMouseLeave(Sender: TObject);
+procedure Tform_relatorios2.SpeedButtonCancelarMouseLeave(Sender: TObject);
 begin
   SpeedButtonCancelar.Font.Color := clWhite;
 end;
 
-procedure Tform_relatorios.SpeedButtonVizualizarClick(Sender: TObject);
+procedure Tform_relatorios2.SpeedButtonVizualizarClick(Sender: TObject);
 begin
   prcValidarCamposObrigatorios( form_relatorios );
 
   ShowMessage('Vizualização do relatório não disponível no momento.');
 end;
 
-procedure Tform_relatorios.SpeedButtonVizualizarMouseEnter(Sender: TObject);
+procedure Tform_relatorios2.SpeedButtonVizualizarMouseEnter(Sender: TObject);
 begin
    SpeedButtonVizualizar.Font.Color := $00591A05;
 end;
 
-procedure Tform_relatorios.SpeedButtonVizualizarMouseLeave(Sender: TObject);
+procedure Tform_relatorios2.SpeedButtonVizualizarMouseLeave(Sender: TObject);
 begin
   SpeedButtonVizualizar.Font.Color := clWhite;
 end;

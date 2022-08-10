@@ -57,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_dados, unit_funcoes;
+uses unit_dados, unit_funcoes, unit_relatorio_agendamento_periodo;
 
 procedure Tform_relatorios.MaskEditDataFinalExit(Sender: TObject);
 begin
@@ -142,6 +142,23 @@ begin
   prcValidarCamposObrigatorios( form_relatorios );
 
   ShowMessage('Vizualização do relatório não disponível no momento.');
+  case ComboBoxTipoRelatorio.ItemIndex of
+  0:begin
+    try
+      form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
+      form_relatorio_agendamento_periodo.lblPeriodo.Caption := 'PERÍODO DE: ' + MaskEditDataInicial.Text + 'ATÉ: ' + MaskEditDataFinal.Text;
+
+      // Mostra o form relatório
+      //form_relatorio_agendamento_periodo.ShowModal;
+
+      // Mostra o relatório coo folha de papel para ser impressa
+      form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
+    finally
+      form_relatorio_agendamento_periodo.Free;
+    end;
+  end;
+
+  end;
 end;
 
 procedure Tform_relatorios.SpeedButtonVizualizarMouseEnter(Sender: TObject);

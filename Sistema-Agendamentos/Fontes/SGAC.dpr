@@ -22,7 +22,8 @@ uses
   unit_usuarios_cadastro in 'unit_usuarios_cadastro.pas' {form_usuarios_cadastro},
   unit_usuarios_consulta in 'unit_usuarios_consulta.pas' {form_usuario_consulta},
   classe.usuarios in 'classe.usuarios.pas',
-  unit_relatorios in 'unit_relatorios.pas' {form_relatorios};
+  unit_relatorios in 'unit_relatorios.pas' {form_relatorios},
+  unit_relatorio_agendamento_periodo in 'unit_relatorio_agendamento_periodo.pas' {form_relatorio_agendamento_periodo};
 
 {$R *.res}
 
@@ -32,6 +33,7 @@ begin
   Application.MainFormOnTaskbar := True;
 
   Application.CreateForm(TDataModule1, DataModule1);
+
   if DataModule1.Conexao.fnc_conectar_banco_dados then
   begin
     form_login := Tform_login.Create(nil);
