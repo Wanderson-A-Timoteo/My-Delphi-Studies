@@ -1048,4 +1048,9 @@ object form_configurar_servidor: Tform_configurar_servidor
       end
     end
   end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 491
+    Top = 27
+  end
 end

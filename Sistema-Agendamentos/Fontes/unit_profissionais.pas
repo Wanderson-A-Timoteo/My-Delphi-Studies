@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, ACBrBase, ACBrEnterTab;
 
 type
   Tform_profissionais = class(TForm)
@@ -35,6 +35,7 @@ type
     Label10: TLabel;
     Label2: TLabel;
     labelMsnDELouEdit: TLabel;
+    ACBrEnterTab1: TACBrEnterTab;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
@@ -119,7 +120,8 @@ begin
                        'Cadastrar/Alterar Profissional',
                        'Cadastro/Alteração Realizado com Sucesso! ' +
                        '',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
+                       'OK');
     Close;
   end else
   begin
@@ -127,7 +129,8 @@ begin
                        'Erro ao Cadastrar/Alterar Profissional',
                        'Não foi possível Cadastrar/Alterar Profissional, possível causa: ' +
                        Erro,
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       'OK');
 
     EditNomeProfissional.SetFocus;
   end;

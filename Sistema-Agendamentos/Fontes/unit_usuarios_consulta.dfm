@@ -202,6 +202,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        OnDblClick = dbg_registros_consulta_usuariosDblClick
         OnKeyDown = dbg_registros_consulta_usuariosKeyDown
         Columns = <
           item
@@ -265,7 +266,7 @@ object form_usuario_consulta: Tform_usuario_consulta
           end
         end
         object PanelBotaoCadastrarNovoCliente: TPanel
-          Left = 463
+          Left = 0
           Top = 0
           Width = 200
           Height = 50
@@ -291,34 +292,6 @@ object form_usuario_consulta: Tform_usuario_consulta
             OnClick = SpeedButtonCadastrarNovoUsuarioClick
             OnMouseEnter = SpeedButtonCadastrarNovoUsuarioMouseEnter
             OnMouseLeave = SpeedButtonCadastrarNovoUsuarioMouseLeave
-          end
-        end
-        object PanelBotaoSelecionarCliente: TPanel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 50
-          Align = alLeft
-          BevelOuter = bvNone
-          Color = 11976552
-          ParentBackground = False
-          TabOrder = 2
-          object SpeedButtonSelecionarUsuario: TSpeedButton
-            Left = 2
-            Top = 2
-            Width = 196
-            Height = 46
-            Align = alCustom
-            Caption = 'Selecionar Usu'#225'rio'
-            Flat = True
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWhite
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = [fsBold]
-            ParentFont = False
-            OnMouseEnter = SpeedButtonSelecionarUsuarioMouseEnter
-            OnMouseLeave = SpeedButtonSelecionarUsuarioMouseLeave
           end
         end
       end

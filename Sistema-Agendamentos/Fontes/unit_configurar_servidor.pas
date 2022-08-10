@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, ACBrBase,
+  ACBrEnterTab;
 
 type
   Tform_configurar_servidor = class(TForm)
@@ -67,6 +68,7 @@ type
     Label27: TLabel;
     Label28: TLabel;
     EditNovaDriverID: TEdit;
+    ACBrEnterTab1: TACBrEnterTab;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonAcessarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -122,15 +124,17 @@ begin
                        'Conectado com o Banco de Dados',
                        'Conexão com o Banco de Dados Realizado com Sucesso! ' +
                        'O Sistema precisa ser reiniciado!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png','OK');
+                       ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
+                       'OK');
     Application.Terminate;
   end else
   begin
     fnc_criar_mensagem('CONEXÃO AO BANCO DE DADOS',
-                      'Erro ao conectar ao Banco de Dados',
-                      'Não foi possível conectar ao Banco de Dados, possível causa: ' +
-                       DataModule1.Conexao.MsgErro,
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
+                       'Erro ao conectar ao Banco de Dados',
+                       'Não foi possível conectar ao Banco de Dados, possível causa: ' +
+                        DataModule1.Conexao.MsgErro,
+                        ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                        'OK');
 
     EditNovoNomeServidor.SetFocus;
   end;

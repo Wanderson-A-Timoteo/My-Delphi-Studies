@@ -21,7 +21,8 @@ uses
   unit_agenda in 'unit_agenda.pas' {form_agenda},
   unit_usuarios_cadastro in 'unit_usuarios_cadastro.pas' {form_usuarios_cadastro},
   unit_usuarios_consulta in 'unit_usuarios_consulta.pas' {form_usuario_consulta},
-  classe.usuarios in 'classe.usuarios.pas';
+  classe.usuarios in 'classe.usuarios.pas',
+  unit_relatorios in 'unit_relatorios.pas' {form_relatorios};
 
 {$R *.res}
 

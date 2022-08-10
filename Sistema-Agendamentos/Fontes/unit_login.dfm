@@ -85,7 +85,7 @@ object form_login: Tform_login
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object SpeedButton2: TSpeedButton
+    object SpeedButtonFechar: TSpeedButton
       Left = 1048
       Top = 9
       Width = 24
@@ -98,9 +98,11 @@ object form_login: Tform_login
       Font.Color = 5839365
       Font.Height = -21
       Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
+      Font.Style = []
       ParentFont = False
-      OnClick = SpeedButton2Click
+      OnClick = SpeedButtonFecharClick
+      OnMouseEnter = SpeedButtonFecharMouseEnter
+      OnMouseLeave = SpeedButtonFecharMouseLeave
     end
     object pnl_lateral: TPanel
       Left = 1
@@ -3016,7 +3018,7 @@ object form_login: Tform_login
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 46
+        ExplicitLeft = -1
       end
       object EditSenhaUsuario: TEdit
         Tag = 5
@@ -3059,9 +3061,9 @@ object form_login: Tform_login
       end
     end
     object pnlEntrar: TPanel
-      Left = 688
+      Left = 643
       Top = 455
-      Width = 273
+      Width = 180
       Height = 50
       BevelOuter = bvNone
       Color = 11976552
@@ -3076,7 +3078,7 @@ object form_login: Tform_login
       object SpeedButtonEntrar: TSpeedButton
         Left = 2
         Top = 2
-        Width = 269
+        Width = 176
         Height = 46
         Cursor = crHandPoint
         Align = alCustom
@@ -3093,6 +3095,43 @@ object form_login: Tform_login
         OnClick = SpeedButtonEntrarClick
         OnMouseEnter = SpeedButtonEntrarMouseEnter
         OnMouseLeave = SpeedButtonEntrarMouseLeave
+      end
+    end
+    object pnlBotaoSair: TPanel
+      Left = 829
+      Top = 455
+      Width = 180
+      Height = 50
+      BevelOuter = bvNone
+      Color = 8421631
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 11976552
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 4
+      object SpeedButtonSair: TSpeedButton
+        Left = 2
+        Top = 2
+        Width = 176
+        Height = 46
+        Cursor = crHandPoint
+        Align = alCustom
+        BiDiMode = bdLeftToRight
+        Caption = 'Sair'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ParentBiDiMode = False
+        OnClick = SpeedButtonSairClick
+        OnMouseEnter = SpeedButtonSairMouseEnter
+        OnMouseLeave = SpeedButtonSairMouseLeave
       end
     end
   end

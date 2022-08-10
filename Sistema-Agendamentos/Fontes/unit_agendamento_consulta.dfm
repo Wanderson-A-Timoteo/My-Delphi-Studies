@@ -471,4 +471,9 @@ object form_agendamento_consulta: Tform_agendamento_consulta
     Left = 611
     Top = 427
   end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 635
+    Top = 51
+  end
 end

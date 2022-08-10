@@ -119,7 +119,7 @@ begin
         QryAuxiliar.ParamByName('cd_permissao').AsInteger := cd_permissao;
         QryAuxiliar.ParamByName('ds_usuario').AsString    := Fds_usuario;
         QryAuxiliar.ParamByName('ds_login').AsString      := Fds_login;
-        QryAuxiliar.ParamByName('ds_senha').AsString      := MD5( Fds_senha );
+        QryAuxiliar.ParamByName('ds_senha').AsString      := Fds_senha;
 
         QryAuxiliar.ExecSQL;
 

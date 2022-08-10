@@ -8,7 +8,7 @@ uses
   Vcl.Mask, Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, unit_profissionais, unit_clientes, classe_conexao, unit_dados,
-  classe.profissionais, classe.agendamento;
+  classe.profissionais, classe.agendamento, ACBrBase, ACBrEnterTab;
 
 type
   Tform_agendamento = class(TForm)
@@ -55,6 +55,7 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    ACBrEnterTab1: TACBrEnterTab;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonCadastrarProfissionalClick(Sender: TObject);
     procedure SpeedButtonLupaPesquisaNomeClienteClick(Sender: TObject);
@@ -124,6 +125,7 @@ begin
                          'Agendamento Realizado Com Sucesso!.',
                          ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
                          'OK');
+
       form_agendamento.Close;
      end else
      begin
@@ -138,9 +140,9 @@ begin
   end else
   begin
     fnc_criar_mensagem('VALIDANDO DADOS',
-                       'Erro ao agendar horário!',
-                       'Dia e Hora do agendamento indisponível! Selecione outra data.',
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       'Não é possível agendar horário!',
+                       'Dia e horário do agendamento indisponível! Selecione outra data ou horário.',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     MaskEditData.SetFocus;

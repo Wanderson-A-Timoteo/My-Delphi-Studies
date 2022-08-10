@@ -399,4 +399,9 @@ object form_profissionais: Tform_profissionais
     Left = 627
     Top = 467
   end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 643
+    Top = 27
+  end
 end

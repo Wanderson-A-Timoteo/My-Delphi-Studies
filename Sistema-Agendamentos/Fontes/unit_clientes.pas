@@ -78,6 +78,7 @@ type
     Label12: TLabel;
     PanelBotaoLimpar: TPanel;
     SpeedButtonLimpar: TSpeedButton;
+    ACBrEnterTab2: TACBrEnterTab;
     procedure SpeedButtonSalvarClick(Sender: TObject);
     procedure MaskEditCPFExit(Sender: TObject);
     procedure MaskEditDataNascimentoExit(Sender: TObject);
@@ -262,7 +263,8 @@ begin
                          'Cadastrar/Alterar Cliente',
                          'Cadastro/Alteração Realizado com Sucesso! ' +
                          '',
-                         ExtractFilePath(Application.ExeName) + 'imagens\aviso.png','OK');
+                         ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
+                         'OK');
       Close;
     end else
     begin
@@ -270,7 +272,8 @@ begin
                          'Erro ao Cadastrar/Alterar Cliente',
                          'Não foi possível Cadastrar/Alterar Cliente, possível causa: ' +
                          Erro,
-                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
+                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                         'OK');
 
       EditNomeCliente.SetFocus;
     end;

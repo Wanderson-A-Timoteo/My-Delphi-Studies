@@ -31,14 +31,21 @@ type
     pnlBordaSenha: TPanel;
     pnlEntrar: TPanel;
     SpeedButtonEntrar: TSpeedButton;
-    SpeedButton2: TSpeedButton;
+    SpeedButtonFechar: TSpeedButton;
     ACBrEnterTab1: TACBrEnterTab;
-    procedure SpeedButton2Click(Sender: TObject);
-    procedure SpeedButtonEntrarClick(Sender: TObject);
+    pnlBotaoSair: TPanel;
+    SpeedButtonSair: TSpeedButton;
+    procedure SpeedButtonFecharClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure SpeedButtonEntrarMouseEnter(Sender: TObject);
     procedure SpeedButtonEntrarMouseLeave(Sender: TObject);
     procedure EditSenhaUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure SpeedButtonSairMouseLeave(Sender: TObject);
+    procedure SpeedButtonSairMouseEnter(Sender: TObject);
+    procedure SpeedButtonFecharMouseEnter(Sender: TObject);
+    procedure SpeedButtonFecharMouseLeave(Sender: TObject);
+    procedure SpeedButtonEntrarClick(Sender: TObject);
+    procedure SpeedButtonSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,9 +93,34 @@ begin
   SpeedButtonEntrar.Font.Color := clWhite;
 end;
 
-procedure Tform_login.SpeedButton2Click(Sender: TObject);
+procedure Tform_login.SpeedButtonFecharClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure Tform_login.SpeedButtonFecharMouseEnter(Sender: TObject);
+begin
+  SpeedButtonFechar.Font.Color := $008080FF;
+end;
+
+procedure Tform_login.SpeedButtonFecharMouseLeave(Sender: TObject);
+begin
+  SpeedButtonFechar.Font.Color := $00591A05;
+end;
+
+procedure Tform_login.SpeedButtonSairClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure Tform_login.SpeedButtonSairMouseEnter(Sender: TObject);
+begin
+  SpeedButtonSair.Font.Color := $00591A05;
+end;
+
+procedure Tform_login.SpeedButtonSairMouseLeave(Sender: TObject);
+begin
+  SpeedButtonSair.Font.Color := clWhite;
 end;
 
 end.

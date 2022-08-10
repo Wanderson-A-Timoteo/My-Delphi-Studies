@@ -1215,4 +1215,9 @@ object form_clientes: Tform_clientes
     Left = 542
     Top = 470
   end
+  object ACBrEnterTab2: TACBrEnterTab
+    EnterAsTab = True
+    Left = 622
+    Top = 46
+  end
 end

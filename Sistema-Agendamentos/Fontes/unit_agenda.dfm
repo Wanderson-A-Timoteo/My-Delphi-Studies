@@ -681,4 +681,9 @@ object form_agenda: Tform_agenda
       FieldName = 'id_agendamento'
     end
   end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 755
+    Top = 43
+  end
 end

@@ -44,6 +44,7 @@ type
     procedure SpeedButtonUsuariosClick(Sender: TObject);
     procedure SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
     procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,7 +59,7 @@ implementation
 {$R *.dfm}
 
 uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda,
-  unit_usuarios_consulta;
+  unit_usuarios_consulta, unit_relatorios;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -71,8 +72,8 @@ begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
                         'Sair do Sistema',
                         'Deseja Realmente Sair do Sistema?',
-                        ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
-                        'Comfirmar') then
+                        ExtractFilePath(Application.ExeName) + 'imagens\info.png',
+                        'CONFIRMAR') then
    Application.Terminate
    else
    Exit;
@@ -103,11 +104,21 @@ begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
                         'Sair do Sistema',
                         'Deseja Realmente Sair do Sistema?',
-                        ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
-                        'Comfirmar') then
+                        ExtractFilePath(Application.ExeName) + 'imagens\info.png',
+                        'CONFIRMAR') then
    Application.Terminate
    else
    Exit;
+end;
+
+procedure Tform_principal.SpeedButtonGerarRelatorioClick(Sender: TObject);
+begin
+  form_relatorios := Tform_relatorios.Create(Self);
+  try
+    form_relatorios.ShowModal;
+  finally
+    form_relatorios.Free;
+  end;
 end;
 
 procedure Tform_principal.SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);

@@ -907,4 +907,9 @@ object form_agendamento: Tform_agendamento
     Left = 643
     Top = 27
   end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 635
+    Top = 91
+  end
 end

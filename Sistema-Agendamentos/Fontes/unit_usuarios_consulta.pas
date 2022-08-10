@@ -30,8 +30,6 @@ type
     PanelBotaoCancelar: TPanel;
     SpeedButtonCancelarConsulta: TSpeedButton;
     labelMsnDELouEdit: TLabel;
-    PanelBotaoSelecionarCliente: TPanel;
-    SpeedButtonSelecionarUsuario: TSpeedButton;
     PanelBordaGrid: TPanel;
     procedure SpeedButtonCancelarConsultaClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -39,14 +37,13 @@ type
     procedure SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
     procedure SpeedButtonCadastrarNovoUsuarioMouseLeave(Sender: TObject);
     procedure SpeedButtonCadastrarNovoUsuarioMouseEnter(Sender: TObject);
-    procedure SpeedButtonSelecionarUsuarioMouseEnter(Sender: TObject);
-    procedure SpeedButtonSelecionarUsuarioMouseLeave(Sender: TObject);
     procedure SpeedButtonCadastrarNovoUsuarioClick(Sender: TObject);
     procedure EditConsultaNomeUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SpeedButtonConsultarUsuarioClick(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
     procedure dbg_registros_consulta_usuariosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure dbg_registros_consulta_usuariosDblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,6 +62,30 @@ uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens, unit_agendamen
   unit_cliente_consulta, unit_usuarios_cadastro, classe.usuarios;
 
 
+procedure Tform_usuario_consulta.dbg_registros_consulta_usuariosDblClick(Sender: TObject);
+begin
+  if not dbg_registros_consulta_usuarios.DataSource.DataSet.IsEmpty then
+  begin
+    try
+      form_usuarios_cadastro := Tform_usuarios_cadastro.Create(Self);
+
+      form_usuarios_cadastro.EditNomeUsuario.Text  := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_usuario').AsString;
+      form_usuarios_cadastro.EditLogin.Text        := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_login').AsString;
+      form_usuarios_cadastro.EditSenha.Text        := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
+      form_usuarios_cadastro.EditRepetirSenha.Text := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
+
+      // Recebe a senha criptografada do Banco de Dados para poder ser alterada caso o usuário altere a senha.
+      form_usuarios_cadastro.senha_original        := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
+
+      DataModule1.Usuarios.id_usuarios             := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('id_usuarios').AsInteger;
+
+      form_usuarios_cadastro.ShowModal;
+    finally
+      form_usuarios_cadastro.Free;
+    end;
+  end;
+end;
+
 procedure Tform_usuario_consulta.dbg_registros_consulta_usuariosKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 var
@@ -72,10 +93,10 @@ var
 begin
    if (NOT ( dbg_registros_consulta_usuarios.DataSource.DataSet.IsEmpty ) ) and ( key = VK_DELETE )
    and ( fnc_criar_mensagem('CONFIRMAÇÃO',
-                          'Excluir Dados do Usuário',
-                          'Deseja excluir este Usuário?',
-                          ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
-                          'CORFIRMA')) then
+                            'Excluir Dados do Usuário',
+                            'Deseja excluir este Usuário?',
+                            ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                            'CONFIRMAR')) then
   begin
     if (not ( DataModule1.Usuarios.fnc_operacoes_crud('EXCLUIR',
                dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('id_usuarios').AsString,
@@ -186,16 +207,6 @@ end;
 procedure Tform_usuario_consulta.SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
 begin
   SpeedButtonConsultarUsuario.Font.Color := clWhite;
-end;
-
-procedure Tform_usuario_consulta.SpeedButtonSelecionarUsuarioMouseEnter(Sender: TObject);
-begin
-  SpeedButtonSelecionarUsuario.Font.Color := $00591A05;
-end;
-
-procedure Tform_usuario_consulta.SpeedButtonSelecionarUsuarioMouseLeave(Sender: TObject);
-begin
-  SpeedButtonSelecionarUsuario.Font.Color := clWhite;
 end;
 
 end.

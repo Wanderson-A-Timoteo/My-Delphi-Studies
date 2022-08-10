@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.WinXCalendars;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.WinXCalendars, ACBrBase, ACBrEnterTab;
 
 type
   Tform_agendamento_consulta = class(TForm)
@@ -38,6 +38,7 @@ type
     Label2: TLabel;
     Label5: TLabel;
     Label6: TLabel;
+    ACBrEnterTab1: TACBrEnterTab;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure CalendarPickerSelecionarDataChange(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
@@ -76,7 +77,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione um Profissional!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     CalendarPickerSelecionarData.IsEmpty := True;
@@ -98,7 +99,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione um Profissional!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     ComboBoxHora.ItemIndex := -1;
@@ -110,7 +111,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Data do agendamento não selecionada!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     ComboBoxHora.ItemIndex := -1;
@@ -127,7 +128,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione um Profissional!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     ComboBoxMinuto.ItemIndex := -1;
@@ -139,7 +140,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Data do agendamento não selecionada!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     ComboBoxMinuto.ItemIndex := -1;
@@ -151,7 +152,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione a Hora!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     ComboBoxMinuto.ItemIndex := -1;
@@ -182,7 +183,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Data do agendamento não selecionada!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
     Abort;
   end;
@@ -193,7 +194,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Horário do agendamento não selecionada!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
     ComboBoxHora.SetFocus;
     Abort;

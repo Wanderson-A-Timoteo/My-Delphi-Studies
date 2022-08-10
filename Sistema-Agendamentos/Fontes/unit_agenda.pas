@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.WinXCalendars, classe.agendamento, Datasnap.DBClient;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.WinXCalendars, classe.agendamento, Datasnap.DBClient,
+  ACBrBase, ACBrEnterTab;
 
 type
   Tform_agenda = class(TForm)
@@ -42,6 +43,7 @@ type
     cds_agendads_cliente: TStringField;
     cds_agendads_profissional: TStringField;
     cds_agendaid_agendamento: TIntegerField;
+    ACBrEnterTab1: TACBrEnterTab;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure CalendarPickerSelecionarDataChange(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
@@ -85,7 +87,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione um Profissional!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     CalendarPickerSelecionarData.IsEmpty := True;
@@ -162,7 +164,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione um Cliente!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     EditNomeCliente.SetFocus;
@@ -183,7 +185,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione uma Data!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     CalendarPickerSelecionarData.SetFocus;
@@ -195,7 +197,7 @@ begin
     fnc_criar_mensagem('VALIDANDO DADOS',
                        'Dados obrigatórios não preenchidos',
                        'Selecione um Profissional!',
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       ExtractFilePath(Application.ExeName) + 'imagens\info.png',
                        'OK');
 
     dbl_cmb_consulta_profissional.SetFocus;
