@@ -65,7 +65,8 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens, unit_agendamento, unit_agenda, classe.agendamento;
+uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens, unit_agendamento, unit_agenda, classe.agendamento,
+  unit_relatorios;
 
 
 procedure Tform_cliente_consulta.dbg_registros_consulta_clienteDblClick(Sender: TObject);
@@ -213,10 +214,21 @@ begin
   with dbg_registros_consulta_cliente.DataSource.DataSet do
     if (not ( IsEmpty )) then
     begin
-      form_agenda.Agendamento.cli_id_cliente      := FieldByName('id_cliente').AsInteger;
-      form_agendamento.EditNomeCliente.Text       := FieldByName('ds_cliente').AsString;
-      form_agendamento.MaskEditTelefoneFixo.Text  := FieldByName('nr_telefone').AsString;
-      form_agendamento.MaskEditCelular.Text       := FieldByName('nr_telefone2').AsString;
+      // Verifica se o form_agendamento foi criado
+      if form_agendamento <> nil then
+      begin
+        form_agenda.Agendamento.cli_id_cliente      := FieldByName('id_cliente').AsInteger;
+        form_agendamento.EditNomeCliente.Text       := FieldByName('ds_cliente').AsString;
+        form_agendamento.MaskEditTelefoneFixo.Text  := FieldByName('nr_telefone').AsString;
+        form_agendamento.MaskEditCelular.Text       := FieldByName('nr_telefone2').AsString;
+      end else
+      if form_relatorios <> nil then
+      begin
+        form_relatorios.cli_id_cliente              := FieldByName('id_cliente').AsInteger;
+        form_agendamento.EditNomeCliente.Text       := FieldByName('ds_cliente').AsString;
+        form_agendamento.MaskEditTelefoneFixo.Text  := FieldByName('nr_telefone').AsString;
+        form_agendamento.MaskEditCelular.Text       := FieldByName('nr_telefone2').AsString;
+      end;
 
       form_cliente_consulta.Close;
     end;

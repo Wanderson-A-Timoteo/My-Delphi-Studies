@@ -34,6 +34,13 @@ type
     Label7: TLabel;
     MaskEditDataFinal: TMaskEdit;
     PanelBordaDataFinal: TPanel;
+    ds_profissionais: TDataSource;
+    LabelNoemProfissional: TLabel;
+    dbl_cmb_profissionais: TDBLookupComboBox;
+    LabelNomeCliente: TLabel;
+    SpeedButtonPesquisaNomeCliente: TSpeedButton;
+    EditNomeCliente: TEdit;
+    Panel1: TPanel;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonVizualizarMouseEnter(Sender: TObject);
     procedure SpeedButtonVizualizarMouseLeave(Sender: TObject);
@@ -45,6 +52,9 @@ type
     procedure MaskEditDataFinalExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure SpeedButtonPesquisaNomeClienteClick(Sender: TObject);
+    procedure ComboBoxTipoRelatorioCloseUp(Sender: TObject);
 
   private
     { Private declarations }
@@ -52,6 +62,7 @@ type
     { Public declarations }
     Relatorios     : TRelatorios;
     senha_original : String;
+    cli_id_cliente : Integer;
   end;
 
 var
@@ -61,7 +72,41 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_relatorio_agendamento_periodo;
+uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta;
+
+procedure Tform_relatorios.ComboBoxTipoRelatorioCloseUp(Sender: TObject);
+begin
+  if ComboBoxTipoRelatorio.ItemIndex = 0 then  // período
+  begin
+    cli_id_cliente := 0;
+    EditNomeCliente.Text := '';
+
+    SpeedButtonPesquisaNomeCliente.Enabled := False;
+
+    dbl_cmb_profissionais.Enabled          := False;
+    dbl_cmb_profissionais.KeyValue         := null;
+
+  end else
+  if ComboBoxTipoRelatorio.ItemIndex = 1 then  // cliente
+  begin
+
+    SpeedButtonPesquisaNomeCliente.Enabled := True;
+
+    dbl_cmb_profissionais.Enabled          := False;
+    dbl_cmb_profissionais.KeyValue         := null;
+
+  end else
+  if ComboBoxTipoRelatorio.ItemIndex = 2 then  // profissional
+  begin
+    cli_id_cliente := 0;
+    EditNomeCliente.Text := '';
+
+    SpeedButtonPesquisaNomeCliente.Enabled := False;
+
+    dbl_cmb_profissionais.Enabled          := True;
+
+  end;
+end;
 
 procedure Tform_relatorios.FormCreate(Sender: TObject);
 begin
@@ -71,6 +116,11 @@ end;
 procedure Tform_relatorios.FormDestroy(Sender: TObject);
 begin
   Relatorios.Free;
+end;
+
+procedure Tform_relatorios.FormShow(Sender: TObject);
+begin
+  ds_profissionais.DataSet := DataModule1.Profissional.fnc_consulta('');
 end;
 
 procedure Tform_relatorios.MaskEditDataFinalExit(Sender: TObject);
@@ -149,6 +199,16 @@ end;
 procedure Tform_relatorios.SpeedButtonCancelarMouseLeave(Sender: TObject);
 begin
   SpeedButtonCancelar.Font.Color := clWhite;
+end;
+
+procedure Tform_relatorios.SpeedButtonPesquisaNomeClienteClick(Sender: TObject);
+begin
+   form_cliente_consulta := Tform_cliente_consulta.Create(Self);
+  try
+    form_cliente_consulta.ShowModal;
+  finally
+    form_cliente_consulta.Free;
+  end;
 end;
 
 procedure Tform_relatorios.SpeedButtonVizualizarClick(Sender: TObject);
