@@ -56,8 +56,6 @@ object form_relatorios: Tform_relatorios
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = -93
-      ExplicitTop = 0
       object LabelTipoRelatorio: TLabel
         Left = 90
         Top = 137

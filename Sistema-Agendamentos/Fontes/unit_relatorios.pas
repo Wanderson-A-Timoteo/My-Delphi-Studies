@@ -72,7 +72,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta;
+uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta, unit_relatorio_agendamento_cliente;
 
 procedure Tform_relatorios.ComboBoxTipoRelatorioCloseUp(Sender: TObject);
 begin
@@ -216,25 +216,49 @@ begin
   prcValidarCamposObrigatorios( form_relatorios );
 
   case ComboBoxTipoRelatorio.ItemIndex of
-  0:begin
-    try
-      form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
-      form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PERÍODO DE:  ' + MaskEditDataInicial.Text + '  ATÉ:  ' + MaskEditDataFinal.Text;
+    0:begin
+      try
+        form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
+        form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PERÍODO DE:  ' + MaskEditDataInicial.Text + '  ATÉ:  ' + MaskEditDataFinal.Text;
 
-      Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
-      form_relatorio_agendamento_periodo.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
-      form_relatorio_agendamento_periodo.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
+        Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
+        form_relatorio_agendamento_periodo.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
+        form_relatorio_agendamento_periodo.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
 
-      // Mostra o form relatório
-      //form_relatorio_agendamento_periodo.ShowModal;
+        // Mostra o form relatório
+        //form_relatorio_agendamento_periodo.ShowModal;
 
-      // Mostra o relatório coo folha de papel para ser impressa
-      form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
-    finally
-      form_relatorio_agendamento_periodo.Free;
+        // Mostra o relatório coo folha de papel para ser impressa
+        form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
+      finally
+        form_relatorio_agendamento_periodo.Free;
+      end;
     end;
-  end;
 
+    1:begin
+      try
+        form_relatorio_agendamento_cliente := Tform_relatorio_agendamento_cliente.Create(Self);
+        form_relatorio_agendamento_cliente.RLLabelPeriodo.Caption := 'PERÍODO DE:  '
+                                                                     + MaskEditDataInicial.Text +
+                                                                     '  ATÉ:  '
+                                                                     + MaskEditDataFinal.Text;
+
+        form_relatorio_agendamento_cliente.RLLabelNomeCliente.Caption := 'CLIENTE:  '
+                                                                     + EditNomeCliente.Text;
+
+        Relatorios.prc_agendamento_cliente( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text), cli_id_cliente);
+        form_relatorio_agendamento_cliente.ds_padrao.DataSet := Relatorios.Qry_agendamento_cliente;
+        form_relatorio_agendamento_cliente.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_cliente.RecordCount);
+
+        // Mostra o form relatório
+        //form_relatorio_agendamento_cliente.ShowModal;
+
+        // Mostra o relatório coo folha de papel para ser impressa
+        form_relatorio_agendamento_cliente.RLReportAgendamentoCliente.Preview;
+      finally
+        form_relatorio_agendamento_cliente.Free;
+      end;
+    end;
   end;
 end;
 

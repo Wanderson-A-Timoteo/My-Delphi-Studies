@@ -24,7 +24,8 @@ uses
   classe.usuarios in 'classe.usuarios.pas',
   unit_relatorios in 'unit_relatorios.pas' {form_relatorios},
   unit_relatorio_agendamento_periodo in 'unit_relatorio_agendamento_periodo.pas' {form_relatorio_agendamento_periodo},
-  classe.relatorios in 'classe.relatorios.pas';
+  classe.relatorios in 'classe.relatorios.pas',
+  unit_relatorio_agendamento_cliente in 'unit_relatorio_agendamento_cliente.pas' {form_relatorio_agendamento_cliente};
 
 {$R *.res}
 
