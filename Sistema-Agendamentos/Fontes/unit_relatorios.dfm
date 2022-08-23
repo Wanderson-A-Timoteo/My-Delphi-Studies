@@ -56,6 +56,8 @@ object form_relatorios: Tform_relatorios
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      ExplicitLeft = 0
+      ExplicitTop = 0
       object LabelTipoRelatorio: TLabel
         Left = 90
         Top = 137
@@ -96,7 +98,7 @@ object form_relatorios: Tform_relatorios
         ParentFont = False
       end
       object Label10: TLabel
-        Left = 292
+        Left = 301
         Top = 137
         Width = 5
         Height = 15
@@ -174,7 +176,7 @@ object form_relatorios: Tform_relatorios
         ParentFont = False
       end
       object SpeedButtonPesquisaNomeCliente: TSpeedButton
-        Left = 90
+        Left = 87
         Top = 407
         Width = 29
         Height = 35
@@ -362,13 +364,14 @@ object form_relatorios: Tform_relatorios
         Height = 29
         Hint = '  -   Escola o Tipo de Relat'#243'rio'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clSilver
+        Font.Color = 11976552
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
+        ItemIndex = 0
         ParentFont = False
         TabOrder = 0
-        Text = 'Selecione'
+        Text = 'Agendamentos Por Per'#237'odo'
         OnCloseUp = ComboBoxTipoRelatorioCloseUp
         Items.Strings = (
           'Agendamentos Por Per'#237'odo'
@@ -435,7 +438,6 @@ object form_relatorios: Tform_relatorios
         TabOrder = 2
         Text = '  /  /    '
         OnExit = MaskEditDataFinalExit
-        OnKeyDown = MaskEditDataFinalKeyDown
       end
       object PanelBordaDataFinal: TPanel
         Left = 278
@@ -453,7 +455,6 @@ object form_relatorios: Tform_relatorios
         TabOrder = 3
       end
       object dbl_cmb_profissionais: TDBLookupComboBox
-        Tag = 5
         Left = 90
         Top = 326
         Width = 460
@@ -474,7 +475,6 @@ object form_relatorios: Tform_relatorios
         TabOrder = 7
       end
       object EditNomeCliente: TEdit
-        Tag = 5
         Left = 122
         Top = 412
         Width = 426

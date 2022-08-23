@@ -72,12 +72,15 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta;
+uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta, unit_relatorio_agendamento_cliente,
+  unit_relatorio_agendamento_profissional;
 
 procedure Tform_relatorios.ComboBoxTipoRelatorioCloseUp(Sender: TObject);
 begin
   if ComboBoxTipoRelatorio.ItemIndex = 0 then  // período
   begin
+    cli_id_cliente := 0;
+    EditNomeCliente.Text := '';
 
     SpeedButtonPesquisaNomeCliente.Enabled := False;
 
@@ -88,14 +91,10 @@ begin
   if ComboBoxTipoRelatorio.ItemIndex = 1 then  // cliente
   begin
 
-    cli_id_cliente := 0;
-    EditNomeCliente.Text := '';
-
     SpeedButtonPesquisaNomeCliente.Enabled := True;
 
     dbl_cmb_profissionais.Enabled          := False;
     dbl_cmb_profissionais.KeyValue         := null;
-
 
   end else
   if ComboBoxTipoRelatorio.ItemIndex = 2 then  // profissional
@@ -147,8 +146,8 @@ end;
 
 procedure Tform_relatorios.MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
-  if key = VK_RETURN then
-  begin
+  //if key = VK_RETURN then
+  //begin
     if (fncRomoveCaracteres ( MaskEditDataFinal.Text ) <> '') and
                             ( MaskEditDataFinal.Text <> '  /  /    ') then
     begin
@@ -166,7 +165,7 @@ begin
       end;
     end;
       SpeedButtonVizualizarClick(Self);
-  end;
+ // end;
 end;
 
 procedure Tform_relatorios.MaskEditDataInicialExit(Sender: TObject);
@@ -218,24 +217,81 @@ begin
   prcValidarCamposObrigatorios( form_relatorios );
 
   case ComboBoxTipoRelatorio.ItemIndex of
-  0:begin
-    try
-      form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
-      form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PERÍODO DE:  ' + MaskEditDataInicial.Text + '  ATÉ:  ' + MaskEditDataFinal.Text;
+    0:begin
+      try
+        form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
+        form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PERÍODO DE:  ' + MaskEditDataInicial.Text + '  ATÉ:  ' + MaskEditDataFinal.Text;
 
-      Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
-      form_relatorio_agendamento_periodo.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
-      form_relatorio_agendamento_periodo.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
+        Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
+        form_relatorio_agendamento_periodo.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
+        form_relatorio_agendamento_periodo.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
 
-      // Mostra o form relatório
-      //form_relatorio_agendamento_periodo.ShowModal;
+        // Mostra o form relatório
+        //form_relatorio_agendamento_periodo.ShowModal;
 
-      // Mostra o relatório coo folha de papel para ser impressa
-      form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
-    finally
-      form_relatorio_agendamento_periodo.Free;
+        // Mostra o relatório coo folha de papel para ser impressa
+        form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
+      finally
+        form_relatorio_agendamento_periodo.Free;
+      end;
     end;
-  end;
+
+    1:begin
+      try
+        form_relatorio_agendamento_cliente := Tform_relatorio_agendamento_cliente.Create(Self);
+        form_relatorio_agendamento_cliente.RLLabelPeriodo.Caption := 'PERÍODO DE:  '
+                                                                     + MaskEditDataInicial.Text +
+                                                                     '  ATÉ:  '
+                                                                     + MaskEditDataFinal.Text;
+
+        form_relatorio_agendamento_cliente.RLLabelNomeCliente.Caption := 'CLIENTE:  '
+                                                                     + EditNomeCliente.Text;
+
+        Relatorios.prc_agendamento_cliente( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text), cli_id_cliente);
+        form_relatorio_agendamento_cliente.ds_padrao.DataSet := Relatorios.Qry_agendamento_cliente;
+        form_relatorio_agendamento_cliente.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_cliente.RecordCount);
+
+        // Mostra o form relatório
+        //form_relatorio_agendamento_cliente.ShowModal;
+
+        // Mostra o relatório coo folha de papel para ser impressa
+        form_relatorio_agendamento_cliente.RLReportAgendamentoCliente.Preview;
+      finally
+        form_relatorio_agendamento_cliente.Free;
+      end;
+    end;
+
+
+
+    2:begin
+      try
+        form_relatorio_agendamento_profissional := Tform_relatorio_agendamento_profissional.Create(Self);
+        form_relatorio_agendamento_profissional.RLLabelPeriodo.Caption := 'PERÍODO DE:  '
+                                                                     + MaskEditDataInicial.Text +
+                                                                     '  ATÉ:  '
+                                                                     + MaskEditDataFinal.Text;
+
+        form_relatorio_agendamento_profissional.RLLabelNomeProfissional.Caption := 'PROFISSIONAL:  '
+                                                                     + dbl_cmb_profissionais.Text;
+
+        Relatorios.prc_agendamento_profissional( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text), dbl_cmb_profissionais.KeyValue);
+        form_relatorio_agendamento_profissional.ds_padrao.DataSet := Relatorios.Qry_agendamento_profissional;
+        form_relatorio_agendamento_profissional.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_profissional.RecordCount);
+
+        // Mostra o form relatório
+        //form_relatorio_agendamento_profissional.ShowModal;
+
+        // Mostra o relatório como folha de papel para ser impressa
+        form_relatorio_agendamento_profissional.RLReportAgendamentoProfissional.Preview;
+      finally
+        form_relatorio_agendamento_profissional.Free;
+      end;
+    end;
+
+
+
+
+
 
   end;
 end;

@@ -225,9 +225,7 @@ begin
       if form_relatorios <> nil then
       begin
         form_relatorios.cli_id_cliente              := FieldByName('id_cliente').AsInteger;
-        form_agendamento.EditNomeCliente.Text       := FieldByName('ds_cliente').AsString;
-        form_agendamento.MaskEditTelefoneFixo.Text  := FieldByName('nr_telefone').AsString;
-        form_agendamento.MaskEditCelular.Text       := FieldByName('nr_telefone2').AsString;
+        form_relatorios.EditNomeCliente.Text        := FieldByName('ds_cliente').AsString;
       end;
 
       form_cliente_consulta.Close;

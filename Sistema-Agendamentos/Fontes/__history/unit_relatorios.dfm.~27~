@@ -56,8 +56,6 @@ object form_relatorios: Tform_relatorios
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = -93
-      ExplicitTop = 0
       object LabelTipoRelatorio: TLabel
         Left = 90
         Top = 137
@@ -176,7 +174,7 @@ object form_relatorios: Tform_relatorios
         ParentFont = False
       end
       object SpeedButtonPesquisaNomeCliente: TSpeedButton
-        Left = 90
+        Left = 87
         Top = 407
         Width = 29
         Height = 35
@@ -364,7 +362,7 @@ object form_relatorios: Tform_relatorios
         Height = 29
         Hint = '  -   Escola o Tipo de Relat'#243'rio'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clSilver
+        Font.Color = 11976552
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
@@ -455,7 +453,6 @@ object form_relatorios: Tform_relatorios
         TabOrder = 3
       end
       object dbl_cmb_profissionais: TDBLookupComboBox
-        Tag = 5
         Left = 90
         Top = 326
         Width = 460
@@ -476,7 +473,6 @@ object form_relatorios: Tform_relatorios
         TabOrder = 7
       end
       object EditNomeCliente: TEdit
-        Tag = 5
         Left = 122
         Top = 412
         Width = 426
@@ -494,6 +490,21 @@ object form_relatorios: Tform_relatorios
         ParentFont = False
         ReadOnly = True
         TabOrder = 8
+      end
+      object Panel1: TPanel
+        Left = 10
+        Top = 482
+        Width = 630
+        Height = 1
+        Color = 14211288
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 9
       end
     end
   end

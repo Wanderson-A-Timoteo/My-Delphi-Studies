@@ -31,14 +31,26 @@ type
     PanelBotaoCancelar: TPanel;
     SpeedButtonCancelarConsulta: TSpeedButton;
     labelMsnDELouEdit: TLabel;
+    PanelBotaoSelecionarCliente: TPanel;
+    SpeedButtonSelecionarCliente: TSpeedButton;
+    Panel1: TPanel;
     procedure SpeedButtonCancelarConsultaClick(Sender: TObject);
-    procedure SpeedButtonCadastrarNovoClienteClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SpeedButtonConsultarClienteClick(Sender: TObject);
     procedure dbg_registros_consulta_clienteDblClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure dbg_registros_consulta_clienteKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure SpeedButtonCadastrarNovoClienteClick(Sender: TObject);
+    procedure SpeedButtonSelecionarClienteClick(Sender: TObject);
+    procedure SpeedButtonSelecionarClienteMouseEnter(Sender: TObject);
+    procedure SpeedButtonSelecionarClienteMouseLeave(Sender: TObject);
+    procedure SpeedButtonCancelarConsultaMouseEnter(Sender: TObject);
+    procedure SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
+    procedure SpeedButtonCadastrarNovoClienteMouseEnter(Sender: TObject);
+    procedure SpeedButtonCadastrarNovoClienteMouseLeave(Sender: TObject);
+    procedure SpeedButtonConsultarClienteMouseLeave(Sender: TObject);
+    procedure SpeedButtonConsultarClienteMouseEnter(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,7 +65,8 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens;
+uses unit_funcoes, unit_clientes, classe_conexao, unit_mensagens, unit_agendamento, unit_agenda, classe.agendamento,
+  unit_relatorios;
 
 
 procedure Tform_cliente_consulta.dbg_registros_consulta_clienteDblClick(Sender: TObject);
@@ -147,7 +160,7 @@ end;
 
 procedure Tform_cliente_consulta.SpeedButtonCadastrarNovoClienteClick(Sender: TObject);
 begin
-  try
+   try
     form_clientes := Tform_clientes.Create(nil);
     ds_cliente_consulta.DataSet := nil;
     form_clientes.ShowModal;
@@ -156,14 +169,79 @@ begin
   end;
 end;
 
+procedure Tform_cliente_consulta.SpeedButtonCadastrarNovoClienteMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCadastrarNovoCliente.Font.Color := $00591A05;
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonCadastrarNovoClienteMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCadastrarNovoCliente.Font.Color := clWhite;
+end;
+
 procedure Tform_cliente_consulta.SpeedButtonCancelarConsultaClick(Sender: TObject);
 begin
   Close;
 end;
 
+procedure Tform_cliente_consulta.SpeedButtonCancelarConsultaMouseEnter(Sender: TObject);
+begin
+  SpeedButtonCancelarConsulta.Font.Color := $00591A05;
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
+begin
+  SpeedButtonCancelarConsulta.Font.Color := clWhite;
+end;
+
 procedure Tform_cliente_consulta.SpeedButtonConsultarClienteClick(Sender: TObject);
 begin
   ds_cliente_consulta.DataSet := LClientes.fnc_consulta( EditConsultaNomeCliente.Text );
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonConsultarClienteMouseEnter(Sender: TObject);
+begin
+  SpeedButtonConsultarCliente.Font.Color := $00591A05;
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonConsultarClienteMouseLeave(Sender: TObject);
+begin
+  SpeedButtonConsultarCliente.Font.Color := clWhite;
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonSelecionarClienteClick(Sender: TObject);
+begin
+  with dbg_registros_consulta_cliente.DataSource.DataSet do
+    if (not ( IsEmpty )) then
+    begin
+      // Verifica se o form_agendamento foi criado
+      if form_agendamento <> nil then
+      begin
+        form_agenda.Agendamento.cli_id_cliente      := FieldByName('id_cliente').AsInteger;
+        form_agendamento.EditNomeCliente.Text       := FieldByName('ds_cliente').AsString;
+        form_agendamento.MaskEditTelefoneFixo.Text  := FieldByName('nr_telefone').AsString;
+        form_agendamento.MaskEditCelular.Text       := FieldByName('nr_telefone2').AsString;
+      end else
+      if form_relatorios <> nil then
+      begin
+        form_relatorios.cli_id_cliente              := FieldByName('id_cliente').AsInteger;
+        form_agendamento.EditNomeCliente.Text       := FieldByName('ds_cliente').AsString;
+        form_agendamento.MaskEditTelefoneFixo.Text  := FieldByName('nr_telefone').AsString;
+        form_agendamento.MaskEditCelular.Text       := FieldByName('nr_telefone2').AsString;
+      end;
+
+      form_cliente_consulta.Close;
+    end;
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonSelecionarClienteMouseEnter(Sender: TObject);
+begin
+  SpeedButtonSelecionarCliente.Font.Color := $00591A05;
+end;
+
+procedure Tform_cliente_consulta.SpeedButtonSelecionarClienteMouseLeave(Sender: TObject);
+begin
+  SpeedButtonSelecionarCliente.Font.Color := clWhite;
 end;
 
 end.

@@ -1,4 +1,4 @@
-unit unit_relatorios;
+Ôªøunit unit_relatorios;
 
 interface
 
@@ -46,7 +46,6 @@ type
     procedure SpeedButtonVizualizarMouseLeave(Sender: TObject);
     procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
-    procedure MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SpeedButtonVizualizarClick(Sender: TObject);
     procedure MaskEditDataInicialExit(Sender: TObject);
     procedure MaskEditDataFinalExit(Sender: TObject);
@@ -72,11 +71,12 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta, unit_relatorio_agendamento_cliente;
+uses unit_funcoes, unit_relatorio_agendamento_periodo, unit_cliente_consulta, unit_relatorio_agendamento_cliente,
+  unit_relatorio_agendamento_profissional;
 
 procedure Tform_relatorios.ComboBoxTipoRelatorioCloseUp(Sender: TObject);
 begin
-  if ComboBoxTipoRelatorio.ItemIndex = 0 then  // perÌodo
+  if ComboBoxTipoRelatorio.ItemIndex = 0 then  // per√≠odo
   begin
     cli_id_cliente := 0;
     EditNomeCliente.Text := '';
@@ -133,37 +133,13 @@ begin
     except
       fnc_criar_mensagem('VALIDANDO DADOS',
                          'Erro ao validar DATA FINAL',
-                         'Data Final Inv·lida',
+                         'Data Final Inv√°lida',
                          ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
                          'OK');
 
       MaskEditDataFinal.SetFocus;
       Exit;
     end;
-  end;
-end;
-
-procedure Tform_relatorios.MaskEditDataFinalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-begin
-  if key = VK_RETURN then
-  begin
-    if (fncRomoveCaracteres ( MaskEditDataFinal.Text ) <> '') and
-                            ( MaskEditDataFinal.Text <> '  /  /    ') then
-    begin
-      try
-        MaskEditDataFinal.Text := FormatDateTime('DD/MM/YYYY', StrToDate( MaskEditDataFinal.Text));
-      except
-        fnc_criar_mensagem('VALIDANDO DADOS',
-                           'Erro ao validar DATA FINAL',
-                           'Data Final Inv·lida',
-                           ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
-                           'OK');
-
-        MaskEditDataFinal.SetFocus;
-        Exit;
-      end;
-    end;
-      SpeedButtonVizualizarClick(Self);
   end;
 end;
 
@@ -177,7 +153,7 @@ begin
     except
       fnc_criar_mensagem('VALIDANDO DADOS',
                          'Erro ao validar DATA INICIAL',
-                         'Data Inicial Inv·lida',
+                         'Data Inicial Inv√°lida',
                          ExtractFilePath( Application.ExeName ) + 'imagens\erro.png',
                          'OK');
 
@@ -219,16 +195,16 @@ begin
     0:begin
       try
         form_relatorio_agendamento_periodo := Tform_relatorio_agendamento_periodo.Create(Self);
-        form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PERÕODO DE:  ' + MaskEditDataInicial.Text + '  AT…:  ' + MaskEditDataFinal.Text;
+        form_relatorio_agendamento_periodo.RLLabelPeriodo.Caption := 'PER√çODO DE:  ' + MaskEditDataInicial.Text + '  AT√â:  ' + MaskEditDataFinal.Text;
 
         Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
         form_relatorio_agendamento_periodo.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
         form_relatorio_agendamento_periodo.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
 
-        // Mostra o form relatÛrio
+        // Mostra o form relat√≥rio
         //form_relatorio_agendamento_periodo.ShowModal;
 
-        // Mostra o relatÛrio coo folha de papel para ser impressa
+        // Mostra o relat√≥rio coo folha de papel para ser impressa
         form_relatorio_agendamento_periodo.RLReportAgendamentoPeriodo.Preview;
       finally
         form_relatorio_agendamento_periodo.Free;
@@ -238,21 +214,60 @@ begin
     1:begin
       try
         form_relatorio_agendamento_cliente := Tform_relatorio_agendamento_cliente.Create(Self);
-        form_relatorio_agendamento_cliente.RLLabelPeriodo.Caption := 'PERÕODO DE:  ' + MaskEditDataInicial.Text + '  AT…:  ' + MaskEditDataFinal.Text;
+        form_relatorio_agendamento_cliente.RLLabelPeriodo.Caption := 'PER√çODO DE:  '
+                                                                     + MaskEditDataInicial.Text +
+                                                                     '  AT√â:  '
+                                                                     + MaskEditDataFinal.Text;
 
-        Relatorios.prc_agendamento_periodo( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text));
-        form_relatorio_agendamento_cliente.ds_padrao.DataSet := Relatorios.Qry_agendamento_periodo;
-        form_relatorio_agendamento_cliente.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_periodo.RecordCount);
+        form_relatorio_agendamento_cliente.RLLabelNomeCliente.Caption := 'CLIENTE:  '
+                                                                     + EditNomeCliente.Text;
 
-        // Mostra o form relatÛrio
+        Relatorios.prc_agendamento_cliente( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text), cli_id_cliente);
+        form_relatorio_agendamento_cliente.ds_padrao.DataSet := Relatorios.Qry_agendamento_cliente;
+        form_relatorio_agendamento_cliente.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_cliente.RecordCount);
+
+        // Mostra o form relat√≥rio
         //form_relatorio_agendamento_cliente.ShowModal;
 
-        // Mostra o relatÛrio coo folha de papel para ser impressa
+        // Mostra o relat√≥rio coo folha de papel para ser impressa
         form_relatorio_agendamento_cliente.RLReportAgendamentoCliente.Preview;
       finally
         form_relatorio_agendamento_cliente.Free;
       end;
     end;
+
+
+
+    2:begin
+      try
+        form_relatorio_agendamento_profissional := Tform_relatorio_agendamento_profissional.Create(Self);
+        form_relatorio_agendamento_profissional.RLLabelPeriodo.Caption := 'PER√çODO DE:  '
+                                                                     + MaskEditDataInicial.Text +
+                                                                     '  AT√â:  '
+                                                                     + MaskEditDataFinal.Text;
+
+        form_relatorio_agendamento_profissional.RLLabelNomeProfissional.Caption := 'PROFISSIONAL:  '
+                                                                     + dbl_cmb_profissionais.Text;
+
+        Relatorios.prc_agendamento_profissional( StrToDate(MaskEditDataInicial.Text), StrToDate(MaskEditDataFinal.Text), dbl_cmb_profissionais.KeyValue);
+        form_relatorio_agendamento_profissional.ds_padrao.DataSet := Relatorios.Qry_agendamento_profissional;
+        form_relatorio_agendamento_profissional.lblTotal.Caption  := IntToStr(Relatorios.Qry_agendamento_profissional.RecordCount);
+
+        // Mostra o form relat√≥rio
+        //form_relatorio_agendamento_profissional.ShowModal;
+
+        // Mostra o relat√≥rio como folha de papel para ser impressa
+        form_relatorio_agendamento_profissional.RLReportAgendamentoProfissional.Preview;
+      finally
+        form_relatorio_agendamento_profissional.Free;
+      end;
+    end;
+
+
+
+
+
+
   end;
 end;
 
