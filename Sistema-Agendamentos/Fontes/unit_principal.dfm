@@ -184,7 +184,7 @@ object form_principal: Tform_principal
     AlignWithMargins = True
     Left = 16
     Top = 610
-    Width = 785
+    Width = 661
     Height = 15
     Anchors = [akLeft, akRight, akBottom]
     Caption = 
@@ -197,7 +197,6 @@ object form_principal: Tform_principal
     Font.Style = [fsBold]
     ParentFont = False
     Layout = tlCenter
-    ExplicitWidth = 661
   end
   object PanelFundo: TPanel
     Left = 22
@@ -2966,7 +2965,6 @@ object form_principal: Tform_principal
     Color = clGray
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 972
   end
   object PanelBtnMaximizarFechar: TPanel
     Left = 1036
@@ -2977,7 +2975,6 @@ object form_principal: Tform_principal
     Anchors = [akTop, akRight]
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 912
     object SpeedButtonMaximinizar: TSpeedButton
       Left = 8
       Top = 5
@@ -3069,7 +3066,6 @@ object form_principal: Tform_principal
     Color = clGray
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 972
   end
   object PanelBtnAgendamento: TPanel
     Left = 142

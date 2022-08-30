@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
-  Vcl.Mask, ACBrValidador, ACBrEnterTab, ACBrBase, ACBrSocket, ACBrCEP;
+  Vcl.Mask, ACBrValidador, ACBrEnterTab, ACBrBase, ACBrSocket, ACBrCEP, classe.lojas;
 
 type
   Tform_lojas = class(TForm)
@@ -32,7 +32,6 @@ type
     PanelBordaNomeCliente: TPanel;
     PanelBordaEndereco: TPanel;
     EditEndereco: TEdit;
-    PanelBordaCelular: TPanel;
     MaskEditTelefoneFixo: TMaskEdit;
     PanelBordaComplemento: TPanel;
     EditComplemento: TEdit;
@@ -83,13 +82,14 @@ type
     Label15: TLabel;
     EditNomeFantasia: TEdit;
     PanelBordaFantasia: TPanel;
-    Panel1: TPanel;
+    PanelBordaCodIBGE: TPanel;
     EditCodigoIBGE: TEdit;
     Label16: TLabel;
     Label17: TLabel;
-    Panel2: TPanel;
+    PanelBordaEmail: TPanel;
     EditEmail: TEdit;
     Label18: TLabel;
+    Panel1: TPanel;
     procedure SpeedButtonSalvarClick(Sender: TObject);
     procedure MaskEditCNPJExit(Sender: TObject);
     procedure MaskEditDataAberturaExit(Sender: TObject);
@@ -116,7 +116,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_funcoes, unit_cliente_consulta, unit_clientes;
+uses unit_funcoes, unit_consulta_lojas, unit_clientes, unit_cliente_consulta;
 
 procedure Tform_lojas.MaskEditCEPExit(Sender: TObject);
 begin
@@ -124,10 +124,11 @@ begin
   begin
     if ACBrCEP1.BuscarPorCEP( MaskEditCEP.Text) > 0 then
     begin
-      EditEndereco.Text := ACBrCEP1.Enderecos[0].Logradouro;
-      EditBairro.Text   := ACBrCEP1.Enderecos[0].Bairro;
-      EditCidade.Text   := ACBrCEP1.Enderecos[0].Municipio;
-      EditUF.Text       := ACBrCEP1.Enderecos[0].UF;
+      EditEndereco.Text   := ACBrCEP1.Enderecos[0].Logradouro;
+      EditBairro.Text     := ACBrCEP1.Enderecos[0].Bairro;
+      EditCidade.Text     := ACBrCEP1.Enderecos[0].Municipio;
+      EditUF.Text         := ACBrCEP1.Enderecos[0].UF;
+      EditCodigoIBGE.Text := ACBrCEP1.Enderecos[0].IBGE_Municipio;
 
       EditNumero.SetFocus;
     end else
@@ -147,7 +148,7 @@ procedure Tform_lojas.MaskEditCNPJExit(Sender: TObject);
 begin
   if (fncRomoveCaracteres ( MaskEditCNPJ.Text ) <> '') then
   begin
-    ACBrValidador1.TipoDocto := docCPF;
+    ACBrValidador1.TipoDocto := docCNPJ;
     ACBrValidador1.Documento := MaskEditCNPJ.Text;
 
     if not ACBrValidador1.Validar then
@@ -246,32 +247,35 @@ begin
   Erro := '';
   prcValidarCamposObrigatorios( form_lojas );
 
-  with form_cliente_consulta.LClientes do
+  with form_consulta_lojas.LLojas do
   begin
-    dt_nascimento  := StrToDate(MaskEditDataAbertura.Text);
-    ds_cliente     := EditRazaoSocial.Text;
-    nr_cpf         := MaskEditCNPJ.Text;
-    nr_rg          := MaskEditInscricaoEstadual.Text;
-    nr_cep         := MaskEditCEP.Text;
-    ds_endereco    := EditEndereco.Text;
-    nr_numero      := EditNumero.Text;
-    ds_complemento := EditComplemento.Text;
-    ds_bairro      := EditBairro.text;
-    ds_cidade      := EditCidade.text;
-    ds_uf          := EditUF.text;
-    nr_telefone    := MaskEditTelefoneFixo.Text;
-    nr_telefone2   := MaskEditCelular.Text;
-    ds_obs         := EditObservacoes.Text;
+    dt_abertura           := StrToDate(MaskEditDataAbertura.Text);
+    ds_razao_social       := EditRazaoSocial.Text;
+    ds_fantasia           := EditNomeFantasia.Text;
+    nr_cnpj               := MaskEditCNPJ.Text;
+    nr_inscricao_estadual := MaskEditInscricaoEstadual.Text;
+    nr_cep                := MaskEditCEP.Text;
+    ds_endereco           := EditEndereco.Text;
+    nr_numero             := EditNumero.Text;
+    ds_complemento        := EditComplemento.Text;
+    ds_bairro             := EditBairro.text;
+    ds_cidade             := EditCidade.text;
+    ds_uf                 := EditUF.text;
+    nr_telefone1          := MaskEditTelefoneFixo.Text;
+    nr_telefone2          := MaskEditCelular.Text;
+    ds_obs                := EditObservacoes.Text;
+    ds_email              := EditEmail.Text;
+    nr_ibge_cidade        := StrToInt(EditCodigoIBGE.Text);
 
-    if form_cliente_consulta.LClientes.id_cliente > 0 then
+    if form_consulta_lojas.LLojas.id_loja > 0 then
      Operacao := 'ALTERAR'
     else
       Operacao := 'INSERIR';
 
-    if form_cliente_consulta.LClientes.fnc_inserir_alterar(Operacao, Erro) then
+    if form_consulta_lojas.LLojas.fnc_inserir_alterar(Operacao, Erro) then
     begin
       fnc_criar_mensagem('INSERINDO DADOS',
-                         'Cadastrar/Alterar Cliente',
+                         'Cadastrar/Alterar Loja',
                          'Cadastro/Alteração Realizado com Sucesso! ' +
                          '',
                          ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
@@ -280,8 +284,8 @@ begin
     end else
     begin
       fnc_criar_mensagem('INSERINDO DADOS',
-                         'Erro ao Cadastrar/Alterar Cliente',
-                         'Não foi possível Cadastrar/Alterar Cliente, possível causa: ' +
+                         'Erro ao Cadastrar/Alterar Loja',
+                         'Não foi possível Cadastrar/Alterar Loja, possível causa: ' +
                          Erro,
                          ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
                          'OK');

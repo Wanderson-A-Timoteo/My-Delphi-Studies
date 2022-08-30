@@ -64,7 +64,7 @@ implementation
 {$R *.dfm}
 
 uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda,
-  unit_usuarios_consulta, unit_relatorios, unit_lojas, unit_login;
+  unit_usuarios_consulta, unit_relatorios, unit_lojas, unit_login, unit_consulta_lojas;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -138,11 +138,11 @@ end;
 
 procedure Tform_principal.SpeedButtonLojasClick(Sender: TObject);
 begin
-  form_lojas := Tform_lojas.Create(Self);
+  form_consulta_lojas := Tform_consulta_lojas.Create(Self);
   try
-    form_lojas.ShowModal;
+    form_consulta_lojas.ShowModal;
   finally
-    form_lojas.Free;
+    form_consulta_lojas.Free;
   end;
 end;
 

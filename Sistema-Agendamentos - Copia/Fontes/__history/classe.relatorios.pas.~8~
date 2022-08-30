@@ -1,0 +1,43 @@
+unit classe.relatorios;
+
+interface
+
+uses
+  FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms,
+  Datasnap.DBClient;
+
+type
+  TRelatorios = class
+
+  private
+    FConexao: TFDConnection;
+    FQry_agendamento_periodo : TFDQuery;
+
+
+  public
+    property Conexao                 : TFDConnection read FConexao                 write FConexao;
+    property Qry_agendamento_periodo : TFDQuery      read FQry_agendamento_periodo write FQry_agendamento_periodo;
+
+    constructor Create (Conexao : TFDConnection);
+    destructor Destroy; Override;
+end;
+
+
+implementation
+
+{ TRelatorios }
+
+constructor TRelatorios.Create(Conexao: TFDConnection);
+begin
+  FConexao                            := Conexao;
+  FQry_agendamento_periodo            := TFDQuery.Create(nil);
+  FQry_agendamento_periodo.Connection := Conexao;
+end;
+
+destructor TRelatorios.Destroy;
+begin
+  FQry_agendamento_periodo.Free;
+  inherited;
+end;
+
+end.

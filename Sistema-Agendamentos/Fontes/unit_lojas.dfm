@@ -2,7 +2,7 @@ object form_lojas: Tform_lojas
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 646
+  ClientHeight = 673
   ClientWidth = 818
   Color = 11976552
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object form_lojas: Tform_lojas
     Left = 0
     Top = 0
     Width = 818
-    Height = 646
+    Height = 673
     Align = alClient
     Brush.Color = 11976552
     Pen.Color = 11976552
@@ -39,14 +39,13 @@ object form_lojas: Tform_lojas
       Left = 3
       Top = 3
       Width = 795
-      Height = 622
+      Height = 646
       Margins.Bottom = 0
       Align = alTop
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 919
       object PanelGrupoCampos: TPanel
         AlignWithMargins = True
         Left = 3
@@ -59,8 +58,6 @@ object form_lojas: Tform_lojas
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 0
-        ExplicitTop = 11
         object LabelNomeCliente: TLabel
           Left = 10
           Top = 90
@@ -602,7 +599,7 @@ object form_lojas: Tform_lojas
         object Label12: TLabel
           Left = 119
           Top = 409
-          Width = 15
+          Width = 5
           Height = 15
           Caption = '*'
           Color = 8421631
@@ -662,7 +659,7 @@ object form_lojas: Tform_lojas
         object Label17: TLabel
           Left = 753
           Top = 214
-          Width = 17
+          Width = 5
           Height = 15
           Caption = '*'
           Color = 8421631
@@ -690,8 +687,8 @@ object form_lojas: Tform_lojas
           ParentFont = False
         end
         object MaskEditCelular: TMaskEdit
-          Left = 175
-          Top = 447
+          Left = 176
+          Top = 445
           Width = 150
           Height = 20
           Hint = '  -   Celular'
@@ -704,16 +701,16 @@ object form_lojas: Tform_lojas
           Font.Style = [fsBold]
           MaxLength = 16
           ParentFont = False
-          TabOrder = 13
+          TabOrder = 14
           Text = '(  )  .    -    '
         end
         object PanelBotoesSalvarCancelar: TPanel
           Left = 10
-          Top = 546
+          Top = 569
           Width = 556
           Height = 49
           BevelOuter = bvNone
-          TabOrder = 20
+          TabOrder = 17
           object PanelBotaoSalvar: TPanel
             Left = 0
             Top = 0
@@ -857,7 +854,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 24
+          TabOrder = 25
         end
         object EditEndereco: TEdit
           Tag = 5
@@ -876,24 +873,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 5
-        end
-        object PanelBordaCelular: TPanel
-          Left = 175
-          Top = 465
-          Width = 150
-          Height = 2
-          Caption = 'PanelBorda'
-          Color = 5839365
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = 5839365
-          Font.Height = -12
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 25
-          Visible = False
+          TabOrder = 6
         end
         object MaskEditTelefoneFixo: TMaskEdit
           Left = 10
@@ -910,7 +890,7 @@ object form_lojas: Tform_lojas
           Font.Style = [fsBold]
           MaxLength = 14
           ParentFont = False
-          TabOrder = 12
+          TabOrder = 13
           Text = '(  )     -    '
         end
         object PanelBordaComplemento: TPanel
@@ -927,7 +907,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 22
+          TabOrder = 23
         end
         object EditComplemento: TEdit
           Left = 10
@@ -944,7 +924,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 11
+          TabOrder = 12
         end
         object PanelBordaObservacoes: TPanel
           Left = 10
@@ -960,7 +940,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 18
+          TabOrder = 20
         end
         object EditObservacoes: TEdit
           Left = 10
@@ -977,7 +957,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 15
+          TabOrder = 16
         end
         object PanelBordaTelefoneFixo: TPanel
           Left = 10
@@ -993,7 +973,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 23
+          TabOrder = 24
         end
         object PanelBordaCidade: TPanel
           Left = 369
@@ -1009,7 +989,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 21
+          TabOrder = 22
         end
         object MaskEditDataAbertura: TMaskEdit
           Tag = 5
@@ -1027,7 +1007,7 @@ object form_lojas: Tform_lojas
           Font.Style = [fsBold]
           MaxLength = 10
           ParentFont = False
-          TabOrder = 3
+          TabOrder = 4
           Text = '  /  /    '
           OnExit = MaskEditDataAberturaExit
         end
@@ -1045,7 +1025,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 16
+          TabOrder = 18
         end
         object PanelBordaNumero: TPanel
           Left = 519
@@ -1061,7 +1041,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 19
+          TabOrder = 21
         end
         object EditNumero: TEdit
           Tag = 5
@@ -1080,13 +1060,13 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 6
+          TabOrder = 7
         end
         object MaskEditInscricaoEstadual: TMaskEdit
           Tag = 5
-          Left = 627
+          Left = 633
           Top = 124
-          Width = 150
+          Width = 144
           Height = 20
           Hint = '  -   Inscri'#231#227'o Estadual'
           BorderStyle = bsNone
@@ -1101,9 +1081,9 @@ object form_lojas: Tform_lojas
           Text = ''
         end
         object PanelBordaRG: TPanel
-          Left = 627
+          Left = 634
           Top = 143
-          Width = 150
+          Width = 144
           Height = 2
           Color = 5839365
           Font.Charset = DEFAULT_CHARSET
@@ -1113,32 +1093,32 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 17
+          TabOrder = 19
         end
         object MaskEditCNPJ: TMaskEdit
           Tag = 5
           Left = 470
           Top = 124
-          Width = 147
+          Width = 153
           Height = 20
           Hint = '  -   CNPJ'
           BorderStyle = bsNone
-          EditMask = '###.###.###-##;1;_'
+          EditMask = '##.###.###/####-##;1;_'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = 11976552
           Font.Height = -16
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
-          MaxLength = 14
+          MaxLength = 18
           ParentFont = False
           TabOrder = 1
-          Text = '   .   .   -  '
+          Text = '  .   .   /    -  '
           OnExit = MaskEditCNPJExit
         end
         object PanelBordaCPF: TPanel
           Left = 470
           Top = 143
-          Width = 150
+          Width = 153
           Height = 2
           Caption = 'PanelBorda'
           Color = 5839365
@@ -1167,7 +1147,7 @@ object form_lojas: Tform_lojas
           Font.Style = [fsBold]
           MaxLength = 10
           ParentFont = False
-          TabOrder = 4
+          TabOrder = 5
           Text = '  .   -   '
           OnExit = MaskEditCEPExit
         end
@@ -1220,7 +1200,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 8
+          TabOrder = 9
         end
         object EditCidade: TEdit
           Tag = 5
@@ -1239,7 +1219,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 9
+          TabOrder = 10
         end
         object PanelBordaUF: TPanel
           Left = 686
@@ -1274,7 +1254,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 10
+          TabOrder = 11
         end
         object EditNomeFantasia: TEdit
           Tag = 5
@@ -1293,7 +1273,7 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 31
+          TabOrder = 3
         end
         object PanelBordaFantasia: TPanel
           Left = 10
@@ -1309,9 +1289,9 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 32
+          TabOrder = 31
         end
-        object Panel1: TPanel
+        object PanelBordaCodIBGE: TPanel
           Left = 621
           Top = 271
           Width = 157
@@ -1325,7 +1305,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 33
+          TabOrder = 32
         end
         object EditCodigoIBGE: TEdit
           Tag = 5
@@ -1344,9 +1324,9 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 7
+          TabOrder = 8
         end
-        object Panel2: TPanel
+        object PanelBordaEmail: TPanel
           Left = 332
           Top = 465
           Width = 446
@@ -1360,7 +1340,7 @@ object form_lojas: Tform_lojas
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 34
+          TabOrder = 33
         end
         object EditEmail: TEdit
           Tag = 5
@@ -1379,7 +1359,23 @@ object form_lojas: Tform_lojas
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          TabOrder = 14
+          TabOrder = 15
+        end
+        object Panel1: TPanel
+          Left = 175
+          Top = 465
+          Width = 150
+          Height = 2
+          Caption = 'PanelBorda'
+          Color = 5839365
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 5839365
+          Font.Height = -12
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 34
         end
       end
     end

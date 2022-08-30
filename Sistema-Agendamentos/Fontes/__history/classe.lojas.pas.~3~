@@ -1,0 +1,250 @@
+unit classe.lojas;
+
+interface
+
+uses FireDAC.Comp.Client, classe_conexao, System.SysUtils, Vcl.Forms, Data.DB;
+
+type
+  TLojas = class
+
+    private
+      FConecao     : TFDConnection;
+
+      Fid_loja     : Integer;
+      Fdt_abertura : TDateTime;
+
+      Fds_razao_social,
+      Fds_fantasia,
+      Fnr_cnpj,
+      Fnr_inscricao_estadual,
+      Fnr_cep,
+      Fds_endereco,
+      Fnr_numero,
+      Fds_complemento,
+      Fds_bairro,
+      Fds_cidade,
+      Fds_uf,
+      Fnr_ibge_cidade,
+      Fds_email,
+      Fnr_telefone1,
+      Fnr_telefone2,
+      Fds_obs        : String;
+
+    public
+      property Conexao               : TFDConnection read FConecao               write FConecao;
+      property id_loja               : Integer       read Fid_loja               write Fid_loja;
+      property dt_abertura           : TDateTime     read Fdt_abertura           write Fdt_abertura;
+      property ds_razao_social       : String        read Fds_razao_social       write Fds_razao_social;
+      property ds_fantasia           : String        read Fds_fantasia           write Fds_fantasia;
+      property nr_cnpj               : String        read Fnr_cnpj               write Fnr_cnpj;
+      property nr_inscricao_estadual : String        read Fnr_inscricao_estadual write Fnr_inscricao_estadual;
+      property nr_cep                : String        read Fnr_cep                write Fnr_cep;
+      property ds_endereco           : String        read Fds_endereco           write Fds_endereco;
+      property nr_numero             : String        read Fnr_numero             write Fnr_numero;
+      property ds_complemento        : String        read Fds_complemento        write Fds_complemento;
+      property ds_bairro             : String        read Fds_bairro             write Fds_bairro;
+      property ds_cidade             : String        read Fds_cidade             write Fds_cidade;
+      property ds_uf                 : String        read Fds_uf                 write Fds_uf;
+      property nr_ibge_cidade        : String        read Fnr_ibge_cidade        write Fnr_ibge_cidade;
+      property ds_email              : String        read Fds_email              write Fds_email;
+      property nr_telefone1          : String        read Fnr_telefone1          write Fnr_telefone1;
+      property nr_telefone2          : String        read Fnr_telefone2          write Fnr_telefone2;
+      property ds_obs                : String        read Fds_obs                write Fds_obs;
+
+      constructor Create (Conexao : TFDConnection);
+      destructor Destroy; Override;
+
+      function fnc_inserir_alterar (TipoOperacao: String; out Erro : String) : boolean;
+      function fnc_consulta (Texto : String) : TFDQuery;
+
+      procedure prc_deleta (id_chave : Integer);
+  end;
+
+var
+  QryConsulta : TFDQuery;
+
+implementation
+
+{ TCliente }
+
+uses unit_funcoes, unit_dados;
+
+constructor TLojas.Create(Conexao: TFDConnection);
+begin
+  FConecao               := Conexao;
+  QryConsulta            := TFDQuery.Create(nil);
+  QryConsulta.Connection := FConecao;
+end;
+
+destructor TLojas.Destroy;
+begin
+  QryConsulta.Free;
+  inherited;
+end;
+
+function TLojas.fnc_consulta(Texto: String): TFDQuery;
+begin
+  try
+    FConecao.Connected := True;
+
+    QryConsulta.SQL.Clear;
+    QryConsulta.SQL.Add('SELECT id_loja,                       ');
+    QryConsulta.SQL.Add('       ds_razao_social,               ');
+    QryConsulta.SQL.Add('       ds_fantasia,                   ');
+    QryConsulta.SQL.Add('       ds_endereco,                   ');
+    QryConsulta.SQL.Add('       nr_numero,                     ');
+    QryConsulta.SQL.Add('       ds_bairro,                     ');
+    QryConsulta.SQL.Add('       ds_complemento,                ');
+    QryConsulta.SQL.Add('       ds_cidade,                     ');
+    QryConsulta.SQL.Add('       ds_uf,                         ');
+    QryConsulta.SQL.Add('       nr_ibge_cidade,                ');
+    QryConsulta.SQL.Add('       nr_cep,                        ');
+    QryConsulta.SQL.Add('       nr_cnpj,                       ');
+    QryConsulta.SQL.Add('       nr_inscricao_estadual,         ');
+    QryConsulta.SQL.Add('       ds_email,                      ');
+    QryConsulta.SQL.Add('       nr_telefone1,                  ');
+    QryConsulta.SQL.Add('       nr_telefone2,                  ');
+    QryConsulta.SQL.Add('       ds_obs                         ');
+    QryConsulta.SQL.Add('       dt_abertura,                   ');
+    QryConsulta.SQL.Add('FROM lojas                            ');
+    QryConsulta.SQL.Add('WHERE ( ds_razao_social LIKE :p_texto ');
+    QryConsulta.SQL.Add('OR ds_fantasia LIKE :p_texto )        ');
+
+    QryConsulta.ParamByName('p_texto').AsString := '%'+Texto+'%';
+    QryConsulta.Open;
+    TIntegerField(QryConsulta.FieldByName('id_loja')).DisplayFormat := '0000';  // use Data.DB
+  finally
+    Result := QryConsulta;
+  end;
+end;
+
+function TLojas.fnc_inserir_alterar(TipoOperacao: String; out Erro: String): boolean;
+var
+  QryInserir : TFDQuery;
+begin
+  try
+    try
+      FConecao.Connected    := False;
+      FConecao.Connected    := True;
+
+      QryInserir            := TFDQuery.Create(nil);
+      QryInserir.Connection := FConecao;
+
+      QryInserir.Close;
+      QryInserir.SQL.Clear;
+
+      if TipoOperacao = 'INSERIR' then
+      begin
+        QryInserir.SQL.Add('INSERT INTO lojas              ');
+        QryInserir.SQL.Add('      ( id_loja,               ');
+        QryInserir.SQL.Add('       ds_razao_social,        ');
+        QryInserir.SQL.Add('       ds_fantasia,            ');
+        QryInserir.SQL.Add('       ds_endereco,            ');
+        QryInserir.SQL.Add('       nr_numero,              ');
+        QryInserir.SQL.Add('       ds_bairro,              ');
+        QryInserir.SQL.Add('       ds_complemento,         ');
+        QryInserir.SQL.Add('       ds_cidade,              ');
+        QryInserir.SQL.Add('       ds_uf,                  ');
+        QryInserir.SQL.Add('       nr_ibge_cidade,         ');
+        QryInserir.SQL.Add('       nr_cep,                 ');
+        QryInserir.SQL.Add('       nr_cnpj,                ');
+        QryInserir.SQL.Add('       nr_inscricao_estadual,  ');
+        QryInserir.SQL.Add('       ds_email,               ');
+        QryInserir.SQL.Add('       nr_telefone1,           ');
+        QryInserir.SQL.Add('       nr_telefone2,           ');
+        QryInserir.SQL.Add('       ds_obs                  ');
+        QryInserir.SQL.Add('       dt_abertura )           ');
+        QryInserir.SQL.Add('VALUES (                       ');
+        QryInserir.SQL.Add('       :ds_razao_social,       ');
+        QryInserir.SQL.Add('       :ds_fantasia,           ');
+        QryInserir.SQL.Add('       :ds_endereco,           ');
+        QryInserir.SQL.Add('       :nr_numero,             ');
+        QryInserir.SQL.Add('       :ds_bairro,             ');
+        QryInserir.SQL.Add('       :ds_complemento,        ');
+        QryInserir.SQL.Add('       :ds_cidade,             ');
+        QryInserir.SQL.Add('       :ds_uf,                 ');
+        QryInserir.SQL.Add('       :nr_ibge_cidade,        ');
+        QryInserir.SQL.Add('       :nr_cep,                ');
+        QryInserir.SQL.Add('       :nr_cnpj,               ');
+        QryInserir.SQL.Add('       :nr_inscricao_estadual, ');
+        QryInserir.SQL.Add('       :ds_email,              ');
+        QryInserir.SQL.Add('       :nr_telefone1,          ');
+        QryInserir.SQL.Add('       :nr_telefone2,          ');
+        QryInserir.SQL.Add('       :ds_obs                 ');
+        QryInserir.SQL.Add('       :dt_abertura )          ');
+
+        QryInserir.ParamByName('id_loja').AsInteger := fnc_proximo_codigo('Lojas', 'id_loja');
+      end else
+      begin
+        QryInserir.SQL.Add('UPDATE lojas SET                                ');
+        QryInserir.SQL.Add('ds_razao_social       = :ds_razao_social,       ');
+        QryInserir.SQL.Add('ds_fantasia           = :ds_fantasia,           ');
+        QryInserir.SQL.Add('dt_abertura           = :dt_abertura,           ');
+        QryInserir.SQL.Add('nr_cnpj               = :nr_cnpj,               ');
+        QryInserir.SQL.Add('nr_inscricao_estadual = :nr_inscricao_estadual, ');
+        QryInserir.SQL.Add('nr_cep                = :nr_cep,                ');
+        QryInserir.SQL.Add('ds_endereco           = :ds_endereco,           ');
+        QryInserir.SQL.Add('nr_numero             = :nr_numero,             ');
+        QryInserir.SQL.Add('ds_complemento        = :ds_complemento,        ');
+        QryInserir.SQL.Add('ds_bairro             = :ds_bairro,             ');
+        QryInserir.SQL.Add('ds_cidade             = :ds_cidade,             ');
+        QryInserir.SQL.Add('ds_uf                 = :ds_uf,                 ');
+        QryInserir.SQL.Add('nr_ibge_cidade        = :nr_ibge_cidade,        ');
+        QryInserir.SQL.Add('ds_email              = :ds_email,              ');
+        QryInserir.SQL.Add('nr_telefone1          = :nr_telefone1,          ');
+        QryInserir.SQL.Add('nr_telefone2          = :nr_telefone2,          ');
+        QryInserir.SQL.Add('ds_obs                = :ds_obs                 ');
+        QryInserir.SQL.Add('WHERE id_loja = :p_id_loja                      ');
+
+        QryInserir.ParamByName('p_id_loja').AsInteger := Fid_loja;
+      end;
+      QryInserir.ParamByName('ds_razao_social').AsString       := Fds_razao_social;
+      QryInserir.ParamByName('ds_fantasia').AsString           := Fds_fantasia;
+      QryInserir.ParamByName('dt_abertura').AsDate             := Fdt_abertura;
+      QryInserir.ParamByName('nr_cnpj').AsString               := Fnr_cnpj;
+      QryInserir.ParamByName('nr_inscricao_estadual').AsString := Fnr_inscricao_estadual;
+      QryInserir.ParamByName('nr_cep').AsString                := Fnr_cep;
+      QryInserir.ParamByName('ds_endereco').AsString           := Fds_endereco;
+      QryInserir.ParamByName('nr_numero').AsString             := Fnr_numero;
+      QryInserir.ParamByName('ds_complemento').AsString        := Fds_complemento;
+      QryInserir.ParamByName('ds_bairro').AsString             := Fds_bairro;
+      QryInserir.ParamByName('ds_cidade').AsString             := Fds_cidade;
+      QryInserir.ParamByName('ds_uf').AsString                 := Fds_uf;
+      QryInserir.ParamByName('nr_telefone1').AsString          := Fnr_telefone1;
+      QryInserir.ParamByName('nr_telefone2').AsString          := Fnr_telefone2;
+      QryInserir.ParamByName('ds_obs').AsString                := Fds_obs;
+      QryInserir.ParamByName('ds_email').AsString              := Fds_email;
+      QryInserir.ParamByName('nr_ibge_cidade').AsString        := Fnr_ibge_cidade;
+      QryInserir.ExecSQL;
+
+      Result := true;
+    except
+      on E: Exception do
+      begin
+        Erro   := E.Message;
+        Result := False;
+      end;
+    end;
+  finally
+    QryInserir.Free;
+  end;
+
+end;
+
+procedure TLojas.prc_deleta(id_chave: Integer);
+begin
+  if fnc_criar_mensagem('CONFIRMAÇÃO', 'Excluir Dados',
+                        'Tem certeza que deseja EXCLUIR os dados desta Loja?',
+                        ExtractFilePath (Application.ExeName)+ 'imagens\aviso.png',
+                        'CONFIRMAR') then
+  begin
+    FConecao.Connected := False;
+    FConecao.Connected := True;
+
+    FConecao.ExecSQL('DELETE FROM lojas WHERE id_loja = :id_chave', [id_chave]);
+
+    fnc_consulta('');
+  end;
+end;
+
+end.

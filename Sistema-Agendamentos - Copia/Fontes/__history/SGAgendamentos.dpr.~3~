@@ -1,0 +1,18 @@
+program SGAgendamentos;
+
+uses
+  Vcl.Forms,
+  unit_principal in 'unit_principal.pas' {form_principal},
+  unit_DataModule in 'unit_DataModule.pas' {DataModule1: TDataModule},
+  unit_login in 'unit_login.pas' {form_login};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tform_principal, form_principal);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(Tform_login, form_login);
+  Application.Run;
+end.
