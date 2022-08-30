@@ -1,0 +1,70 @@
+unit unit_principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, unit_dados, Vcl.ExtCtrls;
+
+type
+  TForm_Principal = class(TForm)
+    dbg_registros: TDBGrid;
+    BtnAtivar: TButton;
+    ds_unidades: TDataSource;
+    Panel1: TPanel;
+    procedure BtnAtivarClick(Sender: TObject);
+    procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+      State: TGridDrawState);
+  private
+    { Private declarations }
+    bDefineTamanho : Boolean;
+  public
+    { Public declarations }
+  end;
+
+type
+  TDBGridPadrao = class(TDBGrid);
+
+var
+  Form_Principal: TForm_Principal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm_Principal.BtnAtivarClick(Sender: TObject);
+begin
+  dmDados.QryUnidades.Active := True;
+
+  // Define o tamanho de cada linha do DBGrid após ativar a Query
+  TDBGridPadrao(dbg_registros).DefaultRowHeight := 30;
+  TDBGridPadrao(dbg_registros).ClientHeight     := (30 * TDBGridPadrao(dbg_registros).RowCount) + 30;
+end;
+
+procedure TForm_Principal.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
+  Column: TColumn; State: TGridDrawState);
+begin
+  // Zebrando o DBGrid
+  if Odd(dbg_registros.DataSource.DataSet.RecNo) then
+    dbg_registros.Canvas.Brush.Color := $00E9E9E9
+  else
+    dbg_registros.Canvas.Brush.Color := clWhite; // $00F9F9F9;
+
+  // Mudando a cor da seleção
+  if (gdSelected in State) then
+  begin
+    dbg_registros.Canvas.Brush.Color := clBlue; // $00844726;
+    dbg_registros.Canvas.Font.Color := clWhite; // $00844726;
+    dbg_registros.Canvas.Font.Style := [fsBold]; // $00844726;
+  end;
+
+  dbg_registros.Canvas.FillRect(Rect);
+  dbg_registros.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+
+
+  // Mudando a posição e alinhando vertical do texto de cada linha
+  dbg_registros.Canvas.TextRect(Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText);
+
+end;
+
+end.

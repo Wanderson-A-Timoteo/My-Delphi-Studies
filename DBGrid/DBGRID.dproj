@@ -99,7 +99,11 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="unit_principal.pas">
-            <Form>Form1</Form>
+            <Form>Form_Principal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_dados.pas">
+            <Form>dmDados</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
