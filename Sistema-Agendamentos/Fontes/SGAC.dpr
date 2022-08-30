@@ -26,7 +26,8 @@ uses
   unit_relatorio_agendamento_periodo in 'unit_relatorio_agendamento_periodo.pas' {form_relatorio_agendamento_periodo},
   classe.relatorios in 'classe.relatorios.pas',
   unit_relatorio_agendamento_cliente in 'unit_relatorio_agendamento_cliente.pas' {form_relatorio_agendamento_cliente},
-  unit_relatorio_agendamento_profissional in 'unit_relatorio_agendamento_profissional.pas' {form_relatorio_agendamento_profissional};
+  unit_relatorio_agendamento_profissional in 'unit_relatorio_agendamento_profissional.pas' {form_relatorio_agendamento_profissional},
+  unit_lojas in 'unit_lojas.pas' {form_lojas};
 
 {$R *.res}
 

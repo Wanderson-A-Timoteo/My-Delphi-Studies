@@ -27,8 +27,10 @@ type
     SpeedButtonGerarRelatorio: TSpeedButton;
     PanelBtnServidor: TPanel;
     SpeedButtonServidor: TSpeedButton;
-    Panel1: TPanel;
+    PanelBtnUsuarios: TPanel;
     SpeedButtonUsuarios: TSpeedButton;
+    PanelBtnLojas: TPanel;
+    SpeedButtonLojas: TSpeedButton;
     procedure Sair1Click(Sender: TObject);
     procedure SpeedButtonFecharClick(Sender: TObject);
     procedure SpeedButtonMaximinizarClick(Sender: TObject);
@@ -37,9 +39,15 @@ type
     procedure SpeedButtonAgendamentoClick(Sender: TObject);
     procedure SpeedButtonAgendamentoMouseEnter(Sender: TObject);
     procedure SpeedButtonAgendamentoMouseLeave(Sender: TObject);
-    procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
     procedure SpeedButtonServidorMouseEnter(Sender: TObject);
     procedure SpeedButtonServidorMouseLeave(Sender: TObject);
+    procedure SpeedButtonUsuariosMouseEnter(Sender: TObject);
+    procedure SpeedButtonUsuariosMouseLeave(Sender: TObject);
+    procedure SpeedButtonUsuariosClick(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
+    procedure SpeedButtonGerarRelatorioClick(Sender: TObject);
+    procedure SpeedButtonLojasClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,7 +61,8 @@ implementation
 
 {$R *.dfm}
 
-uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda;
+uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda,
+  unit_usuarios_consulta, unit_relatorios, unit_lojas, unit_login;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -66,8 +75,8 @@ begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
                         'Sair do Sistema',
                         'Deseja Realmente Sair do Sistema?',
-                        ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
-                        'Comfirmar') then
+                        ExtractFilePath(Application.ExeName) + 'imagens\info.png',
+                        'CONFIRMAR') then
    Application.Terminate
    else
    Exit;
@@ -98,16 +107,41 @@ begin
   if fnc_criar_mensagem('CONFIRMAÇÃO',
                         'Sair do Sistema',
                         'Deseja Realmente Sair do Sistema?',
-                        ExtractFilePath(Application.ExeName) + 'imagens\aviso.png',
-                        'Comfirmar') then
+                        ExtractFilePath(Application.ExeName) + 'imagens\info.png',
+                        'CONFIRMAR') then
    Application.Terminate
    else
    Exit;
 end;
 
+procedure Tform_principal.SpeedButtonGerarRelatorioClick(Sender: TObject);
+begin
+  form_relatorios := Tform_relatorios.Create(Self);
+  try
+    form_relatorios.ShowModal;
+  finally
+    form_relatorios.Free;
+  end;
+end;
+
+procedure Tform_principal.SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
+begin
+  SpeedButtonGerarRelatorio.Font.Color := $00591A05;
+end;
+
 procedure Tform_principal.SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
 begin
   SpeedButtonGerarRelatorio.Font.Color := clWhite;
+end;
+
+procedure Tform_principal.SpeedButtonLojasClick(Sender: TObject);
+begin
+  form_lojas := Tform_lojas.Create(Self);
+  try
+    form_lojas.ShowModal;
+  finally
+    form_lojas.Free;
+  end;
 end;
 
 procedure Tform_principal.SpeedButtonMaximinizarClick(Sender: TObject);
@@ -133,6 +167,26 @@ end;
 procedure Tform_principal.SpeedButtonServidorMouseLeave(Sender: TObject);
 begin
   SpeedButtonServidor.Font.Color := clWhite;
+end;
+
+procedure Tform_principal.SpeedButtonUsuariosClick(Sender: TObject);
+begin
+  form_usuario_consulta := Tform_usuario_consulta.Create(Self);
+  try
+    form_usuario_consulta.ShowModal;
+  finally
+    form_usuario_consulta.Free;
+  end;
+end;
+
+procedure Tform_principal.SpeedButtonUsuariosMouseEnter(Sender: TObject);
+begin
+  SpeedButtonUsuarios.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonUsuariosMouseLeave(Sender: TObject);
+begin
+  SpeedButtonUsuarios.Font.Color := clWhite;
 end;
 
 end.

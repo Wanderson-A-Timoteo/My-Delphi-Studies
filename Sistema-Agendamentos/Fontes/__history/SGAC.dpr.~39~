@@ -17,16 +17,26 @@ uses
   unit_agendamento_consulta in 'unit_agendamento_consulta.pas' {form_agendamento_consulta},
   classe.cliente in 'classe.cliente.pas',
   classe.agendamento in 'classe.agendamento.pas',
-  unit_profissionais in 'unit_profissionais.pas' {form_profissionais};
+  unit_profissionais in 'unit_profissionais.pas' {form_profissionais},
+  unit_agenda in 'unit_agenda.pas' {form_agenda},
+  unit_usuarios_cadastro in 'unit_usuarios_cadastro.pas' {form_usuarios_cadastro},
+  unit_usuarios_consulta in 'unit_usuarios_consulta.pas' {form_usuario_consulta},
+  classe.usuarios in 'classe.usuarios.pas',
+  unit_relatorios in 'unit_relatorios.pas' {form_relatorios},
+  unit_relatorio_agendamento_periodo in 'unit_relatorio_agendamento_periodo.pas' {form_relatorio_agendamento_periodo},
+  classe.relatorios in 'classe.relatorios.pas',
+  unit_relatorio_agendamento_cliente in 'unit_relatorio_agendamento_cliente.pas' {form_relatorio_agendamento_cliente},
+  unit_relatorio_agendamento_profissional in 'unit_relatorio_agendamento_profissional.pas' {form_relatorio_agendamento_profissional};
 
 {$R *.res}
 
 begin
-  ReportMemoryLeaksOnShutdown := true;
+  ReportMemoryLeaksOnShutdown := True;
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
 
   Application.CreateForm(TDataModule1, DataModule1);
+
   if DataModule1.Conexao.fnc_conectar_banco_dados then
   begin
     form_login := Tform_login.Create(nil);
@@ -47,6 +57,7 @@ begin
                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png','OK');
 
     Application.CreateForm(Tform_configurar_servidor, form_configurar_servidor);
+
     form_configurar_servidor.ShowModal;
 
   end;

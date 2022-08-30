@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/05/26 09:28:54.000.451,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
-    <Transaction>2022/05/26 09:32:11.000.469,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
     <Transaction>2022/05/26 09:32:11.000.469,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/05/26 09:32:11.000.469,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
     <Transaction>2022/05/26 09:32:59.000.150,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\SGAgendamentos.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
     <Transaction>2022/05/26 09:34:54.000.044,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
     <Transaction>2022/05/26 09:48:30.000.700,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_DataModule.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
@@ -39,15 +39,15 @@
     <Transaction>2022/06/08 10:59:41.000.180,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_agendamento.pas</Transaction>
     <Transaction>2022/06/24 10:54:07.000.231,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_cliente_consulta.pas</Transaction>
     <Transaction>2022/06/24 10:54:40.000.822,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_cliente_consulta.pas=</Transaction>
-    <Transaction>2022/06/24 10:56:49.000.522,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_cliente_consulta.pas</Transaction>
     <Transaction>2022/06/24 10:56:49.000.522,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_cliente_consulta.dfm</Transaction>
+    <Transaction>2022/06/24 10:56:49.000.522,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_cliente_consulta.pas</Transaction>
     <Transaction>2022/06/24 11:22:32.000.013,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.pas</Transaction>
     <Transaction>2022/06/24 13:38:08.000.213,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
     <Transaction>2022/06/24 13:38:33.000.229,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\classe.cliente.pas</Transaction>
     <Transaction>2022/06/30 10:28:47.000.060,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
     <Transaction>2022/06/30 10:29:19.000.253,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\classe.agendamento.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas</Transaction>
-    <Transaction>2022/06/30 12:20:24.000.340,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_agendamento_consulta.pas</Transaction>
     <Transaction>2022/06/30 12:20:24.000.340,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.dfm=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_agendamento_consulta.dfm</Transaction>
+    <Transaction>2022/06/30 12:20:24.000.340,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_agendamento_consulta.pas</Transaction>
     <Transaction>2022/06/30 12:22:14.000.410,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_profissionais.pas</Transaction>
     <Transaction>2022/07/07 08:38:11.000.978,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_agenda.pas</Transaction>
     <Transaction>2022/07/11 13:46:23.000.923,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_usuarios_cadastro.pas</Transaction>
@@ -61,7 +61,8 @@
     <Transaction>2022/08/10 14:10:22.000.350,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\Unit1.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\clsse.relatorios.pas</Transaction>
     <Transaction>2022/08/10 14:11:06.000.401,D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\clsse.relatorios.pas=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\classe.relatorios.pas</Transaction>
     <Transaction>2022/08/12 09:29:46.000.904,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_relatorio_agendamento_cliente.pas</Transaction>
-    <Transaction>2022/08/23 08:57:25.915,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_relatorio_agendamento_profissional.pas</Transaction>
+    <Transaction>2022/08/23 08:57:25.000.915,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_relatorio_agendamento_profissional.pas</Transaction>
+    <Transaction>2022/08/29 16:30:59.863,=D:\Projetos\ws-delphi\My-Delphi-Studies\Sistema-Agendamentos\Fontes\unit_lojas.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="classe.cliente.pas"/>
@@ -105,5 +106,7 @@
     <File Path="unit_relatorio_agendamento_cliente.dfm"/>
     <File Path="unit_relatorio_agendamento_profissional.pas"/>
     <File Path="unit_relatorio_agendamento_profissional.dfm"/>
+    <File Path="unit_lojas.pas"/>
+    <File Path="unit_lojas.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

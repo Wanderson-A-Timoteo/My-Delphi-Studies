@@ -3119,6 +3119,8 @@ object form_principal: Tform_principal
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = SpeedButtonGerarRelatorioClick
+      OnMouseEnter = SpeedButtonGerarRelatorioMouseEnter
       OnMouseLeave = SpeedButtonGerarRelatorioMouseLeave
     end
   end
@@ -3175,7 +3177,9 @@ object form_principal: Tform_principal
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      OnMouseLeave = SpeedButtonGerarRelatorioMouseLeave
+      OnClick = SpeedButtonUsuariosClick
+      OnMouseEnter = SpeedButtonUsuariosMouseEnter
+      OnMouseLeave = SpeedButtonUsuariosMouseLeave
     end
   end
 end

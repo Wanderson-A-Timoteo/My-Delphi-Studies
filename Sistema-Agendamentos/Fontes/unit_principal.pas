@@ -27,8 +27,10 @@ type
     SpeedButtonGerarRelatorio: TSpeedButton;
     PanelBtnServidor: TPanel;
     SpeedButtonServidor: TSpeedButton;
-    Panel1: TPanel;
+    PanelBtnUsuarios: TPanel;
     SpeedButtonUsuarios: TSpeedButton;
+    PanelBtnLojas: TPanel;
+    SpeedButtonLojas: TSpeedButton;
     procedure Sair1Click(Sender: TObject);
     procedure SpeedButtonFecharClick(Sender: TObject);
     procedure SpeedButtonMaximinizarClick(Sender: TObject);
@@ -45,6 +47,9 @@ type
     procedure SpeedButtonGerarRelatorioMouseEnter(Sender: TObject);
     procedure SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
     procedure SpeedButtonGerarRelatorioClick(Sender: TObject);
+    procedure SpeedButtonLojasClick(Sender: TObject);
+    procedure SpeedButtonLojasMouseEnter(Sender: TObject);
+    procedure SpeedButtonLojasMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +64,7 @@ implementation
 {$R *.dfm}
 
 uses unit_configurar_servidor, unit_funcoes, unit_mensagens, unit_agendamento, unit_clientes, unit_agenda,
-  unit_usuarios_consulta, unit_relatorios;
+  unit_usuarios_consulta, unit_relatorios, unit_lojas, unit_login;
 
 procedure Tform_principal.FormResize(Sender: TObject);
 begin
@@ -129,6 +134,26 @@ end;
 procedure Tform_principal.SpeedButtonGerarRelatorioMouseLeave(Sender: TObject);
 begin
   SpeedButtonGerarRelatorio.Font.Color := clWhite;
+end;
+
+procedure Tform_principal.SpeedButtonLojasClick(Sender: TObject);
+begin
+  form_lojas := Tform_lojas.Create(Self);
+  try
+    form_lojas.ShowModal;
+  finally
+    form_lojas.Free;
+  end;
+end;
+
+procedure Tform_principal.SpeedButtonLojasMouseEnter(Sender: TObject);
+begin
+  SpeedButtonLojas.Font.Color := $00591A05;
+end;
+
+procedure Tform_principal.SpeedButtonLojasMouseLeave(Sender: TObject);
+begin
+  SpeedButtonLojas.Font.Color := clWhite;
 end;
 
 procedure Tform_principal.SpeedButtonMaximinizarClick(Sender: TObject);

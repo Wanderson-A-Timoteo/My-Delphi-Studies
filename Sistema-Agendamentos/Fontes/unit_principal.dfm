@@ -4,7 +4,7 @@ object form_principal: Tform_principal
   Align = alClient
   BorderStyle = bsNone
   ClientHeight = 637
-  ClientWidth = 1002
+  ClientWidth = 1126
   Color = 16250871
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object form_principal: Tform_principal
   Position = poScreenCenter
   OnResize = FormResize
   DesignSize = (
-    1002
+    1126
     637)
   PixelsPerInch = 96
   TextHeight = 15
@@ -35,7 +35,7 @@ object form_principal: Tform_principal
     ParentFont = False
   end
   object LabelUsuarioLogado: TLabel
-    Left = 708
+    Left = 832
     Top = 28
     Width = 170
     Height = 15
@@ -49,6 +49,7 @@ object form_principal: Tform_principal
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
+    ExplicitLeft = 708
   end
   object ImageLogoPequeno: TImage
     Left = 16
@@ -183,7 +184,7 @@ object form_principal: Tform_principal
     AlignWithMargins = True
     Left = 16
     Top = 610
-    Width = 661
+    Width = 785
     Height = 15
     Anchors = [akLeft, akRight, akBottom]
     Caption = 
@@ -196,6 +197,7 @@ object form_principal: Tform_principal
     Font.Style = [fsBold]
     ParentFont = False
     Layout = tlCenter
+    ExplicitWidth = 661
   end
   object PanelFundo: TPanel
     Left = 22
@@ -2957,16 +2959,17 @@ object form_principal: Tform_principal
   object PanelBordaHeader: TPanel
     Left = 16
     Top = 115
-    Width = 972
+    Width = 1096
     Height = 1
     Anchors = [akLeft, akTop, akRight]
     BevelOuter = bvNone
     Color = clGray
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 972
   end
   object PanelBtnMaximizarFechar: TPanel
-    Left = 912
+    Left = 1036
     Top = 4
     Width = 82
     Height = 43
@@ -2974,6 +2977,7 @@ object form_principal: Tform_principal
     Anchors = [akTop, akRight]
     BevelOuter = bvNone
     TabOrder = 2
+    ExplicitLeft = 912
     object SpeedButtonMaximinizar: TSpeedButton
       Left = 8
       Top = 5
@@ -3058,13 +3062,14 @@ object form_principal: Tform_principal
   object PanelBordaFooter: TPanel
     Left = 16
     Top = 596
-    Width = 972
+    Width = 1096
     Height = 1
     Anchors = [akLeft, akRight, akBottom]
     BevelOuter = bvNone
     Color = clGray
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 972
   end
   object PanelBtnAgendamento: TPanel
     Left = 142
@@ -3153,7 +3158,7 @@ object form_principal: Tform_principal
       OnMouseLeave = SpeedButtonServidorMouseLeave
     end
   end
-  object Panel1: TPanel
+  object PanelBtnUsuarios: TPanel
     Left = 335
     Top = 67
     Width = 185
@@ -3180,6 +3185,35 @@ object form_principal: Tform_principal
       OnClick = SpeedButtonUsuariosClick
       OnMouseEnter = SpeedButtonUsuariosMouseEnter
       OnMouseLeave = SpeedButtonUsuariosMouseLeave
+    end
+  end
+  object PanelBtnLojas: TPanel
+    Left = 907
+    Top = 66
+    Width = 185
+    Height = 43
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    Color = 5839365
+    ParentBackground = False
+    TabOrder = 8
+    object SpeedButtonLojas: TSpeedButton
+      Left = 2
+      Top = 2
+      Width = 181
+      Height = 37
+      Align = alCustom
+      Caption = 'Lojas'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = SpeedButtonLojasClick
+      OnMouseEnter = SpeedButtonLojasMouseEnter
+      OnMouseLeave = SpeedButtonLojasMouseLeave
     end
   end
 end
