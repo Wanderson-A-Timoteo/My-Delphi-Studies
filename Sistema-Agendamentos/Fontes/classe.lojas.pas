@@ -177,25 +177,25 @@ begin
         QryInserir.ParamByName('id_loja').AsInteger := fnc_proximo_codigo('Lojas', 'id_loja');
       end else
       begin
-        QryInserir.SQL.Add('UPDATE lojas SET                                ');
-        QryInserir.SQL.Add('ds_razao_social       = :ds_razao_social,       ');
-        QryInserir.SQL.Add('ds_fantasia           = :ds_fantasia,           ');
-        QryInserir.SQL.Add('dt_abertura           = :dt_abertura,           ');
-        QryInserir.SQL.Add('nr_cnpj               = :nr_cnpj,               ');
-        QryInserir.SQL.Add('nr_inscricao_estadual = :nr_inscricao_estadual, ');
-        QryInserir.SQL.Add('nr_cep                = :nr_cep,                ');
-        QryInserir.SQL.Add('ds_endereco           = :ds_endereco,           ');
-        QryInserir.SQL.Add('nr_numero             = :nr_numero,             ');
-        QryInserir.SQL.Add('ds_complemento        = :ds_complemento,        ');
-        QryInserir.SQL.Add('ds_bairro             = :ds_bairro,             ');
-        QryInserir.SQL.Add('ds_cidade             = :ds_cidade,             ');
-        QryInserir.SQL.Add('ds_uf                 = :ds_uf,                 ');
-        QryInserir.SQL.Add('nr_ibge_cidade        = :nr_ibge_cidade,        ');
-        QryInserir.SQL.Add('ds_email              = :ds_email,              ');
-        QryInserir.SQL.Add('nr_telefone1          = :nr_telefone1,          ');
-        QryInserir.SQL.Add('nr_telefone2          = :nr_telefone2,          ');
-        QryInserir.SQL.Add('ds_obs                = :ds_obs                 ');
-        QryInserir.SQL.Add('WHERE id_loja = :p_id_loja                      ');
+        QryInserir.SQL.Add('UPDATE lojas SET                                  ');
+        QryInserir.SQL.Add('  ds_razao_social       = :ds_razao_social,       ');
+        QryInserir.SQL.Add('  ds_fantasia           = :ds_fantasia,           ');
+        QryInserir.SQL.Add('  dt_abertura           = :dt_abertura,           ');
+        QryInserir.SQL.Add('  nr_cnpj               = :nr_cnpj,               ');
+        QryInserir.SQL.Add('  nr_inscricao_estadual = :nr_inscricao_estadual, ');
+        QryInserir.SQL.Add('  nr_cep                = :nr_cep,                ');
+        QryInserir.SQL.Add('  ds_endereco           = :ds_endereco,           ');
+        QryInserir.SQL.Add('  nr_numero             = :nr_numero,             ');
+        QryInserir.SQL.Add('  ds_complemento        = :ds_complemento,        ');
+        QryInserir.SQL.Add('  ds_bairro             = :ds_bairro,             ');
+        QryInserir.SQL.Add('  ds_cidade             = :ds_cidade,             ');
+        QryInserir.SQL.Add('  ds_uf                 = :ds_uf,                 ');
+        QryInserir.SQL.Add('  nr_ibge_cidade        = :nr_ibge_cidade,        ');
+        QryInserir.SQL.Add('  ds_email              = :ds_email,              ');
+        QryInserir.SQL.Add('  nr_telefone1          = :nr_telefone1,          ');
+        QryInserir.SQL.Add('  nr_telefone2          = :nr_telefone2,          ');
+        QryInserir.SQL.Add('  ds_obs                = :ds_obs                 ');
+        QryInserir.SQL.Add('WHERE id_loja           = :p_id_loja              ');
 
         QryInserir.ParamByName('p_id_loja').AsInteger := Fid_loja;
       end;
