@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/08/30 14:39:34.954,=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/08/30 14:41:11.838,D:\Projetos\ws-delphi\My-Delphi-Studies\DBGrid\unit_principal.pas=D:\Projetos\ws-delphi\Unit1.pas</Transaction>
+    <Transaction>2022/08/30 14:41:11.838,D:\Projetos\ws-delphi\My-Delphi-Studies\DBGrid\unit_principal.dfm=D:\Projetos\ws-delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/08/30 14:41:32.598,D:\Projetos\ws-delphi\My-Delphi-Studies\DBGrid\DBGRID.dproj=D:\Projetos\ws-delphi\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
