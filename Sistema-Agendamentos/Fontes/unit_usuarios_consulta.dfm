@@ -202,6 +202,7 @@ object form_usuario_consulta: Tform_usuario_consulta
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        OnDrawColumnCell = dbg_registros_consulta_usuariosDrawColumnCell
         OnDblClick = dbg_registros_consulta_usuariosDblClick
         OnKeyDown = dbg_registros_consulta_usuariosKeyDown
         Columns = <

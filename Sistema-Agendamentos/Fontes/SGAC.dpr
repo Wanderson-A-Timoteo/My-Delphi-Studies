@@ -29,7 +29,9 @@ uses
   unit_relatorio_agendamento_profissional in 'unit_relatorio_agendamento_profissional.pas' {form_relatorio_agendamento_profissional},
   unit_lojas in 'unit_lojas.pas' {form_lojas},
   unit_consulta_lojas in 'unit_consulta_lojas.pas' {form_consulta_lojas},
-  classe.lojas in 'classe.lojas.pas';
+  classe.lojas in 'classe.lojas.pas',
+  unit_usuarios_grupos_consulta in 'unit_usuarios_grupos_consulta.pas' {form_usuarios_grupos_consulta},
+  unit_usuarios_permissoes in 'unit_usuarios_permissoes.pas' {form_usuarios_permissoes};
 
 {$R *.res}
 
@@ -39,6 +41,7 @@ begin
   Application.MainFormOnTaskbar := True;
 
   Application.CreateForm(TDataModule1, DataModule1);
+
   if DataModule1.Conexao.fnc_conectar_banco_dados then
   begin
     form_login := Tform_login.Create(nil);

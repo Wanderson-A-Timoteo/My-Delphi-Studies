@@ -191,6 +191,14 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="classe.lojas.pas"/>
+        <DCCReference Include="unit_usuarios_grupos_consulta.pas">
+            <Form>form_usuarios_grupos_consulta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unit_usuarios_permissoes.pas">
+            <Form>form_usuarios_permissoes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

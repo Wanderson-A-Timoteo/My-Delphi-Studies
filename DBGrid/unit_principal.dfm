@@ -3,7 +3,7 @@ object Form_Principal: TForm_Principal
   Top = 0
   Caption = 'Manipulando DBGrid'
   ClientHeight = 525
-  ClientWidth = 886
+  ClientWidth = 670
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,16 +17,14 @@ object Form_Principal: TForm_Principal
   object PanelContainer: TPanel
     Left = 0
     Top = 0
-    Width = 886
+    Width = 670
     Height = 525
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 56
-    ExplicitWidth = 881
-    ExplicitHeight = 465
+    ExplicitWidth = 886
     object BtnAtivar: TButton
-      Left = 782
-      Top = 8
+      Left = 565
+      Top = 17
       Width = 91
       Height = 41
       Caption = 'Ativar'
@@ -36,13 +34,13 @@ object Form_Principal: TForm_Principal
     object PanelGRID: TPanel
       Left = 16
       Top = 64
-      Width = 857
+      Width = 641
       Height = 449
       TabOrder = 1
       object dbg_registros: TDBGrid
         Left = 1
         Top = 1
-        Width = 855
+        Width = 639
         Height = 447
         Align = alClient
         BorderStyle = bsNone
@@ -98,7 +96,7 @@ object Form_Principal: TForm_Principal
   end
   object ds_unidades: TDataSource
     DataSet = dmDados.QryUnidades
-    Left = 824
+    Left = 576
     Top = 96
   end
 end

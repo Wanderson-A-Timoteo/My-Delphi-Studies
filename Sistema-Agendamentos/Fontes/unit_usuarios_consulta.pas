@@ -44,12 +44,17 @@ type
     procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
     procedure dbg_registros_consulta_usuariosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure dbg_registros_consulta_usuariosDblClick(Sender: TObject);
+    procedure dbg_registros_consulta_usuariosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
+      Column: TColumn; State: TGridDrawState);
   private
     { Private declarations }
   public
     { Public declarations }
     //LUsuarios : TUsuario;
   end;
+
+type
+  TDBGridPadrao = class(TDBGrid);
 
 var
   form_usuario_consulta: Tform_usuario_consulta;
@@ -84,6 +89,31 @@ begin
       form_usuarios_cadastro.Free;
     end;
   end;
+end;
+
+procedure Tform_usuario_consulta.dbg_registros_consulta_usuariosDrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  // Zebrando o DBGrid
+  if Odd(dbg_registros_consulta_usuarios.DataSource.DataSet.RecNo) then
+    dbg_registros_consulta_usuarios.Canvas.Brush.Color := $00E9E9E9
+  else
+    dbg_registros_consulta_usuarios.Canvas.Brush.Color := clWhite; // $00F9F9F9;
+
+  // Mudando a cor da seleção
+  if (gdSelected in State) then
+  begin
+    dbg_registros_consulta_usuarios.Canvas.Brush.Color := $00FF8000;
+    dbg_registros_consulta_usuarios.Canvas.Font.Color  := clWhite; // $00844726;
+    dbg_registros_consulta_usuarios.Canvas.Font.Style  := [fsBold]; // $00844726;
+  end;
+
+  dbg_registros_consulta_usuarios.Canvas.FillRect(Rect);
+  dbg_registros_consulta_usuarios.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+
+
+  // Mudando a posição e alinhando vertical do texto de cada linha
+  dbg_registros_consulta_usuarios.Canvas.TextRect(Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText);
 end;
 
 procedure Tform_usuario_consulta.dbg_registros_consulta_usuariosKeyDown(Sender: TObject; var Key: Word;
@@ -122,6 +152,11 @@ begin
     begin
       ds_usuario_consulta.DataSet := DataModule1.Usuarios.QryConsulta;
       // prcAjustaTamanhoLinha(dbg_Registros, 30);
+          DataModule1.Usuarios.QryConsulta.Active := True;
+
+      // Define o tamanho de cada linha do DBGrid após ativar a Query
+          TDBGridPadrao(dbg_registros_consulta_usuarios).DefaultRowHeight := 30;
+          TDBGridPadrao(dbg_registros_consulta_usuarios).ClientHeight     := (30 * TDBGridPadrao(dbg_registros_consulta_usuarios).RowCount) + 30
     end else
     begin
       fnc_criar_mensagem('CONSULTAR USUÁRIO',
@@ -187,6 +222,11 @@ begin
   begin
     ds_usuario_consulta.DataSet := DataModule1.Usuarios.QryConsulta;
     // prcAjustaTamanhoLinha(dbg_Registros, 30);
+    DataModule1.Usuarios.QryConsulta.Active := True;
+
+    // Define o tamanho de cada linha do DBGrid após ativar a Query
+    TDBGridPadrao(dbg_registros_consulta_usuarios).DefaultRowHeight := 30;
+    TDBGridPadrao(dbg_registros_consulta_usuarios).ClientHeight     := (30 * TDBGridPadrao(dbg_registros_consulta_usuarios).RowCount) + 30
   end else
   begin
     fnc_criar_mensagem('CONSULTAR USUÁRIO',

@@ -12,6 +12,7 @@ uses
   function  fncRomoveCaracteres(AString: String) : String;
   function  Criptografia(Senha, Chave: string) : string;
   function  fnc_criar_mensagem(TituloJanela, TituloMSG, MSG, Icone, Tipo : String) :  boolean;
+
   procedure prcValidarCamposObrigatorios ( Form: TForm );
 
 var
@@ -153,7 +154,6 @@ begin
       end;
     end;
   end;
-
 end;
 
 end.
