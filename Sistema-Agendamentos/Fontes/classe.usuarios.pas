@@ -3,7 +3,7 @@ unit classe.usuarios;
 interface
 
 uses
-  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms, Data.DB;
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms, Data.DB, Datasnap.DBClient;
 
 type
   TUsuarios = class
@@ -16,6 +16,7 @@ type
       Fid_usuarios : Integer;
       FConexao     : TFDConnection;
       FQryConsulta : TFDQuery;
+      FQryModulos  : TFDQuery;
 
     public
       property QryConsulta  : TFDQuery      read FQryConsulta  write FQryConsulta;
@@ -31,6 +32,7 @@ type
 
       function fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String) : Boolean;
       function fnc_validar_login(usuario, senha : String) : Boolean;
+      procedure fnc_carrega_modulos(Modulos : TClientDataSet);
   end;
 
 implementation

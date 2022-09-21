@@ -228,6 +228,7 @@ object form_usuarios_cadastro: Tform_usuarios_cadastro
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           0000}
+        OnClick = SpeedButtonCadastrarGrupoUsuariosClick
       end
       object Label1: TLabel
         Left = 122
@@ -257,7 +258,7 @@ object form_usuarios_cadastro: Tform_usuarios_cadastro
       end
       object Label4: TLabel
         Left = 316
-        Top = 245
+        Top = 227
         Width = 5
         Height = 15
         Caption = '*'

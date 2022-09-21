@@ -236,72 +236,36 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
             Expanded = False
             FieldName = 'ds_modulo'
             Title.Caption = 'M'#243'dulo'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 250
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'abrir'
             Title.Caption = 'Abrir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'inserir'
             Title.Caption = 'Inserir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'alterar'
             Title.Caption = 'Alterar'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'excluir'
             Title.Caption = 'Excluir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'imprimir'
             Title.Caption = 'Imprimir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
             Visible = True
           end>
       end
@@ -342,7 +306,6 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
     end
     object Cds_modulosds_modulo: TStringField
       FieldName = 'ds_modulo'
-      Size = 255
     end
     object Cds_modulosabrir: TBooleanField
       FieldName = 'abrir'

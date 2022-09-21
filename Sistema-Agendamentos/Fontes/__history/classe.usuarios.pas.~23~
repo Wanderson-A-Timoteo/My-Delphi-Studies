@@ -3,7 +3,7 @@ unit classe.usuarios;
 interface
 
 uses
-  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms;
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms, Data.DB;
 
 type
   TUsuarios = class
@@ -15,9 +15,10 @@ type
       Fds_usuario  : String;
       Fid_usuarios : Integer;
       FConexao     : TFDConnection;
+      FQryConsulta : TFDQuery;
 
     public
-
+      property QryConsulta  : TFDQuery      read FQryConsulta  write FQryConsulta;
       property Conexao      : TFDConnection read FConexao      write FConexao;
       property id_usuarios  : Integer       read Fid_usuarios  write Fid_usuarios;
       property ds_usuario   : String        read Fds_usuario   write Fds_usuario;
@@ -32,9 +33,6 @@ type
       function fnc_validar_login(usuario, senha : String) : Boolean;
   end;
 
-var
- QryConsulta : TFDQuery;
-
 implementation
 
 { TUsuarios }
@@ -44,13 +42,13 @@ uses unit_funcoes, unit_dados, unit_usuarios_cadastro;
 constructor TUsuarios.Create(Conexao: TFDConnection);
 begin
   FConexao               := Conexao;
-  QryConsulta            := TFDQuery.Create(nil);
-  QryConsulta.Connection := FConexao;
+  FQryConsulta            := TFDQuery.Create(nil);
+  FQryConsulta.Connection := FConexao;
 end;
 
 destructor TUsuarios.Destroy;
 begin
-  QryConsulta.Free;
+  FQryConsulta.Free;
   inherited;
 end;
 
@@ -64,20 +62,21 @@ begin
 
     if TipoOperacao = 'CONSULTAR' then
     begin
-      QryConsulta.Close;
-      QryConsulta.SQL.Clear;
-      QryConsulta.SQL.Add('SELECT id_usuario,               ');
-      QryConsulta.SQL.Add('       ds_usuario,               ');
-      QryConsulta.SQL.Add('       cd_permissao,             ');
-      QryConsulta.SQL.Add('       ds_login,                 ');
-      QryConsulta.SQL.Add('       ds_senha                  ');
-      QryConsulta.SQL.Add('FROM usuarios                    ');
-      QryConsulta.SQL.Add('WHERE ds_usuario LIKE :parametro ');
-      QryConsulta.ParamByName('parametro').AsString := '%' + parametro + '%';
-      QryConsulta.Open;
+      FQryConsulta.Close;
+      FQryConsulta.SQL.Clear;
+      FQryConsulta.SQL.Add('SELECT id_usuarios,               ');
+      FQryConsulta.SQL.Add('       ds_usuario,               ');
+      FQryConsulta.SQL.Add('       cd_permissao,             ');
+      FQryConsulta.SQL.Add('       ds_login,                 ');
+      FQryConsulta.SQL.Add('       ds_senha                  ');
+      FQryConsulta.SQL.Add('FROM usuarios                    ');
+      FQryConsulta.SQL.Add('WHERE ds_usuario LIKE :parametro ');
+      FQryConsulta.ParamByName('parametro').AsString := '%' + parametro + '%';
+      FQryConsulta.Open;
+      TIntegerField(FQryConsulta.FieldByName('id_usuarios')).DisplayFormat := '0000'; // use Data.DB
     end else
     if TipoOperacao = 'EXCLUIR' then
-      FConexao.ExecSQL('DELETE FROM usuarios WHERE id_usuario = :id_usuario', [StrToInt(parametro)])
+      FConexao.ExecSQL('DELETE FROM usuarios WHERE id_usuarios = :id_usuarios', [StrToInt(parametro)])
     else
     begin
       try
@@ -156,7 +155,7 @@ begin
     QryLogin.SQL.Clear;
     QryLogin.SQL.Add('SELECT ds_usuario,           ');
     QryLogin.SQL.Add('       ds_login,             ');
-    QryLogin.SQL.Add('       ds_senha,             ');
+    QryLogin.SQL.Add('       ds_senha              ');
     QryLogin.SQL.Add('FROM usuarios                ');
     QryLogin.SQL.Add('WHERE ds_login = :p_ds_login ');
     QryLogin.ParamByName('p_ds_login').AsString := usuario;

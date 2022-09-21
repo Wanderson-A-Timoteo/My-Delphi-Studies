@@ -79,7 +79,8 @@ end;
 
 procedure Tform_usuarios_permissoes.FormShow(Sender: TObject);
 begin
-  DataModule1.Usuarios.fnc_carrega_modulos( Cds_modulos );
+  ds_profissionais.DataSet := DataModule1.Profissional.fnc_consulta('');
+  //prcAjustaTamanhoLiha(dbg_Registros, 33);
 end;
 
 procedure Tform_usuarios_permissoes.SpeedButtonAgendarMouseEnter(Sender: TObject);

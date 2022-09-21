@@ -41,7 +41,6 @@ type
     procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
     procedure dbg_registros_consulta_usuariosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
-    procedure SpeedButtonCadastrarNovoUsuarioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +58,7 @@ implementation
 
 {$R *.dfm}
 
-uses unit_dados, unit_funcoes, unit_usuarios_permissoes;
+uses unit_dados, unit_funcoes;
 
 
 procedure Tform_usuarios_grupos_consulta.dbg_registros_consulta_usuariosDrawColumnCell(Sender: TObject; const Rect: TRect;
@@ -85,16 +84,6 @@ begin
 
   // Mudando a posição e alinhando vertical do texto de cada linha
   dbg_registros_consulta_usuarios.Canvas.TextRect(Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText);
-end;
-
-procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoUsuarioClick(Sender: TObject);
-begin
-  try
-    form_usuarios_permissoes := Tform_usuarios_permissoes.Create(Self);
-    form_usuarios_permissoes.ShowModal;
-  finally
-    form_usuarios_permissoes.Free;
-  end;
 end;
 
 procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoUsuarioMouseEnter(Sender: TObject);

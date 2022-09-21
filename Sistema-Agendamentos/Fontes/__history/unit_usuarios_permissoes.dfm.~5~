@@ -53,8 +53,6 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 5
       object LabelNoemProfissional: TLabel
         Left = 10
         Top = 137
@@ -231,79 +229,6 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
         TitleFont.Style = []
         OnDrawColumnCell = dbg_registrosDrawColumnCell
         OnKeyDown = dbg_registrosKeyDown
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'ds_modulo'
-            Title.Caption = 'M'#243'dulo'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 250
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'abrir'
-            Title.Caption = 'Abrir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'inserir'
-            Title.Caption = 'Inserir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'alterar'
-            Title.Caption = 'Alterar'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'excluir'
-            Title.Caption = 'Excluir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'imprimir'
-            Title.Caption = 'Imprimir'
-            Title.Font.Charset = DEFAULT_CHARSET
-            Title.Font.Color = 11976552
-            Title.Font.Height = -16
-            Title.Font.Name = 'Segoe UI'
-            Title.Font.Style = [fsBold]
-            Width = 70
-            Visible = True
-          end>
       end
       object PnlBordaDBGrid: TPanel
         Left = 10
@@ -324,40 +249,12 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
     end
   end
   object ds_permissoes: TDataSource
-    Left = 555
+    Left = 643
     Top = 587
   end
   object ACBrEnterTab1: TACBrEnterTab
     EnterAsTab = True
-    Left = 499
+    Left = 579
     Top = 587
-  end
-  object Cds_modulos: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    Left = 619
-    Top = 587
-    object Cds_modulosid_item: TIntegerField
-      FieldName = 'id_item'
-    end
-    object Cds_modulosds_modulo: TStringField
-      FieldName = 'ds_modulo'
-      Size = 255
-    end
-    object Cds_modulosabrir: TBooleanField
-      FieldName = 'abrir'
-    end
-    object Cds_modulosinserir: TBooleanField
-      FieldName = 'inserir'
-    end
-    object Cds_modulosalterar: TBooleanField
-      FieldName = 'alterar'
-    end
-    object Cds_modulosexcluir: TBooleanField
-      FieldName = 'excluir'
-    end
-    object Cds_modulosimprimir: TBooleanField
-      FieldName = 'imprimir'
-    end
   end
 end

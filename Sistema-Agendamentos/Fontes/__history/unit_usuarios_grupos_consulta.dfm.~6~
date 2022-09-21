@@ -217,7 +217,7 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
           item
             Expanded = False
             FieldName = 'ds_grupo'
-            Title.Caption = 'Nome do Grupo'
+            Title.Caption = 'Nome do Usu'#225'rio'
             Title.Font.Charset = DEFAULT_CHARSET
             Title.Font.Color = 11976552
             Title.Font.Height = -16
@@ -286,7 +286,6 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
-            OnClick = SpeedButtonCadastrarNovoUsuarioClick
             OnMouseEnter = SpeedButtonCadastrarNovoUsuarioMouseEnter
             OnMouseLeave = SpeedButtonCadastrarNovoUsuarioMouseLeave
           end

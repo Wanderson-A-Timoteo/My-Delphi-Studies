@@ -48,6 +48,7 @@ type
     procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
     procedure SpeedButtonSalvarClick(Sender: TObject);
+    procedure SpeedButtonCadastrarGrupoUsuariosClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -63,7 +64,17 @@ implementation
 
 {$R *.dfm}
 
-uses unit_dados, unit_funcoes;
+uses unit_dados, unit_funcoes, unit_usuarios_grupos_consulta, unit_usuarios_permissoes;
+
+procedure Tform_usuarios_cadastro.SpeedButtonCadastrarGrupoUsuariosClick(Sender: TObject);
+begin
+  try
+    form_usuarios_grupos_consulta := Tform_usuarios_grupos_consulta.Create(Self);
+    form_usuarios_grupos_consulta.ShowModal;
+  finally
+    form_usuarios_grupos_consulta.Free;
+  end;
+end;
 
 procedure Tform_usuarios_cadastro.SpeedButtonCancelarClick(Sender: TObject);
 begin

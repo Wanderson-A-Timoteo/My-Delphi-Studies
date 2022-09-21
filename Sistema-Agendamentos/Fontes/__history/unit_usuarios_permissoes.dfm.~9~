@@ -342,7 +342,6 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
     end
     object Cds_modulosds_modulo: TStringField
       FieldName = 'ds_modulo'
-      Size = 255
     end
     object Cds_modulosabrir: TBooleanField
       FieldName = 'abrir'
