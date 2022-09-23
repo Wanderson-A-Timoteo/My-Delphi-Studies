@@ -38,7 +38,7 @@ uses
 begin
   ReportMemoryLeaksOnShutdown := True;
   Application.Initialize;
-  Application.MainFormOnTaskbar := True;
+  //Application.MainFormOnTaskbar := True;
 
   Application.CreateForm(TDataModule1, DataModule1);
 

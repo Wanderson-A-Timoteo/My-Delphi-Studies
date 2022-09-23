@@ -1,0 +1,363 @@
+object form_usuarios_permissoes: Tform_usuarios_permissoes
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 664
+  ClientWidth = 716
+  Color = 11976552
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = 11976552
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 15
+  object shape_fundo_form_agendamento: TShape
+    Left = 0
+    Top = 0
+    Width = 716
+    Height = 664
+    Align = alClient
+    Brush.Color = 11976552
+    Pen.Color = 11976552
+    ExplicitHeight = 465
+  end
+  object PanelContainer: TPanel
+    Left = 8
+    Top = 8
+    Width = 700
+    Height = 648
+    BevelOuter = bvNone
+    Color = 11976552
+    ParentBackground = False
+    TabOrder = 0
+    object PanelAgrupaCamposAgendamento: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 694
+      Height = 638
+      Margins.Bottom = 0
+      Align = alTop
+      BevelOuter = bvNone
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clSilver
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      object LabelNoemProfissional: TLabel
+        Left = 10
+        Top = 137
+        Width = 215
+        Height = 21
+        Caption = 'Nome do Grupo de Usu'#225'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LabelTituloCadastrarProfissional: TLabel
+        Left = 139
+        Top = 30
+        Width = 419
+        Height = 37
+        Caption = 'Cadastrar Permiss'#227'o de Usu'#225'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -27
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 10
+        Top = 201
+        Width = 181
+        Height = 21
+        Caption = 'Permiss'#245'es Cadastradas'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Left = 229
+        Top = 137
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object PanelBotoesAgendarCancelar: TPanel
+        Left = 10
+        Top = 570
+        Width = 364
+        Height = 49
+        BevelOuter = bvNone
+        TabOrder = 2
+        object PanelBotaoAgendar: TPanel
+          Left = 0
+          Top = 0
+          Width = 177
+          Height = 49
+          Align = alLeft
+          Anchors = [akLeft, akBottom]
+          BevelOuter = bvNone
+          Color = 11976552
+          ParentBackground = False
+          TabOrder = 0
+          object SpeedButtonAgendar: TSpeedButton
+            Left = 2
+            Top = 2
+            Width = 173
+            Height = 45
+            Align = alCustom
+            Caption = 'Salvar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnMouseEnter = SpeedButtonAgendarMouseEnter
+            OnMouseLeave = SpeedButtonAgendarMouseLeave
+          end
+        end
+        object PanelBotaoCancelar: TPanel
+          Left = 187
+          Top = 0
+          Width = 177
+          Height = 49
+          Align = alRight
+          BevelOuter = bvNone
+          Color = 8421631
+          ParentBackground = False
+          TabOrder = 1
+          object SpeedButtonCancelar: TSpeedButton
+            Left = 2
+            Top = 2
+            Width = 173
+            Height = 45
+            Align = alCustom
+            Caption = 'Cancelar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = SpeedButtonCancelarClick
+            OnMouseEnter = SpeedButtonCancelarMouseEnter
+            OnMouseLeave = SpeedButtonCancelarMouseLeave
+          end
+        end
+      end
+      object EditNomeProfissional: TEdit
+        Tag = 5
+        Left = 10
+        Top = 174
+        Width = 660
+        Height = 20
+        Hint = '  -   Nome do Profissional'
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        CharCase = ecUpperCase
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 11976552
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object PanelBordaNomeProfissional: TPanel
+        Left = 10
+        Top = 193
+        Width = 660
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 1
+      end
+      object dbg_registros: TDBGrid
+        Left = 12
+        Top = 248
+        Width = 660
+        Height = 281
+        BorderStyle = bsNone
+        DataSource = ds_permissoes
+        FixedColor = clWindow
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
+        TabOrder = 3
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clSilver
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+        OnDrawColumnCell = dbg_registrosDrawColumnCell
+        OnKeyDown = dbg_registrosKeyDown
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'ds_modulo'
+            Title.Caption = 'M'#243'dulo'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 250
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'abrir'
+            Title.Caption = 'Abrir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'inserir'
+            Title.Caption = 'Inserir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'alterar'
+            Title.Caption = 'Alterar'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'excluir'
+            Title.Caption = 'Excluir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'imprimir'
+            Title.Caption = 'Imprimir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end>
+      end
+      object PnlBordaDBGrid: TPanel
+        Left = 10
+        Top = 547
+        Width = 660
+        Height = 1
+        BevelOuter = bvNone
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 4
+      end
+    end
+  end
+  object ds_permissoes: TDataSource
+    Left = 555
+    Top = 587
+  end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 499
+    Top = 587
+  end
+  object cds_modulos: TClientDataSet
+    Aggregates = <>
+    MasterSource = ds_permissoes
+    PacketRecords = 0
+    Params = <>
+    Left = 619
+    Top = 587
+    object cds_modulosid_item: TIntegerField
+      FieldName = 'id_item'
+    end
+    object cds_modulosds_modulo: TStringField
+      FieldName = 'ds_modulo'
+      Size = 255
+    end
+    object cds_modulosabrir: TBooleanField
+      FieldName = 'abrir'
+    end
+    object cds_modulosinserir: TBooleanField
+      FieldName = 'inserir'
+    end
+    object cds_modulosalterar: TBooleanField
+      FieldName = 'alterar'
+    end
+    object cds_modulosexcluir: TBooleanField
+      FieldName = 'excluir'
+    end
+    object cds_modulosimprimir: TBooleanField
+      FieldName = 'imprimir'
+    end
+  end
+end

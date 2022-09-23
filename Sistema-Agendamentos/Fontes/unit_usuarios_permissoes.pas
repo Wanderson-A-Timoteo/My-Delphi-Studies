@@ -29,14 +29,14 @@ type
     Label10: TLabel;
     ACBrEnterTab1: TACBrEnterTab;
     PnlBordaDBGrid: TPanel;
-    Cds_modulos: TClientDataSet;
-    Cds_modulosid_item: TIntegerField;
-    Cds_modulosds_modulo: TStringField;
-    Cds_modulosabrir: TBooleanField;
-    Cds_modulosinserir: TBooleanField;
-    Cds_modulosalterar: TBooleanField;
-    Cds_modulosexcluir: TBooleanField;
-    Cds_modulosimprimir: TBooleanField;
+    cds_modulos: TClientDataSet;
+    cds_modulosid_item: TIntegerField;
+    cds_modulosabrir: TBooleanField;
+    cds_modulosinserir: TBooleanField;
+    cds_modulosalterar: TBooleanField;
+    cds_modulosexcluir: TBooleanField;
+    cds_modulosimprimir: TBooleanField;
+    cds_modulosds_modulo: TStringField;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
@@ -46,6 +46,7 @@ type
     procedure SpeedButtonAgendarMouseLeave(Sender: TObject);
     procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
+    procedure dbg_registrosCellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -61,6 +62,16 @@ implementation
 
 uses unit_funcoes;
 
+
+procedure Tform_usuarios_permissoes.dbg_registrosCellClick(Column: TColumn);
+begin
+  if (Column.FieldName <> 'ds_modulo') then
+  begin
+    cds_modulos.Edit;
+    cds_modulos.FieldByName( Column.FieldName ).AsBoolean := not cds_modulos.FieldByName( Column.FieldName ).AsBoolean;
+    cds_modulos.Post;
+  end;
+end;
 
 procedure Tform_usuarios_permissoes.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
@@ -79,7 +90,10 @@ end;
 
 procedure Tform_usuarios_permissoes.FormShow(Sender: TObject);
 begin
-  DataModule1.Usuarios.fnc_carrega_modulos( Cds_modulos );
+  cds_modulos.Close;
+  cds_modulos.CreateDataSet;
+  DataModule1.Usuarios.prc_carrega_modulos( cds_modulos );
+  //prcAjustaTamanhoLinha(dbg_registros, 33);
 end;
 
 procedure Tform_usuarios_permissoes.SpeedButtonAgendarMouseEnter(Sender: TObject);

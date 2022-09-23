@@ -20,6 +20,7 @@ type
 
     public
       property QryConsulta  : TFDQuery      read FQryConsulta  write FQryConsulta;
+      property QryModulos   : TFDQuery      read FQryModulos   write FQryModulos;
       property Conexao      : TFDConnection read FConexao      write FConexao;
       property id_usuarios  : Integer       read Fid_usuarios  write Fid_usuarios;
       property ds_usuario   : String        read Fds_usuario   write Fds_usuario;
@@ -32,7 +33,8 @@ type
 
       function fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String) : Boolean;
       function fnc_validar_login(usuario, senha : String) : Boolean;
-      procedure fnc_carrega_modulos(Modulos : TClientDataSet);
+
+      procedure prc_carrega_modulos(Modulos : TClientDataSet);
   end;
 
 implementation
@@ -43,14 +45,18 @@ uses unit_funcoes, unit_dados, unit_usuarios_cadastro;
 
 constructor TUsuarios.Create(Conexao: TFDConnection);
 begin
-  FConexao               := Conexao;
+  FConexao                := Conexao;
   FQryConsulta            := TFDQuery.Create(nil);
   FQryConsulta.Connection := FConexao;
+
+  FQryModulos             := TFDQuery.Create(nil);
+  FQryModulos.Connection  := FConexao;
 end;
 
 destructor TUsuarios.Destroy;
 begin
   FQryConsulta.Free;
+  FQryModulos.Free;
   inherited;
 end;
 
@@ -66,7 +72,7 @@ begin
     begin
       FQryConsulta.Close;
       FQryConsulta.SQL.Clear;
-      FQryConsulta.SQL.Add('SELECT id_usuarios,               ');
+      FQryConsulta.SQL.Add('SELECT id_usuarios,              ');
       FQryConsulta.SQL.Add('       ds_usuario,               ');
       FQryConsulta.SQL.Add('       cd_permissao,             ');
       FQryConsulta.SQL.Add('       ds_login,                 ');
@@ -194,6 +200,36 @@ begin
   finally
     QryLogin.Free;
   end;
+end;
+
+procedure TUsuarios.prc_carrega_modulos(Modulos: TClientDataSet);
+begin
+  FQryModulos.Close;
+  FQryModulos.SQL.Clear;
+  FQryModulos.SQL.Add('SELECT id_modulo,     ');
+  FQryModulos.SQL.Add('       ds_modulo      ');
+  FQryModulos.SQL.Add('FROM usuarios_modulos ');
+  FQryModulos.Open;
+  FQryModulos.First;
+
+  while not FQryModulos.Eof do
+  begin
+    Modulos.Insert;
+    Modulos.FieldByName('id_item').AsInteger  := FQryModulos.RecNo;
+    Modulos.FieldByName('ds_modulo').AsString := FQryModulos.FieldByName('ds_modulo').AsString;
+    Modulos.FieldByName('abrir').AsBoolean    := False;
+    Modulos.FieldByName('inserir').AsBoolean  := False;
+    Modulos.FieldByName('alterar').AsBoolean  := False;
+    Modulos.FieldByName('excluir').AsBoolean  := False;
+    Modulos.FieldByName('imprimir').AsBoolean := False;
+    Modulos.Post;
+
+    QryModulos.Next;
+  end;
+
+  Modulos.First;
+  FQryModulos.Close;
+
 end;
 
 end.
