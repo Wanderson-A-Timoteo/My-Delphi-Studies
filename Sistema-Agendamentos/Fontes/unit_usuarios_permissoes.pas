@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.Mask, unit_dados, classe.profissionais, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
-  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, ACBrBase, ACBrEnterTab, Datasnap.DBClient;
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, ACBrBase, ACBrEnterTab, Datasnap.DBClient, System.ImageList,
+  Vcl.ImgList;
 
 type
   Tform_usuarios_permissoes = class(TForm)
@@ -19,9 +20,9 @@ type
     PanelBotoesAgendarCancelar: TPanel;
     PanelBotaoAgendar: TPanel;
     PanelBotaoCancelar: TPanel;
-    SpeedButtonAgendar: TSpeedButton;
+    SpeedButtonSalvar: TSpeedButton;
     SpeedButtonCancelar: TSpeedButton;
-    EditNomeProfissional: TEdit;
+    EditNomeGrupoUsuarios: TEdit;
     PanelBordaNomeProfissional: TPanel;
     dbg_registros: TDBGrid;
     Label1: TLabel;
@@ -37,16 +38,17 @@ type
     cds_modulosexcluir: TBooleanField;
     cds_modulosimprimir: TBooleanField;
     cds_modulosds_modulo: TStringField;
+    ImageList: TImageList;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
-      Column: TColumn; State: TGridDrawState);
-    procedure dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure SpeedButtonAgendarMouseEnter(Sender: TObject);
-    procedure SpeedButtonAgendarMouseLeave(Sender: TObject);
+    procedure SpeedButtonSalvarMouseEnter(Sender: TObject);
+    procedure SpeedButtonSalvarMouseLeave(Sender: TObject);
     procedure SpeedButtonCancelarMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
     procedure dbg_registrosCellClick(Column: TColumn);
+    procedure dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+      State: TGridDrawState);
+    procedure SpeedButtonSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,19 +75,30 @@ begin
   end;
 end;
 
-procedure Tform_usuarios_permissoes.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect;
-  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+procedure Tform_usuarios_permissoes.dbg_registrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
+  Column: TColumn; State: TGridDrawState);
+var
+ Picture: TPicture;
+ AlignPicture: Integer;
 begin
-  //prcDrawColumnCell(dbg_registros, Rect, DataCol, Column, State);
-  //prcAjustaTamanhoLinha(dbg_Registros, 33);
-end;
+  if ( Column.FieldName <> 'ds_module' ) then
+  begin
+    try
+      Picture := TPicture.Create;
+      dbg_registros.Canvas.FillRect(Rect);
 
-procedure Tform_usuarios_permissoes.dbg_registrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-begin
-  if (not (dbg_registros.DataSource.DataSet.IsEmpty)) AND (key = VK_DELETE) then
-    DataModule1.Profissional.prc_deleta(dbg_registros.DataSource.DataSet.FieldByName('id_profissional').AsInteger );
+      if dbg_registros.DataSource.DataSet.FieldByName(Column.FieldName).AsBoolean = False then
+        ImageList.GetBitmap(0, Picture.Bitmap)
+      else
+        ImageList.GetBitmap(1, Picture.Bitmap);
 
-  //prcAjustaTamanhoLiha(dbg_Registros, 33);
+      AlignPicture := Trunc ((Column.Width - Picture.Width) / 2);
+
+      dbg_registros.Canvas.Draw(Rect.Left + AlignPicture, Rect.Top + 10, Picture.Graphic);
+    finally
+      Picture.Free;
+    end;
+  end;
 end;
 
 procedure Tform_usuarios_permissoes.FormShow(Sender: TObject);
@@ -96,14 +109,47 @@ begin
   //prcAjustaTamanhoLinha(dbg_registros, 33);
 end;
 
-procedure Tform_usuarios_permissoes.SpeedButtonAgendarMouseEnter(Sender: TObject);
+procedure Tform_usuarios_permissoes.SpeedButtonSalvarClick(Sender: TObject);
+var
+  SErro: String;
 begin
-  SpeedButtonAgendar.Font.Color := $00591A05;
+  SErro := '';
+
+  prcValidarCamposObrigatorios( form_usuarios_permissoes );
+
+  DataModule1.Usuarios.ds_grupo_usuario := EditNomeGrupoUsuarios.Text;
+
+  if DataModule1.Usuarios.fnc_inserir_grupo_permissao( cds_modulos, SErro) then
+  begin
+    fnc_criar_mensagem('INSERINDO DADOS',
+                       'Cadastrar/Alterar Grupo de Usuários/Permissões',
+                       'Cadastro/Alteração Realizado com Sucesso! ' +
+                       '',
+                       ExtractFilePath(Application.ExeName) + 'imagens\sucesso.png',
+                       'OK');
+    Close;
+  end else
+  begin
+    fnc_criar_mensagem('INSERINDO DADOS',
+                       'Erro ao Cadastrar/Alterar Grupo de Usuários/Permissões',
+                       'Não foi possível Cadastrar/Alterar Grupo de Usuários/Permissões, possível causa: ' +
+                       SErro,
+                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                       'OK');
+
+    EditNomeGrupoUsuarios.SetFocus;
+  end;
+
 end;
 
-procedure Tform_usuarios_permissoes.SpeedButtonAgendarMouseLeave(Sender: TObject);
+procedure Tform_usuarios_permissoes.SpeedButtonSalvarMouseEnter(Sender: TObject);
 begin
-  SpeedButtonAgendar.Font.Color := clWhite;
+  SpeedButtonSalvar.Font.Color := $00591A05;
+end;
+
+procedure Tform_usuarios_permissoes.SpeedButtonSalvarMouseLeave(Sender: TObject);
+begin
+  SpeedButtonSalvar.Font.Color := clWhite;
 end;
 
 procedure Tform_usuarios_permissoes.SpeedButtonCancelarClick(Sender: TObject);

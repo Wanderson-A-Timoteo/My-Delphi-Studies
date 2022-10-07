@@ -25,7 +25,7 @@ type
     ds_grupos_usuario_consulta: TDataSource;
     Label1: TLabel;
     PanelBotaoCadastrarNovoCliente: TPanel;
-    SpeedButtonCadastrarNovoUsuario: TSpeedButton;
+    SpeedButtonCadastrarNovoGrupo: TSpeedButton;
     PanelBotoesCadastrarNovoClienteFechar: TPanel;
     PanelBotaoCancelar: TPanel;
     SpeedButtonCancelarConsulta: TSpeedButton;
@@ -34,14 +34,14 @@ type
     procedure SpeedButtonCancelarConsultaClick(Sender: TObject);
     procedure SpeedButtonCancelarConsultaMouseEnter(Sender: TObject);
     procedure SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
-    procedure SpeedButtonCadastrarNovoUsuarioMouseLeave(Sender: TObject);
-    procedure SpeedButtonCadastrarNovoUsuarioMouseEnter(Sender: TObject);
+    procedure SpeedButtonCadastrarNovoGrupoMouseLeave(Sender: TObject);
+    procedure SpeedButtonCadastrarNovoGrupoMouseEnter(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioClick(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
     procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
     procedure dbg_registros_consulta_usuariosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
-    procedure SpeedButtonCadastrarNovoUsuarioClick(Sender: TObject);
+    procedure SpeedButtonCadastrarNovoGrupoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -87,7 +87,7 @@ begin
   dbg_registros_consulta_usuarios.Canvas.TextRect(Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText);
 end;
 
-procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoUsuarioClick(Sender: TObject);
+procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoGrupoClick(Sender: TObject);
 begin
   try
     form_usuarios_permissoes := Tform_usuarios_permissoes.Create(Self);
@@ -97,14 +97,14 @@ begin
   end;
 end;
 
-procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoUsuarioMouseEnter(Sender: TObject);
+procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoGrupoMouseEnter(Sender: TObject);
 begin
-  SpeedButtonCadastrarNovoUsuario.Font.Color := $00591A05;
+  SpeedButtonCadastrarNovoGrupo.Font.Color := $00591A05;
 end;
 
-procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoUsuarioMouseLeave(Sender: TObject);
+procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoGrupoMouseLeave(Sender: TObject);
 begin
-  SpeedButtonCadastrarNovoUsuario.Font.Color := clWhite;
+  SpeedButtonCadastrarNovoGrupo.Font.Color := clWhite;
 end;
 
 procedure Tform_usuarios_grupos_consulta.SpeedButtonCancelarConsultaClick(Sender: TObject);

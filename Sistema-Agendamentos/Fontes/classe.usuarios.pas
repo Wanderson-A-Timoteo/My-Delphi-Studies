@@ -9,30 +9,35 @@ type
   TUsuarios = class
 
     private
-      Fcd_permissao: Integer;
-      Fds_senha    : String;
-      Fds_login    : String;
-      Fds_usuario  : String;
-      Fid_usuarios : Integer;
-      FConexao     : TFDConnection;
-      FQryConsulta : TFDQuery;
-      FQryModulos  : TFDQuery;
+      Fcd_permissao    : Integer;
+      Fds_senha        : String;
+      Fds_login        : String;
+      Fds_usuario      : String;
+      Fid_usuarios     : Integer;
+      FConexao         : TFDConnection;
+      FQryConsulta     : TFDQuery;
+      FQryModulos      : TFDQuery;
+      Fds_grupo_usuario: String;
+      Fid_grupo_usuario: Integer;
 
     public
-      property QryConsulta  : TFDQuery      read FQryConsulta  write FQryConsulta;
-      property QryModulos   : TFDQuery      read FQryModulos   write FQryModulos;
-      property Conexao      : TFDConnection read FConexao      write FConexao;
-      property id_usuarios  : Integer       read Fid_usuarios  write Fid_usuarios;
-      property ds_usuario   : String        read Fds_usuario   write Fds_usuario;
-      property ds_login     : String        read Fds_login     write Fds_login;
-      property ds_senha     : String        read Fds_senha     write Fds_senha;
-      property cd_permissao : Integer       read Fcd_permissao write Fcd_permissao;
+      property QryConsulta      : TFDQuery      read FQryConsulta      write FQryConsulta;
+      property QryModulos       : TFDQuery      read FQryModulos       write FQryModulos;
+      property Conexao          : TFDConnection read FConexao          write FConexao;
+      property id_usuarios      : Integer       read Fid_usuarios      write Fid_usuarios;
+      property ds_usuario       : String        read Fds_usuario       write Fds_usuario;
+      property ds_login         : String        read Fds_login         write Fds_login;
+      property ds_senha         : String        read Fds_senha         write Fds_senha;
+      property cd_permissao     : Integer       read Fcd_permissao     write Fcd_permissao;
+      property id_grupo_usuario : Integer       read Fid_grupo_usuario write Fid_grupo_usuario;
+      property ds_grupo_usuario : String        read Fds_grupo_usuario write Fds_grupo_usuario;
 
       constructor Create(Conexao : TFDConnection);
       destructor Destroy; Override;
 
       function fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String) : Boolean;
       function fnc_validar_login(usuario, senha : String) : Boolean;
+      function fnc_inserir_grupo_permissao( cds_permissoes: TClientDataSet; out Erro: String ) : Boolean;
 
       procedure prc_carrega_modulos(Modulos : TClientDataSet);
   end;
@@ -58,6 +63,79 @@ begin
   FQryConsulta.Free;
   FQryModulos.Free;
   inherited;
+end;
+
+function TUsuarios.fnc_inserir_grupo_permissao(cds_permissoes: TClientDataSet; out Erro: String): Boolean;
+var
+  QryAuxiliar : TFDQuery;
+begin
+  Result := False;
+
+  try
+    FConexao.Connected := False;
+    FConexao.Connected := True;
+
+    QryAuxiliar := TFDQuery.Create(nil);
+
+    with QryAuxiliar do
+    begin
+      Close;
+      SQL.Clear;
+      SQL.Add('INSERT INTO usuarios_grupos     ');
+      SQL.Add('            ( id_grupo_usuario, ');
+      SQL.Add('              ds_grupo_usuaro ) ');
+      SQL.Add('VALUES                          ');
+      SQL.Add('          ( :id_grupo_usuario,  ');
+      SQL.Add('            :ds_grupo_usuaro )  ');
+
+      Fid_grupo_usuario := fnc_proximo_codigo('usuarios_grupos', 'id_grupo_usuario');
+
+      ParamByName('id_grupo_usuario').AsInteger := Fid_grupo_usuario;
+      ParamByName('ds_grupo_usuario').AsString  := Fds_grupo_usuario;
+
+      ExecSQL;
+
+      Close;
+      SQL.Clear;
+      SQL.Add('INSERT INTO usuarios_permissoes ');
+      SQL.Add('          ( cod_grupo_usuario,  ');
+      SQL.Add('            cod_modulo,         ');
+      SQL.Add('            fg_abrir,           ');
+      SQL.Add('            fg_imprimir,        ');
+      SQL.Add('            fg_inserir,         ');
+      SQL.Add('            fg_alterar,         ');
+      SQL.Add('            fg_excluir  )       ');
+      SQL.Add('VALUES                          ');
+      SQL.Add('          (:cod_grupo_usuario,  ');
+      SQL.Add('           :cod_modulo,         ');
+      SQL.Add('           :fg_abrir,           ');
+      SQL.Add('           :fg_imprimir,        ');
+      SQL.Add('           :fg_inserir,         ');
+      SQL.Add('           :fg_alterar,         ');
+      SQL.Add('           :fg_excluir  )       ');
+
+      ExecSQL;
+
+      cds_permissoes.First;
+      while not cds_permissoes.Eof do
+      begin
+        ParamByName('cod_grupo_usuario').AsInteger := Fid_grupo_usuario;
+        ParamByName('cod_modulo').AsInteger        := cds_permissoes.FieldByName('cod_modulo').AsInteger;
+        ParamByName('fg_abrir').AsString           := cds_permissoes.FieldByName('abrir').AsString;
+        ParamByName('fg_inserir').AsString         := cds_permissoes.FieldByName('inserir').AsString;
+        ParamByName('fg_alterar').AsString         := cds_permissoes.FieldByName('alterar').AsString;
+        ParamByName('fg_excluir').AsString         := cds_permissoes.FieldByName('excluir').AsString;
+        ParamByName('fg_imprimir').AsString        := cds_permissoes.FieldByName('imprimir').AsString;
+        cds_permissoes.Next;
+      end;
+    end;
+
+    Result := True;
+  finally
+    cds_permissoes.Close;
+    QryAuxiliar.Free;
+  end;
+
 end;
 
 function TUsuarios.fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String): Boolean;
@@ -215,13 +293,14 @@ begin
   while not FQryModulos.Eof do
   begin
     Modulos.Insert;
-    Modulos.FieldByName('id_item').AsInteger  := FQryModulos.RecNo;
-    Modulos.FieldByName('ds_modulo').AsString := FQryModulos.FieldByName('ds_modulo').AsString;
-    Modulos.FieldByName('abrir').AsBoolean    := False;
-    Modulos.FieldByName('inserir').AsBoolean  := False;
-    Modulos.FieldByName('alterar').AsBoolean  := False;
-    Modulos.FieldByName('excluir').AsBoolean  := False;
-    Modulos.FieldByName('imprimir').AsBoolean := False;
+    Modulos.FieldByName('id_item').AsInteger   := FQryModulos.RecNo;
+    Modulos.FieldByName('cd_modulo').AsInteger := FQryModulos.FieldByName('id_modulo').AsInteger;
+    Modulos.FieldByName('ds_modulo').AsString  := FQryModulos.FieldByName('ds_modulo').AsString;
+    Modulos.FieldByName('abrir').AsBoolean     := False;
+    Modulos.FieldByName('inserir').AsBoolean   := False;
+    Modulos.FieldByName('alterar').AsBoolean   := False;
+    Modulos.FieldByName('excluir').AsBoolean   := False;
+    Modulos.FieldByName('imprimir').AsBoolean  := False;
     Modulos.Post;
 
     QryModulos.Next;
@@ -229,7 +308,6 @@ begin
 
   Modulos.First;
   FQryModulos.Close;
-
 end;
 
 end.

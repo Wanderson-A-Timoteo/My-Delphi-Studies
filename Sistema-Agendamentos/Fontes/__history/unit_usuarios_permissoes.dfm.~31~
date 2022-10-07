@@ -1,0 +1,552 @@
+object form_usuarios_permissoes: Tform_usuarios_permissoes
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 664
+  ClientWidth = 716
+  Color = 11976552
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = 11976552
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 15
+  object shape_fundo_form_agendamento: TShape
+    Left = 0
+    Top = 0
+    Width = 716
+    Height = 664
+    Align = alClient
+    Brush.Color = 11976552
+    Pen.Color = 11976552
+    ExplicitHeight = 465
+  end
+  object PanelContainer: TPanel
+    Left = 8
+    Top = 8
+    Width = 700
+    Height = 648
+    BevelOuter = bvNone
+    Color = 11976552
+    ParentBackground = False
+    TabOrder = 0
+    object PanelAgrupaCamposAgendamento: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 694
+      Height = 638
+      Margins.Bottom = 0
+      Align = alTop
+      BevelOuter = bvNone
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clSilver
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      object LabelNoemProfissional: TLabel
+        Left = 10
+        Top = 137
+        Width = 215
+        Height = 21
+        Caption = 'Nome do Grupo de Usu'#225'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LabelTituloCadastrarProfissional: TLabel
+        Left = 139
+        Top = 30
+        Width = 419
+        Height = 37
+        Caption = 'Cadastrar Permiss'#227'o de Usu'#225'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -27
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 10
+        Top = 201
+        Width = 181
+        Height = 21
+        Caption = 'Permiss'#245'es Cadastradas'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Left = 229
+        Top = 137
+        Width = 5
+        Height = 15
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object PanelBotoesAgendarCancelar: TPanel
+        Left = 10
+        Top = 570
+        Width = 364
+        Height = 49
+        BevelOuter = bvNone
+        TabOrder = 2
+        object PanelBotaoAgendar: TPanel
+          Left = 0
+          Top = 0
+          Width = 177
+          Height = 49
+          Align = alLeft
+          Anchors = [akLeft, akBottom]
+          BevelOuter = bvNone
+          Color = 11976552
+          ParentBackground = False
+          TabOrder = 0
+          object SpeedButtonAgendar: TSpeedButton
+            Left = 2
+            Top = 2
+            Width = 173
+            Height = 45
+            Align = alCustom
+            Caption = 'Salvar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnMouseEnter = SpeedButtonAgendarMouseEnter
+            OnMouseLeave = SpeedButtonAgendarMouseLeave
+          end
+        end
+        object PanelBotaoCancelar: TPanel
+          Left = 187
+          Top = 0
+          Width = 177
+          Height = 49
+          Align = alRight
+          BevelOuter = bvNone
+          Color = 8421631
+          ParentBackground = False
+          TabOrder = 1
+          object SpeedButtonCancelar: TSpeedButton
+            Left = 2
+            Top = 2
+            Width = 173
+            Height = 45
+            Align = alCustom
+            Caption = 'Cancelar'
+            Flat = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            OnClick = SpeedButtonCancelarClick
+            OnMouseEnter = SpeedButtonCancelarMouseEnter
+            OnMouseLeave = SpeedButtonCancelarMouseLeave
+          end
+        end
+      end
+      object EditNomeProfissional: TEdit
+        Tag = 5
+        Left = 10
+        Top = 174
+        Width = 660
+        Height = 20
+        Hint = '  -   Nome do Profissional'
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
+        CharCase = ecUpperCase
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 11976552
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object PanelBordaNomeProfissional: TPanel
+        Left = 10
+        Top = 193
+        Width = 660
+        Height = 2
+        Caption = 'PanelBorda'
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 1
+      end
+      object dbg_registros: TDBGrid
+        Left = 10
+        Top = 228
+        Width = 660
+        Height = 313
+        BorderStyle = bsNone
+        DataSource = ds_permissoes
+        FixedColor = clWindow
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clSilver
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        Options = [dgTitles, dgTabs, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
+        TabOrder = 3
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clSilver
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+        OnCellClick = dbg_registrosCellClick
+        OnDrawColumnCell = dbg_registrosDrawColumnCell
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'ds_modulo'
+            Title.Caption = 'M'#243'dulo'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 250
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'abrir'
+            Title.Caption = 'Abrir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'inserir'
+            Title.Caption = 'Inserir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'alterar'
+            Title.Caption = 'Alterar'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'excluir'
+            Title.Caption = 'Excluir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'imprimir'
+            Title.Caption = 'Imprimir'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = 11976552
+            Title.Font.Height = -16
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Style = [fsBold]
+            Width = 70
+            Visible = True
+          end>
+      end
+      object PnlBordaDBGrid: TPanel
+        Left = 10
+        Top = 547
+        Width = 660
+        Height = 1
+        BevelOuter = bvNone
+        Color = 5839365
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 5839365
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 4
+      end
+    end
+  end
+  object ds_permissoes: TDataSource
+    DataSet = cds_modulos
+    Left = 555
+    Top = 587
+  end
+  object ACBrEnterTab1: TACBrEnterTab
+    EnterAsTab = True
+    Left = 499
+    Top = 587
+  end
+  object cds_modulos: TClientDataSet
+    PersistDataPacket.Data = {
+      A90000009619E0BD010000001800000008000000000003000000A9000769645F
+      6974656D04000100000000000964735F6D6F64756C6F02004900000001000557
+      4944544802000200FF00056162726972020003000000000007696E7365726972
+      020003000000000007616C74657261720200030000000000076578636C756972
+      020003000000000008696D7072696D697202000300000000000963645F6D6F64
+      756C6F04000100000000000000}
+    Active = True
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'id_item'
+        DataType = ftInteger
+      end
+      item
+        Name = 'ds_modulo'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'abrir'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'inserir'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'alterar'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'excluir'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'imprimir'
+        DataType = ftBoolean
+      end
+      item
+        Name = 'cd_modulo'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 619
+    Top = 587
+    object cds_modulosid_item: TIntegerField
+      FieldName = 'id_item'
+    end
+    object cds_moduloscd_modulo: TIntegerField
+      FieldName = 'cd_modulo'
+    end
+    object cds_modulosds_modulo: TStringField
+      FieldName = 'ds_modulo'
+      Size = 255
+    end
+    object cds_modulosabrir: TBooleanField
+      FieldName = 'abrir'
+    end
+    object cds_modulosinserir: TBooleanField
+      FieldName = 'inserir'
+    end
+    object cds_modulosalterar: TBooleanField
+      FieldName = 'alterar'
+    end
+    object cds_modulosexcluir: TBooleanField
+      FieldName = 'excluir'
+    end
+    object cds_modulosimprimir: TBooleanField
+      FieldName = 'imprimir'
+    end
+  end
+  object ImageList: TImageList
+    Left = 483
+    Top = 395
+    Bitmap = {
+      494C010102000800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000001000000001002000000000000010
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000F3F4E600D6DBAB00C3CA8200B9C26F00B9C26F00C3CA8200D7DCAC00F3F4
+      E600000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FDFDFB00D5DA
+      A900B7C06A00B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B7C0
+      6A00D6DBAA00FEFEFC0000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000F0F0F0006969
+      6900353535003333330033333300333333003333330033333300333333003535
+      35006A6A6A00F1F1F100000000000000000000000000FDFDFB00C9D09000B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF
+      6800B6BF6800C9D09000FEFEFC00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000676767005B5B
+      5B00C9C9C900CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00C9C9
+      C9005A5A5A006A6A6A00000000000000000000000000D5DAA800B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800D6DBAA00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000031313100CDCD
+      CD00000000000000000000000000000000000000000000000000000000000000
+      0000CDCDCD00313131000000000000000000F3F4E600B7C06A00B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800B7C06A00F3F4E6000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000002B2B2B00D4D4
+      D400000000000000000000000000000000000000000000000000000000000000
+      0000D4D4D4002B2B2B000000000000000000D6DBAA00B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800CED49C00E5E7CB00BBC37100B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800D7DCAC000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000002B2B2B00D4D4
+      D400000000000000000000000000000000000000000000000000000000000000
+      0000D4D4D4002B2B2B000000000000000000C2CA8100B6BF6800B6BF6800B6BF
+      6800B6BF6800CFD59E00F9F9F900F7F7F300ECEEDC00BBC37100B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800C3CA82000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000002B2B2B00D4D4
+      D400000000000000000000000000000000000000000000000000000000000000
+      0000D4D4D4002B2B2B000000000000000000BBC27000B6BF6800B6BF6800B6BF
+      6800CAD19400F9F9F900D9DEB400BFC77C00F3F4EA00ECEEDC00BBC37100B6BF
+      6800B6BF6800B6BF6800B6BF6800BAC370000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000002B2B2B00D4D4
+      D400000000000000000000000000000000000000000000000000000000000000
+      0000D4D4D4002B2B2B000000000000000000B9C26F00B6BF6800B6BF6800B6BF
+      6800C8CF8E00D4D9A800B6BF6800B6BF6800BFC77C00F3F4EA00ECEEDC00BBC3
+      7100B6BF6800B6BF6800B6BF6800BBC270000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000002B2B2B00D4D4
+      D400000000000000000000000000000000000000000000000000000000000000
+      0000D4D4D4002B2B2B000000000000000000C2CA8100B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800BFC77C00F3F4EA00ECEE
+      DC00B9C16D00B6BF6800B6BF6800C3CA82000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000002B2B2B00D4D4
+      D400000000000000000000000000000000000000000000000000000000000000
+      0000D4D4D4002B2B2B000000000000000000D5DBA900B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800BFC77C00E7E9
+      D100BDC57800B6BF6800B6BF6800D6DBAB000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000031313100CECE
+      CE00000000000000000000000000000000000000000000000000000000000000
+      0000CDCDCD00313131000000000000000000F2F4E500B7C06A00B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800B7C06A00F3F4E6000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000666666005D5D
+      5D00CACACA00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CCCCCC00CACA
+      CA005B5B5B0069696900000000000000000000000000D4DAA700B6BF6800B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF
+      6800B6BF6800B6BF6800D5DAA900000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000F0F0F0006767
+      6700343434003333330033333300333333003333330033333300333333003434
+      340068686800F0F0F000000000000000000000000000FDFDFB00C9D08F00B6BF
+      6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF
+      6800B6BF6800C9D09000FDFDFB00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FDFDFB00D4DA
+      A700B8C06900B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B6BF6800B7C0
+      6A00D5DAA800FDFDFB0000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000F2F4E500D6DBAA00C2CA8100B9C26F00B9C26F00C2CA8100D6DBAA00F2F4
+      E500000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000100000000100010000000000800000000000000000000000
+      000000000000000000000000FFFFFF00FFFFF00F00000000FFFFC00300000000
+      C003800100000000C003800100000000CFF3000000000000CFF3000000000000
+      CFF3000000000000CFF3000000000000CFF3000000000000CFF3000000000000
+      CFF3000000000000CFF3000000000000C003800100000000C003800100000000
+      FFFFC00300000000FFFFF00F0000000000000000000000000000000000000000
+      000000000000}
+  end
+end

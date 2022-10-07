@@ -272,7 +272,7 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
           Color = 5839365
           ParentBackground = False
           TabOrder = 1
-          object SpeedButtonCadastrarNovoUsuario: TSpeedButton
+          object SpeedButtonCadastrarNovoGrupo: TSpeedButton
             Left = 2
             Top = 2
             Width = 196
@@ -286,9 +286,9 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
             Font.Name = 'Segoe UI'
             Font.Style = [fsBold]
             ParentFont = False
-            OnClick = SpeedButtonCadastrarNovoUsuarioClick
-            OnMouseEnter = SpeedButtonCadastrarNovoUsuarioMouseEnter
-            OnMouseLeave = SpeedButtonCadastrarNovoUsuarioMouseLeave
+            OnClick = SpeedButtonCadastrarNovoGrupoClick
+            OnMouseEnter = SpeedButtonCadastrarNovoGrupoMouseEnter
+            OnMouseLeave = SpeedButtonCadastrarNovoGrupoMouseLeave
           end
         end
       end

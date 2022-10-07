@@ -1,0 +1,235 @@
+unit classe.usuarios;
+
+interface
+
+uses
+  FireDAC.Comp.Client, System.SysUtils, Vcl.Forms, Data.DB, Datasnap.DBClient;
+
+type
+  TUsuarios = class
+
+    private
+      Fcd_permissao: Integer;
+      Fds_senha    : String;
+      Fds_login    : String;
+      Fds_usuario  : String;
+      Fid_usuarios : Integer;
+      FConexao     : TFDConnection;
+      FQryConsulta : TFDQuery;
+      FQryModulos  : TFDQuery;
+
+    public
+      property QryConsulta  : TFDQuery      read FQryConsulta  write FQryConsulta;
+      property QryModulos   : TFDQuery      read FQryModulos   write FQryModulos;
+      property Conexao      : TFDConnection read FConexao      write FConexao;
+      property id_usuarios  : Integer       read Fid_usuarios  write Fid_usuarios;
+      property ds_usuario   : String        read Fds_usuario   write Fds_usuario;
+      property ds_login     : String        read Fds_login     write Fds_login;
+      property ds_senha     : String        read Fds_senha     write Fds_senha;
+      property cd_permissao : Integer       read Fcd_permissao write Fcd_permissao;
+
+      constructor Create(Conexao : TFDConnection);
+      destructor Destroy; Override;
+
+      function fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String) : Boolean;
+      function fnc_validar_login(usuario, senha : String) : Boolean;
+
+      procedure prc_carrega_modulos(Modulos : TClientDataSet);
+  end;
+
+implementation
+
+{ TUsuarios }
+
+uses unit_funcoes, unit_dados, unit_usuarios_cadastro;
+
+constructor TUsuarios.Create(Conexao: TFDConnection);
+begin
+  FConexao                := Conexao;
+  FQryConsulta            := TFDQuery.Create(nil);
+  FQryConsulta.Connection := FConexao;
+
+  FQryModulos             := TFDQuery.Create(nil);
+  FQryModulos.Connection  := FConexao;
+end;
+
+destructor TUsuarios.Destroy;
+begin
+  FQryConsulta.Free;
+  FQryModulos.Free;
+  inherited;
+end;
+
+function TUsuarios.fnc_operacoes_crud(TipoOperacao, parametro: String; out Erro: String): Boolean;
+var
+  QryAuxiliar : TFDQuery;
+begin
+  try
+    FConexao.Connected := False;
+    FConexao.Connected := True;
+
+    if TipoOperacao = 'CONSULTAR' then
+    begin
+      FQryConsulta.Close;
+      FQryConsulta.SQL.Clear;
+      FQryConsulta.SQL.Add('SELECT id_usuarios,              ');
+      FQryConsulta.SQL.Add('       ds_usuario,               ');
+      FQryConsulta.SQL.Add('       cd_permissao,             ');
+      FQryConsulta.SQL.Add('       ds_login,                 ');
+      FQryConsulta.SQL.Add('       ds_senha                  ');
+      FQryConsulta.SQL.Add('FROM usuarios                    ');
+      FQryConsulta.SQL.Add('WHERE ds_usuario LIKE :parametro ');
+      FQryConsulta.ParamByName('parametro').AsString := '%' + parametro + '%';
+      FQryConsulta.Open;
+      TIntegerField(FQryConsulta.FieldByName('id_usuarios')).DisplayFormat := '0000'; // use Data.DB
+    end else
+    if TipoOperacao = 'EXCLUIR' then
+      FConexao.ExecSQL('DELETE FROM usuarios WHERE id_usuarios = :id_usuarios', [StrToInt(parametro)])
+    else
+    begin
+      try
+        QryAuxiliar := TFDQuery.Create(nil);
+        QryAuxiliar.Connection := FConexao;
+
+        QryAuxiliar.Close;
+        QryAuxiliar.SQL.Clear;
+
+        if TipoOperacao = 'INSERIR' then
+        begin
+          QryAuxiliar.SQL.Add('INSERT INTO usuarios    ');
+          QryAuxiliar.SQL.Add('       ( id_usuarios,   ');
+          QryAuxiliar.SQL.Add('         ds_usuario,    ');
+          QryAuxiliar.SQL.Add('         cd_permissao,  ');
+          QryAuxiliar.SQL.Add('         ds_login,      ');
+          QryAuxiliar.SQL.Add('         ds_senha   )   ');
+          QryAuxiliar.SQL.Add('VALUES                  ');
+          QryAuxiliar.SQL.Add('       ( :id_usuarios,  ');
+          QryAuxiliar.SQL.Add('         :ds_usuario,   ');
+          QryAuxiliar.SQL.Add('         :cd_permissao, ');
+          QryAuxiliar.SQL.Add('         :ds_login,     ');
+          QryAuxiliar.SQL.Add('         :ds_senha   )  ');
+
+          QryAuxiliar.ParamByName('id_usuarios').AsInteger :=
+                                fnc_proximo_codigo('usuarios', 'id_usuarios');
+        end else
+        if TipoOperacao = 'ALTERAR' then
+        begin
+          QryAuxiliar.SQL.Add('UPDATE usuarios SET                  ');
+          QryAuxiliar.SQL.Add('       cd_permissao = :cd_permissao, ');
+          QryAuxiliar.SQL.Add('       ds_usuario   = :ds_usuario,   ');
+          QryAuxiliar.SQL.Add('       ds_login     = :ds_login,     ');
+          QryAuxiliar.SQL.Add('       ds_senha     = :ds_senha      ');
+          QryAuxiliar.SQL.Add('WHERE  id_usuarios  = :p_id_usuarios ');
+
+          QryAuxiliar.ParamByName('p_id_usuarios').AsInteger := Fid_usuarios;
+        end;
+
+        QryAuxiliar.ParamByName('cd_permissao').AsInteger := cd_permissao;
+        QryAuxiliar.ParamByName('ds_usuario').AsString    := Fds_usuario;
+        QryAuxiliar.ParamByName('ds_login').AsString      := Fds_login;
+        QryAuxiliar.ParamByName('ds_senha').AsString      := Fds_senha;
+
+        QryAuxiliar.ExecSQL;
+
+      finally
+        QryAuxiliar.Free;
+      end;
+    end;
+
+    Result := True;
+
+  except
+
+    on E: Exception do
+    begin
+      Erro := E.Message;
+      Result := False;
+    end;
+  end;
+end;
+
+function TUsuarios.fnc_validar_login(usuario, senha: String): Boolean;
+var
+  QryLogin : TFDQuery;
+
+begin
+  Result := False;
+
+  try
+    QryLogin := TFDQuery.Create(nil);
+    QryLogin.Connection := FConexao;
+
+    QryLogin.Close;
+    QryLogin.SQL.Clear;
+    QryLogin.SQL.Add('SELECT ds_usuario,           ');
+    QryLogin.SQL.Add('       ds_login,             ');
+    QryLogin.SQL.Add('       ds_senha              ');
+    QryLogin.SQL.Add('FROM usuarios                ');
+    QryLogin.SQL.Add('WHERE ds_login = :p_ds_login ');
+    QryLogin.ParamByName('p_ds_login').AsString := usuario;
+    QryLogin.Open;
+
+    if QryLogin.IsEmpty then
+    begin
+      // Usuário não encontrado
+      fnc_criar_mensagem('VALIDANDO LOGIN',
+                         'Erro ao efetuar Login',
+                         'Nome do Usuário / Login não encontrado!',
+                         ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                         'OK');
+      Result := False;
+    end else
+    begin
+      // Usuário encontrado, faz a validação da senha
+      if QryLogin.FieldByName('ds_senha').AsString = senha then
+      begin
+        // Senha Correta
+        var_gbl_nome_usuario := QryLogin.FieldByName('ds_usuario').AsString;
+        Result := True;
+      end else
+      begin
+        // Senha inválida
+        fnc_criar_mensagem('VALIDANDO LOGIN',
+                           'Erro ao efetuar Login',
+                           'Senha inválida!',
+                           ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
+                           'OK');
+        Result := False;
+      end;
+    end;
+  finally
+    QryLogin.Free;
+  end;
+end;
+
+procedure TUsuarios.prc_carrega_modulos(Modulos: TClientDataSet);
+begin
+  FQryModulos.Close;
+  FQryModulos.SQL.Clear;
+  FQryModulos.SQL.Add('SELECT id_modulo,     ');
+  FQryModulos.SQL.Add('       ds_modulo      ');
+  FQryModulos.SQL.Add('FROM usuarios_modulos ');
+  FQryModulos.Open;
+  FQryModulos.First;
+
+  while not FQryModulos.Eof do
+  begin
+    Modulos.Insert;
+    Modulos.FieldByName('id_item').AsInteger  := FQryModulos.RecNo;
+    Modulos.FieldByName('ds_modulo').AsString := FQryModulos.FieldByName('ds_modulo').AsString;
+    Modulos.FieldByName('abrir').AsBoolean    := False;
+    Modulos.FieldByName('inserir').AsBoolean  := False;
+    Modulos.FieldByName('alterar').AsBoolean  := False;
+    Modulos.FieldByName('excluir').AsBoolean  := False;
+    Modulos.FieldByName('imprimir').AsBoolean := False;
+    Modulos.Post;
+
+    QryModulos.Next;
+  end;
+
+  Modulos.First;
+  FQryModulos.Close;
+
+end;
+
+end.
