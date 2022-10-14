@@ -42,6 +42,7 @@ type
     Label3: TLabel;
     Label5: TLabel;
     ACBrEnterTab1: TACBrEnterTab;
+    dsc_grupo: TDataSource;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure SpeedButtonSalvarMouseEnter(Sender: TObject);
     procedure SpeedButtonSalvarMouseLeave(Sender: TObject);
@@ -49,6 +50,7 @@ type
     procedure SpeedButtonCancelarMouseLeave(Sender: TObject);
     procedure SpeedButtonSalvarClick(Sender: TObject);
     procedure SpeedButtonCadastrarGrupoUsuariosClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -66,11 +68,20 @@ implementation
 
 uses unit_dados, unit_funcoes, unit_usuarios_grupos_consulta, unit_usuarios_permissoes;
 
+procedure Tform_usuarios_cadastro.FormShow(Sender: TObject);
+begin
+  DataModule1.Usuarios.prc_consultar_grupos_usuarios('');
+  dsc_grupo.DataSet := DataModule1.Usuarios.QryGruposUsuarios;
+end;
+
 procedure Tform_usuarios_cadastro.SpeedButtonCadastrarGrupoUsuariosClick(Sender: TObject);
 begin
   try
     form_usuarios_grupos_consulta := Tform_usuarios_grupos_consulta.Create(Self);
     form_usuarios_grupos_consulta.ShowModal;
+
+    DataModule1.Usuarios.prc_consultar_grupos_usuarios('');
+    dsc_grupo.DataSet := DataModule1.Usuarios.QryGruposUsuarios;
   finally
     form_usuarios_grupos_consulta.Free;
   end;
@@ -129,7 +140,7 @@ begin
       // Se a senha não for alterada, manda a senha original do Banco de Dados
        ds_senha := senha_original;
 
-     //cd_permissao  := dbl_cmb_grupo_usuarios.KeyValue;
+     cd_permissao  := dbl_cmb_grupo_usuarios.KeyValue;
 
      if fnc_operacoes_crud(sTipoOperacao, '', sErro) then
      begin

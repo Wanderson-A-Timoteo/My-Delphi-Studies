@@ -333,6 +333,14 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
     Top = 587
   end
   object cds_modulos: TClientDataSet
+    PersistDataPacket.Data = {
+      AA0000009619E0BD010000001800000008000000000003000000AA000769645F
+      6974656D04000100000000000964735F6D6F64756C6F02004900000001000557
+      4944544802000200FF00056162726972020003000000000007696E7365726972
+      020003000000000007616C74657261720200030000000000076578636C756972
+      020003000000000008696D7072696D697202000300000000000A636F645F6D6F
+      64756C6F04000100000000000000}
+    Active = True
     Aggregates = <>
     FieldDefs = <
       item
@@ -365,7 +373,7 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
         DataType = ftBoolean
       end
       item
-        Name = 'cd_modulo'
+        Name = 'cod_modulo'
         DataType = ftInteger
       end>
     IndexDefs = <>
@@ -375,6 +383,9 @@ object form_usuarios_permissoes: Tform_usuarios_permissoes
     Top = 587
     object cds_modulosid_item: TIntegerField
       FieldName = 'id_item'
+    end
+    object cds_moduloscod_modulo: TIntegerField
+      FieldName = 'cod_modulo'
     end
     object cds_modulosds_modulo: TStringField
       FieldName = 'ds_modulo'

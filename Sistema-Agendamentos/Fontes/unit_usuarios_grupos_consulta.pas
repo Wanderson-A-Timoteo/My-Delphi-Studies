@@ -17,8 +17,8 @@ type
     LabelConsultaNomeCliente: TLabel;
     LabelTituloConsultarUsuarios: TLabel;
     PanelBotaoConsultar: TPanel;
-    SpeedButtonConsultarUsuario: TSpeedButton;
-    EditConsultaNomeUsuario: TEdit;
+    SpeedButtonConsultarGruposUsuario: TSpeedButton;
+    EditConsultaNomeGrupoUsuario: TEdit;
     PanelBordaConsultaNomeCliente: TPanel;
     dbg_registros_consulta_usuarios: TDBGrid;
     LabelClientesCadastrados: TLabel;
@@ -36,12 +36,13 @@ type
     procedure SpeedButtonCancelarConsultaMouseLeave(Sender: TObject);
     procedure SpeedButtonCadastrarNovoGrupoMouseLeave(Sender: TObject);
     procedure SpeedButtonCadastrarNovoGrupoMouseEnter(Sender: TObject);
-    procedure SpeedButtonConsultarUsuarioClick(Sender: TObject);
-    procedure SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
-    procedure SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
+    procedure SpeedButtonConsultarGruposUsuarioClick(Sender: TObject);
+    procedure SpeedButtonConsultarGruposUsuarioMouseEnter(Sender: TObject);
+    procedure SpeedButtonConsultarGruposUsuarioMouseLeave(Sender: TObject);
     procedure dbg_registros_consulta_usuariosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
     procedure SpeedButtonCadastrarNovoGrupoClick(Sender: TObject);
+    procedure EditConsultaNomeGrupoUsuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -87,6 +88,17 @@ begin
   dbg_registros_consulta_usuarios.Canvas.TextRect(Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText);
 end;
 
+procedure Tform_usuarios_grupos_consulta.EditConsultaNomeGrupoUsuarioKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = VK_RETURN then
+  begin
+    DataModule1.Usuarios.prc_consultar_grupos_usuarios(EditConsultaNomeGrupoUsuario.Text);
+    ds_grupos_usuario_consulta.DataSet := DataModule1.Usuarios.QryGruposUsuarios;
+    //pcrAjustaTamanhoLinha(dbg_registros_consulta_usuarios, 30);
+  end;
+end;
+
 procedure Tform_usuarios_grupos_consulta.SpeedButtonCadastrarNovoGrupoClick(Sender: TObject);
 begin
   try
@@ -122,39 +134,22 @@ begin
   SpeedButtonCancelarConsulta.Font.Color := clWhite;
 end;
 
-procedure Tform_usuarios_grupos_consulta.SpeedButtonConsultarUsuarioClick(Sender: TObject);
-var
-  sErro : String;
+procedure Tform_usuarios_grupos_consulta.SpeedButtonConsultarGruposUsuarioClick(Sender: TObject);
 begin
-  if DataModule1.Usuarios.fnc_operacoes_crud('CONSULTAR', EditConsultaNomeUsuario.Text, sErro) then
-  begin
-    ds_grupos_usuario_consulta.DataSet := DataModule1.Usuarios.QryConsulta;
-    // prcAjustaTamanhoLinha(dbg_Registros, 30);
-    DataModule1.Usuarios.QryConsulta.Active := True;
+  DataModule1.Usuarios.prc_consultar_grupos_usuarios(EditConsultaNomeGrupoUsuario.Text);
+  ds_grupos_usuario_consulta.DataSet := DataModule1.Usuarios.QryGruposUsuarios;
+  //pcrAjustaTamanhoLinha(dbg_registros_consulta_usuarios, 30);
 
-    // Define o tamanho de cada linha do DBGrid após ativar a Query
-    TDBGridPadrao(dbg_registros_consulta_usuarios).DefaultRowHeight := 30;
-    TDBGridPadrao(dbg_registros_consulta_usuarios).ClientHeight     := (30 * TDBGridPadrao(dbg_registros_consulta_usuarios).RowCount) + 30
-  end else
-  begin
-    fnc_criar_mensagem('CONSULTAR USUÁRIO',
-                       'Erro ao Consultar Usuário',
-                       sErro,
-                       ExtractFilePath(Application.ExeName) + 'imagens\erro.png',
-                       'ERRO');
-
-    EditConsultaNomeUsuario.SetFocus;
-  end;
 end;
 
-procedure Tform_usuarios_grupos_consulta.SpeedButtonConsultarUsuarioMouseEnter(Sender: TObject);
+procedure Tform_usuarios_grupos_consulta.SpeedButtonConsultarGruposUsuarioMouseEnter(Sender: TObject);
 begin
-  SpeedButtonConsultarUsuario.Font.Color := $00591A05;
+  SpeedButtonConsultarGruposUsuario.Font.Color := $00591A05;
 end;
 
-procedure Tform_usuarios_grupos_consulta.SpeedButtonConsultarUsuarioMouseLeave(Sender: TObject);
+procedure Tform_usuarios_grupos_consulta.SpeedButtonConsultarGruposUsuarioMouseLeave(Sender: TObject);
 begin
-  SpeedButtonConsultarUsuario.Font.Color := clWhite;
+  SpeedButtonConsultarGruposUsuario.Font.Color := clWhite;
 end;
 
 end.

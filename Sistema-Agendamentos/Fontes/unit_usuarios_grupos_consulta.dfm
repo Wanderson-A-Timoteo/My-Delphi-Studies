@@ -81,9 +81,9 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
       object LabelClientesCadastrados: TLabel
         Left = 10
         Top = 213
-        Width = 163
+        Width = 151
         Height = 21
-        Caption = 'Usu'#225'rios Cadastrados'
+        Caption = 'Grupos Cadastrados'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 5839365
         Font.Height = -16
@@ -101,10 +101,10 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
       object labelMsnDELouEdit: TLabel
         Left = 10
         Top = 526
-        Width = 438
+        Width = 441
         Height = 15
         Caption = 
-          'Pressione DELETE para EXCLUIR ou duplo clique para EDITAR usu'#225'ri' +
+          'Pressione DELETE para EXCLUIR ou duplo clique para EDITAR o grup' +
           'o cadastrado'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
@@ -123,7 +123,7 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
         Color = 11976552
         ParentBackground = False
         TabOrder = 1
-        object SpeedButtonConsultarUsuario: TSpeedButton
+        object SpeedButtonConsultarGruposUsuario: TSpeedButton
           Left = 2
           Top = 2
           Width = 99
@@ -137,12 +137,12 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
           Font.Name = 'Segoe UI'
           Font.Style = [fsBold]
           ParentFont = False
-          OnClick = SpeedButtonConsultarUsuarioClick
-          OnMouseEnter = SpeedButtonConsultarUsuarioMouseEnter
-          OnMouseLeave = SpeedButtonConsultarUsuarioMouseLeave
+          OnClick = SpeedButtonConsultarGruposUsuarioClick
+          OnMouseEnter = SpeedButtonConsultarGruposUsuarioMouseEnter
+          OnMouseLeave = SpeedButtonConsultarGruposUsuarioMouseLeave
         end
       end
-      object EditConsultaNomeUsuario: TEdit
+      object EditConsultaNomeGrupoUsuario: TEdit
         Tag = 5
         Left = 10
         Top = 173
@@ -160,6 +160,7 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
+        OnKeyDown = EditConsultaNomeGrupoUsuarioKeyDown
       end
       object PanelBordaConsultaNomeCliente: TPanel
         Left = 10
@@ -204,7 +205,7 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
         Columns = <
           item
             Expanded = False
-            FieldName = 'id_usuarios'
+            FieldName = 'id_grupo_usuario'
             Title.Caption = 'C'#243'digo'
             Title.Font.Charset = DEFAULT_CHARSET
             Title.Font.Color = 11976552
@@ -216,7 +217,7 @@ object form_usuarios_grupos_consulta: Tform_usuarios_grupos_consulta
           end
           item
             Expanded = False
-            FieldName = 'ds_usuario'
+            FieldName = 'ds_grupo_usuario'
             Title.Caption = 'Nome do Grupo'
             Title.Font.Charset = DEFAULT_CHARSET
             Title.Font.Color = 11976552

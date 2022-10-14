@@ -39,6 +39,7 @@ type
     cds_modulosimprimir: TBooleanField;
     cds_modulosds_modulo: TStringField;
     ImageList: TImageList;
+    cds_moduloscod_modulo: TIntegerField;
     procedure SpeedButtonCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SpeedButtonSalvarMouseEnter(Sender: TObject);
@@ -87,14 +88,14 @@ begin
       Picture := TPicture.Create;
       dbg_registros.Canvas.FillRect(Rect);
 
-      if dbg_registros.DataSource.DataSet.FieldByName(Column.FieldName).AsBoolean = False then
+      if ( dbg_registros.DataSource.DataSet.FieldByName(Column.FieldName).AsBoolean = False ) then
         ImageList.GetBitmap(0, Picture.Bitmap)
       else
         ImageList.GetBitmap(1, Picture.Bitmap);
 
       AlignPicture := Trunc ((Column.Width - Picture.Width) / 2);
 
-      dbg_registros.Canvas.Draw(Rect.Left + AlignPicture, Rect.Top + 10, Picture.Graphic);
+      dbg_registros.Canvas.Draw(Rect.Left + AlignPicture, Rect.Top + 5, Picture.Graphic);
     finally
       Picture.Free;
     end;

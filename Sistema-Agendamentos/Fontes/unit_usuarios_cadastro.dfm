@@ -13,6 +13,7 @@ object form_usuarios_cadastro: Tform_usuarios_cadastro
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object shape_fundo_form_agendamento: TShape
@@ -454,7 +455,7 @@ object form_usuarios_cadastro: Tform_usuarios_cadastro
         Top = 254
         Width = 630
         Height = 29
-        Hint = '  -   Nome do Usu'#225'rio'
+        Hint = '  -   Nome do Grupo de Usu'#225'rio'
         BevelInner = bvNone
         BevelOuter = bvNone
         Font.Charset = DEFAULT_CHARSET
@@ -462,6 +463,9 @@ object form_usuarios_cadastro: Tform_usuarios_cadastro
         Font.Height = -16
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
+        KeyField = 'id_grupo_usuario'
+        ListField = 'ds_grupo_usuario'
+        ListSource = dsc_grupo
         ParentFont = False
         TabOrder = 1
       end
@@ -540,6 +544,10 @@ object form_usuarios_cadastro: Tform_usuarios_cadastro
   object ACBrEnterTab1: TACBrEnterTab
     EnterAsTab = True
     Left = 619
+    Top = 35
+  end
+  object dsc_grupo: TDataSource
+    Left = 555
     Top = 35
   end
 end

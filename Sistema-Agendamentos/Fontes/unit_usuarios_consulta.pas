@@ -74,15 +74,28 @@ begin
     try
       form_usuarios_cadastro := Tform_usuarios_cadastro.Create(Self);
 
-      form_usuarios_cadastro.EditNomeUsuario.Text  := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_usuario').AsString;
-      form_usuarios_cadastro.EditLogin.Text        := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_login').AsString;
-      form_usuarios_cadastro.EditSenha.Text        := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
-      form_usuarios_cadastro.EditRepetirSenha.Text := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
+      form_usuarios_cadastro.EditNomeUsuario.Text  :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_usuario').AsString;
+
+      form_usuarios_cadastro.EditLogin.Text        :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_login').AsString;
+
+      form_usuarios_cadastro.EditSenha.Text        :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
+
+      form_usuarios_cadastro.EditRepetirSenha.Text :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
 
       // Recebe a senha criptografada do Banco de Dados para poder ser alterada caso o usuário altere a senha.
-      form_usuarios_cadastro.senha_original        := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
+      form_usuarios_cadastro.senha_original        :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('ds_senha').AsString;
 
-      DataModule1.Usuarios.id_usuarios             := dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('id_usuarios').AsInteger;
+      // Recebe código do campo permissão.
+      form_usuarios_cadastro.dbl_cmb_grupo_usuarios.KeyValue :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('cd_permissao').AsInteger;
+
+      DataModule1.Usuarios.id_usuarios             :=
+        dbg_registros_consulta_usuarios.DataSource.DataSet.FieldByName('id_usuarios').AsInteger;
 
       form_usuarios_cadastro.ShowModal;
     finally
