@@ -1,0 +1,3959 @@
+﻿/* v. 4.0.0.0 */
+*{
+    font-family: [[APP_FONT]]; /*, 'Exo', Helvetica Neue,Helvetica,Arial,sans-serif; v.   */
+    /*font-weight: 400;*/
+    outline: 0;
+    box-sizing: border-box;
+}
+/* v. 3.3.3.0 */
+hr {
+  margin-top: 4px;
+  heigth: 1px !important;
+  border-color:transparent;
+  background-color: #eae9e9 !important;
+}
+/* v. 4.0.0.0 */
+/*.rc-font-light {
+    font-size: 18px !important;
+    font-weight: 200 !important;
+} */
+
+.h5, h5 {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/*    v. 3.1.0.61
+TUniSpinEdit: Issue on FireFox
+*/
+.x-form-spinner-default{
+  width:100%;
+  /*
+  se desejar aumentar o HEIGHT dos campos de edição para 34px para o layout ficar mais 'agradável' em MOBILE
+  descomente a linha abaixo. Lembrando que você deve ajustar o HEIGHT de todos seus campos para 34px
+
+  if you want to increase the HEIGHT of the edit fields to 34px to make the layout look 'nicer' in MOBILE
+  uncomment the line below. Remembering that you must set the HEIGHT of all your fields to 34px
+  */
+  /*height: 14px !important;*/
+}
+/* v. 3.4.0.0 FontAwesome adjust for "ico-pos:"*/
+.rc-ico-pos .fa { line-height: 1.1; }
+.rc-ico-pos .fas { line-height: 1.1; }
+.rc-ico-pos .far { line-height: 1.1; }
+.rc-ico-pos .fal { line-height: 1.1; }
+.rc-ico-pos .fab { line-height: 1.1; }
+.rc-ico-pos-5 .fa { line-height: 1.5; }
+.rc-ico-pos-5 .fas { line-height: 1.5; }
+.rc-ico-pos-5 .far { line-height: 1.5; }
+.rc-ico-pos-5 .fal { line-height: 1.5; }
+.rc-ico-pos-5 .fab { line-height: 1.5; }
+
+.rc-cursor-pointer { cursor: pointer; }
+
+.rc-font-size-10{ font-size: 10px; }
+.rc-font-size-12{ font-size: 12px; }
+.rc-font-size-14{ font-size: 14px; }
+.rc-font-size-16{ font-size: 16px; }
+/* v. 4.0.0.0 */
+.rc-label-clear {  }
+/* [PT] aplique esta classe quando desejar alterar o css de um LABEL e a opção "Forms Default" do controle de temas estiver ativa
+   [EN] apply this class when you want to change the css of a LABEL and the "Forms Default" option of the theme control activated */
+.rc-font-light { font-weight: 200 !important; }
+.rc-font-bold{ font-weight: 700 !important; }
+.rc-font-black { color: black; }
+.rc-font-white { color: white; }
+/* avatar list v. 3.0.0.0 */
+.rc-circle-avatar {
+    font-size: 1rem;
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+    border-radius: .375rem;
+    background-color: #adb5bd;
+    align-items: center;
+    justify-content: center;
+}
+.rc-circle-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  display: inline-block;
+}
+/* Gradients v. 3.0.0.0 */
+.rc-bg-gradient-orange {
+    background: linear-gradient( 87deg , #fb6340 0 , #fbb140 100% ) !important;
+}
+.rc-bg-gradient-red {
+    background: linear-gradient( 87deg , #f5365c 0 , #f56036 100% ) !important;
+}
+.rc-bg-gradient-info {
+    background: linear-gradient( 87deg , #11cdef 0 , #1171ef 100% ) !important;
+}
+.rc-bg-gradient-green {
+    background: -webkit-gradient(linear, left top, left bottom, from([[COLOR_GREEN]]), to(#204e23));
+    background: linear-gradient(to bottom, [[COLOR_GREEN]] 0%, #204e23 100%);
+}
+.rc-bg-gradient-purple {
+    background: linear-gradient( 87deg , #8965e0 0 , #bc65e0 100% ) !important;
+}
+.rc-bg-gradient-yellow {
+    background: linear-gradient( 87deg , #ffd600 0 , #beff00 100% ) !important;
+}
+/* ScrollBars v. 3.0.0.0 */
+/*.x-scroller { */
+   /*overflow: auto;  /*remover barra horizontal indesejada  ( ajuda  do EDUARDO BELO )*/
+/*   overflow: hidden visible !important;
+} */
+/* Firefox */
+* {
+  scrollbar-width: [[SCROLLBAR-SIZE]]px;/*thin;*/ /* 4.0.0.0 */
+  scrollbar-height:[[SCROLLBAR-SIZE]]px;/*thin;*/ /* 4.0.0.0 */
+  scrollbar-color: #d0d0d0 #e6e6e6; /* gray silver;*/ /* 3.0.0.47 */
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: [[SCROLLBAR-SIZE]]px;   /* 4.0.0.0 */
+  height: [[SCROLLBAR-SIZE]]px;  /* 4.0.0.0 */
+}
+*::-webkit-scrollbar-track {
+  background: #e6e6e6; /* 3.0.0.47 */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #d0d0d0; /* 3.0.0.47 */
+  border-radius: 7px;
+  /*border: 3px solid orange;*/
+}
+/* v. 4.0.0.0 */
+.rc-anim-sweetalert{
+   animation: showSweetAlert .3s !important;
+   -webkit-animation: showSweetAlert .3s !important;
+}
+/* zoom */
+.rc-zoomer-def {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+}
+.rc-zoomer {
+  animation: rc-zoomer-scale 30s linear infinite;
+}
+.rc-zoomer-quick {
+  animation: rc-zoomer-scale 1s linear infinite;
+}
+@keyframes rc-zoomer-scale {
+  50% {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+  }
+}
+/* rotate fade */
+.rc-rotator {
+  animation: rc-rotator-fade 1.0s;
+}
+@keyframes rc-rotator-fade {
+  from {
+    opacity: 0;
+    transform: rotate(0turn);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(1turn);
+  }
+}
+
+/* button loading*/
+.rc-btn-loading .x-btn-inner {
+  visibility: hidden;
+  opacity: 0;
+}
+.rc-btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: rc-btn-loading-spinner 1s ease infinite;
+}
+@keyframes rc-btn-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* v. 3.2.0.7 rotate in test */
+.rc-transform-rotate-180 {
+  animation: rc-rotate-to-180 0.5s;
+}
+@keyframes rc-rotate-to-180 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+.rc-transform-rotate-0 {
+  animation: rc-rotate-to-0 0.5s;
+}
+@keyframes rc-rotate-to-0 {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* qrcode */
+.rc-qrcode{
+  text-align:center;
+}
+/* hover zoom*/
+.rc-hover-zoom-1 {
+  transition: transform .2s;
+}
+.rc-hover-zoom-1:hover {
+  -ms-transform: scale(1.0); /* IE 9 */
+  -webkit-transform: scale(1.0); /* Safari 3-8 */
+  transform: scale(1.0);
+  z-index:9999;
+}
+.rc-hover-zoom-1-1 {
+  transition: transform .2s;
+}
+.rc-hover-zoom-1-1:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  transition: transform .5s cubic-bezier(.2,3,.4,1) 0s; /* v. 3.2.0.0 */
+  z-index:9999;
+}
+.rc-hover-zoom-1-2 {
+  transition: transform .2s;
+}
+.rc-hover-zoom-1-2:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+  z-index:9999;
+}
+.rc-hover-zoom-1-5 {
+  transition: transform .2s;
+}
+.rc-hover-zoom-1-5:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+/* resize block */
+.rc-anim-block-resize{
+  transition: 300ms ease ;
+}
+.rc-anim-block-resize:active{
+
+}
+/* hover shadow*/
+.rc-shadow-hover{
+  transition: box-shadow 500ms ease;
+}
+.rc-shadow-hover:hover{
+   box-shadow: 0 4px 12px 2px rgba(0, 0, 0, .4)
+}
+/* fade in / out effect */
+.rc-fade-in {
+  animation: rc-fade-in 0.5s;
+}
+@keyframes rc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.rc-fade-out {
+  animation: rc-fade-out 500ms;
+}
+@keyframes rc-fade-out {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* checkbox // v. 3.3.3.0  */
+.x-form-cb-checked .x-form-checkbox-default:before {
+  color: [[BUTTON_COLOR_CRUD]];
+}
+/* radio group */
+/* v. 3.2.0.7 */
+/*.x-form-radio-default {
+    font: 18px/1 'Font Awesome 5 Free';
+    color: #fff;
+    border-color: gray;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+}
+*/
+/* v. 4.0.0.4 img responsive */
+/*.img-responsive {
+  max-width: 100%;
+  height: auto;
+}              */
+.img-responsive {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* video comum*/
+.video-file-responsive {
+  width: 100%  !important;
+  height: auto !important;
+}
+/* youtube video responsivo */
+
+.video-tube-responsive {
+/*  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  */
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video-tube-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* animations */
+.rc-pulse {
+
+/*  margin-top:20px;
+  padding: 20px 40px;
+  background-color: #4E4DED;
+  font-size: 1rem;
+  font-weight: 500;
+  */
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  cursor:pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.10), 0 3px 3px rgba(0,0,0,0.05);
+  animation: shadow-pulse 1s infinite;
+}
+@keyframes shadow-pulse
+{
+     0% {
+          box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2);
+     }
+     100% {
+          box-shadow: 0 0 0 35px rgba(255, 255, 255, 0);
+     }
+}
+
+.rc-obj-float{
+  animation:
+    float-obj 3s linear infinite alternate;
+}
+@keyframes float-obj {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  80% {
+    transform: translate(0, -20px);
+  }
+}
+/* v. 3.2.0.0 new css animations */
+.slide_in {
+   -webkit-animation: slide-in 600ms ease 0s normal forwards;
+   -moz-animation: slide-in 600ms ease 0s normal forwards;
+   animation: slide-in 600ms ease 0s normal forwards; }
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px); }
+}
+.drop_in { /* v. 3.3.1.0 */
+  -webkit-animation: drop-in .5s ease 0s normal forwards;
+  -moz-animation: drop-in .5s ease 0s normal forwards;
+  animation: drop-in .5s ease 0s normal forwards;
+}
+@keyframes drop-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    }
+}
+.drop_out {
+  -webkit-animation: drop-out .5s ease 0s normal forwards;
+  -moz-animation: drop-out .5s ease 0s normal forwards;
+  animation: drop-out .5s ease 0s normal forwards;
+}
+@keyframes drop-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+    }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100%); }
+}
+
+/*label-link attribute
+
+/* visited link */
+a:visited { color: [[LINK_COLOR]] ; }
+/* mouse over link */
+a:hover { color: [[LINKHOVER_COLOR]] ; }
+/* selected link */
+a:active { color: [[LINK_COLOR]] ; }
+
+/* validade  */
+.rc-valid .x-form-trigger-wrap-default{
+    border-color : green !important;
+}
+.rc-invalid .x-form-trigger-wrap-default{
+    border-color : red !important;
+}
+/* v. 3.2.0.7 */
+/*.x-scroller  remover barra horizontal indesejada  ( ajuda  do EDUARDO BELO ) */
+.rc-scrollbar-hidden-v {
+  /*           h      v        overflow: auto;  */
+   overflow: hidden visible !important;
+    scrollbar-width: thin;  /*estilo do scrool para o mozilla  */
+    scrollbar-color: #adb3b8 #516579;  /*estilo do scrool para o mozilla  */
+}
+.rc-scrollbar-hidden-h {
+  /*           h      v        overflow: auto;  */
+   overflow: visible hidden !important;
+    scrollbar-width: thin;  /*estilo do scrool para o mozilla  */
+    scrollbar-color: #adb3b8 #516579;  /*estilo do scrool para o mozilla  */
+}
+.rc-scrollbar-hidden {
+  /*           h      v        overflow: auto;  */
+   overflow: hidden hidden !important;
+}
+/*
+.sbox-scroller::-webkit-scrollbar {
+    width: 7px;
+    height:7px;
+    background: #516579;
+}
+.sbox-scroller::-webkit-scrollbar-track {
+    background: rgba( 0, 0, 0, 0.1);
+}
+.sbox-scroller::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    height:7px;
+    background:#adb3b8;
+}  */
+
+
+/*
+Border HTMLFrame
+*/
+canvas {
+    border: 0px !important;
+}
+
+/* sombra */
+.shadow-obj-tour {
+    /*box-shadow: 10px 7px 7px -1px rgba(0,0,0,0.26);*/
+    box-shadow: 0.1em 0.1em 0.2em;
+}
+
+.shadow-text {
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+/* v.  */
+.shadow-text-2 {
+    text-shadow: 2px 2px black;
+}
+
+.x-field.x-disabled>.x-label-el {
+    opacity: 0.7 !important;
+    color: black !important;
+}
+
+.x-field.x-disabled>.x-body-wrap-el {
+    opacity: 0.7 !important;
+    color: black !important;
+}
+
+.x-textfield-faded .x-input-wrap-el {
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: rgba(0, 0, 0, 0.9)  !important;
+}
+
+
+
+.gradientCOLOR {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(gray, white);
+    max-height: 100%;
+    top: 100px;
+    position: static;
+    font-family:  "helvetica";
+}
+
+/* para uso do TOUR
+--------------------
+z-index: inherit
+*/
+
+.trans-panel {
+  background-color:transparent !important;
+}
+.trans-obj-0 {
+  opacity: 0.0;
+}
+.trans-obj {
+  opacity: 0.7;
+}
+.notrans-obj {
+  opacity: 1;
+}
+.bringtofront{
+  z-index: 10000;
+}
+/* v. 3.3.0.0 / 3.3.0.2 */
+.rc-z-index-2{
+  z-index: 2;
+}
+
+
+/* Alinhamento VERTICAL/HORIZONTAL
+-------------------------------------
+*/
+/* ideal para label com imagens */
+.align-center {
+    top: 50% !important;
+    left: 50% !important;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* Alinhamento de LABEL VERTICAL
+
+uso: UniLabel.JSInterface.JSCall('addCls', ['align-label-center']);
+
+*/
+/* v. 3.3.0.2 */
+.align-btn-caption{
+    /*margin-left: 5px !important;*/
+    [[RTL-ALIGN-BTN-CAPTION]]
+}
+/* v. 4.0.0.0 */
+.align-btn-caption-remove{
+    margin-left: 0px !important;
+}
+.align-label-right-top{
+    vertical-align: top;
+    text-align: right;
+    display: table-cell;
+    position: relative !important;
+}
+.align-label-left-center{
+    vertical-align: middle;
+    text-align: left;
+    display: table-cell;
+    position: relative !important;
+}
+.align-label-center{
+    text-align: center !important;
+}
+.align-label-right-center{
+    vertical-align: middle;
+    text-align: right;
+    display: table-cell;
+    position: relative !important;
+}
+.align-label-center-center{
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    position: relative !important;
+}
+
+
+/*
+itens combobox
+---------------
+v. 4.0.0.0 */
+.x-boundlist-item-over {
+    color: [[EDIT_FONT_COLOR]] ;
+    background: [[EDIT_FOCUS_COLOR]];
+    border-color: [[EDIT_FOCUS_COLOR]];
+}
+.x-boundlist-selected {
+    color: [[EDIT_FONT_COLOR]] ;
+    background: [[EDIT_FOCUS_COLOR]];
+    border-color: [[EDIT_FOCUS_COLOR]];
+}
+.x-boundlist {
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+/*
+.x-boundlist {
+}
+.x-boundlist-item {
+}
+.x-boundlist-item-over {
+}
+.x-boundlist-selected {
+}
+*/
+
+
+/*
+buttom BORDER
+-------------------------------
+*/
+.x-button{
+ border-width: 0px !important;
+}
+
+.customClsBorder {
+    border-radius: 0;
+    border-left: 0;
+}
+
+.customClsSearch {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('files/images/tel.png');
+    position: relative;
+    right: 10%;
+}
+
+/*
+cor dos icones no MOBILE( normalmente azul - acho q é o TEMA )
+--------------------------------------------------------------
+.x-button .x-body-el {
+  margin: 0px !important;
+}
+.x-button .x-button-el{
+  color : white !important;
+}
+
+*/
+
+
+/*
+collapse panel
+------------------------
+*/
+.x-panel-header-default-horizontal.x-header-noborder {
+    height: 32px !important;
+    padding: 6px 5px 4px 8px;
+}
+
+.x-panel-header-default {
+    background-image: none;
+    background-color: gray !important;
+    border: 0 ;   /* padrão AZUL do TRITON */
+}
+
+.x-panel-default {
+     border: 0 ;   /* padrão AZUL do TRITON */
+}
+
+/* remove bordas laterais padrao do objeto */
+.x-panel-default-outer-border-trbl {
+   /*background: none !important;*/
+   border: 0px !important;
+
+}
+
+/*
+----------------------------
+cores / ajsutes TRITON.MODIFIED
+
+Flavio Motta
+
+*/
+/* v. 4.0.0.0 */
+.rc-border { border: 1px solid ; }
+.rc-border-no { border: 0px solid ; }
+.rc-border-bottom { border-bottom: 1px solid ; }
+.rc-border-bottomright { border-bottom: 1px solid ; border-right: 1px solid ; }
+.rc-border-bottomleft { border-bottom: 1px solid ; border-left: 1px solid ; }
+.rc-border-top { border-top: 1px solid ; }
+.rc-border-topright { border-top: 1px solid ; border-right: 1px solid ; }
+.rc-border-topleft { border-top: 1px solid ; border-left: 1px solid ; }
+.rc-border-left { border-left: 1px solid ; }
+.rc-border-right { border-right: 1px solid ; }
+
+/* Panel ROUNDED */
+.clsRoundPanelForm {
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+
+.clsRoundPanel {
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+
+.clsRoundPaneltopleft {
+    -webkit-border-radius: [[BORDER_ROUNDED]] 0px 0px 0px !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] 0px 0px 0px !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] 0px 0px 0px !important;
+    -o-border-radius: [[BORDER_ROUNDED]] 0px 0px 0px !important;
+    border-radius: [[BORDER_ROUNDED]] 0px 0px 0px !important;
+}
+
+.clsRoundPaneltopright {
+    -webkit-border-radius: 0px [[BORDER_ROUNDED]] 0px 0px !important;
+    -moz-border-radius: 0px [[BORDER_ROUNDED]] 0px 0px !important;
+    -ms-border-radius: 0px [[BORDER_ROUNDED]] 0px 0px !important;
+    -o-border-radius: 0px [[BORDER_ROUNDED]] 0px 0px !important;
+    border-radius: 0px [[BORDER_ROUNDED]] 0px 0px !important;
+}
+
+.clsRoundPaneltopleftright {
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px !important;
+}
+
+
+.clsRoundPanelbottomleft {
+    -webkit-border-radius: 0px 0px 0px [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: 0px 0px 0px [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: 0px 0px 0px [[BORDER_ROUNDED]] !important;
+    -o-border-radius: 0px 0px 0px [[BORDER_ROUNDED]] !important;
+    border-radius: 0px 0px 0px [[BORDER_ROUNDED]] !important;
+}
+
+.clsRoundPanelbottomright {
+    -webkit-border-radius: 0px 0px [[BORDER_ROUNDED]] 0px !important;
+    -moz-border-radius: 0px 0px [[BORDER_ROUNDED]] 0px !important;
+    -ms-border-radius: 0px 0px [[BORDER_ROUNDED]] 0px !important;
+    -o-border-radius: 0px 0px [[BORDER_ROUNDED]] 0px !important;
+    border-radius: 0px 0px [[BORDER_ROUNDED]] 0px !important;
+}
+
+.clsRoundPanelbottomleftright {
+    -webkit-border-radius: 0px 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: 0px 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: 0px 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: 0px 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: 0px 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+
+.clsRoundPaneltopbottomleft {
+    -webkit-border-radius: [[BORDER_ROUNDED]] 0px 0px [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] 0px 0px [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] 0px 0px [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] 0px 0px [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] 0px 0px [[BORDER_ROUNDED]] !important;
+}
+.clsRoundPaneltopbottomright {
+    -webkit-border-radius: 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px !important;
+    -moz-border-radius: 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px !important;
+    -ms-border-radius: 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px !important;
+    -o-border-radius: 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px !important;
+    border-radius: 0px [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.card-info-box-white-noshadow {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f0f0f0;
+    border-radius: .25rem;
+    min-height: 42px; /* v. 3.3.0.0 / 3.3.0.2 */
+    position: relative;
+}
+.card-info-box-white {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    background: #fff !important;
+    min-height: 20px;
+    position: relative;
+    color: #000;
+}
+.card-info-box-themecrud{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, .1);
+    border-radius: .25rem;
+    background: [[BUTTON_COLOR_CRUD]] !important;
+    min-height: 20px;
+    /*padding: .5rem;*/
+    position: relative;
+}
+/* v. 4.0.0.0 */
+.card-info-box-purple{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, .1);
+    border-radius: .25rem;
+    background: [[COLOR_PURPLE]] !important;
+    min-height: 20px;
+    /*padding: .5rem;*/
+    position: relative;
+}
+.card-themecrud{
+     background: [[BUTTON_COLOR_CRUD]] ;
+     color:#fff  !important;
+     border-color: 1px solid [[BUTTON_COLOR_CRUD]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-red{
+     background:[[COLOR_RED]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_RED]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-green{
+     background:[[COLOR_GREEN]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_GREEN]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-blue{
+     background: [[COLOR_BLUE]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_BLUE]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-bluedark{
+     background: [[COLOR_BLUEDARK]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_BLUEDARK]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-white{
+     background:#FFFFFF !important;
+     color:#000 !important;
+     border-color:#FFFFFF !important;
+     border: 0px ;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-orange{
+     background:[[COLOR_ORANGE]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_ORANGE]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-gray{
+     background: [[COLOR_GRAY]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_GRAY]] !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+.card-light{
+     background: #fff !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_GRAY]] !important;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      background-color: rgba(0, 0, 0, 0.03) !important;
+}
+.card-silver{
+     background: #eaeaea !important;
+     color:#000 !important;
+     border-color:#ffc107 !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+/* v. 4.0.0.0 */
+.card-purple{
+     background: [[COLOR_PURPLE]] !important;
+     color:#000 !important;
+     border-color:#ffc107 !important;
+      -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+      border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] 0px 0px;
+}
+
+/* v. 4.0.0.0 update all colors */
+.color-themecrud { color:[[BUTTON_COLOR_CRUD]]  !important; }
+.color-themecrud-light { color: [[BUTTON_COLOR_CRUD]] !important;opacity:0.7; }
+.color-purple { color:[[COLOR_PURPLE]] !important; }
+.color-purple-light { color: [[COLOR_PURPLE]] !important;opacity:0.7; }
+.color-red { color:[[COLOR_RED]] !important; }
+.color-red-light { color: [[COLOR_RED]] !important;opacity:0.7; }
+.color-green { color:[[COLOR_GREEN]] !important; }
+.color-green-light { color: [[COLOR_GREEN]] !important;opacity:0.5; }
+.color-blue { color:[[COLOR_BLUE]] !important; }
+.color-blue-light { color: [[COLOR_BLUE]] !important;opacity:0.7; }
+.color-bluedark { color:[[COLOR_BLUEDARK]] !important; }
+.color-bluedark-light { color: [[COLOR_BLUEDARK]] !important;opacity:0.7; }
+.color-white { color:#fff !important; }
+.color-white-light { color: #fff !important;opacity:0.7; }
+.color-orange { color:[[COLOR_ORANGE]] !important; }
+.color-orange-light { color: [[COLOR_ORANGE]] !important;opacity:0.7; }
+.color-silver { color: [[COLOR_SILVER]] !important; }
+.color-silver-light { color: [[COLOR_SILVER]] !important;opacity:0.7; }
+.color-gray { color: [[COLOR_GRAY]] !important; }
+.color-gray-light { color: [[COLOR_GRAY]] !important;opacity:0.7; }
+.color-black { color: black !important; }
+.color-black-light { color: #000 !important;opacity:0.7; }
+.color-dark { color: [[COLOR_DARK]] !important; }
+.color-dark-light { color: [[COLOR_DARK]] !important;opacity:0.7; }
+/* v. 4.0.0.0 update all bg colors */
+.bg-themecrud { background:[[BUTTON_COLOR_CRUD]]  !important; }
+.bg-themecrud-light { background: [[BUTTON_COLOR_CRUD]] !important;opacity:0.7; }
+.bg-purple { background:[[COLOR_PURPLE]] !important; }
+.bg-purple-light { background: [[COLOR_PURPLE]] !important;opacity:0.7; }
+.bg-red { background:[[COLOR_RED]] !important; }
+.bg-red-light { background: [[COLOR_RED]] !important;opacity:0.7; }
+.bg-green { background:[[COLOR_GREEN]] !important; }
+.bg-green-light { background: [[COLOR_GREEN]] !important;opacity:0.5; }
+.bg-blue { background:[[COLOR_BLUE]] !important; }
+.bg-blue-light { background: [[COLOR_BLUE]] !important;opacity:0.7; }
+.bg-bluedark { background:[[COLOR_BLUEDARK]] !important; }
+.bg-bluedark-light { background: [[COLOR_BLUEDARK]] !important;opacity:0.7; }
+.bg-white { background:#fff !important; }
+.bg-white-light { background: #fff !important;opacity:0.7; }
+.bg-orange { background:[[COLOR_ORANGE]] !important; }
+.bg-orange-light { background: [[COLOR_ORANGE]] !important;opacity:0.7; }
+.bg-silver { background: [[COLOR_SILVER]] !important; }
+.bg-silver-light { background: [[COLOR_SILVER]] !important;opacity:0.7; }
+.bg-gray { background: [[COLOR_GRAY]] !important; }
+.bg-gray-light { background: [[COLOR_GRAY]] !important;opacity:0.7; }
+.bg-black { background: black !important; }
+.bg-black-light { background: #000 !important;opacity:0.7; }
+.bg-dark { background: [[COLOR_DARK]] !important; }
+.bg-dark-light { background: [[COLOR_DARK]] !important;opacity:0.7; }
+/*
+dar um espaco a direita nos campos de valores
+
+*/
+    /*
+.bg {
+
+   background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+} */
+
+
+/* Transparencia no FORM - nao consegui rodar - fica p depois */
+.frmLoginTransp .x-window-body {
+  background-color: transparent !important;
+}
+
+.x-form-text-default {
+    padding: 0px 5px 0px 5px !important;
+}
+
+
+
+/* pagecontrol */
+.x-uni-tabsheet{
+    /*padding: 0px 0px 0px 0px !important;
+    margin: 0 !important;*/
+}
+
+/* cor do texto da aba que não está selecionada */
+.x-tab-inner-default {
+    font-family: [[APP_FONT]]; /* v. 4.0.0.0 */
+    color: gray;
+    /*background-color: #ddd;*/
+    /*padding: 8px 8px ;/*padding: 4px 4px 6px 4px !important;*/
+    margin-top: -6px;
+    margin-bottom: -12px;
+    /*height: 40px;*/
+}
+
+.x-tab-bar-default-top > .x-tab-bar-body-default{
+    /*padding: 0px 0px 0px 0px !important;
+    margin: 0 !important;*/
+}
+
+.x-tab-bar-default {
+    /*background-color: [[MENU_COLOR]] !important;*/
+    /* borda do pagecontrol
+    margin: -4px 4px 0px 4px !important;*/
+
+    /*height: 44px !important;*/
+    /*padding: 0px 0px 0px 0px !important;*/
+
+    /*background-image: -webkit-linear-gradient( top , #ffffff , [[MENU_COLOR]] );*/
+    background-color: #fff; /* fundo das ABAS nao é DA ABA em si... */
+    border-bottom: 1px solid #ddd !important;
+
+}
+
+/* pg control LOGIN - em desenvolvimento */
+.pglogin-x-tab-bar-default {
+    background-color: [[LOGIN_COLOR]] !important;
+
+    /*height: 39px !important;*/
+    /* borda do pagecontrol
+    margin: 4px 4px 0px 4px !important; */
+
+    padding: 0px 0px 0px 0px !important;
+}
+
+
+.x-tab-default-top {
+
+    /*background-color: #A5A5A5; !important;*/
+
+    /*padding: 4px 4px 6px 4px !important;*/
+
+
+    /*background-color: white !important;*/
+
+    /*background-image: -webkit-linear-gradient(top,#ffffff,[[MENU_COLOR]]);*/
+
+    /*background-color: [[TAB_COLOR_DEFAULT]] !important;*/
+
+    color: gray;
+    /*height: 44px !important;*/
+
+    /*padding: 6px 15px;*/
+
+    background-color: #fff;
+    /*background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-color: transparent;*/
+
+    font-weight: 200;
+
+    -webkit-border-radius: 5px 5px 0px 0px !important;
+    -moz-border-radius: 5px 5px 0px 0px !important;
+    -ms-border-radius: 5px 5px 0px 0px !important;
+    -o-border-radius: 5px 5px 0px 0px !important;
+    border-radius: 5px 5px 0px 0px !important;
+}
+
+.x-tab-default-top .allRounded {
+
+    padding: 0px 6px 0px 6px !important;/*padding: 8px 8px ;/**/
+
+    color: gray;
+    font-weight: 200;
+
+    -webkit-border-radius: 5px 5px 5px 5px !important;
+    -moz-border-radius: 5px 5px 5px 5px !important;
+    -ms-border-radius: 5px 5px 5px 5px !important;
+    -o-border-radius: 5px 5px 5px 5px !important;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
+
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default{
+    padding: 6px 6px 5px 6px !important;/*padding: 8px 8px ;/**/
+
+    height: 40px !important;
+
+    color: [[TAB_COLOR_FONT]] !important;/* #fff ;/*black;*/
+    font-weight: bold;
+
+    background-color: [[TAB_COLOR_FOCUS]];/*#fff; /*[[BUTTON_COLOR_CRUD]] ;/*#fff;*/
+
+    border: 1px solid #ddd; /* [[MENU_COLOR]] caso queira usar o padrao do TEMA ATUAL de cor;*/
+    /*border-bottom-color: rgb(221, 221, 221);*/
+    border-bottom-color: white transparent;
+
+    border-radius: 5px 5px 5px 5px !important;
+    /*
+    -webkit-border-radius: 5px 5px 0px 0px !important;
+    -moz-border-radius: 5px 5px 0px 0px !important;
+    -ms-border-radius: 5px 5px 0px 0px !important;
+    -o-border-radius: 5px 5px 0px 0px !important;
+    border-radius: 5px 5px 0px 0px !important;*/
+
+}
+
+.x-keyboard-mode .x-tab-focus.x-tab-default {
+ border-color:transparent;
+ background-color:transparent;
+ /*background-color: [[TAB_COLOR_FOCUS]] !important*/;
+ outline:0px solid #5fa2dd;
+ outline-offset:-3px;
+
+}
+/* fim pagecontrole */
+
+
+/* TABs - fim */
+
+/*
+----------------------------
+Mensagem na frente( fonte: fórum )
+
+Flavio Motta
+*/
+
+.swal2-container{
+  z-index: 20000 !important;
+}
+
+
+/*
+uniDBGrid
+------------------------
+*/
+.x-column-header-default, .x-grid-cell-inner {
+   border-left: 1px solid #FFF !important;
+   border-right: 1px solid #FFF !important;
+}
+.x-grid-cell, .x-grid-item {
+ border: 0 !important;
+}
+
+/* v. 4.0.0.0 */
+.x-item-disabled .x-column-header-checkbox .x-column-header-checkbox, .x-item-disabled .x-grid-checkcolumn {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 1.0;
+    padding-top:3px;
+}
+.rc-btn-action-padding{
+    padding: .25rem .4rem !important;
+}
+
+/* v.  - center content on cell grid*/
+.x-grid-td {
+  vertical-align: middle;
+}
+.rc-grid-action-border-off .x-grid-with-col-lines .x-grid-item-selected .x-grid-cell {
+  border-left: 0px;
+  width: 44px;
+}
+.x-grid-with-col-lines .x-grid-item-selected .x-grid-cell {
+    border-color: #f6f6f6;
+    border-style: solid;
+}
+.rc-grid-cell-badge {
+    font-size: 8px !important;
+    text-align: center;
+}
+
+/* remove o check box que marca todos os registros*/
+.rc-grid-title-check .x-column-header-checkbox {
+  display:none;
+}
+/* reduz o tam. dos icones da tool bar de paginação */
+.x-btn-icon-el.x-tbar-page-next {
+    font: 11px/13px ExtJS;
+}
+.x-btn-icon-el.x-tbar-page-last {
+    font: 11px/13px ExtJS;
+}
+.x-btn-icon-el.x-tbar-page-prev {
+    font: 11px/13px ExtJS;
+}
+.x-btn-icon-el.x-tbar-page-first {
+    font: 11px/13px ExtJS;
+}
+.x-btn-icon-el.x-tbar-loading {
+    font: 11px/13px 'Font Awesome 5 Free';
+    /*color: #919191;*/
+}
+.x-toolbar-text-default {
+    padding: 0px 0px 0px -8px;
+    /*color: #4b4c4c;*/
+    font: 300 11px/13px 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+}
+/* v.  */
+.rc-mirror-h { transform: rotate(180deg); }
+/* v. 3.2.0.7 */
+.rc-rotate-5 { transform: rotate(5deg); }
+.rc-rotate-45 { transform: rotate(45deg); }
+.rc-rotate-90 { transform: rotate(90deg); }
+.rc-rotate--90 { transform: rotate(-90deg); } /* v. 4.0.0.4*/
+.rc-rotate-180 { transform: rotate(180deg); }
+/* remove 'pipes' entre os botoes do paginador do grid */
+.x-toolbar-default .x-toolbar-separator-horizontal{
+    border-width: 0px;
+}
+.x-toolbar-default {
+    padding: 6px 0 0px 0px;
+    border-width: 0px;
+   /*padding: 0px 0px 0px 0px;
+   height: 0;*/
+
+}
+/* // v. 4.0.0.0 */
+.x-column-header {
+    background: [[GRID-TITLE-BG]] !important;/*#f2f2f2 !important;*/
+    color: [[GRID-TITLE-COLOR]] !important;/*#000 !important;*/
+    font-size: 14px;
+    [[GRID-TITLE-UPPER]]/*text-transform: uppercase;*/
+    [[GRID-TITLE-BOLD]]/*font-weight: 700;*/
+}
+.rc-column-font-bold .x-column-header {
+/* font: normal 13px/19px 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;*/
+    font-weight: 700 !important;
+}
+.x-column-header-over {
+    background-image: none;
+    background-color: [[GRID-TITLE-BG-OVER]];
+    color: [[GRID-TITLE-COLOR-OVER]];
+}
+.x-column-header-open {
+    background-color: [[GRID-TITLE-BG-OVER]];
+    color: [[GRID-TITLE-COLOR-OVER]];
+}
+.x-column-header-open .x-column-header-trigger {
+    background-color: [[GRID-TITLE-BG-OVER]];
+    color: [[GRID-TITLE-COLOR-OVER]];
+}
+.x-column-header-open .x-column-header-trigger {
+    color: [[GRID-TITLE-COLOR-ICON]];
+    background-color: [[GRID-TITLE-BG-OVER]];
+}
+.x-column-header-over .x-column-header-trigger,
+.x-column-header-open .x-column-header-trigger {
+    color: [[GRID-TITLE-COLOR-ICON]];
+    background-color: [[GRID-TITLE-BG-OVER]];
+}
+.x-column-header-sort-ASC,
+.x-column-header-sort-DESC {
+    background-image: none;
+    background-color: [[GRID-TITLE-BG-OVER]];
+    color: [[GRID-TITLE-COLOR-ICON]];
+}
+/* remove a 'barra' de coluna separadora do grid */
+.x-column-header-default, .x-grid-cell-inner {
+/*    border-left: 1px solid #FFF !important;
+    border-right: 1px solid #FFF !important;*/
+/*    border-left: 0px !important;
+    border-right: 0px !important;*/
+    [[GRID-COLUMN-SEPARATOR]]
+}
+.x-column-header-sort-DESC .x-column-header-text-inner:after{
+    color: [[GRID-TITLE-COLOR-ICON]];
+}
+.x-column-header-sort-ASC .x-column-header-text-inner:after{
+    color: [[GRID-TITLE-COLOR-ICON]];
+}
+.tocapitalize{
+    text-transform: capitalize !important;
+}
+/* v. 3.2.0.0 */
+.toright { text-align: right !important; }
+.toleft{ text-align: left; }
+.tocenter{ text-align: center; }
+.tolower{ text-transform: lowercase; }
+.toupper{ text-transform: uppercase; }
+
+/* v. 3.0.0.0 remove 'pipes' entre os botoes do paginador do grid */
+/*.x-toolbar-default .x-toolbar-separator-horizontal{
+    border-width: 0;
+} */
+
+
+/*----------------------------
+/*
+----------------------------
+dica do grupo
+
+Flavio Motta
+
+*/
+/* selecao serrilhada no dbgrid */
+.x-grid-item-focused .x-grid-cell-inner:before{
+	display: none;
+}
+/* caso queira mudar a cor do item selecionado no uniDBGrid */
+.x-grid-item-selected {
+    color: #404040;
+    background-color: [[GRID_SEL_COLOR]]; /* v. 3.0.0.0  [[EDIT_FOCUS_COLOR]]; /*#ffefbb;*/
+}
+/*  */
+.x-grid .x-grid-column {
+    border-style: solid;
+    /*border-width: 1px 1px 0;*/
+    height: [[GRID-ROW-HEIGHT]]px;                 /* 38 HEIGTH da linha */
+    line-height: [[GRID-ROW-HEIGHT]]px;            /* HEIGTH da linha */
+    padding: 0 8px;
+    vertical-align: middle;
+}
+/*  */
+.x-grid .x-grid-cell {
+    height: [[GRID-ROW-HEIGHT]]px !important;      /* HEIGTH da linha */
+    line-height: [[GRID-ROW-HEIGHT]]px !important; /* HEIGTH da linha */
+}
+/* fim dbgrid
+----------------------------*/
+
+/* forms
+--------------------------------
+*/
+/* v. 4.0.0.0 */
+.rc-edit-disabled .x-form-text {
+    background-color: #ebfaff !important;
+    color: gray;
+    border-right: 0px !important;
+    pointer-events: none !important;
+}
+/*
+Exemplo de Efeito Edits com borda inferior - Desktop
+Silvio Santos
+uniguidesign@gmail.com
+
+Para aplicar individualmente, descomente a linha .border-bottom-edit e adicione border-bottom-edit na propriedade LayouConfig > Cls do componente
+*/
+.border-bottom-edit .x-form-trigger-wrap-default {
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.3) !important;
+    background-image: transparent !important;
+    box-shadow: 0 10px 10px -5px #EEE;
+}
+.border-bottom-edit .x-form-trigger-wrap-focus {
+    border:0;
+    border-bottom-style: dotted !important;
+    border-bottom: 1px solid rgba(21, 65, 131, 0.8) !important;
+    background-color: rgb(255, 255, 255) !important;
+}
+/*  v. 3.2.0.0
+    Form c/ Background Transparente
+    By Silvio Santos
+    Email: uniguidesign@gmail.com
+    Outras dicas no Telegram: https://t.me/uniguidevdesign
+
+    Aplicar na propriedade Cls do Form: transparent-form-bg
+*/
+.transparent-form-bg .x-window-body-default  {
+    border: 0;
+}
+.transparent-form-bg,
+.transparent-form-bg .x-panel-body-default,
+.transparent-form-bg .x-window-body-default,
+.transparent-form-bg .x-autocontainer-outerCt {
+    background-color: transparent !important;
+    /* ou semi transparente: */
+    /* background-color: rgba(255,255,255,.1) !important; */
+}
+/* titulo do form sem icone fica com espacos a esquerda */
+.x-window-header-title-default{
+    /*left: -20px !important;*/
+}
+.x-window-default2 {
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
+/* forms arredondados  */
+.x-window-default {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border-width: 0px;
+    /*-webkit-border-radius: 8px 8px 8px 8px !important;
+    -moz-border-radius: 8px 8px 8px 8px !important;
+    -ms-border-radius: 8px 8px 8px 8px !important;
+    -o-border-radius: 8px 8px 8px 8px !important;
+    border-radius: 8px 8px 8px 8px !important;*/
+}
+/* forms arredondados  */
+.form-rounded {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border-width: 0px;
+    -webkit-border-radius: 8px 8px 8px 8px !important;
+    -moz-border-radius: 8px 8px 8px 8px !important;
+    -ms-border-radius: 8px 8px 8px 8px !important;
+    -o-border-radius: 8px 8px 8px 8px !important;
+    border-radius: 8px 8px 8px 8px !important;
+}
+.form-noborder {
+    background-color: transparent !important;
+    border-color: 0 0 0 0 solid black !important;
+    -webkit-border-radius: 0px 0px 0px 0px !important;
+    -moz-border-radius: 0px 0px 0px 0px !important;
+    -ms-border-radius: 0px 0px 0px 0px !important;
+    -o-border-radius: 0px 0px 0px 0px !important;
+    border-radius: 0px 0px 0px 0px !important;
+}
+.x-noborder-trbl {
+    border: 0;
+    padding: 0;
+}
+.x-window-header-title-default > .x-title-text-default{
+    /*padding: 0px 0px 0px 12px;*/
+}
+.x-window-header {
+    background-color: [[BUTTON_COLOR_CRUD]];
+    border-color: [[BUTTON_COLOR_CRUD]];
+}
+.x-tool-close {
+    background: none !important;
+}
+.x-tool-maximize {
+    background: none !important;
+}
+.x-tool-minimize {
+    background: none !important;
+}
+.clsRoundForm {
+    background-color: transparent !important;
+    border-color: transparent !important; /*#5fa2dd;*/
+    -webkit-border-radius: 8px 8px 8px 8px !important;
+    -moz-border-radius: 8px 8px 8px 8px !important;
+    -ms-border-radius: 8px 8px 8px 8px !important;
+    -o-border-radius: 8px 8px 8px 8px !important;
+    border-radius: 8px 8px 8px 8px !important;
+}
+/* sombra global nos forms
+-------------------------
+*/
+.rc-form-shadow { box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 20px !important; }
+.x-css-shadow[style] { box-shadow: rgba(0, 0, 0, 0.0) 0px 0px 0px !important; }
+
+/* diversos */
+
+.clsBS-Edit-teste {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.clsBS-Edit .x-form-text-wrap {
+
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Labels
+  [PT]
+  - evita a quebra do texto do label quando reduz a área do browser ( white-space: nowrap; )
+  - deixa o tom CINZA com padrão( color: gray )
+    e o 'peso' da letra: ( font-weight )
+  - comentando toda a classe fica padrão
+  [EN]
+  - avoids breaking the label text when reducing the browser area (white-space: nowrap;)
+  - leaves the GRAY tone with pattern (color: gray)
+    and the 'weight' of the letter: (font-weight)
+  - commenting the whole class becomes standard
+
+*/
+[[LABEL_FORMS_DEFAULT]]
+
+/* v. 4.0.0.0 */
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.rc-text-height-150 { line-height: 1.50; }
+.rc-text-height-175 { line-height: 1.75; }
+.rc-label-wrap { white-space: normal !important; }
+/* v. 4.0.0.0 */
+/*.rc-label-link label:hover, label:active, input:hover+label, input:active+label {
+   /*background-color: yellow;*/
+  /* color: yellow;*/
+/*} */
+
+/* Loading Mask  // v.
+-----------------------
+dica [#loading .loading-indicator] do grupo( uniGUI na VEIA - ADEN )
+
+.x-mask-msg e .x-mask-msg-text  adicionada por mim
+
+Flavio Motta : deixei o texto transparente pra exibir apenas a imagem de processamento
+
+dependendo da imagem escolhida vc terá que ajustar o "padding" das classes abaixo
+
+Sempre lembrando que a ordem dos valores indica: T R B L
+
+T op
+R ight
+B ottom
+L eft
+
+*/
+/* first loading app   */
+/* v. 4.0.0.0
+    [PT]
+    commentar todo o css referente ao loadmask, agora tudo será carregado dinamicamente em [[RC-LOADMASK]]
+    [EN]
+    comment out all css referring to loadmask, now everything will be dynamically loaded in [[RC-LOADMASK]]
+*/
+[[RC-LOADMASK]]
+
+
+/* UniTreeMenu - Inicio
+-----------------------
+dica do grupo( DIMAS se nao me engano )
+
+Flavio Motta: melhoramentos diversos
+
+*/
+.x-treelist-nav-NEW {
+   background-color: [[cor]] !important;
+}
+.rc-tree-align-icon{
+    width: 26px;
+    text-align: center;
+}
+/* para icones 'invisiveis' - so pra dar espacamento */
+.rc-tree-font-color-bg {
+   color: black ;
+}
+.x-treelist-nav {       /* Aqui ira determina a COR DE Fundo do menu */
+    background-color: [[MENU_COLOR]];/* !important;/* #32404e ;  moccasin; */
+
+    /*background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-image: url( 'files/images/menu-bg.png' );
+
+    background-position: 0px 50% !important;*/
+
+    padding: 0 0 0 0;
+    overflow: auto;
+
+    scrollbar-width: thin;  /*estilo do scrool para o mozilla  */
+    scrollbar-color: #adb3b8 #516579;  /*estilo do scrool para o mozilla  */
+    [[RTL-TEXTALIGN]] /* v. 3.1.0.63 ammar / raafat feedback */
+}
+.x-treelist-nav::-webkit-scrollbar {
+    width: 7px;
+    height:7px;
+    background: #516579; /* bg scroll bar */
+}
+.x-treelist-nav::-webkit-scrollbar-track {
+    background: rgba( 0, 0, 0, 0.1);
+}
+.x-treelist-nav::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    height:7px;
+    background: #adb3b8;
+}
+.x-treelist-nav .x-treelist-item-text {
+  /* menu lado Esquerdo */
+  color: [[MENUFONT_COLOR]];/* #adb3b8;     /* cor da letra do menu */
+
+  margin-left: 6px;  /*  espaçamento da esquerda para direita dos Itens do menu */
+  margin-right: 20px; /*  espaçamento da esquerda para direita dos Grupos do menu */
+
+  font-size: [[MENUFONT_SIZE]]px;    /* tamanho das letras   */
+  line-height: 42px;  /* altura da linha do menu */
+}
+.x-treelist-nav .x-treelist-item-icon:before, .x-treelist-nav .x-treelist-item-tool:before, .x-treelist-nav .x-treelist-item-expander {
+     /*line-height: 42px;*/
+     [[RTL-EXPANDER]] /* v. 3.1.0.63 ammar / raafat feedback */
+}
+.x-treelist-nav .x-treelist-row{
+  padding-left: 2px;
+}
+.x-treelist-nav .x-treelist-item-selected > .x-treelist-row::before {
+    background-color: #f99500; /*barra laranja*/
+    /*background-color: [[BUTTON_COLOR_CRUD]];*/
+}
+/*.rc-treemenu-title .x-treelist-nav .x-treelist-item-selected > .x-treelist-row::before {*/
+.rc-treemenu-title .x-treelist-nav .x-treelist-row-over{ /* .x-unselectable .x-treelist-nav .x-treelist-item-text{*/
+    background-color: transparent !important;
+    /*pointer-events: none !important; */ /* v. 3.2.0.0 */
+}
+
+/* RTL
+// RTL TreeMenu( see dm_rc too )
+//     This was (or is) an attempt to apply css for when RTL is active.
+//     I don't understand just anything about RTL, but I wanted to make this small attempt.
+//     Maybe it can be an IDEA for someone in need...
+*/
+[[TREEMENU-RTL]]
+
+/* UniTreeMenu - Fim */
+
+/*
+----------------------------
+cores foco dos EDITs
+
+Flavio Motta
+
+*/
+/* para usar nos campos desabilitados */
+.rc-x-item-disabled .x-form-field {
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    color: blue;
+    background: #F0F0F0;
+}
+.rc-mydisabledCheckBox .x-form-cb-label-default {
+    -moz-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    color: blue;
+    background: #F0F0F0;
+}
+
+/* trigger buttons ( search do tree menu por exemplo )
+------------------------------------------------------
+.x-form-trigger::before,
+.x-form-trigger-default::before {
+    position: relative;
+    top: 6px;
+    color: #333;
+}
+*/
+/* v. 4.0.0.4 */
+.rc-trigger-icon-top-8 .x-form-trigger-default {
+    padding-top: 8px ;
+    /*font: 16px FontAwesome !important;
+    padding-right: 0.4em ;*/
+}
+.x-form-trigger-default {
+    font: 16px FontAwesome !important;
+    padding-top: 0.3em ;
+    padding-right: 0.4em ;
+}
+
+/* v. 3.3.1.0 */
+.rc-clear-btn-no-border-right .x-form-trigger-default {
+    padding-right: 9px !important;
+    width: 28px;
+}
+
+.x-form-trigger {
+    text-align: right;
+}
+
+/* edits arredondados ou não*/
+
+/* Edit Borders
+ */
+.x-form-text {
+   [[EDIT_BORDER_ROUNDED]]
+}
+.x-form-trigger-wrap-default{
+    [[EDIT_BORDER_ROUNDED]]
+}
+.x-form-trigger-wrap-focus{
+  [[EDIT_BORDER_ROUNDED]]
+  /*border-color: #d0d0d0 !important;*/
+  /* se quiser adaptar as bordas na cor do FOCO , lembrando que pra desligar o FUNDO tem q ajustar o JS em frmBaseCRUD */
+  border-color: [[BUTTON_COLOR_CRUD]] !important;
+  /*v. 3.2.0.0*/
+  /*border-color: #66afe9;*/
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(190, 190, 190, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(190, 190, 190, 0.6);
+
+}
+/* v. 4.0.0.0 */
+.x-form-trigger-default{
+    [[EDIT_BORDER_ROUNDED]]
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+    width: 24px;
+    /*color: gray; */
+    color: [[EDIT_FONT_COLOR_TRIGGER]];
+    background: [[EDIT_COLOR_TRIGGER]];
+}
+
+/* fim edits arredondados */
+
+/* bsRENDER - themed v.  */
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: [[BUTTON_COLOR_CRUD]];/* #007bff;*/
+    background-color: [[BUTTON_COLOR_CRUD]];/* #007bff;*/
+}
+
+.x-form-text:focus,
+.x-form-text:hover,
+.x-form-text:active
+{
+    color: black ;
+    border-color: [[EDIT_FOCUS_COLOR]];
+}
+/*// v. 3.1.0.60 */
+.rc-form-text .x-form-text{
+    border-radius: 5px;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+}
+.rc-form-text-trigger .x-form-trigger{
+    border-radius: 5px;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+}
+.rc-edit-no-border-right .x-form-text{
+    border-radius: 5px;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+    border-right:0;
+}
+
+.x-myfield-focus {
+    border-color: #7eadd9;
+   color: #FF0000;
+   background-image: none;
+}
+
+.edit-foco {
+   border-color: [[EDIT_FOCUS_COLOR]]; /*#7eadd9;*/
+   background-color: none; /*[[EDIT_FOCUS_COLOR]] ;*/
+   color: #FF0000;
+   background-image: none;
+}
+
+.rc-wrapper {
+  display: flex;
+  background: [[BUTTON_COLOR_CRUD]] ;
+  color:#fff ;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+/* v. 4.0.0.0 */
+.rc-badge {
+    display: inline-block;
+    min-width: 30px;
+    min-height: 20px;
+    /*padding: .1em;*/
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    font-size: 13px;
+    text-align: center;
+    background: #1779ba;
+    color: #fff;
+}
+/* v. 4.0.0.0 */
+.rc-badge-inverse {
+    height:20px;
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-badge-inverse-percent {
+    padding-right:15px;
+    min-width:40px;
+    height:20px;
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-badge-inverse-warning {
+    background-color: rgba(255, 168, 0, 0.1);
+    color: [[COLOR_ORANGE]];/*#ffa800;*/
+}
+.rc-badge-inverse-primary {
+    background-color: rgba(0, 128, 255, 0.1);
+    color: [[COLOR_BLUE]];/*#0080ff;*/
+}
+.rc-badge-inverse-success {
+    background-color: rgba(24, 210, 107, 0.1);
+    color: [[COLOR_GREEN]];/*#18d26b;*/
+}
+.rc-badge-inverse-secondary {
+    background-color: rgba(129, 167, 205, 0.1);
+    color: [[COLOR_GRAY]];/*#93b4d4;*/
+}
+.rc-badge-inverse-danger {
+    background-color: rgb(255 0 0 / 10%);
+    color: [[COLOR_RED]];/*#93b4d4;*/
+}
+/* IMG CIRCLE - W3 SCHOOLS */
+/* v. 4.0.0.0 */
+.mini-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  top: 50% !important;
+  left: 50% !important;
+}
+.avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  top: 50% !important;
+  left: 50% !important;
+}
+
+.localeflag {
+  width: 18px;
+  height: 14px;
+  top: 50% !important;
+  left: 50% !important;
+}
+
+/* GRADIENTES
+------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.gradient_whitetocolor
+{
+ background: #ffffff; /* Old browsers */
+ background: -moz-linear-gradient(top,  #ffffff 0%, red 100%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,red)); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top,  #ffffff 0%,red 100%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top,  #ffffff 0%,red 100%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(top,  #ffffff 0%,red 100%); /* IE10+ */
+ background: linear-gradient(to bottom,  #ffffff 0%,red 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='red',GradientType=0 ); /* IE6-9 */
+}
+
+.gradient_colortoblack
+{
+ background: #ffffff; /* Old browsers */
+ background: -moz-linear-gradient(top,  red 0%, black 100%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,red), color-stop(100%,black)); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top,  red 0%,black 100%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top,  red 0%,black 100%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(top,  red 0%,black 100%); /* IE10+ */
+ background: linear-gradient(to bottom,  red 0%,black 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='red', endColorstr='black',GradientType=0 ); /* IE6-9 */
+}
+
+.rc-gradient-color-green-to-bottom{
+    background-image: linear-gradient(to bottom, [[COLOR_GREEN]], [[COLOR_HOVER_GREEN]]);
+}
+.rc-gradient-color-red-to-bottom{
+    background-image: linear-gradient(to bottom, [[COLOR_RED]], [[COLOR_HOVER_RED]]);
+}
+.rc-gradient-color-orange-to-bottom{
+    background-image: linear-gradient(to bottom, [[COLOR_ORANGE]], [[COLOR_HOVER_ORANGE]]);
+}
+.rc-gradient-color-blue-to-bottom{
+    background-image: linear-gradient(to bottom, [[COLOR_BLUE]], [[COLOR_HOVER_BLUE]]);
+}
+.rc-gradient-color-crud-to-bottom{
+    background-image: linear-gradient(to bottom, [[LOGIN_COLOR]], [[COLOR_DARK]]);
+}
+/* v. 3.0.0.0 - login form */
+.rc-gradient-dark-to-color-crud{
+    background-image: linear-gradient(to bottom, [[COLOR_DARK]], [[LOGIN_COLOR]]);
+}
+
+/* BUTTONS / BOTÕES
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+/* // v. 3.3.3.0 */
+.x-form-cb-checked .x-form-radio-default:before {
+    /*content: '\f192';*/
+    color: [[BUTTON_COLOR_CRUD]];
+}
+/* v. 3.3.3.1 */
+.x-fieldset-default{
+   padding: 0 0 0 0 !important;
+}
+
+/* v. 3.4.0.0 UniMeunButton */
+.x-btn-wrap-default-large.x-btn-split-right:after {
+  padding-left: 0px !important;
+}
+/* button disable ( remover o azul padrão ) */
+.x-btn.x-btn-disabled.x-btn-default-medium{
+    background-image: none;
+    background-color: [[BUTTON_COLOR_CRUD]];
+}
+/* v. 3.1.0.60 button disable ( remover o azul padrão ) */
+.x-btn.x-btn-disabled.x-btn-default-small {
+    background-image: none;
+    background-color: [[BUTTON_COLOR_CRUD]];
+}
+.x-keyboard-mode .x-btn-focus.x-btn-default-small {
+    background-image: none;
+    background-color: [[BUTTON_COLOR_CRUD]];
+}
+.x-keyboard-mode .x-btn-focus.x-btn-default-medium {
+    background-image: none;
+    background-color: [[BUTTON_COLOR_CRUD]];
+}
+/* v. 3.0.0.0 bsChk disabled( remover azul padrão )*/
+.custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
+    background-color: [[BUTTON_COLOR_CRUD]];
+    opacity: 0.5;
+}
+/* v. 3.0.0.0 bsSwt disabled( remover azul padrão )*/
+.custom-switch .custom-control-input:disabled:checked~.custom-control-label::before {
+    background-color: [[BUTTON_COLOR_CRUD]];
+    opacity: 0.5;
+}
+/* v. 3.0.0.0 bsRgp disabled( remover azul padrão )*/
+.custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
+    background-color: [[BUTTON_COLOR_CRUD]];
+    opacity: 0.5;
+}
+/* v. 4.0.0.0  */
+/*.x-btn-inner-default-small{
+    color: white;
+} */
+.x-window-header-title-default > .x-title-text-default{
+    color: white;
+}
+/* v. 4.0.0.0
+datetime picker
+*/
+.x-datepicker{
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+/*
+.x-datepicker-header{
+   height: 38px;
+   font-weight:400;
+   background-color:[[BUTTON_COLOR_CRUD]];
+   color:#fff;
+}              */
+.x-datepicker-today{
+    background-color:[[BUTTON_COLOR_CRUD]];
+    border-color:[[BUTTON_COLOR_CRUD]];
+    opacity: 0.3;
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.x-datepicker-selected div.x-datepicker-date{
+    background-color:[[BUTTON_COLOR_CRUD]];
+    border-color:[[BUTTON_COLOR_CRUD]];
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+div.x-datepicker-date:hover{
+    -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+    border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+
+/* css da BORDA dos botoes: vc pode alterar pra ficar com a cor do FOCO se quiser....    */
+.x-btn-default-small{
+    border-color:[[BUTTON_COLOR_CRUD]];
+    background-color:[[BUTTON_COLOR_CRUD]];
+    background:[[BUTTON_COLOR_CRUD]];
+      [[BTN_BORDER_ROUNDED]]
+}
+.x-btn-default-medium{
+    border-color:[[BUTTON_COLOR_CRUD]];
+    background-color:[[BUTTON_COLOR_CRUD]];
+    background:[[BUTTON_COLOR_CRUD]];
+      [[BTN_BORDER_ROUNDED]]
+}
+/* v. 4.0.0.0 */
+.x-btn-default-large{
+    border-color:[[BUTTON_COLOR_CRUD]];
+    background-color:[[BUTTON_COLOR_CRUD]];
+    background:[[BUTTON_COLOR_CRUD]];
+      [[BTN_BORDER_ROUNDED]]
+}
+.x-btn-over {
+    border-color:[[BUTTON_COLOR_HOVER]];
+    background-color:[[BUTTON_COLOR_HOVER]];
+    background:[[BUTTON_COLOR_HOVER]];
+    text-decoration:none;
+}
+.x-btn-over:active,
+.x-btn-over:hover,
+.x-btn-over:focus {
+    border-color:[[BUTTON_COLOR_HOVER]];
+    background-color:[[BUTTON_COLOR_HOVER]];
+    background:[[BUTTON_COLOR_HOVER]];
+    text-decoration:none;
+}
+/* FOCUS COLOR    */
+.x-keyboard-mode .x-btn-focus.x-btn-default-small {
+    border-color:[[BUTTON_COLOR_HOVER]];
+    background: [[BUTTON_COLOR_HOVER]];
+}
+.x-keyboard-mode .x-btn-focus.x-btn-default-medium {
+    border-color:[[BUTTON_COLOR_HOVER]];
+    background: [[BUTTON_COLOR_HOVER]];
+}
+
+.ButtonTheme{
+     padding: 0;
+     background: [[BUTTON_COLOR]] ;
+     color:#fff ;
+     border-color: [[BUTTON_COLOR]]; /* v. 3.0.0.0 */
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+}
+.ButtonTheme:hover {
+     background: [[BUTTON_COLOR_HOVER]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #000 ;
+     text-decoration:none;
+}
+
+.ButtonTheme:focus,
+.ButtonTheme:active{
+     border-color: [[BUTTON_COLOR]]; /* v. 3.0.0.0 */
+     text-decoration:none;
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+}
+
+.disabled {
+ opacity: 0.6;
+ cursor: not-allowed;
+}
+
+.ButtonThemeInactive {
+     background: gray ;
+     color:#fff ;
+     border-color: gray; /*  */
+     /* -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;*/
+      [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+
+.ButtonThemeTab {
+     background: [[BUTTON_COLOR_CRUD]] ;
+     color:#fff ;
+     border-color: [[BUTTON_COLOR_CRUD]]; /*  */
+     /* -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;*/
+      [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonThemeTab:hover {
+     background: [[BUTTON_COLOR_CRUD_HOVER]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #000 ;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonThemeTab:focus,
+.ButtonThemeTab:active{
+     border-color: [[BUTTON_COLOR_CRUD_HOVER]]; /*  */
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+/* close all tabs RED // v. 3.2.0.8 */
+.ButtonThemeCloseAllTab {
+     background: white;/* [[BUTTON_COLOR_CRUD]] ;*/
+     color:red ;
+     border-color: white;/* [[BUTTON_COLOR_CRUD]] ;*/
+      [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonThemeCloseAllTab:hover {
+     background: white;/* [[BUTTON_COLOR_CRUD_HOVER]]; /* #6c757d !important;*/
+     font-weight: bold;
+     color: #000 ;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonThemeCloseAllTab:focus,
+.ButtonThemeCloseAllTab:active{
+     border-color: [[BUTTON_COLOR_CRUD_HOVER]]; /*  */
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+/* other active tabs colors for "bspills:" cls-active: parameter v. 3.3.3.0 */
+.ButtonTabPurple {
+     background: [[COLOR_PURPLE]] ;
+     color:#fff ;
+     border-color: [[COLOR_BORDER_PURPLE]] ; /*  */
+     /* -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;*/
+      [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonTabPurple:hover {
+     background: [[COLOR_HOVER_PURPLE]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #000 ;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonTabPurple:focus,
+.ButtonTabPurple:active{
+     border-color: [[COLOR_BORDER_PURPLE]]; /*  */
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonTabGreen {
+     background: [[COLOR_GREEN]] ;
+     color:#fff ;
+     border-color: [[COLOR_BORDER_GREEN]]; /*  */
+     /* -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;*/
+      [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonTabGreen:hover {
+     background: [[COLOR_HOVER_GREEN]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #000 ;
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+.ButtonTabGreen:focus,
+.ButtonTabGreen:active{
+     border-color: [[COLOR_BORDER_GREEN]]; /*  */
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+     text-decoration:none; /* v. 3.0.0.0 */
+}
+/*// v. 3.4.0.0 */
+.ButtonThemeCrud{
+    padding: 0;
+    background-color: [[BUTTON_COLOR_CRUD]] ;
+    color:#fff  !important;
+    border-color: [[BUTTON_COLOR_CRUD]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+    text-align: center !important;
+    text-decoration !important;
+}
+.ButtonThemeCrud:hover {
+     background-color: [[BUTTON_COLOR_CRUD_HOVER]];
+     font-weight: bold;
+     color:#fff  !important;
+     text-decoration:none;
+}
+.ButtonThemeCrud:focus,
+.ButtonThemeCrud:active{
+     border-color: [[BUTTON_COLOR_CRUD]] ;
+     color:#fff  !important;
+     text-decoration:none;
+}
+/* v. 3.2.0.1 */
+.rc-btn-text-black .x-btn-inner {
+  color: #000 !important;
+}
+.rc-btn-text-black .x-btn-inner:hover {
+  color: #fff !important;
+}
+
+/* outline blue buttons */
+/*
+.ButtonThemeCrud {
+    background: [[BUTTON_COLOR_CRUD]];
+    color: black !important;
+    border: 2px solid [[BUTTON_COLOR_CRUD]];
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+}
+.ButtonThemeCrud:focus,
+.ButtonThemeCrud:hover{
+    background:[[BUTTON_COLOR_CRUD_HOVER]] !important;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    color: black !important;
+    text-decoration:none;
+    border: 2px solid [[BUTTON_COLOR_CRUD]];
+}
+.ButtonThemeCrud:active{
+    background:[[COLOR_HOVER_BLUE]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px solid gray !important;
+    color: black !important;
+}
+*/
+
+/* v. 3.1.0.60
+
+button them sem borda esq/dir
+ */
+.ButtonThemeCrud-no-border-left{
+     padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+     background: [[BUTTON_COLOR_CRUD]] ;
+     color:#fff  !important;
+     /*border-color: [[BUTTON_COLOR_CRUD]]; /*  */
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     /*border-radius: 5px;*/
+     border-top-left-radius:0;
+     border-bottom-left-radius:0;
+     border-left:0;
+}
+.ButtonThemeCrud-no-border-left:hover {
+     background: [[BUTTON_COLOR_CRUD_HOVER]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #fff  !important;
+     text-decoration:none;
+}
+.ButtonThemeCrud-no-border-left:focus,
+.ButtonThemeCrud-no-border-left:active{
+     border-color: [[BUTTON_COLOR_CRUD]] ; /*  */
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+     color: #fff  !important;
+     text-decoration:none;
+}
+.ButtonThemeCrud-no-border-right{
+     padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+     background: [[BUTTON_COLOR_CRUD]] ;
+     color:#fff  !important;
+     /*border-color: [[BUTTON_COLOR_CRUD]]; /*  */
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     /*border-radius: 5px;*/
+     border-top-right-radius:0;
+     border-bottom-right-radius:0;
+     border-right:0;
+}
+.ButtonThemeCrud-no-border-right:hover {
+     background: [[BUTTON_COLOR_CRUD_HOVER]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #fff  !important;
+     text-decoration:none;
+}
+.ButtonThemeCrud-no-border-right:focus,
+.ButtonThemeCrud-no-border-right:active{
+     border-color: [[BUTTON_COLOR_CRUD]] ; /*  */
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+     color: #fff  !important;
+     text-decoration:none;
+}
+.ButtonThemeCrud-no-border-left-right{
+     padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+     background: [[BUTTON_COLOR_CRUD]] ;
+     color:#fff  !important;
+     /*border-color: [[BUTTON_COLOR_CRUD]]; /*  */
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.3s ease-in-out;
+     transition: background 0.3s ease-in-out;
+     /*border-radius: 5px;*/
+     border-top-left-radius:0;
+     border-bottom-left-radius:0;
+     border-top-right-radius:0;
+     border-bottom-right-radius:0;
+     border-right:0;
+}
+.ButtonThemeCrud-no-border-left-right:hover {
+     background: [[BUTTON_COLOR_CRUD_HOVER]]; /* #6c757d !important;*/
+     font-weight: bold;
+     /*box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;  */
+     color: #fff  !important;
+     text-decoration:none;
+}
+.ButtonThemeCrud-no-border-left-right:focus, .ButtonThemeCrud-no-border-left-right:active {
+     border-color: [[BUTTON_COLOR_CRUD]] ; /*  */
+     /*background: white;  #6c757d !important;
+     font-weight: bold;
+     box-shadow: 2px 2px 5px #E0E0E0;
+     border:2px none gray !important;
+     color: black;  !important;*/
+     color: #fff  !important;
+     text-decoration:none;
+}
+.ButtonLogin {
+     padding: 0; /* v. 3.0.0.0 */
+     background:[[LOGIN_COLOR_BTNS]] ;
+     color:#fff !important;
+     border-color:[[LOGIN_COLOR_BTNS]];
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.1s ease-in-out;
+     transition: background 0.1s ease-in-out;
+}
+.ButtonLogin:focus, .ButtonLogin:hover, .ButtonLogin:active {
+    background:#6c757d !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+
+/* Buttons with BG and HOVER
+cinza escuro */
+.ButtonDark {
+    padding: 0; /* v. 3.0.0.0 */
+    background:[[COLOR_DARK]] !important;
+    color:#fff !important;
+    border-color:[[COLOR_BORDER_DARK]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonDark:focus, .ButtonDark:hover, .ButtonDark:active{
+    background:[[COLOR_HOVER_DARK]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+/* vermelho */
+.ButtonRed {
+  padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+  background:[[COLOR_RED]] !important;
+  color:#fff !important;
+  border-color:[[COLOR_BORDER_RED]];
+  [[BTN_BORDER_ROUNDED]]
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+.ButtonRed:focus, .ButtonRed:hover, .ButtonRed:active {
+  background:[[COLOR_HOVER_RED]] !important;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px #E0E0E0;
+  border:2px none gray !important;
+  color: #FFF !important;
+  text-decoration:none;
+}
+/* verde */
+.ButtonGreen{
+  padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+  background:[[COLOR_GREEN]] !important;
+  color:#fff !important;
+  border-color:[[COLOR_BORDER_GREEN]];
+  [[BTN_BORDER_ROUNDED]]
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+}
+.ButtonGreen:focus, .ButtonGreen:hover, .ButtonGreen:active {
+  background:[[COLOR_HOVER_GREEN]] !important;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px #E0E0E0;
+  border:2px none gray !important;
+  color: #000 !important;
+  text-decoration:none;
+}
+/* azul */
+.ButtonBlue {
+    padding: 0; /* v. 3.0.0.0 */
+    background: [[COLOR_BLUE]] !important;
+    color:#fff; /*!important;*/
+    border-color:[[COLOR_BORDER_BLUE]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+}
+.ButtonBlue:focus, .ButtonBlue:hover, .ButtonBlue:active {
+    background:[[COLOR_HOVER_BLUE]] !important;
+    font-weight: bold;
+    /*box-shadow: 2px 2px 5px #E0E0E0;*/
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+/* azul escuro */
+.ButtonBlueDark{
+     padding: 0; /* v. 3.0.0.0 */
+     background: [[COLOR_BLUEDARK]] !important;
+     color:#fff !important;
+     border-color:[[COLOR_BORDER_BLUEDARK]];
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.5s ease-in-out;
+     transition: background 0.5s ease-in-out;
+}
+.ButtonBlueDark:focus, .ButtonBlueDark:hover, .ButtonBlueDark:active{
+    background:[[COLOR_HOVER_BLUEDARK]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+/* branco */
+.ButtonWhite{
+    padding: 0; /* v. 3.0.0.0 */
+    background:#FFFFFF !important;
+    /*color:#000 !important;*/
+    border-color:#FFFFFF;
+    border: 0px ;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonWhite:focus, .ButtonWhite:hover, .ButtonWhite:active{
+    background:#FFFFFF  !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px gray;
+    border:2px none gray ;
+    /*color:#000 !important;*/
+    text-decoration:none;
+}
+/* laranja */
+.ButtonOrange {
+    padding: 0; /* v. 3.0.0.0 */
+    background:[[COLOR_ORANGE]] !important;
+    color:#fff !important;
+    border-color:[[COLOR_BORDER_ORANGE]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonOrange:focus, .ButtonOrange:hover, .ButtonOrange:active{
+    background:[[COLOR_HOVER_ORANGE]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+/* cinza */
+.ButtonGray{
+    padding: 0; /* v. 3.0.0.0 */
+    background:[[COLOR_GRAY]] !important;
+    color:#fff !important;
+    border-color:[[COLOR_BORDER_GRAY]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonGray:focus, .ButtonGray:hover, .ButtonGray:active{
+    background:[[COLOR_HOVER_GRAY]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+/* silver  */
+.ButtonSilver{
+    background:[[COLOR_SILVER]] !important;
+    /*color:#fff !important;*/
+    border-color:[[COLOR_BORDER_SILVER]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonSilver:focus, .ButtonSilver:hover, .ButtonSilver:active {
+    background:[[COLOR_HOVER_SILVER]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    /*color: #000 !important;*/
+    text-decoration:none;
+}
+/* v. 4.0.0.0
+/* purple  */
+.ButtonPurple{
+    background:[[COLOR_PURPLE]] !important;
+    color:#fff !important;
+    border-color:[[COLOR_BORDER_PURPLE]];
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonPurple:focus, .ButtonPurple:hover, .ButtonPurple:active {
+    background:[[COLOR_HOVER_PURPLE]] !important;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px #E0E0E0;
+    border:2px none gray !important;
+    color: #000 !important;
+    text-decoration:none;
+}
+/*
+Buttons without BG and HOVER. Ex: Action Buttons on CRUD MODEL 3
+cinza escuro */
+.ButtonDarkNoBg {
+    padding: 0; /* v. 3.0.0.0 */
+    color:[[COLOR_DARK]] !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+/* vermelho */
+.ButtonRedNoBg {
+  padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+  color:[[COLOR_RED]] !important;
+  [[BTN_BORDER_ROUNDED]]
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+/* verde */
+.ButtonGreenNoBg{
+  padding: 0; /* v. 3.0.0.0 */  /*padding: 0;*/  /* v.  */
+  color:[[COLOR_GREEN]] !important;
+  [[BTN_BORDER_ROUNDED]]
+  -webkit-transition: background 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+/* azul */
+.ButtonBlueNoBg {
+    padding: 0; /* v. 3.0.0.0 */
+    background: [[COLOR_BLUE]] !important;
+    color:[[COLOR_BLUE]] !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out;
+}
+/* azul escuro */
+.ButtonBlueDarkNoBg{
+     padding: 0; /* v. 3.0.0.0 */
+     color:[[COLOR_BLUEDARK]] !important;
+     [[BTN_BORDER_ROUNDED]]
+     -webkit-transition: background 0.5s ease-in-out;
+     transition: color 0.5s ease-in-out;
+}
+/* branco */
+.ButtonWhiteNoBg{
+    padding: 0; /* v. 3.0.0.0 */
+    color:#FFFFFF !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+.ButtonWhiteNoBg:focus, .ButtonWhiteNoBg:hover, .ButtonWhiteNoBg:active{
+    font-weight: bold;
+    color: #000  !important;
+    text-decoration:none;
+}
+/* laranja */
+.ButtonOrangeNoBg {
+    padding: 0; /* v. 3.0.0.0 */
+    color:[[COLOR_ORANGE]] !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+/* cinza */
+.ButtonGrayNoBg{
+    padding: 0; /* v. 3.0.0.0 */
+    color:[[COLOR_GRAY]] !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+/* silver  */
+.ButtonSilverNoBg {
+    color:[[COLOR_SILVER]] !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+.ButtonPurpleNoBg{
+    color:[[COLOR_PURPLE]] !important;
+    [[BTN_BORDER_ROUNDED]]
+    -webkit-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+}
+.ButtonPurpleNoBg:focus  , .ButtonPurpleNoBg:hover  , .ButtonPurpleNoBg:active ,
+.ButtonSilverNoBg:focus  , .ButtonSilverNoBg:hover  , .ButtonSilverNoBg:active ,
+.ButtonGrayNoBg:focus    , .ButtonGrayNoBg:hover    , .ButtonGrayNoBg:active,
+.ButtonOrangeNoBg:focus  , .ButtonOrangeNoBg:hover  , .ButtonOrangeNoBg:active,
+.ButtonBlueDarkNoBg:focus, .ButtonBlueDarkNoBg:hover, .ButtonBlueDarkNoBg:active,
+.ButtonBlueNoBg:focus    , .ButtonBlueNoBg:hover    , .ButtonBlueNoBg:active ,
+.ButtonGreenNoBg:focus   , .ButtonGreenNoBg:hover   , .ButtonGreenNoBg:active ,
+.ButtonDarkNoBg:focus    , .ButtonDarkNoBg:hover    , .ButtonDarkNoBg:active,
+.ButtonRedNoBg:focus     , .ButtonRedNoBg:hover     , .ButtonRedNoBg:active {
+  font-weight: bold;
+  color: #000 !important;
+  text-decoration:none;
+}
+
+.x-btn-inner-default-medium{
+    padding: 0px;
+}
+/* v. 4.0.0.0
+para botoes branco ( icones )dos CRUDs*/
+.font-black { color: black; }
+.font-white { color: white; }
+/* v. 4.0.0.0
+exclusivo para OVER dos botões */
+.btn-font-blue .x-btn-inner { color: inherit !important; }
+.btn-font-blue:hover { color: white !important; }
+.btn-font-blue:focus { color: white !important; }
+.btn-font-blue{ color: [[COLOR_BLUE]] !important; }
+.btn-font-red .x-btn-inner { color: inherit !important; }
+.btn-font-red:hover { color: white !important; }
+.btn-font-red:focus { color: white !important; }
+.btn-font-red{ color: [[COLOR_RED]] !important; }
+.btn-font-green .x-btn-inner { color: inherit !important; }
+.btn-font-green:hover { color: white !important; }
+.btn-font-green:focus { color: white !important; }
+.btn-font-green{ color: [[COLOR_GREEN]] !important; }
+.btn-font-orange .x-btn-inner { color: inherit !important; }
+.btn-font-orange:hover { color: white !important; }
+.btn-font-orange:focus { color: white !important; }
+.btn-font-orange{ color: [[COLOR_ORANGE]] !important; }
+.btn-font-gray .x-btn-inner { color: inherit !important; }
+.btn-font-gray:hover { color: white !important; }
+.btn-font-gray:focus { color: white !important; }
+.btn-font-gray{ color: [[COLOR_GRAY]] !important; }
+.btn-font-silver .x-btn-inner { color: inherit !important; }
+.btn-font-silver:hover { color: white !important; }
+.btn-font-silver:focus { color: white !important; }
+.btn-font-silver{ color: [[COLOR_SILVER]] !important; }
+.btn-font-black .x-btn-inner { color: inherit !important; }
+.btn-font-black:hover { color: white !important; }
+.btn-font-black:focus { color: white !important; }
+.btn-font-black{ color: #000 !important; }
+.btn-font-white .x-btn-inner { color: inherit !important; }
+.btn-font-white:hover { color: white !important; }
+.btn-font-white:focus { color: white !important; }
+.btn-font-white{ color: white !important; }
+.btn-font-purple .x-btn-inner { color: inherit !important; }
+.btn-font-purple:hover { color: white !important; }
+.btn-font-purple:focus { color: white !important; }
+.btn-font-purple{ color: [[COLOR_PURPLE]] !important; }
+/* OutLine Buttons
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+/* v. 4.0.0.0 */
+.ButtonOutline  { /* // v. 4.0.0.0 */
+    padding: 0; /* v. 3.0.0.0 */
+    border: none;
+    /*color: white !important ;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* transition-duration: 0.2s; */
+    -webkit-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 0;
+}
+.ButtonRound {
+    /*border-radius: .30em !important;*/
+    border-radius: [[BTN_BORDER_ROUNDED]] !important;
+}
+/* outline blue buttons */
+.ButtonOutlineBlue {
+    background-color: white;
+    /*color: [[COLOR_BLUE]] ;*/ /* v. 4.0.0.0 */
+    border: 2px solid [[COLOR_BLUE]];
+}
+.ButtonOutlineBlue:focus, .ButtonOutlineBlue:hover {
+    background:[[COLOR_HOVER_BLUE]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/ /* v. 4.0.0.0 */
+    text-decoration:none;
+    border: 2px solid [[COLOR_BLUE]];
+}
+.ButtonOutlineBlueShadow ButtonOutlineBlueShadow:focus, .ButtonOutlineBlueShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* red buttons */
+.ButtonOutlineRed {
+    background-color: white;
+    color: black ;
+    border: 2px solid [[COLOR_RED]];
+}
+.ButtonOutlineRed:focus, .ButtonOutlineRed:hover {
+    background:[[COLOR_HOVER_RED]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_RED]];
+}
+.ButtonOutlineRedShadow ButtonOutlineRedShadow:focus, .ButtonOutlineRedShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* outline blue dark buttons */
+.ButtonOutlineBluedark {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_BLUEDARK]];
+}
+.ButtonOutlineBluedark:focus, .ButtonOutlineBluedark:hover {
+    background:[[COLOR_HOVER_BLUEDARK]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_BLUEDARK]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineBluedarkShadow ButtonOutlineBluedarkShadow:focus, .ButtonOutlineBluedarkShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* green buttons */
+.ButtonOutlineGreen {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_GREEN]];
+}
+.ButtonOutlineGreen:focus, .ButtonOutlineGreen:hover {
+    background:[[COLOR_HOVER_GREEN]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_GREEN]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineGreenShadow ButtonOutlineGreenShadow:focus, .ButtonOutlineGreenShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* orange buttons */
+.ButtonOutlineOrange {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_ORANGE]];
+}
+.ButtonOutlineOrange:focus, .ButtonOutlineOrange:hover {
+    background:[[COLOR_HOVER_ORANGE]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_ORANGE]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineOrangeShadow ButtonOutlineOrangeShadow:focus, .ButtonOutlineOrangeShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* gray buttons */
+.ButtonOutlineGray {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_GRAY]];
+}
+.ButtonOutlineGray:focus, .ButtonOutlineGray:hover {
+    background:[[COLOR_HOVER_GRAY]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_GRAY]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineGrayShadow ButtonOutlineGrayShadow:focus, .ButtonOutlineGrayShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* silver buttons */
+.ButtonOutlineSilver {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_SILVER]];
+}
+.ButtonOutlineSilver:focus, .ButtonOutlineSilver:hover {
+    background:[[COLOR_HOVER_SILVER]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_SILVER]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineSilverShadow ButtonOutlineSilverShadow:focus, .ButtonOutlineSilverShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* outline dark buttons */
+.ButtonOutlineDark {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_DARK]];
+}
+.ButtonOutlineDark:focus, .ButtonOutlineDark:hover {
+    background:[[COLOR_HOVER_DARK]] !important;
+    /*x-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[COLOR_DARK]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineDarkShadow ButtonOutlineDarkShadow:focus, .ButtonOutlineDarkShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* outline THEME CRUD buttons */
+.ButtonOutlineThemeCrud {
+    background-color: white;
+    color: black;
+    border: 2px solid [[BUTTON_COLOR_CRUD]];
+}
+.ButtonOutlineThemeCrud:focus, .ButtonOutlineThemeCrud:hover {
+    background:[[BUTTON_COLOR_CRUD]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[BUTTON_COLOR_CRUD]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlineThemeCrudShadow ButtonOutlineThemeCrudShadow:focus, .ButtonOutlineThemeCrudShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* outline PURPLE buttons */
+.ButtonOutlinePurple {
+    background-color: white;
+    color: black;
+    border: 2px solid [[COLOR_PURPLE]];
+}
+.ButtonOutlinePurple:focus, .ButtonOutlinePurple:hover {
+    background:[[HOVER_COLOR_PURPLE]] !important;
+    /*box-shadow: 2px 2px 5px #E0E0E0;
+    color: #fff !important;*/
+    text-decoration:none;
+    border: 2px solid [[HOVER_COLOR_PURPLE]]; /* v. 3.0.0.0 */
+}
+.ButtonOutlinePurpleShadow ButtonOutlinePurpleShadow:focus, .ButtonOutlinePurpleShadow:hover {
+    box-shadow: 2px 2px 5px #E0E0E0;
+}
+/* v. 4.0.0.0
+Progress Bar
+*/
+.progress-xs {
+    height: 7px;
+}
+.progress {
+    box-shadow: none;
+    border-radius: 1px;
+}
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 10%);
+}
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .6s ease;
+}
+.progress-bar-danger {
+    background-color: [[COLOR_RED]];
+}
+/*
+// sweet alert
+*/
+.swal2-modal .swal2-spacer {
+    height: 0px !important;
+}
+/*
+// Field Set / Html / Grid Borders
+*/
+.x-panel-default-outer-border-rl{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.x-panel-default-outer-border-rbl{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.x-panel-default-outer-border-trl {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.x-html-editor-container {
+    border: none;
+}
+.x-fieldset {
+    border-top: none !important;
+}
+.x-fieldset-default {
+    border: none;
+    background: none;
+}
+/*
+// Lista de Produtos
+*/
+.img-size-32{
+      height: auto;
+      width: 32px;
+}
+.img-circle{
+    border-radius: 50%;
+}
+
+
+/* ICONES FONTAWESOME NOS EDITs ( nao implementei pro mobile - outro tema )
+---------------------------------------------------------------------------------------------------------------------------------------
+fonte: fórum
+adaptação: Flavio Motta
+*/
+
+.inputWithIcon input[type="text"] {
+  padding-left: 40px ;
+}
+.inputWithIcon {
+  position: relative ;
+}
+.inputWithIcon i {
+  position: absolute ;
+  left: 0px ;
+  top: 0px ;
+  padding: 6px 8px ;*
+  vertical-align: middle;
+  width: 27px;
+  height: 40px;
+  color: #aaa ;
+}
+.inputWithIcon.inputIconBg i {
+  background-color: #fff; /*#aaa ;*/
+  color: silver ;
+  padding: 14px 8px ; /* v. 4.0.0.0 */
+  width: 30px;
+  height: 40px;
+
+  [[INPUTICON_BORDER_ROUNDED]]
+
+  border-left: 1px solid #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  border-right: 0px solid #d0d0d0;
+  z-index: 1000;
+}
+.inputWithIconFocus input[type="text"] {
+  padding-left: 40px ;
+}
+.inputWithIconFocus {
+  position: relative ;
+}
+.inputWithIconFocus i {
+  position: absolute ;
+  left: 0px ;
+  top: 0px ;
+  padding: 6px 8px ;*
+  vertical-align: middle;
+  width: 27px;
+  height: 40px;
+  color: #aaa ;
+}
+.inputWithIconFocus.inputIconBg i {
+  background-color: #fff; /*#aaa ;*/
+  color: silver ;
+  padding: 14px 8px ; /* v. 4.0.0.0 */
+  width: 30px;
+  height: 40px;
+
+  [[INPUTICON_BORDER_ROUNDED]]
+
+  border-left: 1px solid [[BUTTON_COLOR_CRUD]];/*rgba(81, 203, 238, 1);*/
+  border-top: 1px solid [[BUTTON_COLOR_CRUD]];/*rgba(81, 203, 238, 1);*/
+  border-bottom: 1px solid [[BUTTON_COLOR_CRUD]];/*rgba(81, 203, 238, 1);*/
+  border-right: 0px solid #d0d0d0;
+
+  z-index: 1000;
+}
+/* RTL // v. 3.1.0.63*/
+.inputWithIcon-rtl input[type="text"] {
+  padding-right: 40px ;
+  text-align: right;
+}
+.inputWithIcon-rtl {
+  position: relative ;
+}
+.inputWithIcon-rtl i {
+  position: absolute ;
+  left: 0px ;
+  top: 0px ;
+  padding: 6px 8px ;*
+  vertical-align: middle;
+  width: 27px;
+  height: 40px;
+  color: #aaa ;
+}
+.inputWithIcon-rtl.inputIconBg-rtl i {
+  background-color: #fff; /*#aaa ;*/
+  color: silver ;
+  padding: 14px 8px ; /* v. 4.0.0.0 */
+  width: 30px;
+  height: 40px;
+
+  [[INPUTICON_BORDER_ROUNDED]]
+
+  border-left: 0px solid #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+  z-index: 1000;
+}
+.inputWithIconFocus-rtl input[type="text"] {
+  padding-right: 40px ;
+  text-align: right;
+}
+.inputWithIconFocus-rtl {
+  position: relative ;
+}
+.inputWithIconFocus-rtl i {
+  position: absolute ;
+  left: 0px ;
+  top: 0px ;
+  padding: 6px 8px ;*
+  vertical-align: middle;
+  width: 27px;
+  height: 40px;
+  color: #aaa ;
+}
+.inputWithIconFocus-rtl.inputIconBg-rtl i {
+  background-color: #fff; /*#aaa ;*/
+  color: silver ;
+  padding: 14px 8px ; /* v. 4.0.0.0 */
+  width: 30px;
+  height: 40px;
+
+  [[INPUTICON_BORDER_ROUNDED]]
+
+  border-left: 0px solid [[BUTTON_COLOR_CRUD]];/*rgba(81, 203, 238, 1);*/
+  border-top: 1px solid [[BUTTON_COLOR_CRUD]];/*rgba(81, 203, 238, 1);*/
+  border-bottom: 1px solid [[BUTTON_COLOR_CRUD]];/*rgba(81, 203, 238, 1);*/
+  border-right: 1px solid #d0d0d0;
+
+  z-index: 1000;
+}
+
+/* center */
+.center-div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Button Floating
+ ---------------------------------------------------------------------------------------------------------------------------------- */
+.fab{
+    position: fixed;
+    bottom:10px;
+    right:10px;
+}
+
+.fab button{
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 30px;
+    background-color: [[BUTTON_COLOR_CRUD_HOVER]]; /*#cb60b3;*/
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+    font-size: 24px;
+    color: white;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+.fab button:focus{
+    outline: none;
+}
+.fab button.main{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: [[BUTTON_COLOR_CRUD]]; /*#5b19b7;*/
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+}
+.fab button.main:before{
+    content: '⋀';
+}
+.fab ul{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    padding:0;
+    padding-right:5px;
+    margin:0;
+    list-style:none;
+    z-index:10;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+.fab ul li{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: -10%;
+    opacity: 0;
+    -webkit-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+.fab ul li label{
+    margin-right:10px;
+    white-space: nowrap;
+    display: block;
+    margin-top: 10px;
+    padding: 5px 8px;
+    background-color: rgba(0,0,0,0);
+    /*box-shadow: 0 1px 3px rgba(0,0,0,.2);*/
+    border-radius:0px;
+    border:0px;
+    border-color:transparent;
+    height: 18px;
+    font-size: 16px;
+    pointer-events: none;
+    opacity:0;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+.fab.show button.main,
+.fab.show button.main{
+    outline: none;
+    background-color: [[BUTTON_COLOR_CRUD]]; /*#7716ff; */
+    box-shadow: 0 3px 8px rgba(0,0,0,.5);
+}
+.fab.show button.main:before,
+.fab.show button.main:before{
+    content: '⋁';
+}
+.fab.show button.main + ul,
+.fab.show button.main + ul{
+    bottom: 70px;
+}
+.fab.show button.main + ul li,
+.fab.show button.main + ul li{
+    margin-bottom: 10px;
+    opacity: 1;
+}
+.fab.show button.main + ul li:hover label,
+.fab.show button.main + ul li:hover label{
+    opacity: 1;
+}
+
+/* // v. 3.2.0.0
+New RC-Alert warning
+-----------------
+v. 3.2.0.0 */
+.rc-warning-alert {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  border: 2px solid #E8BC52;
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  background: #e8bc5212;
+  line-height:16px;
+  -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-warning-alert i {
+  margin-right: 10px;
+  color: #E8BC52;
+  font-size: 30px;
+}
+.rc-warning-alert .rc-warning-alert-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.rc-warning-alert .rc-warning-alert-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* // v. 3.2.0.0
+  rcsuccess*/
+.rc-success-alert {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  border: 2px solid #155724;
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  background: #d4edda;
+  line-height:16px;
+  -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-success-alert i {
+  margin-right: 10px;
+  color: #155724;
+  font-size: 30px;
+}
+.rc-success-alert .rc-success-alert-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.rc-success-alert .rc-success-alert-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* // v. 3.2.0.0
+rcdanger
+*/
+.rc-danger-alert {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  border: 2px solid #721c24;
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  background: #f8d7da;
+  line-height:16px;
+  -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-danger-alert i {
+  margin-right: 10px;
+  color: #721c24;
+  font-size: 30px;
+}
+.rc-danger-alert .rc-danger-alert-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.rc-danger-alert .rc-danger-alert-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* // v. 3.2.0.0
+  rcalert info
+*/
+.rc-info-alert {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  border: 2px solid #0c5460;
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  background: #d1ecf1;
+  line-height:16px;
+  -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-info-alert i {
+  margin-right: 10px;
+  color: #0c5460;
+  font-size: 30px;
+}
+.rc-info-alert .rc-info-alert-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.rc-info-alert .rc-info-alert-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* // v. 3.2.0.0
+  rcalert themed
+*/
+.rc-themed-alert {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  border: 2px solid [[BUTTON_COLOR_CRUD]];
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  -webkit-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -moz-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -ms-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  -o-border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+  border-radius: [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] [[BORDER_ROUNDED]] !important;
+}
+.rc-themed-alert i {
+  margin-right: 10px;
+  color: [[BUTTON_COLOR_CRUD]];
+  font-size: 30px;
+}
+.rc-themed-alert .rc-themed-alert-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.rc-themed-alert .rc-themed-alert-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* // v. 3.2.0.0
+New rcFeature Tiles
+
+*/
+.feature-tiles a {
+  text-decoration: none;
+  color: inherit;
+}
+.feature-tiles .feature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  border: 2px solid [[BUTTON_COLOR_CRUD]];
+  -webkit-box-shadow: 0 0 3px 0 #ccc;
+          box-shadow: 0 0 3px 0 #ccc;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+.feature-tiles .feature:hover {
+  border: 2px solid #43484D;
+  cursor: pointer;
+}
+.feature-tiles .feature:hover .icon {
+  background: #43484D;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /*background: -webkit-gradient(linear, left top, left bottom, from(#43484D), to(#27292B));
+  background: linear-gradient(to bottom, #43484D 0%, #27292B 100%);*/
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.feature-tiles .feature .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  min-width: 80px;
+  background: [[BUTTON_COLOR_CRUD]];
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /*background: -webkit-gradient(linear, left top, left bottom, from(#43af5c), to(#204e23));
+  background: linear-gradient(to bottom, #155724 0%, #204e23 100%);*/
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.feature-tiles .feature .icon i {
+  color: #fff;
+  font-size: 40px;
+}
+.feature-tiles .feature .description {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+}
+.feature-tiles .feature .description h3 {
+  margin-bottom: 5px;
+  color: #43484D;
+  font-size: 18px;
+  font-weight: bold;
+}
+.feature-tiles .feature .description p {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 14px;
+  color: #666;
+  white-space: normal;
+}
+/* default messages anim by Sherzod and adapted by me :)
+*/
+.x-message-box {
+  -moz-transition: 0.8s ease-in-out;    /* for Firefox 15 */
+  -webkit-transition: 0.8s ease-in-out; /* for Chrome and Safari */
+  transition: 0.8s ease-in-out;
+ }
+ /* // v. 3.2.0.0
+ Keyboard button style
+ */
+rc-kbd {
+    display: inline-block;
+    margin: 0 .1em;
+    padding: .1em .6em;
+    font-family: var(--theme-body-font-family);
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--black-800);
+    text-shadow: 0 1px 0 var(--white);
+    background-color: var(--black-075);
+    border: 1px solid var(--black-300);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px hsla(210,8%,5%,0.15),inset 0 1px 0 0 var(--white);
+    white-space: nowrap;
+}
+.s-prose rc-kbd {
+    display: inline-block;
+    margin: 0 .1em;
+    padding: .1em .6em;
+    font-family: var(--ff-sans);
+    font-size: 11px;
+    line-height: var(--s-prose-line-height);
+    color: var(--black-800);
+    text-shadow: 0 1px 0 var(--white);
+    background-color: var(--black-075);
+    border: 1px solid var(--black-300);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px hsl(210deg 8% 5% / 15%), inset 0 1px 0 0 hsl(0deg 0% 100%);
+    overflow-wrap: break-word;
+}
+/* // v. 3.2.0.0
+dashed block
+*/
+.rc-dashed-block {
+    border-width: 0.142857rem;
+    border-color: rgb(216, 220, 222);
+    border-style: dashed;
+    border-radius: 0.357143rem;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.9;
+    display: block;
+    width: 100%;
+    padding: 1rem 0.714286rem;
+    color: rgb(47, 57, 65);
+    cursor: pointer !important;
+}
+/* // v. 3.2.0.0
+rounded button
+
+*/
+/*
+a.btn, input.btn {
+    text-transform: none;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #FB9218;
+    margin: 0 5px 20px;
+    padding: 6px 18px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    vertical-align: inherit !important;
+    color: white !important;
+    background: #FB9218;
+    letter-spacing: .25px;
+    text-align: center;
+    cursor: pointer;
+    zoom: 1;
+    box-shadow: 0px 5.03704px 8.11514px rgb(7 12 89 / 20%);
+}
+.rc-btn-rounded .btn.btn-primary {
+    background-color: #2193D6;
+    border-color: #2193D6;
+    transition: 0.2s all linear;
+}
+.rc-btn-rounded .btn.btn-primary {
+    margin: 0;
+    padding: 0;
+    display: table;
+    white-space: pre-line;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.rc-btn-rounded  * {
+    box-sizing: border-box;
+}   */
+/* // v. 3.2.0.0
+RTL bootstrap button groups
+
+.rc-btn-group-first-rtl
+ .rc-btn-group-last-rtl
+
+*/
+/*[[BS-BTNGROUP-RTL]]*/
+/*.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.btn-group>.btn-group:not(:first-child), .btn-group>.btn:not(:first-child) {
+    margin-left: -1px;
+}
+*/
+.btn-group-rtl>.btn-group-rtl:not(:last-child)>.btn, .btn-group-rtl>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4;
+    border-bottom-right-radius: 4;
+}
+
+.btn-group-rtl>.btn-group-rtl:not(:first-child)>.btn, .btn-group-rtl>.btn:not(:first-child) {
+    border-top-left-radius: 4;
+    border-bottom-left-radius: 4;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+/*.btn-group-rtl>.btn-group-rtl:not(:first-child), .btn-group-rtl>.btn:not(:first-child) {
+    margin-left: -3px;
+} */
+
+
+/*
+.rc-btn-group-first-rtl .btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 4 !important;
+    border-bottom-right-radius: 4 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.rc-btn-group-last-rtl .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:first-child) {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 4 !important;
+    border-bottom-left-radius: 4 !important;
+    padding:0px 2px 0px 2px;
+}
+   */
+/* .input-group {
+   direction:rtl !important;
+}
+
+.input-group-btn:last-child >.btn {
+   border-top-right-radius: 0 !important;
+   border-bottom-right-radius: 0 !important;
+   border-top-left-radius: 4px !important;
+   border-bottom-left-radius: 4px !important;
+   border-right-width:0px !important;
+   border-left-width:1px !important;
+
+}
+
+.input-group .form-control:first-child {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+
+ }
+    */
+
+/* ------------- direct chat ---------------- */
+.direct-chat .card-body {
+  overflow-x: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.direct-chat.chat-pane-open .direct-chat-contacts {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.direct-chat.timestamp-light .direct-chat-timestamp {
+  color: #30465f;
+}
+
+.direct-chat.timestamp-dark .direct-chat-timestamp {
+  color: #cccccc;
+}
+
+.direct-chat-messages {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  height: 250px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.direct-chat-msg,
+.direct-chat-text {
+  display: block;
+}
+
+.direct-chat-msg {
+  margin-bottom: 10px;
+}
+
+.direct-chat-msg::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.direct-chat-messages,
+.direct-chat-contacts {
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+.direct-chat-text {
+  border-radius: 0.3rem;
+  background-color: #d2d6de;
+  border: 1px solid #d2d6de;
+  color: #444;
+  margin: 5px 0 0 50px;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.direct-chat-text::after, .direct-chat-text::before {
+  border: solid transparent;
+  border-right-color: #d2d6de;
+  content: " ";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 100%;
+  top: 15px;
+  width: 0;
+}
+
+.direct-chat-text::after {
+  border-width: 5px;
+  margin-top: -5px;
+}
+
+.direct-chat-text::before {
+  border-width: 6px;
+  margin-top: -6px;
+}
+
+.right .direct-chat-text {
+  margin-left: 0;
+  margin-right: 50px;
+}
+
+.right .direct-chat-text::after, .right .direct-chat-text::before {
+  border-left-color: #d2d6de;
+  border-right-color: transparent;
+  left: 100%;
+  right: auto;
+}
+
+.direct-chat-img {
+  border-radius: 50%;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
+
+.right .direct-chat-img {
+  float: right;
+}
+
+.direct-chat-infos {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 2px;
+}
+
+.direct-chat-name {
+  font-weight: 600;
+}
+
+.direct-chat-timestamp {
+  color: #697582;
+}
+
+.direct-chat-contacts-open .direct-chat-contacts {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.direct-chat-contacts {
+  -webkit-transform: translate(101%, 0);
+  transform: translate(101%, 0);
+  background-color: #343a40;
+  bottom: 0;
+  color: #fff;
+  height: 250px;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.direct-chat-contacts-light {
+  background-color: #f8f9fa;
+}
+
+.direct-chat-contacts-light .contacts-list-name {
+  color: #495057;
+}
+
+.direct-chat-contacts-light .contacts-list-date {
+  color: #6c757d;
+}
+
+.direct-chat-contacts-light .contacts-list-msg {
+  color: #545b62;
+}
+/* ------------- direct chat ---------------- */
+
+/*
+// v. 3.2.0.2 - hint
+tooltip
+
+*/
+.x-tip-default{
+    /*background-color: [[BUTTON_COLOR_CRUD_HOVER]];*/
+    font-size: 1.2em;
+    /*font-weight: bold;*/
+}
+.x-tip-default {
+    -webkit-border-radius: [[BORDER_ROUNDED]];
+    -moz-border-radius: [[BORDER_ROUNDED]];
+    -ms-border-radius: [[BORDER_ROUNDED]];
+    -o-border-radius: [[BORDER_ROUNDED]];
+    border-radius: [[BORDER_ROUNDED]];
+    padding: 0px 5px 8px 8px;
+    border-width: 1px;
+    border-style: solid;
+    /*background-color: [[BUTTON_COLOR_CRUD_HOVER]];*/
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+.x-tip-header-default {
+    padding: 5px 5px 5px 5px;
+}
+.x-tip-header-title-default {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 0px 0px 5px;
+}
+.x-tip-anchor{ color:#000; }
+/* bg type 1 */
+.rc-tip-gray        { background: [[COLOR_GRAY]]; }
+.rc-tip-info        { background: [[COLOR_BLUE]]; }
+.rc-tip-warning     { background: [[COLOR_ORANGE]]; }
+.rc-tip-danger      { background: [[COLOR_RED]]; }
+.rc-tip-success     { background: [[COLOR_GREEN]]; }
+.rc-tip-text-white .x-tip-body-default { color:#fff;}
+.rc-tip-text-black .x-tip-body-default { color:#000;}
+.rc-tip-title-text-black .x-tip-header-title-default { color: #000; }
+.rc-tip-title-text-white .x-tip-header-title-default { color: #fff; }
+/* bg type 2 */
+.rc-tip-info-light        { background: #d1ecf1; border-color: #bee5eb;}
+.rc-tip-warning-light     { background: #fff3cd; border-color: #ffeeba;}
+.rc-tip-danger-light      { background: #f8d7da; border-color: #f5c6cb;}
+.rc-tip-success-light     { background: #d4edda; border-color: #c3e6cb;}
+.rc-tip-text-info-light    .x-tip-body-default { color: #0c5460; }
+.rc-tip-text-warning-light .x-tip-body-default { color: #856404; }
+.rc-tip-text-danger-light  .x-tip-body-default { color: #721c24; }
+.rc-tip-text-success-light .x-tip-body-default { color: #155724; }
+.rc-tip-title-info-light    .x-tip-header-title-default { color: #0c5460; }
+.rc-tip-title-warning-light .x-tip-header-title-default { color: #856404; }
+.rc-tip-title-danger-light  .x-tip-header-title-default { color: #721c24; }
+.rc-tip-title-success-light .x-tip-header-title-default { color: #155724; }
+
+
+/* v. 4.0.0.0
+[PT]
+Aqui será adicionado suas definições CSS específicas( servermodule_customcss_userdef.css )
+[EN]
+Here it will be added your specific CSS definitions( servermodule_customcss_userdef.css )
+*/
+
+

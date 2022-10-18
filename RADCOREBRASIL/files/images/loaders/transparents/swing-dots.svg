@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Flevix.com  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="150px" height="150px" viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+
+<circle fill="#FBB040" cx="24.667" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin="0"
+                  values="0,20;0,-20;0,20;"
+                  repeatCount="indefinite"/>
+</circle>
+<circle fill="#F7941E" cx="40.667" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin=".05"
+                  values="0,25;0,-25;0,25;"
+                  repeatCount="indefinite"/>
+</circle>
+<circle fill="#F15A29" cx="56" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin=".1"
+                  values="0,30;0,-30;0,30;"
+                  repeatCount="indefinite"/>
+</circle>
+<circle fill="#EF4136" cx="73" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin=".15"
+                  values="0,35;0,-35;0,35;"
+                  repeatCount="indefinite"/>
+</circle>
+<circle fill="#F15A29" cx="90.667" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin=".20"
+                  values="0,30;0,-30;0,30;"
+                  repeatCount="indefinite"/>
+</circle>
+<circle fill="#F7941E" cx="108" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin=".25"
+                  values="0,25;0,-25;0,25;"
+                  repeatCount="indefinite"/>
+</circle>
+<circle fill="#FBB040" cx="125" cy="72.333" r="5.333">
+	<animateTransform attributeName="transform"
+                  attributeType="XML"
+                  type="translate"
+                  dur="1.75s"
+                  begin=".30"
+                  values="0,20;0,-20;0,20;"
+                  repeatCount="indefinite"/>
+</circle>
+</svg>

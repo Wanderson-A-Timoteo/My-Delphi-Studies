@@ -1,0 +1,19 @@
+RADCOREBRASIL.exe: 000005F8: 09:08:10 []:>--------------------------------------------------------------<
+RADCOREBRASIL.exe: 000005F8: 09:08:10 [Tsm]:Server First Init.
+RADCOREBRASIL.exe: 000005F8: 09:08:10 [Tsm]:Start Path = D:\Projetos\radcorebrasil\
+RADCOREBRASIL.exe: 000005F8: 09:08:10 [Tsm]:Starting HTTP Server on Port: 8075...
+RADCOREBRASIL.exe: 000005F8: 09:08:10 [Tsm]:HTTP Server Started on Port: 8075
+RADCOREBRASIL.exe: 00002CF0: 09:08:34 [HandleFileRequest[127.0.0.1]]:File not found: D:\Projetos\radcorebrasil\files\images\loaders\files\images\loaders\dash-circle-2.svg
+RADCOREBRASIL.exe: 000005F8: 09:17:11 [Tsm]:Shutting Down Server.
+RADCOREBRASIL.exe: 000005F8: 09:17:11 [Tsm]:Access violation at address 00828A3F in module 'RADCOREBRASIL.exe'. Read of address 000001C4
+RADCOREBRASIL.exe: 000005F8: 09:17:11 [Tsm]:Stopping HTTP Server.
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [Tsm]:HTTP Server Stopped.
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [TUniGUISessionManager]:Terminating Session manager.
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [TUniGUISessionManager]:Stopping Cache Eraser...
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [TUniGUISessionManager]:Cache Eraser Stopped.
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [127.0.0.1]:>>> mm.UniGUIMainModuleDestroy
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [TUniGUISessionManager]:Destroying Worker Threads.
+RADCOREBRASIL.exe: 000005F8: 09:17:12 [TUniGUISessionManager]:Session manager terminated.
+RADCOREBRASIL.exe: 000005F8: 09:17:13 [Tsm]:Server Shutdown Completed.
+RADCOREBRASIL.exe: 000005F8: 09:17:13 []:<-------------------------------------------------------------->
+RADCOREBRASIL.exe: 000005F8: 09:17:13 [Terminated]:Exit Code: 0
