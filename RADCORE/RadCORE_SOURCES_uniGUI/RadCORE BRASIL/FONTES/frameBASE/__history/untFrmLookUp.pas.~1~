@@ -1,0 +1,422 @@
+﻿unit untFrmLookUp; // v. 3.2.0.7
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIForm, uniGUIBaseClasses, uniPanel, uniBasicGrid,
+
+  uniSpeedButton,
+
+  uniDBGrid, uniEdit, uniLabel, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, uniButton, uniBitBtn, uniTimer;
+
+type
+  TfrmLookUp = class(TUniForm)
+    timerClose: TUniTimer;
+    rcBlock10: TUniContainerPanel;
+    edSearchCRUD1: TUniEdit;
+    UniLabelv1: TUniLabel;
+    rcBlock40: TUniContainerPanel;
+    dbgSearchCRUD: TUniDBGrid;
+    rcBlock20: TUniContainerPanel;
+    btnLkpSearch: TUniBitBtn;
+    ed_PK: TUniEdit;
+    rcBlock30: TUniContainerPanel;
+    btnLkpClear: TUniBitBtn;
+    paTotreg: TUniContainerPanel;
+    labTotReg: TUniLabel;
+    procedure dbgSearchCRUDDrawColumnCell(Sender: TObject; ACol, ARow: Integer;
+      Column: TUniDBGridColumn; Attribs: TUniCellAttribs);
+    procedure btnLkpSearchClick(Sender: TObject);
+    procedure UniFormShow(Sender: TObject);
+    procedure dbgSearchCRUDDblClick(Sender: TObject);
+    procedure edSearchCRUD1KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure UniFormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure btnLkpClearClick(Sender: TObject);
+    procedure UniFormCreate(Sender: TObject);
+    procedure timerCloseTimer(Sender: TObject);
+    procedure dbgSearchCRUDColumnSort(Column: TUniDBGridColumn;
+      Direction: Boolean);
+    procedure btnCloseFormClick(Sender: TObject);
+    procedure UniFormReady(Sender: TObject);
+    procedure UniFormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+    cMSG_BUGERROR_RECORDS_SELECTION,
+    cMSG_RECORDS_FOUND : string ;
+
+    cFormModal : TUniForm;
+
+    procedure SelectRecordInGrid;
+  end;
+
+
+function frmLookUp: TfrmLookUp;
+
+implementation
+
+{$R *.dfm}
+
+uses
+  MainModule, uniGUIApplication, untdm_rc, str_func, //untDM_LOOKUPs,
+  uconsts, Main, mkm_layout, mkm_func_web, mkm_anim;
+
+function frmLookUp: TfrmLookUp;
+begin
+  Result := TfrmLookUp(mm.GetFormInstance(TfrmLookUp));
+end;
+
+procedure TfrmLookUp.btnLkpSearchClick(Sender: TObject);
+var
+   cTemp,
+   cWhereAnd,
+   cSearchFieldList,
+   cSearchFieldListSQL,
+   cSqlWhere ,
+   cSqlWherePesqExtra,
+   cSqlOrder : String;
+begin
+     // essas GLOBAIS sao informadas na chamada do LOOKUP
+     // pois pode haver pesquisas com FILTROS pré-estabelecidos...
+     cSqlWhere               := mm.varC_Where;
+     cSqlOrder               := mm.varC_Order;
+     cSqlWherePesqExtra      := mm.varC_WhereExtra ;
+
+     // caso tenha vindo de um edLKP____PesqExtra, limpa a variavel
+     mm.varC_WhereExtra := '';
+
+     cSearchFieldList    := ReverseStr( mm.varC_Search_Fields );
+     cSearchFieldList    := Trim( Copy( cSearchFieldList , Pos( ';', cSearchFieldList ) , 2000 ) );
+     cSearchFieldList    := ReverseStr( cSearchFieldList );
+
+     cSearchFieldListSQL := '';
+
+     // criar lista de pesquisa
+     cSearchFieldListSQL := '';
+
+     if edSearchCRUD1.Text <> '' then
+     begin
+
+        cSearchFieldListSQL := cSearchFieldListSQL + '( ' ;
+
+        while Length( cSearchFieldList ) > 0 do
+        begin
+             cTemp := Copy( cSearchFieldList, 1, Pos( ';' , cSearchFieldList) - 1 );
+
+              // feedback by SAMET
+             if pos( ' as ' , ansilowercase( cTemp ) ) > 0 then
+             begin
+                cTemp := Copy( cTemp, 1, Pos ( ' as ' , ansilowercase( cSearchFieldList ) ) - 1 );
+             end;
+
+             cSearchFieldListSQL := cSearchFieldListSQL + '( ' +
+                                        cTemp + //Copy( cSearchFieldList, 1, Pos( ';' , cSearchFieldList) - 1 ) +
+                                        ' LIKE ' + QuotedStr( '%' + edSearchCRUD1.Text + '%' ) + ' ) OR ';
+
+             //remove o ultimo campo adicionado...
+             cSearchFieldList    := Trim( Copy( cSearchFieldList , Pos( ';', cSearchFieldList ) + 1, 2000 ) ) ;
+
+             //caso haja alguma má formação da string na chamada
+             //tentar encerrar o processo...
+             if Pos( ';' , cSearchFieldList ) = 0 then
+                cSearchFieldList := '';
+
+             //retira o ultimo ' OR '
+             if cSearchFieldList = '' then
+                cSearchFieldListSQL := Copy( cSearchFieldListSQL , 1 , Length( cSearchFieldListSQL ) - 3 );
+        end;
+
+        cSearchFieldListSQL := cSearchFieldListSQL + ' )' ;
+     end;
+
+     cWhereAnd               := '';
+
+     dm_rc.sqlLookUpSearch.Close;
+     dm_rc.sqlLookUpSearch.sql.Text := mm.varC_SQL_Default_LookUps;
+
+     if cSqlWhere <> '' then
+     begin
+        if Copy( cSqlWhere, 1, 1 ) <> ' ' then
+           cSqlWhere := ' ' + cSqlWhere;
+
+        dm_rc.sqlLookUpSearch.sql.Text := dm_rc.sqlLookUpSearch.sql.Text + cSqlWhere ;
+        cWhereAnd := ' AND '
+     end
+     else
+     begin
+        dm_rc.sqlLookUpSearch.sql.Text := dm_rc.sqlLookUpSearch.sql.Text ;
+        cWhereAnd := ' WHERE '
+     end;
+
+     if edSearchCRUD1.Text <> '' then
+     begin
+        dm_rc.sqlLookUpSearch.sql.Text := dm_rc.sqlLookUpSearch.sql.Text + cWhereAnd + cSearchFieldListSQL;
+     end;
+
+     dm_rc.sqlLookUpSearch.sql.Text := dm_rc.sqlLookUpSearch.sql.Text + cSqlOrder;
+
+     // sugestão para evitar erro com caracteries especiais - Flavio / Osmar 24 05 21
+     dm_rc.sqlLookUpSearch.sql.Text := StrTokenClearSql ( dm_rc.sqlLookUpSearch.sql.Text );
+
+     dm_rc.rc_OpenQuery( dm_rc.sqlLookUpSearch );
+
+     labTotReg.Caption := dm_rc.sqlLookUpSearch.recordcount.ToString + cMSG_RECORDS_FOUND;
+
+     if Self.Tag = 1 then
+     begin
+        if dm_rc.sqlLookUpSearch.RecordCount = 1 then
+        begin
+           SelectRecordInGrid;
+        end;
+     end
+     else
+        // contar quantos campos tem pra ativar ou nao o FORCEFIT
+        // FORCEFIT fica melhor com poucos campos
+        dbgSearchCRUD.ForceFit := ( dbgSearchCRUD.Columns.Count <= 5 );
+
+     Self.Tag := 0;
+end;
+
+procedure TfrmLookUp.dbgSearchCRUDColumnSort(Column: TUniDBGridColumn;
+  Direction: Boolean);
+begin
+  if Column.Sortable then
+  begin
+     mm.varC_Order := ' Order by ' + lowercase(Column.FieldName) + varIIf( Direction, ' ASC', ' DESC') ;
+     btnLkpSearch.Click;
+  end;
+end;
+
+procedure TfrmLookUp.dbgSearchCRUDDblClick(Sender: TObject);
+begin
+     SelectRecordInGrid;
+end;
+
+procedure TfrmLookUp.dbgSearchCRUDDrawColumnCell(Sender: TObject; ACol,
+  ARow: Integer; Column: TUniDBGridColumn; Attribs: TUniCellAttribs);
+begin
+   dm_rc.rc_GridDrawCell( dbgSearchCRUD , ACol, ARow, Column, Attribs ) ;
+end;
+
+procedure TfrmLookUp.edSearchCRUD1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if key = 13 then
+     begin
+          btnLkpSearchClick( self );
+     end;
+end;
+
+procedure TfrmLookUp.SelectRecordInGrid;
+begin
+     if not dbgSearchCRUD.DataSource.DataSet.IsEmpty then
+     begin
+        try
+           mm.varC_Lookup_Code := dbgSearchCRUD.DataSource.DataSet.FieldByName( trim( Copy( mm.varC_Search_Fields,
+                                                                                Pos(';' + ed_PK.Text , mm.varC_Search_Fields) + 1, 50 ) ) ).AsString;
+        except
+              dm_rc.rc_ShowError( cMSG_BUGERROR_RECORDS_SELECTION );
+        end;
+
+        mm.varC_SelectedItem_LookUp := ReverseStr( trim( Copy( mm.varC_Search_Fields, 1, Pos(';' + ed_PK.Text , mm.varC_Search_Fields) - 1 ) ) );
+
+        // caso tenha mais de um campo de exibição, pegar somente o que tem a "descricao" que por padrao fica ANTES do "codigo"( TAB_CODIGO_ID_PREFIXO )
+        //
+        if Pos( ';' , mm.varC_SelectedItem_LookUp ) > 0 then
+           mm.varC_SelectedItem_LookUp := ReverseStr( Copy( mm.varC_SelectedItem_LookUp , 1, Pos( ';' , mm.varC_SelectedItem_LookUp ) - 1 ) )
+        else
+           mm.varC_SelectedItem_LookUp := ReverseStr( mm.varC_SelectedItem_LookUp );
+
+        mm.varC_SelectedItem_LookUp := dbgSearchCRUD.DataSource.DataSet.FieldByName( mm.varC_SelectedItem_LookUp ).AsString;
+     end;
+
+     // caso tenha vindo de um edLKP____PesqExtra
+     mm.varC_WhereExtra := '';
+
+     // limpar globais para evitar conflito em outra pesq. lookup
+     mm.varC_Where := '';
+     mm.varC_Order := '';
+     mm.varC_Search_Fields := '';
+
+     Close;
+end;
+
+procedure TfrmLookUp.timerCloseTimer(Sender: TObject);
+begin
+     mm.varC_Form_Modal := cFormModal ;
+     timerClose.Enabled := false;
+     close;
+end;
+
+procedure TfrmLookUp.btnCloseFormClick(Sender: TObject);
+begin
+     timerClose.Enabled := true;
+     rc_MoveAnimationForm( self,
+                           self.left,
+                           self.left,
+                           self.top,
+                           -self.Height,
+                           400,
+                           0 ) ;
+end;
+
+procedure TfrmLookUp.btnLkpClearClick(Sender: TObject);
+begin
+     mm.varC_Lookup_Code := '';
+     mm.varC_SelectedItem_LookUp := '';
+     dm_rc.sqlLookUpSearch.Close;
+
+     timerClose.Enabled := true;
+     rc_MoveAnimationForm( self,
+                           self.left,
+                           self.left,
+                           self.top,
+                           -self.Height,
+                           400,
+                           0 ) ;
+end;
+
+procedure TfrmLookUp.UniFormCreate(Sender: TObject);
+begin
+  // sort
+  dbgSearchCRUD.ClientEvents.UniEvents.Add(
+       'store.afterCreate=function store.afterCreate(sender)' +
+       '{ sender.setRemoteSort(false);﻿ }'
+  );
+  // translate messages
+  case mm.varLT_Lang of
+
+       ltpt_BR : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'Falha na seleção do registro( rc_LookUpSearch )';
+                   cMSG_RECORDS_FOUND              := ' registro(s) localizado(s)';
+                 end;
+       lten_US   : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'Search record selection failed (rc_LookUpSearch)';
+                   cMSG_RECORDS_FOUND              := ' record(s) found ';
+                 end;
+       ltes_ES   : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION :='Falló la selección del registro de búsqueda (rc_LookUpSearch)';
+                   cMSG_RECORDS_FOUND              := ' registro(s) encontrado ';
+                 end;
+       ltfr_FR   : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'La sélection de l''enregistrement a échoué ( rc_LookUpSearch )';
+                   cMSG_RECORDS_FOUND              := 'enregistrement(s) trouvé(s)';
+                 end;
+       ltde_DE   : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'Datensatzauswahl fehlgeschlagen ( rc_LookUpSearch )';
+                   cMSG_RECORDS_FOUND              := 'Datensatz(e) gefunden';
+                 end;
+       ltit_IT   : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'Selezione record fallita ( rc_LookUpSearch )';
+                   cMSG_RECORDS_FOUND              := 'record(s) trovati';
+                 end;
+       lttr_TR    : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'Kayıt seçimi başarısız( rc_LookUpSearch )';
+                   cMSG_RECORDS_FOUND              := 'kayıt(lar) bulundu';
+                 end;
+       ltru_RU    : begin
+                   cMSG_BUGERROR_RECORDS_SELECTION := 'Ошибка выбора записи поиска (rc_LookUpSearch)';
+                   cMSG_RECORDS_FOUND              := 'найдены записи';
+                 end;
+       ltzn_CH : begin
+
+                 end;
+       ltin_ID : begin
+
+                 end;
+       ltth_TH : begin
+
+                 end;
+       lthi_IN : begin
+
+                 end;
+       ltar_SA    : begin
+
+                 end;
+  end;
+
+  cFormModal := mm.varC_Form_Modal;
+
+  // para formulários, deve-se efetuar o ResizeBlocks
+  rc_RenderLayout( Self, true, true, true );
+end;
+
+procedure TfrmLookUp.UniFormDestroy(Sender: TObject);
+begin
+    // para quando um FORM MODAL estiver ativo, não executar o "dbGridUpdate" no
+    // que estiver "abaixo" do MODAL
+    mm.varC_Form_Modal := nil;
+end;
+
+procedure TfrmLookUp.UniFormReady(Sender: TObject);
+begin
+     Self.Top := ( UniSession.UniApplication.ScreenHeight  div 2 ) - ( self.Height div 2  );
+     dm_rc.rc_ResizeBlocks( Self, true, true );
+end;
+
+procedure TfrmLookUp.UniFormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if Key = 27 then
+     begin
+          // para NAO atualizar o RETORNO
+          mm.varC_Lookup_Code := '_ESC_';
+          mm.varC_SelectedItem_LookUp := '';
+          dm_rc.sqlLookUpSearch.Close;
+
+          SelectRecordInGrid;
+     end;
+end;
+
+procedure TfrmLookUp.UniFormShow(Sender: TObject);
+begin
+  inherited;
+
+  ed_PK.text := mm.varC_Field_PK;
+  Self.Tag   := mm.varC_FrmLookUpTag;
+
+  dm_rc.memGridPK.Open;
+
+  if Self.Tag = 0 then
+  begin
+      Self.Visible := True;
+      Self.Top  := 0;
+
+      rc_MoveAnimationForm( self,
+                            self.left,
+                            self.left,
+                            self.top,
+                            ( UniSession.UniApplication.ScreenHeight  div 2 ) - ( self.Height div 2  ),
+                            400,
+                            1 ) ;
+  end
+  else
+  begin
+    Self.Visible := False;
+    Self.Top  := -1000;
+  end;
+
+  edSearchCRUD1.Clear;
+  mm.varC_Lookup_Code := '';
+  mm.varC_SelectedItem_LookUp := '';
+
+  // para NAO atualizar o RETORNO
+  //
+  mm.varC_Lookup_Code := '_ESC_';
+
+  btnLkpSearch.Click;
+
+  edSearchCRUD1.SetFocus;
+
+  Self.Visible := True;
+end;
+end.

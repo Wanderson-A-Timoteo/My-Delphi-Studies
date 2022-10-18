@@ -1,0 +1,4 @@
+Existe um problema com a versão DELPHI 10.3.1
+
+Lendo alguns artigos, aparentemente, é resolvido aplicando
+os patchs ( 10.3.2 ou superior )

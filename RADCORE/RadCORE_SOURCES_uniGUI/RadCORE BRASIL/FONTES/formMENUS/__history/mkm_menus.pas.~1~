@@ -1,0 +1,327 @@
+﻿unit mkm_menus; // v. 3.2.0.7
+
+interface
+
+uses
+
+    System.SysUtils, System.Math, uconsts;
+
+procedure rc_BuildHTMLMENU( pMenuList : array of string  ) ;
+// v. 3.2.0.6 //closebtn
+procedure rc_BuildMenuItem( var pMenuList     : array of string;
+                            var pSeq          : integer ;
+                            pLevel            : integer;
+                            pItem             : string = '';
+                            pTable            : string = '';
+                            pRestrictionField : string = '';
+                            pForm             : string = '';
+                            pIcon             : string = '';
+                            pModal            : boolean = false ;
+                            pHidden           : boolean = false ;
+                            pAskNewAfterPost  : boolean = false ;
+                            pGenNextID_OnNew  : boolean = false ;
+                            pCloseButton      : boolean = true );
+
+procedure rc_BuildMenuItemPermission( var pMenuList : array of string;
+                                      var pSeq      : integer ;
+                                      var pSeqPerm  : integer;
+                                      pItem         : string );
+
+implementation
+
+
+uses mkm_func_web, MainModule, untdm_rc;
+
+procedure rc_BuildMenuItem( var pMenuList     : array of string;
+                            var pSeq          : integer ;
+                            pLevel            : integer;
+                            pItem             : string ;
+                            pTable            : string ;
+                            pRestrictionField : string;
+                            pForm             : string ;
+                            pIcon             : string;
+                            pModal            : boolean ;
+                            pHidden           : boolean ;
+                            pAskNewAfterPost  : boolean ;
+                            pGenNextID_OnNew  : boolean ;
+                            pCloseButton      : boolean );
+begin
+     try
+        pItem := StringOfChar( ']', pLevel ) + pItem;
+
+        if ( pRestrictionField = '' ) and ( pTable <> '' ) then
+           pRestrictionField := pTable
+        else
+        if ( pRestrictionField = '' ) and ( pForm <> '' ) then
+           pRestrictionField := pForm;
+
+        if pAskNewAfterPost then
+           pSeq := pSeq;
+
+        // v. 3.2.0.4
+        if pLevel = -1 then
+           pItem := '-1';
+
+        pItem := pItem + varIIf( pIcon <> '' , ' ico:' + pIcon, '' ) +
+                         varIIf( pTable <> '', ' tbl:' + pTable, '' ) +
+                         varIIf( pRestrictionField <> '', ' fld:' + pRestrictionField, '' ) +
+                         varIIf( pHidden , ' hide:' , '' ) +
+                         varIIf( pAskNewAfterPost , ' asknew:' , '' ) +
+                         varIIf( pGenNextID_OnNew , ' genid:' , '' ) +
+                         varIIf( not pCloseButton , ' closebtn:' , '' ) +
+                         varIIf( pForm <> '', ' frm:' + varIIF( pModal, 'modal_', '' ) + pForm, '' ) ;
+        pMenuList[ pSeq ] := pItem ;
+        Inc( pSeq );
+     except on e:exception do
+            begin
+                 dm_rc.rc_ShowSweetAlert( 'rc_BuildMenuItem' , 'Item: ' + pItem + '( ' + e.message + ' )', 'error' );
+            end;
+     end;
+end;
+// v. 3.1.0.61
+procedure rc_BuildMenuItemPermission( var pMenuList : array of string; var pSeq : integer ; var pSeqPerm : integer; pItem : string );
+begin
+     //permissions
+     if ( Pos( 'AIED', pItem ) > 0 ) or
+        ( Pos( 'A>', pItem ) > 0 ) or
+        ( Pos( 'H>', pItem ) > 0 ) then
+     begin
+        // translate messages
+        case mm.varLT_Lang of
+
+             ltpt_BR : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Acessar' ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Acessar'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Cadastrar' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Alterar'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Excluir' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Escondido' ; Inc( pSeqPerm );
+                       end;
+             lten_US   : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Access'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Access'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Insert' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Edit'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Delete' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Hidden' ; Inc( pSeqPerm );
+                       end;
+             ltes_ES   : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Acessar'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Acessar'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Cadastrar' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Alterar'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Excluir' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Escondido' ; Inc( pSeqPerm );
+                       end;
+             ltfr_FR   : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Accès'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Accès'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Cadastre' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Éditer'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Supprimer' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Caché' ; Inc( pSeqPerm );
+                       end;
+             ltde_DE   : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Zugang'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Zugang'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Kataster' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Redigieren'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Löschen' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Versteckt' ; Inc( pSeqPerm );
+                       end;
+             ltit_IT   : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Accesso'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Accesso'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Catasto' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Redigere'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Cancellare' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Nascosto' ; Inc( pSeqPerm );
+                       end;
+             lttr_TR    : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Erişim'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Erişim'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Kadastro' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Düzenlemek'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Silmek' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Gizli' ; Inc( pSeqPerm );
+                       end;
+             ltru_RU    : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Доступ'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Доступ'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Вставка' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Редактировать'   ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Удалить' ; Inc( pSeqPerm );
+                          end;
+
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.Скрытый' ; Inc( pSeqPerm );
+                       end;
+             ltzn_CH : begin
+
+                       end;
+             ltin_ID : begin
+
+                       end;
+             ltth_TH : begin
+
+                       end;
+             lthi_IN : begin
+
+                       end;
+                       // feedback Mohamed Ammar // v. 3.1.0.63
+             ltar_SA : begin
+                          If ( Pos( 'A>', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + 'عرض.'  ;
+                          end
+                          else
+                          If ( Pos( 'AIED', pItem ) > 0 ) then
+                          begin
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.عرض'  ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.جديد' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.تعديل' ; Inc( pSeqPerm );
+                            pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.حذف' ; Inc( pSeqPerm );
+                          end;
+                          if Pos( 'H>', pItem ) > 0 then
+                             pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.مخفي' ; Inc( pSeqPerm );
+                       end;
+        end;
+     end
+     else
+     begin
+       pMenuList[ pSeqPerm ] := IntToStr( pSeq - 1 ) + '.' + pItem ; Inc( pSeqPerm );
+     end;
+end;
+// _pasta é pra SEPARAR os arquivos de cada categoria do MENU
+procedure rc_BuildHTMLMENU( pMenuList : array of string ) ;
+var
+   I      : integer;
+   vItem_prior,
+   vItem : string;
+begin
+    vItem_prior := ' ';
+    I := 1;
+
+    //mm.varSL_HtmlMenu.Add( '          <ul class="treeview-menu">' );
+    //mm.varSL_HtmlMenu.Add( '            <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Opção avulsa</a></li> -->' );
+    while ( I <= High( pMenuList ) ) do
+    begin
+         vItem_prior := pMenuList[ i - 1 ];
+         vItem := pMenuList[ i ];
+
+         // montar o Array com as informacoes do MENU e sua respectiva TABELA
+         if Copy( vItem , 1, 1 ) = ']' then
+         begin
+              mm.varSL_HtmlMenu.Add( '             <li class="treeview">' );
+              mm.varSL_HtmlMenu.Add( '                 <a href="#"><i class="fa fa-circle-o text-yellow"></i> ' + Copy( vItem , 2, 50 ) );
+              mm.varSL_HtmlMenu.Add( '                    <span class="pull-right-container">' );
+              mm.varSL_HtmlMenu.Add( '                     <i class="fa fa-angle-left pull-right"></i>' );
+              mm.varSL_HtmlMenu.Add( '                    </span>' );
+              mm.varSL_HtmlMenu.Add( '                 </a>' );
+
+              mm.varSL_HtmlMenu.Add( '                 <ul class="treeview-menu">' );
+
+              vItem_prior := pMenuList[ i ];
+              // processa até o próximo SUBMENU
+              Repeat
+                    Inc( I );
+
+                    if ( I <= High( pMenuList ) ) then
+                    begin
+                       vItem := pMenuList[ i ];
+
+                       if Pos( '|', vItem ) > 0 then
+                       begin
+                            mm.varA_FSideMenu[ mm.varI_NumMenu ].option  := Trim( Copy( vItem , 1, Pos( '|', vItem ) - 1 ) );
+                            mm.varA_FSideMenu[ mm.varI_NumMenu ].table := Trim( Copy( vItem , Pos( '|', vItem ) + 1, 100 ) );
+                            mm.varA_FSideMenu[ mm.varI_NumMenu ].image := 'fa fa-circle-o';
+
+                            // estou ASSUMINDO mainpage? pra tentar CENTRALIZAR tudo
+                            if mm.varC_MenuGroup <> 'relatorios' then
+                               mm.varSL_HtmlMenu.Add( '                    <li><a href="#" onclick="ajaxRequest( MainForm.hfMain , ''menuprincipal'' , [ page=' + mm.varA_FSideMenu[ mm.varI_NumMenu ].option + ', table=' + mm.varA_FSideMenu[ mm.varI_NumMenu ].table + ' ] )"><i class="' + mm.varA_FSideMenu[ mm.varI_NumMenu ].image + '"></i> ' + mm.varA_FSideMenu[ mm.varI_NumMenu ].option + '</a></li>' )
+                            else
+                               mm.varSL_HtmlMenu.Add( '                    <li><a href="#" onclick="ajaxRequest( MainForm.hfMain , ''relatorios'' , [ page=' + mm.varA_FSideMenu[ mm.varI_NumMenu ].option + ', table=' + mm.varA_FSideMenu[ mm.varI_NumMenu ].table + ' ] )"><i class="' + mm.varA_FSideMenu[ mm.varI_NumMenu ].image + '"></i> ' + mm.varA_FSideMenu[ mm.varI_NumMenu ].option + '</a></li>' );
+
+                            Inc( mm.varI_NumMenu );
+                       end;
+                    end;
+              Until ( Copy( vItem , 1, 1 ) = ']' ) or ( I > High( pMenuList ) );
+
+              mm.varSL_HtmlMenu.Add( '                 </ul>' );
+              mm.varSL_HtmlMenu.Add( '             </li>' );
+         end;
+    end;
+
+    mm.varSL_HtmlMenu.Add( '            </li>' );
+    mm.varSL_HtmlMenu.Add( '          </ul>');
+end;
+end.

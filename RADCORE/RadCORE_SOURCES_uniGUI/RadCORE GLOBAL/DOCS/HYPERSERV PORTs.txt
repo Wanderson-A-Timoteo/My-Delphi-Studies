@@ -1,0 +1,42 @@
+PORTUGUÊS
+------------
+1a. Instancia: 
+
+	start_port = 16384 ( ou qualquer outra que deseje )
+
+2a. Instancia: 
+
+	start_port = 16384 + ( 8×3 + 8 ) = 16416
+
+
+3a. Instancia: 
+
+	start_port = 16416 + ( 16×3 + 8 ) = 16472
+
+
+4a. Instancia: 
+
+	start_port = 16472 + ( 24×3 + 8 ) = 16552
+
+
+
+ENGLISH:
+--------
+1st Instance: 
+
+	start_port = 16384 ( or any other you wish )
+
+2nd Instance: 
+
+	start_port = 16384 + ( 8×3 + 8 ) = 16416
+
+
+Third Instance: ( 8×3 + 8 ) = 16416 
+
+	start_port = 16416 + ( 16×3 + 8 ) = 16472
+
+
+Fourth Instance: 
+
+	start_port = 16472 + ( 24×3 + 8 ) = 16552
+

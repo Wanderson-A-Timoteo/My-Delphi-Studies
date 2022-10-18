@@ -1,0 +1,227 @@
+unit mkm_dbfuncs; // v. 3.2.0.7
+
+interface
+
+uses
+    uniDBComboBox, uniGUIFrame, uniGUIForm, System.SysUtils, vcl.Graphics,
+    System.Classes, uniGUIClasses, uconsts , TypInfo, Data.DB,
+    uniLabel, uniPanel, uniDBGrid;
+
+procedure rc_DSStateCheck(pForm: TObject; pDS:TDataSource );
+
+implementation
+{------------------------------------------------------------------------------}
+
+uses mkm_layout, untDM_RC;
+procedure rc_DSStateCheck(pForm: TObject; pDS:TDataSource );
+var
+   i : integer;
+   oObj : TUniControl;
+   cHint, cTmp, cParamI, cParamE, cParamB, cDS : string;
+   bVisible : boolean;
+begin
+  bVisible := false;
+
+  for i := 0 to TComponent(pForm).ComponentCount -1 do
+  begin
+    if TComponent(pForm).Components[i] is TUniDBGrid then
+       cTmp := cTmp;
+
+    oObj := TUniControl( TComponent(pForm).Components[i] );
+    If GetPropInfo( oObj.ClassInfo, 'Hint') <> nil then
+    begin
+       cHint := oObj.Hint;
+       if not cHint.IsEmpty then
+       begin
+         if Pos( 'ds:', cHint ) > 0 then
+            cDS := cDS;
+
+         cDS   := rc_GetHintProperty( 'ds:', cHint ).ToLower;
+         if cDS.IsEmpty then cDS := 'dsmaster';
+
+         //enable
+         cTmp := rc_GetHintProperty( 'state-enable:', cHint );
+         if ( cTmp <> '' ) and ( cDS = lowercase( pDS.Name ) ) then
+         begin
+            if ( Pos( 'i-true', cTmp ) > 0 ) then
+               dm_rc.rc_ObjectEnabled( pForm, oObj, pDS.State = dsInsert )
+            else
+               if ( Pos( 'i-false', cTmp ) > 0 ) then
+                  dm_rc.rc_ObjectEnabled( pForm, oObj, pDS.State <> dsInsert );
+
+            if ( Pos( 'e-true', cTmp ) > 0 ) then
+               dm_rc.rc_ObjectEnabled( pForm, oObj, pDS.State = dsEdit )
+            else
+               if ( Pos( 'e-false', cTmp ) > 0 ) then
+                  dm_rc.rc_ObjectEnabled( pForm, oObj, pDS.State <> dsEdit );
+
+            if ( Pos( 'b-true', cTmp ) > 0 ) then
+               dm_rc.rc_ObjectEnabled( pForm, oObj, pDS.State = dsBrowse )
+            else
+               if ( Pos( 'b-false', cTmp ) > 0 ) then
+                  dm_rc.rc_ObjectEnabled( pForm, oObj, pDS.State <> dsBrowse );
+            //empty
+            if ( not ( pDS.State in [dsEdit , dsInsert] ) ) and ( Pos( 'empty-', cTmp ) > 0 ) then
+               if ( pDS.DataSet.IsEmpty ) then
+                  dm_rc.rc_ObjectEnabled( pForm, oObj, ( Pos( 'empty-true', cTmp ) > 0 ) )
+               else
+                  dm_rc.rc_ObjectEnabled( pForm, oObj, ( Pos( 'empty-false', cTmp ) > 0 ) );
+         end;
+         //color
+         cTmp := rc_GetHintProperty( 'state-color:', cHint );
+         if ( cTmp <> '' ) and ( cDS = lowercase( pDS.Name ) ) then
+         begin
+            if ( pDS.State = dsInsert ) then
+            begin
+                 cParamI := rc_GetHintProperty( 'i-', cTmp, true );
+                 If ( cParamI <> '' ) then
+                    TUniPanel( oObj ).Color := StringToColor( cParamI );
+            end
+            else
+            if ( pDS.State = dsEdit ) then
+            begin
+                 cParamE := rc_GetHintProperty( 'e-', cTmp, true );
+                 If ( cParamE <> '' ) then
+                    TUniPanel( oObj ).Color := StringToColor( cParamE );
+            end
+            else
+            if ( pDS.State = dsBrowse ) then
+            begin
+                 cParamB := rc_GetHintProperty( 'b-', cTmp, true );
+                 If ( cParamB <> '' ) then
+                    TUniPanel( oObj ).Color := StringToColor( cParamB );
+            end;
+         end;
+         //font-color
+         cTmp := rc_GetHintProperty( 'state-font-color:', cHint );
+         if ( cTmp <> '' ) and ( cDS = lowercase( pDS.Name ) ) and ( oObj is TUniLabel ) then
+         begin
+            if ( pDS.State = dsInsert ) then
+            begin
+                 cParamI := rc_GetHintProperty( 'i-', cTmp, true );
+                 If ( cParamI <> '' ) then
+                    TUniLabel( oObj ).Font.Color := StringToColor( cParamI );
+            end
+            else
+            if ( pDS.State = dsEdit ) then
+            begin
+                 cParamE := rc_GetHintProperty( 'e-', cTmp, true );
+                 If ( cParamE <> '' ) then
+                    TUniLabel( oObj ).Font.Color := StringToColor( cParamE );
+            end
+            else
+            if ( pDS.State = dsBrowse ) then
+            begin
+                 cParamB := rc_GetHintProperty( 'b-', cTmp, true );
+                 If ( cParamB <> '' ) then
+                    TUniLabel( oObj ).Font.Color := StringToColor( cParamB );
+            end;
+         end;
+         //caption
+         cTmp := rc_GetHintProperty( 'state-caption:', cHint );
+         if ( cTmp <> '' ) and ( cDS = lowercase( pDS.Name ) ) and ( oObj is TUniLabel ) then
+         begin
+            if ( pDS.State = dsInsert ) then
+            begin
+                 cParamI := rc_GetHintProperty( 'i-', cTmp, true );
+                 If ( cParamI <> '' ) then
+                    TUniLabel( oObj ).Caption := cParamI;
+            end
+            else
+            if ( pDS.State = dsEdit ) then
+            begin
+                 cParamE := rc_GetHintProperty( 'e-', cTmp, true );
+                 If ( cParamE <> '' ) then
+                    TUniLabel( oObj ).Caption := cParamE ;
+            end
+            else
+            if ( pDS.State = dsBrowse ) then
+            begin
+                 cParamB := rc_GetHintProperty( 'b-', cTmp, true );
+                 If ( cParamB <> '' ) then
+                    TUniLabel( oObj ).Caption := cParamB ;
+            end;
+         end;
+         //cls
+         cTmp := rc_GetHintProperty( 'state-cls:', cHint );
+         if ( cTmp <> '' ) and ( cDS = lowercase( pDS.Name ) ) then
+         begin
+            cParamI := rc_GetHintProperty( 'i-', cTmp, true , true) + ' ';
+            cParamI := Copy( cParamI , 1, Pos( ' ', cParamI ) - 1 );
+            cParamE := rc_GetHintProperty( 'e-', cTmp, true , true) + ' ';
+            cParamE := Copy( cParamE , 1, Pos( ' ', cParamE ) - 1 );
+            cParamB := rc_GetHintProperty( 'b-', cTmp, true , true) + ' ';
+            cParamB := Copy( cParamB , 1, Pos( ' ', cParamB ) - 1 );
+
+            if not cParamI.IsEmpty then rc_RemoveCssClass( oObj, cParamI );
+            if not cParamE.IsEmpty then rc_RemoveCssClass( oObj, cParamE );
+            if not cParamB.IsEmpty then rc_RemoveCssClass( oObj, cParamB );
+
+            if ( pDS.State = dsInsert ) then
+            begin
+                 If ( cParamI <> '' ) then
+                 begin
+                    rc_AddCssClass( oObj, cParamI );
+                 end;
+            end
+            else
+            if ( pDS.State = dsEdit ) then
+            begin
+                 If ( cParamE <> '' ) then
+                 begin
+                    rc_AddCssClass( oObj, cParamE );
+                 end;
+            end
+            else
+            if ( pDS.State = dsBrowse ) then
+            begin
+                 If ( cParamB <> '' ) then
+                 begin
+                    rc_AddCssClass( oObj, cParamB );
+                 end;
+            end;
+         end;
+         //visible
+         cTmp := rc_GetHintProperty( 'state-visible:', cHint );
+         if ( cTmp <> '' ) and ( cDS = lowercase( pDS.Name ) ) then
+         begin
+            if Copy( TUniControl( oObj ).Name, 1, 7 ) = 'rcBlock' then
+               bVisible := oObj.Visible;
+
+            if ( Pos( 'i-true', cTmp ) > 0 ) then
+               oObj.Visible := pDS.State = dsInsert
+            else
+               if ( Pos( 'i-false', cTmp ) > 0 ) then
+                  oObj.Visible := pDS.State <> dsInsert ;
+
+            if ( Pos( 'e-true', cTmp ) > 0 ) then
+               oObj.Visible := pDS.State = dsEdit
+            else
+               if ( Pos( 'e-false', cTmp ) > 0 ) then
+                  oObj.Visible := pDS.State <> dsEdit ;
+
+            if ( Pos( 'b-true', cTmp ) > 0 ) then
+               oObj.Visible := pDS.State = dsBrowse
+            else
+               if ( Pos( 'b-false', cTmp ) > 0 ) then
+                  oObj.Visible := pDS.State <> dsBrowse ;
+            //empty
+            if ( not ( pDS.State in [dsEdit , dsInsert] ) ) and ( Pos( 'empty-', cTmp ) > 0 ) then
+               if ( pDS.DataSet.IsEmpty ) then
+                  oObj.Visible := ( Pos( 'empty-true', cTmp ) > 0 )
+               else
+                  oObj.Visible := ( Pos( 'empty-false', cTmp ) > 0 );
+
+            if ( Copy( TUniControl( oObj ).Name, 1, 7 ) = 'rcBlock' ) and
+               ( bVisible <> oObj.Visible ) then
+            begin
+               oObj.Enabled := oObj.Visible;
+               dm_rc.rc_ResizeBlocks( pForm );
+            end;
+
+         end;
+       end;
+    end;
+  end;
+end;
+end.

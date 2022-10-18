@@ -1,0 +1,118 @@
+- Copie e cole no DM_RC a partir da clausua "object" abaixo e
+  em seguida descomente no codigo fonte os trechos com
+      //----------[[RESTDATAWARE
+      //----------RESTDATAWARE]]
+
+- Copy and Paste into DM_RC from the "object" clause below and
+  then uncomment the excerpts in the source code with
+      //----------[[RESTDATAWARE
+      //----------RESTDATAWARE]]
+
+object sqlRdwInsUpd: TRESTDWClientSQL
+  Active = False
+  Filtered = False
+  FieldDefs = <>
+  IndexDefs = <>
+  FetchOptions.AssignedValues = [evMode]
+  FetchOptions.Mode = fmAll
+  FormatOptions.AssignedValues = [fvMaxBcdPrecision, fvMaxBcdScale]
+  FormatOptions.MaxBcdPrecision = 2147483647
+  FormatOptions.MaxBcdScale = 2147483647
+  ResourceOptions.AssignedValues = [rvSilentMode]
+  ResourceOptions.SilentMode = True
+  UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvCountUpdatedRecords, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable, uvAutoCommitUpdates]
+  UpdateOptions.LockWait = True
+  UpdateOptions.FetchGeneratorsPoint = gpNone
+  UpdateOptions.CheckRequired = False
+  UpdateOptions.AutoCommitUpdates = True
+  StoreDefs = True
+  BinaryCompatibleMode = False
+  MasterCascadeDelete = True
+  BinaryRequest = False
+  Datapacks = -1
+  DataCache = False
+  Params = <>
+  DataBase = mm.RestDATABASE
+  SQL.Strings = (
+    '')
+  CacheUpdateRecords = True
+  AutoCommitData = False
+  AutoRefreshAfterCommit = False
+  RaiseErrors = True
+  ActionCursor = crSQLWait
+  ReflectChanges = False
+  Left = 53
+  Top = 452
+end
+object sqlRdwNextID: TRESTDWClientSQL
+  Active = False
+  Filtered = False
+  FieldDefs = <>
+  IndexDefs = <>
+  FetchOptions.AssignedValues = [evMode]
+  FetchOptions.Mode = fmAll
+  FormatOptions.AssignedValues = [fvMaxBcdPrecision, fvMaxBcdScale]
+  FormatOptions.MaxBcdPrecision = 2147483647
+  FormatOptions.MaxBcdScale = 2147483647
+  ResourceOptions.AssignedValues = [rvSilentMode]
+  ResourceOptions.SilentMode = True
+  UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvCountUpdatedRecords, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable, uvAutoCommitUpdates]
+  UpdateOptions.LockWait = True
+  UpdateOptions.FetchGeneratorsPoint = gpNone
+  UpdateOptions.CheckRequired = False
+  UpdateOptions.AutoCommitUpdates = True
+  StoreDefs = True
+  BinaryCompatibleMode = False
+  MasterCascadeDelete = True
+  BinaryRequest = False
+  Datapacks = -1
+  DataCache = False
+  Params = <>
+  DataBase = mm.RestDATABASE
+  SQL.Strings = (
+    '')
+  CacheUpdateRecords = True
+  AutoCommitData = False
+  AutoRefreshAfterCommit = False
+  RaiseErrors = True
+  ActionCursor = crSQLWait
+  ReflectChanges = False
+  Left = 55
+  Top = 401
+end
+object sqlRdwGetRecords: TRESTDWClientSQL
+  Active = False
+  Filtered = False
+  FieldDefs = <>
+  IndexDefs = <>
+  FetchOptions.AssignedValues = [evMode]
+  FetchOptions.Mode = fmAll
+  FormatOptions.AssignedValues = [fvMaxBcdPrecision, fvMaxBcdScale]
+  FormatOptions.MaxBcdPrecision = 2147483647
+  FormatOptions.MaxBcdScale = 2147483647
+  ResourceOptions.AssignedValues = [rvSilentMode]
+  ResourceOptions.SilentMode = True
+  UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvCountUpdatedRecords, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable, uvAutoCommitUpdates]
+  UpdateOptions.LockWait = True
+  UpdateOptions.FetchGeneratorsPoint = gpNone
+  UpdateOptions.CheckRequired = False
+  UpdateOptions.AutoCommitUpdates = True
+  StoreDefs = True
+  BinaryCompatibleMode = False
+  MasterCascadeDelete = True
+  BinaryRequest = False
+  Datapacks = -1
+  DataCache = False
+  Params = <>
+  DataBase = mm.RestDATABASE
+  SQL.Strings = (
+    '')
+  CacheUpdateRecords = True
+  AutoCommitData = False
+  AutoRefreshAfterCommit = False
+  RaiseErrors = True
+  ActionCursor = crSQLWait
+  ReflectChanges = False
+  Left = 57
+  Top = 496
+end

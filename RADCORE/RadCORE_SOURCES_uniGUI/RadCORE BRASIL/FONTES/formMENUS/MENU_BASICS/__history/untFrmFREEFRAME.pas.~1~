@@ -1,0 +1,709 @@
+﻿unit untFrmFREEFRAME; // v. 3.2.0.7
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, StrUtils,
+  Controls, Forms, uniGUITypes, uniGUIAbstractClasses,
+  uniGUIClasses, uniGUIFrame, uniGUIForm, uniGUIBaseClasses, uniButton, uniBitBtn, uniLabel, uniEdit, uniPanel, uniPageControl, uniHTMLFrame,
+  uniURLFrame, Vcl.Imaging.jpeg, uniImage, uniScrollBox, uniMemo,
+  Vcl.Imaging.pngimage;
+
+type
+  TfrmFreeFrame = class(TUniFrame)
+    sboxGridBlock: TUniScrollBox;
+    rcBlock140: TUniContainerPanel;
+    UniContainerPanel23: TUniContainerPanel;
+    UniLabel33: TUniLabel;
+    rcBlock240: TUniContainerPanel;
+    UniContainerPanel28: TUniContainerPanel;
+    UniLabel13: TUniLabel;
+    pgTabSample: TUniPageControl;
+    tabEx1: TUniTabSheet;
+    pa1: TUniPanel;
+    UniMemo1: TUniMemo;
+    tabEx2: TUniTabSheet;
+    UniMemo2: TUniMemo;
+    tabEx3: TUniTabSheet;
+    UniMemo3: TUniMemo;
+    rcBlock250: TUniContainerPanel;
+    UniContainerPanel17: TUniContainerPanel;
+    UniLabel14: TUniLabel;
+    pgCardTab: TUniPageControl;
+    UniTabSheet1: TUniTabSheet;
+    UniPanel3: TUniPanel;
+    UniMemo4: TUniMemo;
+    UniTabSheet2: TUniTabSheet;
+    UniMemo5: TUniMemo;
+    UniTabSheet3: TUniTabSheet;
+    UniMemo6: TUniMemo;
+    rcBlock152: TUniContainerPanel;
+    UniContainerPanel24: TUniContainerPanel;
+    UniLabel11: TUniLabel;
+    rcBlock270: TUniContainerPanel;
+    UniContainerPanel27: TUniContainerPanel;
+    UniLabel15: TUniLabel;
+    UniContainerPanel19: TUniContainerPanel;
+    UniHTMLFrame3: TUniHTMLFrame;
+    rcBlock280: TUniContainerPanel;
+    UniContainerPanel35: TUniContainerPanel;
+    UniLabel16: TUniLabel;
+    UniContainerPanel18: TUniContainerPanel;
+    imgCap: TUniImage;
+    UniButton4: TUniButton;
+    UniButton5: TUniButton;
+    rcBlock130: TUniContainerPanel;
+    UniLabel36: TUniLabel;
+    rcBlock200: TUniContainerPanel;
+    UniLabel37: TUniLabel;
+    rcBlock230: TUniContainerPanel;
+    UniLabel40: TUniLabel;
+    rcBlock260: TUniContainerPanel;
+    UniLabel41: TUniLabel;
+    rcBlock150: TUniContainerPanel;
+    UniLabel43: TUniLabel;
+    UniScrollBox6: TUniScrollBox;
+    UniContainerPanel1: TUniContainerPanel;
+    UniLabel9: TUniLabel;
+    UniContainerPanel4: TUniContainerPanel;
+    UniLabel3: TUniLabel;
+    UniContainerPanel6: TUniContainerPanel;
+    UniLabel4: TUniLabel;
+    UniContainerPanel2: TUniContainerPanel;
+    UniLabel8: TUniLabel;
+    UniContainerPanel3: TUniContainerPanel;
+    UniLabel7: TUniLabel;
+    UniContainerPanel7: TUniContainerPanel;
+    UniLabel5: TUniLabel;
+    UniContainerPanel5: TUniContainerPanel;
+    UniLabel6: TUniLabel;
+    rcBlock154: TUniContainerPanel;
+    UniContainerPanel13: TUniContainerPanel;
+    UniLabel21: TUniLabel;
+    rcBlock158: TUniContainerPanel;
+    UniContainerPanel15: TUniContainerPanel;
+    UniLabel24: TUniLabel;
+    rcBlock156: TUniContainerPanel;
+    UniContainerPanel30: TUniContainerPanel;
+    UniLabel44: TUniLabel;
+    UniContainerPanel8: TUniContainerPanel;
+    UniLabel45: TUniLabel;
+    UniContainerPanel10: TUniContainerPanel;
+    UniLabel46: TUniLabel;
+    rcBlock120: TUniContainerPanel;
+    UniLabel30: TUniLabel;
+    rcBlock122: TUniContainerPanel;
+    UniContainerPanel26: TUniContainerPanel;
+    UniLabel48: TUniLabel;
+    UniBitBtn12: TUniBitBtn;
+    btnSuccess1: TUniBitBtn;
+    UniBitBtn21: TUniBitBtn;
+    rcBlock124: TUniContainerPanel;
+    paSweetHeader: TUniContainerPanel;
+    UniLabel49: TUniLabel;
+    UniBitBtn25: TUniBitBtn;
+    btnSweetSuccess: TUniBitBtn;
+    btnSweetWarning: TUniBitBtn;
+    btnSweetError: TUniBitBtn;
+    btnSweetInfo: TUniBitBtn;
+    rcBlock126: TUniContainerPanel;
+    UniContainerPanel32: TUniContainerPanel;
+    UniLabel50: TUniLabel;
+    UniBitBtn27: TUniBitBtn;
+    UniBitBtn28: TUniBitBtn;
+    UniBitBtn29: TUniBitBtn;
+    UniBitBtn30: TUniBitBtn;
+    rcBlock128: TUniContainerPanel;
+    UniContainerPanel33: TUniContainerPanel;
+    UniLabel51: TUniLabel;
+    UniBitBtn34: TUniBitBtn;
+    chkSound: TUniLabel;
+    UniLabel52: TUniLabel;
+    UniBitBtn31: TUniBitBtn;
+    chkPassword: TUniLabel;
+    UniLabel54: TUniLabel;
+    labAlert: TUniLabel;
+    UniLabel56: TUniLabel;
+    UniLabel57: TUniLabel;
+    UniLabel58: TUniLabel;
+    rcBlock290: TUniContainerPanel;
+    UniContainerPanel37: TUniContainerPanel;
+    UniLabel60: TUniLabel;
+    UniButton3: TUniButton;
+    imgCarRed: TUniImage;
+    rcBlock300: TUniContainerPanel;
+    UniContainerPanel38: TUniContainerPanel;
+    UniLabel61: TUniLabel;
+    UniContainerPanel39: TUniContainerPanel;
+    hfChat: TUniHTMLFrame;
+    UniButton6: TUniButton;
+    UniButton7: TUniButton;
+    edMsg: TUniEdit;
+    rcBlock350: TUniContainerPanel;
+    rcBlock355: TUniContainerPanel;
+    UniLabel62: TUniLabel;
+    rcBlock360: TUniContainerPanel;
+    rcBlock370: TUniContainerPanel;
+    UniLabel63: TUniLabel;
+    rcBlock380: TUniContainerPanel;
+    UniLabel64: TUniLabel;
+    rcBlock390: TUniContainerPanel;
+    UniLabel65: TUniLabel;
+    UniContainerPanel20: TUniContainerPanel;
+    UniContainerPanel31: TUniContainerPanel;
+    UniLabel59: TUniLabel;
+    UniContainerPanel34: TUniContainerPanel;
+    labCodeReaded: TUniEdit;
+    UniButton1: TUniButton;
+    UniButton2: TUniButton;
+    paPillSample: TUniContainerPanel;
+    labPills: TUniLabel;
+    paTabSample: TUniContainerPanel;
+    labTabs: TUniLabel;
+    rcBlock1000: TUniContainerPanel;
+    rcBlock19: TUniContainerPanel;
+    rcBlock20: TUniContainerPanel;
+    UniLabel1: TUniLabel;
+    rcBlock21: TUniContainerPanel;
+    btnClose: TUniBitBtn;
+    rcBlock22: TUniContainerPanel;
+    btnRed: TUniBitBtn;
+    rcBlock23: TUniContainerPanel;
+    btnGreen: TUniBitBtn;
+    rcBlock27: TUniContainerPanel;
+    btnGray: TUniBitBtn;
+    rcBlock28: TUniContainerPanel;
+    btnSilver: TUniBitBtn;
+    rcBlock29: TUniContainerPanel;
+    btnCrud: TUniBitBtn;
+    rcBlock24: TUniContainerPanel;
+    btnOrange: TUniBitBtn;
+    rcBlock25: TUniContainerPanel;
+    btnBlue: TUniBitBtn;
+    rcBlock26: TUniContainerPanel;
+    btnDark: TUniBitBtn;
+    rcBlock40: TUniContainerPanel;
+    UniContainerPanel22: TUniContainerPanel;
+    UniLabel32: TUniLabel;
+    edUserName: TUniEdit;
+    labRepitaNova: TUniLabel;
+    UniLabel2: TUniLabel;
+    edPassword: TUniEdit;
+    btnLink: TUniBitBtn;
+    rcBlock42: TUniContainerPanel;
+    UniContainerPanel9: TUniContainerPanel;
+    UniLabel17: TUniLabel;
+    UniScrollBox1: TUniScrollBox;
+    memo: TUniMemo;
+    btnSave: TUniBitBtn;
+    btnCancel: TUniBitBtn;
+    UniLabel19: TUniLabel;
+    UniEdit1: TUniEdit;
+    UniLabel20: TUniLabel;
+    rcBlock72: TUniContainerPanel;
+    UniContainerPanel14: TUniContainerPanel;
+    UniLabel18: TUniLabel;
+    UniScrollBox2: TUniScrollBox;
+    UniContainerPanel21: TUniContainerPanel;
+    UniLabel22: TUniLabel;
+    UniLabel23: TUniLabel;
+    UniLabel25: TUniLabel;
+    UniLabel26: TUniLabel;
+    UniLabel27: TUniLabel;
+    UniLabel28: TUniLabel;
+    UniLabel38: TUniLabel;
+    UniLabel39: TUniLabel;
+    UniLabel53: TUniLabel;
+    UniLabel55: TUniLabel;
+    rcBlock70: TUniContainerPanel;
+    UniContainerPanel29: TUniContainerPanel;
+    UniLabel29: TUniLabel;
+    UniContainerPanel36: TUniContainerPanel;
+    bsrgpTipo01_M: TUniLabel;
+    UniLabel31: TUniLabel;
+    bsrgpTipo02_E: TUniLabel;
+    UniLabel34: TUniLabel;
+    bsrgpTipo03_F: TUniLabel;
+    UniLabel47: TUniLabel;
+    btnGetIndex: TUniBitBtn;
+    btnGetValue: TUniBitBtn;
+    rcBlock10: TUniContainerPanel;
+    UniLabel35: TUniLabel;
+    rcBlock30: TUniContainerPanel;
+    UniContainerPanel11: TUniContainerPanel;
+    UniLabel42: TUniLabel;
+    UniScrollBox3: TUniScrollBox;
+    btnRedOutL: TUniBitBtn;
+    btnGreenOutL: TUniBitBtn;
+    btnBlueOutL: TUniBitBtn;
+    btnRedRound: TUniBitBtn;
+    btnGreenRound: TUniBitBtn;
+    btnRound: TUniBitBtn;
+    btnOrangeOutL: TUniBitBtn;
+    btnGrayOutL: TUniBitBtn;
+    btnOrangeRound: TUniBitBtn;
+    btnSilverOutL: TUniBitBtn;
+    btnGrayRound: TUniBitBtn;
+    btnSilverRound: TUniBitBtn;
+    rcBlock76: TUniContainerPanel;
+    UniContainerPanel16: TUniContainerPanel;
+    UniLabel69: TUniLabel;
+    UniBitBtn2: TUniBitBtn;
+    UniBitBtn3: TUniBitBtn;
+    UniBitBtn4: TUniBitBtn;
+    UniBitBtn5: TUniBitBtn;
+    rcBlock46: TUniContainerPanel;
+    rcBlock48: TUniContainerPanel;
+    UniLabel70: TUniLabel;
+    rcBlock50: TUniContainerPanel;
+    rcLabel3600: TUniLabel;
+    rcBlock52: TUniContainerPanel;
+    UniEdit2: TUniEdit;
+    rcBlock58: TUniContainerPanel;
+    UniLabel71: TUniLabel;
+    rcBlock60: TUniContainerPanel;
+    edID: TUniEdit;
+    rcBlock65: TUniContainerPanel;
+    rcBlock67: TUniContainerPanel;
+    rcBlock69: TUniContainerPanel;
+    UniBitBtn6: TUniBitBtn;
+    UniBitBtn7: TUniBitBtn;
+    rcBlock54: TUniContainerPanel;
+    UniLabel72: TUniLabel;
+    rcBlock56: TUniContainerPanel;
+    UniEdit4: TUniEdit;
+    rcBlock63: TUniContainerPanel;
+    UniLabel73: TUniLabel;
+    rcBlock64: TUniContainerPanel;
+    UniEdit5: TUniEdit;
+    rcBlock500: TUniContainerPanel;
+    rcBlock510: TUniContainerPanel;
+    UniLabel66: TUniLabel;
+    rcBlock520: TUniContainerPanel;
+    rcBlock440: TUniContainerPanel;
+    rcBlock450: TUniContainerPanel;
+    UniLabel12: TUniLabel;
+    rcBlock455: TUniContainerPanel;
+    UniLabel74: TUniLabel;
+    rcBlock400: TUniContainerPanel;
+    rcBlock402: TUniContainerPanel;
+    UniLabel67: TUniLabel;
+    rcBlock410: TUniContainerPanel;
+    rcBlock210: TUniContainerPanel;
+    rcBlock222: TUniContainerPanel;
+    UniLabel10: TUniLabel;
+    rcBlock225: TUniContainerPanel;
+    rcBlock220: TUniContainerPanel;
+    rcBl: TUniContainerPanel;
+    UniLabel68: TUniLabel;
+    UniContainerPanel12: TUniContainerPanel;
+    btnPrior: TUniButton;
+    btnNext: TUniButton;
+    paSlides: TUniContainerPanel;
+    paImg1: TUniPanel;
+    paImg2: TUniPanel;
+    paImg3: TUniPanel;
+    UniLabel75: TUniLabel;
+    UniLabel76: TUniLabel;
+    UniLabel77: TUniLabel;
+    UniLabel78: TUniLabel;
+    rcBlock160: TUniContainerPanel;
+    UniLabel79: TUniLabel;
+    rcBlock162: TUniContainerPanel;
+    UniLabel80: TUniLabel;
+    rcBlock164: TUniContainerPanel;
+    UniLabel81: TUniLabel;
+    rcBlock166: TUniContainerPanel;
+    UniLabel82: TUniLabel;
+    rcBlock168: TUniContainerPanel;
+    UniLabel83: TUniLabel;
+    rcBlock170: TUniContainerPanel;
+    UniLabel84: TUniLabel;
+    rcBlock172: TUniContainerPanel;
+    UniLabel85: TUniLabel;
+    rcBlock174: TUniContainerPanel;
+    UniLabel86: TUniLabel;
+    rcBlock176: TUniContainerPanel;
+    UniLabel87: TUniLabel;
+    rcBlock178: TUniContainerPanel;
+    UniLabel88: TUniLabel;
+    rcBlock175: TUniContainerPanel;
+    UniLabel89: TUniLabel;
+    rcBlock177: TUniContainerPanel;
+    UniLabel90: TUniLabel;
+    UniLabel91: TUniLabel;
+    UniLabel92: TUniLabel;
+    UniLabel93: TUniLabel;
+    UniLabel94: TUniLabel;
+    rcBlock182: TUniContainerPanel;
+    UniLabel95: TUniLabel;
+    rcBlock184: TUniContainerPanel;
+    UniContainerPanel25: TUniContainerPanel;
+    btnQrCode: TUniButton;
+    edQrCodeLink: TUniEdit;
+    paQrCode: TUniContainerPanel;
+    UniContainerPanel40: TUniContainerPanel;
+    imgQrCode: TUniImage;
+    labRcCollapse24: TUniLabel;
+    procedure UniFrameCreate(Sender: TObject);
+    procedure btnPriorClick(Sender: TObject);
+    procedure btnNextClick(Sender: TObject);
+    procedure UniButton5Click(Sender: TObject);
+    procedure UniButton4Click(Sender: TObject);
+    procedure UniFrameReady(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+    procedure btnGetIndexClick(Sender: TObject);
+    procedure btnGetValueClick(Sender: TObject);
+    procedure btnSuccess1Click(Sender: TObject);
+    procedure UniBitBtn21Click(Sender: TObject);
+    procedure UniBitBtn12Click(Sender: TObject);
+    procedure UniBitBtn25Click(Sender: TObject);
+    procedure btnSweetWarningClick(Sender: TObject);
+    procedure UniBitBtn30Click(Sender: TObject);
+    procedure UniBitBtn34Click(Sender: TObject);
+    procedure btnSweetSuccessClick(Sender: TObject);
+    procedure btnSweetInfoClick(Sender: TObject);
+    procedure btnSweetErrorClick(Sender: TObject);
+    procedure UniBitBtn27Click(Sender: TObject);
+    procedure UniBitBtn28Click(Sender: TObject);
+    procedure UniBitBtn29Click(Sender: TObject);
+    procedure UniBitBtn31Click(Sender: TObject);
+    procedure UniButton2Click(Sender: TObject);
+    procedure UniButton1Click(Sender: TObject);
+    procedure UniButton3Click(Sender: TObject);
+    procedure UniButton6Click(Sender: TObject);
+    procedure UniButton7Click(Sender: TObject);
+    procedure UniBitBtn3Click(Sender: TObject);
+    procedure UniBitBtn4Click(Sender: TObject);
+    procedure UniBitBtn5Click(Sender: TObject);
+    procedure UniBitBtn2Click(Sender: TObject);
+    procedure UniBitBtn7Click(Sender: TObject);
+    procedure UniEdit3KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure btnQrCodeClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+    iSlides, iSlideCount : integer;
+
+    pObj : TUniControl;
+
+  end;
+
+implementation
+
+{$R *.dfm}
+
+uses Main, ServerModule, untFrmWEBCAM, MainModule, mkm_gridblock,
+  mkm_layout, uconsts, mkm_anim, untDM_RC, mkm_translate, mkm_validate, mkm_qrcode, mkm_func_web;//, untFrmBARCODE;
+
+procedure TfrmFreeFrame.btnGetIndexClick(Sender: TObject);
+begin
+   dm_rc.rc_ShowMessage( 'Selected ItemIndex = ' + dm_rc.rc_GetItemIndexFromRgp( bsrgpTipo01_M ).ToString );
+
+end;
+
+procedure TfrmFreeFrame.btnGetValueClick(Sender: TObject);
+begin
+   dm_rc.rc_ShowMessage( 'Selected Item Value = ' + dm_rc.rc_GetValueFromRgp( bsrgpTipo01_M ) );
+
+end;
+
+procedure TfrmFreeFrame.UniBitBtn12Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowError('Oh no !!!');
+end;
+
+procedure TfrmFreeFrame.btnSuccess1Click(Sender: TObject);
+begin
+
+     dm_rc.rc_ShowMessage( 'Processed!!!' , 'success' );
+
+end;
+
+procedure TfrmFreeFrame.UniBitBtn21Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowMessage('You Win!!!');
+end;
+
+procedure TfrmFreeFrame.btnSweetSuccessClick(Sender: TObject);
+begin
+     dm_rc.rc_ShowSweetAlert( 'Sucess!', 'Use Masks.', 'success'  );
+end;
+
+procedure TfrmFreeFrame.btnSweetWarningClick(Sender: TObject);
+begin
+     dm_rc.rc_ShowSweetAlert( 'Alert!', 'Use Masks.', 'warning' );
+end;
+
+procedure TfrmFreeFrame.btnSweetErrorClick(Sender: TObject);
+begin
+     dm_rc.rc_ShowSweetAlert( 'Error!', 'Sorry...', 'error' );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn25Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowMessage('You Win!!!', 'warning');
+end;
+
+procedure TfrmFreeFrame.btnSweetInfoClick(Sender: TObject);
+begin
+     dm_rc.rc_ShowSweetAlert( 'Info!', 'Use Masks.', 'info' );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn27Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowToaster( 'success', 'RadCORE. Your best choice !', (chkSound.tag = 1), 'slideLeftRightFade' );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn28Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowToaster( 'warning', 'Choose RadCORE !', (chkSound.tag = 1), 'slideLeftRightFade' );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn29Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowToaster( 'error', 'RadCORE helps you !', (chkSound.tag = 1), 'pinItUp' );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn2Click(Sender: TObject);
+begin
+     MainForm.rc_AddFormFrameInTab( nil, 'Clientes', 'clientes', '' , false, false, aftInsert );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn30Click(Sender: TObject);
+begin
+     dm_rc.rc_ShowToaster( 'info', 'RadCORE it´s nice !', (chkSound.tag = 1), 'pinItUp' ); //slideLeftRightFade
+end;
+
+procedure TfrmFreeFrame.UniBitBtn31Click(Sender: TObject);
+begin
+
+     dm_rc.rc_ShowInputBox( 'Admin required' , 'Enter info1' , '', 'Enter info2', '', ( chkPassword.tag = 1 ) );
+
+     dm_rc.rc_ShowSweetAlert( 'Sucess!', 'Field 1:' + mm.varC_InputBox_Result1 + sLineBreak +
+                                           'Field 2:' + mm.varC_InputBox_Result2 , 'success'  )
+
+end;
+
+procedure TfrmFreeFrame.UniBitBtn34Click(Sender: TObject);
+begin
+       dm_rc.rc_ShowYesNo( 'Confirm ?' );
+
+       if mm.varB_Yes then
+          dm_rc.rc_ShowSweetAlert( 'Sucess!', 'Clicked YES', 'success'  )
+       else
+          dm_rc.rc_ShowSweetAlert( 'Warning!', 'Clicked NO', 'warning'  );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn3Click(Sender: TObject);
+begin
+     //                                   Form Title  Form table
+     MainForm.rc_AddFormFrameInTab( nil, 'Fish Fact', '', 'FISHFACT' , false, false );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn4Click(Sender: TObject);
+begin
+     //                                   Form Title  Form table
+     MainForm.rc_AddFormFrameInTab( nil, 'Clientes', 'clientes', '' , false, false, aftShow,  569 );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn5Click(Sender: TObject);
+begin
+     MainForm.rc_AddFormFrameInTab( nil, 'Clientes', 'clientes', '' , false, false, aftEdit, 569 );
+end;
+
+procedure TfrmFreeFrame.UniBitBtn7Click(Sender: TObject);
+begin
+  if not rc_FormValidate( Self ) then
+     Abort;
+end;
+
+procedure TfrmFreeFrame.UniButton1Click(Sender: TObject);
+begin
+//     frmBARCODE.ShowModal( procedure(Sender: TComponent; Result:Integer)
+//                          begin
+//                               if mm.varB_Yes then
+//                                  labCodeReaded.Text := mm.varC_TempFile ;
+//                          end
+//                          );
+end;
+
+procedure TfrmFreeFrame.UniButton2Click(Sender: TObject);
+begin
+     labCodeReaded.Text := '';
+end;
+
+procedure TfrmFreeFrame.UniButton3Click(Sender: TObject);
+begin
+    rc_AnimTimeLineCreate( 'rcRedCar' );
+
+    rc_AnimTimeLineAdd( 'rcRedCar', imgCarRed, 'y', '-150', '1.8', gsEasePower1, '0.8', gsEaseTypeOut , '90') ;
+    rc_AnimTimeLineAdd( 'rcRedCar', imgCarRed, 'x', '470' , '2.8', gsEaseBack  , '0.8', gsEaseTypeOut );
+    rc_AnimTimeLineAdd( 'rcRedCar', imgCarRed, 'y', '50'  , '1.8', gsEasePower2, '0.8', gsEaseTypeOut, '270' );
+    rc_AnimTimeLineAdd( 'rcRedCar', imgCarRed, 'x', '-100', '2.8', gsEaseBack  , '0.8', gsEaseTypeOut  );
+
+    rc_AnimTimeLinePlay( 'rcRedCar' );
+
+end;
+
+procedure TfrmFreeFrame.UniButton4Click(Sender: TObject);
+begin
+     // vai retornar o caminho da foto
+     // will return the path of the photo
+     frmWEBCAM.ShowModal( procedure(Sender: TComponent; Result:Integer)
+                          begin
+                               if mm.varB_Yes then
+                                  imgCap.Picture.LoadFromFile( mm.varC_TempFile );
+                          end
+                          );
+end;
+
+procedure TfrmFreeFrame.UniButton5Click(Sender: TObject);
+begin
+   dm_rc.rc_BitmapClear( imgCap );
+end;
+
+procedure TfrmFreeFrame.UniButton6Click(Sender: TObject);
+begin
+    hfChat.HTML.Add(
+            '                    <!-- Message to the right -->' +
+            '                    <div class="direct-chat-msg right">' +
+            '                        <div class="direct-chat-infos clearfix">' +
+            '                            <span class="direct-chat-name float-right">RadCORE</span>' +
+            '                            <span class="direct-chat-timestamp float-left">' + DateTimeToStr(now)  + '</span>' +
+            '                        </div>' +
+            '                        <!-- /.direct-chat-infos -->' +
+            '                        <img class="direct-chat-img" src="files/images/avatar_12.png" alt="func image">' +
+            '                        <!-- /.direct-chat-img -->' +
+            '                        <div class="direct-chat-text">' +
+            '                            ' + edMsg.Text +
+            '                        </div>' +
+            '                        <!-- /.direct-chat-text -->' +
+            '                    </div>' +
+            '                    <!-- /.direct-chat-msg -->' );
+
+    edMsg.Text := '';
+end;
+
+procedure TfrmFreeFrame.UniButton7Click(Sender: TObject);
+begin
+    hfChat.HTML.Add(
+         '                    <!-- Message. Default to the left -->' +
+         '                    <div class="direct-chat-msg">' +
+         '                        <div class="direct-chat-infos clearfix">' +
+         '                            <span class="direct-chat-name float-left">Flavio Motta</span>' +
+         '                            <span class="direct-chat-timestamp float-right">' + DateTimeToStr(now)  + '</span>' +
+         '                        </div>' +
+         '                        <!-- /.direct-chat-infos -->' +
+         '                        <img class="direct-chat-img" src="files/images/avatar_8.png" alt="cli image">' +
+         '                        <!-- /.direct-chat-img -->' +
+         '                        <div class="direct-chat-text">' +
+         '                            ' + edMsg.Text +
+         '                        </div>' +
+         '                        <!-- /.direct-chat-text -->' +
+         '                    </div>' +
+         '                    <!-- /.direct-chat-msg -->' );
+
+    edMsg.Text := '';
+end;
+
+procedure TfrmFreeFrame.UniEdit3KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+     //if key = 13 then
+     //   dm_rc.rc_QrCode( hfQRCode, UniEdit3.Text, 3 );
+
+     //   UniSession.AddJS( 'updateQRCode("rc-qrcode", "' + UniEdit3.Text  + '", 3 );' );
+end;
+
+procedure TfrmFreeFrame.btnPriorClick(Sender: TObject);
+begin
+     if iSlides >= 2 then
+     begin
+        rc_jQueryAnimate(
+          TUniControl( Self.FindComponent(
+            'paImg' + iSlides.ToString ) ) ,
+            'left'  ,
+            IntToStr( ( TUniControl( Self.FindComponent( 'paImg' + iSlides.ToString ) ).Width + 3 )  ) ,
+            '350' );
+
+        Dec( iSlides );
+
+        rc_jQueryAnimate(
+          TUniControl( Self.FindComponent(
+            'paImg' + ( iSlides ).ToString ) ) ,
+            'left'  ,
+            '3' ,
+            '350');
+     end;
+end;
+
+procedure TfrmFreeFrame.btnQrCodeClick(Sender: TObject);
+begin
+  rc_QRCode( imgQrCode, edQrCodeLink.Text, Self );
+  rc_QRCode( paQrCode, edQrCodeLink.Text, Self );
+end;
+
+procedure TfrmFreeFrame.btnCloseClick(Sender: TObject);
+begin
+     if mm.oPgGeneral <> nil then
+        mm.oPgGeneral.ActivePage.Close;
+end;
+
+procedure TfrmFreeFrame.btnNextClick(Sender: TObject);
+begin
+     if iSlides < iSlideCount then
+     begin
+        rc_jQueryAnimate(
+          TUniControl( Self.FindComponent( 'paImg' + iSlides.ToString ) ) ,
+            'left'  ,
+            IntToStr( ( TUniControl( Self.FindComponent( 'paImg' + iSlides.ToString ) ).Width + 3 ) * (-1) ) ,
+            '350' );
+
+        Inc( iSlides );
+
+        rc_jQueryAnimate(
+          TUniControl( Self.FindComponent( 'paImg' + ( iSlides ).ToString ) ) ,
+            'left'  ,
+            '3' ,
+            '350');
+     end;
+end;
+
+procedure TfrmFreeFrame.UniFrameCreate(Sender: TObject);
+begin
+     Self.Color  := StringToColor( mm.CONFIG_LAYOUT_BG_COLOR );
+
+     iSlides     := 1;
+     iSlideCount := 3;
+
+     hfChat.HTML.Clear;
+
+     dm_rc.rc_ShowSweetAlert( 'RadCORE' , 'Do More. Better and Fast!' , 'info' );
+
+     if mm.CONFIG_LANGUAGE = 'pt_BR' then
+        btnLink.Hint := rc_SetHintProperty( 'https://radcore.pro.br/web/atualizacoes/' , 'link:', btnLink.Hint )
+     else
+        btnLink.Hint := rc_SetHintProperty( 'https://radcore.pro.br/web/updates/' , 'link:', btnLink.Hint );
+     // para frames, não precisa efetuar o ResizeBlocks
+     rc_RenderLayout( Self, false, false );
+end;
+
+procedure TfrmFreeFrame.UniFrameReady(Sender: TObject);
+begin
+     //dm_rc.rc_QrCode( hfQRCode, 'www.mikromundo.com' );
+
+     // para aplicar o controle de máscaras de digitação
+     dm_rc.rc_ApplyEditMasks( Self );
+
+     dm_rc.rc_ResizeBlocks( Self, true, true );
+
+     // in development
+     rc_Translate( Self, nil , '' , mm.CONFIG_LANGUAGE );
+end;
+
+initialization
+  RegisterClass(TfrmFreeFrame);
+
+end.

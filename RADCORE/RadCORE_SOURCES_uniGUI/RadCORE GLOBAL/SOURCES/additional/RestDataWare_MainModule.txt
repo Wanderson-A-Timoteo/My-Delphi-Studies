@@ -1,0 +1,348 @@
+- Copie e cole no MAINMODULE a partir da clausua "object" abaixo e
+  em seguida descomente no codigo fonte os trechos com
+      //----------[[RESTDATAWARE
+      //----------RESTDATAWARE]]
+
+- Copy and Paste into MAINMODULE from the "object" clause below and
+  then uncomment the excerpts in the source code with
+      //----------[[RESTDATAWARE
+      //----------RESTDATAWARE]]
+
+object RestDATABASE: TRESTDWDataBase
+  Active = False
+  Compression = True
+  CriptOptions.Use = False
+  CriptOptions.Key = 'RDWBASEKEY256'
+  AuthenticationOptions.AuthorizationOption = rdwAOBasic
+  AuthenticationOptions.OptionParams.Username = 'testserver'
+  AuthenticationOptions.OptionParams.Password = 'testserver'
+  Proxy = False
+  ProxyOptions.Port = 8888
+  PoolerService = '127.0.0.1'
+  PoolerPort = 8082
+  PoolerName = 'TServerMethodDM.RESTDWPoolerFD'
+  RestModule = 'TServerMethods1'
+  StateConnection.AutoCheck = False
+  StateConnection.InTime = 1000
+  RequestTimeOut = 9999999
+  EncodeStrings = True
+  Encoding = esUtf8
+  StrsTrim = False
+  StrsEmpty2Null = False
+  StrsTrim2Len = True
+  HandleRedirects = False
+  RedirectMaximum = 0
+  ParamCreate = True
+  FailOver = False
+  FailOverConnections = <>
+  FailOverReplaceDefaults = False
+  ClientConnectionDefs.Active = False
+  UserAgent =
+    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l' +
+    'ike Gecko) Chrome/41.0.2227.0 Safari/537.36'
+  Left = 75
+  Top = 162
+end
+object restPool: TRESTClientPooler
+  DataCompression = True
+  Encoding = esUtf8
+  hEncodeStrings = True
+  Host = '127.0.0.1'
+  AuthenticationOptions.AuthorizationOption = rdwAOBasic
+  AuthenticationOptions.OptionParams.Username = 'testserver'
+  AuthenticationOptions.OptionParams.Password = 'testserver'
+  ProxyOptions.BasicAuthentication = False
+  ProxyOptions.ProxyPort = 0
+  RequestTimeOut = 10000
+  ThreadRequest = False
+  AllowCookies = False
+  RedirectMaximum = 0
+  HandleRedirects = False
+  FailOver = False
+  FailOverConnections = <>
+  FailOverReplaceDefaults = False
+  BinaryRequest = True
+  CriptOptions.Use = False
+  CriptOptions.Key = 'RDWBASEKEY256'
+  UserAgent =
+    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, l' +
+    'ike Gecko) Chrome/41.0.2227.0 Safari/537.36'
+  Left = 73
+  Top = 207
+end
+object dwClientEvents: TDWClientEvents
+  ServerEventName = 'TServerMethodDM.DWServerEvents1'
+  CriptOptions.Use = False
+  CriptOptions.Key = 'RDWBASEKEY256'
+  RESTClientPooler = restPool
+  Events = <
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovDateTime
+          ParamName = 'result'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovString
+          ParamName = 'inputdata'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odINOUT
+          ObjectValue = ovString
+          ParamName = 'resultstring'
+          Encoded = False
+        end>
+      JsonMode = jmDataware
+      Name = 'servertime'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovString
+          ParamName = 'sql'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'result'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'loaddatasetevent'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'result'
+          Encoded = False
+        end>
+      JsonMode = jmPureJSON
+      Name = 'getemployee'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'result'
+          Encoded = False
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odINOUT
+          ObjectValue = ovString
+          ParamName = 'segundoparam'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'getemployeeDW'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovInteger
+          ParamName = 'mynumber'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovInteger
+          ParamName = 'result'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'eventint'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovDateTime
+          ParamName = 'mydatetime'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovDateTime
+          ParamName = 'result'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'eventdatetime'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'result'
+          Encoded = False
+        end>
+      JsonMode = jmPureJSON
+      Name = 'helloworld'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovStream
+          ParamName = 'DSFromServer'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'DSFromClient'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovInteger
+          ParamName = 'QtdDias'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovString
+          ParamName = 'Direction'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odINOUT
+          ObjectValue = ovString
+          ParamName = 'Tabela'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovString
+          ParamName = 'Sql'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'ErroServidor'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'replicador'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovString
+          ParamName = 'tabela'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odINOUT
+          ObjectValue = ovString
+          ParamName = 'campo'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odINOUT
+          ObjectValue = ovString
+          ParamName = 'tipoinfo'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'result'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'getInfoBD'
+    end
+    item
+      Routes = [crAll]
+      NeedAuthorization = True
+      DWParams = <
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovInteger
+          ParamName = 'rows_ini'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovInteger
+          ParamName = 'rows_fim'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odIN
+          ObjectValue = ovString
+          ParamName = 'tabela'
+          Encoded = True
+        end
+        item
+          TypeObject = toParam
+          ObjectDirection = odOUT
+          ObjectValue = ovString
+          ParamName = 'result'
+          Encoded = True
+        end>
+      JsonMode = jmDataware
+      Name = 'getRegistros'
+    end>
+  Left = 71
+  Top = 251
+end
+

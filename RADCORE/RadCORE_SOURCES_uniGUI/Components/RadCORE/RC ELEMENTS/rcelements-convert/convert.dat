@@ -1,0 +1,399 @@
+[TUniContainerPanel]
+l00=Object [[name]]: TUniContainerPanel
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Visible = [[visible]]
+l07=  Enabled = [[enabled]]
+l08=  Tag = [[tag]]
+l09=  TabOrder = [[taborder]]
+l10=end
+l11=rc-end
+
+[TUniBitBtn]
+l00=Object [[name]]: TUniBitBtn
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Caption = [[caption]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniSpeedButton]
+l00=Object [[name]]: TUniSpeedButton
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Caption = [[caption]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=  Glyph.Data = [[glyph.data]]
+l11=end
+l12=rc-end
+
+[TUniCheckBox]
+l00=Object [[name]]: TUniCheckBox
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Caption = [[caption]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniDBCheckBox]
+l00=Object [[name]]: TUniDBCheckBox
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  ValueChecked = [[valuechecked]]
+l09=  ValueUnchecked = [[valueunchecked]]
+l10=  Caption = [[caption]]
+l11=  Visible = [[visible]]
+l12=  Enabled = [[enabled]]
+l13=  Tag = [[tag]]
+l14=  TabOrder = [[taborder]]
+l15=end
+l16=rc-end
+
+[TUniRadioButton]
+l00=Object [[name]]: TUniRadioButton
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Caption = [[caption]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniComboBox]
+l00=Object [[name]]: TUniComboBox
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Text = [[text]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=  Items.Strings = [[items.strings]]
+l12=  ItemIndex = [[itemindex]]
+l13=end
+l14=rc-end
+
+[TUniDBComboBox]
+l00=Object [[name]]: TUniDBComboBox
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Visible = [[visible]]
+l09=  Enabled = [[enabled]]
+l10=  Tag = [[tag]]
+l11=  TabOrder = [[taborder]]
+l12=  Items.Strings = [[items.strings]]
+l13=end
+l14=rc-end
+
+[TUniDBRadioGroup]
+l00=Object [[name]]: TUniDBRadioGroup
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Caption = [[caption]]
+l09=  Visible = [[visible]]
+l10=  Enabled = [[enabled]]
+l11=  Tag = [[tag]]
+l12=  TabOrder = [[taborder]]
+l13=  Items.Strings = [[items.strings]]
+l14=end
+l15=rc-end
+
+[TUniRadioGroup]
+l00=Object [[name]]: TUniRadioGroup
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Caption = [[caption]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=  Items.Strings = [[items.strings]]
+l12=  ItemIndex = [[itemindex]]
+l13=end
+l14=rc-end
+
+[TUniDBRadioGroup]
+l00=Object [[name]]: TUniDBRadioGroup
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Caption = [[caption]]
+l09=  Visible = [[visible]]
+l10=  Enabled = [[enabled]]
+l11=  Tag = [[tag]]
+l12=  TabOrder = [[taborder]]
+l13=  Items.Strings = [[items.strings]]
+l14=  Columns = [[columns]]
+l15=  Values.Strings = [[values.strings]]
+l17=end
+l18=rc-end
+
+[TUniLabel]
+l00=Object [[name]]: TUniLabel
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Caption = [[caption]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniDBText]
+l00=Object [[name]]: TUniDBText
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Visible = [[visible]]
+l09=  Enabled = [[enabled]]
+l10=  Tag = [[tag]]
+l11=  TabOrder = [[taborder]]
+l12=end
+l13=rc-end
+
+[TUniImage]
+l00=Object [[name]]: TUniImage
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Center = [[center]]
+l07=  AutoSize = [[autosize]]
+l08=  Stretch = [[stretch]]
+l09=  Proportional = [[proportional]]
+l10=  Transparent = [[transparent]]
+l11=  Visible = [[visible]]
+l12=  Enabled = [[enabled]]
+l13=  Tag = [[tag]]
+l14=  Picture.Data = [[picture.data]]
+l15=end
+l16=rc-end
+
+[TUniEdit]
+l00=Object [[name]]: TUniEdit
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Text = [[text]]
+l07=  EmptyText = [[emptytext]]
+l08=  CharCase = [[charcase]]
+l09=  Visible = [[visible]]
+l10=  Enabled = [[enabled]]
+l11=  Tag = [[tag]]
+l12=  TabOrder = [[taborder]]
+l13=end
+l14=rc-end
+
+[TUniDBEdit]
+l00=Object [[name]]: TUniDBEdit
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Visible = [[visible]]
+l09=  Enabled = [[enabled]]
+l10=  Tag = [[tag]]
+l11=  TabOrder = [[taborder]]
+l12=end
+l13=rc-end
+
+[TUniDateTimePicker]
+l00=Object [[name]]: TUniDateTimePicker
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Date = [[date]]
+l07=  Time = [[time]]
+l08=  Visible = [[visible]]
+l09=  Enabled = [[enabled]]
+l10=  Tag = [[tag]]
+l11=  TabOrder = [[taborder]]
+l12=end
+l13=rc-end
+
+[TUniDBDateTimePicker]
+l00=Object [[name]]: TUniDBDateTimePicker
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Date = [[date]]
+l07=  Time = [[time]]
+l08=  DataField = [[datafield]]
+l09=  DataSource = [[datasource]]
+l10=  Visible = [[visible]]
+l11=  Enabled = [[enabled]]
+l12=  Tag = [[tag]]
+l13=  TabOrder = [[taborder]]
+l14=end
+l15=rc-end
+
+[TUniDBLookupComboBox]
+l00=Object [[name]]: TUniDBLookupComboBox
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Visible = [[visible]]
+l09=  Enabled = [[enabled]]
+l10=  KeyField = [[keyfield]]
+l11=  ListField = [[listfield]]
+l12=  ListSource = [[listsource]]
+l13=  Tag = [[tag]]
+l14=  TabOrder = [[taborder]]
+l15=end
+l16=rc-end
+
+[TUniFormattedNumberEdit]
+l00=Object [[name]]: TUniFormattedNumberEdit
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  Value = [[value]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniDBFormattedNumberEdit]
+l00=Object [[name]]: TUniDBFormattedNumberEdit
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataField = [[datafield]]
+l07=  DataSource = [[datasource]]
+l08=  Visible = [[visible]]
+l09=  Enabled = [[enabled]]
+l10=  Tag = [[tag]]
+l11=  TabOrder = [[taborder]]
+l12=end
+l13=rc-end
+
+[TUniDBGrid]
+l00=Object [[name]]: TUniDBGrid
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  DataSource = [[datasource]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniStringGrid]
+l00=Object [[name]]: TUniStringGrid
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  FixedCols = [[fixedcols]]
+l06=  FixedRows = [[fixedrows]]
+l06=  RowCount = [[rowcount]]
+l06=  ColCount = [[colcount]]
+l07=  Visible = [[visible]]
+l08=  Enabled = [[enabled]]
+l09=  Tag = [[tag]]
+l10=  TabOrder = [[taborder]]
+l11=end
+l12=rc-end
+
+[TUniSpinEdit]
+l00=Object [[name]]: TUniSpinEdit
+l01=  Left = [[left]]
+l02=  Top = [[top]]
+l03=  Width = [[width]]
+l04=  Height = [[height]]
+l05=  Hint = [[hint]]
+l06=  MinValue = [[value]]
+l07=  MaxValue = [[value]]
+l08=  Value = [[value]]
+l09=  Visible = [[visible]]
+l10=  Enabled = [[enabled]]
+l11=  Tag = [[tag]]
+l12=  TabOrder = [[taborder]]
+l13=end
+l14=rc-end
