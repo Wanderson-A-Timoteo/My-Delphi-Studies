@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="150px" height="150px" viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+<g>
+	
+		<circle opacity=".8" fill="none" stroke="#7E3F98" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="46.3827,46.3827" cx="75" cy="75" r="45">
+			<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="360 75 75"
+                    dur="3s"
+                    repeatCount="indefinite"/>
+
+		</circle>
+</g>
+<circle opacity=".8" fill="none" stroke="#D91B5B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="32" cx="75" cy="75" r="30.952">
+	<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="-360 75 75"
+                    dur="2s"
+                    repeatCount="indefinite"/>
+
+</circle>
+<circle opacity=".8" fill="none" stroke="#F05A28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="20" cx="75" cy="75" r="15">
+	<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="360 75 75"
+                    dur="1s"
+                    repeatCount="indefinite"/>
+
+</circle>
+</svg>
