@@ -1,0 +1,84 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 320
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object ToolBar1: TToolBar
+    Size.Width = 320.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    TintColor = xFF3F3F3F
+    object Label1: TLabel
+      Align = Contents
+      StyledSettings = [Family, Size, Style]
+      Size.Width = 320.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Rotas'
+    end
+    object SpeedButton1: TSpeedButton
+      Align = Right
+      IconTintColor = claWhite
+      Position.X = 272.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'infotoolbutton'
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Margins.Left = 20.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Size.Width = 280.000000000000000000
+    Size.Height = 412.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Label2: TLabel
+      Align = Top
+      Size.Width = 280.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Origem'
+    end
+    object Label3: TLabel
+      Align = Top
+      Position.Y = 85.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Destino'
+    end
+    object edt_origem: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 3
+      Position.Y = 23.000000000000000000
+      Margins.Bottom = 30.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edt_destino: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 2
+      Position.Y = 108.000000000000000000
+      Margins.Bottom = 30.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+end
