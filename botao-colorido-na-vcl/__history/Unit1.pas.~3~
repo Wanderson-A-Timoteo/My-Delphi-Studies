@@ -1,0 +1,65 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    PnlBotaoSalvar: TPanel;
+    PnlBotaoFechar: TPanel;
+    procedure PnlBotaoSalvarMouseLeave(Sender: TObject);
+    procedure PnlBotaoSalvarMouseEnter(Sender: TObject);
+    procedure PnlBotaoSalvarClick(Sender: TObject);
+    procedure PnlBotaoFecharClick(Sender: TObject);
+    procedure PnlBotaoFecharMouseEnter(Sender: TObject);
+    procedure PnlBotaoFecharMouseLeave(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  FCorBotaoInicial : TColor;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.PnlBotaoFecharClick(Sender: TObject);
+begin
+  ShowMessage('Botão Fechar!');
+end;
+
+procedure TForm1.PnlBotaoFecharMouseEnter(Sender: TObject);
+begin
+  FCorBotaoInicial     := PnlBotaoFechar.Color;
+  PnlBotaoFechar.Color := clRed;
+end;
+
+procedure TForm1.PnlBotaoFecharMouseLeave(Sender: TObject);
+begin
+  PnlBotaoFechar.Color := FCorBotaoInicial;
+end;
+
+procedure TForm1.PnlBotaoSalvarClick(Sender: TObject);
+begin
+  ShowMessage('Botão confirmado!');
+end;
+
+procedure TForm1.PnlBotaoSalvarMouseEnter(Sender: TObject);
+begin
+  FCorBotaoInicial     := PnlBotaoSalvar.Color;
+  PnlBotaoSalvar.Color := clHotLight;
+end;
+
+procedure TForm1.PnlBotaoSalvarMouseLeave(Sender: TObject);
+begin
+  PnlBotaoSalvar.Color := FCorBotaoInicial;
+end;
+
+end.
